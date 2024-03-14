@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdPerson } from "react-icons/io";
 import Navbar from "./Navbar";
 import { useState } from "react";
-
+import navlogo from '../../assets/navbar/navlogo.png'
 const Header = () => {
   // const pathName = window.location.pathname;
   const [showNav, setShowNav] = useState(false);
@@ -25,7 +25,7 @@ const Header = () => {
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2">
           <Link to="/">
-            <img src={logo} alt="logo" className="h-[50px]" />
+            <img src={navlogo} alt="logo" className="h-[300px]" />
           </Link>
         </div>
         <div
