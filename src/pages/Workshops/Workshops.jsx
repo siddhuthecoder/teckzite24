@@ -1,19 +1,29 @@
-import Header from "../../components/Header/Header";
-import ETWSCard from "../../components/Shared/ETWSCard";
+import ETWSCard from '../../components/Shared/ETWSCard'
+// import Style from './Workshops.module.css'
+import Header from '../../components/Header/Header'
+import WorkshopsBanner from './WorkshopsBanner'
+
+
+
 
 const Workshops = () => {
-  return (
-    <>
-      <Header />
-      <div className="flex flex-wrap max-sm:justify-center max-xl:justify-around justify-between">
-        <ETWSCard />
-        <ETWSCard />
-        <ETWSCard />
-        <ETWSCard />
-        <ETWSCard />
-      </div>
-    </>
-  );
-};
 
-export default Workshops;
+  return (
+    <main>
+      {/* <Header /> */}
+      <WorkshopsBanner />
+      
+            <>
+              <div className="w-full flex items-center justify-around gap-4 flex-wrap"  >
+                <ETWSCard className="mx-4" />
+                <ETWSCard className="mx-4" />
+                <ETWSCard className="mx-4" />
+
+              </div>
+            </>
+        
+    </main>
+  )
+}
+
+export default Workshops
