@@ -44,7 +44,7 @@ const AboutBanner = () => {
             <div className="about-banner w-full min-h-[100vh] pointer-events-none flex justify-center items-center z-[1]" style={backgroundStyle}></div>
             <div className={` w-full min-h-[100vh] flex justify-center items-center z-[11] relative pointer-events-none
                `} style={headingStyle}>
-                <div className="about-heading w-full text-center text-[50px] md:text-[70px] lg:text-[90px] " style={{}}>About</div>
+                <div className="about-heading w-full text-center text-[50px] md:text-[70px] lg:text-[90px] " style={{}}>About Banner</div>
 
             </div>
             <div className="w-full h-[100vh]"></div>
