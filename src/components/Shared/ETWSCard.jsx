@@ -8,7 +8,7 @@ const ETWSCard = () => {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className="relative mt-5 w-64 cursor-pointer mx-auto"
+      className="relative mt-5 w-64  cursor-pointer mx-auto"
       onMouseLeave={() => {
         setIsHover(false);
       }}

@@ -39,7 +39,7 @@ const SwipperModule = ({ data, width, slidePerview }) => {
           {data.map((t) => (
             <SwiperSlide key={t.id}>
               {({ isActive }) => (
-                <div className={`flex scale-[0.7]  duration-1000 justify-center ${isActive ? "scale-[0.7] md:scale-[1] " : "scale-[0.4] md:scale-[0.6]"}`}>
+                <div className={`flex   duration-1000 justify-center ${isActive ? " scale-[1] md:scale-[1m] " : "scale-[0.4] md:scale-[0.6]"}`}>
                   <WebCard img={t.img} name={t.name} role={t.role} />
                 </div>
               )}
