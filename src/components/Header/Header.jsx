@@ -33,7 +33,7 @@ const Header = () => {
           style={{ verticalAlign: "middle" }}
         >
           <Link to="/register">
-            <h1 className="max-md:hidden">Register</h1>
+            <h1 className="max-md:hidden bg-transparent">Registerr</h1>
             <IoMdPerson className="md:hidden" size={22} />
           </Link>
         </div>
