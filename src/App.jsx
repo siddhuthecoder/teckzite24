@@ -67,7 +67,7 @@ function App() {
         <>
           <Toaster />
           <main className="animate-show">
-            {/* <BackgroundAnimation /> */}
+            <BackgroundAnimation />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
