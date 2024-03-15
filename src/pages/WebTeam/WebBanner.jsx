@@ -45,17 +45,16 @@ const WebBanner = () => {
     return (
         <>
             <div className="web-banner w-full min-h-[100vh] pointer-events-none flex justify-center items-center z-[1]" style={backgroundStyle}></div>
-            <div className={`web-heading pointer-events-none w-full min-h-[100vh] flex justify-center items-center z-[11] relative
+            <div className={` web-heading pointer-events-none w-full min-h-[100vh] flex justify-center items-center z-[11] relative
                 ${width >= 1200 && width < 1500 ? "  text-[120px]" : ""}
                 ${width > 900 && width < 1200 ? "   text-[170px]" : ""}
                 ${width >= 700 && width < 1025 ? "   text-[100px]" : ""}
                 ${width >= 400 && width < 700 ? "   text-[100px]" : ""}
                 ${width < 400 ? "   text-[60px]" : ""}
                `} style={headingStyle}>
-                <div style={{ position: "absolute", bottom: "150px" }}>web Team</div>
+                <div className="w-full text-center" style={{ position: "absolute", bottom: "150px" }}>web Team</div>
 
             </div>
-            <div className="w-full h-[100vh]"></div>
         </>
     );
 };

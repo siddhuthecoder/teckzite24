@@ -36,6 +36,8 @@
     padding: 4rem 6rem 5.5rem;
     text-transform: uppercase;
     animation: flicker 1.5s infinite alternate;
+    background: url('../assets/img/workshop.jpg');
+    background-size: cover;
 }
 
 .workshop-heading::-moz-selection {

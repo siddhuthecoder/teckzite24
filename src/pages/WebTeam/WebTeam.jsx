@@ -10,8 +10,11 @@ const WebTeam = () => {
     <>
       <Header />
       <WebBanner />
-      <div className="w-full h-[100vh] flex justify-center items-center">
-        <SwipperModule data={WebTeamCard} />
+      <div className="w-full lg:hidden">
+        <SwipperModule data={WebTeamCard} width={"max-w-[1000px]"} slidePerview={1} />
+      </div>
+      <div className="w-full hidden lg:block">
+        <SwipperModule data={WebTeamCard} width={""} slidePerview={2} />
       </div>
     </>
   );

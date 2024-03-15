@@ -40,13 +40,13 @@ const WorkshopsBanner = () => {
     }
 
 
-    const opacity = 1 - scroll / (window.innerHeight / 1);
+    const opacity = 1 - scroll / (window.innerHeight / 4);
     const marginTop = `${-100 + scroll * 5 / 2}px`;
 
     const DesktopBg = ({ scroll }) => {
         return (
             <>
-                <div className="workshop-banner pointer-events-none  flex items-center justify-center z-[3] " style={{
+                <div className="workshop-banner pointer-events-none  flex items-center justify-center z-[11] " style={{
                     opacity,
                     backgroundSize,
                     backgroundPosition: "center center",
@@ -55,9 +55,10 @@ const WorkshopsBanner = () => {
                     position: "sticky", top: "0px", left: "0px"
                 }}>
                 </div>
-                <div className="workshop-heading w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[10] " style={{ position: "fixed", top: "0px", left: "0px" }}>
+                <div className="workshop-heading w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[10]  " style={{ position: "fixed", top: "0px", left: "0px", opacity }}>
                     <div className={` text-[50px] sm: md:text-[87px]`} style={{ opacity }}>Workshops</div>
                 </div>
+                <div className="w-full h-[100vh]"></div>
             </>
         )
     }
