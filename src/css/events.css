@@ -11,6 +11,9 @@
     z-index: 1;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+}
 
 
 @media (max-width: 768px) {

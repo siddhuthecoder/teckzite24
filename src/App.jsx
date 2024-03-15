@@ -3,8 +3,8 @@ import { Toaster } from "react-hot-toast";
 import EventDetailsCard2 from "./pages/EventDetails/EventDetailsCard2";
 import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
-import WECard from "./components/Shared/WECard";
-import Contact from './pages/contact/Contact'
+import Contact from "./pages/Contact/Contact";
+import AudioBG from "./components/Audio";
 import {
   CoreTeam,
   Events,
@@ -16,7 +16,7 @@ import {
   // WorkshopsDetails,
   // EventDetails,
   // Profile,
-  // Referrals,
+  Referrals,
   // Speakers,
   // Sponsors,
   // Schedule,
@@ -68,8 +68,8 @@ function App() {
       ) : (
         <>
           <Toaster />
-          <main className="animate-show">
-            {/* <BackgroundAnimation /> */}
+          <main className="">
+            <BackgroundAnimation />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
@@ -79,12 +79,16 @@ function App() {
               <Route path="/webteam" element={<WebTeam />} />
               <Route path="/register" element={<Register />} />
               <Route path="/team" element={<TeamCard />} />
-              <Route path="/card" element={<WECard />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/swiper" element={<SwiperModule />} />
+              <Route path="/referrals" element={<Referrals />} />
+              <Route path="/audio" element={<AudioBG />} />
               <Route path="/eventdetails" element={<EventDetailsCard2 />} />
             </Routes>
             <Footer />
+            <div className="absolute bottom-0 left-0 z-[2000]">
+              <AudioBG />
+            </div>
           </main>
         </>
       )}

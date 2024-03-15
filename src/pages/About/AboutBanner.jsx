@@ -25,6 +25,7 @@ const AboutBanner = () => {
     const blurValue = 1 + scroll * 0.050;
     const backgroundStyle = {
         opacity: `${1 - scroll / (window.innerHeight / 2)}`,
+        // filter: `blur(${blurValue}px)`,
         backgroundPosition: 'center bottom',
         backgroundSize: "cover",
         position: 'fixed',
@@ -41,14 +42,9 @@ const AboutBanner = () => {
     return (
         <>
             <div className="about-banner w-full min-h-[100vh] pointer-events-none flex justify-center items-center z-[1]" style={backgroundStyle}></div>
-            <div className={`about-heading pointer-events-none w-full min-h-[100vh] flex justify-center items-center z-[11] relative
-                ${width >= 1200 && width < 1500 ? "  text-[120px]" : ""}
-                ${width > 900 && width < 1200 ? "   text-[170px]" : ""}
-                ${width >= 700 && width < 1025 ? "   text-[100px]" : ""}
-                ${width >= 400 && width < 700 ? "   text-[100px]" : ""}
-                ${width < 400 ? "   text-[60px]" : ""}
+            <div className={` w-full min-h-[100vh] flex justify-center items-center z-[11] relative pointer-events-none
                `} style={headingStyle}>
-                <div style={{ position: "absolute", bottom: "150px" }}>About</div>
+                <div className="about-heading w-full text-center text-[50px] md:text-[70px] lg:text-[90px] " style={{}}>About</div>
 
             </div>
             <div className="w-full h-[100vh]"></div>
