@@ -4,6 +4,7 @@ import EventDetailsCard2 from "./pages/EventDetails/EventDetailsCard2";
 import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
 import WECard from "./components/Shared/WECard";
+import Contact from './pages/contact/Contact'
 import {
   CoreTeam,
   Events,
@@ -68,7 +69,7 @@ function App() {
         <>
           <Toaster />
           <main className="animate-show">
-            <BackgroundAnimation />
+            {/* <BackgroundAnimation /> */}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
@@ -79,6 +80,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/team" element={<TeamCard />} />
               <Route path="/card" element={<WECard />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/swiper" element={<SwiperModule />} />
               <Route path="/eventdetails" element={<EventDetailsCard2 />} />
             </Routes>

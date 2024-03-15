@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import TabButton from "../button/TabButton";
+import { FaLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import "./button.css";
 import '../../index.css'

@@ -25,7 +25,6 @@ const WebBanner = () => {
     const blurValue = 1 + scroll * 0.050;
     const backgroundStyle = {
         opacity: `${1 - scroll / (window.innerHeight / 2)}`,
-        // filter: `blur(${blurValue}px)`,
         backgroundPosition: 'center bottom',
         backgroundSize: "cover",
         position: 'fixed',
@@ -37,10 +36,6 @@ const WebBanner = () => {
         opacity: 1 - scroll / (window.innerHeight / 2),
 
     };
-    const opacity = `${1 - scroll / (window.innerHeight / 2)}`;
-    const fontSize = `${100 - scroll * (1) / 2}px`;
-    const backgroundSize = `${170 + scroll / 2}%`;
-    const marginTop = `${-80 + scroll * 1.8 * 1 / 1}px`;
 
     return (
         <>
