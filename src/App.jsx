@@ -3,6 +3,7 @@ import { Toaster } from "react-hot-toast";
 import EventDetailsCard2 from "./pages/EventDetails/EventDetailsCard2";
 import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
+import WECard from "./components/Shared/WECard";
 import {
   CoreTeam,
   Events,
@@ -77,6 +78,7 @@ function App() {
               <Route path="/webteam" element={<WebTeam />} />
               <Route path="/register" element={<Register />} />
               <Route path="/team" element={<TeamCard />} />
+              <Route path="/card" element={<WECard />} />
               <Route path="/swiper" element={<SwiperModule />} />
               <Route path="/eventdetails" element={<EventDetailsCard2 />} />
             </Routes>

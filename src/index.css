@@ -3,21 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --primary-gradient: linear-gradient(
-    to right bottom,
-    #f90cff,
-    #e027ff,
-    #c534ff,
-    #a93eff,
-    #8a44ff,
-    #6560ff,
-    #3c73ff,
-    #0081ff,
-    #009cff,
-    #00b3ff,
-    #00c6f5,
-    #0cd7e8
-  );
+  --primary-gradient: linear-gradient(to right bottom,
+      #f90cff,
+      #e027ff,
+      #c534ff,
+      #a93eff,
+      #8a44ff,
+      #6560ff,
+      #3c73ff,
+      #0081ff,
+      #009cff,
+      #00b3ff,
+      #00c6f5,
+      #0cd7e8);
 
   /* font-family: Arial, Helvetica, sans-serif; */
   font-family: 'BURN-RUBBER', sans-serif;
@@ -81,12 +79,14 @@ select option {
 .nav_heading.active h1 {
   text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
 }
+
 .nav_heading:hover,
 .nav_heading.active {
   transform: scale(1.05);
 }
 
 @keyframes fade {
+
   0%,
   50% {
     opacity: 0;
@@ -102,6 +102,7 @@ select option {
 }
 
 @keyframes showFirst {
+
   0%,
   10% {
     opacity: 0;
@@ -161,13 +162,11 @@ select option {
 }
 
 .team-content h3:before {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.25),
-    rgba(255, 255, 255, 0.25) 1px,
-    transparent 1px,
-    transparent 6px
-  );
+  background-image: repeating-linear-gradient(-45deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25) 1px,
+      transparent 1px,
+      transparent 6px);
   background-size: 4px 4px;
   content: "";
   position: absolute;
@@ -295,6 +294,7 @@ select option {
   background: url("../public/footer.png") no-repeat bottom center fixed;
   background-size: auto 60px;
 }
+
 @media (max-width: 768px) {
   .footer_container {
     height: 40px;
@@ -325,6 +325,7 @@ select option {
 .scroll_in {
   overflow-y: scroll;
 }
+
 .scroll_in::--webkit-scrollbar {
   display: none;
 }
@@ -351,47 +352,61 @@ select option {
   left: 10vw;
   animation: animate 15s linear infinite;
 }
+
 .a_box ul li:nth-child(2) {
   left: 37vw;
   animation-delay: 2s;
 }
+
 .a_box ul li:nth-child(3) {
   left: 25vw;
   animation-delay: 4s;
 }
+
 .a_box ul li:nth-child(4) {
   left: 60vw;
   animation-delay: 6s;
 }
+
 .a_box ul li:nth-child(5) {
   left: 95vw;
   animation-delay: 8s;
 }
+
 .a_box ul li:nth-child(6) {
   left: 35vw;
   animation-delay: 10s;
 }
+
 .a_box ul li:nth-child(7) {
   left: 85vw;
   animation-delay: 12s;
 }
+
 .a_box ul li:nth-child(8) {
   left: 55vw;
   animation-delay: 14s;
 }
+
 .a_box ul li:nth-child(9) {
   left: 75vw;
   animation-delay: 16s;
 }
+
 @keyframes animate {
   0% {
     transform: scale(0);
     opacity: 1;
     bottom: 0;
   }
+
   100% {
     transform: scale(7);
     opacity: 0;
     bottom: 100vh;
   }
+}
+
+.event-button {
+  background-color: var(--primary-gradient);
 }

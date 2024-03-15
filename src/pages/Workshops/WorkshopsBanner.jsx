@@ -58,7 +58,6 @@ const WorkshopsBanner = () => {
                 <div className="workshop-heading w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[10]  " style={{ position: "fixed", top: "0px", left: "0px", opacity }}>
                     <div className={` text-[50px] sm: md:text-[87px]`} style={{ opacity }}>Workshops</div>
                 </div>
-                <div className="w-full h-[100vh]"></div>
             </>
         )
     }
