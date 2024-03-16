@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 import EventDetailsCard2 from "./pages/EventDetails/EventDetailsCard2";
 import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
-import Contact from "./pages/contact/Contact";
+import Contact from "./pages/Contact/Contact";
 import AudioBG from "./components/Audio";
 import {
   CoreTeam,
@@ -86,8 +86,8 @@ function App() {
               <Route path="/eventdetails" element={<EventDetailsCard2 />} />
             </Routes>
             <Footer />
-            <div className="absolute bottom-0 left-0 z-[2000]">
-              <AudioBG />
+            <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-0 w-[50px] h-[50px] left-0 z-[2000]">
+              <AudioBG className="text-[30px] " />
             </div>
           </main>
         </>

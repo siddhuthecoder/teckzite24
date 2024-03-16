@@ -30,9 +30,7 @@
 
 :root {
     --neon-text-color: #8A2BE2;
-    /* Purple */
-    --neon-border-color: ;
-    
+
 }
 
 
@@ -112,10 +110,10 @@ button.active-tab {
     background-color: var(--btn-color);
     border-radius: 3px;
     outline: none;
-    box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
-    text-shadow: 0 0 .5em var(--glow-color);
+    box-shadow: 0 0 .8em .15em var(--glow-color),
+        0 0 3em 1em var(--glow-spread-color),
+        inset 0 0 .6em .15em var(--glow-color);
+    text-shadow: 0 0 .4em var(--glow-color);
     position: relative;
     transition: all 0.3s;
 }
@@ -129,25 +127,24 @@ button.active-tab::after {
     height: 100%;
     width: 100%;
     background-color: var(--glow-spread-color);
-    filter: blur(1em);
-    /* Decreased blur amount */
-    opacity: .5;
-    /* Decreased opacity */
+    filter: blur(.9em);
+
+    opacity: .2;
     transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
 }
 
 button.active-tab:hover {
     color: var(--btn-color);
     background-color: var(--glow-color);
-    box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 1.5em var(--glow-spread-color),
+    box-shadow: 0 0 .8em .05em var(--glow-color),
+        0 0 3em 1.5em var(--glow-spread-color),
         /* Adjusted spread amount */
-        inset 0 0 .75em .25em var(--glow-color);
+        inset 0 0 .0em .0em var(--glow-color);
 }
 
 button.active-tab:active {
-    box-shadow: 0 0 0.6em .25em var(--glow-color),
+    box-shadow: 0 0 0.5em .05em var(--glow-color),
         0 0 2.5em 1.5em var(--glow-spread-color),
         /* Adjusted spread amount */
-        inset 0 0 .5em .25em var(--glow-color);
+        inset 0 0 .4em .004em var(--glow-color);
 }

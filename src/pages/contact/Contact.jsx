@@ -39,7 +39,7 @@ const Contact = () => {
                         </h5>
                         <div>
                             <div className="flex gap-3 bg-[#0F1C23]  w-[90%] m-auto mt-[40px]">
-                                <div className=" border-[#f90cff] relative w-[50%] border-[1px] rounded h-[60px] ">
+                                <div className=" border-[#f90cff] relative w-[50%] border-[1px] rounded h-[50px] ">
                                     <input
                                         type="text"
                                         className="w-full rounded pl-[16px] h-full bg-[#0F1C23]"
@@ -47,7 +47,7 @@ const Contact = () => {
                                     />
                                     <PermIdentityIcon className="absolute text-slate-500 right-1 top-4" />
                                 </div>
-                                <div className="border-[#f90cff] relative w-[50%] border-[1px] h-[60px] rounded">
+                                <div className="border-[#f90cff] relative w-[50%] border-[1px] h-[50px] rounded">
                                     <input
                                         type="email"
                                         className=" w-full rounded pl-[16px] h-full bg-[#0F1C23]"
@@ -57,7 +57,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className="flex gap-3 w-[90%] m-auto bg-[#0F1C23] mt-[20px]">
-                                <div className=" border-[#f90cff] border-[1px] relative w-[50%] h-[60px] rounded ">
+                                <div className=" border-[#f90cff] border-[1px] relative w-[50%] h-[50px] rounded ">
                                     <input
                                         type="number"
                                         className="w-full pl-[16px] rounded h-full bg-[#0F1C23]"
@@ -65,7 +65,7 @@ const Contact = () => {
                                     />
                                     <PhoneOutlinedIcon className="absolute right-1 text-slate-500 top-4" />
                                 </div>
-                                <div className="border-[#f90cff] text-slate-500 border-[1px] w-[50%] h-[60px] rounded">
+                                <div className="border-[#f90cff] text-slate-500 border-[1px] w-[50%] h-[50px] rounded">
                                     <select className="h-full rounded pl-[16px] w-full bg-[#0F1C23]">
                                         <option className="bg-[#0F1C23]" value={"subject"}>
                                             Subject
@@ -134,7 +134,7 @@ const Contact = () => {
                                 </h5>
                                 <div>
                                     <div className="flex gap-3 bg-[#0F1C23] mt-[40px]">
-                                        <div className=" border-[#f90cff] relative w-[40%] border-[1px] rounded h-[60px] ">
+                                        <div className=" border-[#f90cff] relative w-[40%] border-[1px] rounded h-[50px] ">
                                             <input
                                                 type="text"
                                                 className="w-full rounded pl-[10%] h-full bg-[#0F1C23]"
@@ -142,7 +142,7 @@ const Contact = () => {
                                             />
                                             <PermIdentityIcon className="absolute text-slate-500 right-1 top-4" />
                                         </div>
-                                        <div className="border-[#f90cff] relative w-[40%] border-[1px] h-[60px] rounded">
+                                        <div className="border-[#f90cff] relative w-[40%] border-[1px] h-[50px] rounded">
                                             <input
                                                 type="email"
                                                 className=" w-full rounded pl-[10%] h-full bg-[#0F1C23]"
@@ -152,7 +152,7 @@ const Contact = () => {
                                         </div>
                                     </div>
                                     <div className="flex gap-3 bg-[#0F1C23] mt-[20px]">
-                                        <div className=" border-[#f90cff] border-[1px] relative w-[40%] h-[60px] rounded ">
+                                        <div className=" border-[#f90cff] border-[1px] relative w-[40%] h-[50px] rounded ">
                                             <input
                                                 type="number"
                                                 className="w-full pl-[10%] rounded h-full bg-[#0F1C23]"
@@ -160,7 +160,7 @@ const Contact = () => {
                                             />
                                             <PhoneOutlinedIcon className="absolute right-1 text-slate-500 top-4" />
                                         </div>
-                                        <div className="border-[#f90cff] text-slate-500 border-[1px] w-[40%] h-[60px] rounded">
+                                        <div className="border-[#f90cff] text-slate-500 border-[1px] w-[40%] h-[50px] rounded">
                                             <select className="h-full rounded pl-[10%] w-full bg-[#0F1C23]">
                                                 <option className="bg-[#0F1C23]" value={"subject"}>
                                                     Subject

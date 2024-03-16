@@ -34,11 +34,9 @@
 
 
 .web-heading {
-    font-size: 13rem;
     font-weight: 700;
     font-style: italic;
-    color: purple;
-    padding: 4rem 6rem 5.5rem;
+    color: #fff;
     text-transform: uppercase;
     animation: flicker 1.5s infinite alternate;
 }

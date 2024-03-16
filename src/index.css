@@ -414,3 +414,7 @@ select option {
 .audio-bg {
   background-image: var(--primary-gradient);
 }
+
+::-webkit-scrollbar {
+  width: 0;
+}

@@ -10,7 +10,7 @@ const AudioBG = () => {
 
     return (
         <div>
-            <audio controls>
+            <audio autoPlay={true} loop >
                 <source src={Audio} type="audio/mp3" />
             </audio>
             <button className="" onClick={toggleMute}>{isMuted ? 'Unmute' : 'Mute'}</button>
