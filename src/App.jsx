@@ -28,6 +28,7 @@ import { Preloader } from "./components";
 import { useEffect, useState } from "react";
 import Footer from "./components/Shared/Footer";
 import BackgroundAnimation from "./components/Shared/BackgroundAnimation";
+import EWCard from "./components/Shared/EWCard";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -84,6 +85,7 @@ function App() {
               <Route path="/swiper" element={<SwiperModule />} />
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
+              <Route path="/card" element={<EWCard />} />
               <Route path="/eventdetails" element={<EventDetailsCard2 />} />
             </Routes>
             <Footer />

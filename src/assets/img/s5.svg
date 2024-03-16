@@ -1,0 +1,22 @@
+<svg width="117" height="102" viewBox="0 0 117 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_5_19)">
+<path d="M58.5 70L32.0862 31.75L84.9138 31.75L58.5 70Z" fill="url(#paint0_diamond_5_19)"/>
+<path d="M58.5 70L32.0862 31.75L84.9138 31.75L58.5 70Z" stroke="#F82D9B" stroke-width="2"/>
+</g>
+<defs>
+<filter id="filter0_d_5_19" x="0.18042" y="0.75" width="116.639" height="101.01" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="15"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.878667 0 0 0 0 0.696667 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5_19"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5_19" result="shape"/>
+</filter>
+<radialGradient id="paint0_diamond_5_19" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(58.5 44.5) rotate(94.0246) scale(17.3829 20.7604)">
+<stop stop-color="#DD5DA2"/>
+<stop offset="1" stop-color="#FF48AB"/>
+</radialGradient>
+</defs>
+</svg>

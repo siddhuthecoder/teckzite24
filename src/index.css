@@ -426,3 +426,7 @@ select option {
   height: 40px;
   margin-top: 20px;
 }
+
+.gradient-bg {
+  background-image: var(--primary-gradient);
+}

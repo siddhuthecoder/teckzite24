@@ -24,7 +24,7 @@ const ETWSCard = () => {
   console.log(isHover)
   return (
     <div
-      className="relative mt-10 w-[200px] m-auto cursor-pointer "
+      className="relative mt-10 w-[200px] mx-auto  cursor-pointer "
       onMouseLeave={() => {
         setIsHover(false);
       }}
@@ -40,7 +40,7 @@ const ETWSCard = () => {
           borderImage: " linear-gradient(to bottom, blue, purple,blue,purple) 1"
         }}
       />
-      <div className="absolute top-0 opacity-70    [clip-path:polygon(38%_5%,_10%_5%,_0_13%,_0%_80%,_7%_87%,_7%_100%,_85%_100%,_100%_85%,_100%_30%,_95%_25%,_95%_0,_45%_0)] min-w-[260px] h-[350px] z-[2] bg-[black] md:hover:bg-[transparent] duration-100 "></div>
+      <div className={`absolute top-0 opacity-70    [clip-path:polygon(38%_5%,_10%_5%,_0_13%,_0%_80%,_7%_87%,_7%_100%,_85%_100%,_100%_85%,_100%_30%,_95%_25%,_95%_0,_45%_0)] min-w-[260px] h-[350px] z-[2] bg-[black] hover:bg-[transparent] duration-100 ${isHover ? "" : ""}`} ></div>
       <motion.div className="absolute bottom-[20px] w-full z-[3]">
         <div className={`${isHover ? "text-[30px]" : "text-[20px]"} text-[white] font-bold duration-500 ps-[30px] hover:text-[30px] w-full`}>Event</div>
         <div className={`${isHover ? "block" : "hidden"} text-[white] font-bold duration-500 ps-[30px] w-full`}>Event discription</div>

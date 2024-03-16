@@ -4,6 +4,7 @@ import { useState } from "react";
 import EventsBanner from "./EventsBanner";
 import "../../css/events.css";
 import Header from "../../components/Header/Header";
+import EWCard from '../../components/Shared/EWCard'
 
 const Events = () => {
   const [tab, setTab] = useState("ALL");
@@ -15,7 +16,7 @@ const Events = () => {
       <div className="w-full flex flex-col z-10 min-h-[85vh] mb-5 sticky  ">
         <div className="w-full flex items-center justify-center flex-wrap mt-[20px]  ">
           <button
-            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "ALL" ? "active-tab" : ""
+            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "ALL" ? "gradient-bg" : ""
               }`}
             onClick={() => {
               setTab("ALL");
@@ -24,7 +25,7 @@ const Events = () => {
             ALL
           </button>
           <button
-            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "CSE" ? "active-tab" : ""
+            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "CSE" ? "gradient-bg" : ""
               }`}
             onClick={() => {
               setTab("CSE");
@@ -33,7 +34,7 @@ const Events = () => {
             CSE
           </button>
           <button
-            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "ECE" ? "active-tab" : ""
+            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "ECE" ? "gradient-bg" : ""
               }`}
             onClick={() => {
               setTab("ECE");
@@ -42,7 +43,7 @@ const Events = () => {
             ECE
           </button>
           <button
-            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "MME" ? "active-tab" : ""
+            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "MME" ? "gradient-bg" : ""
               }`}
             onClick={() => {
               setTab("MME");
@@ -51,7 +52,7 @@ const Events = () => {
             MME
           </button>
           <button
-            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "MECH" ? "active-tab" : ""
+            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "MECH" ? "gradient-bg" : ""
               }`}
             onClick={() => {
               setTab("MECH");
@@ -60,7 +61,7 @@ const Events = () => {
             MECH
           </button>
           <button
-            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "CHEM" ? "active-tab" : ""
+            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "CHEM" ? "gradient-bg" : ""
               }`}
             onClick={() => {
               setTab("CHEM");
@@ -69,7 +70,7 @@ const Events = () => {
             CHEM
           </button>
           <button
-            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "CIVIL" ? "active-tab" : ""
+            className={`tab  w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab == "CIVIL" ? "gradient-bg" : ""
               }`}
             onClick={() => {
               setTab("CIVIL");
@@ -84,10 +85,11 @@ const Events = () => {
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-                  <ETWSCard className='mx-auto' />
-                  <ETWSCard />
-                  <ETWSCard />
-                  <ETWSCard />
+                  <EWCard />
+                  <EWCard />
+                  <EWCard />
+                  <EWCard />
+                  <EWCard />
                 </div>
               </div>
             </>
