@@ -14,7 +14,7 @@ const EWCard = () => {
     return (
         <>
             <div className="w-full h-screen flex items-center justify-center">
-                <div className="w-[250px] h-[360px] flex justify-center   relative">
+                <div className="w-[250px] h-[360px] flex justify-center  relative">
                     <img src={s1} alt="" className='absolute left-[-20%] top-[-20%]' />
                     <img src={s2} alt="" className='absolute right-[-20%] top-[-20%]' />
                     <img src={s3} alt="" className="absolute top-[27.55%] left-[-20%] " />
