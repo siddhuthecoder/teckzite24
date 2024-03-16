@@ -26,12 +26,12 @@ const CoreteamBanner = () => {
     let backgroundSize;
 
     if (width > 1000) {
-        backgroundSize = `${100 + scroll / 2}%`;
+        backgroundSize = `${120 + scroll / 2}%`;
     } else if (width <= 1000 && width > 700) {
-        backgroundSize = `${250 + scroll / 2}%`;
+        backgroundSize = `${270 + scroll / 2}%`;
     }
     else if (width <= 700 && width > 500) {
-        backgroundSize = `${215 + scroll * 3 / 2}%`;
+        backgroundSize = `${340 + scroll * 3 / 2}%`;
     }
     else if (width <= 500) {
         backgroundSize = `${430 + scroll * 3 / 2}%`;

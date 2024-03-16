@@ -85,9 +85,7 @@ const Contact = () => {
                                     <ChatBubbleOutlineOutlinedIcon className="absolute right-1 text-slate-500 top-2.5" />
                                 </div>
                             </div>
-                            <div className="m-[20px]">
-                                <Button text="Send" link="/" />
-                            </div>
+                            <button className="send-btn ms-[20px]">Send</button>
                         </div>
                         <p className="text-[#f90cff]  w-[90%] m-auto mt-[45px] font-semibold text-left text-lg">
                             # INFORMATION
@@ -181,9 +179,7 @@ const Contact = () => {
                                         </div>
                                     </div>
                                     {/* send message button */}
-                                    <div className="mt-[20px]">
-                                        <Button text="Send" link="/" />
-                                    </div>
+                                    <button className="send-btn">Send</button>
                                 </div>
                             </div>
                         </div>
@@ -234,13 +230,6 @@ const Contact = () => {
                     referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
             </div>
-            {/* logo */}
-            <div className="w-[20%] max-md:w-[40%] max-sm:w-[80%] m-auto h-[80px] rotate-180 contact-logo [clip-path:polygon(20%_0%,_80%_0,_100%_100%,_0%_100%)]">
-                <div className=" rotate-180 w-full  h-[80%] items-center">
-                    <h2 className="font-bold text-3xl text-white text-center"> TECKZITE</h2>
-                </div>
-            </div>
-
 
         </section>
     );

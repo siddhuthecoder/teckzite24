@@ -45,7 +45,7 @@ const ReferralsBanner = () => {
             <div className={`ref-heading w-full min-h-[100vh] flex justify-center items-center z-[2] relative
                
                `} style={headingStyle}>
-                <div className="text-[50px] ps-[10%] sm:text-[60px] md:text-[70px]" style={{ position: "absolute", bottom: "200px" }}>Referrals</div>
+                <div className="text-[50px]  sm:text-[60px] md:text-[70px]" style={{ position: "absolute", bottom: "200px" }}>Referrals</div>
             </div>
         </>
     );
