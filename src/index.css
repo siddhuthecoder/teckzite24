@@ -89,7 +89,7 @@ select option {
 
   0%,
   50% {
-    opacity: 0;
+    opacity: 1;
   }
 
   100% {
