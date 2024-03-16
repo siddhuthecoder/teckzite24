@@ -5,6 +5,7 @@ import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
 import Contact from "./pages/Contact/Contact";
 import AudioBG from "./components/Audio";
+import Referrals from "./pages/Referrals/Referrals";
 import {
   CoreTeam,
   Events,
@@ -16,7 +17,7 @@ import {
   // WorkshopsDetails,
   // EventDetails,
   // Profile,
-  Referrals,
+  // Referrals,
   // Speakers,
   // Sponsors,
   // Schedule,

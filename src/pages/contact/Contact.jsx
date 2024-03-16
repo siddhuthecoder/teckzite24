@@ -29,7 +29,7 @@ const Contact = () => {
             {size[0] <= 1204 ? (
                 <>
                     {/* laptop */}
-                    <div className=" bg-[#0F1C23] lg:pt-[8%] pb-[30px] pt-[50px] lg:h-[1100px] w-full lg:[clip-path:polygon(25%_0,_0_0,_0_100%,_25%_100%,_35%_95%,_65%_95%,_78%_100%,_100%_100%,_100%_0,_75%_0,_65%_5%,_35%_5%)]">
+                    <div className=" bg-[#0f1214]  backdrop-blur-lg lg:pt-[8%] pb-[30px] pt-[50px] lg:h-[1100px] w-full lg:[clip-path:polygon(25%_0,_0_0,_0_100%,_25%_100%,_35%_95%,_65%_95%,_78%_100%,_100%_100%,_100%_0,_75%_0,_65%_5%,_35%_5%)]">
                         <p className="text-[#f90cff] w-[90%] m-auto font-semibold text-left text-lg pt-[40px]">
                             # GET IN TOUCH
                         </p>
@@ -38,11 +38,11 @@ const Contact = () => {
                             <span className="text-[#f90cff]">!</span>
                         </h5>
                         <div>
-                            <div className="flex gap-3 bg-[#0F1C23]  w-[90%] m-auto mt-[40px]">
+                            <div className="flex gap-3 bg-[#0f1214]  backdrop-blur-lg  w-[90%] m-auto mt-[40px]">
                                 <div className=" border-[#f90cff] relative w-[50%] border-[1px] rounded h-[50px] ">
                                     <input
                                         type="text"
-                                        className="w-full rounded pl-[16px] h-full bg-[#0F1C23]"
+                                        className="w-full rounded pl-[16px] h-full bg-[#0f1214]  backdrop-blur-lg"
                                         placeholder={`${size[0] < 431 ? "Name" : "Your Name"}`}
                                     />
                                     <PermIdentityIcon className="absolute text-slate-500 right-1 top-4" />
@@ -50,37 +50,37 @@ const Contact = () => {
                                 <div className="border-[#f90cff] relative w-[50%] border-[1px] h-[50px] rounded">
                                     <input
                                         type="email"
-                                        className=" w-full rounded pl-[16px] h-full bg-[#0F1C23]"
+                                        className=" w-full rounded pl-[16px] h-full bg-[#0f1214]  backdrop-blur-lg"
                                         placeholder={`${size[0] < 431 ? "Email" : "Email Address"}`}
                                     />
                                     <MailOutlineIcon className="absolute right-1 text-slate-500 top-4" />
                                 </div>
                             </div>
-                            <div className="flex gap-3 w-[90%] m-auto bg-[#0F1C23] mt-[20px]">
+                            <div className="flex gap-3 w-[90%] m-auto bg-[#0f1214]  backdrop-blur-lg mt-[20px]">
                                 <div className=" border-[#f90cff] border-[1px] relative w-[50%] h-[50px] rounded ">
                                     <input
                                         type="number"
-                                        className="w-full pl-[16px] rounded h-full bg-[#0F1C23]"
+                                        className="w-full pl-[16px] rounded h-full bg-[#0f1214]  backdrop-blur-lg"
                                         placeholder={`${size[0] < 431 ? "Phone" : "Phone Number"}`}
                                     />
                                     <PhoneOutlinedIcon className="absolute right-1 text-slate-500 top-4" />
                                 </div>
                                 <div className="border-[#f90cff] text-slate-500 border-[1px] w-[50%] h-[50px] rounded">
-                                    <select className="h-full rounded pl-[16px] w-full bg-[#0F1C23]">
-                                        <option className="bg-[#0F1C23]" value={"subject"}>
+                                    <select className="h-full rounded pl-[16px] w-full bg-[#0f1214]  backdrop-blur-lg">
+                                        <option className="bg-[#0f1214]  backdrop-blur-lg" value={"subject"}>
                                             Subject
                                         </option>
-                                        <option className="bg-[#0F1C23]" value={"subject1"}>
+                                        <option className="bg-[#0f1214]  backdrop-blur-lg" value={"subject1"}>
                                             Subject1
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                            <div className="flex bg-[#0F1C23] w-[90%] m-auto mt-[20px]">
+                            <div className="flex bg-[#0f1214]  backdrop-blur-lg w-[90%] m-auto mt-[20px]">
                                 <div className=" border-[#f90cff] w-full relative min-h-[100px] border-[1px] rounded ">
                                     <textarea
                                         placeholder="Write Massage..."
-                                        className="bg-[#0F1C23] rounded min-h-full w-full"
+                                        className="bg-[#0f1214]  backdrop-blur-lg rounded min-h-full w-full"
                                     ></textarea>
                                     <ChatBubbleOutlineOutlinedIcon className="absolute right-1 text-slate-500 top-2.5" />
                                 </div>
@@ -95,7 +95,7 @@ const Contact = () => {
                         <h5 className="font-bold w-[90%] m-auto text-3xl text-left my-1">
                             Contact Information's <span className="text-[#f90cff]">!</span>
                         </h5>
-                        <div className="border-[1px] border-[#f90cff]  justify-between w-[90%] m-auto mt-[60px] p-[15px] items-center rounded-2xl flex bg-[#0f1c23]">
+                        <div className="border-[1px] border-[#f90cff]  justify-between w-[90%] m-auto mt-[60px] p-[15px] items-center rounded-2xl flex bg-[#0f1214]  backdrop-blur-lg">
                             <div className="pl-[15px] text-left">
                                 <FaLocationCrosshairs className="text-[50px] text-[#f90cff]" />
                                 <h4 className="font-semibold">ADDRESS:</h4>
@@ -105,7 +105,7 @@ const Contact = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="border-[1px] border-[#f90cff]  justify-between w-[90%] m-auto mt-[30px] p-[15px] items-center rounded-2xl flex bg-[#0f1c23]">
+                        <div className="border-[1px] border-[#f90cff]  justify-between w-[90%] m-auto mt-[30px] p-[15px] items-center rounded-2xl flex bg-[#0f1214]  backdrop-blur-lg">
                             <div className="pl-[15px] text-left">
                                 <FaLocationCrosshairs className="text-[50px] text-[#f90cff]" />
                                 <h4 className="font-semibold">ADDRESS:</h4>
@@ -123,7 +123,7 @@ const Contact = () => {
                     <div className="flex justify-center ">
                         {/* Left Card */}
 
-                        <div className="w-1/2 h-[700px]  rotate-180 items-center justify-center bg-[#0F1C23] [clip-path:polygon(32%_10%,_46%_0,_100%_0,_100%_100%,_45%_100%,_32%_90%,_0_90%,_0_10%)]">
+                        <div className="w-1/2 h-[700px]  rotate-180 items-center justify-center bg-[#0f1214]  backdrop-blur-lg [clip-path:polygon(32%_10%,_46%_0,_100%_0,_100%_100%,_45%_100%,_32%_90%,_0_90%,_0_10%)]">
                             <div className="w-[90%] rotate-180 h-[85%]">
                                 <p className="text-[#f90cff] font-semibold text-left text-lg">
                                     # GET IN TOUCH
@@ -133,11 +133,11 @@ const Contact = () => {
                                     <span className="text-[#f90cff]">!</span>
                                 </h5>
                                 <div>
-                                    <div className="flex gap-3 bg-[#0F1C23] mt-[40px]">
+                                    <div className="flex gap-3 bg-[#0f1214]  backdrop-blur-lg mt-[40px]">
                                         <div className=" border-[#f90cff] relative w-[40%] border-[1px] rounded h-[50px] ">
                                             <input
                                                 type="text"
-                                                className="w-full rounded pl-[10%] h-full bg-[#0F1C23]"
+                                                className="w-full rounded pl-[10%] h-full bg-[#0f1214] backdrop-blur-lg"
                                                 placeholder="Your Name"
                                             />
                                             <PermIdentityIcon className="absolute text-slate-500 right-1 top-4" />
@@ -145,37 +145,37 @@ const Contact = () => {
                                         <div className="border-[#f90cff] relative w-[40%] border-[1px] h-[50px] rounded">
                                             <input
                                                 type="email"
-                                                className=" w-full rounded pl-[10%] h-full bg-[#0F1C23]"
+                                                className=" w-full rounded pl-[10%] h-full bg-[#0f1214]  backdrop-blur-lg"
                                                 placeholder="Email Address"
                                             />
                                             <MailOutlineIcon className="absolute right-1 text-slate-500 top-4" />
                                         </div>
                                     </div>
-                                    <div className="flex gap-3 bg-[#0F1C23] mt-[20px]">
+                                    <div className="flex gap-3  mt-[20px]">
                                         <div className=" border-[#f90cff] border-[1px] relative w-[40%] h-[50px] rounded ">
                                             <input
                                                 type="number"
-                                                className="w-full pl-[10%] rounded h-full bg-[#0F1C23]"
+                                                className="w-full pl-[10%] rounded h-full bg-[#0f1214]  backdrop-blur-lg"
                                                 placeholder="Phone Number"
                                             />
                                             <PhoneOutlinedIcon className="absolute right-1 text-slate-500 top-4" />
                                         </div>
                                         <div className="border-[#f90cff] text-slate-500 border-[1px] w-[40%] h-[50px] rounded">
-                                            <select className="h-full rounded pl-[10%] w-full bg-[#0F1C23]">
-                                                <option className="bg-[#0F1C23]" value={"subject"}>
+                                            <select className="h-full rounded pl-[10%] w-full bg-[#0f1214]  backdrop-blur-lg">
+                                                <option className="bg-[#0f1214]  backdrop-blur-lg" value={"subject"}>
                                                     Subject
                                                 </option>
-                                                <option className="bg-[#0F1C23]" value={"subject1"}>
+                                                <option className="bg-[#0f1214]  backdrop-blur-lg" value={"subject1"}>
                                                     Subject1
                                                 </option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="flex bg-[#0F1C23] mt-[20px]">
+                                    <div className="flex bg-[#0f1214]  backdrop-blur-lg mt-[20px]">
                                         <div className=" border-[#f90cff] w-[82%] relative min-h-[100px] border-[1px] rounded ">
                                             <textarea
                                                 placeholder="Write Massage..."
-                                                className="bg-[#0F1C23] rounded min-h-full w-full"
+                                                className="bg-[#0f1214]  backdrop-blur-lg rounded min-h-full w-full"
                                             ></textarea>
                                             <ChatBubbleOutlineOutlinedIcon className="absolute right-1 text-slate-500 top-2.5" />
                                         </div>
@@ -188,7 +188,7 @@ const Contact = () => {
                             </div>
                         </div>
                         {/* Right Card */}
-                        <div className="w-1/2 bg-[#0f1c23] cursor-default h-[700px] [clip-path:polygon(32%_10%,_46%_0,_100%_0,_100%_100%,_45%_100%,_32%_90%,_0_90%,_0_10%)]">
+                        <div className="w-1/2 bg-[#0f1214]  backdrop-blur-lg cursor-default h-[700px] [clip-path:polygon(32%_10%,_46%_0,_100%_0,_100%_100%,_45%_100%,_32%_90%,_0_90%,_0_10%)]">
                             <div className="w-[80%]  mt-[17%] m-auto">
                                 <p className="text-[#f90cff] font-semibold text-left text-lg">
                                     # INFORMATION
@@ -197,7 +197,7 @@ const Contact = () => {
                                     Contact Information's{" "}
                                     <span className="text-[#f90cff]">!</span>
                                 </h5>
-                                <div className="border-[1px] mt-[20px]  border-[#f90cff]  p-[15px] items-center rounded-2xl flex bg-[#0f1c23] w-full h-[90px]">
+                                <div className="border-[1px] mt-[20px]  border-[#f90cff]  p-[15px] items-center rounded-2xl flex bg-[#0f1214]  backdrop-blur-lg w-full h-[90px]">
                                     <FaLocationCrosshairs className="text-[50px] text-[#f90cff]" />
                                     <div className="pl-[15px] text-left">
                                         <h4 className="font-semibold">ADDRESS:</h4>
@@ -208,7 +208,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="border-[1px] mt-[10px] border-[#f90cff] p-[15px] items-center rounded-2xl flex bg-[#0f1c23] w-full h-[90px]">
+                                <div className="border-[1px] mt-[10px] border-[#f90cff] p-[15px] items-center rounded-2xl flex bg-[#0f1214]  backdrop-blur-lg w-full h-[90px]">
                                     <FaLocationDot className="text-[50px] text-[#f90cff]" />
                                     <div className="pl-[15px] text-left">
                                         <h4 className="font-semibold">ADDRESS:</h4>

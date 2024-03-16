@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../css/web.css';
+import '../../css/referrals.css';
 
-const WebBanner = () => {
+const ReferralsBanner = () => {
     const [scroll, setScroll] = useState(0);
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -26,7 +26,7 @@ const WebBanner = () => {
     const backgroundStyle = {
         opacity: `${1 - scroll / (window.innerHeight / 2)}`,
         // filter: `blur(${blurValue}px)`,
-        backgroundPosition: 'center bottom',
+        backgroundPosition: 'center center',
         backgroundSize: "cover",
         position: 'fixed',
         top: '0px',
@@ -37,21 +37,18 @@ const WebBanner = () => {
         opacity: 1 - scroll / (window.innerHeight / 2),
 
     };
-    const opacity = `${1 - scroll / (window.innerHeight / 2)}`;
-    const fontSize = `${100 - scroll * (1) / 2}px`;
-    const backgroundSize = `${170 + scroll / 2}%`;
-    const marginTop = `${-80 + scroll * 1.8 * 1 / 1}px`;
+
 
     return (
         <>
-            <div className="web-banner w-full min-h-[100vh] pointer-events-none flex justify-center items-center z-[1]" style={backgroundStyle}></div>
-            <div className={` web-heading  w-full min-h-[100vh] flex justify-center items-center z-[11] relative pointer-events-none
+            <div className="ref-banner w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[1]" style={backgroundStyle}></div>
+            <div className={`ref-heading w-full min-h-[100vh] flex justify-center items-center z-[2] relative
+               
                `} style={headingStyle}>
-                <div className="w-full text-center text-[70px] md:text-[70px] lg:text-[90px] " style={{}}>web Team</div>
-
+                <div className="text-[50px] ps-[10%] sm:text-[60px] md:text-[70px]" style={{ position: "absolute", bottom: "200px" }}>Referrals</div>
             </div>
         </>
     );
 };
 
-export default WebBanner;
+export default ReferralsBanner;
