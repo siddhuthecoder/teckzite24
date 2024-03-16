@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 import EventDetailsCard2 from "./pages/EventDetails/EventDetailsCard2";
 import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
-import Contact from "./pages/Contact/Contact";
+import Contact from "./pages/contact/Contact";
 import AudioBG from "./components/Audio";
 import Referrals from "./pages/Referrals/Referrals";
 import {
