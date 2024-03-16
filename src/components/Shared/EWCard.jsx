@@ -9,7 +9,7 @@ import s7 from '../../assets/img/s7.svg'
 import s8 from '../../assets/img/s8.svg'
 import Eve from '../../assets/img/event.jpg'
 
-
+//new card
 const EWCard = () => {
     return (
         <>
