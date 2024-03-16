@@ -69,7 +69,7 @@ function App() {
       ) : (
         <>
           <Toaster />
-          <main className="">
+          <main className="animate-show">
             <BackgroundAnimation />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -87,8 +87,8 @@ function App() {
               <Route path="/eventdetails" element={<EventDetailsCard2 />} />
             </Routes>
             <Footer />
-            <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-0 w-[50px] h-[50px] left-0 z-[2000]">
-              <AudioBG className="text-[30px] " />
+            <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
+              <AudioBG />
             </div>
           </main>
         </>
