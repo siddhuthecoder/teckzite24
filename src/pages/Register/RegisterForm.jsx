@@ -85,8 +85,8 @@ const RegisterForm = () => {
   };
 
   const onSuccess = async (res) => {
-    console.log(res);
     const decodedUser = jwtDecode(res.credential);
+    console.log(decodedUser);
     const { given_name, family_name, email, picture } = decodedUser;
     const domainPattern = /@(rguktn|rgukto|rgukts|rguktr)\.ac\.in$/;
 

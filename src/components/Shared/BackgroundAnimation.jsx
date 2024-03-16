@@ -1,7 +1,7 @@
 const BackgroundAnimation = () => {
   return (
     <>
-      <div className="a_box">
+      <div className="a_box z-[-1]">
         <ul>
           <li></li>
           <li></li>

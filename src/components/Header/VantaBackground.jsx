@@ -7,7 +7,6 @@ const VantaBackground = () => {
 
   useEffect(() => {
     if (dotsRef.current) {
-      // Initialize Vanta.js dots effect
       const vantaEffect = DOTS({
         el: dotsRef.current,
         THREE: THREE,
@@ -17,7 +16,7 @@ const VantaBackground = () => {
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
-        count: 100,
+        count: 1000,
         mouseControls: true,
         touchControls: true,
         gyroControls: false,

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import EventDetailsCard2 from "./pages/EventDetails/EventDetailsCard2";
 import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
@@ -25,9 +25,16 @@ import { Preloader } from "./components";
 import { useEffect, useState } from "react";
 import Footer from "./components/Shared/Footer";
 import BackgroundAnimation from "./components/Shared/BackgroundAnimation";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchEvents } from "./store/eventSlice";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+
+  const eventData = useSelector((state) => state.event.data);
+  const eventError = useSelector((state) => state.event.error);
+  const eventStatus = useSelector((state) => state.event.status);
 
   useEffect(() => {
     const handleSound = () => {
@@ -43,6 +50,23 @@ function App() {
   useEffect(() => {
     setTimeout(() => setLoading(false), 5000);
   }, []);
+
+  useEffect(() => {
+    if (eventError) {
+      toast.error(eventError);
+    }
+  }, [eventError]);
+
+  useEffect(() => {
+    //fetch events
+    if (eventStatus === "idle") {
+      dispatch(fetchEvents());
+    }
+  }, [eventStatus, dispatch]);
+
+  useEffect(() => {
+    console.log(eventStatus, eventError, eventData);
+  }, [eventStatus, eventError, eventData]);
 
   return (
     <>

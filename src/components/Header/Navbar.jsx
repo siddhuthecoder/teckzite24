@@ -5,6 +5,7 @@ import VantaBackground from "./VantaBackground";
 import logo from "../../assets/logo.png";
 import Glasses from "../../assets/navbar/vr_glasses.png";
 import { motion } from "framer-motion";
+import BackgroundAnimation from "../Shared/BackgroundAnimation";
 
 const Navbar = ({ setShowNav }) => {
   const pathname = window.location.pathname;
@@ -13,7 +14,8 @@ const Navbar = ({ setShowNav }) => {
       className="w-full min-h-screen relative top-0 left-0 z-[1001] bg-black"
       style={{ position: "fixed" }}
     >
-      <VantaBackground />
+      {/* <VantaBackground /> */}
+      <BackgroundAnimation />
       <div
         onClick={() => setShowNav(false)}
         className="absolute right-[2.4rem] z-30 top-[2.4rem] cursor-pointer"
