@@ -47,13 +47,9 @@ const EventsBanner = () => {
         <>
             <div className="eve-banner w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[1]" style={backgroundStyle}></div>
             <div className={`eve-heading w-full min-h-[100vh] flex justify-center items-center z-[2] relative
-                ${width >= 1200 && width < 1500 ? "  text-[120px]" : ""}
-                ${width > 900 && width < 1200 ? "   text-[170px]" : ""}
-                ${width >= 700 && width < 1025 ? "   text-[100px]" : ""}
-                ${width >= 400 && width < 700 ? "   text-[100px]" : ""}
-                ${width < 400 ? "   pt-[-100px]" : ""}
+               
                `} style={headingStyle}>
-                <div style={{ position: "absolute", bottom: "200px" }}>Events</div>
+                <div className="text-[50px] sm:text-[60px] md:text-[70px]" style={{ position: "absolute", bottom: "200px" }}>Events</div>
             </div>
         </>
     );

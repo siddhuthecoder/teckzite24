@@ -1,42 +1,57 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import 'swiper/swiper-bundle.css';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import WebCard from '../../components/Shared/WebCard';
+import left from '../../assets/img/after.webp'
+import right from '../../assets/img/before.webp'
 import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-import './swipper.css'
+const SwipperModule = ({ data, width, slidePerview }) => {
+  const swiperRef = useRef(null);
 
-
-import { Autoplay } from 'swiper/modules';
-
-const SwipperModule = () => {
   return (
-    <>
-      <Swiper style={{ width: "1000px", paddingTop: "100px", paddingBottom: "100px" }}
-        spaceBetween={100}
-        slidesPerView={1}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay]}
-        className="mySwiper"
-      >
-        <SwiperSlide  >
-          <div style={{ border: "1px solid purple" }} className="w-[97%] mx-auto  max-w-[200px] h-[200px] backdrop-blur-lg"></div>
-        </SwiperSlide>
-        <SwiperSlide >
-          <div style={{ border: "1px solid purple" }} className="w-[97%] mx-auto max-w-[200px] h-[200px] backdrop-blur-lg"></div>
-        </SwiperSlide>
-        <SwiperSlide >
-          <div style={{ border: "1px solid purple" }} className="w-[97%] mx-auto max-w-[200px] h-[200px] backdrop-blur-lg"></div>
-        </SwiperSlide>
-        <SwiperSlide >
-          <div style={{ border: "1px solid purple" }} className="w-[97%] mx-auto max-w-[200px] h-[200px] backdrop-blur-lg"></div>
-        </SwiperSlide>
+    <div className="w-full flex items-center justify-center h-[100vh] overflow-hidden">
+      <div className={`w-full  flex items-center justify-between  `}>
+        <div className="after hidden md:block md:translate-x-[50%]" >
+          <img src={left} alt="" className="" />
+        </div>
+        <Swiper
+          spaceBetween={4}
+          slidesPerView={slidePerview}
+          centeredSlides={true}
+          Pagination={{
+            clickable: true,
+          }}
+          loop={true}
 
-      </Swiper>
-    </>
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay, Pagination]}
+          className="mySwiper relative"
+          ref={swiperRef}
+          initialSlide={2}
+        >
+          {data.map((t) => (
+            <SwiperSlide key={t.id}>
+              {({ isActive }) => (
+                <div className={`flex   duration-1000 justify-center ${isActive ? " scale-[1] md:scale-[1m] " : "scale-[0.4] md:scale-[0.6]"}`}>
+                  <WebCard img={t.img} name={t.name} role={t.role} />
+                </div>
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="after me-[-4%] hidden md:block  md:translate-x-[-50%] ">
+          <img src={right} alt="" className="h-[]" />
+        </div>
+      </div>
+    </div>
   );
-}
-export default SwipperModule
+};
+
+export default SwipperModule;

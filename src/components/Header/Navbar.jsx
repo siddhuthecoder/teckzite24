@@ -11,7 +11,7 @@ const Navbar = ({ setShowNav }) => {
   const pathname = window.location.pathname;
   return (
     <div
-      className="w-full min-h-screen relative top-0 left-0 z-[1001] bg-black"
+      className="w-full min-h-screen relative top-0 left-0 z-[1050] bg-black"
       style={{ position: "fixed" }}
     >
       {/* <VantaBackground /> */}
@@ -34,12 +34,23 @@ const Navbar = ({ setShowNav }) => {
           </h1>
         </Link>
       </div>
-      <ul className="animate-fade hidden lg:flex z-10 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white w-full max-w-[1200px] items-center justify-around">
-        {navigation.map((nav) => {
+      <ul className="animate-fade  hidden lg:flex z-10 absolute  top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white w-full max-w-[1200px] items-center justify-around">
+        {navigation.map((nav, index) => {
           return (
-            <li
+            <motion.li
+              initial={{
+                y: (index + 2) % 2 == 0 ? "-100%" : "100%",
+                opacity: 0,
+              }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.07,
+                type: "spring",
+                stiffness: 400,
+              }}
               key={nav.id}
-              className={`odd:mt-[200px] nav_heading ${
+              className={`odd:mt-[300px] nav_heading   ${
                 pathname === nav.link && "active"
               }`}
             >
@@ -58,11 +69,19 @@ const Navbar = ({ setShowNav }) => {
                   className="mt-0 h-[auto] lg:max-w-[120%]"
                 />
               </Link>
-            </li>
+            </motion.li>
           );
         })}
-        <li
-          className={`odd:mt-[200px] nav_heading ${
+        <motion.li
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: "0%", opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.07,
+            type: "spring",
+            stiffness: 200,
+          }}
+          className={`odd:mt-[300px] nav_heading ${
             pathname === "/register" && "active"
           }`}
         >
@@ -80,7 +99,7 @@ const Navbar = ({ setShowNav }) => {
               className="mt-0 h-[auto] lg:max-w-[120%]"
             />
           </Link>
-        </li>
+        </motion.li>
       </ul>
       <ul className="flex flex-col lg:hidden z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[75vh] w-full items-center scroll_in">
         {navigation.map((nav, index) => {

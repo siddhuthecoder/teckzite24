@@ -3,6 +3,9 @@ import { Toaster, toast } from "react-hot-toast";
 import EventDetailsCard2 from "./pages/EventDetails/EventDetailsCard2";
 import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
+import Contact from "./pages/contact/Contact";
+import AudioBG from "./components/Audio";
+import Referrals from "./pages/Referrals/Referrals";
 import {
   CoreTeam,
   Events,
@@ -18,7 +21,7 @@ import {
   // Speakers,
   // Sponsors,
   // Schedule,
-  // About,
+  About,
 } from "./pages";
 
 import { Preloader } from "./components";
@@ -27,6 +30,7 @@ import Footer from "./components/Shared/Footer";
 import BackgroundAnimation from "./components/Shared/BackgroundAnimation";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchEvents } from "./store/eventSlice";
+import { fetchWorkshops } from "./store/workshopSlice";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -35,6 +39,10 @@ function App() {
   const eventData = useSelector((state) => state.event.data);
   const eventError = useSelector((state) => state.event.error);
   const eventStatus = useSelector((state) => state.event.status);
+
+  const workshopData = useSelector((state) => state.workshop.data);
+  const workshopError = useSelector((state) => state.workshop.error);
+  const workshopStatus = useSelector((state) => state.workshop.status);
 
   useEffect(() => {
     const handleSound = () => {
@@ -55,18 +63,28 @@ function App() {
     if (eventError) {
       toast.error(eventError);
     }
-  }, [eventError]);
+    if (workshopError) {
+      toast.error(workshopError);
+    }
+  }, [eventError, workshopError]);
 
   useEffect(() => {
     //fetch events
     if (eventStatus === "idle") {
       dispatch(fetchEvents());
     }
-  }, [eventStatus, dispatch]);
+    if (workshopStatus === "idle") {
+      dispatch(fetchWorkshops());
+    }
+  }, [eventStatus, workshopStatus, dispatch]);
 
   useEffect(() => {
     console.log(eventStatus, eventError, eventData);
   }, [eventStatus, eventError, eventData]);
+
+  useEffect(() => {
+    console.log(workshopStatus, workshopError, workshopData);
+  }, [workshopStatus, workshopError, workshopData]);
 
   return (
     <>
@@ -95,15 +113,22 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
+              <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />
               <Route path="/coreteam" element={<CoreTeam />} />
               <Route path="/webteam" element={<WebTeam />} />
               <Route path="/register" element={<Register />} />
               <Route path="/team" element={<TeamCard />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/swiper" element={<SwiperModule />} />
+              <Route path="/referrals" element={<Referrals />} />
+              <Route path="/audio" element={<AudioBG />} />
               <Route path="/eventdetails" element={<EventDetailsCard2 />} />
             </Routes>
             <Footer />
+            <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
+              <AudioBG />
+            </div>
           </main>
         </>
       )}

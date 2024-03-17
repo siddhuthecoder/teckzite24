@@ -6,8 +6,7 @@ export const fetchEvents = createAsyncThunk("/user/events", async () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BACKEND_URL}/events/all-events`
     );
-    console.log(res.data);
-    return res.data.events;
+    return res.data;
   } catch (error) {
     console.log(error);
     throw new Error(error?.response?.data.message || "Internal Server error");

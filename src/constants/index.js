@@ -51,14 +51,14 @@ export const WebTeamCard = [
     img: team1,
   },
   {
-    id: 1,
-    name: "Yasvanth Hanumantu",
+    id: 2,
+    name: "Sribabu Mandraju",
     role: "Web Developer",
     img: team1,
   },
   {
     id: 3,
-    name: "Sribabu Mandraju",
+    name: "Yasvanth Hanumantu",
     role: "Web Developer",
     img: team1,
   },
