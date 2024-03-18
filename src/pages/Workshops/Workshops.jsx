@@ -45,6 +45,7 @@ const Workshops = () => {
                 return (
                   <ETWSCard
                     key={w._id}
+                    id={w._id}
                     about={w.about}
                     img={w.workshopImg}
                     name={w.name}

@@ -32,6 +32,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchEvents } from "./store/eventSlice";
 import { fetchWorkshops } from "./store/workshopSlice";
 import EWCard from "./components/Shared/EWCard";
+import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -116,6 +117,10 @@ function App() {
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<EWCard />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard2 />} />
+              <Route
+                path="/workshopdetails/:id"
+                element={<WorkshopDetails />}
+              />
             </Routes>
             <Footer />
             <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">

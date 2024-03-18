@@ -2,8 +2,9 @@ import React, { useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./button.css";
 import "../../index.css";
+import { useNavigate } from "react-router-dom";
 
-const ETWSCard = ({ about, name, img }) => {
+const ETWSCard = ({ about, name, img, id }) => {
   const [isHover, setIsHover] = useState(false);
   const [size, setSize] = useState([0, 0]);
   useLayoutEffect(() => {
@@ -14,6 +15,8 @@ const ETWSCard = ({ about, name, img }) => {
     updateSize();
     return () => window.removeEventListener("resize", updateSize);
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div
@@ -62,6 +65,7 @@ const ETWSCard = ({ about, name, img }) => {
                 background:
                   "linear-gradient(to right bottom,#f90cff,#e027ff,#c534ff,#a93eff,#8a44ff,#6560ff,#3c73ff,#0081ff,#009cff,#00b3ff,#00c6f5,#0cd7e8)",
               }}
+              onClick={() => navigate(`/workshopdetails/${id}`)}
             >
               Explore
             </button>
@@ -74,6 +78,7 @@ const ETWSCard = ({ about, name, img }) => {
               background:
                 "linear-gradient(to right bottom,#f90cff,#e027ff,#c534ff,#a93eff,#8a44ff,#6560ff,#3c73ff,#0081ff,#009cff,#00b3ff,#00c6f5,#0cd7e8)",
             }}
+            onClick={() => navigate(`/workshopdetails/${id}`)}
           >
             Explore More
           </button>
