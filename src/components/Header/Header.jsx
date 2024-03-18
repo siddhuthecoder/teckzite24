@@ -5,9 +5,12 @@ import { IoMdPerson } from "react-icons/io";
 import Navbar from "./Navbar";
 import { useState } from "react";
 import navlogo from "../../assets/navbar/navlogo.png";
+import { useSelector } from "react-redux";
+
 const Header = () => {
   // const pathName = window.location.pathname;
   const [showNav, setShowNav] = useState(false);
+  const userData = useSelector((state) => state.user.data);
 
   return (
     <div className="header_container">
@@ -32,10 +35,19 @@ const Header = () => {
           className="absolute top-[35%] -translate-y-1/2 px-4 font-semibold font-koneMono text-xl cursor-pointer inline-block right-0"
           style={{ verticalAlign: "middle" }}
         >
-          <Link to="/register">
-            <h1 className="max-md:hidden bg-transparent">Login</h1>
-            <IoMdPerson className="md:hidden" size={22} />
-          </Link>
+          {userData ? (
+            <Link to="/profile">
+              <h1 className="max-md:hidden bg-transparent">
+                {userData.tzkid.toUpperCase()}
+              </h1>
+              <IoMdPerson className="md:hidden" size={22} />
+            </Link>
+          ) : (
+            <Link to="/register">
+              <h1 className="max-md:hidden bg-transparent">Login</h1>
+              <IoMdPerson className="md:hidden" size={22} />
+            </Link>
+          )}
         </div>
       </header>
       {showNav && <Navbar setShowNav={setShowNav} />}

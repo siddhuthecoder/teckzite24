@@ -33,11 +33,6 @@ export const navigation = [
   },
   {
     id: 7,
-    name: "Profile",
-    link: "/profile",
-  },
-  {
-    id: 8,
     name: "Contact",
     link: "/contact",
   },

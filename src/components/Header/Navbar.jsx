@@ -4,10 +4,12 @@ import { FaTimes } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import Glasses from "../../assets/navbar/vr_glasses.png";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 import BackgroundAnimation from "../Shared/BackgroundAnimation";
 
 const Navbar = ({ setShowNav }) => {
   const pathname = window.location.pathname;
+  const userData = useSelector((state) => state.user.data);
 
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black z-50 overflow-hidden">
@@ -66,20 +68,39 @@ const Navbar = ({ setShowNav }) => {
             pathname === "/register" && "active"
           }`}
         >
-          <Link
-            to="/register"
-            onClick={() => setShowNav(false)}
-            className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
-          >
-            <h1 className="text-[20px] pt-1 text-nowrap top-[20px] font-koneMono h-2 absolute">
-              Login
-            </h1>
-            <img
-              src={Glasses}
-              alt="nav"
-              className="mt-0 h-auto max-w-[160px] lg:max-w-[100%]"
-            />
-          </Link>
+          {userData ? (
+            <>
+              <Link
+                to="/profile"
+                onClick={() => setShowNav(false)}
+                className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
+              >
+                <h1 className="text-[20px] pt-1 text-nowrap top-[20px] font-koneMono h-2 absolute">
+                  {userData.tzkid.toUpperCase()}
+                </h1>
+                <img
+                  src={Glasses}
+                  alt="nav"
+                  className="mt-0 h-auto max-w-[160px] lg:max-w-[100%]"
+                />
+              </Link>
+            </>
+          ) : (
+            <Link
+              to="/register"
+              onClick={() => setShowNav(false)}
+              className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
+            >
+              <h1 className="text-[20px] pt-1 text-nowrap top-[20px] font-koneMono h-2 absolute">
+                Login
+              </h1>
+              <img
+                src={Glasses}
+                alt="nav"
+                className="mt-0 h-auto max-w-[160px] lg:max-w-[100%]"
+              />
+            </Link>
+          )}
         </motion.li>
       </ul>
     </div>

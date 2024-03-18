@@ -33,6 +33,7 @@ import { fetchEvents } from "./store/eventSlice";
 import { fetchWorkshops } from "./store/workshopSlice";
 import EWCard from "./components/Shared/EWCard";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
+import { fetchUser } from "./store/userSlice";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,13 @@ function App() {
   useEffect(() => {
     setTimeout(() => setLoading(false), 5000);
   }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      dispatch(fetchUser(token));
+    }
+  }, [dispatch]);
 
   useEffect(() => {
     if (eventError) {
