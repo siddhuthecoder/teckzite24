@@ -33,12 +33,12 @@ const Navbar = ({ setShowNav }) => {
           </h1>
         </Link>
       </div>
-      <ul className="  hidden lg:flex z-10 absolute  top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white w-full max-w-[1200px] items-center justify-around">
+      <ul className="animate-fade  hidden lg:flex z-10 absolute  top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white w-full max-w-[1200px] items-center justify-around">
         {navigation.map((nav, index) => {
           return (
             <motion.li
               initial={{
-                y: (index + 2) % 2 === 0 ? "-100%" : "100%",
+                y: (index + 2) % 2 == 0 ? "-100%" : "100%",
                 opacity: 1,
               }}
               animate={{ y: "0%", opacity: 1 }}

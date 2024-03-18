@@ -89,7 +89,7 @@ select option {
 
   0%,
   50% {
-    opacity: 0;
+    opacity: 1;
   }
 
   100% {
@@ -116,7 +116,7 @@ select option {
 /*  */
 /*  */
 /*  */
-/* Card Design */
+/* Card Design  index .*/
 .team-content {
   position: relative;
   margin-top: -15px;

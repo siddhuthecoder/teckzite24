@@ -2,9 +2,8 @@ import React, { useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./button.css";
 import "../../index.css";
-import Eve from "../../assets/img/event.jpg";
 
-const ETWSCard = () => {
+const ETWSCard = ({ about, name, img }) => {
   const [isHover, setIsHover] = useState(false);
   const [size, setSize] = useState([0, 0]);
   useLayoutEffect(() => {
@@ -25,10 +24,10 @@ const ETWSCard = () => {
       onMouseEnter={() => setIsHover(true)}
     >
       <img
-        src={Eve}
+        src={img}
         width="100%"
-        alt="siddu"
-        className={`hover:saturate-[1] overflow-hidden [clip-path:polygon(38%_5%,_10%_5%,_0_13%,_0%_80%,_7%_87%,_7%_100%,_85%_100%,_100%_85%,_100%_30%,_95%_25%,_95%_0,_45%_0)]  min-w-[260px] h-[350px] `}
+        alt={name}
+        className={`overflow-hidden [clip-path:polygon(38%_5%,_10%_5%,_0_13%,_0%_80%,_7%_87%,_7%_100%,_85%_100%,_100%_85%,_100%_30%,_95%_25%,_95%_0,_45%_0)]  min-w-[260px] h-[350px] `}
         style={{
           border: "4px solid transparent",
           borderImage:
@@ -36,24 +35,24 @@ const ETWSCard = () => {
         }}
       />
       <div
-        className={`absolute top-0 opacity-70    [clip-path:polygon(38%_5%,_10%_5%,_0_13%,_0%_80%,_7%_87%,_7%_100%,_85%_100%,_100%_85%,_100%_30%,_95%_25%,_95%_0,_45%_0)] min-w-[260px] h-[350px] z-[2] bg-[black] hover:bg-[transparent] duration-100 ${
+        className={`absolute top-0 opacity-70    [clip-path:polygon(38%_5%,_10%_5%,_0_13%,_0%_80%,_7%_87%,_7%_100%,_85%_100%,_100%_85%,_100%_30%,_95%_25%,_95%_0,_45%_0)] min-w-[260px] h-[350px] z-[2] bg-[black] duration-100 ${
           isHover ? "" : ""
         }`}
       ></div>
       <motion.div className="absolute bottom-[20px] w-full z-[3]">
         <div
           className={`${
-            isHover ? "text-[30px]" : "text-[20px]"
-          } text-[white] font-bold duration-500 ps-[30px] hover:text-[30px] w-full`}
+            isHover ? "text-[22px]" : "text-[20px]"
+          } text-[white] font-bold pl-[30px] w-full`}
         >
-          Event
+          {name}
         </div>
         <div
           className={`${
             isHover ? "block" : "hidden"
           } text-[white] font-bold duration-500 ps-[30px] w-full`}
         >
-          Event discription
+          {about.slice(0, 30)}
         </div>
         {size[0] > 1024 && (
           <div className={`${isHover ? "block" : "hidden"}`}>

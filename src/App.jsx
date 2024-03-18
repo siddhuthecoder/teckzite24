@@ -125,7 +125,7 @@ function App() {
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<EWCard />} />
-              <Route path="/eventdetails" element={<EventDetailsCard2 />} />
+              <Route path="/eventdetails:/id" element={<EventDetailsCard2 />} />
             </Routes>
             <Footer />
             <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
