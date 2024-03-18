@@ -25,7 +25,7 @@ const Navbar = ({ setShowNav }) => {
       <div className="absolute top-[2.4%] right-[2.4%] z-60 cursor-pointer">
         <FaTimes size={32} onClick={() => setShowNav(false)} />
       </div>
-      <ul className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-lg:h-[90vh] max-lg:mt-[10vh] max-lg:mb-[20px] max-lg:pt-[60px] max-lg:pb-[20px] scroll_in text-white flex flex-col justify-center items-center lg:flex-row">
+      <ul className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-lg:h-[90vh] max-lg:mt-[10vh] max-lg:mb-[20px] max-lg:py-[20px] scroll_in text-white flex flex-col items-center lg:flex-row">
         {navigation.map((nav, index) => (
           <motion.li
             key={nav.id}
