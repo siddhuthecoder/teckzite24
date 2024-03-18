@@ -3,22 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --primary-gradient: linear-gradient(to right bottom,
-      #f90cff,
-      #e027ff,
-      #c534ff,
-      #a93eff,
-      #8a44ff,
-      #6560ff,
-      #3c73ff,
-      #0081ff,
-      #009cff,
-      #00b3ff,
-      #00c6f5,
-      #0cd7e8);
+  --primary-gradient: linear-gradient(
+    to right bottom,
+    #bd13cc,
+    #57128f,
+    #a301b1
+  );
 
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: 'BURN-RUBBER', sans-serif;
+  font-family: "BURN-RUBBER", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -86,7 +79,6 @@ select option {
 }
 
 @keyframes fade {
-
   0%,
   50% {
     opacity: 1;
@@ -102,7 +94,6 @@ select option {
 }
 
 @keyframes showFirst {
-
   0%,
   10% {
     opacity: 0;
@@ -162,11 +153,13 @@ select option {
 }
 
 .team-content h3:before {
-  background-image: repeating-linear-gradient(-45deg,
-      rgba(255, 255, 255, 0.25),
-      rgba(255, 255, 255, 0.25) 1px,
-      transparent 1px,
-      transparent 6px);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 1px,
+    transparent 6px
+  );
   background-size: 4px 4px;
   content: "";
   position: absolute;

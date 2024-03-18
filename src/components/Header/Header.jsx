@@ -25,7 +25,7 @@ const Header = () => {
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2">
           <Link to="/">
-            <img src={navlogo} alt="logo" className="h-[300px]" />
+            <img src={navlogo} alt="logo" className="w-[300px] h-[100px]" />
           </Link>
         </div>
         <div

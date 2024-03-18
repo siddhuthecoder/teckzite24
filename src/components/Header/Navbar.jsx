@@ -4,12 +4,14 @@ import { FaTimes } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import Glasses from "../../assets/navbar/vr_glasses.png";
 import { motion } from "framer-motion";
+import BackgroundAnimation from "../Shared/BackgroundAnimation";
 
 const Navbar = ({ setShowNav }) => {
   const pathname = window.location.pathname;
 
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black z-50 overflow-hidden">
+      <BackgroundAnimation />
       <div className="absolute top-[2.4%] left-[2.4%] z-60 cursor-pointer">
         <Link
           to="/"
