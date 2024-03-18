@@ -11,6 +11,8 @@ import { IoLocationSharp } from "react-icons/io5";
 
 const EventDetailsCard2 = () => {
   const [tab, setTab] = useState("Description");
+  const [data, setData] = useState(null);
+
   return (
     <>
       <Header />
