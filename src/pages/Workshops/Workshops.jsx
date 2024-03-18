@@ -43,7 +43,12 @@ const Workshops = () => {
             <>
               {workshopData.map((w) => {
                 return (
-                  <ETWSCard about={w.about} img={w.workshopImg} name={w.name} />
+                  <ETWSCard
+                    key={w._id}
+                    about={w.about}
+                    img={w.workshopImg}
+                    name={w.name}
+                  />
                 );
               })}
             </>

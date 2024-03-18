@@ -7,14 +7,18 @@ import s5 from "../../assets/img/s5.svg";
 import s6 from "../../assets/img/s6.svg";
 import s7 from "../../assets/img/s7.svg";
 import s8 from "../../assets/img/s8.svg";
-import Eve from "../../assets/img/event.jpg";
+import { useNavigate } from "react-router-dom";
 
 //new card
-const EWCard = () => {
+const EWCard = ({ img, id }) => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="w-full mt-24 flex items-center justify-center">
-        <div className="w-[250px] h-[360px] flex justify-center  relative">
+        <div
+          className="w-[250px] h-[360px] flex justify-center  relative"
+          onClick={() => navigate(`/eventdetails/${id}`)}
+        >
           <img src={s1} alt="" className="absolute left-[-20%] top-[-20%]" />
           <img src={s2} alt="" className="absolute right-[-20%] top-[-20%]" />
           <img src={s3} alt="" className="absolute top-[27.55%] left-[-20%] " />
@@ -94,7 +98,7 @@ const EWCard = () => {
             }}
           ></div>
           <div className="w-[200px] h-[270px] ">
-            <img src={Eve} alt="" className="w-[200px] h-[270px]" />
+            <img src={img} alt="" className="w-[200px] h-[270px]" />
           </div>
         </div>
       </div>

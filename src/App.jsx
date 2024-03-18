@@ -37,11 +37,9 @@ function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  const eventData = useSelector((state) => state.event.data);
   const eventError = useSelector((state) => state.event.error);
   const eventStatus = useSelector((state) => state.event.status);
 
-  const workshopData = useSelector((state) => state.workshop.data);
   const workshopError = useSelector((state) => state.workshop.error);
   const workshopStatus = useSelector((state) => state.workshop.status);
 
@@ -78,14 +76,6 @@ function App() {
       dispatch(fetchWorkshops());
     }
   }, [eventStatus, workshopStatus, dispatch]);
-
-  useEffect(() => {
-    console.log(eventStatus, eventError, eventData);
-  }, [eventStatus, eventError, eventData]);
-
-  useEffect(() => {
-    console.log(workshopStatus, workshopError, workshopData);
-  }, [workshopStatus, workshopError, workshopData]);
 
   return (
     <>
@@ -125,7 +115,7 @@ function App() {
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<EWCard />} />
-              <Route path="/eventdetails:/id" element={<EventDetailsCard2 />} />
+              <Route path="/eventdetails/:id" element={<EventDetailsCard2 />} />
             </Routes>
             <Footer />
             <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
