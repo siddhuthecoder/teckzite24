@@ -27,14 +27,15 @@ const Events = () => {
     <main>
       <Header />
       <EventsBanner />
-      <div className="w-full flex flex-col z-10 min-h-[85vh] mb-5 sticky">
+      <div className="w-full flex flex-col z-10 min-h-[85vh] pb-5 sticky">
         <div className="w-full flex items-center justify-center flex-wrap mt-3">
           {["ALL", "PUC", "CSE", "ECE", "MME", "MECH", "CHEM", "CIVIL"].map(
             (item, index) => (
               <button
                 key={index}
-                className={`tab rounded-sm w-[100px] h-[30px] mx-[10px] mt-[12px] ${tab === item ? "gradient-bg" : ""
-                  }`}
+                className={`tab rounded-sm w-[100px] h-[30px] mx-[10px] mt-[12px] ${
+                  tab === item ? "gradient-bg" : ""
+                }`}
                 onClick={() => setTab(item)}
               >
                 {item}
