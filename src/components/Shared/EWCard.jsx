@@ -107,12 +107,12 @@
 // };
 
 /* Rectangle 23 */
-import React from 'react'
-import s1 from '../../assets/img/s1.svg'
-import s2 from '../../assets/img/s2.svg'
-import s3 from '../../assets/img/s3.svg'
-import s4 from '../../assets/img/s4.svg'
-import s5 from '../../assets/img/s5.svg'
+import React from "react";
+import s1 from "../../assets/img/s1.svg";
+import s2 from "../../assets/img/s2.svg";
+import s3 from "../../assets/img/s3.svg";
+import s4 from "../../assets/img/s4.svg";
+import s5 from "../../assets/img/s5.svg";
 import { useNavigate } from "react-router-dom";
 
 //new card
@@ -121,25 +121,39 @@ const EWCard = ({ img, id }) => {
   return (
     <>
       <div className="">
-        <div className="w-[230px] h-[336px] flex justify-center m-[40px]  relative" onClick={() => navigate(`/eventdetails/${id}`)}>
-          <img src={s1} alt="" className='absolute left-[-20%] top-[-20%]' />
-          <img src={s2} alt="" className='absolute right-[-20%] top-[-20%]' />
+        <div
+          className="w-[230px] h-[336px] flex justify-center m-[40px]  relative"
+          onClick={() => navigate(`/eventdetails/${id}`)}
+        >
+          <img src={s1} alt="" className="absolute left-[-20%] top-[-20%]" />
+          <img src={s2} alt="" className="absolute right-[-20%] top-[-20%]" />
           <img src={s3} alt="" className="absolute top-[26.75%] left-[-18%] " />
-          <img src={s4} alt="" className="absolute top-[26.75%] right-[-22%] " />
-          <img src={s5} alt="" className="absolute bottom-0 left-[-6px] scale-x-[1.3] scale-y-[1.3]" />
-          <div className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute left-[6%] top-[40%]" style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}></div>
-          <div className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute right-[6%] top-[40%]" style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}></div>
+          <img
+            src={s4}
+            alt=""
+            className="absolute top-[26.75%] right-[-22%] "
+          />
+          <img
+            src={s5}
+            alt=""
+            className="absolute bottom-0 left-[-6px] scale-x-[1.3] scale-y-[1.3]"
+          />
+          <div
+            className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute left-[6%] top-[40%]"
+            style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
+          ></div>
+          <div
+            className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute right-[6%] top-[40%]"
+            style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
+          ></div>
           <div className="w-[167px] h-[230px] ">
-            <img src={img} alt="" className='w-[200px] h-[230px]' />
+            <img src={img} alt="" className="w-[200px] h-[230px]" />
           </div>
-
         </div>
-      </div >
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default EWCard
+export default EWCard;
 /* Rectangle 23 */
-
-

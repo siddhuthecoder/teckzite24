@@ -65,7 +65,6 @@ const RegisterForm = () => {
 
   const handleNext = (e) => {
     e.preventDefault();
-    console.log(data);
     if (
       data.firstName === "" ||
       data.lastName === "" ||

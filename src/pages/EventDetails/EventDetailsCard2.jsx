@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import { toast } from "react-hot-toast";
 import "./eventDetails.css";
 import Description from "./details/Description";
 import Contact from "./details/Contact";
@@ -9,15 +10,17 @@ import Structure from "./details/Structure";
 import right from "../../assets/events/after.png";
 import left from "../../assets/events/before.png";
 import { useSelector } from "react-redux";
-import { Button } from "../../components";
+import axios from "axios";
 
 const EventDetailsCard2 = () => {
   const [activeTab, setActiveTab] = useState("Description");
+  const [registerForm, setRegisterForm] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   const eventData = useSelector((state) => state.event.data);
+  const userData = useSelector((state) => state.user.data);
 
   useEffect(() => {
     if (eventData) {
@@ -26,6 +29,29 @@ const EventDetailsCard2 = () => {
       setLoading(false);
     }
   }, [id, eventData]);
+
+  const handleRegister = () => {
+    if (!userData) {
+      toast.error("Log in to register to an event");
+      return;
+    }
+
+    if (userData.regEvents.includes(id)) {
+      toast.error("You are already registered to this event");
+      return;
+    }
+    if (data.dep === "ALL") {
+      setRegisterForm(true);
+      return;
+    }
+    if (data.dep.toUpperCase() === userData.branch.toUpperCase()) {
+      setRegisterForm(true);
+      return;
+    } else {
+      toast.error(`Only ${data.dep} students can register for this event`);
+    }
+    console.log(registerForm);
+  };
 
   const tabs = [
     { label: "About", value: "Description" },
@@ -50,7 +76,7 @@ const EventDetailsCard2 = () => {
     ));
   };
 
-  const renderLoadingIndicator = () => (
+  const RenderLoadingIndicator = () => (
     <div className="w-full min-h-[100vh] flex items-center justify-center">
       <div role="status">
         <svg
@@ -74,7 +100,7 @@ const EventDetailsCard2 = () => {
     </div>
   );
 
-  const renderEventDetails = () => (
+  const RenderEventDetails = () => (
     <div className="w-full h-[100vh] justify-center pt-[100px] max-md:pt-[450px] pb-24 flex  items-center overflow-auto  ">
       <div className=" card-box  w-[90%] mx-auto  max-w-[900px] h-[auto]  relative grid grid-cols-12 ">
         <div className="absolute left-[-6%] top-[20%] hidden md:block">
@@ -97,7 +123,10 @@ const EventDetailsCard2 = () => {
 
           <div className="w-100 flex justify-between items-center">
             <div className="font-[ROG] font-bold md:text-center flex items-center">
-              <button className="text-white rounded-sm bg-gradient hover:bg-primary design_btn px-5 py-1.5 font-serif">
+              <button
+                className="text-white rounded-sm bg-gradient hover:bg-primary design_btn px-5 py-1.5 font-serif"
+                onClick={handleRegister}
+              >
                 Register
               </button>
             </div>
@@ -138,10 +167,146 @@ const EventDetailsCard2 = () => {
     </div>
   );
 
+  const RenderRegistrationForm = () => {
+    const renderInputFields = () => {
+      const inputFields = [];
+      for (let i = 0; i < data.teamSize; i++) {
+        inputFields.push(
+          <>
+            <p className="mt-2 text-sm text-black pb-1 pl-1">{`Team Member ${
+              i + 1
+            }`}</p>
+            <input
+              key={i}
+              type="text"
+              id={`team-${i + 1}`}
+              className="w-full uppercase placeholder:capitalize px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              placeholder={`Team Member ${i + 1} TzkId`}
+            />
+          </>
+        );
+      }
+      return inputFields;
+    };
+
+    const [loading, setLoading] = useState(false);
+
+    return (
+      <div
+        id="default-modal"
+        tabIndex="-1"
+        aria-hidden="true"
+        className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center z-[1200] scroll_in"
+      >
+        <div className="bg-white text-black w-full max-w-lg p-4 rounded-lg shadow-lg max-h-[90vh] scroll_in">
+          <div className="flex items-center justify-between pb-4 border-b">
+            <h3 className="text-xl font-semibold text-black">{data.name}</h3>
+            <button
+              type="button"
+              onClick={() => setRegisterForm(false)}
+              className="text-gray-500 hover:text-gray-700 focus:outline-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className="p-4">
+            <form onSubmit={(e) => e.preventDefault()}>
+              {renderInputFields()}
+            </form>
+          </div>
+          <div className="flex justify-end pt-4">
+            <button
+              onClick={() => setRegisterForm(false)}
+              className="px-4 py-1 bg-gray-300 text-gray-800 rounded mr-2 focus:outline-none"
+            >
+              Close
+            </button>
+            <button
+              disabled={loading}
+              className="px-4 py-1 bg-gradient text-white rounded focus:outline-none"
+              onClick={async () => {
+                setLoading(true);
+                const teamMembers = [];
+                let flag = false;
+                let empty = false;
+                let dups = false;
+
+                for (let i = 0; i < data.teamSize; i++) {
+                  const inputValue = document.getElementById(
+                    `team-${i + 1}`
+                  ).value;
+                  if (inputValue === "" || inputValue.length !== 9) {
+                    empty = true;
+                  }
+                  if (inputValue.toLowerCase() === userData.tzkid) {
+                    flag = true;
+                  }
+                  if (teamMembers.includes(inputValue.toLowerCase())) {
+                    dups = true;
+                  }
+                  teamMembers.push(inputValue.toLowerCase());
+                }
+
+                if (empty) {
+                  toast.error("Invalid Teckzides Ids");
+                } else if (dups) {
+                  toast.error("Duplicate Teckzides Ids are not allowed");
+                } else if (!flag) {
+                  toast.error(
+                    "Invalid Teckzite Ids !!\n You must be a part of team"
+                  );
+                } else {
+                  const token = localStorage.getItem("token");
+                  try {
+                    await axios.post(
+                      `${process.env.REACT_APP_BACKEND_URL}/events/register/${data._id}`,
+                      {
+                        tzkIds: teamMembers,
+                      },
+                      {
+                        headers: {
+                          Authorization: `Bearer ${token}`,
+                        },
+                      }
+                    );
+                  } catch (error) {
+                    toast.error(
+                      error?.response?.data.message || "Internal Server Error"
+                    );
+                  } finally {
+                    setRegisterForm(false);
+                  }
+                }
+
+                setLoading(false);
+              }}
+            >
+              {loading ? "Registering...." : "Register"}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <Header />
-      {loading ? renderLoadingIndicator() : renderEventDetails()}
+      {registerForm && <RenderRegistrationForm />}
+      {loading ? <RenderLoadingIndicator /> : <RenderEventDetails />}
     </>
   );
 };

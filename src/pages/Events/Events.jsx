@@ -46,7 +46,7 @@ const Events = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           {filteredEvents ? (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
+              <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-4 gap-20">
                 {filteredEvents.map((event, index) => (
                   <EWCard key={index} img={event.img} id={event._id} />
                 ))}

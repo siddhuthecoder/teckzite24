@@ -51,7 +51,7 @@ const Navbar = ({ setShowNav }) => {
                 stiffness: 400,
               }}
               key={nav.id}
-              className={`odd:mt-[300px] nav_heading   ${
+              className={`odd:mt-[200px] nav_heading   ${
                 pathname === nav.link && "active"
               }`}
             >
@@ -82,7 +82,7 @@ const Navbar = ({ setShowNav }) => {
             type: "spring",
             stiffness: 200,
           }}
-          className={`odd:mt-[300px] nav_heading ${
+          className={`odd:mt-[200px] nav_heading ${
             pathname === "/register" && "active"
           }`}
         >
@@ -93,13 +93,13 @@ const Navbar = ({ setShowNav }) => {
                 onClick={() => setShowNav(false)}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
               >
-                <h1 className="text-[20px] pt-1 text-nowrap top-[20px] font-koneMono h-2 absolute">
+                <h1 className="text-[20px] pt-2 text-nowrap top-[20px] font-koneMono h-2 absolute">
                   {userData.tzkid.toUpperCase()}
                 </h1>
                 <img
                   src={Glasses}
                   alt="nav"
-                  className="mt-0 h-auto max-w-[160px] lg:max-w-[100%]"
+                  className="mt-0 h-auto max-w-[160px] lg:max-w-[120%]"
                 />
               </Link>
             </>
@@ -115,7 +115,7 @@ const Navbar = ({ setShowNav }) => {
               <img
                 src={Glasses}
                 alt="nav"
-                className="mt-0 h-auto max-w-[160px] lg:max-w-[100%]"
+                className="mt-0 h-auto max-w-[160px] lg:max-w-[120%]"
               />
             </Link>
           )}
@@ -163,19 +163,35 @@ const Navbar = ({ setShowNav }) => {
             stiffness: 200,
           }}
         >
-          <Link
-            to="/register"
-            className="flex items-center justify-center gap-3"
-          >
-            <img
-              src={Glasses}
-              alt="nav"
-              className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
-            />
-            <h1 className="text-lg text-nowrap pb-6 font-koneMono h-2 absolute">
-              Register
-            </h1>
-          </Link>
+          {userData ? (
+            <Link
+              to="/profile"
+              className="flex items-center justify-center gap-3"
+            >
+              <img
+                src={Glasses}
+                alt="nav"
+                className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
+              />
+              <h1 className="text-lg text-nowrap pb-6 font-koneMono h-2 absolute">
+                {userData.tzkid.toUpperCase()}
+              </h1>
+            </Link>
+          ) : (
+            <Link
+              to="/register"
+              className="flex items-center justify-center gap-3"
+            >
+              <img
+                src={Glasses}
+                alt="nav"
+                className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
+              />
+              <h1 className="text-lg text-nowrap pb-6 font-koneMono h-2 absolute">
+                Register
+              </h1>
+            </Link>
+          )}
         </motion.li>
       </ul>
     </div>

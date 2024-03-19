@@ -15,7 +15,7 @@ const Description = ({ desc, rules }) => {
       <h2 className="text-2xl w-full font-bold text-[white] mt-4">Rules</h2>
       <ul style={{ listStyleType: "disc" }}>
         {rules.map((r, index) => (
-          <li className="pl-5 text-lg">
+          <li className="pl-5 text-lg" key={index}>
             {`${index + 1}.    `}
             {r}
           </li>
