@@ -1,4 +1,5 @@
 import team1 from "../assets/webteam/sid.png";
+import aswini from '../assets/webteam/aswini.jpg';
 
 export const navigation = [
   {
@@ -43,7 +44,7 @@ export const WebTeamCard = [
     id: 1,
     name: "Aswini Kodati",
     role: "UI/UX Designer",
-    img: team1,
+    img: aswini,
   },
   {
     id: 2,

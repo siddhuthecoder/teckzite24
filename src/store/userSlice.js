@@ -28,6 +28,21 @@ const userSlice = createSlice({
       state.data = null;
     },
   },
+  extraReducers: (builders) => {
+    builders.addCase(fetchUser.pending, (state, action) => {
+      state.status = "loading";
+    });
+    builders.addCase(fetchUser.rejected, (state, action) => {
+      state.status = "loaded";
+      state.error = action.error.message;
+      state.data = null;
+    });
+    builders.addCase(fetchUser.fulfilled, (state, action) => {
+      state.status = "loaded";
+      state.error = null;
+      state.data = action.payload;
+    });
+  },
 });
 
 export default userSlice;

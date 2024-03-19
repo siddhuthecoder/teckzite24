@@ -1,14 +1,92 @@
 import React from 'react'
+import t1 from '../../assets/img/table/t1.svg'
+import t2 from '../../assets/img/table/t2.svg'
+import t3 from '../../assets/img/table/t3.svg'
+import t4 from '../../assets/img/table/t4.svg'
+import t5 from '../../assets/img/table/t5.svg'
+import t6 from '../../assets/img/table/t6.svg'
+import t7 from '../../assets/img/table/t7.svg'
+import t8 from '../../assets/img/table/t8.svg'
+import t9 from '../../assets/img/table/t9.svg'
 
-const TableCard = (props) => {
+
+
+const Table = () => {
+
   return (
-    <div className="w-full justify-between min-w-[700px] mt-[10px] text-center px-[3%] bg-[rgba(255,255,255,0.125)] items-center py-[15px] flex [clip-path:polygon(50%_0%,_97%_0,_100%_50%,_97%_100%,_3%_100%,_0_50%,_3%_0)]">
-      <p className="min-w-[10%] font-bold overflow-x-hidden text-1xl">{props.rank}</p>
-      <p className="min-w-[35%] font-bold overflow-x-hidden text-1xl">{props.name}</p>
-      <p className="min-w-[35%] font-bold overflow-x-hidden text-1xl">{props.email}</p>
-      <p className="min-w-[20%] font-bold overflow-x-hidden text-1xl">{props.referrals}</p>
+    <div className="w-full h-screen flex items-center justify-center">
+      <div className="w-[97%] max-w-[920px] min-w-[300px] min-h-[80vh] overflow-x-auto    flex flex-col  ">
+        <div className="w-[100%]  min-w-[900px] flex flex-col" style={{}}>
+          <div className="w-full  my-[20px]  h-[60px]  flex items-center relative">
+            <div className="w-[97%] py-[20px] h-[20px]   flex items-center justify-around mx-auto">
+              <div className="w-[30px] mx-auto text-center    ">Sno</div>
+              <div className="w-[240px] mx-auto text-center">Name</div>
+              <div className="w-[300px] mx-auto text-center">Email</div>
+              <div className="w-[300px] mx-auto text-center">Referrals</div>
+            </div>
+            <img src={t5} alt="" className="absolute top-[-15px] scale-y-[0.7] " />
+            <img src={t6} alt="" className="absolute bottom-[5px] left-[10%] scale-x-[0.7]" />
+            <img src={t7} alt="" className="absolute bottom-[-3px] left-[9.365%] scale-x-[0.705]" />
+            <img src={t9} alt="" className="absolute scale-[0.8] right-[30%] top-[10px] " />
+            <img src={t7} alt="" className="absolute top-[-6px] right-[30%] scale-x-[0.799]" />
+
+          </div>
+          <div className="w-full  mt-[40px] relative flex item-center justify-center  ">
+            <div className="w-[97%] py-[20px] h-[20px]  flex items-center justify-around">
+              <div className="w-[30px] mx-auto text-center">1</div>
+              <div className="w-[240px] mx-auto text-center">Sribabu Mandraju</div>
+              <div className="w-[300px] mx-auto text-center">Sribabumandraju@gmail.com</div>
+              <div className="w-[300px] mx-auto text-center">xz22132djscz</div>
+            </div>
+            <img src={t1} alt="" className='absolute scale-y-[1.2] pointer-events-none ' />
+            <img src={t2} alt="" className="absolute top-[-120%] left-[17%] scale-y-[1.1] scale-x-[0.84]" />
+            <img src={t3} alt="" className="absolute top-[-7px] left-[3px] scale-y-[1.1] scale-x-[0.84]" />
+            <img src={t4} alt="" className="absolute bottom-[-26px] left-[56.5%] scale-y-[1.1] scale-x-[0.84]" />
+          </div>
+          <div className="w-full  mt-[40px] relative  flex item-center justify-center  " style={{ transform: "scaleX(-1)" }}>
+            <div className="w-[97%] py-[20px] h-[20px]  flex items-center justify-around" style={{ transform: "scaleX(-1)" }}>
+              <div className="w-[30px] mx-auto text-center">1</div>
+              <div className="w-[240px] mx-auto text-center">Sribabu Mandraju</div>
+              <div className="w-[300px] mx-auto text-center">Sribabumandraju@gmail.com</div>
+              <div className="w-[300px] mx-auto text-center">xz22132djscz</div>
+            </div>
+            <img src={t1} alt="" className='absolute scale-y-[1.2] pointer-events-none ' />
+            <img src={t2} alt="" className="absolute top-[-120%] left-[17%] scale-y-[1.1] scale-x-[0.84]" />
+            <img src={t3} alt="" className="absolute top-[-7px] left-[3px] scale-y-[1.1] scale-x-[0.84]" />
+            <img src={t4} alt="" className="absolute bottom-[-26px] left-[56.5%] scale-y-[1.1] scale-x-[0.84]" />
+
+          </div>
+          <div className="w-full  mt-[40px] relative flex item-center justify-center  ">
+            <div className="w-[97%] py-[20px] h-[20px]  flex items-center justify-around">
+              <div className="w-[30px] mx-auto text-center">1</div>
+              <div className="w-[240px] mx-auto text-center">Sribabu Mandraju</div>
+              <div className="w-[300px] mx-auto text-center">Sribabumandraju@gmail.com</div>
+              <div className="w-[300px] mx-auto text-center">xz22132djscz</div>
+            </div>
+            <img src={t1} alt="" className='absolute scale-y-[1.2] pointer-events-none ' />
+            <img src={t2} alt="" className="absolute top-[-120%] left-[17%] scale-y-[1.1] scale-x-[0.84]" />
+            <img src={t3} alt="" className="absolute top-[-7px] left-[3px] scale-y-[1.1] scale-x-[0.84]" />
+            <img src={t4} alt="" className="absolute bottom-[-26px] left-[56.5%] scale-y-[1.1] scale-x-[0.84]" />
+          </div>
+          <div className="w-full  mt-[40px] relative  flex item-center justify-center  " style={{ transform: "scaleX(-1)" }}>
+            <div className="w-[97%] py-[20px] h-[20px]  flex items-center justify-around" style={{ transform: "scaleX(-1)" }}>
+              <div className="w-[30px] mx-auto text-center">1</div>
+              <div className="w-[240px] mx-auto text-center">Sribabu Mandraju</div>
+              <div className="w-[300px] mx-auto text-center">Sribabumandraju@gmail.com</div>
+              <div className="w-[300px] mx-auto text-center">xz22132djscz</div>
+            </div>
+            <img src={t1} alt="" className='absolute scale-y-[1.2] pointer-events-none ' />
+            <img src={t2} alt="" className="absolute top-[-120%] left-[17%] scale-y-[1.1] scale-x-[0.84]" />
+            <img src={t3} alt="" className="absolute top-[-7px] left-[3px] scale-y-[1.1] scale-x-[0.84]" />
+            <img src={t4} alt="" className="absolute bottom-[-26px] left-[56.5%] scale-y-[1.1] scale-x-[0.84]" />
+
+          </div>
+        </div>
+
+
+      </div>
     </div>
   )
 }
 
-export default TableCard
+export default Table
