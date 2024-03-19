@@ -4,12 +4,13 @@ import WebCard from "../../components/Shared/WebCard";
 import Header from "../../components/Header/Header";
 import WebBanner from "./WebBanner";
 import SwipperModule from "../../components/swiper/Swiper";
+import Banner from "../../components/banner/Banner";
 
 const WebTeam = () => {
   return (
     <>
       <Header />
-      <WebBanner />
+      <Banner text="WEB TEAM" bg="web-heading" />
       <div className="w-full lg:hidden">
         <SwipperModule data={WebTeamCard} width={"max-w-[1000px]"} slidePerview={1} />
       </div>
