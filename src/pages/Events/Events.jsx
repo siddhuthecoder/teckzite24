@@ -29,24 +29,32 @@ const Events = () => {
       <EventsBanner />
       <div className="w-full flex flex-col z-10 min-h-[85vh] pb-5 sticky">
         <div className="w-full flex items-center justify-center flex-wrap mt-3">
-          {["ALL", "PUC", "CSE", "ECE", "MME", "MECH", "CHEM", "CIVIL"].map(
-            (item, index) => (
-              <button
-                key={index}
-                className={`tab rounded-sm w-[100px] h-[30px] mx-[10px] mt-[12px] ${
-                  tab === item ? "gradient-bg" : ""
-                }`}
-                onClick={() => setTab(item)}
-              >
-                {item}
-              </button>
-            )
-          )}
+          {[
+            "ALL",
+            "PUC",
+            "CSE",
+            "ECE",
+            "EEE",
+            "MME",
+            "MECH",
+            "CHEM",
+            "CIVIL",
+          ].map((item, index) => (
+            <button
+              key={index}
+              className={`tab rounded-sm w-[100px] h-[30px] mx-[10px] mt-[12px] ${
+                tab === item ? "gradient-bg" : ""
+              }`}
+              onClick={() => setTab(item)}
+            >
+              {item}
+            </button>
+          ))}
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           {filteredEvents ? (
             <>
-              <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-4 gap-20">
+              <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 {filteredEvents.map((event, index) => (
                   <EWCard key={index} img={event.img} id={event._id} />
                 ))}

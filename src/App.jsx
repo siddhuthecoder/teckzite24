@@ -45,6 +45,9 @@ function App() {
   const workshopError = useSelector((state) => state.workshop.error);
   const workshopStatus = useSelector((state) => state.workshop.status);
 
+  const userError = useSelector((state) => state.user.error);
+  const userStatus = useSelector((state) => state.user.status);
+
   useEffect(() => {
     const handleSound = () => {
       const audio = new Audio("./click.wav");
@@ -63,9 +66,11 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      dispatch(fetchUser(token));
+      if (userStatus === "idle") {
+        dispatch(fetchUser(token));
+      }
     }
-  }, [dispatch]);
+  }, [dispatch, userStatus]);
 
   useEffect(() => {
     if (eventError) {

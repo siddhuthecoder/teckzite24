@@ -121,10 +121,7 @@ const EWCard = ({ img, id }) => {
   return (
     <>
       <div className="">
-        <div
-          className="w-[230px] h-[336px] flex justify-center m-[40px]  relative"
-          onClick={() => navigate(`/eventdetails/${id}`)}
-        >
+        <div className="w-[230px] h-[336px] flex justify-center mt-10  relative">
           <img src={s1} alt="" className="absolute left-[-20%] top-[-20%]" />
           <img src={s2} alt="" className="absolute right-[-20%] top-[-20%]" />
           <img src={s3} alt="" className="absolute top-[26.75%] left-[-18%] " />
@@ -147,7 +144,12 @@ const EWCard = ({ img, id }) => {
             style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
           ></div>
           <div className="w-[167px] h-[230px] ">
-            <img src={img} alt="" className="w-[200px] h-[230px]" />
+            <img
+              src={img}
+              alt=""
+              className="w-[200px] h-[230px] cursor-pointer"
+              onClick={() => navigate(`/eventdetails/${id}`)}
+            />
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ const Header = () => {
             </Link>
           ) : (
             <Link to="/register">
-              <h1 className="max-md:hidden bg-transparent">Login</h1>
+              <h1 className="max-md:hidden bg-transparent">Login/Register</h1>
               <IoMdPerson className="md:hidden" size={22} />
             </Link>
           )}

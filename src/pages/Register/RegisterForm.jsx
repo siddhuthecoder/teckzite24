@@ -6,12 +6,15 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userActions } from "../../store/userSlice";
+// import Razorpay from "razorpay";
 
 const RegisterForm = () => {
   const initialData = {
     firstName: "",
     lastName: "",
     college: "",
+    collegeId: "",
+    branch: "",
     year: "",
     gender: "",
     phoneNumber: "",
@@ -21,6 +24,8 @@ const RegisterForm = () => {
     city: "",
     file: "",
     img: "",
+    referal: "",
+    amount: 500,
     terms: false,
   };
   const [data, setData] = useState(initialData);
@@ -41,26 +46,113 @@ const RegisterForm = () => {
     }
   }, [error]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
 
     if (data.state === "" || data.district === "" || data.city === "") {
       setError("All fields are required");
+      setIsLoading(false);
       return;
     }
 
     if (isRgukt && data.file === "") {
       setError("Upload id proof");
+      setIsLoading(false);
       return;
     }
 
     if (!data.terms) {
       setError("Please accept the Terms and Conditions");
+      setIsLoading(false);
       return;
     }
 
-    // Handle form submission
-    alert("Registrations will be opened soon");
+    try {
+      const {
+        data: { order },
+      } = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/user/order/create`,
+        { amount: data.amount, email: data.email }
+      );
+
+      const options = {
+        key: process.env.REACT_APP_RAZORPAY_KEY_ID,
+        amount: order.amount,
+        currency: "INR",
+        name: "Teckzite 2k24",
+        description: "Test Transaction",
+        image: "https://example.com/your_logo",
+        order_id: order.id,
+        handler: async function (response) {
+          try {
+            const {
+              res: { success },
+            } = await axios.post(
+              `${process.env.REACT_APP_BACKEND_URL}/user/order/verify`,
+              {
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_signature: response.razorpay_signature,
+              }
+            );
+
+            if (success) {
+              await axios.post(
+                `${process.env.REACT_APP_BACKEND_URL}/user/register`,
+                {
+                  email: data.email,
+                  firstName: data.firstName,
+                  lastName: data.lastName,
+                  college: data.college,
+                  phno: data.phoneNumber,
+                  year: data.year,
+                  branch: data.branch,
+                  collegeId: data.collegeId,
+                  gender: data.gender,
+                  img: data.img,
+                  state: data.state,
+                  district: data.district,
+                  idUpload: data.file,
+                  city: data.city,
+                  mode: "online_mode",
+                  referredBy: data.referal,
+                  razorpay_order_id: response.razorpay_order_id,
+                }
+              );
+            }
+          } catch (error) {
+            console.error("Failed to verify order:", error);
+            toast.error("Failed to verify order. Please try again.");
+          }
+        },
+        prefill: {
+          name: data.firstName,
+          email: data.email,
+          contact: data.phoneNumber,
+        },
+        notes: {
+          address: "Razorpay Corporate Office",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      // const razor = new Razorpay(options);
+      // razor.on("payment.failed", function (response) {
+      //   toast.error("Payment failed: " + response.error);
+      //   setIsLoading(false);
+      // });
+      // razor.open();
+    } catch (error) {
+      console.error("Error occurred during payment:", error);
+      toast.error(
+        error?.response?.data?.message ||
+          "Failed to process payment. Please try again."
+      );
+      setIsLoading(false);
+    }
   };
 
   const handleNext = (e) => {
@@ -105,8 +197,7 @@ const RegisterForm = () => {
           sub: email,
         }
       );
-      console.log(res.data);
-      localStorage.getItem("token", res.data.token);
+      localStorage.setItem("token", res.data.token);
       dispatch(userActions.setUser(res.data.user));
       navigate("/");
     } catch (error) {
@@ -118,6 +209,7 @@ const RegisterForm = () => {
           idNumber: given_name,
           firstName: family_name.split(" ").slice(1).join(" ").toLowerCase(),
           lastName: family_name.split(" ")[0].toLowerCase(),
+          amount: 250,
         });
         setIsRgukt(true);
       } else {

@@ -30,7 +30,7 @@ const EventDetailsCard2 = () => {
     }
   }, [id, eventData]);
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     if (!userData) {
       toast.error("Log in to register to an event");
       return;
@@ -40,17 +40,40 @@ const EventDetailsCard2 = () => {
       toast.error("You are already registered to this event");
       return;
     }
-    if (data.dep === "ALL") {
-      setRegisterForm(true);
-      return;
-    }
-    if (data.dep.toUpperCase() === userData.branch.toUpperCase()) {
-      setRegisterForm(true);
-      return;
+    if (
+      data.dep === "ALL" ||
+      data.dep.toUpperCase() === userData.branch.toUpperCase()
+    ) {
+      if (data.teamSize === 1) {
+        if (window.confirm("Are you sure you want to register to this event")) {
+          const token = localStorage.getItem("token");
+          try {
+            await axios.post(
+              `${process.env.REACT_APP_BACKEND_URL}/events/register/${data._id}`,
+              {
+                tzkIds: [userData.tzkid],
+              },
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+            toast.success("Registered for the event Successfully");
+          } catch (error) {
+            console.log(error.message);
+            toast.error(
+              error?.response?.data.message || "Internal Server Error"
+            );
+          }
+        }
+      } else {
+        setRegisterForm(true);
+        return;
+      }
     } else {
       toast.error(`Only ${data.dep} students can register for this event`);
     }
-    console.log(registerForm);
   };
 
   const tabs = [
@@ -172,18 +195,17 @@ const EventDetailsCard2 = () => {
       const inputFields = [];
       for (let i = 0; i < data.teamSize; i++) {
         inputFields.push(
-          <>
-            <p className="mt-2 text-sm text-black pb-1 pl-1">{`Team Member ${
+          <div className="mt-2" key={i}>
+            <p className="text-sm text-black pb-1 pl-1">{`Team Member ${
               i + 1
             }`}</p>
             <input
-              key={i}
               type="text"
               id={`team-${i + 1}`}
               className="w-full uppercase placeholder:capitalize px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               placeholder={`Team Member ${i + 1} TzkId`}
             />
-          </>
+          </div>
         );
       }
       return inputFields;
