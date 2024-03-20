@@ -11,8 +11,7 @@ const Register = () => {
 
   useEffect(() => {
     if (userData) {
-      toast.error("Log out to login again");
-      navigate("/profile");
+      navigate("/");
     }
   }, [navigate, userData]);
 

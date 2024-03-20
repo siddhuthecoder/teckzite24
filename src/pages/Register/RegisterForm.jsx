@@ -6,7 +6,6 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userActions } from "../../store/userSlice";
-// import Razorpay from "razorpay";
 
 const RegisterForm = () => {
   const initialData = {
@@ -25,7 +24,7 @@ const RegisterForm = () => {
     file: "",
     img: "",
     referal: "",
-    amount: 500,
+    amount: process.env.REACT_APP_OUTSIDERS,
     terms: false,
   };
   const [data, setData] = useState(initialData);
@@ -45,6 +44,10 @@ const RegisterForm = () => {
       }, 3000);
     }
   }, [error]);
+
+  useEffect(() => {
+    console.log(window);
+  }, []);
 
   const handleSubmit = async (e) => {
     setIsLoading(true);
@@ -75,7 +78,7 @@ const RegisterForm = () => {
         `${process.env.REACT_APP_BACKEND_URL}/user/order/create`,
         { amount: data.amount, email: data.email }
       );
-
+      console.log(order);
       const options = {
         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
         amount: order.amount,
@@ -139,12 +142,12 @@ const RegisterForm = () => {
         },
       };
 
-      // const razor = new Razorpay(options);
-      // razor.on("payment.failed", function (response) {
-      //   toast.error("Payment failed: " + response.error);
-      //   setIsLoading(false);
-      // });
-      // razor.open();
+      const razor = new window.Razorpay(options);
+      razor.on("payment.failed", function (response) {
+        toast.error("Payment failed: " + response.error);
+        setIsLoading(false);
+      });
+      razor.open();
     } catch (error) {
       console.error("Error occurred during payment:", error);
       toast.error(
@@ -209,7 +212,7 @@ const RegisterForm = () => {
           idNumber: given_name,
           firstName: family_name.split(" ").slice(1).join(" ").toLowerCase(),
           lastName: family_name.split(" ")[0].toLowerCase(),
-          amount: 250,
+          amount: process.env.REACT_APP_RGUKT_FEE,
         });
         setIsRgukt(true);
       } else {
