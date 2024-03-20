@@ -11,6 +11,7 @@ import "./reg.css";
 
 const RegisterForm = () => {
   const initialData = {
+    email: "",
     firstName: "",
     lastName: "",
     college: "",
@@ -100,8 +101,8 @@ const RegisterForm = () => {
                 razorpay_signature: response.razorpay_signature,
               }
             );
-
             if (success) {
+              console.log("sucess");
               await axios.post(
                 `${process.env.REACT_APP_BACKEND_URL}/user/register`,
                 {
@@ -129,7 +130,10 @@ const RegisterForm = () => {
             navigate("/");
           } catch (error) {
             console.error("Failed to verify order:", error);
-            toast.error("Failed to verify order. Please try again.");
+            toast.error(
+              error?.response?.data.message ||
+                "Failed to verify order. Please try again."
+            );
           }
         },
         prefill: {
@@ -196,6 +200,7 @@ const RegisterForm = () => {
     setIsLoading(true);
     const decodedUser = jwtDecode(res.credential);
     const { given_name, family_name, email, picture } = decodedUser;
+    console.log(email);
     const domainPattern = /@(rguktn|rgukto|rgukts|rguktr)\.ac\.in$/;
 
     try {
@@ -216,6 +221,7 @@ const RegisterForm = () => {
         setData({
           ...data,
           idNumber: given_name,
+          email: email,
           firstName: family_name.split(" ").slice(1).join(" ").toLowerCase(),
           lastName: family_name.split(" ")[0].toLowerCase(),
           amount: process.env.REACT_APP_RGUKT_FEE,
@@ -226,7 +232,7 @@ const RegisterForm = () => {
           ...data,
           firstName: given_name,
           lastName: family_name,
-          email,
+          email: email,
           img: picture,
         });
       }
