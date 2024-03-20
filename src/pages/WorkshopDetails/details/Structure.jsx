@@ -5,7 +5,7 @@ const Structure = ({data}) => {
     <div className="flex w-full text-left flex-col ps-[12px] " >
             <div className="text-2xl font-bold text-[white]">Structure</div>
             <p className="text-white text-[15px] " style={{ textIndent: "40px" }}>
-                {data.structure}
+                <div dangerouslySetInnerHTML={{ __html: data.structure }} />
             </p>
         </div>
   )

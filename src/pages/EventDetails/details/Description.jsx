@@ -6,12 +6,12 @@ const Description = ({ desc, rules }) => {
       <h2 className="text-2xl w-full mt-3 font-bold text-[white]">
         Description
       </h2>
-      <p
+      <div
         className="text-white w-full text-lg mt-1 "
         style={{ textIndent: "20px" }}
       >
-        {desc}
-      </p>
+        <div dangerouslySetInnerHTML={{ __html: desc }} />
+      </div>
       <h2 className="text-2xl w-full font-bold text-[white] mt-4">Rules</h2>
       <ul style={{ listStyleType: "disc" }}>
         {rules.map((r, index) => (

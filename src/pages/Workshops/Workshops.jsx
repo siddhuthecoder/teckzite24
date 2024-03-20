@@ -7,6 +7,7 @@ import Banner from "../../components/banner/Banner";
 
 
 import { useSelector } from "react-redux";
+import EWCard from "../../components/Shared/EWCard";
 
 // import Header from "../../components/Header/Header";
 
@@ -45,12 +46,10 @@ const Workshops = () => {
             <>
               {workshopData.map((w) => {
                 return (
-                  <ETWSCard
+                  <EWCard
                     key={w._id}
                     id={w._id}
-                    about={w.about}
                     img={w.workshopImg}
-                    name={w.name}
                   />
                 );
               })}

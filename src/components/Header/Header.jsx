@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoMdPerson } from "react-icons/io";
+import { IoMdExit, IoMdPerson } from "react-icons/io";
 import Navbar from "./Navbar";
 import { useState } from "react";
 import navlogo from "../../assets/navbar/navlogo.png";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { userActions } from "../../store/userSlice";
+import { toast } from "react-hot-toast";
 
 const Header = () => {
   // const pathName = window.location.pathname;
   const [showNav, setShowNav] = useState(false);
   const userData = useSelector((state) => state.user.data);
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    localStorage.clear();
+    toast.success("User Logged out successfully");
+    dispatch(userActions.removeUser());
+  };
 
   return (
     <div className="header_container">
@@ -20,10 +28,18 @@ const Header = () => {
           style={{ verticalAlign: true }}
         >
           <div
-            className="cursor-pointer"
+            className="cursor-pointer flex items-center justify-center gap-3"
             onClick={() => setShowNav((prev) => !prev)}
           >
             <GiHamburgerMenu size={22} />
+            {userData && (
+              <Link to="/profile">
+                <h1 className="max-md:hidden bg-transparent font-semibold font-koneMono text-xl">
+                  {userData.tzkid.toUpperCase()}
+                </h1>
+                <IoMdPerson className="md:hidden" size={22} />
+              </Link>
+            )}
           </div>
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2">
@@ -36,12 +52,10 @@ const Header = () => {
           style={{ verticalAlign: "middle" }}
         >
           {userData ? (
-            <Link to="/profile">
-              <h1 className="max-md:hidden bg-transparent">
-                {userData.tzkid.toUpperCase()}
-              </h1>
-              <IoMdPerson className="md:hidden" size={22} />
-            </Link>
+            <div onClick={logout}>
+              <h1 className="max-md:hidden bg-transparent">Logout</h1>
+              <IoMdExit className="md:hidden" size={22} />
+            </div>
           ) : (
             <Link to="/register">
               <h1 className="max-md:hidden bg-transparent">Login/Register</h1>

@@ -58,9 +58,8 @@ const RegisterForm = () => {
       return;
     }
 
-    if (isRgukt && data.file === "") {
+    if (!isRgukt && data.file === "") {
       setError("Upload id proof");
-      toast.error("Upload id proof");
       setisReging(false);
       return;
     }

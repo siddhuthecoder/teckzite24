@@ -148,7 +148,16 @@ const EventDetailsCard2 = () => {
             <div className="flex flex-col font-ROG md:hidden">
               <div className="font-bold">PRIZE MONEY</div>
               <div className="text-center font-bold">
-                {data.prizeMoney ? `${data.prizeMoney}/-` : "Updated soon"}
+                {data.prizeMoney ? (
+                  <>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: data.prizeMoney }}
+                    />{" "}
+                    {"/-"}
+                  </>
+                ) : (
+                  "Updated soon"
+                )}
               </div>
             </div>
           </div>
@@ -173,7 +182,16 @@ const EventDetailsCard2 = () => {
             <div className="hidden md:flex flex-col font-ROG">
               <div className="font-bold">PRIZE MONEY</div>
               <div className="text-center font-bold">
-                {data.prizeMoney ? `${data.prizeMoney}/-` : "Updated soon..."}
+                {data.prizeMoney ? (
+                  <>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: data.prizeMoney }}
+                    />{" "}
+                    {"/-"}
+                  </>
+                ) : (
+                  "Updated soon"
+                )}
               </div>
             </div>
           </div>

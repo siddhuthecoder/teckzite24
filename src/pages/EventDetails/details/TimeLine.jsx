@@ -3,7 +3,7 @@ import React from "react";
 const TimeLine = ({ timeline }) => {
   return (
     <>
-      <p className="mt-3 text-lg">{timeline}</p>
+      <div className="mt-3 text-lg"><div dangerouslySetInnerHTML={{ __html: timeline }} /></div>
     </>
   );
 };

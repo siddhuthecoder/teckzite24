@@ -3,7 +3,7 @@ import React from "react";
 const contact = ({ contact }) => {
   return (
     <>
-      <p className="mt-3 text-lg">{contact}</p>
+      <div className="mt-3 text-lg"><div dangerouslySetInnerHTML={{ __html: contact }} /></div>
     </>
   );
 };
