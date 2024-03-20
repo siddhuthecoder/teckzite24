@@ -6,6 +6,8 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userActions } from "../../store/userSlice";
+import img from "../../assets/logo.png";
+import "./reg.css";
 
 const RegisterForm = () => {
   const initialData = {
@@ -33,6 +35,7 @@ const RegisterForm = () => {
   const [error, setError] = useState(null);
   const [isRgukt, setIsRgukt] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isReging, setisReging] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -45,29 +48,26 @@ const RegisterForm = () => {
     }
   }, [error]);
 
-  useEffect(() => {
-    console.log(window);
-  }, []);
-
   const handleSubmit = async (e) => {
-    setIsLoading(true);
+    setisReging(true);
     e.preventDefault();
 
     if (data.state === "" || data.district === "" || data.city === "") {
       setError("All fields are required");
-      setIsLoading(false);
+      setisReging(false);
       return;
     }
 
     if (isRgukt && data.file === "") {
       setError("Upload id proof");
-      setIsLoading(false);
+      toast.error("Upload id proof");
+      setisReging(false);
       return;
     }
 
     if (!data.terms) {
       setError("Please accept the Terms and Conditions");
-      setIsLoading(false);
+      setisReging(false);
       return;
     }
 
@@ -78,24 +78,26 @@ const RegisterForm = () => {
         `${process.env.REACT_APP_BACKEND_URL}/user/order/create`,
         { amount: data.amount, email: data.email }
       );
-      console.log(order);
+
       const options = {
         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: "INR",
         name: "Teckzite 2k24",
         description: "Test Transaction",
-        image: "https://example.com/your_logo",
+        image: img,
         order_id: order.id,
         handler: async function (response) {
           try {
+            console.log(response);
+            console.log(order);
             const {
-              res: { success },
+              data: { success },
             } = await axios.post(
               `${process.env.REACT_APP_BACKEND_URL}/user/order/verify`,
               {
                 razorpay_payment_id: response.razorpay_payment_id,
-                razorpay_order_id: response.razorpay_order_id,
+                order_id: order.id,
                 razorpay_signature: response.razorpay_signature,
               }
             );
@@ -124,6 +126,8 @@ const RegisterForm = () => {
                 }
               );
             }
+            toast.success("Account created Sucessfully!!\n Login again");
+            navigate("/");
           } catch (error) {
             console.error("Failed to verify order:", error);
             toast.error("Failed to verify order. Please try again.");
@@ -145,16 +149,19 @@ const RegisterForm = () => {
       const razor = new window.Razorpay(options);
       razor.on("payment.failed", function (response) {
         toast.error("Payment failed: " + response.error);
-        setIsLoading(false);
+        setisReging(false);
+        return;
       });
+
       razor.open();
+      setisReging(false);
     } catch (error) {
       console.error("Error occurred during payment:", error);
       toast.error(
         error?.response?.data?.message ||
           "Failed to process payment. Please try again."
       );
-      setIsLoading(false);
+      setisReging(false);
     }
   };
 
@@ -508,9 +515,11 @@ const RegisterForm = () => {
                   </div>
                   <div
                     type="submit"
+                    disabled={isReging}
+                    onClick={handleSubmit}
                     className="text-white cursor-pointer bg-green-600 hover:bg-green-700 font-medium rounded-md text-base px-6 py-1.5 me-2 mb-2"
                   >
-                    Submit
+                    {isReging ? "Submitting..." : "Submit"}
                   </div>
                 </>
               )}
