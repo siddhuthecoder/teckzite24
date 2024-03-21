@@ -370,9 +370,11 @@ const RegisterForm = () => {
               className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
             />
             <h4 className="font-semibold mt-2 text-xl">Register</h4>
-            <h3 className="font-semibold text-sm mt-1 mb-4 px-4 text-center">
-              {`Fee for Rguktn mails is ${process.env.REACT_APP_RGUKT_FEE} and
-              fee for outsiders is ${process.env.REACT_APP_OUTSIDERS}`}
+            <h3 className="text-sm mt-1 mb-4 px-10 text-center">
+              {isRgukt &&
+                `Fee for Registration is ${process.env.REACT_APP_RGUKT_FEE}`}
+              {!isRgukt &&
+                `Fee for Registration is ${process.env.REACT_APP_OUTSIDERS}`}
             </h3>
             {!next && (
               <>
@@ -478,7 +480,7 @@ const RegisterForm = () => {
                 {/* Gender */}
                 <div className="w-[90%] mb-1 text-left">Gender</div>
                 <div className="mb-1 w-[80%] mr-[10%] flex items-center justify-between">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-2">
                     <input
                       id="male"
                       type="radio"
@@ -495,7 +497,7 @@ const RegisterForm = () => {
                       Male
                     </label>
                   </div>
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-2">
                     <input
                       id="female"
                       type="radio"
@@ -512,7 +514,7 @@ const RegisterForm = () => {
                       Female
                     </label>
                   </div>
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-2">
                     <input
                       id="others"
                       type="radio"
