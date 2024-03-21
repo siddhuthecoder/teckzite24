@@ -106,8 +106,8 @@ const Table = () => {
   ));
 
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <div className="w-[97%] max-w-[920px] min-w-[300px] min-h-[80vh] overflow-x-auto flex flex-col">
+    <div className="w-full min-h-screen flex items-center justify-center">
+      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-x-auto flex flex-col">
         <div className="w-[100%] min-w-[900px] flex flex-col" style={{}}>
           <div className="w-full my-[20px] h-[60px] flex items-center relative">
             <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">

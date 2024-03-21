@@ -27,10 +27,6 @@ body {
   background-color: #000;
 }
 
-input::placeholder {
-  color: #9e9e9e;
-}
-
 .bg-gradient {
   background-image: var(--primary-gradient);
 }
@@ -60,11 +56,11 @@ input::placeholder {
 }
 
 .text_input::placeholder {
-  color: #eee;
+  color: #888;
 }
 
 select option {
-  background-color: #000143;
+  background-color: #121212;
 }
 
 .animate-fade {
