@@ -7,7 +7,11 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userActions } from "../../store/userSlice";
 import img from "../../assets/logo.png";
+import FileBase64 from "react-file-base64";
 import "./reg.css";
+import bord from "../../assets/img/svgs/regBorder.svg";
+import svg1 from "../../assets/img/svgs/regSvg.svg";
+import svg2 from "../../assets/img/svgs/svg2.svg";
 
 const RegisterForm = () => {
   const initialData = {
@@ -48,6 +52,29 @@ const RegisterForm = () => {
       }, 3000);
     }
   }, [error]);
+
+  const handleFileInputChange = (file) => {
+    if (!file || !file.base64) {
+      setError("Please select a valid file.");
+      return;
+    }
+
+    const acceptedImageTypes = ["image/jpeg", "image/png", "image/jpg"];
+    if (!acceptedImageTypes.includes(file.type)) {
+      setError("Only image files (JPEG, PNG, JPG) are allowed.");
+      return;
+    }
+
+    const maxSizeInBytes = 5 * 1024 * 1024;
+    if (file.size > maxSizeInBytes) {
+      setError(
+        "File size exceeds the limit (5MB). Please select a smaller file."
+      );
+      return;
+    }
+
+    setData({ ...data, file: file });
+  };
 
   const handleSubmit = async (e) => {
     setisReging(true);
@@ -142,7 +169,7 @@ const RegisterForm = () => {
           contact: data.phoneNumber,
         },
         notes: {
-          address: "Razorpay Corporate Office",
+          address: `${data.state},${data.district},${data.city}`,
         },
         theme: {
           color: "#3399cc",
@@ -200,7 +227,6 @@ const RegisterForm = () => {
     setIsLoading(true);
     const decodedUser = jwtDecode(res.credential);
     const { given_name, family_name, email, picture } = decodedUser;
-    console.log(email);
     const domainPattern = /@(rguktn|rgukto|rgukts|rguktr)\.ac\.in$/;
 
     try {
@@ -250,7 +276,7 @@ const RegisterForm = () => {
     <section className="z-30 w-full pt-[80px] pb-[20px]">
       <form
         onSubmit={handleSubmit}
-        className="w-[90%] max-w-[420px] mx-auto mb-20 border border-primary rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
+        className="w-[90%] max-w-[420px] mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
       >
         {!signIn && (
           <>
@@ -277,7 +303,27 @@ const RegisterForm = () => {
                 </div>
               </div>
             ) : (
-              <div className="my-16 mx-auto">
+              <div className="w-full h-[100%] flex justify-center items-center mx-auto  relative  ">
+                <img
+                  src={bord}
+                  alt=""
+                  className="absolute pointer-events-none  left-0"
+                />
+                <img
+                  src={svg1}
+                  alt=""
+                  className="absolute pointer-events-none  hidden sm:block sm:left-[24%]  sm:top-[-280%] sm:scale-x-[0.7] "
+                />
+                <img
+                  src={svg2}
+                  alt=""
+                  className="absolute pointer-events-none right-[-15px]"
+                />
+                <img
+                  src={svg2}
+                  alt=""
+                  className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
+                />
                 <GoogleLogin
                   clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
                   onSuccess={onSuccess}
@@ -289,7 +335,27 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className="py-2 w-full flex justify-center items-center flex-col">
+          <div className="py-2 w-full flex justify-center items-center  sm:mt-[0px] flex-col relative ">
+            <img
+              src={bord}
+              alt=""
+              className="absolute pointer-events-none hidden sm:block  scale-y-[2.9]  sm:scale-y-[1.8]   left-0"
+            />
+            <img
+              src={svg1}
+              alt=""
+              className="absolute pointer-events-none hidden top-[-2%] left-[16%] scale-x-[0.5]  sm:block sm:left-[24%]  sm:top-[-7%] sm:scale-x-[0.65] "
+            />
+            <img
+              src={svg2}
+              alt=""
+              className="absolute pointer-events-none  right-[-15px]"
+            />
+            <img
+              src={svg2}
+              alt=""
+              className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
+            />
             <h4 className="font-semibold mt-2 mb-4 text-xl">Register</h4>
             {!next && (
               <>
@@ -470,10 +536,10 @@ const RegisterForm = () => {
                     >
                       Upload Id Card
                     </label>
-                    <input
-                      className="block w-full text-sm text-white border border-[#eee] rounded-sm cursor-pointer bg-transparent"
+                    <FileBase64
                       id="file_input"
-                      type="file"
+                      multiple={false}
+                      onDone={handleFileInputChange}
                     />
                   </div>
                 )}

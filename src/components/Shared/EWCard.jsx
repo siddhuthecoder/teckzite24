@@ -116,7 +116,7 @@ import s5 from "../../assets/img/s5.svg";
 import { useNavigate } from "react-router-dom";
 
 //new card
-const EWCard = ({ img, id }) => {
+const EWCard = ({ img, id, name }) => {
   const navigate = useNavigate();
   return (
     <>
@@ -143,6 +143,9 @@ const EWCard = ({ img, id }) => {
             className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute right-[6%] top-[40%]"
             style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
           ></div>
+          <div className="absolute top-[-20px] text-white text-center font-bold w-full ">
+            {name}
+          </div>
           <div className="w-[167px] h-[230px] ">
             <img
               src={img}
@@ -151,6 +154,9 @@ const EWCard = ({ img, id }) => {
               onClick={() => navigate(`/eventdetails/${id}`)}
             />
           </div>
+          <button className="absolute bottom-[20%] text-white">
+            Know more
+          </button>
         </div>
       </div>
     </>
