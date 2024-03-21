@@ -45,7 +45,6 @@ function App() {
   const workshopError = useSelector((state) => state.workshop.error);
   const workshopStatus = useSelector((state) => state.workshop.status);
 
-  const userError = useSelector((state) => state.user.error);
   const userStatus = useSelector((state) => state.user.status);
 
   useEffect(() => {
