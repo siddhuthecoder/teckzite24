@@ -76,9 +76,7 @@ const Table = () => {
     >
       <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around">
         <div className="w-[30px] mx-auto text-center">{index + 1}</div>
-        <div className="w-[240px] mx-auto text-center">
-          {user.firstName} {user.lastName}
-        </div>
+        <div className="w-[240px] mx-auto text-center">{user.firstName}</div>
         <div className="w-[300px] mx-auto text-center">{user.email}</div>
         <div className="w-[300px] mx-auto text-center">
           {user.referralsCount}

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { userActions } from "../../store/userSlice";
 import img from "../../assets/logo.png";
 import FileBase64 from "react-file-base64";
@@ -14,6 +14,13 @@ import svg1 from "../../assets/img/svgs/regSvg.svg";
 import svg2 from "../../assets/img/svgs/svg2.svg";
 
 const RegisterForm = () => {
+  const location = useLocation();
+
+  const getQueryParam = (name) => {
+    const params = new URLSearchParams(location.search);
+    return params.get(name);
+  };
+
   const initialData = {
     email: "",
     firstName: "",
@@ -24,13 +31,12 @@ const RegisterForm = () => {
     year: "",
     gender: "",
     phoneNumber: "",
-    idNumber: "",
     state: "",
     district: "",
     city: "",
     file: "",
     img: "",
-    referal: "",
+    referal: getQueryParam("ref") || "",
     amount: process.env.REACT_APP_OUTSIDERS,
     terms: false,
   };
@@ -73,7 +79,7 @@ const RegisterForm = () => {
       return;
     }
 
-    setData({ ...data, file: file });
+    setData({ ...data, file: file.base64 });
   };
 
   const handleSubmit = async (e) => {
@@ -99,6 +105,7 @@ const RegisterForm = () => {
     }
 
     try {
+      window.alert("Please wait a little after payment");
       const {
         data: { order },
       } = await axios.post(
@@ -130,7 +137,7 @@ const RegisterForm = () => {
             );
             if (success) {
               console.log("sucess");
-              await axios.post(
+              const res = await axios.post(
                 `${process.env.REACT_APP_BACKEND_URL}/user/register`,
                 {
                   email: data.email,
@@ -148,18 +155,20 @@ const RegisterForm = () => {
                   idUpload: data.file,
                   city: data.city,
                   mode: "online_mode",
-                  referredBy: data.referal,
+                  referredBy: data.referal.toLowerCase(),
                   razorpay_order_id: response.razorpay_order_id,
                 }
               );
+
+              localStorage.setItem("token", res.data.token);
+              dispatch(userActions.setUser(res.data.user));
+              toast.success("Account created Sucessfully!!");
+              navigate("/profile");
             }
-            toast.success("Account created Sucessfully!!\n Login again");
-            navigate("/");
           } catch (error) {
-            console.error("Failed to verify order:", error);
             toast.error(
               error?.response?.data.message ||
-                "Failed to verify order. Please try again."
+                "Failed to verify order or registering user. Please try again."
             );
           }
         },
@@ -202,7 +211,7 @@ const RegisterForm = () => {
       data.lastName === "" ||
       data.college === "" ||
       data.phoneNumber === "" ||
-      data.idNumber === "" ||
+      data.collegeId === "" ||
       data.year === "" ||
       data.gender === ""
     ) {
@@ -239,15 +248,19 @@ const RegisterForm = () => {
       );
       localStorage.setItem("token", res.data.token);
       dispatch(userActions.setUser(res.data.user));
-      navigate("/");
+      navigate("/profile");
     } catch (error) {
       console.log(error);
       setIsLoading(false);
       if (domainPattern.test(email)) {
         setData({
           ...data,
-          idNumber: given_name,
+          collegeId: given_name,
           email: email,
+          state: "Andhra Pradesh",
+          district: "Yeluru",
+          city: "Nuzvid",
+          college: "RGUKT",
           firstName: family_name.split(" ").slice(1).join(" ").toLowerCase(),
           lastName: family_name.split(" ")[0].toLowerCase(),
           amount: process.env.REACT_APP_RGUKT_FEE,
@@ -356,33 +369,39 @@ const RegisterForm = () => {
               alt=""
               className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
             />
-            <h4 className="font-semibold mt-2 mb-4 text-xl">Register</h4>
+            <h4 className="font-semibold mt-2 text-xl">Register</h4>
+            <h3 className="font-semibold text-sm mt-1 mb-4 px-4 text-center">
+              {`Fee for Rguktn mails is ${process.env.REACT_APP_RGUKT_FEE} and
+              fee for outsiders is ${process.env.REACT_APP_OUTSIDERS}`}
+            </h3>
             {!next && (
               <>
-                <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* First Name */}
-                  <input
-                    type="text"
-                    id="firstName"
-                    value={data.firstName}
-                    name="firstName"
-                    onChange={handleChange}
-                    className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="First Name"
-                    required
-                  />
-                  {/* Last Name */}
-                  <input
-                    type="text"
-                    id="lastName"
-                    value={data.lastName}
-                    name="lastName"
-                    onChange={handleChange}
-                    className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="Last Name"
-                    required
-                  />
-                </div>
+                {!isRgukt && (
+                  <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* First Name */}
+                    <input
+                      type="text"
+                      id="firstName"
+                      value={data.firstName}
+                      name="firstName"
+                      onChange={handleChange}
+                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
+                      placeholder="First Name"
+                      required
+                    />
+                    {/* Last Name */}
+                    <input
+                      type="text"
+                      id="lastName"
+                      value={data.lastName}
+                      name="lastName"
+                      onChange={handleChange}
+                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
+                      placeholder="Last Name"
+                      required
+                    />
+                  </div>
+                )}
                 {/* College */}
                 <div className="mb-3 w-[90%]">
                   <input
@@ -410,17 +429,17 @@ const RegisterForm = () => {
                   />
                   <input
                     type="text"
-                    id="idNumber"
-                    value={data.idNumber}
-                    name="idNumber"
+                    id="collegeId"
+                    value={data.collegeId}
+                    name="collegeId"
                     onChange={handleChange}
                     className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="Id Number"
+                    placeholder="Enter your college ID"
                     required
                   />
                 </div>
-                {/* Year */}
-                <div className="mb-3 w-[90%]">
+                {/* Year and branch */}
+                <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
                   <select
                     id="year"
                     value={data.year}
@@ -436,6 +455,24 @@ const RegisterForm = () => {
                     <option value="E2">E2</option>
                     <option value="E3">E3</option>
                     <option value="E4">E4</option>
+                  </select>
+                  <select
+                    id="branch"
+                    value={data.branch}
+                    name="branch"
+                    onChange={handleChange}
+                    className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
+                    style={{ borderBottom: "1px solid #eee" }}
+                  >
+                    <option value="">--Select Branch--</option>
+                    <option value="PUC">PUC</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="MECH">MECH</option>
+                    <option value="CHEM">CHEM</option>
+                    <option value="CIVIL">CIVIL</option>
+                    <option value="MME">MME</option>
                   </select>
                 </div>
                 {/* Gender */}
@@ -497,49 +534,74 @@ const RegisterForm = () => {
             )}
             {next && (
               <>
-                <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    id="state"
-                    name="state"
-                    value={data.state}
-                    onChange={handleChange}
-                    placeholder="State"
-                    className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                    style={{ borderBottom: "1px solid #eee" }}
-                  />
-                  <input
-                    id="district"
-                    name="district"
-                    value={data.district}
-                    onChange={handleChange}
-                    placeholder="District"
-                    className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                    style={{ borderBottom: "1px solid #eee" }}
-                  />
-                </div>
-                <div className="mb-3 w-[90%]">
-                  <input
-                    id="city"
-                    name="city"
-                    value={data.city}
-                    onChange={handleChange}
-                    placeholder="Village / Town / City"
-                    className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                    style={{ borderBottom: "1px solid #eee" }}
-                  />
-                </div>
                 {!isRgukt && (
-                  <div className="my-3 w-[90%]">
-                    <label
-                      className="block mb-1 text-sm font-medium text-[#eee]"
-                      htmlFor="file_input"
-                    >
-                      Upload Id Card
-                    </label>
-                    <FileBase64
-                      id="file_input"
-                      multiple={false}
-                      onDone={handleFileInputChange}
+                  <>
+                    <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <input
+                        id="state"
+                        name="state"
+                        value={data.state}
+                        onChange={handleChange}
+                        placeholder="State"
+                        className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
+                        style={{ borderBottom: "1px solid #eee" }}
+                      />
+                      <input
+                        id="district"
+                        name="district"
+                        value={data.district}
+                        onChange={handleChange}
+                        placeholder="District"
+                        className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
+                        style={{ borderBottom: "1px solid #eee" }}
+                      />
+                    </div>
+                    <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <input
+                        id="city"
+                        name="city"
+                        value={data.city}
+                        onChange={handleChange}
+                        placeholder="Village / Town / City"
+                        className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
+                        style={{ borderBottom: "1px solid #eee" }}
+                      />
+                      <input
+                        id="referal"
+                        name="referal"
+                        value={data.referal}
+                        onChange={handleChange}
+                        placeholder="Refferal Id"
+                        className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
+                        style={{ borderBottom: "1px solid #eee" }}
+                      />
+                    </div>
+
+                    <div className="my-3 w-[90%]">
+                      <label
+                        className="block mb-1 text-sm font-medium text-[#eee]"
+                        htmlFor="file_input"
+                      >
+                        Upload Id Card
+                      </label>
+                      <FileBase64
+                        id="file_input"
+                        multiple={false}
+                        onDone={handleFileInputChange}
+                      />
+                    </div>
+                  </>
+                )}
+                {isRgukt && (
+                  <div className="mb-3 w-[90%]">
+                    <input
+                      id="referal"
+                      name="referal"
+                      value={data.referal}
+                      onChange={handleChange}
+                      placeholder="Refferal Id"
+                      className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
+                      style={{ borderBottom: "1px solid #eee" }}
                     />
                   </div>
                 )}
