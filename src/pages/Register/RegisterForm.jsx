@@ -71,11 +71,8 @@ const RegisterForm = () => {
       return;
     }
 
-    const maxSizeInBytes = 5 * 1024 * 1024;
-    if (file.size > maxSizeInBytes) {
-      setError(
-        "File size exceeds the limit (5MB). Please select a smaller file."
-      );
+    if (parseInt(file.size) > 100) {
+      setError("File size should less than 100KB");
       return;
     }
 
@@ -236,7 +233,7 @@ const RegisterForm = () => {
     setIsLoading(true);
     const decodedUser = jwtDecode(res.credential);
     const { given_name, family_name, email, picture } = decodedUser;
-    const domainPattern = /@(rguktn|rgukto|rgukts|rguktr)\.ac\.in$/;
+    const domainPattern = /@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
 
     try {
       const res = await axios.post(
@@ -250,7 +247,6 @@ const RegisterForm = () => {
       dispatch(userActions.setUser(res.data.user));
       navigate("/profile");
     } catch (error) {
-      console.log(error);
       setIsLoading(false);
       if (domainPattern.test(email)) {
         setData({
