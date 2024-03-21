@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header/Header";
+import { Link } from "react-router-dom";
 
 export const PageNotFound = () => {
   return (
@@ -14,7 +15,9 @@ export const PageNotFound = () => {
           <p className="font-semibold text-xl px-3 mb-[-18px] text-center">
             You are lost some where in Metaverse
           </p>
-          <button className="send-btn text-white">Back to Home</button>
+          <Link to="/">
+            <button className="send-btn text-white">Back to Home</button>
+          </Link>
         </div>
       </div>
     </>

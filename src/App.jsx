@@ -6,6 +6,8 @@ import SwiperModule from "./components/swiper/Swiper";
 import Contact from "./pages/contact/Contact";
 import AudioBG from "./components/Audio";
 import Referrals from "./pages/Referrals/Referrals";
+import EDcard from "./pages/EventDetails/EDcard";
+import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import {
   CoreTeam,
   Events,
@@ -129,7 +131,8 @@ function App() {
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<EWCard />} />
-              <Route path="/eventdetails/:id" element={<EventDetailsCard2 />} />
+              <Route path="/ed" element={<EDcard />} />
+              <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}
