@@ -5,7 +5,6 @@ import ETWSCard from "../../components/Shared/ETWSCard";
 import WorkshopsBanner from "./WorkshopsBanner";
 import Banner from "../../components/banner/Banner";
 
-
 import { useSelector } from "react-redux";
 import EWCard from "../../components/Shared/EWCard";
 
@@ -50,6 +49,7 @@ const Workshops = () => {
                     key={w._id}
                     id={w._id}
                     img={w.workshopImg}
+                    name={w.name}
                   />
                 );
               })}

@@ -33,7 +33,7 @@ const Referrals = () => {
     if (navigator.share) {
       navigator
         .share({
-          title: "Teckzite referal",
+          title: "Teckzite 2k24 refferal",
           text: "Register for teckzite2k24 using this link",
           url: `${process.env.REACT_APP_FRONTEND_URL}/register?ref=${userData.tzkid}`,
         })

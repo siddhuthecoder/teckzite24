@@ -16,7 +16,7 @@ import {
   // EventUpdates,
   // WorkshopsDetails,
   // EventDetails,
-  // Profile,
+  Profile,
   // Referrals,
   // Speakers,
   // Sponsors,
@@ -34,6 +34,7 @@ import { fetchWorkshops } from "./store/workshopSlice";
 import EWCard from "./components/Shared/EWCard";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 import { fetchUser } from "./store/userSlice";
+import { PageNotFound } from "./components/PageNotFound";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -133,11 +134,13 @@ function App() {
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}
               />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
             <Footer />
-            <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
+            {/* <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
               <AudioBG />
-            </div>
+            </div> */}
           </main>
         </>
       )}

@@ -60,7 +60,7 @@ const Events = () => {
                     key={index}
                     img={event.img}
                     id={event._id}
-                    name="sribabu"
+                    name={event.name}
                   />
                 ))}
               </div>
