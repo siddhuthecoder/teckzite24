@@ -136,7 +136,6 @@ const RegisterForm = () => {
               }
             );
             if (success) {
-              console.log("sucess");
               const res = await axios.post(
                 `${process.env.REACT_APP_BACKEND_URL}/user/register`,
                 {
@@ -166,6 +165,7 @@ const RegisterForm = () => {
               navigate("/profile");
             }
           } catch (error) {
+            console.log(error);
             toast.error(
               error?.response?.data.message ||
                 "Failed to verify order or registering user. Please try again."
