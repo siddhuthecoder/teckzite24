@@ -81,18 +81,24 @@ const EventDetailsCard3 = () => {
     { label: "Contact", value: "Contact" },
   ];
 
-  const renderTabs = () => {
+  const RenderTabs = () => {
     return tabs.map((tab) => (
       <button
         key={tab.value}
         type="button"
-        className={`tab border text-[15px] mt-[10px] md:mt-[0px] ${
-          activeTab === tab.value ? " active-tab " : ""
-        }`}
-        style={{ width: "100px", height: "40px" }}
+        className={`text-[15px] mt-[10px] md:mt-[0px] flex items-center justify-center flex-wrap relative`}
+        style={{ width: "120px", height: "40px" }}
         onClick={() => setActiveTab(tab.value)}
       >
-        {tab.label}
+        <img
+          src={ed4}
+          alt="cover"
+          className={`absolute top-0 left-0 z-[-1] ${
+            activeTab === tab.value ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ width: "120px", height: "40px" }}
+        />
+        <span className="p-2">{tab.label}</span>
       </button>
     ));
   };
@@ -122,152 +128,64 @@ const EventDetailsCard3 = () => {
   );
 
   const RenderEventDetails = () => (
-    <div className="w-full flex h-screen  items-center">
-      <div className="w-[95%] max-w-[800px] mx-auto min-h-[450px]  relative">
-        <div className="w-[90%] mx-auto   flex-col z-[1] absolute top-[10%] left-[4%]">
-          <div className="w-full  items-center hidden sm:flex mt-[20px] z-[2] justify-between gap-5  flex-wrap ">
-            <div
-              className="flex items-center tab   cursor-pointer  "
-              onClick={() => setTab("Description")}
-            >
-              <div className="z-[2] text-center text-nowrap">Desciption</div>
-              <img
-                src={ed4}
-                alt=""
-                className={`ms-[-80px] ${
-                  tab == "Description" ? "block" : "hidden"
-                }`}
-                style={{ width: "100%" }}
-              />
-            </div>
-            <div
-              className="flex items-center tab   cursor-pointer  "
-              onClick={() => setTab("Structure")}
-              style={{ maxWidth: "150px" }}
-            >
-              <div className="z-[2] text-center text-nowrap">Structure</div>
-              <img
-                src={ed4}
-                alt=""
-                className={`ms-[-70px] ${
-                  tab == "Structure" ? "block" : "hidden"
-                }`}
-                style={{ width: "100%" }}
-              />
-            </div>
-            <div
-              className="flex items-center tab  mx-[10px] cursor-pointer"
-              onClick={() => setTab("Rules")}
-            >
-              <div className="z-[2] text-center text-nowrap">Rules</div>
-              <img
-                src={ed4}
-                alt=""
-                className={`ms-[-60px] ${tab == "Rules" ? "block" : "hidden"}`}
-                style={{ width: "100%" }}
-              />
-            </div>
-            <div
-              className="flex items-center tab  mx-[10px] cursor-pointer"
-              onClick={() => setTab("Contact")}
-            >
-              <div className="z-[2] text-center text-nowrap">Contact</div>
-              <img
-                src={ed4}
-                alt=""
-                className={`ms-[-70px] ${
-                  tab == "Contact" ? "block" : "hidden"
-                }`}
-                style={{ width: "100%" }}
-              />
-            </div>
+    <div className="w-full flex min-h-screen justify-center items-center">
+      <div
+        className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center z-0"
+        style={{ backgroundImage: "url('../../../eventdetails.png')" }}
+      ></div>
+      <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen overflow-y-auto max-md:pt-[80px]">
+        <div className="absolute max-md:relative top-3 w-full z-20">
+          <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900">
+            <RenderTabs />
           </div>
+          <h1 className="text-xl my-2 w-full text-center font-joti text-[#FF48AB]">
+            {data.name}
+          </h1>
+          <div className="h-[220px] grid grid-cols-12 p-3">
+            <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3">
+              <img src={data.img} alt={data.name} className="h-[220px]" />
+              <button
+                className="px-8 py-1.5 rounded bg-gradient"
+                onClick={handleRegister}
+              >
+                Register
+              </button>
+            </div>
 
-          <div className="m-[10px] py-[0.4px] hidden sm:block bg-[purple]"></div>
-          <div className="w-full grid grid-cols-1 md:grid-cols-6 ">
-            <div
-              className="col-span-1 md:col-span-2 mx-auto"
-              style={{ maxHeight: "250px" }}
-            >
-              <img
-                src={img}
-                alt=""
-                style={{ width: "200px", height: "200px" }}
-              />
-            </div>
-            <div className="w-full  items-center flex sm:hidden my-[20px]  z-[2] justify-between gap-5  flex-wrap ">
-              <div
-                className="flex items-center tab   cursor-pointer  "
-                onClick={() => setTab("Description")}
-              >
-                <div className="z-[2] text-center text-nowrap">Desciption</div>
-                <img
-                  src={ed4}
-                  alt=""
-                  className={`ms-[-80px] ${
-                    tab == "Description" ? "block" : "hidden"
-                  }`}
-                  style={{ width: "100%" }}
-                />
+            <div className="col-span-8 max-md:col-span-12 max-md:mt-4 max-md:pb-14 w-full flex items-start flex-col px-4 max-md:px-2">
+              <div className="div h-[240px] max-md:h-[fit-content] overflow-y-auto">
+                {activeTab === "TimeLine" && (
+                  <TimeLine timeline={data.timeline} />
+                )}
+                {activeTab === "Structure" && (
+                  <Structure structure={data.structure} />
+                )}
+                {activeTab === "Description" && (
+                  <Description desc={data.desc} rules={data.rules} />
+                )}
+                {activeTab === "Contact" && (
+                  <Contact contact={data.contact_info} />
+                )}
               </div>
-              <div
-                className="flex items-center tab   cursor-pointer  "
-                onClick={() => setTab("Structure")}
-                style={{ maxWidth: "150px" }}
-              >
-                <div className="z-[2] text-center text-nowrap">Structure</div>
-                <img
-                  src={ed4}
-                  alt=""
-                  className={`ms-[-70px] ${
-                    tab == "Structure" ? "block" : "hidden"
-                  }`}
-                  style={{ width: "100%" }}
-                />
+              <div className="w-full flex items-end flex-col px-10">
+                <h1 className="font-semibold text-lg">Prize Money :- </h1>
+                {data.prizeMoney ? (
+                  <>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: data.prizeMoney }}
+                    />
+                  </>
+                ) : (
+                  "Updated soon"
+                )}
               </div>
-              <div
-                className="flex items-center tab  mx-[10px] cursor-pointer"
-                onClick={() => setTab("TimeLine")}
-              >
-                <div className="z-[2] text-center text-nowrap">TimeLine</div>
-                <img
-                  src={ed4}
-                  alt=""
-                  className={`ms-[-60px] ${
-                    tab == "TimeLine" ? "block" : "hidden"
-                  }`}
-                  style={{ width: "100%" }}
-                />
-              </div>
-              <div
-                className="flex items-center tab  mx-[10px] cursor-pointer"
-                onClick={() => setTab("Contact")}
-              >
-                <div className="z-[2] text-center text-nowrap">Contact</div>
-                <img
-                  src={ed4}
-                  alt=""
-                  className={`ms-[-70px] ${
-                    tab == "Contact" ? "block" : "hidden"
-                  }`}
-                  style={{ width: "100%" }}
-                />
-              </div>
-            </div>
-            <div className="h-[200px] w-full mt-[10px] overflow-y-auto">
-              {tab === "TimeLine" && <TimeLine timeline={data.timeline} />}
-              {tab === "Structure" && <Structure structure={data.structure} />}
-              {tab === "Description" && (
-                <Description desc={data.desc} rules={data.rules} />
-              )}
-              {tab === "Contact" && <Contact contact={data.contact_info} />}
             </div>
           </div>
         </div>
         <img
           src={ed1}
           alt=""
-          className="absolute pointer-events-none hidden sm:block sm:rotate-[0deg]  z-[0]   "
+          className="absolute pointer-events-none scale-y-[1.1] hidden md:block md:rotate-[0deg] z-[0]  "
           style={{
             width: "800px",
             minHeight: "400px",
@@ -276,12 +194,12 @@ const EventDetailsCard3 = () => {
         <img
           src={ed2}
           alt=""
-          className="absolute pointer-events-none  scale-[0.7] left-[-0px] sm:left-[-20px] z-[0]  top-[5%] sm:top-[20%]"
+          className="absolute max-md:hidden pointer-events-none  scale-[0.7] left-[-0px] md:left-[-20px] z-[0]  top-[5%] md:top-[20%]"
         />
         <img
           src={ed3}
           alt=""
-          className="absolute pointer-events-none  scale-[0.7] right-[-0px] sm:right-[-20px] z-[0] top-[5%]  sm:top-[20%]"
+          className="absolute max-md:hidden pointer-events-none  scale-[0.7] right-[-0px] md:right-[-20px] z-[0] top-[5%]  md:top-[20%]"
         />
       </div>
     </div>

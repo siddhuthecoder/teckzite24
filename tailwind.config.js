@@ -12,6 +12,7 @@ module.exports = {
         namdhinggo: ["Namdhinggo", "sans-serif"],
         koneMono: ["Kode Mono", "monospace"],
         rog: ["ROG", "sans-serif"],
+        joti: ["Joti One", "serif"],
       },
     },
   },
