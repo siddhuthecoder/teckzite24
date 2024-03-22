@@ -1,5 +1,5 @@
 import team1 from "../assets/webteam/sid.png";
-import aswini from '../assets/webteam/aswini.jpg';
+import aswini from "../assets/webteam/aswini.jpg";
 
 export const navigation = [
   {
@@ -34,6 +34,11 @@ export const navigation = [
   },
   {
     id: 7,
+    name: "Updates",
+    link: "/eventupdates",
+  },
+  {
+    id: 8,
     name: "Contact",
     link: "/contact",
   },

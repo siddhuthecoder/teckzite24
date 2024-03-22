@@ -29,21 +29,21 @@ const Profile = () => {
       <div className="z-[0] w-full min-h-screen absolute"></div>
       <Header />
 
-      <div className="w-full grid bg-[#10022A] pt-[30px] min-h-screen absolute z-[1] h-[548px] top-[141px] left-[101px] mainBox container ">
-        <img src={s1} className="absolute left-[20%] top-[-7%]" />
-        <img src={s2} className="absolute left-[20.7%] top-[-8.2%]" />
-        <img src={s3} className="absolute left-[-8%] top-[-8.8%]" />
+      <div className="w-full bg-[#10022A] pt-[30px] absolute z-[1] top-[141px] left-[101px] mainBox container ">
+        <img src={s1} className="absolute left-[20%] top-[-5.7%]" />
+        <img src={s2} className="absolute left-[20.7%] top-[-6.7%]" />
+        <img src={s3} className="absolute left-[-8%] top-[-6.8%]" />
         <img
           src={s1}
-          className="absolute rotate-180 right-[20%] bottom-[-7%]"
+          className="absolute rotate-180 right-[20%] bottom-[-5.7%]"
         />
         <img
           src={s2}
-          className="absolute rotate-180 right-[20.7%] bottom-[-8.2%]"
+          className="absolute rotate-180 right-[20.7%] bottom-[-6.7%]"
         />
         <img
           src={s3}
-          className="absolute rotate-180 right-[-8%] bottom-[-8.8%]"
+          className="absolute rotate-180 right-[-8%] bottom-[-6.8%]"
         />
 
         <div className="col-span-3 mb-0 max-lg:col-span-12 h-[fit-content] flex justify-center">
@@ -59,7 +59,7 @@ const Profile = () => {
             </div>
           )}
         </div>
-        <div className="w-full absolute text-left flex gap-5 h-full pt-[250px] ">
+        <div className="w-full absolute text-left flex gap-5 h-[250px] pt-[100px] ">
           <div className="w-[45%] mx-[15%] h-[50%]">
             <div className=" mt-2 text-white">
               <h1 className="font-extrabold text-lg">
@@ -131,17 +131,17 @@ const Profile = () => {
         </div>
         {userData.regEvents && userData.regEvents.length !== 0 && (
           <>
-            <div className="w-[1250px] m-auto mx-[20px] mt-[0] flex justify-center">
-              <img src={s4} className="w-[400px]" alt={`svg`} />
+            <div className="w-full m-auto mx-[20px] mt-[300px] flex justify-center">
+              <img src={s4} className="w-[400px]" />
             </div>
 
-            <div className="col-span-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-10">
+            <div className="col-span-12 w-[90%] justify-center max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pb-10">
               {userData.regEvents.map((e) => {
                 return (
                   <EWCard
                     key={e._id}
                     id={e._id}
-                    img={e.workshopImg}
+                    img={e.img}
                     name={e.name}
                   />
                 );

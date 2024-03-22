@@ -56,16 +56,18 @@ const EventUpdatesCards = () => {
   }
 
   return (
-    <div className="mt-14 pb-10 w-full max-w-7xl mx-auto">
+    <div className="mt-14 pb-10 w-[95%] max-w-7xl mx-auto">
       {notificationData && (
         <>
           {notificationData.map((note, index) => (
-            <div key={index} className="grid grid-cols-12 my-10">
-              <div className="col-span-1"></div>
+            <div
+              key={index}
+              className="grid grid-cols-12 my-14 border max-w-5xl mx-auto border-gray-500 rounded py-2 px-5 gap-2"
+            >
               <div
                 className={`col-span-3 ${
                   (index + 1) % 2 === 0 ? "order-2" : "order-1"
-                } max-md:col-span-12 max-md:order-1`}
+                } max-md:col-span-12 max-md:order-1 max-md:flex justify-center items-center`}
               >
                 <img
                   src={note.picturePath}
@@ -74,7 +76,7 @@ const EventUpdatesCards = () => {
                 />
               </div>
               <div
-                className={`col-span-7 ${
+                className={`col-span-9 ${
                   (index + 1) % 2 === 0 ? "order-1" : "order-2"
                 } max-md:order-2 max-md:col-span-12 py-3 max-md:px-3 w-full flex items-start justify-start flex-col`}
               >
@@ -86,12 +88,11 @@ const EventUpdatesCards = () => {
                 </p>
                 <a
                   href={note.link}
-                  className="underline text-sm text-blue-800 w-full my-2 max-md:text-center"
+                  className="underline text-sm text-blue-800 w-full my-2 text-right"
                 >
                   Click Here
                 </a>
               </div>
-              <div className="col-span-1"></div>
             </div>
           ))}
         </>

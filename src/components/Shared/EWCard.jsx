@@ -143,20 +143,18 @@ const EWCard = ({ img, id, name }) => {
             className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute right-[6%] top-[40%]"
             style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
           ></div>
-          <div className="absolute top-[-20px] text-white text-center font-bold w-full ">
-            {name}
-          </div>
           <div className="w-[167px] h-[230px] ">
-            <img
-              src={img}
-              alt=""
-              className="w-[200px] h-[230px] cursor-pointer"
-              onClick={() => navigate(`/eventdetails/${id}`)}
-            />
+            <img src={img} alt="" className="w-[200px] h-[230px]" />
           </div>
-          <button className="absolute bottom-[20%] text-white">
-            Know more
-          </button>
+          <div className="absolute bottom-[100px] z-20 h-[100px] w-[80%] bg-[rgba(224,224,224,0.1)] backdrop-blur-md flex justify-center items-center flex-col">
+            <h1 className="text-xl font-semibold text-black mb-1">{name}</h1>
+            <button
+              className="px-4 py-1 text-sm rounded bg-gradient text-white"
+              onClick={() => navigate(`/eventdetails/${id}`)}
+            >
+              Know More
+            </button>
+          </div>
         </div>
       </div>
     </>
