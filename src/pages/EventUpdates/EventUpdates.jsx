@@ -1,9 +1,16 @@
+import Header from "../../components/Header/Header";
+import EventUpdatesCards from "./EventUpdatesCards";
 
-import Style from './EventUpdates.module.css'
 const EventUpdates = () => {
   return (
-    <div className={Style.error}>EventUpdates</div>
-  )
-}
+    <>
+      <Header />
+      <div className="w-full pt-24">
+        <h1 className="w-full text-center text-2xl">Event Updates</h1>
+        <EventUpdatesCards />
+      </div>
+    </>
+  );
+};
 
-export default EventUpdates
+export default EventUpdates;

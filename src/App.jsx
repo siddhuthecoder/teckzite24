@@ -24,6 +24,7 @@ import {
   // Sponsors,
   // Schedule,
   About,
+  EventUpdates,
 } from "./pages";
 
 import { Preloader } from "./components";
@@ -31,6 +32,7 @@ import { useEffect, useState } from "react";
 import Footer from "./components/Shared/Footer";
 import BackgroundAnimation from "./components/Shared/BackgroundAnimation";
 import { useSelector, useDispatch } from "react-redux";
+import { fetchNotifications } from "./store/notificationSlice";
 import { fetchEvents } from "./store/eventSlice";
 import { fetchWorkshops } from "./store/workshopSlice";
 import EWCard from "./components/Shared/EWCard";
@@ -47,6 +49,9 @@ function App() {
 
   const workshopError = useSelector((state) => state.workshop.error);
   const workshopStatus = useSelector((state) => state.workshop.status);
+
+  const notificationError = useSelector((state) => state.notification.error);
+  const notificationStatus = useSelector((state) => state.notification.status);
 
   const userStatus = useSelector((state) => state.user.status);
 
@@ -81,7 +86,10 @@ function App() {
     if (workshopError) {
       toast.error(workshopError);
     }
-  }, [eventError, workshopError]);
+    if (notificationError) {
+      toast.error(notificationError);
+    }
+  }, [eventError, workshopError, notificationError]);
 
   useEffect(() => {
     //fetch events
@@ -91,7 +99,10 @@ function App() {
     if (workshopStatus === "idle") {
       dispatch(fetchWorkshops());
     }
-  }, [eventStatus, workshopStatus, dispatch]);
+    if (notificationStatus === "idle") {
+      dispatch(fetchNotifications());
+    }
+  }, [eventStatus, workshopStatus, notificationStatus, dispatch]);
 
   return (
     <>
@@ -133,6 +144,7 @@ function App() {
               <Route path="/card" element={<EWCard />} />
               <Route path="/ed" element={<EDcard />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
+              <Route path="/eventupdates" element={<EventUpdates />} />
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}

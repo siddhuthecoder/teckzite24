@@ -103,7 +103,9 @@ const RegisterForm = () => {
     }
 
     try {
-      window.alert("Please wait a little after payment");
+      window.alert(
+        "Please don't press back button after completion of payment.\n It will automatically redirected to webiste after 5 secs of payment completion"
+      );
       const {
         data: { order },
       } = await axios.post(

@@ -3,6 +3,7 @@ import userSlice from "./userSlice";
 import eventSlice from "./eventSlice";
 import workshopSlice from "./workshopSlice";
 import refSlice from "./refSlice";
+import notificationSlice from "./notificationSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     event: eventSlice.reducer,
     workshop: workshopSlice.reducer,
     ref: refSlice.reducer,
+    notification: notificationSlice.reducer,
   },
 });
 
