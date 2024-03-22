@@ -226,7 +226,7 @@ const RegisterForm = () => {
     const decodedUser = jwtDecode(res.credential);
     const { given_name, family_name, email, picture } = decodedUser;
     const domainPattern =
-      /^(r|n|s|o)[a-z]{6}@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
+      /^(r|n|s|o)[0-9]{6}@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
 
     try {
       const res = await axios.post(
