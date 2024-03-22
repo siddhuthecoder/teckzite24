@@ -30,7 +30,7 @@ const Profile = () => {
     <>
       <Header />
       <div className=" flex items-center min-h-[100vh] justify-center backdrop-blur-lg w-full ">
-        <div className="w-[97%] max-w-[900px] mx-auto flex-col   border-[#A301B1] border-[1px]  relative">
+        <div className="w-[97%] max-w-[900px] mx-auto flex-col my-[10%] pt-4 pb-10  border-[#A301B1] border-[1px]  relative">
           <img
             src={s1}
             alt=""
@@ -61,8 +61,18 @@ const Profile = () => {
             alt=""
             className="absolute bottom-[-55px] right-[30.8%] scale-x-[0.6]"
           />
-          <div className="w-[230px] h-[230px] my-[20px] mx-auto flex justify-center items-center border bg-gradient">
-            <div className="text-[100px]">S</div>
+          <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-gradient">
+            {userData.img && userData.img !== "" ? (
+              <img
+                src={userData.img}
+                alt={userData.firstName}
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <div className="text-[60px]">
+                {userData.firstName.charAt(0).toUpperCase()}
+              </div>
+            )}
           </div>
           <div className="w-full grid grid-cols-1 md:grid-cols-2">
             <div className="ps-[40px] md:ps-[40px] flex flex-col">
@@ -115,7 +125,7 @@ const Profile = () => {
                 <div className="text-[20px] text-[grey]">
                   Email <span className="hidden md:inline-block">:-</span>{" "}
                 </div>
-                <div className="font-bold text-1xl pt-2 md:text-[12px] text-[#A301B1]">
+                <div className="font-bold text-lg pt-2 md:text-[12px] text-[#A301B1]">
                   {userData.email}
                 </div>
               </div>
@@ -123,9 +133,10 @@ const Profile = () => {
           </div>
           {userData.regEvents && userData.regEvents.length !== 0 && (
             <>
-              <div className="w-full m-auto mx-[20px] mt-[300px] flex justify-center"></div>
-
-              <div className="col-span-12 w-[90%] justify-center max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pb-10">
+              <h1 className="col-span-12 text-2xl font-joti mt-10 mb-5 text-center text-white  font-semibold">
+                Registered Events
+              </h1>
+              <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
                 {userData.regEvents.map((e) => {
                   return (
                     <EWCard key={e._id} id={e._id} img={e.img} name={e.name} />
@@ -136,10 +147,10 @@ const Profile = () => {
           )}
           {userData.regWorkshop && userData.regWorkshop.length !== 0 && (
             <>
-              <h1 className="col-span-12 text-2xl mt-5 text-center font-semibold">
+              <h1 className="col-span-12 text-2xl font-joti mt-5 text-center text-white  font-semibold">
                 Registered Workshops
               </h1>
-              <div className="col-span-12 w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-10">
+              <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
                 {userData.regWorkshop.map((w) => {
                   return (
                     <EWCard
@@ -147,6 +158,7 @@ const Profile = () => {
                       id={w._id}
                       img={w.workshopImg}
                       name={w.name}
+                      workshop={true}
                     />
                   );
                 })}

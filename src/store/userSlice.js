@@ -27,6 +27,13 @@ const userSlice = createSlice({
     removeUser: (state, action) => {
       state.data = null;
     },
+    addEvent: (state, action) => {
+      if (state.data) {
+        const regEvents = state.data.regEvents;
+        regEvents.push(action.payload);
+        state.data.regEvents = regEvents;
+      }
+    },
   },
   extraReducers: (builders) => {
     builders.addCase(fetchUser.pending, (state, action) => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { toast } from "react-hot-toast";
 import "./eventDetails.css";
@@ -7,34 +7,37 @@ import Description from "./details/Description";
 import Contact from "./details/Contact";
 import TimeLine from "./details/TimeLine";
 import Structure from "./details/Structure";
-import right from "../../assets/events/after.png";
-import left from "../../assets/events/before.png";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import ed1 from "../../assets/img/ed/ed1.svg";
 import ed2 from "../../assets/img/ed/ed2.svg";
 import ed3 from "../../assets/img/ed/ed3.svg";
 import ed4 from "../../assets/img/ed/ed4.svg";
-import img from "../../assets/img/event.jpg";
+import { userActions } from "../../store/userSlice";
 
 const EventDetailsCard3 = () => {
-  const [tab, setTab] = useState("Description");
   const [activeTab, setActiveTab] = useState("Description");
   const [registerForm, setRegisterForm] = useState(false);
   const [data, setData] = useState(null);
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
+  const dispatch = useDispatch();
   const eventData = useSelector((state) => state.event.data);
   const userData = useSelector((state) => state.user.data);
 
   useEffect(() => {
     if (eventData) {
       const event = eventData.find((e) => e._id === id);
-      setData(event);
-      setLoading(false);
+      if (event) {
+        setData(event);
+        setLoading(false);
+      } else {
+        navigate("/eventdetails");
+      }
     }
-  }, [id, eventData]);
+  }, [id, eventData, navigate]);
 
   const handleRegister = async () => {
     if (!userData) {
@@ -51,7 +54,7 @@ const EventDetailsCard3 = () => {
       if (window.confirm("Are you sure you want to register to this event")) {
         const token = localStorage.getItem("token");
         try {
-          await axios.post(
+          const res = await axios.post(
             `${process.env.REACT_APP_BACKEND_URL}/events/register/${data._id}`,
             {
               tzkIds: [userData.tzkid],
@@ -63,6 +66,8 @@ const EventDetailsCard3 = () => {
             }
           );
           toast.success("Registered for the event Successfully");
+          dispatch(userActions.addEvent(res.data.event));
+          navigate("/profile");
         } catch (error) {
           console.log(error.message);
           toast.error(error?.response?.data.message || "Internal Server Error");
@@ -141,9 +146,13 @@ const EventDetailsCard3 = () => {
           <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#FF48AB]">
             {data.name}
           </h1>
-          <div className="h-[220px] grid grid-cols-12 p-3">
+          <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
             <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3">
-              <img src={data.img} alt={data.name} className="h-[220px]" />
+              <img
+                src={data.img}
+                alt={data.name}
+                className="md:h-[220px] max-md:w-[70vw]"
+              />
               <button
                 className="px-8 py-1.5 rounded bg-gradient"
                 onClick={handleRegister}
@@ -156,8 +165,8 @@ const EventDetailsCard3 = () => {
               <RenderTabs />
             </div>
 
-            <div className="col-span-8 max-md:col-span-12 max-md:pt-4 max-md:bg-[#10022A] max-md:pb-14 w-full flex items-start flex-col px-4 max-md:px-2">
-              <div className="div h-[240px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible">
+            <div className="col-span-8 max-md:col-span-12 max-md:bg-[#10022A] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2">
+              <div className="div h-[230px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible">
                 {activeTab === "TimeLine" && (
                   <TimeLine timeline={data.timeline} />
                 )}
@@ -171,7 +180,7 @@ const EventDetailsCard3 = () => {
                   <Contact contact={data.contact_info} />
                 )}
               </div>
-              <div className="w-full flex items-end flex-col px-10">
+              <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
                 <h1 className="font-semibold text-lg">Prize Money :- </h1>
                 {data.prizeMoney ? (
                   <>
