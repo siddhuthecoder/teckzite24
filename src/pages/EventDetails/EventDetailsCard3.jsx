@@ -133,12 +133,12 @@ const EventDetailsCard3 = () => {
         className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center z-0"
         style={{ backgroundImage: "url('../../../eventdetails.png')" }}
       ></div>
-      <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen overflow-y-auto max-md:pt-[80px]">
+      <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
         <div className="absolute max-md:relative top-3 w-full z-20">
           <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900">
             <RenderTabs />
           </div>
-          <h1 className="text-xl my-2 w-full text-center font-joti text-[#FF48AB]">
+          <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#FF48AB]">
             {data.name}
           </h1>
           <div className="h-[220px] grid grid-cols-12 p-3">
@@ -152,8 +152,12 @@ const EventDetailsCard3 = () => {
               </button>
             </div>
 
-            <div className="col-span-8 max-md:col-span-12 max-md:mt-4 max-md:pb-14 w-full flex items-start flex-col px-4 max-md:px-2">
-              <div className="div h-[240px] max-md:h-[fit-content] overflow-y-auto">
+            <div className="max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900">
+              <RenderTabs />
+            </div>
+
+            <div className="col-span-8 max-md:col-span-12 max-md:pt-4 max-md:bg-[#10022A] max-md:pb-14 w-full flex items-start flex-col px-4 max-md:px-2">
+              <div className="div h-[240px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible">
                 {activeTab === "TimeLine" && (
                   <TimeLine timeline={data.timeline} />
                 )}

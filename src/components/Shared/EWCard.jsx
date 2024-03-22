@@ -119,45 +119,39 @@ import { useNavigate } from "react-router-dom";
 const EWCard = ({ img, id, name }) => {
   const navigate = useNavigate();
   return (
-    <>
-      <div className="">
-        <div className="w-[230px] h-[336px] flex justify-center mt-10  relative">
-          <img src={s1} alt="" className="absolute left-[-20%] top-[-20%]" />
-          <img src={s2} alt="" className="absolute right-[-20%] top-[-20%]" />
-          <img src={s3} alt="" className="absolute top-[26.75%] left-[-18%] " />
-          <img
-            src={s4}
-            alt=""
-            className="absolute top-[26.75%] right-[-22%] "
-          />
-          <img
-            src={s5}
-            alt=""
-            className="absolute bottom-0 left-[-6px] scale-x-[1.3] scale-y-[1.3]"
-          />
-          <div
-            className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute left-[6%] top-[40%]"
-            style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
-          ></div>
-          <div
-            className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute right-[6%] top-[40%]"
-            style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
-          ></div>
-          <div className="w-[167px] h-[230px] ">
-            <img src={img} alt="" className="w-[200px] h-[230px]" />
-          </div>
-          <div className="absolute bottom-[100px] z-20 h-[100px] w-[80%] bg-[rgba(224,224,224,0.1)] backdrop-blur-md flex justify-center items-center flex-col">
-            <h1 className="text-xl font-semibold text-black mb-1">{name}</h1>
-            <button
-              className="px-4 py-1 text-sm rounded bg-gradient text-white"
-              onClick={() => navigate(`/eventdetails/${id}`)}
-            >
-              Know More
-            </button>
-          </div>
+    <div className="w-full flex items-center justify-center">
+      <div className="w-[230px] h-[336px] flex justify-center mt-10  relative">
+        <img src={s1} alt="" className="absolute left-[-20%] top-[-20%]" />
+        <img src={s2} alt="" className="absolute right-[-20%] top-[-20%]" />
+        <img src={s3} alt="" className="absolute top-[26.75%] left-[-18%] " />
+        <img src={s4} alt="" className="absolute top-[26.75%] right-[-22%] " />
+        <img
+          src={s5}
+          alt=""
+          className="absolute bottom-0 left-[-6px] scale-x-[1.3] scale-y-[1.3]"
+        />
+        <div
+          className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute left-[6%] top-[40%]"
+          style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
+        ></div>
+        <div
+          className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute right-[6%] top-[40%]"
+          style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
+        ></div>
+        <div className="w-[167px] h-[230px] ">
+          <img src={img} alt="" className="w-[200px] h-[230px]" />
+        </div>
+        <div className="absolute bottom-[100px] z-20 h-[100px] w-[80%] bg-[rgba(224,224,224,0.1)] backdrop-blur-md flex justify-center items-center flex-col">
+          <h1 className="text-xl font-semibold text-black mb-1">{name}</h1>
+          <button
+            className="px-4 py-1 text-sm rounded bg-gradient text-white"
+            onClick={() => navigate(`/eventdetails/${id}`)}
+          >
+            Know More
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

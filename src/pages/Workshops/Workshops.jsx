@@ -18,7 +18,10 @@ const Workshops = () => {
       <Header />
       <Banner text="workshops" bg="workshop-heading" />
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-[10%] lg:grid-cols-3 gap-4 pb-24">
+        <h1 className="text-3xl text-center font-joti text-[#DE7CE7]">
+          Workshops
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-[5%] lg:grid-cols-3 gap-4 pb-24 content-center">
           {!workshopData ? (
             <>
               <div role="status">
