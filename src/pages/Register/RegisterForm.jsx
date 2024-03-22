@@ -123,23 +123,13 @@ const RegisterForm = () => {
         order_id: order.id,
         handler: async function (response) {
           try {
-            console.log(response);
-            console.log(order);
-            const {
-              data: { success },
-            } = await axios.post(
+            const res = await axios.post(
               `${process.env.REACT_APP_BACKEND_URL}/user/order/verify`,
               {
                 razorpay_payment_id: response.razorpay_payment_id,
                 order_id: order.id,
                 razorpay_signature: response.razorpay_signature,
-              }
-            );
-            if (success) {
-              setSettingUser(true);
-              const res = await axios.post(
-                `${process.env.REACT_APP_BACKEND_URL}/user/register`,
-                {
+                userData: {
                   email: data.email,
                   firstName: data.firstName,
                   lastName: data.lastName,
@@ -156,15 +146,13 @@ const RegisterForm = () => {
                   city: data.city,
                   mode: "online_mode",
                   referredBy: data.referal.toLowerCase(),
-                  razorpay_order_id: response.razorpay_order_id,
-                }
-              );
-
-              localStorage.setItem("token", res.data.token);
-              dispatch(userActions.setUser(res.data.user));
-              toast.success("Account created Sucessfully!!");
-              navigate("/profile");
-            }
+                },
+              }
+            );
+            localStorage.setItem("token", res.data.token);
+            dispatch(userActions.setUser(res.data.user));
+            toast.success(res.data.message || "Account created Sucessfully!!");
+            navigate("/profile");
           } catch (error) {
             console.log(error);
             toast.error(
@@ -237,7 +225,8 @@ const RegisterForm = () => {
     setIsLoading(true);
     const decodedUser = jwtDecode(res.credential);
     const { given_name, family_name, email, picture } = decodedUser;
-    const domainPattern = /@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
+    const domainPattern =
+      /^(r|n|s|o)[a-z]{6}@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
 
     try {
       const res = await axios.post(
