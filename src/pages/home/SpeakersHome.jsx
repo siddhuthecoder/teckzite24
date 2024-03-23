@@ -17,12 +17,12 @@ const SpeakersHome = () => {
         transition={{ duration: 2 }}
     >
         <Header />
-        <SideComonent  num="4" text="Speakers" />
-        <div className="w-full hidden md:block">
-            <Swiper2 />
+        <SideComonent  num="3" text="SPEAKERS" />
+        <div className="w-full max-w-[1000px] mx-auto hidden md:block">
+            <Swiper2 slidePerview={2} />
         </div>
         <div className="w-full  md:hidden">
-            <Swiper2 />
+            <Swiper2 slidePerview={1} />
         </div>
 
         

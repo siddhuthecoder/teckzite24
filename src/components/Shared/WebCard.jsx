@@ -2,7 +2,7 @@
 const webCard = ({ img, name, role }) => {
   return (
     <>
-      <div className="team-item mb-5 w-[95%] max-w-[280px] mx-auto ">
+      <div className="team-item my-5 w-[95%] max-w-[280px] mx-auto ">
         <div className="team-thumb relative">
           <div
             className="shape-wrap w-full h-full absolute left-0 bottom-0 z-2"

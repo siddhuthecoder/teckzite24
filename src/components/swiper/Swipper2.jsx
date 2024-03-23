@@ -37,25 +37,67 @@ const Swipper2= ({ slidePerview }) => {
           initialSlide={2}
         >
             <SwiperSlide>
-              <SpeakersCard />
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
             </SwiperSlide>
             <SwiperSlide>
-              <SpeakersCard />
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
             </SwiperSlide>
             <SwiperSlide>
-              <SpeakersCard />
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
             </SwiperSlide>
             <SwiperSlide>
-              <SpeakersCard />
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
             </SwiperSlide>
             <SwiperSlide>
-              <SpeakersCard />
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
             </SwiperSlide>
             <SwiperSlide>
-              <SpeakersCard />
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
             </SwiperSlide>
             <SwiperSlide>
-              <SpeakersCard />
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
             </SwiperSlide>
         </Swiper>
       </div>

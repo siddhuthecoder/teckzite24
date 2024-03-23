@@ -23,9 +23,17 @@ const EventsBanner = () => {
     }, []);
 
     const blurValue = 1 + scroll * 0.050;
+        
+  const maxOpacity = 0.16111;
+  let opacity = 1 - (scroll * 1.4) / (window.innerHeight / 1);
+
+  if (opacity < maxOpacity) {
+    opacity = maxOpacity;
+  }
+
+  console.log(opacity);
     const backgroundStyle = {
-        opacity: `${1 - scroll / (window.innerHeight / 2)}`,
-        // filter: `blur(${blurValue}px)`,
+        opacity:opacity,
         backgroundPosition: 'center bottom',
         backgroundSize: "cover",
         position: 'fixed',
@@ -33,15 +41,15 @@ const EventsBanner = () => {
         left: '0px'
     };
 
+
+  
+
     const headingStyle = {
         opacity: 1 - scroll / (window.innerHeight / 2),
         fontSize: "100px"
 
     };
-    const opacity = `${1 - scroll / (window.innerHeight / 2)}`;
-    const fontSize = `${100 - scroll * (1) / 2}px`;
-    const backgroundSize = `${170 + scroll / 2}%`;
-    const marginTop = `${-80 + scroll * 1.8 * 1 / 1}px`;
+
 
     return (
         <>
