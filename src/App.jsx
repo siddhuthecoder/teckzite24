@@ -42,7 +42,7 @@ import { fetchUser } from "./store/userSlice";
 import { PageNotFound } from "./components/PageNotFound";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
   const eventError = useSelector((state) => state.event.error);
