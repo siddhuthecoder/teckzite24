@@ -8,29 +8,6 @@ import subject from "../../assets/img/contact/subject.svg";
 import text from "../../assets/img/contact/textarea.svg";
 
 const Contact = () => {
-  const [count, setCount] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      let isScroll = false;
-      if (!isScroll) {
-        isScroll = true;
-        if (window.scrollY > 0) {
-          setCount((prevCount) => Math.min(prevCount + 1, 5));
-        } else {
-          setCount((prevCount) => Math.max(prevCount - 1, 1));
-        }
-        console.log(count);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [count]);
-
   return (
     <section className="absolute top-0 bg-black w-full m-auto overflow-x-hidden">
       <Header />
