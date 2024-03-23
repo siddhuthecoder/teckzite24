@@ -25,6 +25,7 @@ import {
   // Schedule,
   About,
   EventUpdates,
+  ScrollHome,
 } from "./pages";
 
 import { Preloader } from "./components";
@@ -129,7 +130,7 @@ function App() {
           <main className="animate-show">
             <BackgroundAnimation />
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<ScrollHome />} />
               <Route path="/events" element={<Events />} />
               <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />

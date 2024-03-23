@@ -133,12 +133,10 @@ const WorkshopDetails = () => {
                 {activeTab === "Structure" && <Structure data={data} />}
               </div>
               <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
-                <h1 className="font-semibold text-lg">Prize Money :- </h1>
-                {data.prizeMoney ? (
+                <h1 className="font-semibold text-lg">Registration Fee :- </h1>
+                {data.entryFee ? (
                   <>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: data.prizeMoney }}
-                    />
+                    <div dangerouslySetInnerHTML={{ __html: data.entryFee }} />
                   </>
                 ) : (
                   "Updated soon"

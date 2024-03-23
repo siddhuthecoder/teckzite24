@@ -492,6 +492,7 @@ const RegisterForm = () => {
                     <option value="CHEM">CHEM</option>
                     <option value="CIVIL">CIVIL</option>
                     <option value="MME">MME</option>
+                    <option value="ROBOTICS">ROBOTICS</option>
                   </select>
                 </div>
                 {/* Gender */}

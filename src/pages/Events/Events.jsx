@@ -39,6 +39,7 @@ const Events = () => {
             "MECH",
             "CHEM",
             "CIVIL",
+            "ROBOTICS",
           ].map((item, index) => (
             <button
               key={index}

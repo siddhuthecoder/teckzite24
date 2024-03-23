@@ -278,13 +278,13 @@ select option {
 
 /* Footer */
 .footer_container {
-  height: 60px;
+  height: 56px;
   position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
   background: url("../public/footer.png") no-repeat bottom center fixed;
-  background-size: auto 60px;
+  background-size: auto 56px;
 }
 
 @media (max-width: 768px) {

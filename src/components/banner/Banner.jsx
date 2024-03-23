@@ -32,8 +32,17 @@ const Banner = ({ bg, text }) => {
   } else if (width <= 500) {
     backgroundSize = `${330 + (scroll * 0.7 * 3) / 2}%`;
   }
+  const maxOpacity = 0.16111;
+  let opacity = 1 - (scroll * 1.4) / (window.innerHeight / 1);
 
-  const opacity = 1 - scroll / (window.innerHeight / 1);
+  if (opacity < maxOpacity) {
+    opacity = maxOpacity;
+  }
+
+  console.log(opacity);
+  const opacity2 = 1 - (scroll * 4) / (window.innerHeight / 1);
+
+  console.log(opacity);
 
   const DesktopBg = ({ bg }) => {
     return (
@@ -51,10 +60,15 @@ const Banner = ({ bg, text }) => {
           }}
         ></div>
         <div
-          className={`${bg} w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[10]  `}
+          className={`${bg} w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[1  `}
           style={{ position: "fixed", top: "0px", left: "0px", opacity }}
         >
-          <div className={` text-[50px] sm: md:text-[87px]`} style={{}}>
+          <div
+            className={` text-[50px] sm: md:text-[87px] ${
+              scroll > 1000 ? "hidden" : ""
+            }`}
+            style={{ opacity2 }}
+          >
             {text}
           </div>
         </div>

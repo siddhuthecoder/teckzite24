@@ -174,7 +174,11 @@ const EventDetailsCard3 = () => {
                   <Structure structure={data.structure} />
                 )}
                 {activeTab === "Description" && (
-                  <Description desc={data.desc} rules={data.rules} />
+                  <Description
+                    desc={data.desc}
+                    rules={data.rules}
+                    teamSize={data.teamSize}
+                  />
                 )}
                 {activeTab === "Contact" && (
                   <Contact contact={data.contact_info} />

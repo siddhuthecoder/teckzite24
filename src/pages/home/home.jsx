@@ -7,9 +7,9 @@ import "../../css/glitch2.scss";
 
 const Home = () => {
   return (
-    <main>
+    <main  >
       <Header />
-      <div className="absolute top-0 left-0 w-full h-full z-2 overflow-hidden">
+      <div className="absolute  top-0 left-0 w-full h-full z-2 overflow-hidden">
         <video
           src={video}
           autoPlay
@@ -31,9 +31,6 @@ const Home = () => {
               TECKZITE
             </div>
           </div>
-          {/*             <div className="w-full ">
-              <div className="glitch fixed bottom w-full text-center text-[30px] bottom-[10%] " data-glitch="META VERSE" style={{}}>META VERSE</div>
-            </div> */}
         </div>
       </div>
     </main>

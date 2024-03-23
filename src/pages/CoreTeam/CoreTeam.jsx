@@ -1,9 +1,7 @@
 // import TeamCard from '../../components/Shared/TeamCard';
 import Header from "../../components/Header/Header";
 import WebCard from "../../components/Shared/WebCard";
-import CoreteamBanner from "./coreteamBanner";
-import Banner from '../../components/banner/Banner'
-
+import Banner from "../../components/banner/Banner";
 
 import { CoreTeamData } from "../../constants";
 const CoreTeam = () => {
@@ -23,5 +21,5 @@ const CoreTeam = () => {
     </>
   );
 };
-// jhbsdj
+
 export default CoreTeam;

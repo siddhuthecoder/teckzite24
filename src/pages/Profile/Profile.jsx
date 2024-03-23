@@ -29,8 +29,13 @@ const Profile = () => {
   return (
     <>
       <Header />
-      <div className=" flex items-center min-h-[100vh] justify-center backdrop-blur-lg w-full ">
-        <div className="w-[97%] max-w-[900px] mx-auto flex-col my-[10%] pt-4 pb-10  border-[#A301B1] border-[1px]  relative">
+      <div
+        className=" flex items-center min-h-[100vh] justify-center w-full bg-fixed bg-center"
+        style={{
+          backgroundImage: "url('../../../register.png')",
+        }}
+      >
+        <div className="w-[97%] bg-transparent max-w-[900px] mx-auto flex-col my-[10%] pt-4 max-md:mt-24 pb-10  border-[white] border-[1px] rounded-md  relative">
           <img
             src={s1}
             alt=""
@@ -75,57 +80,57 @@ const Profile = () => {
             )}
           </div>
           <div className="w-full grid grid-cols-1 md:grid-cols-2">
-            <div className="ps-[40px] md:ps-[40px] flex flex-col">
+            <div className="ps-[0px] md:ps-[40px] flex flex-col">
               <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[grey]">
+                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
                   Name of Student{" "}
                   <span className="hidden md:inline-block">:-</span>{" "}
                 </div>
-                <div className="font-bold text-2xl md:text-[20px] text-[#A301B1]">
+                <div className="font-normal text-xl max-md:text-xl  md:text-[20px] text-[white] max-md:text-center">
                   {userData.firstName} {userData.lastName}
                 </div>
               </div>
               <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[grey]">
+                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
                   Student ID <span className="hidden md:inline-block">:-</span>{" "}
                 </div>
-                <div className="font-bold text-2xl md:text-[20px] text-[#A301B1]">
+                <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
                   {userData.collegeId.toUpperCase()}
                 </div>
               </div>
               <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[grey]">
+                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
                   Teckzite ID <span className="hidden md:inline-block">:-</span>{" "}
                 </div>
-                <div className="font-bold text-2xl md:text-[20px] text-[#A301B1]">
+                <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
                   {userData.tzkid.toUpperCase()}
                 </div>
               </div>
             </div>
-            <div className="ps-[40px] md:ps-[40px] flex flex-col">
+            <div className="ps-[0] md:ps-[40px] flex flex-col">
               <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[grey]">
+                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
                   University Name{" "}
                   <span className="hidden md:inline-block">:-</span>{" "}
                 </div>
-                <div className="font-bold text-2xl md:text-[20px] text-[#A301B1]">
+                <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
                   {userData.college.toUpperCase()}
                 </div>
               </div>
               <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[grey]">
+                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
                   Year & Branch{" "}
                   <span className="hidden md:inline-block">:-</span>{" "}
                 </div>
-                <div className="font-bold text-2xl md:text-[20px] text-[#A301B1]">
+                <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
                   {userData.year.toUpperCase()} {userData.branch.toUpperCase()}
                 </div>
               </div>
               <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[grey]">
+                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
                   Email <span className="hidden md:inline-block">:-</span>{" "}
                 </div>
-                <div className="font-bold text-lg pt-2 md:text-[12px] text-[#A301B1]">
+                <div className="font-normal text-lg pt-2 md:text-[14px] text-[white] max-md:text-center">
                   {userData.email}
                 </div>
               </div>
