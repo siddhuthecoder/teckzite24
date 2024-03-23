@@ -35,7 +35,7 @@ const Profile = () => {
           backgroundImage: "url('../../../register.png')",
         }}
       >
-        <div className="w-[97%] bg-transparent max-w-[900px] mx-auto flex-col my-[10%] pt-4 max-md:mt-24 pb-10  border-[white] border-[1px] rounded-md  relative">
+        <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] pt-4 max-md:mt-24 pb-10  border-[white] border-[1px] rounded-md  relative">
           <img
             src={s1}
             alt=""
