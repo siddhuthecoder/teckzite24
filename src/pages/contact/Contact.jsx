@@ -19,6 +19,7 @@ const Contact = () => {
     updateSize();
     return () => window.removeEventListener("resize", updateSize);
   }, []);
+
   return (
     <section className="absolute top-0 bg-black w-[99vw] m-auto overflow-x-hidden">
       <Header />
