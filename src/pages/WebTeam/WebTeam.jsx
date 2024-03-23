@@ -11,11 +11,16 @@ const WebTeam = () => {
     <>
       <Header />
       <Banner text="WEB TEAM" bg="web-heading" />
-      <div className="w-full lg:hidden">
-        <SwipperModule data={WebTeamCard} width={"max-w-[1000px]"} slidePerview={1} />
-      </div>
-      <div className="w-full hidden lg:block">
-        <SwipperModule data={WebTeamCard} width={""} slidePerview={2} />
+      <div className="w-full my-[10%] min-h-[80vh]">
+        <div className="text-center main-heading">Web Team</div>
+        <div className="w-full grid grid-cols-1 ">
+          <WebCard name="sribabu" role="web" img=""  />
+        </div>
+        <div className="w-full grid grid-cols-1 md:grid-cols-3">
+          <WebCard name="sribabu" role="web" img=""  />
+          <WebCard name="sribabu" role="web" img=""  />
+          <WebCard name="sribabu" role="web" img=""  />
+        </div>
       </div>
     </>
   );
@@ -24,3 +29,4 @@ const WebTeam = () => {
 export default WebTeam;
 
 //grid grid-cols-4 gap-x-20 max-sm:grid-cols-1 m-6 max-lg:grid-cols-2 max-lg:gap-6
+

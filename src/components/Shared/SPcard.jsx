@@ -18,15 +18,6 @@ const SpeakersCard = () => {
       <div className="flex  w-[216px] justify-center items-center h-[336px] m-[40px]  relative">
         <div className="w-[170px] h-[300px] relative">
           <img src={img} alt="" />
-          <div
-            className="absolute  bottom-0 rounded-[10px] w-[100%] mx-auto h-[100px] backdrop-blur-lg flex flex-col  z-[1] "
-            style={{}}
-          >
-            <div className="text-center font-bold font-ROG">SRIBABU</div>
-            <div className="text-center text-[20px] font-ROG">
-              Web developer
-            </div>
-          </div>
         </div>
         <img src={sp1} alt="" className="absolute pointer-events-none" />
         <img

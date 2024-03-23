@@ -66,6 +66,7 @@ const Profile = () => {
             alt=""
             className="absolute bottom-[-55px] right-[30.8%] scale-x-[0.6]"
           />
+          <div className="text-center main-heading">Profile</div> 
           <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-gradient">
             {userData.img && userData.img !== "" ? (
               <img

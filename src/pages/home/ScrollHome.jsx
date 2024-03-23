@@ -6,6 +6,7 @@ import Home from './home'
 import Home1 from './home1'
 import SpeakersHome from './SpeakersHome';
 import SponsersHome from './SponsersHome';
+import StatusHome from './StatusHome';
 
 const ScrollHome = () => {
     const [scroll, setScroll] = useState(0);
@@ -33,13 +34,15 @@ const ScrollHome = () => {
             }
             {scroll > 500 && scroll <= 1000 && <AboutHome />
             }
-            {scroll > 1000 && scroll <= 1500 && <SocialIcons />
+            {scroll > 1000 && scroll <= 1500 && <StatusHome />
             }
-            {scroll > 1500 && scroll <= 2000 && <SponsersHome />
+            {scroll > 1500 && scroll <= 2000 && <SpeakersHome />
             }
-            {scroll > 2000 && scroll <= 2400 && <SpeakersHome />
+            {scroll > 2000 && scroll <= 2500 && <SponsersHome />
             }
-            <div className="w-full h-[2400px]"></div>
+            {scroll > 2500 && scroll <= 2900 && <SocialIcons />
+            }
+            <div className="w-full h-[2800px]"></div>
         </>
 
     )
