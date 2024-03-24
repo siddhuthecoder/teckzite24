@@ -24,7 +24,7 @@ const SocialIcons = () => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
-        className="w-[100%] mx-auto  h-[100vh] flex flex-col justify-between  items-center"
+        className="  w-[100%] mx-auto  h-[100vh] flex flex-col justify-between  items-center"
         style={{
           position: "sticky",
           top: "0px",
@@ -34,7 +34,7 @@ const SocialIcons = () => {
         }}
       >
         <Header />
-        <SideComonent num="4" text="Connect" />
+        <SideComonent num="5" text="Connect" />
         <div className="w-[100%] mx-auto h-[40px]  z-[20]"></div>
         <div className="flex flex-col w-[100%]">
           <motion.div

@@ -3,6 +3,7 @@ import '../../css/home.css';
 import { motion } from 'framer-motion'
 import Header from '../../components/Header/Header'
 import SideComonent from './SideComonent'
+import rect from "../../assets/img/speakers/rect.svg";
 
 
 const StatusHome = () => {
@@ -38,7 +39,7 @@ const StatusHome = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="w-full justify-center items-center flex-col h-[100vh]" style={{ overflowY: "scroll", position: "sticky", top: "0px", left: "0px" }}>
+                className=" w-full justify-center items-center flex-col h-[100vh]" style={{ overflowY: "scroll", position: "sticky", top: "0px", left: "0px",opacity:"0.5" }}>
                 <Header />
                 <SideComonent num="2" text="STATISTICS" />
                 
@@ -51,7 +52,15 @@ const StatusHome = () => {
                                 animate={{ y: 0, opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.5, delay: 0.5 + 0.099 * index, type: 'spring', stiffness: 300 }}
-                                key={index} className="w-[150px] h-[150px] md:w-[150px] md:h-[150px]  flex flex-col icon-bg mx-3 ">
+                                key={index} className="w-[150px] h-[150px] md:w-[150px] md:h-[150px]  flex flex-col icon-bg mx-3  relative"  style={{
+                                    backgroundImage:
+                                      "repeating-linear-gradient(45deg,#262626,#1a1a1a 7px ,#1a1a1a 7px",
+                                  }}>
+                                    <img
+                                    src={rect}
+                                    alt=""
+                                    className="absolute bottom-[-10px] scale-x-[0.5] left-[-35px]"
+                                    />
                                 <div className="w-full items-center justify-center   text-[30px] grad-text font-bold  flex">
                                     <Counter className="" count={item.count} />
                                     <div className="text-white px-3" style={{ fontSize: "20px" }}>+</div>

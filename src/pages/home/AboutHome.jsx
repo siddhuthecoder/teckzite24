@@ -20,7 +20,7 @@ const AboutHome = () => {
     };
 
     return (
-        <motion.section className="relative w-full min-h-[100vh] flex-col flex justify-center z-[5]" style={{
+        <motion.section className=" relative w-full min-h-[100vh] flex-col flex justify-center z-[5]" style={{
             position: "sticky",
             top: "0px",
             left: "0px"
@@ -39,7 +39,7 @@ const AboutHome = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1, delay: 0.5, type: 'spring', stiffness: 150 }} //
                     className=" h-screen   flex justify-center items-center w-full flex-wrap ">
-                        <div className="about-bg  p-2   rounded-[4px] w-full relative max-w-[500px] " style={{ overflow: "hidden" }}>
+                        <div className="about-bg     rounded-[4px] w-full relative max-w-[500px] " style={{ overflow: "hidden" }}>
                             <iframe
                                 title="YouTube Video"
                                 ref={videoRef}
@@ -64,10 +64,19 @@ const AboutHome = () => {
                         </div>
                         <div className="w-full max-w-[500px]   justify-between flex flex-col min-h-[10vh] ps-[20px] ">
                             <div className="font-bold text-2xl md:text-3xl ">About</div>
-                            <p className="text-[grey] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                            <p className="text-[purple] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
                                 m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
                                 est! Quae odio, animi ab delectus doloribus quod deserunt.
                             </p>
+                            <p className="text-[purple] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                                m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
+                                est! Quae odio, animi ab delectus doloribus quod deserunt.
+                            </p>
+                            <p className="text-[purple] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                                m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
+                                est! Quae odio, animi ab delectus doloribus quod deserunt.
+                            </p>
+
                             
                             <div className="w-full flex  flex-row-reverse px-[20px]">Know more...</div>
                         </div>

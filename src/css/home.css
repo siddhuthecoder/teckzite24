@@ -24,9 +24,14 @@
 
 .video-clip {
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-  transform: scale(2);
+  transform: scale(0.8);
   margin-bottom: 5px;
-  background-image: linear-gradient(45deg, #743ad5, #d53a9d);
+  background-image:linear-gradient(
+    to right bottom,
+    #9b1ba7,
+    #57128f,
+    #a301b1
+  );;
 }
 
 img.neon-img {

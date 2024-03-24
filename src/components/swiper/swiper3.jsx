@@ -1,107 +1,100 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import WebCard from '../../components/Shared/WebCard';
-import left from '../../assets/img/after.webp'
-import right from '../../assets/img/before.webp'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import SpeakersCard from '../Shared/SPcard';
 
 
-const Swipper2= ({ slidePerview }) => {
-  const swiperRef = useRef(null);
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
+const Swiper3 = ({slidesPerView}) => {
   return (
-    <div className="w-full flex items-center justify-center h-[100vh] overflow-hidden">
-      <div className={`w-full  flex items-center justify-between  `}>
-        
-        <Swiper
-           spaceBetween={4}
-           slidesPerView={slidePerview}
-           centeredSlides={true}
-           Pagination={{
-             clickable: true,
-           }}
-           loop={true}
-           autoplay={{
-             delay: 2000,
-             disableOnInteraction: false,
-           }}
-           modules={[Autoplay, Pagination]}
-           className="mySwiper relative"
-           ref={swiperRef}
-           initialSlide={2}
-        >
-            <SwiperSlide>
-              {({isActive}) => (
-                <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
-                      <SpeakersCard  />
-                  </div>
-                </>
-              )}
-            </SwiperSlide>
-            <SwiperSlide>
-              {({isActive}) => (
-                <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
-                      <SpeakersCard  />
-                  </div>
-                </>
-              )}
-            </SwiperSlide>
-            <SwiperSlide>
-              {({isActive}) => (
-                <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
-                      <SpeakersCard  />
-                  </div>
-                </>
-              )}
-            </SwiperSlide>
-            <SwiperSlide>
-              {({isActive}) => (
-                <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
-                      <SpeakersCard  />
-                  </div>
-                </>
-              )}
-            </SwiperSlide>
-            <SwiperSlide>
-              {({isActive}) => (
-                <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
-                      <SpeakersCard  />
-                  </div>
-                </>
-              )}
-            </SwiperSlide>
-            <SwiperSlide>
-              {({isActive}) => (
-                <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
-                      <SpeakersCard  />
-                  </div>
-                </>
-              )}
-            </SwiperSlide>
-            <SwiperSlide>
-              {({isActive}) => (
-                <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
-                      <SpeakersCard  />
-                  </div>
-                </>
-              )}
-            </SwiperSlide>
-        </Swiper>
-      </div>
-    </div>
-  );
-};
+    <>
+      <Swiper
+        spaceBetween={5}
+        centeredSlides={true}
+        slidesPerView={slidesPerView}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper  w-[95%] max-w-[800px] mx-auto"
+        initialSlide={2}
 
-export default Swipper2
+      >
+         <SwiperSlide>
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
+            </SwiperSlide>
+            <SwiperSlide>
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
+            </SwiperSlide>
+            <SwiperSlide>
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
+            </SwiperSlide>
+            <SwiperSlide>
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
+            </SwiperSlide>
+            <SwiperSlide>
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
+            </SwiperSlide>
+            <SwiperSlide>
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
+            </SwiperSlide>
+            <SwiperSlide>
+              {({isActive}) => (
+                <>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                      <SpeakersCard  />
+                  </div>
+                </>
+              )}
+            </SwiperSlide>
+      </Swiper>
+    </>
+  );
+}
+export default Swiper3

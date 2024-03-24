@@ -1,7 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 import Header from '../../components/Header/Header'
-import Swiper2 from '../../components/swiper/Swipper2'
+import Swiper3 from '../../components/swiper/swiper3'
 import SideComonent from './SideComonent'
 
 const SpeakersHome = () => {
@@ -17,12 +17,12 @@ const SpeakersHome = () => {
         transition={{ duration: 2 }}
     >
         <Header />
-        <SideComonent  num="3" text="SPEAKERS" />
+        <SideComonent  num="4" text="SPEAKERS" />
         <div className="w-full max-w-[1000px] mx-auto hidden md:block">
-            <Swiper2 slidePerview={2} />
+            <Swiper3 slidesPerView={3} />
         </div>
         <div className="w-full  md:hidden">
-            <Swiper2 slidePerview={1} />
+            <Swiper3 slidesPerView={1} />
         </div>
 
         

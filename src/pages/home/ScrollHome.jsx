@@ -5,6 +5,7 @@ import Home1 from "./home1";
 import SpeakersHome from "./SpeakersHome";
 import SponsersHome from "./SponsersHome";
 import StatusHome from "./StatusHome";
+import '../../css/referrals.css'
 
 const ScrollHome = () => {
   const [scroll, setScroll] = useState(0);
@@ -48,8 +49,8 @@ const ScrollHome = () => {
       {scroll > 500 && scroll <= 1000 && <AboutHome />}
       {scroll > 1000 && scroll <= 1500 && <StatusHome />}
       {scroll > 1500 && scroll <= 2000 && <SpeakersHome />}
-      {scroll > 2000 && scroll <= 2500 && <SocialIcons />}
-      {scroll > 2500 && scroll <= 3000 && <SponsersHome />}
+      {scroll > 2000 && scroll <= 2500 && <SponsersHome />}
+      {scroll > 2500 && scroll <= 3000 &&  <SocialIcons />}
       <div className="w-full h-[2800px]"></div>
     </>
   );
