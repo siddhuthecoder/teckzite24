@@ -28,13 +28,10 @@ const userSlice = createSlice({
       state.data = null;
     },
     addEvent: (state, action) => {
-      if (state.data) {
-        const regEvents = state.data.regEvents;
-        regEvents.push(action.payload);
-        state.data.regEvents = regEvents;
-      }
+      state.data.regEvents.push(action.payload);
     },
   },
+
   extraReducers: (builders) => {
     builders.addCase(fetchUser.pending, (state, action) => {
       state.status = "loading";

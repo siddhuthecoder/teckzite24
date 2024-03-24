@@ -21,6 +21,7 @@ const EventDetailsCard3 = () => {
   const [data, setData] = useState(null);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [isReg, setIsReg] = useState(false);
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const EventDetailsCard3 = () => {
   }, [id, eventData, navigate]);
 
   const handleRegister = async () => {
+    setIsReg(true);
     if (!userData) {
       toast.error("Log in to register to an event");
       return;
@@ -65,6 +67,7 @@ const EventDetailsCard3 = () => {
               },
             }
           );
+          setIsReg(false);
           toast.success("Registered for the event Successfully");
           dispatch(userActions.addEvent(res.data.event));
           navigate("/profile");
@@ -75,6 +78,7 @@ const EventDetailsCard3 = () => {
       }
     } else {
       setRegisterForm(true);
+      setIsReg(false);
       return;
     }
   };
@@ -157,7 +161,7 @@ const EventDetailsCard3 = () => {
                 className="px-8 py-1.5 rounded bg-gradient"
                 onClick={handleRegister}
               >
-                Register
+                {isReg ? "Registering..." : "Register"}
               </button>
             </div>
 
@@ -252,7 +256,7 @@ const EventDetailsCard3 = () => {
         aria-hidden="true"
         className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center z-[1200] scroll_in"
       >
-        <div className="bg-white text-black w-full max-w-lg p-4 rounded-lg shadow-lg max-h-[90vh] scroll_in">
+        <div className="bg-white text-black w-[95%] max-w-lg p-4 rounded shadow-lg max-h-[90vh] scroll_in">
           <div className="flex items-center justify-between pb-4 border-b">
             <h3 className="text-xl font-semibold text-black">{data.name}</h3>
             <button
@@ -316,16 +320,19 @@ const EventDetailsCard3 = () => {
 
                 if (empty) {
                   toast.error("Invalid Teckzides Ids");
+                  setLoading(false);
                 } else if (dups) {
                   toast.error("Duplicate Teckzides Ids are not allowed");
+                  setLoading(false);
                 } else if (!flag) {
                   toast.error(
                     "Invalid Teckzite Ids !!\n You must be a part of team"
                   );
+                  setLoading(false);
                 } else {
                   const token = localStorage.getItem("token");
                   try {
-                    await axios.post(
+                    const res = await axios.post(
                       `${process.env.REACT_APP_BACKEND_URL}/events/register/${data._id}`,
                       {
                         tzkIds: teamMembers,
@@ -336,16 +343,20 @@ const EventDetailsCard3 = () => {
                         },
                       }
                     );
+                    setLoading(false);
+                    toast.success("Registered for the event Successfully");
+                    dispatch(userActions.addEvent(res.data.event));
+                    navigate("/profile");
                   } catch (error) {
                     toast.error(
                       error?.response?.data.message || "Internal Server Error"
                     );
+                    setLoading(false);
                   } finally {
                     setRegisterForm(false);
+                    setLoading(false);
                   }
                 }
-
-                setLoading(false);
               }}
             >
               {loading ? "Registering...." : "Register"}

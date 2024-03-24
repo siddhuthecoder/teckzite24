@@ -42,7 +42,7 @@ import { fetchUser } from "./store/userSlice";
 import { PageNotFound } from "./components/PageNotFound";
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   const eventError = useSelector((state) => state.event.error);
@@ -67,9 +67,7 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 5000);
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -123,7 +121,7 @@ function App() {
         }}
       /> */}
       {loading ? (
-        <Preloader />
+        <Preloader setLoading={setLoading} loading={loading} />
       ) : (
         <>
           <Toaster />

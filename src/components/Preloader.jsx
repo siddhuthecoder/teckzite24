@@ -17,15 +17,44 @@
 // export default Preloader;
 
 import { useEffect, useState } from "react";
+import preloader1 from "../assets/preloader.png";
+import preloader2 from "../assets/preloader1.png";
 
-const Preloader = () => {
+const Preloader = ({ setLoading }) => {
   const [isStart, setIsStart] = useState(false);
+  const [startCount, setStartCount] = useState(false);
+  const [currentTime, setCurrentTime] = useState("");
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsStart(true);
-  //   }, 2000);
-  // }, []);
+  useEffect(() => {
+    if (isStart) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    }
+  }, [isStart, setLoading]);
+
+  const handleStart = () => {
+    setTimeout(() => {
+      setIsStart(true);
+    }, 2000);
+    setStartCount(true);
+  };
+
+  useEffect(() => {
+    const fetchCurrentTime = () => {
+      const now = new Date().toLocaleString("en-US", {
+        timeZone: "Asia/Kolkata",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: false,
+      });
+      setCurrentTime(now);
+    };
+
+    setInterval(fetchCurrentTime, 1000);
+    fetchCurrentTime();
+  }, []);
 
   const Whole = ({ left }) => {
     return (
@@ -34,15 +63,29 @@ const Preloader = () => {
           left && "-translate-x-1/2"
         }`}
       >
-        <h1 className="text-3xl uppercase font-koneMono">Present Time</h1>
-        <div className="my-8 flex items-center justify-evenly w-[90%] max-w-[1000px]">
-          <h2 className="text-4xl">MAR 23 , 2024 22:30</h2>
+        <img
+          src={preloader1}
+          alt="preloaderimg"
+          className="absolute h-[1000px] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 max-md:hidden"
+        />
+        <img
+          src={preloader2}
+          alt="preloaderimg"
+          className="absolute w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2] scale-y-[1.5] -translate-y-1/2 md:hidden"
+        />
+        <h1 className="text-3xl max-md:text-lg max-md:pl-4 uppercase font-koneMono mt-10">
+          Present Time
+        </h1>
+        <div className="my-8 max-md:pl-4 flex items-center justify-evenly w-[90%] max-w-[1000px]">
+          <h2 className="text-4xl max-md:text-2xl">{currentTime}</h2>
         </div>
         <button
-          className="bg-red-600 mt-3 px-5 py-1.5 border rounded border-red-700"
+          onClick={handleStart}
+          className="bg-red-600 mt-3 max-md:ml-4 px-5 py-1.5 border rounded border-red-700"
           style={{
             borderWidth: "5px",
             filter:
+              !startCount &&
               "hue-rotate(137deg) drop-shadow(0 0 20px #23a347) brightness(120%)",
           }}
         >
