@@ -23,7 +23,11 @@ import preloader2 from "../assets/preloader1.png";
 const Preloader = ({ setLoading }) => {
   const [isStart, setIsStart] = useState(false);
   const [startCount, setStartCount] = useState(false);
-  const [currentTime, setCurrentTime] = useState("");
+  const [hour, setHour] = useState("");
+  const [minute, setMinute] = useState("");
+  const [second, setSecond] = useState("");
+  const [date, setDate] = useState("");
+  const [month, setMonth] = useState("");
 
   useEffect(() => {
     if (isStart) {
@@ -37,23 +41,38 @@ const Preloader = ({ setLoading }) => {
     setTimeout(() => {
       setIsStart(true);
     }, 2000);
+    startTimer();
     setStartCount(true);
+  };
+
+  const startTimer = () => {
+    const interval = setInterval(() => {
+      setSecond((p) => (p + 5) % 60);
+      setHour((p) => (p + 5) % 24);
+      setMinute((p) => (p + 5) % 60);
+      setMonth((p) => (p + 1) % 12);
+      setDate((p) => (p + 2) % 31);
+    }, 10);
+
+    setTimeout(() => {
+      clearInterval(interval);
+    }, 2000);
   };
 
   useEffect(() => {
     const fetchCurrentTime = () => {
-      const now = new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Kolkata",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-        hour12: false,
-      });
-      setCurrentTime(now);
+      const now = new Date();
+      setHour(now.getHours().toString().padStart(2, "0"));
+      setMinute(now.getMinutes().toString().padStart(2, "0"));
+      setSecond(now.getSeconds().toString().padStart(2, "0"));
+      setDate(now.getDate().toString().padStart(2, "0"));
+      setMonth((now.getMonth() + 1).toString().padStart(2, "0"));
     };
 
-    setInterval(fetchCurrentTime, 1000);
+    const interval = setInterval(fetchCurrentTime, 1000);
     fetchCurrentTime();
+
+    return () => clearInterval(interval);
   }, []);
 
   const Whole = ({ left }) => {
@@ -74,10 +93,14 @@ const Preloader = ({ setLoading }) => {
           className="absolute w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2] scale-y-[1.5] -translate-y-1/2 md:hidden"
         />
         <h1 className="text-3xl max-md:text-lg max-md:pl-4 uppercase font-koneMono mt-10">
-          Present Time
+          {!startCount ? "Present Time" : "Travelling"}
         </h1>
         <div className="my-8 max-md:pl-4 flex items-center justify-evenly w-[90%] max-w-[1000px]">
-          <h2 className="text-4xl max-md:text-2xl">{currentTime}</h2>
+          <h2 className="text-4xl max-md:text-2xl">
+            {isStart
+              ? "-- : -- : -- - --/--"
+              : `${hour}:${minute}:${second} - ${date}/${month}`}
+          </h2>
         </div>
         <button
           onClick={handleStart}

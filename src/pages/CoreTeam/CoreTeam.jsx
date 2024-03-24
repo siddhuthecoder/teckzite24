@@ -9,6 +9,7 @@ const CoreTeam = () => {
     <>
       <Header />
       <Banner text="CORE TEAM" bg="core-heading" />
+      <div className="text-center font-joti text-3xl my-7">Web Team</div>
       <div className="max-w-10xl h-[100vh]  mb-[10%] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-20 gap-4   ">
           {CoreTeamData.map((t) => (
