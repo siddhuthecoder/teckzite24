@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import WebBanner from "./WebBanner";
 import SwipperModule from "../../components/swiper/Swiper";
 import Banner from "../../components/banner/Banner";
+import sri from '../../assets/img/sribabu.png'
 
 const WebTeam = () => {
   return (
@@ -14,7 +15,7 @@ const WebTeam = () => {
       <div className="w-full my-[10%] min-h-[80vh]">
         <div className="text-center main-heading">Web Team</div>
         <div className="w-full grid grid-cols-1 ">
-          <WebCard name="sribabu" role="web" img=""  />
+          <WebCard name="sribabu" role="web" img={sri}  />
         </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-3">
           <WebCard name="sribabu" role="web" img=""  />
