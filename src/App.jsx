@@ -40,6 +40,7 @@ import EWCard from "./components/Shared/EWCard";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 import { fetchUser } from "./store/userSlice";
 import { PageNotFound } from "./components/PageNotFound";
+import ComingSoon from "./components/ComingSoon";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -132,18 +133,21 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />
-              <Route path="/coreteam" element={<CoreTeam />} />
+              {/* <Route path="/coreteam" element={<CoreTeam />} /> */}
+              <Route path="/coreteam" element={<ComingSoon />} />
               <Route path="/webteam" element={<WebTeam />} />
               <Route path="/register" element={<Register />} />
               <Route path="/team" element={<TeamCard />} />
-              <Route path="/contact" element={<Contact />} />
+              {/* <Route path="/contact" element={<Contact />} /> */}
+              <Route path="/contact" element={<ComingSoon />} />
               <Route path="/swiper" element={<SwiperModule />} />
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<EWCard />} />
               <Route path="/ed" element={<EDcard />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
-              <Route path="/eventupdates" element={<EventUpdates />} />
+              <Route path="/eventupdates" element={<ComingSoon />} />
+              {/* <Route path="/eventupdates" element={<EventUpdates />} /> */}
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}
