@@ -28,8 +28,8 @@ const Events = () => {
       <Header />
       <EventsBanner />
       <div className="w-full flex flex-col z-10 min-h-[85vh] pb-5 sticky">
-        <div className="text-center main-heading">Events</div>
-        <div className="w-full flex items-center justify-center flex-wrap mt-3">
+        <div className="text-center font-joti text-3xl">Events</div>
+        <div className="w-full flex items-center justify-center flex-wrap mt-7">
           {[
             "ALL",
             "PUC",
