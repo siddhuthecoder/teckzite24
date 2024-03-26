@@ -24,8 +24,6 @@ const SpeakersHome = () => {
         <div className="w-full  md:hidden">
             <Swiper3 slidesPerView={1} />
         </div>
-
-        
     </motion.section>
   )
 }

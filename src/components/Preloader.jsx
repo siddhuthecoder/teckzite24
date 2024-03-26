@@ -1,23 +1,7 @@
-// const Preloader = () => {
-//   return (
-//     <div className="flex items-center justify-center h-screen">
-//       <video
-//         className="absolute inset-0 w-full h-full object-cover"
-//         autoPlay
-//         muted
-//         playsInline
-//         // poster="../../favicon.png"
-//       >
-//         <source src="../../preloader.mp4" type="video/mp4" />
-//       </video>
-//     </div>
-//   );
-// };
-
-// export default Preloader;
-
 import { useEffect, useState } from "react";
 import BackgroundAnimation from "./Shared/BackgroundAnimation";
+import '../css/glitch.scss'
+import '../css/glitch2.scss'
 
 const Preloader = ({ setLoading }) => {
   const [isStart, setIsStart] = useState(false);
@@ -27,6 +11,13 @@ const Preloader = ({ setLoading }) => {
   const [second, setSecond] = useState("");
   const [date, setDate] = useState("");
   const [month, setMonth] = useState("");
+  const [isToggled, setIsToggled] = useState(false);
+
+  if(isStart){
+    const toggleLightInterval = setInterval(() => {
+      setIsToggled(prevState => !prevState);
+    }, 200);
+  }
 
   useEffect(() => {
     if (isStart) {
@@ -94,26 +85,30 @@ const Preloader = ({ setLoading }) => {
           alt="preloaderimg"
           className={`absolute w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2.2] scale-y-[1.8] -translate-y-1/2 md:hidden`}
         />
-        <img
-          src={"/lighton.svg"}
-          alt="light"
-          className="absolute top-[5%] right-[10%] w-[100px] h-[100px]"
-        />
-        <img
-          src={"/lightoff.svg"}
-          alt="light"
-          className="absolute top-[5%] w-[100px] h-[100px]"
-          style={{ right: "calc(10% - 70px)" }}
-        />
+        {isToggled ? (
+          <img
+            src={"/lighton.svg"}
+            alt="light"
+            className="absolute top-[5%] right-[10%] w-[100px] h-[100px]"
+          />
+        ) : (
+          <img
+            src={"/lightoff.svg"}
+            alt="light"
+            className="absolute top-[5%] w-[100px] h-[100px]"
+            style={{ right: "calc(10%)" }}
+          />
+        )}
+
         <h1 className="text-3xl max-md:text-lg font-[ROG] max-md:pl-4 uppercase mt-10">
           {isStart ? (
             "?????????"
           ) : (
             <>
-              {!startCount ? "Present Time" : "Travelling"}
-              {startCount && (
-                <span className="animate-blink animate-bounce">...</span>
+              {!startCount ? <><div data-glitch="METAVERSE" className="glitch text-[#f529a3]">METAVERSE</div></> : (
+                <><div data-glitch="PRESENT" className="glitch">PRESENTs</div></>
               )}
+              
             </>
           )}
         </h1>
@@ -125,8 +120,10 @@ const Preloader = ({ setLoading }) => {
           </h2>
         </div>
         <button
-          onClick={handleStart}
-          className="bg-red-600 mt-3 max-md:ml-4 px-5 py-1.5 border rounded border-red-700"
+          onClick={() => {
+            handleStart()
+          }}
+          className="bg-red-600 mt-3 max-md:ml-4 px-5 py-1.5 border rounded border-red-700 cursor-pointer"
           style={{
             borderWidth: "5px",
             filter:
