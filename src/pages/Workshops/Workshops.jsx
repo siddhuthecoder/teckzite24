@@ -12,7 +12,10 @@ import EWCard from "../../components/Shared/EWCard";
 
 const Workshops = () => {
   const workshopData = useSelector((state) => state.workshop.data);
-
+  const handleSound = () => {
+    const audio = new Audio("./click.wav");
+    audio.play();
+  };
   return (
     <main>
       <Header />

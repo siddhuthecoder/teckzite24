@@ -5,7 +5,10 @@ import Header from "../../components/Header/Header";
 import WebBanner from "./WebBanner";
 import SwipperModule from "../../components/swiper/Swiper";
 import Banner from "../../components/banner/Banner";
-import sri from '../../assets/img/sribabu.png'
+import sri from '../../assets/webteam/sribabu.png'
+import sid from '../../assets/webteam/sid.png'
+import aswini from '../../assets/webteam/aswini.jpg'
+import yas from '../../assets/webteam/yaswanth.jpg'
 
 const WebTeam = () => {
   return (
@@ -15,12 +18,15 @@ const WebTeam = () => {
       <div className="w-full my-[10%] min-h-[80vh]">
         <div className="text-center font-joti text-3xl">Web Team</div>
         <div className="w-full grid grid-cols-1 ">
-          <WebCard name="sribabu" role="web" img={sri}  />
+          <WebCard name="Siddardha" role="Full stack (lead)" img={sid}  />
         </div>
-        <div className="w-full grid grid-cols-1 md:grid-cols-3">
-          <WebCard name="sribabu" role="web" img="" />
-          <WebCard name="sribabu" role="web" img="" />
-          <WebCard name="sribabu" role="web" img="" />
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto">
+          <WebCard name="Yaswanth" role="Full stack" img={sri} />
+          <WebCard name="sribabu" role="Full stack" img={yas} />
+        </div>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto">
+          <WebCard name="Hemanth" role="Full stack" img="" />
+          <WebCard name="sribabu" role="Full stack" img="" />
         </div>
       </div>
     </>

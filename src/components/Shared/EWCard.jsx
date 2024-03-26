@@ -54,7 +54,7 @@ const EWCard = ({ img, id, name, workshop }) => {
             className="w-[8px] h-[118px] bg-[#A301B1] border-[1px] border-[#F8A6FF] absolute right-[6%] top-[40%]"
             style={{ boxShadow: " 0px 0px 50px 3px rgba(163, 1, 177, 0.38)  " }}
           ></div>
-          <div className="text-center font-bold absolute top-[-40px]">
+          <div className="text-center font-bold absolute top-[-55px] max-w-[230px]">
             {name}
           </div>
           <div className="w-[200px] h-[230px] ">

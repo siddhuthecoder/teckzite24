@@ -64,21 +64,21 @@ const AboutHome = () => {
                         </div>
                         <div className="w-full max-w-[500px]   justify-between flex flex-col min-h-[10vh] ps-[20px] ">
                             <div className="font-bold text-2xl md:text-3xl ">About</div>
-                            <p className="text-[purple] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                            <p className="text-[white] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
                                 m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
                                 est! Quae odio, animi ab delectus doloribus quod deserunt.
                             </p>
-                            <p className="text-[purple] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                            <p className="text-[white] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
                                 m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
                                 est! Quae odio, animi ab delectus doloribus quod deserunt.
                             </p>
-                            <p className="text-[purple] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                            <p className="text-[white] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
                                 m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
                                 est! Quae odio, animi ab delectus doloribus quod deserunt.
                             </p>
 
                             
-                            <div className="w-full flex  flex-row-reverse px-[20px]">Know more...</div>
+                            <div className="w-full flex  flex-row-reverse text-[#f529a3] font-bold px-[20px]">Know more...</div>
                         </div>
                 </motion.div>
                

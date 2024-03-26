@@ -20,7 +20,7 @@ const SponsersHome = () => {
       transition={{ duration: 2 }}
     >
       <Header />
-      <SideComonent text="SPONSERS" num="3" />
+      <SideComonent text="SPONSERS" num="4" />
       <div className="w-full flex flex-col h-[90vh] items-center justify-start overflow-y-scroll  gap-5 mt-[4%] ">
         <div className="w-full flex items-center justify-center flex-wrap mt-5">
           <SponsorsCard2 />

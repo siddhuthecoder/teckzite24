@@ -54,10 +54,6 @@ const Header = () => {
             )}
             
           </div>
-          <div className="hidden md:block font-bold mx-3 cursor-pointer" onClick={() => {
-            handleSound()
-            navigate("/")
-          }}>HOME</div>
         </div>
         <div className="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2" onClick={() => {
           handleSound()
@@ -69,10 +65,12 @@ const Header = () => {
         <div
           className="absolute top-[35%] -translate-y-1/2 px-4 font-semibold font-koneMono text-xl cursor-pointer inline-block right-0"
           style={{ verticalAlign: "middle" }}
+          onClick={() => {
+            handleSound()
+          }}
         >
           {userData ? (
             <div onClick={() => {
-              handleSound()
               logout()
             }}>
               <h1 className="max-md:hidden bg-transparent">Logout</h1>
