@@ -8,13 +8,21 @@ import { useNavigate } from "react-router-dom";
 
 const EWCard = ({ img, id, name, workshop }) => {
   const navigate = useNavigate();
+  const handleSound = () => {
+    const audio = new Audio("./click.wav");
+    audio.play();
+  };
   return (
     <>
       <div className="my-10 mx-2 flex items-center justify-center">
         <div
           className="w-[240px] h-[336px] flex justify-center mt-10 cursor-pointer  relative"
           onClick={() =>
-            navigate(`/${workshop ? "workshopdetails" : "eventdetails"}/${id}`)
+            {
+              handleSound()
+              navigate(`/${workshop ? "workshopdetails" : "eventdetails"}/${id}`)
+              
+            }
           }
         >
           <img
@@ -53,7 +61,9 @@ const EWCard = ({ img, id, name, workshop }) => {
             <img src={img} alt="" className="w-[200px] h-[230px]" />
           </div>
           <div className="absolute bottom-[100px] z-20 py-2 w-[80%] flex justify-center  items-center flex-col">
-            <button className="px-4 py-1 text-sm rounded bg-gradient text-white">
+            <button className="px-4 py-1 text-sm rounded bg-gradient text-white" onClick={()=> {
+              handleSound()
+            }}>
               Know More
             </button>
           </div>

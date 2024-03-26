@@ -11,6 +11,11 @@ const Navbar = ({ setShowNav }) => {
   const pathname = window.location.pathname;
   const userData = useSelector((state) => state.user.data);
 
+  const handleSound = () => {
+    const audio = new Audio("./click.wav");
+    audio.play();
+  };
+
   return (
     <div
       className="w-full min-h-screen relative top-0 left-0 z-[1001] bg-black"
@@ -18,7 +23,10 @@ const Navbar = ({ setShowNav }) => {
     >
       <BackgroundAnimation />
       <div
-        onClick={() => setShowNav(false)}
+        onClick={() => {
+          setShowNav(false)
+          handleSound()
+        }}
         className="absolute right-[2.4rem] z-30 top-[2.4rem] cursor-pointer"
       >
         <FaTimes size={32} />
@@ -57,7 +65,10 @@ const Navbar = ({ setShowNav }) => {
             >
               <Link
                 to={nav.link}
-                onClick={() => setShowNav(false)}
+                onClick={() => {
+                  handleSound()
+                  setShowNav(false)
+                }}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer h-[auto] relative"
               >
                 <h1 className="text-[20px] pt-2 text-nowra top-[20px] font-koneMono h-2 absolute">
@@ -90,7 +101,10 @@ const Navbar = ({ setShowNav }) => {
             <>
               <Link
                 to="/profile"
-                onClick={() => setShowNav(false)}
+                onClick={() => {
+                  handleSound()
+                  setShowNav(false)
+                }}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
               >
                 <h1 className="text-[20px] pt-2 text-nowrap top-[20px] font-koneMono h-2 absolute">
@@ -106,7 +120,10 @@ const Navbar = ({ setShowNav }) => {
           ) : (
             <Link
               to="/register"
-              onClick={() => setShowNav(false)}
+              onClick={() =>{
+                handleSound()
+                setShowNav(false)
+              }}
               className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
             >
               <h1 className="text-[20px] pt-1 text-nowrap top-[20px] font-koneMono h-2 absolute">

@@ -22,9 +22,13 @@ const Events = () => {
       setFilteredEvents(filtering);
     }
   }, [eventData, tab]);
+  const handleSound = () => {
+    const audio = new Audio("./click.wav");
+    audio.play();
+  };
 
   return (
-    <main>
+    <main className="w-full overflow-x-hidden">
       <Header />
       <EventsBanner />
       <div className="w-full flex flex-col z-10 min-h-[85vh] pb-5 sticky">
@@ -47,7 +51,10 @@ const Events = () => {
               className={`tab rounded-sm w-[100px] h-[30px] mx-[10px] mt-[12px] ${
                 tab === item ? "gradient-bg" : ""
               }`}
-              onClick={() => setTab(item)}
+              onClick={() => {
+                setTab(item)
+                handleSound()
+              }}
             >
               {item}
             </button>

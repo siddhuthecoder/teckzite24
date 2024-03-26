@@ -24,7 +24,7 @@ const EventsBanner = () => {
 
     const blurValue = 1 + scroll * 0.050;
         
-  const maxOpacity = 0.16111;
+  const maxOpacity = 0.36111;
   let opacity = 1 - (scroll * 1.4) / (window.innerHeight / 1);
 
   if (opacity < maxOpacity) {
