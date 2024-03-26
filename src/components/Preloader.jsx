@@ -17,8 +17,7 @@
 // export default Preloader;
 
 import { useEffect, useState } from "react";
-import preloader1 from "../assets/preloader.png";
-import preloader2 from "../assets/preloader1.png";
+import BackgroundAnimation from "./Shared/BackgroundAnimation";
 
 const Preloader = ({ setLoading }) => {
   const [isStart, setIsStart] = useState(false);
@@ -38,11 +37,11 @@ const Preloader = ({ setLoading }) => {
   }, [isStart, setLoading]);
 
   const handleStart = () => {
+    setStartCount(true);
     setTimeout(() => {
       setIsStart(true);
     }, 2000);
     startTimer();
-    setStartCount(true);
   };
 
   const startTimer = () => {
@@ -83,17 +82,40 @@ const Preloader = ({ setLoading }) => {
         }`}
       >
         <img
-          src={preloader1}
+          src={"/preloader.png"}
           alt="preloaderimg"
-          className="absolute h-[1000px] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 max-md:hidden"
+          className={`absolute h-[1000px] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 max-md:hidden ${
+            startCount && "animate-pulse"
+          }`}
+          style={{ animationDuration: "750ms" }}
         />
         <img
-          src={preloader2}
+          src={"/preloader1.png"}
           alt="preloaderimg"
-          className="absolute w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2] scale-y-[1.5] -translate-y-1/2 md:hidden"
+          className={`absolute w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2.2] scale-y-[1.8] -translate-y-1/2 md:hidden`}
         />
-        <h1 className="text-3xl max-md:text-lg max-md:pl-4 uppercase font-koneMono mt-10">
-          {!startCount ? "Present Time" : "Travelling"}
+        <img
+          src={"/lighton.svg"}
+          alt="light"
+          className="absolute top-[5%] right-[10%] w-[100px] h-[100px]"
+        />
+        <img
+          src={"/lightoff.svg"}
+          alt="light"
+          className="absolute top-[5%] w-[100px] h-[100px]"
+          style={{ right: "calc(10% - 70px)" }}
+        />
+        <h1 className="text-3xl max-md:text-lg font-[ROG] max-md:pl-4 uppercase mt-10">
+          {isStart ? (
+            "?????????"
+          ) : (
+            <>
+              {!startCount ? "Present Time" : "Travelling"}
+              {startCount && (
+                <span className="animate-blink animate-bounce">...</span>
+              )}
+            </>
+          )}
         </h1>
         <div className="my-8 max-md:pl-4 flex items-center justify-evenly w-[90%] max-w-[1000px]">
           <h2 className="text-4xl max-md:text-2xl">
@@ -120,11 +142,12 @@ const Preloader = ({ setLoading }) => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
+      <BackgroundAnimation />
       <div
         className={`absolute top-0 ${
           isStart ? "left-[-50%] opacity-25" : "left-0 opacity-100"
         } transition-all h-screen w-[50%] overflow-hidden`}
-        style={{ transitionDuration: "2s" }}
+        style={{ transitionDuration: "2s", transitionDelay: "200ms" }}
       >
         <Whole />
       </div>
@@ -132,7 +155,7 @@ const Preloader = ({ setLoading }) => {
         className={`absolute top-0 ${
           isStart ? "right-[-50%] opacity-25" : "right-0 opacity-100"
         } transition-all h-screen w-[50%] overflow-hidden`}
-        style={{ transitionDuration: "2s" }}
+        style={{ transitionDuration: "2s", transitionDelay: "200ms" }}
       >
         <Whole left={true} />
       </div>
