@@ -32,7 +32,7 @@ const Banner = ({ bg, text }) => {
   } else if (width <= 500) {
     backgroundSize = `${330 + (scroll * 0.7 * 3) / 2}%`;
   }
-  const maxOpacity = 0.56111;
+  const maxOpacity = 0.36111;
   let opacity = 1 - (scroll * 1.4) / (window.innerHeight / 1);
 
   if (opacity < maxOpacity) {

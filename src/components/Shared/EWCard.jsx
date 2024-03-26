@@ -17,13 +17,10 @@ const EWCard = ({ img, id, name, workshop }) => {
       <div className="my-10 mx-2 flex items-center justify-center">
         <div
           className="w-[240px] h-[336px] flex justify-center mt-10 cursor-pointer  relative"
-          onClick={() =>
-            {
-              handleSound()
-              navigate(`/${workshop ? "workshopdetails" : "eventdetails"}/${id}`)
-              
-            }
-          }
+          onClick={() => {
+            handleSound();
+            navigate(`/${workshop ? "workshopdetails" : "eventdetails"}/${id}`);
+          }}
         >
           <img
             src={s1}
@@ -57,13 +54,16 @@ const EWCard = ({ img, id, name, workshop }) => {
           <div className="text-center font-bold absolute top-[-55px] max-w-[230px]">
             {name}
           </div>
-          <div className="w-[200px] h-[230px] ">
-            <img src={img} alt="" className="w-[200px] h-[230px]" />
+          <div className="w-[180px] h-[230px] mx-auto">
+            <img src={img} alt="" className="w-[180px] h-[230px] mx-auto" />
           </div>
           <div className="absolute bottom-[100px] z-20 py-2 w-[80%] flex justify-center  items-center flex-col">
-            <button className="px-4 py-1 text-sm rounded bg-gradient text-white" onClick={()=> {
-              handleSound()
-            }}>
+            <button
+              className="px-4 py-1 text-sm rounded bg-gradient text-white"
+              onClick={() => {
+                handleSound();
+              }}
+            >
               Know More
             </button>
           </div>

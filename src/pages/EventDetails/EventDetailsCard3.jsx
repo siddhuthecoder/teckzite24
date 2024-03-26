@@ -28,6 +28,11 @@ const EventDetailsCard3 = () => {
   const eventData = useSelector((state) => state.event.data);
   const userData = useSelector((state) => state.user.data);
 
+  const handleSound = () => {
+    const audio = new Audio("./click.wav");
+    audio.play();
+  };
+
   useEffect(() => {
     if (eventData) {
       const event = eventData.find((e) => e._id === id);
@@ -141,6 +146,7 @@ const EventDetailsCard3 = () => {
       <div
         className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center z-0"
         style={{ backgroundImage: "url('../../../eventdetails.png')" }}
+        onClick={() => handleSound()}
       ></div>
       <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
         <div className="absolute max-md:relative top-3 w-full z-20">
