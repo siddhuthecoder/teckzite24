@@ -24,14 +24,14 @@ const ComingSoon = () => {
             <Link
               to="/"
               style={{ backgroundColor: "#221C3E" }}
-              className="comeBtn w-[40%] max-sm:h-[30px] max-sm:w-[70%] m-auto max-sm:text-sm flex items-center justify-center md:text-sm"
+              className="comeBtn w-[40%] max-sm:h-[30px] rounded-[5px] max-sm:w-[70%] m-auto max-sm:text-sm flex items-center justify-center md:text-sm"
             >
               {" "}
               Back to Home
             </Link>
             <Link
               to="/contact"
-              className="comeBtn w-[40%] max-sm:h-[30px] max-sm:w-[70%] m-auto max-sm:text-base flex items-center justify-center md:text-sm"
+              className="comeBtn w-[40%] max-sm:h-[30px] rounded-[5px] max-sm:w-[70%] m-auto max-sm:text-base flex items-center justify-center md:text-sm"
             >
               {" "}
               Contact Us

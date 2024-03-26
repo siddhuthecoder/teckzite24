@@ -8,6 +8,7 @@ import AudioBG from "./components/Audio";
 import Referrals from "./pages/Referrals/Referrals";
 import EDcard from "./pages/EventDetails/EDcard";
 import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
+import SpeakersCard from "./components/Shared/SPcard";
 import {
   CoreTeam,
   Events,
@@ -57,16 +58,16 @@ function App() {
 
   const userStatus = useSelector((state) => state.user.status);
 
-  useEffect(() => {
-    const handleSound = () => {
-      const audio = new Audio("./click.wav");
-      audio.play();
-    };
-    document.body.addEventListener("click", handleSound);
-    return () => {
-      document.body.removeEventListener("click", handleSound);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleSound = () => {
+  //     const audio = new Audio("./click.wav");
+  //     audio.play();
+  //   };
+  //   document.body.addEventListener("click", handleSound);
+  //   return () => {
+  //     document.body.removeEventListener("click", handleSound);
+  //   };
+  // }, []);
 
   useEffect(() => {}, []);
 
@@ -143,7 +144,7 @@ function App() {
               <Route path="/swiper" element={<SwiperModule />} />
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
-              <Route path="/card" element={<EWCard />} />
+              <Route path="/card" element={<SpeakersCard />} />
               <Route path="/ed" element={<EDcard />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               <Route path="/eventupdates" element={<ComingSoon />} />

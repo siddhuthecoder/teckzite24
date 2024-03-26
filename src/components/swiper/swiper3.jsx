@@ -14,7 +14,7 @@ const Swiper3 = ({slidesPerView}) => {
   return (
     <>
       <Swiper
-        spaceBetween={5}
+        spaceBetween={10}
         centeredSlides={true}
         slidesPerView={slidesPerView}
         autoplay={{
@@ -26,14 +26,14 @@ const Swiper3 = ({slidesPerView}) => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper  w-[95%] max-w-[800px] mx-auto"
+        className="mySwiper  w-[95%] max-w-[1000px] mx-auto"
         initialSlide={2}
 
       >
          <SwiperSlide>
               {({isActive}) => (
                 <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.7]"} duration-150`}>
                       <SpeakersCard  />
                   </div>
                 </>
@@ -42,7 +42,7 @@ const Swiper3 = ({slidesPerView}) => {
             <SwiperSlide>
               {({isActive}) => (
                 <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.7]"} duration-150`}>
                       <SpeakersCard  />
                   </div>
                 </>
@@ -51,7 +51,7 @@ const Swiper3 = ({slidesPerView}) => {
             <SwiperSlide>
               {({isActive}) => (
                 <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.7]"} duration-150`}>
                       <SpeakersCard  />
                   </div>
                 </>
@@ -60,7 +60,7 @@ const Swiper3 = ({slidesPerView}) => {
             <SwiperSlide>
               {({isActive}) => (
                 <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.7]"} duration-150`}>
                       <SpeakersCard  />
                   </div>
                 </>
@@ -69,7 +69,7 @@ const Swiper3 = ({slidesPerView}) => {
             <SwiperSlide>
               {({isActive}) => (
                 <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.7]"} duration-150`}>
                       <SpeakersCard  />
                   </div>
                 </>
@@ -78,7 +78,7 @@ const Swiper3 = ({slidesPerView}) => {
             <SwiperSlide>
               {({isActive}) => (
                 <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.7]"} duration-150`}>
                       <SpeakersCard  />
                   </div>
                 </>
@@ -87,7 +87,7 @@ const Swiper3 = ({slidesPerView}) => {
             <SwiperSlide>
               {({isActive}) => (
                 <>
-                  <div className={`${isActive?"scale-[1]":"scale-[0.5]"} duration-150`}>
+                  <div className={`${isActive?"scale-[1]":"scale-[0.7]"} duration-150`}>
                       <SpeakersCard  />
                   </div>
                 </>

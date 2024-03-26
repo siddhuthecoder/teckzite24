@@ -21,6 +21,11 @@ const WorkshopDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const handleSound = () => {
+    const audio = new Audio("./click.wav");
+    audio.play();
+  };
+
   useEffect(() => {
     if (workshopData) {
       const workshop = workshopData.find((e) => e._id === id);
@@ -52,7 +57,10 @@ const WorkshopDetails = () => {
         type="button"
         className={`text-[15px] mt-[10px] md:mt-[0px] flex items-center justify-center flex-wrap relative`}
         style={{ width: "120px", height: "40px" }}
-        onClick={() => setActiveTab(tab.value)}
+        onClick={() => {
+          handleSound()
+          setActiveTab(tab.value)
+        }}
       >
         <span className="p-2 max-md:bg-[#10022A]">{tab.label}</span>
         <img

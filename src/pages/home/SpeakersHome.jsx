@@ -17,7 +17,7 @@ const SpeakersHome = () => {
         transition={{ duration: 2 }}
     >
         <Header />
-        <SideComonent  num="4" text="SPEAKERS" />
+        <SideComonent  num="3" text="SPEAKERS" />
         <div className="w-full max-w-[1000px] mx-auto hidden md:block">
             <Swiper3 slidesPerView={3} />
         </div>
