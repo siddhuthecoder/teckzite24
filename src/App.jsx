@@ -9,6 +9,7 @@ import Referrals from "./pages/Referrals/Referrals";
 import EDcard from "./pages/EventDetails/EDcard";
 import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
+import Contact1 from "./pages/contact/Contact1";
 import {
   CoreTeam,
   Events,
@@ -145,7 +146,7 @@ function App() {
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<SpeakersCard />} />
-              <Route path="/ed" element={<EDcard />} />
+              <Route path="/ed" element={<Contact1 />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               <Route path="/eventupdates" element={<ComingSoon />} />
               {/* <Route path="/eventupdates" element={<EventUpdates />} /> */}

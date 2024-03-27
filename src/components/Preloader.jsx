@@ -85,20 +85,19 @@ const Preloader = ({ setLoading }) => {
           alt="preloaderimg"
           className={`absolute w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2.2] scale-y-[1.8] -translate-y-1/2 md:hidden`}
         />
-        {isToggled ? (
-          <img
+         <img
             src={"/lighton.svg"}
             alt="light"
             className="absolute top-[5%] right-[10%] w-[100px] h-[100px]"
           />
-        ) : (
           <img
             src={"/lightoff.svg"}
             alt="light"
             className="absolute top-[5%] w-[100px] h-[100px]"
-            style={{ right: "calc(10%)" }}
+            style={{ right: "calc(10%-10px)" }}
           />
-        )}
+         
+      
 
         <h1 className="text-3xl max-md:text-lg font-[ROG] max-md:pl-4 uppercase mt-10">
           {isStart ? (
