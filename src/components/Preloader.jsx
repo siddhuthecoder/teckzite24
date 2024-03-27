@@ -94,7 +94,7 @@ const Preloader = ({ setLoading }) => {
             src={"/lightoff.svg"}
             alt="light"
             className="absolute top-[5%] w-[100px] h-[100px]"
-            style={{ right: "calc(10%-10px)" }}
+            style={{ right:' calc(10%-70px)' }}
           />
          
       
@@ -104,7 +104,7 @@ const Preloader = ({ setLoading }) => {
             "?????????"
           ) : (
             <>
-              {!startCount ? <><div data-glitch="METAVERSE" className="glitch text-[#f529a3]">METAVERSE</div></> : (
+              {!startCount ? <><div data-glitch="METAVERSE" className="glitch text-[#f529a3] font-bold font-sans">METAVERSE</div></> : (
                 <><div data-glitch="PRESENT" className="glitch">PRESENTs</div></>
               )}
               
