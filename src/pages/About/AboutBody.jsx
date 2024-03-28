@@ -1,5 +1,18 @@
 import React from 'react'
 import s1 from '../../assets/about/about.svg'
+import i1 from '../../assets/img/about/img01.webp'
+import i2 from '../../assets/img/about/img02.webp'
+import i3 from '../../assets/img/about/img03.webp'
+import i4 from '../../assets/img/about/img04.webp'
+import i5 from '../../assets/img/about/img05.webp'
+import i6 from '../../assets/img/about/img06.webp'
+import i7 from '../../assets/img/about/img07.webp'
+import i8 from '../../assets/img/about/img08.webp'
+import i9 from '../../assets/img/about/img09.webp'
+import i10 from '../../assets/img/about/img10.webp'
+import i11 from '../../assets/img/about/img11.webp'
+import i12 from '../../assets/img/about/img12.webp'
+
 
 
 const AboutBody = () => {
@@ -7,7 +20,7 @@ const AboutBody = () => {
     <>
         <div className="w-full min-h-[100vh]">
             <div className="text-center  font-bold text-[40px] sm:text-[60px] md:text-[80px] text-white main-heading">ABOUT</div>
-            <div className="w-[97%] max-w-[1200px] border-[#f529a3]  border flex justify-center items-center mx-auto min-h-[400px] backdrop-blur-md relative ">
+            <div className="w-[97%] max-w-[1200px] border-[#f529a3] rounded-[5px]  border-[2px] flex justify-center items-center mx-auto min-h-[400px] backdrop-blur-md relative ">
                 <div className="mx-3 z-[2]">
                     <p className="px-3 mt-3" style={{textIndent:"30px"}}>Teckzite is a national-level technological extravaganza that ignites young minds with its unique vision for the future of technology. Organized by the SDCAC wing of RGUKT Nuzvid, it serves as South India's largest pageant. Our vision for Teckzite is to not only impart knowledge and deepen thinking but also to explore new horizons in technology.</p>
                     <p className="px-3 mt-3" style={{textIndent:"30px"}}>The event this time spans over 2 days and 3 nights, packed with a wide array of competitions, exhibitions, and entertainment activities. Participants engage in various technical competitions ranging from coding challenges, robotics competitions, circuit designing, to hackathons. These events provide students with the opportunity to apply their theoretical knowledge to real-world problems, fostering innovation and critical thinking.</p>
@@ -28,41 +41,42 @@ const AboutBody = () => {
             <div className="w-full my-3 mb-[80px]">
             <div className="memos w-[97%]  max-w-[1200px] mx-auto ">
                 <a href="#" className="memo-1">
-                    <img src="assets/img/about/img01.webp" />
+                    <img src={i1} />
                 </a> 
                 <a href="#" className="memo-2">
-                    <img src="assets/img/about/img02.webp" />
+                    <img src={i2} />
                 </a>
                 <a href="#" className="memo-3">
-                    <img src="assets/img/about/img03.webp" />
+                    <img src={i3} />
                 </a>
                 <a href="#" className="memo-4">
-                    <img src="assets/img/about/img04.webp" />
+                    <img src={i4} />
                 </a>
                 <a href="#" className="memo-5">
-                    <img src="assets/img/about/img05.webp" />
+                    <img src={i5} />
                 </a>
                 <a href="#" className="memo-6">
-                    <img src="assets/img/about/img06.webp" />
+                    <img src={i6} />
                 </a>
                 <a href="#" className="memo-7">
-                    <img src="assets/img/about/img07.webp" />
+                    <img src={i7} />
                 </a>
                 <a href="#" className="memo-8">
-                    <img src="assets/img/about/img08.webp" />
+                    <img src={i8} />
                 </a>
                 <a href="#" className="memo-9">
-                    <img src="assets/img/about/img09.webp" />
+                    <img src={i9} />
                 </a>
                 <a href="#" className="memo-10">
-                    <img src="assets/img/about/img10.webp" />
+                    <img src={i10} />
                 </a>
                 <a href="#" className="memo-11">
-                    <img src="assets/img/about/img11.webp" />
+                    <img src={i11} />
                 </a>
                 <a href="#" className="memo-12">
-                    <img src="assets/img/about/img12.webp" />
+                    <img src={i12} />
                 </a>
+                
             </div>  
             </div>
         </div>

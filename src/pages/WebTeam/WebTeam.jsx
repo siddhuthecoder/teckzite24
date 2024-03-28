@@ -24,24 +24,18 @@ const WebTeam = () => {
     },
     {
       id: 2,
-      name: "Yasvanth Hanumantu",
-      role: "Web Developer",
-      img: yash,
-    },
-    {
-      id: 3,
       name: "Aswini Kodati",
       role: "UI/UX Designer",
       img: aswini,
     },
     {
-      id: 4,
+      id: 3,
       name: "Sribabu Mandraju",
       role: "Web Developer",
       img: sri,
     },
     {
-      id: 5,
+      id: 4,
       name: "Hemanth",
       role: "Web Developer",
       img: "",
