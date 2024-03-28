@@ -52,14 +52,10 @@ const Contact = () => {
       await emailjs.send("service_ID", "template_ID", temp, {
         publicKey: "PUBLICKEY HERE",
       });
-      console.log("SUCCESS!");
     } catch (err) {
       if (err instanceof EmailJSResponseStatus) {
-        console.log("EMAILJS FAILED...", err);
         return;
       }
-
-      console.log("ERROR", err);
     }
   };
 

@@ -155,7 +155,6 @@ const RegisterForm = () => {
             toast.success(res.data.message || "Account created Sucessfully!!");
             navigate("/profile");
           } catch (error) {
-            console.log(error);
             toast.error(
               error?.response?.data.message ||
                 "Failed to verify order or registering user. Please try again."
@@ -185,7 +184,6 @@ const RegisterForm = () => {
       razor.open();
       setisReging(false);
     } catch (error) {
-      console.error("Error occurred during payment:", error);
       toast.error(
         error?.response?.data?.message ||
           "Failed to process payment. Please try again."
@@ -218,7 +216,6 @@ const RegisterForm = () => {
   };
 
   const onFailure = (error) => {
-    console.log("Error: " + error);
     toast.error("Error while signing with Google");
   };
 

@@ -1,11 +1,9 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
-import img from "../../assets/event.webp";
 import "./WorkshopDetails.module.css";
 import Description from "./details/Description";
 import right from "../../assets/events/after.png";
 import left from "../../assets/events/before.png";
-import { IoLocationSharp } from "react-icons/io5";
 import Instructor from "./details/Instructor";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -15,14 +13,15 @@ import Structure from "./details/Structure";
 
 const WorkshopDetails = () => {
   const [tab, setTab] = useState("Description");
-  const workshopData = useSelector((state) => state.workshop.data)
-  const [data,setData] = useState({})
-  const {id} = useParams()
-  useEffect(()=>{
-    workshopData.map((item)=>{item._id==id && setData(item)})
-  },[])
-  
-  console.log(data);
+  const workshopData = useSelector((state) => state.workshop.data);
+  const [data, setData] = useState({});
+  const { id } = useParams();
+  useEffect(() => {
+    workshopData.map((item) => {
+      item._id === id && setData(item);
+    });
+  }, [workshopData, id]);
+
   return (
     <>
       <Header />
@@ -104,7 +103,6 @@ const WorkshopDetails = () => {
                 >
                   Contact
                 </button>
-                
               </div>
             </div>
             <div className="h-[200px] w-full mt-[10px] overflow-y-auto">

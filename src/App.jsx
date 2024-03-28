@@ -1,19 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
-import EventDetailsCard2 from "./pages/EventDetails/EventDetailsCard2";
 import TeamCard from "./components/Shared/TeamCard";
 import SwiperModule from "./components/swiper/Swiper";
-import Contact from "./pages/contact/Contact";
+// import Contact from "./pages/contact/Contact";
 import AudioBG from "./components/Audio";
 import Referrals from "./pages/Referrals/Referrals";
-import EDcard from "./pages/EventDetails/EDcard";
 import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
 import Contact1 from "./pages/contact/Contact1";
 import {
-  CoreTeam,
+  // CoreTeam,
   Events,
-  Home,
+  // Home,
   Register,
   WebTeam,
   Workshops,
@@ -26,7 +24,7 @@ import {
   // Sponsors,
   // Schedule,
   About,
-  EventUpdates,
+  // EventUpdates,
   ScrollHome,
 } from "./pages";
 
@@ -38,7 +36,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchNotifications } from "./store/notificationSlice";
 import { fetchEvents } from "./store/eventSlice";
 import { fetchWorkshops } from "./store/workshopSlice";
-import EWCard from "./components/Shared/EWCard";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 import { fetchUser } from "./store/userSlice";
 import { PageNotFound } from "./components/PageNotFound";
@@ -70,7 +67,30 @@ function App() {
   //   };
   // }, []);
 
-  useEffect(() => {}, []);
+  const ctrlShiftKey = (e, keycode) => {
+    return e.ctrlKey && e.shiftKey && e.keyCode === keycode.charCodeAt(0);
+  };
+
+  useEffect(() => {
+    const preventRightClick = (e) => {
+      e.preventDefault();
+    };
+
+    const handleKeyDown = (e) => {
+      if (
+        e.keyCode === 123 ||
+        ctrlShiftKey(e, "I") ||
+        ctrlShiftKey(e, "J") ||
+        ctrlShiftKey(e, "C") ||
+        (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    window.document.addEventListener("contextmenu", preventRightClick);
+    window.document.addEventListener("keydown", handleKeyDown);
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");

@@ -10,7 +10,6 @@ export const fetchNotifications = createAsyncThunk(
       );
       return res.data.notifications;
     } catch (error) {
-      console.log(error);
       throw new Error(error?.response?.data.message || "Internal Server error");
     }
   }

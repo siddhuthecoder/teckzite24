@@ -8,7 +8,6 @@ export const fetchEvents = createAsyncThunk("/user/events", async () => {
     );
     return res.data;
   } catch (error) {
-    console.log(error);
     throw new Error(error?.response?.data.message || "Internal Server error");
   }
 });

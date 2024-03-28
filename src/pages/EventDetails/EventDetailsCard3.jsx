@@ -79,7 +79,6 @@ const EventDetailsCard3 = () => {
           dispatch(userActions.addEvent(res.data.event));
           navigate("/profile");
         } catch (error) {
-          console.log(error.message);
           toast.error(error?.response?.data.message || "Internal Server Error");
         }
       }
