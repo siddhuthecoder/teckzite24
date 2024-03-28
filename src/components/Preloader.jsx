@@ -114,7 +114,10 @@ const Preloader = ({ setLoading }) => {
                 </>
               ) : (
                 <>
-                  <div data-glitch="PRESENT" className="glitch">
+                  <div
+                    data-glitch="Travelling.."
+                    className="text-[#f529a3] glitch"
+                  >
                     PRESENTs
                   </div>
                 </>
