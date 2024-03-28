@@ -72,26 +72,26 @@ function App() {
     return e.ctrlKey && e.shiftKey && e.keyCode === keycode.charCodeAt(0);
   };
 
-  useEffect(() => {
-    const preventRightClick = (e) => {
-      e.preventDefault();
-    };
+  // useEffect(() => {
+  //   const preventRightClick = (e) => {
+  //     e.preventDefault();
+  //   };
 
-    const handleKeyDown = (e) => {
-      if (
-        e.keyCode === 123 ||
-        ctrlShiftKey(e, "I") ||
-        ctrlShiftKey(e, "J") ||
-        ctrlShiftKey(e, "C") ||
-        (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
-      ) {
-        e.preventDefault();
-      }
-    };
+  //   const handleKeyDown = (e) => {
+  //     if (
+  //       e.keyCode === 123 ||
+  //       ctrlShiftKey(e, "I") ||
+  //       ctrlShiftKey(e, "J") ||
+  //       ctrlShiftKey(e, "C") ||
+  //       (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
+  //     ) {
+  //       e.preventDefault();
+  //     }
+  //   };
 
-    window.document.addEventListener("contextmenu", preventRightClick);
-    window.document.addEventListener("keydown", handleKeyDown);
-  }, []);
+  //   window.document.addEventListener("contextmenu", preventRightClick);
+  //   window.document.addEventListener("keydown", handleKeyDown);
+  // }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");

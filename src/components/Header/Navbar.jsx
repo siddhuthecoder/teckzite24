@@ -190,7 +190,7 @@ const Navbar = ({ setShowNav }) => {
                 alt="nav"
                 className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
               />
-              <h1 className="text-lg text-nowrap pb-6 md:text-[16px] h-2 absolute">
+              <h1 className="text-lg text-nowrap pb-3 md:text-[16px] h-2 absolute">
                 {userData.tzkid.toUpperCase()}
               </h1>
             </Link>
