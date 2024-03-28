@@ -47,6 +47,11 @@ const Workshops = () => {
             </div>
           ) : (
             <>
+              {workshopData.length === 0 && (
+                <div className="w-full min-h-[50vh] flex items-center justify-center">
+                  <h1 className="text-center">No workshops yet...</h1>
+                </div>
+              )}
               {workshopData.map((w) => {
                 return (
                   <EWCard

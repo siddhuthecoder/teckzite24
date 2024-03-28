@@ -29,6 +29,9 @@ const userSlice = createSlice({
     addEvent: (state, action) => {
       state.data.regEvents.push(action.payload);
     },
+    addWorkshop: (state, action) => {
+      state.data.regWorkshop.push(action.payload);
+    },
   },
 
   extraReducers: (builders) => {

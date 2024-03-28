@@ -2,9 +2,14 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import { userActions } from "../../store/userSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const RenderRegistrationForm = ({ setRegisterForm, data }) => {
   const userData = useSelector((state) => state.user.data);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const defaultEmail = userData ? userData.email : "";
   const defaultIdNumber = userData ? userData.collegeId : "";
@@ -55,6 +60,14 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
           }
         );
         toast.success(res.data.message || "Registerd Successfully");
+        dispatch(
+          userActions.addWorkshop({
+            id: data._id,
+            name: data.name,
+            workshopImg: data.workshopImg,
+          })
+        );
+        navigate("/profile");
       } else {
         const res = await axios.post(
           `${process.env.REACT_APP_BACKEND_URL}/workshops/register/${data._id}`,
