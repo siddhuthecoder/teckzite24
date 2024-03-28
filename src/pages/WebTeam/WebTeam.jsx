@@ -1,9 +1,6 @@
 // import Style from "./WebTeam.module.css";
-import { WebTeamCard } from "../../constants";
 import WebCard from "../../components/Shared/WebCard";
 import Header from "../../components/Header/Header";
-import WebBanner from "./WebBanner";
-import SwipperModule from "../../components/swiper/Swiper";
 import Banner from "../../components/banner/Banner";
 import sri from "../../assets/webteam/sribabu.png";
 import sid from "../../assets/webteam/sid.png";

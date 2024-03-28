@@ -128,6 +128,7 @@ const RegisterForm = () => {
               {
                 razorpay_payment_id: response.razorpay_payment_id,
                 order_id: order.id,
+                amount: order.amount,
                 razorpay_signature: response.razorpay_signature,
                 userData: {
                   email: data.email,
@@ -638,7 +639,16 @@ const RegisterForm = () => {
                     htmlFor="terms"
                     className="ms-2 text-sm font-medium text-[#eee]"
                   >
-                   Accept <a href={"https://drive.google.com/file/d/1-Ykrk7ZwDvn3AiLdQ0ZZBbbPXyJt_aQG/view?usp=drivesdk"} target="_blank" className="underline text-[#bb00ff]">Terms and Conditions</a>
+                    Accept{" "}
+                    <a
+                      href={
+                        "https://drive.google.com/file/d/1-Ykrk7ZwDvn3AiLdQ0ZZBbbPXyJt_aQG/view?usp=drivesdk"
+                      }
+                      target="_blank"
+                      className="underline text-[#bb00ff]"
+                    >
+                      Terms and Conditions
+                    </a>
                   </label>
                 </div>
               </>
