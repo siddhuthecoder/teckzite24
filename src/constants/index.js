@@ -3,6 +3,11 @@ import aswini from "../assets/webteam/aswini.jpg";
 
 export const navigation = [
   {
+    id: 0,
+    name: "Home",
+    link: "/",
+  },
+  {
     id: 1,
     name: "Events",
     link: "/events",
@@ -124,43 +129,43 @@ export const CoreTeamData = [
 
 export const CoreTeam = [
   {
-    name:"T.Pranay Kumar",
-    role:"Overall Coordinator",
-    id:"N1908"
+    name: "T.Pranay Kumar",
+    role: "Overall Coordinator",
+    id: "N1908",
   },
   {
-    name:"K. Mohana Rao",
-    role:"Treasurer",
-    id:"N19114"
+    name: "K. Mohana Rao",
+    role: "Treasurer",
+    id: "N19114",
   },
   {
-    name:"P.Sai Bhavani",
-    role:"Events Manager",
-    id:"N190660"
+    name: "P.Sai Bhavani",
+    role: "Events Manager",
+    id: "N190660",
   },
   {
-    name:"S.Jashwanth",
-    role:"Workshops",
-    id:"N190290"
+    name: "S.Jashwanth",
+    role: "Workshops",
+    id: "N190290",
   },
   {
-    name:"K.Chandu",
-    role:"Graphic Designing",
-    id:"N190463"
+    name: "K.Chandu",
+    role: "Graphic Designing",
+    id: "N190463",
   },
   {
-    name:"K. Satish",
-    role:"Stalls Management",
-    id:"N190254"
+    name: "K. Satish",
+    role: "Stalls Management",
+    id: "N190254",
   },
   {
-    name:"M.Sravani",
-    role:"Promotions Manager",
-    id:"N191117"
+    name: "M.Sravani",
+    role: "Promotions Manager",
+    id: "N191117",
   },
   {
-    name:"A.Vasanthi",
-    role:"Hospitality",
-    id:"N190453"
+    name: "A.Vasanthi",
+    role: "Hospitality",
+    id: "N190453",
   },
-]
+];
