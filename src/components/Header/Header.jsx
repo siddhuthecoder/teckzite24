@@ -3,7 +3,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdExit, IoMdPerson } from "react-icons/io";
 import Navbar from "./Navbar";
 import { useState } from "react";
-import navlogo from "../../assets/navbar/navlogo.png";
 import { useSelector, useDispatch } from "react-redux";
 import { userActions } from "../../store/userSlice";
 import { toast } from "react-hot-toast";
@@ -59,7 +58,7 @@ const Header = () => {
           }}
         >
           <Link to="/">
-            <img src={navlogo} alt="logo" className="w-[300px] h-[100px]" />
+            <img src={"/logo.png"} alt="logo" className="w-[300px] h-[100px]" />
           </Link>
         </div>
         <div
