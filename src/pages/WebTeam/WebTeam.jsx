@@ -11,7 +11,7 @@ const WebTeam = () => {
   const WebTeamCard = [
     {
       id: 0,
-      name: "Siddu",
+      name: "Siddu from Srikakulam",
       role: "Web3 developer",
       img: sid,
     },
