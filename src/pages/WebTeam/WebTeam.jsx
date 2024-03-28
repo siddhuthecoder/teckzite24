@@ -40,7 +40,7 @@ const WebTeam = () => {
       id: 4,
       name: "Hemanth",
       role: "Web Developer",
-      img: sri,
+      img: "",
     },
   ];
   return (
