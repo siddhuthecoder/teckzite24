@@ -31,7 +31,7 @@ const Preloader = ({ setLoading }) => {
     setStartCount(true);
     setTimeout(() => {
       setIsStart(true);
-    }, 2000);
+    }, 1500);
     startTimer();
   };
 

@@ -40,6 +40,7 @@ import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 import { fetchUser } from "./store/userSlice";
 import { PageNotFound } from "./components/PageNotFound";
 import ComingSoon from "./components/ComingSoon";
+import Home from "./pages/home1/home";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -151,7 +152,7 @@ function App() {
           <main className="animate-show">
             <BackgroundAnimation />
             <Routes>
-              <Route path="/" element={<ScrollHome />} />
+              <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
               <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />
