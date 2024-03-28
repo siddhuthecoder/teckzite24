@@ -49,11 +49,13 @@ const EventDetailsCard3 = () => {
     setIsReg(true);
     if (!userData) {
       toast.error("Log in to register to an event");
+      setIsReg(false);
       return;
     }
 
     if (userData.regEvents.includes(id)) {
       toast.error("You are already registered to this event");
+      setIsReg(false);
       return;
     }
 
