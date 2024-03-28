@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { toast } from "react-hot-toast";
+import axios from "axios";
 
 const RenderRegistrationForm = ({ setRegisterForm, data }) => {
   const userData = useSelector((state) => state.user.data);
@@ -19,8 +21,62 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
   const [name, setName] = useState(defaultName);
   const [phno, setPhno] = useState(defaultPhno);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    if (
+      email === "" ||
+      idNumber === "" ||
+      college === "" ||
+      name === "" ||
+      phno === ""
+    ) {
+      toast.error("All fields are required");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem("token");
+      if (token) {
+        const res = await axios.post(
+          `${process.env.REACT_APP_BACKEND_URL}/workshops/register/${data._id}`,
+          {
+            email,
+            idNumber,
+            name,
+            phno,
+            college,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        toast.success(res.data.message || "Registerd Successfully");
+      } else {
+        const res = await axios.post(
+          `${process.env.REACT_APP_BACKEND_URL}/workshops/register/${data._id}`,
+          {
+            email,
+            idNumber,
+            name,
+            phno,
+            college,
+          }
+        );
+        console.log(res.data);
+        toast.success(res.data.message || "Registerd Successfully");
+      }
+    } catch (err) {
+      toast.error(
+        err?.response?.data.message || "Check your Internet connection"
+      );
+    } finally {
+      setRegisterForm(false);
+      setLoading(false);
+    }
   };
 
   return (
@@ -55,7 +111,7 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
           </button>
         </div>
         <div className="p-4">
-          <form onSubmit={(e) => e.preventDefault()} onClick={handleSubmit}>
+          <form onSubmit={(e) => e.preventDefault()}>
             <div className="mt-2">
               <label
                 htmlFor="username"
@@ -133,6 +189,7 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
           </button>
           <button
             disabled={loading}
+            onClick={handleSubmit}
             className="px-4 py-1 bg-gradient text-white rounded focus:outline-none"
           >
             {loading ? "Registering...." : "Register"}

@@ -39,7 +39,7 @@ const Events = () => {
             "PUC",
             "CSE",
             "ECE",
-            "EEE",
+            "EE",
             "MME",
             "MECH",
             "CHEM",
@@ -52,8 +52,8 @@ const Events = () => {
                 tab === item ? "gradient-bg" : ""
               }`}
               onClick={() => {
-                setTab(item)
-                handleSound()
+                setTab(item);
+                handleSound();
               }}
             >
               {item}
