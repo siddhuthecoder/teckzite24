@@ -7,7 +7,7 @@ const AboutBody = () => {
     <>
         <div className="w-full min-h-[100vh]">
             <div className="text-center  font-bold text-[40px] sm:text-[60px] md:text-[80px] text-white main-heading">ABOUT</div>
-            <div className="w-[97%] max-w-[1200px] border-[#f529a3]  border flex justify-center items-center mx-auto min-h-[400px] backdrop-blur-md relative ">
+            <div className="w-[97%] max-w-[1200px] border-[#f529a3] rounded-[5px]  border-[2px] flex justify-center items-center mx-auto min-h-[400px] backdrop-blur-md relative ">
                 <div className="mx-3 z-[2]">
                     <p className="px-3 mt-3" style={{textIndent:"30px"}}>Teckzite is a national-level technological extravaganza that ignites young minds with its unique vision for the future of technology. Organized by the SDCAC wing of RGUKT Nuzvid, it serves as South India's largest pageant. Our vision for Teckzite is to not only impart knowledge and deepen thinking but also to explore new horizons in technology.</p>
                     <p className="px-3 mt-3" style={{textIndent:"30px"}}>The event this time spans over 2 days and 3 nights, packed with a wide array of competitions, exhibitions, and entertainment activities. Participants engage in various technical competitions ranging from coding challenges, robotics competitions, circuit designing, to hackathons. These events provide students with the opportunity to apply their theoretical knowledge to real-world problems, fostering innovation and critical thinking.</p>
