@@ -12,7 +12,7 @@ const WebTeam = () => {
     {
       id: 0,
       name: "Siddu",
-      role: "Web developer",
+      role: "Web3 developer",
       img: sid,
     },
      {
