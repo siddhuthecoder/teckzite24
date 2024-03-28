@@ -34,7 +34,7 @@ const Home1 = () => {
           />
           <div className="w-full text-center absolute bottom-[-10%] h-[90vh]">
             <div
-              className="glitch text-[72px] max-lg:text-[45px] lg:text-[50px] mt-[26vh] fontt"
+              className="glitch text-[72px] max-lg:text-[45px] lg:text-[50px] mt-[26vh]"
               data-glitch="TECKZITE"
             >
               TECKZITE

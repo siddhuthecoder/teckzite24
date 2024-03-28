@@ -8,7 +8,6 @@ export const fetchWorkshops = createAsyncThunk("/user/workshops", async () => {
     );
     return res.data;
   } catch (error) {
-    console.log(error);
     throw new Error(error?.response?.data.message || "Internal Server error");
   }
 });

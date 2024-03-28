@@ -24,8 +24,8 @@ const Navbar = ({ setShowNav }) => {
       <BackgroundAnimation />
       <div
         onClick={() => {
-          setShowNav(false)
-          handleSound()
+          setShowNav(false);
+          handleSound();
         }}
         className="absolute right-[2.4rem] z-30 top-[2.4rem] cursor-pointer"
       >
@@ -66,12 +66,12 @@ const Navbar = ({ setShowNav }) => {
               <Link
                 to={nav.link}
                 onClick={() => {
-                  handleSound()
-                  setShowNav(false)
+                  handleSound();
+                  setShowNav(false);
                 }}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer h-[auto] relative"
               >
-                <h1 className="text-[20px] pt-2 text-nowra top-[20px] font-koneMono h-2 absolute">
+                <h1 className="text-[20px] pt-0 text-nowra top-[20px] font-koneMono h-2 absolute">
                   {nav.name}
                 </h1>
                 <img
@@ -102,12 +102,12 @@ const Navbar = ({ setShowNav }) => {
               <Link
                 to="/profile"
                 onClick={() => {
-                  handleSound()
-                  setShowNav(false)
+                  handleSound();
+                  setShowNav(false);
                 }}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
               >
-                <h1 className="text-[20px] pt-2 text-nowrap top-[20px] font-koneMono h-2 absolute">
+                <h1 className="text-[20px] pt-0 text-nowrap top-[20px] font-koneMono h-2 absolute">
                   {userData.tzkid.toUpperCase()}
                 </h1>
                 <img
@@ -120,13 +120,13 @@ const Navbar = ({ setShowNav }) => {
           ) : (
             <Link
               to="/register"
-              onClick={() =>{
-                handleSound()
-                setShowNav(false)
+              onClick={() => {
+                handleSound();
+                setShowNav(false);
               }}
               className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
             >
-              <h1 className="text-[20px] pt-1 text-nowrap top-[20px] font-koneMono h-2 absolute">
+              <h1 className="text-[20px] pt-0 text-nowrap top-[20px] font-koneMono h-2 absolute">
                 Login
               </h1>
               <img

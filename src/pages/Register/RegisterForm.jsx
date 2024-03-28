@@ -128,6 +128,7 @@ const RegisterForm = () => {
               {
                 razorpay_payment_id: response.razorpay_payment_id,
                 order_id: order.id,
+                amount: order.amount,
                 razorpay_signature: response.razorpay_signature,
                 userData: {
                   email: data.email,
@@ -154,7 +155,6 @@ const RegisterForm = () => {
             toast.success(res.data.message || "Account created Sucessfully!!");
             navigate("/profile");
           } catch (error) {
-            console.log(error);
             toast.error(
               error?.response?.data.message ||
                 "Failed to verify order or registering user. Please try again."
@@ -184,7 +184,6 @@ const RegisterForm = () => {
       razor.open();
       setisReging(false);
     } catch (error) {
-      console.error("Error occurred during payment:", error);
       toast.error(
         error?.response?.data?.message ||
           "Failed to process payment. Please try again."
@@ -217,7 +216,6 @@ const RegisterForm = () => {
   };
 
   const onFailure = (error) => {
-    console.log("Error: " + error);
     toast.error("Error while signing with Google");
   };
 
@@ -303,7 +301,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="z-30 w-full pt-[80px] pb-[20px]">
+    <section className="z-30 w-full pt-[160px] pb-[20px]">
       <form
         onSubmit={handleSubmit}
         className="w-[90%] max-w-[420px] mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
@@ -638,7 +636,16 @@ const RegisterForm = () => {
                     htmlFor="terms"
                     className="ms-2 text-sm font-medium text-[#eee]"
                   >
-                   Accept <a href={"https://drive.google.com/file/d/1-Ykrk7ZwDvn3AiLdQ0ZZBbbPXyJt_aQG/view?usp=drivesdk"} target="_blank" className="underline text-[#bb00ff]">Terms and Conditions</a>
+                    Accept{" "}
+                    <a
+                      href={
+                        "https://drive.google.com/file/d/1-Ykrk7ZwDvn3AiLdQ0ZZBbbPXyJt_aQG/view?usp=drivesdk"
+                      }
+                      target="_blank"
+                      className="underline text-[#bb00ff]"
+                    >
+                      Terms and Conditions
+                    </a>
                   </label>
                 </div>
               </>

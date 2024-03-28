@@ -49,11 +49,13 @@ const EventDetailsCard3 = () => {
     setIsReg(true);
     if (!userData) {
       toast.error("Log in to register to an event");
+      setIsReg(false);
       return;
     }
 
     if (userData.regEvents.includes(id)) {
       toast.error("You are already registered to this event");
+      setIsReg(false);
       return;
     }
 
@@ -77,7 +79,6 @@ const EventDetailsCard3 = () => {
           dispatch(userActions.addEvent(res.data.event));
           navigate("/profile");
         } catch (error) {
-          console.log(error.message);
           toast.error(error?.response?.data.message || "Internal Server Error");
         }
       }

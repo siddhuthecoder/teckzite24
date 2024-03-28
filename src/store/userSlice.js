@@ -10,7 +10,6 @@ export const fetchUser = createAsyncThunk("/user", async (token) => {
     });
     return res.data.user;
   } catch (error) {
-    console.log(error);
     throw new Error(error?.response?.data.message || "Internal Server error");
   }
 });

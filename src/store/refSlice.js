@@ -8,7 +8,6 @@ export const fetchRefs = createAsyncThunk("/user/refs", async () => {
     );
     return res.data.leaderboard;
   } catch (error) {
-    console.log(error);
     throw new Error(error?.response?.data.message || "Internal Server error");
   }
 });
