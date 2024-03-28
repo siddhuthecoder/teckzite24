@@ -71,7 +71,7 @@ const Navbar = ({ setShowNav }) => {
                 }}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer h-[auto] relative"
               >
-                <h1 className="text-[20px] pt-0 text-nowra top-[20px] md:text-[16px] h-2 absolute">
+                <h1 className="text-[18px] pt-1 text-nowra top-[20px]  h-2 absolute">
                   {nav.name}
                 </h1>
                 <img
@@ -107,7 +107,7 @@ const Navbar = ({ setShowNav }) => {
                 }}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
               >
-                <h1 className="text-[20px] pt-0 text-nowrap top-[20px] md:text-[16px] h-2 absolute">
+                <h1 className="text-[20px] pt-0 text-nowrap top-[20px]  h-2 absolute">
                   {userData.tzkid.toUpperCase()}
                 </h1>
                 <img
@@ -126,7 +126,7 @@ const Navbar = ({ setShowNav }) => {
               }}
               className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
             >
-              <h1 className="text-[20px] pt-0 text-nowrap top-[20px] md:text-[16px] h-2 absolute">
+              <h1 className="text-[20px] pt-0 text-nowrap top-[20px]  h-2 absolute">
                 Login
               </h1>
               <img
@@ -162,7 +162,7 @@ const Navbar = ({ setShowNav }) => {
                   alt="nav"
                   className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
                 />
-                <h1 className="text-lg text-nowrap pb-6 md:text-[16px] h-2 absolute">
+                <h1 className="text-lg text-nowrap pb-6  h-2 absolute">
                   {nav.name}
                 </h1>
               </Link>
@@ -190,7 +190,7 @@ const Navbar = ({ setShowNav }) => {
                 alt="nav"
                 className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
               />
-              <h1 className="text-lg text-nowrap pb-3 md:text-[16px] h-2 absolute">
+              <h1 className="text-lg text-nowrap pb-6  h-2 absolute">
                 {userData.tzkid.toUpperCase()}
               </h1>
             </Link>
@@ -204,7 +204,7 @@ const Navbar = ({ setShowNav }) => {
                 alt="nav"
                 className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
               />
-              <h1 className="text-lg text-nowrap pb-6 md:text-[16px] h-2 absolute">
+              <h1 className="text-lg text-nowrap pb-6  h-2 absolute">
                 Register
               </h1>
             </Link>
