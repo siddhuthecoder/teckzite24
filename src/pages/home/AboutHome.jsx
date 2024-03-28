@@ -59,20 +59,20 @@ const AboutHome = () => {
                                 </div>
                             )}
                             <div className="w-full " style={{ position: 'absolute', bottom: "0px", left: "0%" }}>
-                                <div className="mx-auto video-clip text-center cursor-pointer max-w-[200px]  z-[10]">Know More ..</div>
+                                <div className="mx-auto video-clip animate-bounce text-center cursor-pointer max-w-[200px]  z-[10]">Know More ..</div>
                             </div>
                         </div>
                         <div className="w-full max-w-[500px]   justify-between flex flex-col min-h-[10vh] ps-[20px] ">
-                            <div className="font-bold text-2xl md:text-3xl ">About</div>
-                            <p className="text-[white] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                            <div className="font-bold text-2xl md:text-4xl ">About</div>
+                            <p className="text-[white] text-[15px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
                                 m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
                                 est! Quae odio, animi ab delectus doloribus quod deserunt.
                             </p>
-                            <p className="text-[white] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                            <p className="text-[white] text-[15px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
                                 m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
                                 est! Quae odio, animi ab delectus doloribus quod deserunt.
                             </p>
-                            <p className="text-[white] text-[13px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
+                            <p className="text-[white] text-[15px] py-[10px]" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus doloru
                                 m voluptatem labore animi rerum eum quibusdam nesciunt, quidem excepturi esse mollitia 
                                 est! Quae odio, animi ab delectus doloribus quod deserunt.
                             </p>

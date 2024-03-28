@@ -45,7 +45,7 @@ const Header = () => {
             <GiHamburgerMenu size={22} />
             {userData && (
               <Link to="/profile">
-                <h1 className="max-md:hidden bg-transparent font-semibold font-koneMono text-xl">
+                <h1 className="max-md:hidden bg-transparent font-semibold  text-xl">
                   {userData.tzkid.toUpperCase()}
                 </h1>
                 <IoMdPerson className="md:hidden" size={22} />
@@ -63,7 +63,7 @@ const Header = () => {
           </Link>
         </div>
         <div
-          className="absolute top-[35%] -translate-y-1/2 px-4 font-semibold font-koneMono text-xl cursor-pointer inline-block right-0"
+          className="absolute top-[35%] -translate-y-1/2 px-4 font-semibold  text-xl cursor-pointer inline-block right-0"
           style={{ verticalAlign: "middle" }}
           onClick={() => {
             handleSound()
