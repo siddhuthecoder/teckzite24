@@ -7,14 +7,14 @@ import navlogo from "../../assets/navbar/navlogo.png";
 import { useSelector, useDispatch } from "react-redux";
 import { userActions } from "../../store/userSlice";
 import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   // const pathName = window.location.pathname;
   const [showNav, setShowNav] = useState(false);
   const userData = useSelector((state) => state.user.data);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const logout = () => {
     localStorage.clear();
@@ -36,10 +36,9 @@ const Header = () => {
         >
           <div
             className="cursor-pointer flex items-center justify-center gap-3"
-            onClick={() =>{
-              handleSound()
-              setShowNav((prev) => !prev)
-
+            onClick={() => {
+              handleSound();
+              setShowNav((prev) => !prev);
             }}
           >
             <GiHamburgerMenu size={22} />
@@ -50,14 +49,15 @@ const Header = () => {
                 </h1>
                 <IoMdPerson className="md:hidden" size={22} />
               </Link>
-              
             )}
-            
           </div>
         </div>
-        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2" onClick={() => {
-          handleSound()
-        }}>
+        <div
+          className="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2"
+          onClick={() => {
+            handleSound();
+          }}
+        >
           <Link to="/">
             <img src={navlogo} alt="logo" className="w-[300px] h-[100px]" />
           </Link>
@@ -66,13 +66,15 @@ const Header = () => {
           className="absolute top-[35%] -translate-y-1/2 px-4 font-semibold  text-xl cursor-pointer inline-block right-0"
           style={{ verticalAlign: "middle" }}
           onClick={() => {
-            handleSound()
+            handleSound();
           }}
         >
           {userData ? (
-            <div onClick={() => {
-              logout()
-            }}>
+            <div
+              onClick={() => {
+                logout();
+              }}
+            >
               <h1 className="max-md:hidden bg-transparent">Logout</h1>
               <IoMdExit className="md:hidden" size={22} />
             </div>
