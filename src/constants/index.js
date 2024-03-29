@@ -49,33 +49,6 @@ export const navigation = [
   },
 ];
 
-export const WebTeamCard = [
-  {
-    id: 1,
-    name: "Aswini Kodati",
-    role: "UI/UX Designer",
-    img: aswini,
-  },
-  {
-    id: 2,
-    name: "Sribabu Mandraju",
-    role: "Web Developer",
-    img: team1,
-  },
-  {
-    id: 3,
-    name: "Yasvanth Hanumantu",
-    role: "Web Developer",
-    img: team1,
-  },
-  {
-    id: 4,
-    name: "Hemanth",
-    role: "Web Developer",
-    img: team1,
-  },
-];
-
 export const CoreTeamData = [
   {
     id: 1,
