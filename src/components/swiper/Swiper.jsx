@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import WebCard from "../../components/Shared/WebCard";
-import left from "../../assets/img/after.webp";
-import right from "../../assets/img/before.webp";
+// import left from "../../assets/img/after.webp";
+// import right from "../../assets/img/before.webp";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -15,9 +15,9 @@ const SwipperModule = ({ data, width, slidePerview }) => {
   return (
     <div className="w-full flex items-center justify-center h-[100vh] overflow-hidden">
       <div className={`w-full  flex items-center justify-between  `}>
-        <div className="after hidden md:block md:translate-x-[50%]">
+        {/* <div className="after hidden md:block md:translate-x-[50%]">
           <img src={left} alt="" className="" />
-        </div>
+        </div> */}
         <Swiper
           spaceBetween={4}
           slidesPerView={slidePerview}
@@ -51,9 +51,9 @@ const SwipperModule = ({ data, width, slidePerview }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="after me-[-4%] hidden md:block  md:translate-x-[-50%] ">
+        {/* <div className="after me-[-4%] hidden md:block  md:translate-x-[-50%] ">
           <img src={right} alt="" className="h-[]" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

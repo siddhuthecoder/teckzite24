@@ -1,5 +1,4 @@
 import React from "react";
-import img from "../../../assets/event.webp"
 const Instructor = ({data}) => {
   return (
     <div className="flex text-center w-full flex-col ps-[12px] ">
