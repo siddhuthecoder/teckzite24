@@ -2,7 +2,6 @@ import { navigation } from "../../constants";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import logo from "../../assets/logo.png";
-import Glasses from "../../assets/navbar/vr_glasses.png";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import BackgroundAnimation from "../Shared/BackgroundAnimation";
@@ -75,7 +74,7 @@ const Navbar = ({ setShowNav }) => {
                   {nav.name}
                 </h1>
                 <img
-                  src={Glasses}
+                  src={"/vr_glasses.png"}
                   alt="nav"
                   style={{ transitionDuration: "0.5s" }}
                   className="mt-0 h-[auto] lg:max-w-[120%]"
@@ -107,11 +106,11 @@ const Navbar = ({ setShowNav }) => {
                 }}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
               >
-                <h1 className="text-[20px] pt-0 text-nowrap top-[20px]  h-2 absolute">
+                <h1 className="text-[16px] pt-1 text-nowrap top-[20px]  h-2 absolute">
                   {userData.tzkid.toUpperCase()}
                 </h1>
                 <img
-                  src={Glasses}
+                  src={"/vr_glasses.png"}
                   alt="nav"
                   className="mt-0 h-auto max-w-[160px] lg:max-w-[120%]"
                 />
@@ -126,11 +125,11 @@ const Navbar = ({ setShowNav }) => {
               }}
               className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
             >
-              <h1 className="text-[20px] pt-0 text-nowrap top-[20px]  h-2 absolute">
+              <h1 className="text-[16px] pt-1 text-nowrap top-[20px]  h-2 absolute">
                 Login
               </h1>
               <img
-                src={Glasses}
+                src={"/vr_glasses.png"}
                 alt="nav"
                 className="mt-0 h-auto max-w-[160px] lg:max-w-[120%]"
               />
@@ -158,7 +157,7 @@ const Navbar = ({ setShowNav }) => {
                 className="flex items-center justify-center gap-3"
               >
                 <img
-                  src={Glasses}
+                  src={"/vr_glasses.png"}
                   alt="nav"
                   className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
                 />
@@ -186,7 +185,7 @@ const Navbar = ({ setShowNav }) => {
               className="flex items-center justify-center gap-3"
             >
               <img
-                src={Glasses}
+                src={"/vr_glasses.png"}
                 alt="nav"
                 className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
               />
@@ -200,7 +199,7 @@ const Navbar = ({ setShowNav }) => {
               className="flex items-center justify-center gap-3"
             >
               <img
-                src={Glasses}
+                src={"/vr_glasses.png"}
                 alt="nav"
                 className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
               />

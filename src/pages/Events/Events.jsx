@@ -49,10 +49,10 @@ const Events = () => {
             <button
               key={index}
               className={`tab rounded-sm w-[100px] h-[30px] mx-[10px] mt-[12px] ${
-                tab === item ? "gradient-bg" : ""
+                tab === (item === "EE" ? "EEE" : item) ? "gradient-bg" : ""
               }`}
               onClick={() => {
-                setTab(item);
+                setTab(item === "EE" ? "EEE" : item);
                 handleSound();
               }}
             >
