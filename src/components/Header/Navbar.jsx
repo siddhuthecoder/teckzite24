@@ -107,7 +107,7 @@ const Navbar = ({ setShowNav }) => {
                 }}
                 className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
               >
-                <h1 className="text-[20px] pt-0 text-nowrap top-[20px]  h-2 absolute">
+                <h1 className="text-[16px] pt-1 text-nowrap top-[20px]  h-2 absolute">
                   {userData.tzkid.toUpperCase()}
                 </h1>
                 <img
@@ -126,7 +126,7 @@ const Navbar = ({ setShowNav }) => {
               }}
               className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
             >
-              <h1 className="text-[20px] pt-0 text-nowrap top-[20px]  h-2 absolute">
+              <h1 className="text-[16px] pt-1 text-nowrap top-[20px]  h-2 absolute">
                 Login
               </h1>
               <img

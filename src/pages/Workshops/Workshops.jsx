@@ -48,8 +48,8 @@ const Workshops = () => {
           ) : (
             <>
               {workshopData.length === 0 && (
-                <div className="w-full min-h-[50vh] cols-span-3 flex items-center justify-center">
-                  <h1 className="text-center">No workshops yet...</h1>
+                <div className="w-full min-h-[50vh] col-span-3 flex items-center justify-center">
+                  <h1 className="text-center text-xl">No workshops yet...</h1>
                 </div>
               )}
               {workshopData.map((w) => {
