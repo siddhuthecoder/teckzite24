@@ -1,5 +1,4 @@
 import team1 from "../assets/webteam/sid.png";
-import aswini from "../assets/webteam/aswini.jpg";
 
 export const navigation = [
   {

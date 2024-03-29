@@ -81,6 +81,9 @@ const EventDetailsCard3 = () => {
         } catch (error) {
           toast.error(error?.response?.data.message || "Internal Server Error");
         }
+      } else {
+        setIsReg(false);
+        return;
       }
     } else {
       setRegisterForm(true);
