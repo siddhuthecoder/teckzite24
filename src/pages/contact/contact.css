@@ -1,7 +1,7 @@
 .input-bg{
     background: url('./contact.svg');
     /* background-size: cover; */
-    /* background-size: cover; */
+    background-size: cover;
     height: 100%;
     height: 60px;
     background-repeat: no-repeat;
@@ -9,4 +9,12 @@
 .input-bg::after{
     position: absolute;
     content: "Name";
+}
+.info-bg{
+    background: url('./contact.svg');
+    /* background-size: cover; */
+    background-size: 100%;
+    width: 100%;
+    height: 60px;
+    background-repeat: no-repeat;
 }
