@@ -72,18 +72,18 @@ const AboutBody = () => {
         </div>
         <div className="w-full my-3 mb-[80px] z-10">
           <div className="memos w-[97%]  max-w-[1200px] mx-auto ">
-            <img alt="tzkimg" className="bg-gray-400" src={i1} />
-            <img alt="tzkimg" className="bg-gray-400" src={i2} />
-            <img alt="tzkimg" className="bg-gray-400" src={i3} />
-            <img alt="tzkimg" className="bg-gray-400" src={i4} />
-            <img alt="tzkimg" className="bg-gray-400" src={i5} />
-            <img alt="tzkimg" className="bg-gray-400" src={i6} />
-            <img alt="tzkimg" className="bg-gray-400" src={i7} />
-            <img alt="tzkimg" className="bg-gray-400" src={i8} />
-            <img alt="tzkimg" className="bg-gray-400" src={i9} />
-            <img alt="tzkimg" className="bg-gray-400" src={i10} />
-            <img alt="tzkimg" className="bg-gray-400" src={i11} />
-            <img alt="tzkimg" className="bg-gray-400" src={i12} />
+            <img alt="tzkimg" className="bg-gray-400 memo-1" src={i1} />
+            <img alt="tzkimg" className="bg-gray-400 memo-2" src={i2} />
+            <img alt="tzkimg" className="bg-gray-400 memo-3" src={i3} />
+            <img alt="tzkimg" className="bg-gray-400 memo-4" src={i4} />
+            <img alt="tzkimg" className="bg-gray-400 memo-5" src={i5} />
+            <img alt="tzkimg" className="bg-gray-400 memo-6" src={i6} />
+            <img alt="tzkimg" className="bg-gray-400 memo-7" src={i7} />
+            <img alt="tzkimg" className="bg-gray-400 memo-8" src={i8} />
+            <img alt="tzkimg" className="bg-gray-400 memo-9" src={i9} />
+            <img alt="tzkimg" className="bg-gray-400 memo-10" src={i10} />
+            <img alt="tzkimg" className="bg-gray-400 memo-11" src={i11} />
+            <img alt="tzkimg" className="bg-gray-400 memo-12" src={i12} />
           </div>
         </div>
       </div>
