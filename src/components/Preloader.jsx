@@ -107,7 +107,7 @@ const Preloader = ({ setLoading }) => {
                 <>
                   <div
                     data-glitch="METAVERSE"
-                    className="glitch text-[#f529a3] font-bold font-sans"
+                    className="glitch text-[#f529a3] font-bold "
                   >
                     METAVERSE
                   </div>
