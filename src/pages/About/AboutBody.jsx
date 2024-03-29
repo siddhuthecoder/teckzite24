@@ -1,5 +1,4 @@
 import React from 'react'
-import s1 from '../../assets/about/about.svg'
 import i1 from '../../assets/img/about/img01.webp'
 import i2 from '../../assets/img/about/img02.webp'
 import i3 from '../../assets/img/about/img03.webp'

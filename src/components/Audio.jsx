@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Audio from '../assets/aud/web-bg.mp3';
 import { GoMute, GoUnmute } from "react-icons/go";
 
 const AudioBG = () => {
@@ -40,7 +39,7 @@ const AudioBG = () => {
     return (
         <div>
             <audio ref={audioRef} autoPlay loop>
-                <source src={Audio} type="audio/mp3" />
+                <source src={""} type="audio/mp3" />
             </audio>
             <button className="w-[40px] h-[40px] flex items-center justify-center rounded-[50%] audio-bg" onClick={togglePlayPause}>
                 {!isPlaying ? (<GoMute className="text-[20px] text-[white]" />) : (<GoUnmute className="text-[20px] text-[white]" />)}
