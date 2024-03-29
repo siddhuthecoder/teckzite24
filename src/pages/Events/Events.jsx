@@ -52,7 +52,7 @@ const Events = () => {
                 tab === item ? "gradient-bg" : ""
               }`}
               onClick={() => {
-                setTab(item);
+                setTab(item !== "EE" ? item : "EEE");
                 handleSound();
               }}
             >

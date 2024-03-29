@@ -15,17 +15,15 @@ const WebTeam = () => {
       role: "Web3 developer",
       img: sid,
     },
-     {
+    {
       id: 1,
       name: "Aswini Kodati",
       role: "UI/UX Designer",
       img: aswini,
     },
-
-
     {
       id: 2,
-       name: "Yasvanth Hanumantu",
+      name: "Yasvanth Hanumantu",
       role: "Web Developer",
       img: yash,
     },
