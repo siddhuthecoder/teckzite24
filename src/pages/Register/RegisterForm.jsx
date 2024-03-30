@@ -6,7 +6,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { userActions } from "../../store/userSlice";
-import img from "../../../public/logo.png";
+import img from "../../assets/logo.png";
 import FileBase64 from "react-file-base64";
 import "./reg.css";
 import bord from "../../assets/img/svgs/regBorder.svg";
@@ -170,7 +170,7 @@ const RegisterForm = () => {
           address: `${data.state},${data.district},${data.city}`,
         },
         theme: {
-          color: "DE7CE7",
+          color: "#F529A3",
         },
       };
 
