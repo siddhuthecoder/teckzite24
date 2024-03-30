@@ -6,7 +6,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { userActions } from "../../store/userSlice";
-import img from "../../assets/logo.png";
+import img from "../../../public/logo.png";
 import FileBase64 from "react-file-base64";
 import "./reg.css";
 import bord from "../../assets/img/svgs/regBorder.svg";
@@ -118,7 +118,7 @@ const RegisterForm = () => {
         amount: order.amount,
         currency: "INR",
         name: "Teckzite 2k24",
-        description: "Test Transaction",
+        description: "Teckzite 2k24",
         image: img,
         order_id: order.id,
         handler: async function (response) {
@@ -170,7 +170,7 @@ const RegisterForm = () => {
           address: `${data.state},${data.district},${data.city}`,
         },
         theme: {
-          color: "#3399cc",
+          color: "DE7CE7",
         },
       };
 
