@@ -140,7 +140,6 @@ const RegisterForm = () => {
                   branch: data.branch,
                   collegeId: data.collegeId,
                   gender: data.gender,
-                  img: data.img,
                   state: data.state,
                   district: data.district,
                   idUpload: data.file,
