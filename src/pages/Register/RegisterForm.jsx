@@ -587,7 +587,7 @@ const RegisterForm = () => {
                         name="referal"
                         value={data.referal}
                         onChange={handleChange}
-                        placeholder="Refferal Id"
+                        placeholder="Refferal Id (Optional)"
                         className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
                         style={{ borderBottom: "1px solid #eee" }}
                       />

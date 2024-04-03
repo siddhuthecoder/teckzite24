@@ -13,7 +13,7 @@ const Contact = () => {
       </div>
       <div className="absolute bottom-[15%]">
         <p className="text-gray-300 text-center">
-          Note :- Final year students are not allowed{" "}
+          Note :- Btech final year and mtech students are not allowed{" "}
         </p>
       </div>
     </>
