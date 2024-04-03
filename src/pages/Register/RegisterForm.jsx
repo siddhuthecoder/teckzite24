@@ -470,7 +470,6 @@ const RegisterForm = () => {
                     <option value="E1">E1</option>
                     <option value="E2">E2</option>
                     <option value="E3">E3</option>
-                    <option value="E4">E4</option>
                   </select>
                   <select
                     id="branch"
