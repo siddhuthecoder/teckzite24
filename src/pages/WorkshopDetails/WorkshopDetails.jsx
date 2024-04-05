@@ -41,8 +41,8 @@ const WorkshopDetails = () => {
   }, [id, workshopData, navigate]);
 
   const handleRegister = async () => {
-    // setRegisterForm(true);
-    window.alert("Only offline registration are allowed");
+    setRegisterForm(true);
+    // window.alert("Only offline registration are allowed");
   };
 
   const tabs = [
