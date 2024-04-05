@@ -8,7 +8,7 @@ const Contact = () => {
           Facing any Issues? Contact Us
         </p>
         <p className="text-gray-300 text-center">
-          Y.Siddartha +91 9398848215 codewithsiddhu@gmail.com{" "}
+          H.Yasvanth +91 8330930503 yasvanthhanumantu1@gmail.com{" "}
         </p>
       </div>
       <div className="absolute bottom-[15%]">
