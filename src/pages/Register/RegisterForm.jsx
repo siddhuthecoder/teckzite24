@@ -637,9 +637,10 @@ const RegisterForm = () => {
                     Accept{" "}
                     <a
                       href={
-                        "https://drive.google.com/file/d/1-Ykrk7ZwDvn3AiLdQ0ZZBbbPXyJt_aQG/view?usp=drivesdk"
+                        "https://docs.google.com/document/d/1CbrFplLJ8eWZdKc7KF4Yacm6xHIb6TBu/edit?usp=drivesdk&ouid=105229758609745283151&rtpof=true&sd=true"
                       }
                       target="_blank"
+                      rel="noreferrer"
                       className="underline text-[#bb00ff]"
                     >
                       Terms and Conditions
