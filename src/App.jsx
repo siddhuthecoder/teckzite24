@@ -8,6 +8,7 @@ import Referrals from "./pages/Referrals/Referrals";
 import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
 import Contact1 from "./pages/contact/Contact1";
+import EWschedule from "./pages/Schedule/EWschedule";
 import {
   // CoreTeam,
   Events,
@@ -22,7 +23,7 @@ import {
   // Referrals,
   // Speakers,
   // Sponsors,
-  // Schedule,
+  Schedule,
   About,
   // EventUpdates,
   ScrollHome,
@@ -57,16 +58,16 @@ function App() {
 
   const userStatus = useSelector((state) => state.user.status);
 
-  // useEffect(() => {
-  //   const handleSound = () => {
-  //     const audio = new Audio("./click.wav");
-  //     audio.play();
-  //   };
-  //   document.body.addEventListener("click", handleSound);
-  //   return () => {
-  //     document.body.removeEventListener("click", handleSound);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const handleSound = () => {
+      const audio = new Audio("./click.wav");
+      audio.play();
+    };
+    // document.body.addEventListener("click", handleSound);
+    return () => {
+      // document.body.removeEventListener("click", handleSound);
+    };
+  }, []);
 
   const ctrlShiftKey = (e, keycode) => {
     return e.ctrlKey && e.shiftKey && e.keyCode === keycode.charCodeAt(0);
@@ -167,7 +168,8 @@ function App() {
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<SpeakersCard />} />
-              <Route path="/ed" element={<Contact1 />} />
+              <Route path="/schedule" element={<Schedule />} />
+              <Route path="/card2" element={<EWschedule />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               <Route path="/eventupdates" element={<ComingSoon />} />
               {/* <Route path="/eventupdates" element={<EventUpdates />} /> */}

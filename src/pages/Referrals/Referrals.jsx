@@ -51,23 +51,13 @@ const Referrals = () => {
       <Table />
       <div className="my-10 w-full flex items-center justify-center">
         <button
-          className="px-10 py-2 bg-gradient rounded"
+          className="px-10 py-2 bg-gradient rounded mb-[40px]"
           onClick={handleShare}
         >
           Refer Now
         </button>
       </div>
-      <div className="w-[75%] bg-black pt-[30px] relative rounded-lg mt-[30px] m-auto h-[250px]">
-        <div className="text-center relative">
-          <div className="absolute w-[100px] h-[100px]"></div>
-          <p className="text-[rgb(152,65,255)] font-semibold text-lg">
-            Prizes for Winners
-          </p>
-          <div className="w-[75%] m-auto">
-            <p className="text-white font-semibold text-lg">awards</p>
-          </div>
-        </div>
-      </div>
+      
     </section>
   );
 };
