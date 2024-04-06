@@ -46,7 +46,7 @@ const Home = () => {
               <div className="w-full flex flex-row-reverse">
                 <IoMdClose style={{}} className="text-[30px] text-[orange]"  onClick={() => setApp(false)}/>
               </div>
-              <div className="text-center">GET IT ON THE OUR <span className="text-[black] font-bold ">MEEBUDDY</span> APP</div>
+              <div className="text-center">NOW CAN ACCESS ON <span className="text-[black] font-bold ">MEEBUDDY</span> APP</div>
               <div className="w-full flex items-center flex-wrap gap-4">
                 <img src={google} alt="" className="mx-auto" style={{width:"160px",height:"70px"}} />
                 <img src={apple} alt="" className="mx-auto mb-3" style={{width:"160px",height:"50px"}} />
