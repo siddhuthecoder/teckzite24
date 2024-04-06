@@ -1,21 +1,4 @@
-:root {
-    --primary-color: #212121;
-    --background-color: #111;
-    --font: sans-serif;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    background: var(--background-color);
-    font-family: var(--font);
-    display: flex;
-    justify-content: center;
-  }
-  
+
   /* Timeline Container */
   .timeline {
     background: var(--primary-color);
@@ -41,7 +24,7 @@
     content: "";
     position: absolute;
     width: 50%;
-    border: solid orangered;
+    border: solid #f529a3;
   }
   
   /* Setting the border of top, bottom, left */
@@ -100,7 +83,7 @@
   
   /* Title of the card */
   .title {
-    color: orangered;
+    color: #f529a3;
     position: relative;
   }
   
@@ -112,7 +95,7 @@
     height: 10px;
     background: white;
     border-radius: 999px;
-    border: 3px solid orangered;
+    border: 3px solid #f529a3;
   }
   
   /* text right if the card is even  */
