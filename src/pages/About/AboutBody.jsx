@@ -19,7 +19,8 @@ const AboutBody = () => {
         <div className="text-center font-bold text-4xl my-7 text-white font-joti">
           ABOUT
         </div>
-        <div className="w-[97%] max-w-[1200px] border-[#f529a3] rounded-[5px]  border-[2px] flex justify-center items-center mx-auto min-h-[400px] backdrop-blur-md relative ">
+        <div className="w-[97%] max-w-[1200px] border-[#f529a3] rounded-[5px]  border-[2px] flex
+         justify-center items-center mx-auto min-h-[400px] backdrop-blur-md relative ">
           <div className="mx-3 z-[2]">
             <p className="px-3 mt-3" style={{ textIndent: "30px" }}>
               Teckzite is a national-level technological extravaganza that

@@ -57,16 +57,16 @@ function App() {
 
   const userStatus = useSelector((state) => state.user.status);
 
-  // useEffect(() => {
-  //   const handleSound = () => {
-  //     const audio = new Audio("./click.wav");
-  //     audio.play();
-  //   };
-  //   document.body.addEventListener("click", handleSound);
-  //   return () => {
-  //     document.body.removeEventListener("click", handleSound);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const handleSound = () => {
+      const audio = new Audio("./click.wav");
+      audio.play();
+    };
+    document.body.addEventListener("click", handleSound);
+    return () => {
+      document.body.removeEventListener("click", handleSound);
+    };
+  }, []);
 
   const ctrlShiftKey = (e, keycode) => {
     return e.ctrlKey && e.shiftKey && e.keyCode === keycode.charCodeAt(0);

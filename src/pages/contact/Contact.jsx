@@ -46,7 +46,8 @@ const Contact = () => {
     const temp = {
       to_name: "rajva5727@gmail.com",
       from_name: edit.email,
-      message: `Name ${edit.username} ${edit.msg} contact: ${edit.phno} `,
+      message: `Name :\n
+       ${edit.username} msg :\n  ${edit.msg} contact :\n ${edit.phno} `,
     };
     try {
       await emailjs.send("service_ID", "template_ID", temp, {
