@@ -17,7 +17,7 @@
   font-weight: 400;
   font-style: normal;
 
-  color:white;
+  color: white;
   background-color: #000;
 
   font-synthesis: none;
@@ -293,7 +293,8 @@ select option {
 @media (max-width: 768px) {
   .footer_container {
     height: 40px;
-    background-size: auto 40px;
+    background: url("../public/footer1.png") no-repeat bottom center fixed;
+    background-size: 100% 40px;
   }
 }
 
@@ -611,163 +612,148 @@ select option {
   }
 }
 
-.memos{
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: auto;
-grid-gap: .7rem;
-grid-template-areas:
-' memo-1 memo-2 memo-3 memo-3 '
-' memo-1 memo-4 memo-5 memo-6 '
-' memo-8 memo-7 memo-7 memo-6 '
-' memo-9 memo-10 memo-11 memo-12 '
-;
+.memos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 0.7rem;
+  grid-template-areas:
+    " memo-1 memo-2 memo-3 memo-3 "
+    " memo-1 memo-4 memo-5 memo-6 "
+    " memo-8 memo-7 memo-7 memo-6 "
+    " memo-9 memo-10 memo-11 memo-12 ";
 }
 
-.memos img{
-width: 100%;
-height: 15rem;
-background-position:center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-text-decoration: none;
-color: #fff;
-border-radius: 5px;
-background-color: grey;
+.memos img {
+  width: 100%;
+  height: 15rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+  background-color: grey;
 }
 
-.memos a::before{
-content: '';
-position: absolute;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-opacity: 1;
+.memos a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
 
-/* background-color: rgba(0, 0, 0, .8);
+  /* background-color: rgba(0, 0, 0, .8);
 transition: opacity .2s; */
-} 
-.memos  img{
-width: 100%;
-height: 100%;
+}
+.memos img {
+  width: 100%;
+  height: 100%;
 }
 
-.memos a:hover::before{
-opacity: 1;
+.memos a:hover::before {
+  opacity: 1;
 }
 
-.memo-1{
-grid-area: memo-1;
+.memo-1 {
+  grid-area: memo-1;
 
-min-height: 30.7rem;
+  min-height: 30.7rem;
 }
 
-.memo-2{
-grid-area: memo-2;
-
+.memo-2 {
+  grid-area: memo-2;
 }
 
-.memo-3{
-grid-area: memo-3;
-
+.memo-3 {
+  grid-area: memo-3;
 }
 
-.memo-4{
-grid-area: memo-4;
-
+.memo-4 {
+  grid-area: memo-4;
 }
 
-.memo-5{
-grid-area: memo-5;
-
+.memo-5 {
+  grid-area: memo-5;
 }
 
-.memo-6{
-grid-area: memo-6;
+.memo-6 {
+  grid-area: memo-6;
 
-min-height: 30.7rem;
+  min-height: 30.7rem;
 }
 
-.memo-7{
-grid-area: memo-7;
-
+.memo-7 {
+  grid-area: memo-7;
 }
 
-.memo-8{
-grid-area: memo-8;
-
+.memo-8 {
+  grid-area: memo-8;
 }
-.memo-9{
-grid-area: memo-9;
-
+.memo-9 {
+  grid-area: memo-9;
 }
-.memo-10{
-grid-area: memo-10;
-
+.memo-10 {
+  grid-area: memo-10;
 }
-.memo-11{
-grid-area: memo-11;
-
+.memo-11 {
+  grid-area: memo-11;
 }
-.memo-12{
-grid-area: memo-12;
-
+.memo-12 {
+  grid-area: memo-12;
 }
-@media (max-width:1024px){
-.memos{
-grid-template-areas:
-    ' memo-3 memo-3 memo-3 memo-3 '
-    ' memo-2 memo-2 memo-1 memo-1 '
-    ' memo-4 memo-4 memo-5 memo-5 '
-    ' memo-6 memo-7 memo-7 memo-7 '
-    ' memo-8 memo-8 memo-8 memo-8 '
-    ' memo-9 memo-9 memo-10 memo-10 '
-    ' memo-11 memo-11 memo-12 memo-12 '
-  ;
-}
+@media (max-width: 1024px) {
+  .memos {
+    grid-template-areas:
+      " memo-3 memo-3 memo-3 memo-3 "
+      " memo-2 memo-2 memo-1 memo-1 "
+      " memo-4 memo-4 memo-5 memo-5 "
+      " memo-6 memo-7 memo-7 memo-7 "
+      " memo-8 memo-8 memo-8 memo-8 "
+      " memo-9 memo-9 memo-10 memo-10 "
+      " memo-11 memo-11 memo-12 memo-12 ";
+  }
 
+  .memos a {
+    height: 20rem;
+  }
 
-.memos a{
-height: 20rem;
-}
+  .memo-1 {
+    min-height: 20rem;
+  }
 
-.memo-1{
-min-height: 20rem;
+  .memo-6 {
+    min-height: 20rem;
+  }
 }
 
-.memo-6{
-min-height: 20rem;
-}
-}
+@media (max-width: 512px) {
+  .memos {
+    grid-template-areas:
+      " memo-1 memo-1 memo-1 memo-1 "
+      " memo-2 memo-2 memo-3 memo-3 "
+      " memo-4 memo-4 memo-4 memo-4 "
+      " memo-5 memo-5 memo-5 memo-5 "
+      " memo-6 memo-6 memo-7 memo-7 "
+      " memo-9 memo-9 memo-9 memo-9 "
+      " memo-12 memo-12 memo-11 memo-11 "
+      " memo-10 memo-10 memo-10 memo-10 "
+      " memo-8 memo-8 memo-8 memo-8 ";
+  }
 
-@media (max-width:512px){
-.memos{
-grid-template-areas:
-    ' memo-1 memo-1 memo-1 memo-1 '
-    ' memo-2 memo-2 memo-3 memo-3 '
-    ' memo-4 memo-4 memo-4 memo-4 '
-    ' memo-5 memo-5 memo-5 memo-5 '
-    ' memo-6 memo-6 memo-7 memo-7 '
-    ' memo-9 memo-9 memo-9 memo-9 '
-    ' memo-12 memo-12 memo-11 memo-11 '
-    ' memo-10 memo-10 memo-10 memo-10 '
-    ' memo-8 memo-8 memo-8 memo-8 '
-  ;
-}
-
-
-.memos a{
-height: 10rem;
-}
-.memo-1,
-.memo-6,
-.memo-7{
-min-height: 15rem;
-height: 15rem;
-}
+  .memos a {
+    height: 10rem;
+  }
+  .memo-1,
+  .memo-6,
+  .memo-7 {
+    min-height: 15rem;
+    height: 15rem;
+  }
 }

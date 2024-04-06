@@ -42,7 +42,7 @@ const WorkshopDetails = () => {
 
   const handleRegister = async () => {
     setRegisterForm(true);
-    // window.alert("Registered are not opened yet!!");
+    // window.alert("Only offline registration are allowed");
   };
 
   const tabs = [

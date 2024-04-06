@@ -33,9 +33,9 @@ const Events = () => {
       <EventsBanner />
       <div className="w-full flex flex-col z-10 min-h-[85vh] pb-5 sticky">
         <div className="text-center font-joti text-3xl">Events</div>
-        <div className="w-full flex items-center justify-center flex-wrap mt-7">
+        <div className="w-full flex items-center gap-2 justify-center flex-wrap mt-7">
           {[
-            "ALL",
+            "OPEN FOR ALL",
             "PUC",
             "CSE",
             "ECE",
@@ -48,11 +48,16 @@ const Events = () => {
           ].map((item, index) => (
             <button
               key={index}
-              className={`tab rounded-sm w-[100px] h-[30px] mx-[10px] mt-[12px] ${
-                tab === (item === "EE" ? "EEE" : item) ? "gradient-bg" : ""
+              className={`tab rounded-sm px-2 h-[30px] mx-[10px] mt-[12px] ${
+                tab ===
+                (item === "EE" ? "EEE" : item === "OPEN FOR ALL" ? "ALL" : item)
+                  ? "gradient-bg"
+                  : ""
               }`}
               onClick={() => {
-                setTab(item === "EE" ? "EEE" : item);
+                setTab(
+                  item === "EE" ? "EEE" : item === "OPEN FOR ALL" ? "ALL" : item
+                );
                 handleSound();
               }}
             >

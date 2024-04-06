@@ -80,7 +80,11 @@ const EventDetailsCard3 = () => {
           navigate("/profile");
         } catch (error) {
           toast.error(error?.response?.data.message || "Internal Server Error");
+          setIsReg(false);
         }
+      } else {
+        setIsReg(false);
+        return;
       }
     } else {
       setRegisterForm(true);
@@ -195,7 +199,7 @@ const EventDetailsCard3 = () => {
                   <Contact contact={data.contact_info} />
                 )}
               </div>
-              <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
+              {/* <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
                 <h1 className="font-semibold text-lg">Prize Money :- </h1>
                 {data.prizeMoney ? (
                   <>
@@ -206,7 +210,7 @@ const EventDetailsCard3 = () => {
                 ) : (
                   "Updated soon"
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

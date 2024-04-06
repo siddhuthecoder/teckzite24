@@ -6,6 +6,7 @@ import sri from "../../assets/webteam/sribabu.png";
 import sid from "../../assets/webteam/sid.png";
 import aswini from "../../assets/webteam/aswini.jpg";
 import yash from "../../assets/webteam/yash.png";
+import hemu from "../../assets/webteam/hemu.png";
 
 const WebTeam = () => {
   const WebTeamCard = [
@@ -24,7 +25,7 @@ const WebTeam = () => {
     {
       id: 2,
       name: "Yasvanth Hanumantu",
-      role: "Web Developer",
+      role: "Fullstack Developer",
       img: yash,
     },
     {
@@ -37,7 +38,7 @@ const WebTeam = () => {
       id: 4,
       name: "Hemanth",
       role: "Web Developer",
-      img: "",
+      img: hemu,
     },
   ];
   return (

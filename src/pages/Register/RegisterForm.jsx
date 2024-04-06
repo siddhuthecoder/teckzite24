@@ -118,7 +118,7 @@ const RegisterForm = () => {
         amount: order.amount,
         currency: "INR",
         name: "Teckzite 2k24",
-        description: "Test Transaction",
+        description: "Teckzite 2k24",
         image: img,
         order_id: order.id,
         handler: async function (response) {
@@ -140,7 +140,6 @@ const RegisterForm = () => {
                   branch: data.branch,
                   collegeId: data.collegeId,
                   gender: data.gender,
-                  img: data.img,
                   state: data.state,
                   district: data.district,
                   idUpload: data.file,
@@ -170,7 +169,7 @@ const RegisterForm = () => {
           address: `${data.state},${data.district},${data.city}`,
         },
         theme: {
-          color: "#3399cc",
+          color: "#F529A3",
         },
       };
 
@@ -471,7 +470,6 @@ const RegisterForm = () => {
                     <option value="E1">E1</option>
                     <option value="E2">E2</option>
                     <option value="E3">E3</option>
-                    <option value="E4">E4</option>
                   </select>
                   <select
                     id="branch"
@@ -589,7 +587,7 @@ const RegisterForm = () => {
                         name="referal"
                         value={data.referal}
                         onChange={handleChange}
-                        placeholder="Refferal Id"
+                        placeholder="Refferal Id (Optional)"
                         className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
                         style={{ borderBottom: "1px solid #eee" }}
                       />
@@ -639,9 +637,10 @@ const RegisterForm = () => {
                     Accept{" "}
                     <a
                       href={
-                        "https://drive.google.com/file/d/1-Ykrk7ZwDvn3AiLdQ0ZZBbbPXyJt_aQG/view?usp=drivesdk"
+                        "https://docs.google.com/document/d/1CbrFplLJ8eWZdKc7KF4Yacm6xHIb6TBu/edit?usp=drivesdk&ouid=105229758609745283151&rtpof=true&sd=true"
                       }
                       target="_blank"
+                      rel="noreferrer"
                       className="underline text-[#bb00ff]"
                     >
                       Terms and Conditions
