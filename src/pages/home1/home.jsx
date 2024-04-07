@@ -6,6 +6,7 @@ import "../../css/glitch2.scss";
 import { IoMdClose } from "react-icons/io";
 import google from "../../assets/img/google-play-badge.png";
 import apple from "../../assets/img/apple.png";
+import meebuddy from "../../assets/meenews.png";
 
 const Home = () => {
   const [app, setApp] = useState(true);
@@ -60,7 +61,10 @@ const Home = () => {
                 NOW ACCESS Updates ON{" "}
                 <span className="font-bold ">MEEBUDDY</span> APP
               </div>
-              <div className="w-full grid grid-cols-12 my-3">
+              <div className="w-full flex items-center justify-center mt-2">
+                <img src={meebuddy} alt="meenews" style={{ height: "35px" }} />
+              </div>
+              <div className="w-full grid grid-cols-12 mb-3 mt-2">
                 <div className="col-span-2 max-md:col-span-1"></div>
                 <a
                   href="https://play.google.com/store/apps/details?id=com.meenews.android"
