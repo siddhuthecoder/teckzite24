@@ -59,27 +59,13 @@ const Home = () => {
               </div>
               <div className="text-center uppercase text-base max-md:text-[12px]">
                 NOW ACCESS Updates ON{" "}
-                <span className="font-bold ">MEEBUDDY</span> APP
+                <span className="font-bold ">MEENEWS</span> APP
               </div>
               <div className="w-full flex items-center justify-center mt-2">
                 <img src={meebuddy} alt="meenews" style={{ height: "35px" }} />
               </div>
               <div className="w-full grid grid-cols-12 mb-3 mt-2">
                 <div className="col-span-2 max-md:col-span-1"></div>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.meenews.android"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full col-span-3 max-md:col-span-4 pb-1"
-                >
-                  <img
-                    src={google}
-                    alt="google"
-                    style={{ height: "35px" }}
-                    className="mx-auto w-full"
-                  />
-                </a>
-                <div className="col-span-2"></div>
                 <a
                   href="https://apps.apple.com/sc/app/meenews/id6475638221"
                   target="_blank"
@@ -89,6 +75,21 @@ const Home = () => {
                   <img
                     src={apple}
                     alt="apple"
+                    style={{ height: "35px" }}
+                    className="mx-auto w-full"
+                  />
+                </a>
+
+                <div className="col-span-2"></div>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.meenews.android"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full col-span-3 max-md:col-span-4 pb-1"
+                >
+                  <img
+                    src={google}
+                    alt="google"
                     style={{ height: "35px" }}
                     className="mx-auto w-full"
                   />
