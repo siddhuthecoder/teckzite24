@@ -110,7 +110,17 @@ const RegisterForm = () => {
         data: { order },
       } = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/user/order/create`,
-        { amount: data.amount, email: data.email }
+        {
+          amount: data.amount,
+          email: data.email,
+          firstName: data.firstName,
+          lastName: data.lastName,
+          college: data.college,
+          year: data.year,
+          phno: data.phoneNumber,
+          branch: data.branch,
+          collegeId: data.collegeId,
+        }
       );
 
       const options = {
