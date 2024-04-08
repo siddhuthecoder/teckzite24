@@ -3,10 +3,10 @@ import { fetchNotifications } from "../../store/notificationSlice";
 import { MdOutlineWifiOff } from "react-icons/md";
 import { motion } from "framer-motion";
 
-import t1 from "../../assets/img/table/t1.svg";
-import t2 from "../../assets/img/table/t2.svg";
-import t3 from "../../assets/img/table/t3.svg";
-import t4 from "../../assets/img/table/t4.svg";
+// import t1 from "../../assets/img/table/t1.svg";
+// import t2 from "../../assets/img/table/t2.svg";
+// import t3 from "../../assets/img/table/t3.svg";
+// import t4 from "../../assets/img/table/t4.svg";
 
 const EventUpdatesCards = () => {
   const dispatch = useDispatch();
@@ -85,7 +85,7 @@ const EventUpdatesCards = () => {
               //   backgroundImage: `url(${t1})`,
               //   backgroundSize: "100% 100%",
               // }}
-              className="grid grid-cols-12 my-14 max-w-5xl backdrop-blur-lg bg-[rgba(255,255,255,0.1)] border mx-auto rounded py-2 px-5 gap-2 relative"
+              className="grid grid-cols-12 my-14 max-w-5xl border border-[#f529a3] bg-[rgba(255,255,255,0.05)] mx-auto rounded py-2 px-5 gap-2 relative"
             >
               {/* <img
                 src={t3}
@@ -100,7 +100,7 @@ const EventUpdatesCards = () => {
               <div
                 className={`col-span-3 ${
                   (index + 1) % 2 === 0 ? "order-2" : "order-1"
-                } max-md:col-span-12 max-md:order-1 max-md:flex justify-center items-center`}
+                } max-md:col-span-12 max-md:order-1 max-md:flex justify-center backdrop-blur-lg items-center`}
               >
                 <img
                   src={note.picturePath}
@@ -111,10 +111,10 @@ const EventUpdatesCards = () => {
               <div
                 className={`col-span-9 ${
                   (index + 1) % 2 === 0 ? "order-1" : "order-2"
-                } max-md:order-2 max-md:col-span-12 py-3 max-md:px-3 w-full flex items-start justify-between flex-col`}
+                } max-md:order-2 max-md:col-span-12 py-3 max-md:px-3 w-full flex backdrop-blur-lg items-start justify-between flex-col`}
               >
-                <div className="flex flex-col items-start gap-2">
-                  <h1 className="text-3xl max-md:text-center mb-2 w-full">
+                <div className="flex flex-col items-start gap-2 backdrop-blur-lg">
+                  <h1 className="text-3xl max-md:text-center mb-2 w-full font-joti">
                     {note.heading}
                   </h1>
                   <p className="text-base max-md:text-center mb-1">
