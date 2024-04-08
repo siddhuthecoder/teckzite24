@@ -9,7 +9,7 @@
   /* Card container */
   .card {
     position: relative;
-    max-width: 400px;
+    max-width: 800px;
   }
   
   /* setting padding based on even or odd */
@@ -75,7 +75,6 @@
   .info {
     display: flex;
     flex-direction: column;
-    background: #333;
     color: gray;
     border-radius: 10px;
     padding: 10px;
