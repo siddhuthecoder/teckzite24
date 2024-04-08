@@ -27,6 +27,7 @@ import {
   About,
   // EventUpdates,
   ScrollHome,
+  EventUpdates,
 } from "./pages";
 
 import { Preloader } from "./components";
@@ -171,8 +172,8 @@ function App() {
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/card2" element={<EWschedule />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
-              <Route path="/eventupdates" element={<ComingSoon />} />
-              {/* <Route path="/eventupdates" element={<EventUpdates />} /> */}
+              {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
+              <Route path="/eventupdates" element={<EventUpdates />} />
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}

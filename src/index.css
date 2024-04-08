@@ -767,7 +767,7 @@ transition: opacity .2s; */
 /* Card container */
 .card {
   position: relative;
-  max-width:100%;
+  max-width: 100%;
 }
 
 /* setting padding based on even or odd */
@@ -835,7 +835,7 @@ transition: opacity .2s; */
   flex-direction: column;
   color: gray;
   border-radius: 10px;
-  background-color:transparent;
+  background-color: transparent;
   padding: 10px;
 }
 
