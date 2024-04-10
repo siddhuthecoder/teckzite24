@@ -174,6 +174,7 @@ function App() {
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
               <Route path="/eventupdates" element={<EventUpdates />} />
+              <Route path="/sponsors" element={<Sponsors />} />
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}
