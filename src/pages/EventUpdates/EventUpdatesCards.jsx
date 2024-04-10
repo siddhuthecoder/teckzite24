@@ -1,6 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { fetchNotifications } from "../../store/notificationSlice";
 import { MdOutlineWifiOff } from "react-icons/md";
+import { motion } from "framer-motion";
+
+// import t1 from "../../assets/img/table/t1.svg";
+// import t2 from "../../assets/img/table/t2.svg";
+// import t3 from "../../assets/img/table/t3.svg";
+// import t4 from "../../assets/img/table/t4.svg";
 
 const EventUpdatesCards = () => {
   const dispatch = useDispatch();
@@ -59,41 +65,72 @@ const EventUpdatesCards = () => {
     <div className="mt-14 pb-10 w-[95%] max-w-7xl mx-auto">
       {notificationData && (
         <>
+          {notificationData.length === 0 && (
+            <div className="w-full min-h-[50vh] flex items-center justify-center">
+              No Notifications yet
+            </div>
+          )}
           {notificationData.map((note, index) => (
-            <div
+            <motion.div
               key={index}
-              className="grid grid-cols-12 my-14 border max-w-5xl mx-auto border-gray-500 rounded py-2 px-5 gap-2"
+              initial={{ y: 400, opacity: 1, scale: 1 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 0,
+                type: "spring",
+                stiffness: 20,
+              }}
+              // style={{
+              //   backgroundImage: `url(${t1})`,
+              //   backgroundSize: "100% 100%",
+              // }}
+              className="grid grid-cols-12 my-14 max-w-5xl border border-[#f529a3] bg-[rgba(255,255,255,0.05)] mx-auto rounded py-2 px-5 gap-2 relative"
             >
+              {/* <img
+                src={t3}
+                alt="-"
+                className="absolute top-[-7px] left-[3px] scale-y-[1.1] scale-x-[0.84]"
+              />
+              <img
+                src={t4}
+                alt="-"
+                className="absolute bottom-[-26px] left-[56.5%] scale-y-[1.1] scale-x-[0.84]"
+              /> */}
               <div
                 className={`col-span-3 ${
                   (index + 1) % 2 === 0 ? "order-2" : "order-1"
-                } max-md:col-span-12 max-md:order-1 max-md:flex justify-center items-center`}
+                } max-md:col-span-12 max-md:order-1 max-md:flex justify-center backdrop-blur-lg items-center`}
               >
                 <img
                   src={note.picturePath}
                   alt="this is test"
-                  className="w-[250px] h-[250px] p-3"
+                  className="w-[250px] min-h-[250px] p-3"
                 />
               </div>
               <div
                 className={`col-span-9 ${
                   (index + 1) % 2 === 0 ? "order-1" : "order-2"
-                } max-md:order-2 max-md:col-span-12 py-3 max-md:px-3 w-full flex items-start justify-start flex-col`}
+                } max-md:order-2 max-md:col-span-12 py-3 max-md:px-3 w-full flex backdrop-blur-lg items-start justify-between flex-col`}
               >
-                <h1 className="text-3xl max-md:text-center mb-2 w-full">
-                  {note.heading}
-                </h1>
-                <p className="text-base max-md:text-center mb-1">
-                  <div dangerouslySetInnerHTML={{ __html: note.info }} />
-                </p>
-                <a
-                  href={note.link}
-                  className="underline text-sm text-blue-800 w-full my-2 text-right"
-                >
-                  Click Here
-                </a>
+                <div className="flex flex-col items-start gap-2 backdrop-blur-lg">
+                  <h1 className="text-3xl max-md:text-center mb-2 w-full font-joti">
+                    {note.heading}
+                  </h1>
+                  <p className="text-base max-md:text-center mb-1">
+                    <div dangerouslySetInnerHTML={{ __html: note.info }} />
+                  </p>
+                </div>
+                {note.link && (
+                  <a
+                    href={note.link}
+                    className="underline text-sm text-blue-800 w-full my-2 text-right"
+                  >
+                    Click Here
+                  </a>
+                )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </>
       )}
