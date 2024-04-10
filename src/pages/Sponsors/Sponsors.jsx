@@ -1,8 +1,11 @@
 import Style from './Sponsors.module.css'
+import SponsorsCard2 from './SponsorsCard2'
 
 const Sponsors = () => {
   return (
-    <div className={Style.error}>Sponsors</div>
+    <>
+      <SponsorsCard2 />
+    </>
   )
 }
 

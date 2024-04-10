@@ -22,7 +22,7 @@ import {
   Profile,
   // Referrals,
   // Speakers,
-  // Sponsors,
+  Sponsors,
   Schedule,
   About,
   // EventUpdates,
