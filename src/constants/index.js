@@ -42,7 +42,12 @@ export const navigation = [
     link: "/eventupdates",
   },
   {
-    id: 8,
+    id:8,
+    name:"Sponsors",
+    link:"/sponsors"
+  },
+  {
+    id: 9,
     name: "Contact",
     link: "/contact",
   },
@@ -141,3 +146,4 @@ export const CoreTeam = [
     id: "N190453",
   },
 ];
+  
