@@ -15,7 +15,7 @@ const EWschedule = () => {
                     <div className="info backdrop-blur-lg">
                         <h3 className="title text-2xl font-bold">{data.Name_of_the_Event}</h3>
                         <div className="flex flex-col ps-3">
-                            <div className="font-bold text-2xl text-[green] ">Rounds</div>
+                            <div className="font-bold text-2xl text-[aqua] ">Rounds</div>
                             <div className="">{
                                 Eve.events[index].Rounds.map((r,index) => (
                                     <>
