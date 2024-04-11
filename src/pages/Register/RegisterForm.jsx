@@ -273,6 +273,7 @@ const RegisterForm = () => {
       // }
       // setSignIn(true);
       window.alert("Registarions Closed");
+      setIsLoading(false);
     }
   };
 
