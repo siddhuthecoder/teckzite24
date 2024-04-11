@@ -10,6 +10,7 @@ import meeNews from '../../assets/img/sponsors/mee news.png'
 import beBest from '../../assets/img/sponsors/beBest.png'
 import bridge from '../../assets/img/sponsors/bridge.jpg'
 import siuk from '../../assets/img/sponsors/siuk.jpg'
+import sriVasta from '../../assets/img/sponsors/sriVasta.jpg'
 
 const SponsorsCard2 = () => {
 
@@ -52,7 +53,8 @@ const SponsorsCard2 = () => {
 
   const TSP = [
     {
-      name:"Sri vatsa electronics"
+      name:"Sri vatsa electronics",
+      img:sriVasta
     },
    
   ]

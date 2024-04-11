@@ -47,7 +47,12 @@ export const navigation = [
     link:"/sponsors"
   },
   {
-    id: 9,
+    id:9,
+    name:"Schedule",
+    link:"/schedule"
+  },
+  {
+    id: 10,
     name: "Contact",
     link: "/contact",
   },

@@ -9,6 +9,7 @@ import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
 import Contact1 from "./pages/contact/Contact1";
 import EWschedule from "./pages/Schedule/EWschedule";
+import NESchedule from "./pages/Schedule/NESchedule";
 import {
   // CoreTeam,
   Events,
@@ -168,7 +169,7 @@ function App() {
               <Route path="/swiper" element={<SwiperModule />} />
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
-              <Route path="/card" element={<SpeakersCard />} />
+              <Route path="/card" element={<NESchedule />} />
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/card2" element={<EWschedule />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
