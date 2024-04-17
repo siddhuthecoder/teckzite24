@@ -9,9 +9,8 @@ import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
 import Contact1 from "./pages/contact/Contact1";
 import EWschedule from "./pages/Schedule/EWschedule";
-import NESchedule from "./pages/Schedule/NESchedule";
 import {
-  // CoreTeam,
+  CoreTeam,
   Events,
   // Home,
   Register,
@@ -159,8 +158,8 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />
-              {/* <Route path="/coreteam" element={<CoreTeam />} /> */}
-              <Route path="/coreteam" element={<ComingSoon />} />
+              <Route path="/coreteam" element={<CoreTeam />} />
+              {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
               <Route path="/webteam" element={<WebTeam />} />
               <Route path="/register" element={<Register />} />
               <Route path="/team" element={<TeamCard />} />
@@ -169,7 +168,7 @@ function App() {
               <Route path="/swiper" element={<SwiperModule />} />
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
-              <Route path="/card" element={<NESchedule />} />
+              <Route path="/card" element={<SpeakersCard />} />
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/card2" element={<EWschedule />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />

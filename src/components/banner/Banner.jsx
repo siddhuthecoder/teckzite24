@@ -39,10 +39,10 @@ const Banner = ({ bg, text }) => {
     opacity = maxOpacity;
   }
 
-  console.log(opacity);
+  // console.log(opacity);
   const opacity2 = 1 - (scroll * 4) / (window.innerHeight / 1);
 
-  console.log(opacity);
+  // console.log(opacity);
 
   const DesktopBg = ({ bg }) => {
     return (

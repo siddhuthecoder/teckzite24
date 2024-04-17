@@ -92,7 +92,16 @@
     animation: flicker 1.5s infinite alternate;
     background-size: cover;
 }
-
+.spon-heading {
+    font-size: 13rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    text-transform: uppercase;
+    background-image: url("../../../public/spon.jpg");
+    animation: flicker 1.5s infinite alternate;
+    background-size: cover;
+}
 .all-heading::-moz-selection {
     background-color: var(--neon-border-color);
     color: var(--neon-text-color);
