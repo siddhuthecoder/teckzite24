@@ -13,3 +13,5 @@ export { default as Schedule } from "./Schedule/Schedule.jsx";
 export { default as EventUpdates } from "./EventUpdates/EventUpdates.jsx";
 export { default as About } from "./About/About.jsx";
 export { default as ScrollHome } from "./home/ScrollHome.jsx";
+// export { default as CertificatesUser } from "./CertificatesUser/CertificatesUser.jsx";
+

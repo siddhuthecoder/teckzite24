@@ -7,7 +7,7 @@ import AudioBG from "./components/Audio";
 import Referrals from "./pages/Referrals/Referrals";
 import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
-import Contact1 from "./pages/contact/Contact1";
+import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
 import EWschedule from "./pages/Schedule/EWschedule";
 import {
   CoreTeam,
@@ -41,6 +41,7 @@ import { fetchWorkshops } from "./store/workshopSlice";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 import { fetchUser } from "./store/userSlice";
 import { PageNotFound } from "./components/PageNotFound";
+
 import ComingSoon from "./components/ComingSoon";
 import Home from "./pages/home1/home";
 
@@ -180,7 +181,10 @@ function App() {
                 element={<WorkshopDetails />}
               />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/certficates/users" element={<CertificatesUser />} />
+
               <Route path="*" element={<PageNotFound />} />
+
             </Routes>
             <Footer />
             {/* <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
