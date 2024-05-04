@@ -13,7 +13,7 @@ const CertificatesUser = () => {
     setError('');
     e.preventDefault();
     try {
-      const response = await axios.get(`https://backendteckzite.onrender.com/qr/getUser/${teckziteId}`);
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/qr/getUser/${teckziteId}`);
       setUserData(response.data.user);
     } catch (error) {
       setError(error.message);

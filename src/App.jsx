@@ -44,6 +44,7 @@ import { PageNotFound } from "./components/PageNotFound";
 
 import ComingSoon from "./components/ComingSoon";
 import Home from "./pages/home1/home";
+import CertificatesWorkshop from "./pages/CertificatesWorkshop/CertificatesWorkshop";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -182,7 +183,7 @@ function App() {
               />
               <Route path="/profile" element={<Profile />} />
               <Route path="/certficates/users" element={<CertificatesUser />} />
-
+              <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
               <Route path="*" element={<PageNotFound />} />
 
             </Routes>
