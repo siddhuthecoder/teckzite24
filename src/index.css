@@ -1063,3 +1063,8 @@ transition: opacity .2s; */
     position:absolute;
   }
   
+  .menu-btn{
+    font-family: "Keania One", serif;
+    font-size: 24px;
+    font-weight: 100;
+  } 
