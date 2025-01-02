@@ -216,10 +216,6 @@
 
 // export default Navbar;
 
-
-
-
-
 import React from "react";
 import MenuButton from "../button/MenuButton";
 import teckzite from "../../assets/menu/Teckzite.svg";
@@ -230,15 +226,24 @@ import Ellipse132 from "../../assets/menu/Ellipse132.svg";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-
-const Navbar = ({setShowNav}) => {
-  const navigate=useNavigate();
+const Navbar = ({ setShowNav }) => {
+  const navigate = useNavigate();
   return (
-    <div style={{
-      zIndex:"2000"
-    }} className="md:h-screen navbar_robo  flex flex-col justify-center items-center md:overflow-x-hidden  py-[40px] px-[20px] md:px-[100px] lg:px-[20px] relative bg-black">
+    <div
+      style={{
+        zIndex: "9999",
+        backgroundColor: "black",
+      }}
+      className="md:h-screen min-h-screen navbar_robo bg-black  flex flex-col w-full justify-center items-center md:overflow-x-hidden overflow-y-auto  py-[40px] px-[20px] md:px-[100px] lg:px-[20px] relative "
+      style={{}}
+    >
       <div className="close text-white text-[40px] fixed lg:right-[30px] lg:top-[30px] right-[10px] top-[10px]">
-        <IoMdClose onClick={()=>{setShowNav(false)}} className="cursor-pointer"/>
+        <IoMdClose
+          onClick={() => {
+            setShowNav(false);
+          }}
+          className="cursor-pointer"
+        />
       </div>
       <div className="main md:relative flex flex-col justify-center items-center gap-[20px]">
         <div className="backgrounds md:flex flex-col justify-center items-center gap-0 relative hidden">
@@ -257,46 +262,43 @@ const Navbar = ({setShowNav}) => {
           />
         </div>
         <div className="left-buttons pt-[30px] md:pt-0 md:absolute left-0 md:top-[30px] flex flex-col gap-[30px] font-[kenia]">
-        
-        <div className="md:ml-[20px] lg:ml-[-30px] animate-slideTopDelay5">
-            <MenuButton name="Home"/>
+          <div className="md:ml-[20px] lg:ml-[-30px] animate-slideTopDelay5">
+            <MenuButton name="Home" />
           </div>
           <div className="md:ml-[-100px] lg:ml-[-150px] animate-slideTopDelay4">
-            <MenuButton name="Events"/>
+            <MenuButton name="Events" />
           </div>
           <div className="md:ml-[-140px] lg:ml-[-180px] animate-slideTopDelay3">
-            <MenuButton name="Workshops"/>
+            <MenuButton name="Workshops" />
           </div>
-          
+
           <div className="md:ml-[-100px] lg:ml-[-150px] animate-slideTopDelay2">
-            <MenuButton name="Web Team"/>
+            <MenuButton name="Web Team" />
           </div>
           <div className="md:ml-[20px] lg:ml-[-30px] animate-slideTopDelay1">
-            <MenuButton name="Updates"/>
+            <MenuButton name="Updates" />
           </div>
-         
-          
         </div>
         <div className="center-button md:absolute lg:top-[-20px] md:top-0 left-2/5 animate-slideTopDelay6">
-        <div>
-            <MenuButton name="Login"/>
+          <div>
+            <MenuButton name="Login" />
           </div>
         </div>
         <div className="right-buttons md:absolute right-0 top-[30px] flex flex-col gap-[30px] ">
           <div className="md:mr-[20px] lg:mr-[-30px] animate-slideTopDelay7">
-            <MenuButton name="About"/>
+            <MenuButton name="About" />
           </div>
           <div className="md:mr-[-100px] lg:mr-[-150px] animate-slideTopDelay8">
-            <MenuButton name="Core Team"/>
+            <MenuButton name="Core Team" />
           </div>
           <div className="md:mr-[-140px] lg:mr-[-180px] animate-slideTopDelay9">
-            <MenuButton name="Referals"/>
+            <MenuButton name="Referals" />
           </div>
           <div className="md:mr-[-100px] lg:mr-[-150px] animate-slideTopDelay10">
-            <MenuButton name="Sponsors"/>
+            <MenuButton name="Sponsors" />
           </div>
           <div className="md:mr-[20px] lg:mr-[-30px] animate-slideTopDelay11">
-            <MenuButton name="Contact"/>
+            <MenuButton name="Contact" />
           </div>
         </div>
       </div>
@@ -304,6 +306,4 @@ const Navbar = ({setShowNav}) => {
   );
 };
 
-
 export default Navbar;
-
