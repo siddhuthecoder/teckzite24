@@ -10,6 +10,7 @@ module.exports = {
       },
       fontFamily: {
         namdhinggo: ["Namdhinggo", "sans-serif"],
+        bruno: ['Bruno Ace', 'sans-serif'],
         koneMono: ["Kode Mono", "monospace"],
         rog: ["ROG", "sans-serif"],
         joti: ["Joti One", "serif"],

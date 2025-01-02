@@ -59,7 +59,7 @@ const Navbar = ({ setShowNav }) => {
 
         {/* Left Buttons */}
         <div className="left-buttons pt-[30px] md:pt-0 md:absolute left-0 md:top-[30px] flex flex-col gap-[30px] font-[kenia]">
-          <div className="md:ml-[20px]  lg:ml-[-30px] animate-slideTopDelay5">
+          <div className="md:ml-[20px] mt-[170px] md:mt-[0px]  lg:ml-[-30px] animate-slideTopDelay5">
             <MenuButton name="Home" />
           </div>
           <div className="md:ml-[-100px] lg:ml-[-150px] animate-slideTopDelay4">
