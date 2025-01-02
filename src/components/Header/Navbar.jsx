@@ -234,8 +234,7 @@ const Navbar = ({ setShowNav }) => {
         zIndex: "9999",
         backgroundColor: "black",
       }}
-      className="md:h-screen min-h-screen navbar_robo bg-black  flex flex-col w-full justify-center items-center md:overflow-x-hidden overflow-y-auto  py-[40px] px-[20px] md:px-[100px] lg:px-[20px] relative "
-      style={{}}
+      className="md:h-screen min-h-screen navbar_robo border top-0 left-0 bg-black  flex flex-col w-full justify-center items-center md:overflow-x-hidden overflow-y-auto  py-[40px] px-[20px] md:px-[100px] lg:px-[20px] relative "
     >
       <div className="close text-white text-[40px] fixed lg:right-[30px] lg:top-[30px] right-[10px] top-[10px]">
         <IoMdClose
