@@ -10,9 +10,23 @@ import meeNews from '../../assets/img/sponsors/mee news.png'
 import beBest from '../../assets/img/sponsors/beBest.png'
 import bridge from '../../assets/img/sponsors/bridge.jpg'
 import siuk from '../../assets/img/sponsors/siuk.jpg'
-import sriVasta from '../../assets/img/sponsors/sriVasta.jpg'
+import svs from '../../assets/img/sponsors/svs.png'
+import una from '../../assets/img/sponsors/una.png'
+import sriv from '../../assets/img/sponsors/sriv.jpeg'
+import fc from '../../assets/img/sponsors/fc.jpeg'
+import kmk from '../../assets/img/sponsors/kmk.jpeg'
+import km from '../../assets/img/sponsors/km.jpeg'
+import des from '../../assets/img/sponsors/des.jpeg'
+
 
 const SponsorsCard2 = () => {
+
+  const edu = [
+    {
+      name:"UNACADEMY",
+      img:una
+    },
+  ]
 
   const DMP = [
     {
@@ -54,7 +68,7 @@ const SponsorsCard2 = () => {
   const TSP = [
     {
       name:"Sri vatsa electronics",
-      img:sriVasta
+      img:sriv,
     },
    
   ]
@@ -62,12 +76,46 @@ const SponsorsCard2 = () => {
   const PP = [
     {
       name:'DD Prime Prints',
-      img:dd_prints
+      img:svs
     }
+  ]
+  const DES = [
+    {
+      name:'Design Verge',
+      img:des
+    }
+  ]
+  const food = [
+    {
+      name:"SWAMY'S FOOD COURT ",
+      img:fc
+    },
+    {
+      name:"KMK FOOD CATERINGS ",
+      img:kmk
+    },
+    {
+      name:"ANUSHA AND FINE CATERINGS",
+      img:km
+    }
+
   ]
   return (
    <>
-
+ <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[100px]">
+ Academic partner
+      </div>
+      <div className="w-full flex items-center justify-center flex-wrap">
+      {
+        edu.map((data) => (
+          <div className="relative mt-5 w-64 cursor-pointer" >
+          <img src="./box_sponsors_card.png" width="100%" />
+          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+        </div>
+        ))
+      }
+      </div>
       <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[100px]">
         Digital and Media Partner
       </div>
@@ -145,6 +193,34 @@ const SponsorsCard2 = () => {
       <div className="w-full flex items-center justify-center flex-wrap">
       {
         PP.map((data) => (
+          <div className="relative mt-5 w-64 cursor-pointer mb-[70px]" >
+          <img src="./box_sponsors_card.png" width="100%" />
+          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+        </div>
+        ))
+      }
+      </div>
+      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+      Designing partner 
+      </div>
+      <div className="w-full flex items-center justify-center flex-wrap">
+      {
+        DES.map((data) => (
+          <div className="relative mt-5 w-64 cursor-pointer mb-[70px]" >
+          <img src="./box_sponsors_card.png" width="100%" />
+          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+        </div>
+        ))
+      }
+      </div>
+      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+       Food Partner
+      </div>
+      <div className="w-full flex items-center justify-center flex-wrap">
+      {
+        food.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer mb-[70px]" >
           <img src="./box_sponsors_card.png" width="100%" />
           <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />

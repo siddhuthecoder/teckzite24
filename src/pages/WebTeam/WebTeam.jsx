@@ -3,8 +3,8 @@ import WebCard from "../../components/Shared/WebCard";
 import Header from "../../components/Header/Header";
 import Banner from "../../components/banner/Banner";
 import sri from "../../assets/webteam/sribabu.png";
-import sid from "../../assets/webteam/sid.png";
-import aswini from "../../assets/webteam/aswini.jpg";
+import sid from "../../assets/webteam/sidd.png";
+import aswini from "../../assets/webteam/ash.png";
 import yash from "../../assets/webteam/yash.png";
 import hemu from "../../assets/webteam/hemu.png";
 
@@ -13,7 +13,7 @@ const WebTeam = () => {
     {
       id: 0,
       name: "Siddu from Srikakulam",
-      role: "Web3 developer",
+      role: "Web Manager",
       img: sid,
     },
     {

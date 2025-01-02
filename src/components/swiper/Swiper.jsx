@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import WebCard from "../../components/Shared/WebCard";
+import WebCard from "../Shared/WebCard";
 // import left from "../../assets/img/after.webp";
 // import right from "../../assets/img/before.webp";
 import "swiper/css";

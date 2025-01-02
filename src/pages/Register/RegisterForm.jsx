@@ -248,32 +248,32 @@ const RegisterForm = () => {
       navigate("/profile");
     } catch (error) {
       setIsLoading(false);
-      // if (domainPattern.test(email)) {
-      //   setData({
-      //     ...data,
-      //     collegeId: given_name,
-      //     email: email,
-      //     state: "Andhra Pradesh",
-      //     district: "Yeluru",
-      //     city: "Nuzvid",
-      //     college: "RGUKT",
-      //     firstName: family_name.split(" ").slice(1).join(" ").toLowerCase(),
-      //     lastName: family_name.split(" ")[0].toLowerCase(),
-      //     amount: process.env.REACT_APP_RGUKT_FEE,
-      //   });
-      //   setIsRgukt(true);
-      // } else {
-      //   setData({
-      //     ...data,
-      //     firstName: given_name,
-      //     lastName: family_name,
-      //     email: email,
-      //     img: picture,
-      //   });
-      // }
-      // setSignIn(true);
-      window.alert("Registarions Closed");
-      setIsLoading(false);
+      if (domainPattern.test(email)) {
+        setData({
+          ...data,
+          collegeId: given_name,
+          email: email,
+          state: "Andhra Pradesh",
+          district: "Yeluru",
+          city: "Nuzvid",
+          college: "RGUKT",
+          firstName: family_name.split(" ").slice(1).join(" ").toLowerCase(),
+          lastName: family_name.split(" ")[0].toLowerCase(),
+          amount: process.env.REACT_APP_RGUKT_FEE,
+        });
+        setIsRgukt(true);
+      } else {
+        setData({
+          ...data,
+          firstName: given_name,
+          lastName: family_name,
+          email: email,
+          img: picture,
+        });
+      }
+      setSignIn(true);
+      // window.alert("Oops Registrations are closed");
+      // setIsLoading(false);
     }
   };
 
