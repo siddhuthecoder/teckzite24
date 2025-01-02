@@ -28,13 +28,13 @@ const Header = () => {
 
   return (
     <div className="header_container">
-      <header className="w-full relative h-full">
+      <header className="w-full  relative h-full">
         <div
-          className="absolute top-[35%] -translate-y-1/2 left-0 px-4 flex items-center gap-4 "
+          className="absolute  lg:left-[5%] top-[35%] -translate-y-1/2 left-0 px-4 flex justify-between items-center gap-4 "
           style={{ verticalAlign: true }}
         >
           <div
-            className="cursor-pointer flex items-center justify-center gap-3"
+            className="cursor-pointer  flex items-center justify-center gap-3"
             onClick={() => {
               handleSound();
               setShowNav((prev) => !prev);
@@ -58,11 +58,11 @@ const Header = () => {
           }}
         >
           <Link to="/">
-            <img src={"/logo.png"} alt="logo" className="w-[300px] h-[100px]" />
+            <img src={"/logo.png"} alt="logo" className=" w-[160px] scale-[0.8] sm:scale-[1] md:w-[300px] h-[100px]" />
           </Link>
         </div>
         <div
-          className="absolute top-[35%] -translate-y-1/2 px-4 font-semibold  text-xl cursor-pointer inline-block right-0"
+          className="absolute top-[35%] lg:right-[5%] -translate-y-1/2 px-4 font-semibold  text-xl cursor-pointer inline-block right-0"
           style={{ verticalAlign: "middle" }}
           onClick={() => {
             handleSound();
@@ -74,13 +74,13 @@ const Header = () => {
                 logout();
               }}
             >
-              <h1 className="max-md:hidden bg-transparent">Logout</h1>
-              <IoMdExit className="md:hidden" size={22} />
+              <h1 className="max-lg:hidden bg-transparent">Logout</h1>
+              <IoMdExit className="lg:hidden" size={22} />
             </div>
           ) : (
             <Link to="/register">
-              <h1 className="max-md:hidden bg-transparent">Login/Register</h1>
-              <IoMdPerson className="md:hidden" size={22} />
+              <h1 className="max-lg:hidden bg-transparent">Login/Register</h1>
+              <IoMdPerson className="lg:hidden" size={22} />
             </Link>
           )}
         </div>

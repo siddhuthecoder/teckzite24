@@ -44,6 +44,7 @@ import { fetchUser } from "./store/userSlice";
 import { PageNotFound } from "./components/PageNotFound";
 import ComingSoon from "./components/ComingSoon";
 import Home from "./pages/home1/home";
+import ParticlesComponent from "./components/home_banneer/Particle";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -153,7 +154,8 @@ function App() {
         <>
           <Toaster />
           <main className="animate-show">
-            <BackgroundAnimation />
+            <ParticlesComponent id="particles" />
+
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />

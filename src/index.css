@@ -281,14 +281,37 @@ select option {
 
 /* Footer */
 .footer_container {
-  height: 60px;
   position: fixed;
   bottom: 0;
-  right: 0;
+  transform: rotate(180deg);
   left: 0;
-  background: url("../public/footer.png") no-repeat bottom center fixed;
-  background-size: auto 60px;
+  right: 0;
+  z-index: 10;
+  background: url("../public/headerImg.png") no-repeat top center fixed;
+  height: 90px;
+  background-size: 100% 100px;
+  /* bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: url("../public/headerImg.png") no-repeat top center fixed;
+  height: 90px;
+  background-size: 100% 100px; */
 }
+
+/* 
+.footer_container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: url("../public/headerImg.png") no-repeat bottom center;
+  background-size: 100% 60px;
+  transform: rotate(180deg); /* Rotate the background image
+  z-index: -1;
+}  */
 
 @media (max-width: 768px) {
   .footer_container {
@@ -304,16 +327,16 @@ select option {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  background: url("../public/header2.png") no-repeat top center fixed;
-  height: 70px;
-  background-size: 100% 70px;
+  z-index: 10;
+  background: url("../public/headerImg.png") no-repeat top center fixed;
+  height: 90px;
+  background-size: 100% 100px;
 }
 
 @media (max-width: 768px) {
   .header_container {
     height: 80px;
-    background: url("../public/header.png") no-repeat top center fixed;
+    background: url("../public/assets/headerMobile.png") no-repeat top center fixed;
     background-size: 100% 80px;
   }
 }
@@ -869,4 +892,13 @@ transition: opacity .2s; */
 /* setting dot to the right if the card is odd */
 .card:nth-child(even) > .info > .title::before {
   right: -45px;
+}
+
+
+
+
+/* hero title section */
+.navbar_robo{
+  z-index: 20000;
+  height: 100vh;
 }
