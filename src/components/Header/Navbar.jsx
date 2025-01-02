@@ -1,221 +1,3 @@
-// import { navigation } from "../../constants";
-// import { Link } from "react-router-dom";
-// import { FaTimes } from "react-icons/fa";
-// import logo from "../../assets/logo.png";
-// import { motion } from "framer-motion";
-// import { useSelector } from "react-redux";
-// import BackgroundAnimation from "../Shared/BackgroundAnimation";
-
-// const Navbar = ({ setShowNav }) => {
-//   const pathname = window.location.pathname;
-//   const userData = useSelector((state) => state.user.data);
-
-//   const handleSound = () => {
-//     const audio = new Audio("./click.wav");
-//     audio.play();
-//   };
-
-//   return (
-//     <div
-//       className="w-full min-h-screen relative top-0 left-0 z-[1001] bg-black"
-//       style={{ position: "fixed" }}
-//     >
-//       <BackgroundAnimation />
-//       <div
-//         onClick={() => {
-//           setShowNav(false);
-//           handleSound();
-//         }}
-//         className="absolute right-[2.4rem] z-30 top-[2.4rem] cursor-pointer"
-//       >
-//         <FaTimes size={32} />
-//       </div>
-//       <div className="absolute left-[2.4rem] z-30 top-[2.4rem] cursor-pointer">
-//         <Link
-//           to="/"
-//           className="flex items-center gap-2"
-//           onClick={() => setShowNav(false)}
-//         >
-//           <img src={logo} alt="logo" width={35} height={35} />
-//           <h1 className="text-2xl max-md:hidden font-semibold">
-//             Teckzite 2k24
-//           </h1>
-//         </Link>
-//       </div>
-//       <ul className="animate-fade  hidden lg:flex z-10 absolute  top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white w-full max-w-[1200px] items-center justify-around">
-//         {navigation.map((nav, index) => {
-//           return (
-//             <motion.li
-//               initial={{
-//                 y: (index + 2) % 2 == 0 ? "-100%" : "100%",
-//                 opacity: 0,
-//               }}
-//               animate={{ y: "0%", opacity: 1 }}
-//               transition={{
-//                 duration: 0.5,
-//                 delay: index * 0.07,
-//                 type: "spring",
-//                 stiffness: 400,
-//               }}
-//               key={nav.id}
-//               className={`odd:mt-[200px] nav_heading   ${
-//                 pathname === nav.link && "active"
-//               }`}
-//             >
-//               <Link
-//                 to={nav.link}
-//                 onClick={() => {
-//                   handleSound();
-//                   setShowNav(false);
-//                 }}
-//                 className="flex flex-col gap-0 items-center justify-center cursor-pointer h-[auto] relative"
-//               >
-//                 <h1 className="text-[18px] pt-1 text-nowra top-[20px]  h-2 absolute">
-//                   {nav.name}
-//                 </h1>
-//                 <img
-//                   src={"/vr_glasses.png"}
-//                   alt="nav"
-//                   style={{ transitionDuration: "0.5s" }}
-//                   className="mt-0 h-[auto] lg:max-w-[120%]"
-//                 />
-//               </Link>
-//             </motion.li>
-//           );
-//         })}
-//         <motion.li
-//           initial={{ y: "100%", opacity: 0 }}
-//           animate={{ y: "0%", opacity: 1 }}
-//           transition={{
-//             duration: 0.5,
-//             delay: 0.07,
-//             type: "spring",
-//             stiffness: 200,
-//           }}
-//           className={`odd:mt-[200px] nav_heading ${
-//             pathname === "/register" && "active"
-//           }`}
-//         >
-//           {userData ? (
-//             <>
-//               <Link
-//                 to="/profile"
-//                 onClick={() => {
-//                   handleSound();
-//                   setShowNav(false);
-//                 }}
-//                 className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
-//               >
-//                 <h1 className="text-[16px] pt-1 text-nowrap top-[20px]  h-2 absolute">
-//                   {userData.tzkid.toUpperCase()}
-//                 </h1>
-//                 <img
-//                   src={"/vr_glasses.png"}
-//                   alt="nav"
-//                   className="mt-0 h-auto max-w-[160px] lg:max-w-[120%]"
-//                 />
-//               </Link>
-//             </>
-//           ) : (
-//             <Link
-//               to="/register"
-//               onClick={() => {
-//                 handleSound();
-//                 setShowNav(false);
-//               }}
-//               className="flex flex-col gap-0 items-center justify-center cursor-pointer relative"
-//             >
-//               <h1 className="text-[16px] pt-1 text-nowrap top-[20px]  h-2 absolute">
-//                 Login
-//               </h1>
-//               <img
-//                 src={"/vr_glasses.png"}
-//                 alt="nav"
-//                 className="mt-0 h-auto max-w-[160px] lg:max-w-[120%]"
-//               />
-//             </Link>
-//           )}
-//         </motion.li>
-//       </ul>
-//       <ul className="flex flex-col lg:hidden z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[75vh] w-full items-center scroll_in">
-//         {navigation.map((nav, index) => {
-//           return (
-//             <motion.li
-//               key={nav.id}
-//               className="hover:scale-110"
-//               initial={{ x: "-100%", opacity: 0 }}
-//               animate={{ x: 0, opacity: 1 }}
-//               transition={{
-//                 duration: 0.5,
-//                 delay: index * 0.07,
-//                 type: "spring",
-//                 stiffness: 200,
-//               }}
-//             >
-//               <Link
-//                 to={nav.link}
-//                 className="flex items-center justify-center gap-3"
-//               >
-//                 <img
-//                   src={"/vr_glasses.png"}
-//                   alt="nav"
-//                   className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
-//                 />
-//                 <h1 className="text-lg text-nowrap pb-6  h-2 absolute">
-//                   {nav.name}
-//                 </h1>
-//               </Link>
-//             </motion.li>
-//           );
-//         })}
-//         <motion.li
-//           className="hover:scale-110"
-//           initial={{ x: "-100%", opacity: 0 }}
-//           animate={{ x: 0, opacity: 1 }}
-//           transition={{
-//             duration: 0.5,
-//             delay: 9 * 0.07,
-//             type: "spring",
-//             stiffness: 200,
-//           }}
-//         >
-//           {userData ? (
-//             <Link
-//               to="/profile"
-//               className="flex items-center justify-center gap-3"
-//             >
-//               <img
-//                 src={"/vr_glasses.png"}
-//                 alt="nav"
-//                 className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
-//               />
-//               <h1 className="text-lg text-nowrap pb-6  h-2 absolute">
-//                 {userData.tzkid.toUpperCase()}
-//               </h1>
-//             </Link>
-//           ) : (
-//             <Link
-//               to="/register"
-//               className="flex items-center justify-center gap-3"
-//             >
-//               <img
-//                 src={"/vr_glasses.png"}
-//                 alt="nav"
-//                 className="mt-3 h-[auto] min-w-[170px] max-lg:h-[90px] relative"
-//               />
-//               <h1 className="text-lg text-nowrap pb-6  h-2 absolute">
-//                 Register
-//               </h1>
-//             </Link>
-//           )}
-//         </motion.li>
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
 import React from "react";
 import MenuButton from "../button/MenuButton";
 import teckzite from "../../assets/menu/Teckzite.svg";
@@ -228,23 +10,35 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ setShowNav }) => {
   const navigate = useNavigate();
+
   return (
     <div
       style={{
         zIndex: "9999",
         backgroundColor: "black",
+        width:"100%",
+        heightL:"100vh"
       }}
-      className="md:h-screen min-h-screen navbar_robo border top-0 left-0 bg-black  flex flex-col w-full justify-center items-center md:overflow-x-hidden overflow-y-auto  py-[40px] px-[20px] md:px-[100px] lg:px-[20px] relative "
+      className="md:h-screen min-h-screen navbar_robo  top-0 left-0 bg-black flex flex-col w-full justify-center items-center md:overflow-x-hidden overflow-y-auto py-[40px] px-[20px] md:px-[100px] lg:px-[20px] relative"
     >
-      <div className="close text-white text-[40px] fixed lg:right-[30px] lg:top-[30px] right-[10px] top-[10px]">
+      {/* Close Button */}
+      <div
+        className="w-full  h-[100px] flex items-center justify-between fixed top-0 left-0 bg-black"
+        style={{
+          zIndex: "99999",
+        }}
+      >
+        <div className="text-white mx-4 font-bold text-4xl">TZ</div>
         <IoMdClose
           onClick={() => {
             setShowNav(false);
           }}
-          className="cursor-pointer"
+          className="cursor-pointer md:text-4xl mx-4 text-2xl text-white"
         />
       </div>
+      {/* Main Content */}
       <div className="main md:relative flex flex-col justify-center items-center gap-[20px]">
+        {/* Background Images */}
         <div className="backgrounds md:flex flex-col justify-center items-center gap-0 relative hidden">
           <img src={shadoweffect} className="h-[500px] w-full" />
           <img src={teckzite} className="absolute top-[60px] h-[30px]" />
@@ -253,6 +47,8 @@ const Navbar = ({ setShowNav }) => {
             className="robo-img absolute top-[100px] h-[250px] w-[250px]"
           />
         </div>
+
+        {/* Decorative Circles */}
         <div className="circles relative mt-[-50px] hidden md:block">
           <img src={Ellipse131} className="h-[63px] w-[555px]" />
           <img
@@ -260,8 +56,10 @@ const Navbar = ({ setShowNav }) => {
             className="h-[32px] w-[450px] absolute  left-[10%] top-[25%]"
           />
         </div>
+
+        {/* Left Buttons */}
         <div className="left-buttons pt-[30px] md:pt-0 md:absolute left-0 md:top-[30px] flex flex-col gap-[30px] font-[kenia]">
-          <div className="md:ml-[20px] lg:ml-[-30px] animate-slideTopDelay5">
+          <div className="md:ml-[20px]  lg:ml-[-30px] animate-slideTopDelay5">
             <MenuButton name="Home" />
           </div>
           <div className="md:ml-[-100px] lg:ml-[-150px] animate-slideTopDelay4">
@@ -270,7 +68,6 @@ const Navbar = ({ setShowNav }) => {
           <div className="md:ml-[-140px] lg:ml-[-180px] animate-slideTopDelay3">
             <MenuButton name="Workshops" />
           </div>
-
           <div className="md:ml-[-100px] lg:ml-[-150px] animate-slideTopDelay2">
             <MenuButton name="Web Team" />
           </div>
@@ -278,12 +75,16 @@ const Navbar = ({ setShowNav }) => {
             <MenuButton name="Updates" />
           </div>
         </div>
+
+        {/* Center Button */}
         <div className="center-button md:absolute lg:top-[-20px] md:top-0 left-2/5 animate-slideTopDelay6">
           <div>
             <MenuButton name="Login" />
           </div>
         </div>
-        <div className="right-buttons md:absolute right-0 top-[30px] flex flex-col gap-[30px] ">
+
+        {/* Right Buttons */}
+        <div className="right-buttons mb-[40px] md:absolute right-0 top-[30px] flex flex-col gap-[30px]">
           <div className="md:mr-[20px] lg:mr-[-30px] animate-slideTopDelay7">
             <MenuButton name="About" />
           </div>
@@ -291,12 +92,12 @@ const Navbar = ({ setShowNav }) => {
             <MenuButton name="Core Team" />
           </div>
           <div className="md:mr-[-140px] lg:mr-[-180px] animate-slideTopDelay9">
-            <MenuButton name="Referals" />
+            <MenuButton name="Referrals" />
           </div>
           <div className="md:mr-[-100px] lg:mr-[-150px] animate-slideTopDelay10">
             <MenuButton name="Sponsors" />
           </div>
-          <div className="md:mr-[20px] lg:mr-[-30px] animate-slideTopDelay11">
+          <div className="md:mr-[20px] mb-[40px] lg:mr-[-30px] animate-slideTopDelay11">
             <MenuButton name="Contact" />
           </div>
         </div>
