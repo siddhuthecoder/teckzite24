@@ -15,8 +15,8 @@ const Home = () => {
   return (
     <main>
       <Header />
-      <Background  />
       <SplineScreen />
+      <Background  />
 
     </main>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import button from '../../assets/menu/button.png';
+<<<<<<< HEAD
 import {useNavigate} from 'react-router-dom';
 const MenuButton = ({ name, text, action }) => {
       const navigate=useNavigate();
@@ -14,13 +15,18 @@ const MenuButton = ({ name, text, action }) => {
             console.log(text); 
         }
     };
+=======
+const MenuButton = ({ name, action }) => {
+      
+
+>>>>>>> b9d3e99496ea5edee8393fc866eec835900db23f
     return (
         <div className="menu-btn flex justify-center items-start">
-            <div className="relative">
+            <div className="relative cursor-pointer">
                 <img src={button} className="h-[60px] w-[150px]" />
                 <div
-                    className="absolute   text-white flex justify-center items-center  z-[10px] top-[5px] right-[10px] left-[10px]"
-                   onClick={handleClick}
+                    className="absolute   text-white flex justify-center items-center  z-[10px] top-[12px] right-[10px] left-[10px]"
+                   onClick={action}
                 >
                     {name}
                 </div>
@@ -30,3 +36,5 @@ const MenuButton = ({ name, text, action }) => {
 };
 
 export default MenuButton;
+
+
