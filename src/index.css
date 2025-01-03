@@ -286,7 +286,6 @@ select option {
   transform: rotate(180deg);
   left: 0;
   right: 0;
-  z-index: 10;
   background: url("../public/headerImg.png") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;

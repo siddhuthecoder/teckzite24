@@ -21,7 +21,7 @@ const MenuButton = ({ name, text, action }) => {
                 <img src={button} className="h-[60px] w-[150px]" />
                 <div
                     className="absolute   text-white flex justify-center items-center  z-[10px] top-[5px] right-[10px] left-[10px]"
-                   onClick={handleClick}
+                   onClick={action}
                 >
                     {name}
                 </div>

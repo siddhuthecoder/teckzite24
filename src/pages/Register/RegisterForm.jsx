@@ -312,7 +312,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="z-30 w-full pt-[160px] pb-[20px]">
+    <section className="z-1 w-full pt-[160px] pb-[20px]">
       <form
         onSubmit={handleSubmit}
         className="w-[90%] max-w-[420px] mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
