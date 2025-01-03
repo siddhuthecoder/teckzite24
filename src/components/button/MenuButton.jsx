@@ -1,8 +1,25 @@
 import React from 'react';
 import button from '../../assets/menu/button.png';
+<<<<<<< HEAD
+import {useNavigate} from 'react-router-dom';
+const MenuButton = ({ name, text, action }) => {
+      const navigate=useNavigate();
+    const handleClick = () => {
+        if (action === "console") {
+            console.log(text); 
+        } else if (action === "alert") {
+            alert(text); 
+        } else if (action === "navigate") {
+            navigate('./footer');
+        } else if (action === "print") {
+            console.log(text); 
+        }
+    };
+=======
 const MenuButton = ({ name, action }) => {
       
 
+>>>>>>> b9d3e99496ea5edee8393fc866eec835900db23f
     return (
         <div className="menu-btn flex justify-center items-start">
             <div className="relative cursor-pointer">
