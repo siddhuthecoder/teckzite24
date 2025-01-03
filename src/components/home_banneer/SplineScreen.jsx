@@ -38,8 +38,7 @@ function SplineScreen() {
   }, []);
 
   return (
-    <div className="spline-container h-screen z-1 relative">
-      {isLoading && <div className="loading-spinner">Loading...</div>}
+    <div className="spline-container h-screen  relative">
       <Spline
         scene={isMobile ? splineSceneMobile : splineSceneDesktop}
         onLoad={(spline) => {

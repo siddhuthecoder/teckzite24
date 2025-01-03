@@ -15,23 +15,21 @@ const Navbar = ({ setShowNav }) => {
     <div
       style={{
         zIndex: "9999",
-        backgroundColor: "black",
         width: "100%",
         heightL: "100vh",
         position: "absolute",
         left: "0",
         top: "0",
       }}
-      className="md:h-screen min-h-screen navbar_robo top-0 left-0 bg-black flex flex-col w-full justify-center items-center md:overflow-x-hidden overflow-y-auto py-[40px] px-[20px] md:px-[100px] lg:px-[20px] relative"
+      className="md:h-screen min-h-screen navbar_robo top-0 left-0 bg-[#1D252A] flex flex-col w-full justify-center items-center md:overflow-x-hidden overflow-y-auto py-[40px] px-[20px] md:px-[100px] lg:px-[20px] relative"
     >
       {/* Close Button */}
       <div
-        className="w-full h-[100px] flex items-center justify-between fixed top-0 left-0"
+        className="w-full h-[100px] flex items-center justify-end fixed top-0 right-0"
         style={{
           zIndex: "99999",
         }}
       >
-        <div className="text-white mx-4 font-bold text-4xl">TZ</div>
         <IoMdClose
           onClick={() => {
             setShowNav(false);
@@ -50,7 +48,6 @@ const Navbar = ({ setShowNav }) => {
         {/* Background Images */}
         <div className="backgrounds md:flex flex-col justify-center items-center gap-0 relative hidden">
           <img src={shadoweffect} className="h-[500px] w-full" />
-          <img src={teckzite} className="absolute top-[60px] h-[30px]" />
           <img
             src={image}
             className="robo-img absolute top-[100px] h-[250px] w-[250px]"
@@ -67,7 +64,7 @@ const Navbar = ({ setShowNav }) => {
         </div>
 
         {/* Left Buttons */}
-        <div className="left-buttons pt-[30px] md:pt-0 md:absolute left-0 md:top-[30px] flex flex-col gap-[30px] font-[kenia]">
+        <div className="left-buttons pt-[30px] md:pt-0 md:absolute left-0 md:top-[30px] flex flex-col gap-[30px] font-bruno">
           <div className="md:ml-[20px] mt-[170px] md:mt-[0px] lg:ml-[-30px] animate-slideTopDelay5">
             <MenuButton
               name="Home"
@@ -101,7 +98,7 @@ const Navbar = ({ setShowNav }) => {
         </div>
 
         {/* Center Button */}
-        <div className="center-button md:absolute lg:top-[-20px] md:top-0 left-2/5 animate-slideTopDelay6">
+        <div className="center-button md:absolute lg:top-[-20px] md:top-0 left-2/5 animate-slideTopDelay6 font-bruno">
           <div>
             <MenuButton
               name="Login"
@@ -111,7 +108,7 @@ const Navbar = ({ setShowNav }) => {
         </div>
 
         {/* Right Buttons */}
-        <div className="right-buttons mb-[40px] md:absolute right-0 top-[30px] flex flex-col gap-[30px]">
+        <div className=" right-buttons mb-[40px] md:absolute right-0 top-[30px] flex flex-col gap-[30px] font-bruno">
           <div className="md:mr-[20px] lg:mr-[-30px] animate-slideTopDelay7">
             <MenuButton
               name="About"

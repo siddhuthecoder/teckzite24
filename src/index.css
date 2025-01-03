@@ -289,6 +289,7 @@ select option {
   background: url("../public/headerImg.png") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
+  z-index: 50;
   /* bottom: 0;
   left: 0;
   right: 0;
@@ -896,6 +897,7 @@ transition: opacity .2s; */
 
 
 
+
 .robo-img{
   transition: all;
   animation: float 5s ease 0.2s infinite forwards;
@@ -964,11 +966,7 @@ transition: opacity .2s; */
   position: absolute;
   z-index: 50;
 }
-.menu-btn{
-  font-family: "Keania One", serif;
-  font-size: 24px;
-  font-weight: 100;
-} 
+
 
 
   
@@ -1061,9 +1059,25 @@ transition: opacity .2s; */
     width: 100%;
     position:absolute;
   }
+  .spline-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
   
-  .menu-btn{
-    font-family: "Keania One", serif;
-    font-size: 24px;
-    font-weight: 100;
-  } 
+  /* Mobile*/
+  @media screen and (max-width: 767px) {
+    .spline-container {
+      height: 100vh;
+      width: 100%;
+      margin-top: 30%;
+      overflow: hidden;
+    }
+    .canvas{
+      transform: scale(100px);
+    }
+  }
+  
