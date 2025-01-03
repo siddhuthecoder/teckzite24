@@ -1,6 +1,5 @@
 import React from 'react';
 import button from '../../assets/menu/button.png';
-<<<<<<< HEAD
 import {useNavigate} from 'react-router-dom';
 const MenuButton = ({ name, text, action }) => {
       const navigate=useNavigate();
@@ -15,11 +14,6 @@ const MenuButton = ({ name, text, action }) => {
             console.log(text); 
         }
     };
-=======
-const MenuButton = ({ name, action }) => {
-      
-
->>>>>>> b9d3e99496ea5edee8393fc866eec835900db23f
     return (
         <div className="menu-btn flex justify-center items-start">
             <div className="relative cursor-pointer">
