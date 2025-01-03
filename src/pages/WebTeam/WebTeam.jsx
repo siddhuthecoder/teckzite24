@@ -12,7 +12,7 @@ const WebTeam = () => {
   const WebTeamCard = [
     {
       id: 0,
-      name: "Siddu from Srikakulam",
+      name: "Siddu from  Srikakulam",
       role: "Web Manager",
       img: sid,
     },
