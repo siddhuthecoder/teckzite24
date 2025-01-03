@@ -997,7 +997,7 @@ transition: opacity .2s; */
 
   /* Title styling */
   .titleSection {
-    color: black;
+    color: transparent;
     cursor: default;
     transition: color 0.3s linear;
     -webkit-text-stroke: 2px #0A69A5; /* Outline the text in aqua color */
