@@ -30,5 +30,3 @@ const MenuButton = ({ name, text, action }) => {
 };
 
 export default MenuButton;
-
-
