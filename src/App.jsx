@@ -29,7 +29,6 @@ import {
   ScrollHome,
   EventUpdates,
 } from "./pages";
-
 import { Preloader } from "./components";
 import { useEffect, useState } from "react";
 import Footer from "./components/Shared/Footer";

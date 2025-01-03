@@ -1,11 +1,80 @@
 import React from "react";
+import eventcard from "../../assets/events/eventcard.png";
+import { useNavigate } from "react-router-dom";
+import EventButton from "../button/EventButton";
+import { CardContainer, CardBody, CardItem } from "../utils/3Dcard";
+const EWCard = ({ img, id, name, workshop }) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    const targetPath = `/${workshop ? "workshopdetails" : "eventdetails"}/${id}`;
+    navigate(targetPath);
+  };
+
+  return (
+    <CardContainer className="flex justify-center items-center">
+      <CardBody className="relative h-[450px] w-[300px]">
+        {/* Background Card */}
+        <CardItem
+          translateZ={-20}
+          className="relative h-full w-full"
+        >
+          <img
+            src={eventcard}
+            className="h-full w-full object-cover rounded-lg"
+            alt="card background"
+          />
+        </CardItem>
+
+        {/* Inner Content */}
+        <CardItem
+          translateZ={30}
+          className="absolute top-[30px] left-[45px] h-[225px] w-[180px]"
+        >
+          <img
+            src={img}
+            className="h-full w-full rounded-lg object-cover"
+            alt="event"
+          />
+        </CardItem>
+
+        <CardItem
+          translateZ={40}
+          className="absolute top-[270px] left-0 flex flex-col gap-[20px]"
+        >
+          <div className="flex flex-col gap-[20px] ml-[70px]">
+            <div className="text-[20px] text-white font-bold">{name}</div>
+            <div className="text-[15px] text-white text-center ml-[-50px]">
+              5
+            </div>
+          </div>
+        </CardItem>
+
+        <CardItem
+          translateZ={50}
+          className="absolute top-[350px] left-[160px]"
+        >
+          <div onClick={handleNavigation}>
+            <EventButton name="Know More" />
+          </div>
+        </CardItem>
+      </CardBody>
+    </CardContainer>
+  );
+};
+
+export default EWCard;
+
+
+
+
+{/*import React from "react";
 import s1 from "../../assets/img/s1.svg";
 import s2 from "../../assets/img/s2.svg";
 import s3 from "../../assets/img/s3.svg";
 import s4 from "../../assets/img/s4.svg";
 import s5 from "../../assets/img/s5.svg";
 import { useNavigate } from "react-router-dom";
-
 const EWCard = ({ img, id, name, workshop }) => {
   const navigate = useNavigate();
   const handleSound = () => {
@@ -73,4 +142,4 @@ const EWCard = ({ img, id, name, workshop }) => {
   );
 };
 
-export default EWCard;
+export default EWCard;*/}

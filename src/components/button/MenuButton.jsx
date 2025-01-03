@@ -14,7 +14,6 @@ const MenuButton = ({ name, text, action }) => {
             console.log(text); 
         }
     };
-
     return (
         <div className="menu-btn flex justify-center items-start">
             <div className="relative">
