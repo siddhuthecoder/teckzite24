@@ -19,16 +19,19 @@ const Background = () => {
 
   return (
     <div className="back h-screen">
-      <section className="section">
-        <h1 className="titleSection text-[3em] md:text-[7em] lg:text-[8em] font-bruno mt-[30px]">
-          TECKZITE
-        </h1>
-        <h1 className="titleSection text-[3em] md:text-[7em] lg:text-[8em] font-bruno">
-          2K25
-        </h1>
-      </section>
-      <div className="light-effect"></div>
-    </div>
+    <section className="section">
+      <h1 className="titleSection text-[3em] md:text-[7em] lg:text-[8em] font-bruno mt-[30px] hidden md:block">
+        TECKZITE
+      </h1>
+      <h1 className="titleSection text-[3em] md:text-[7em] lg:text-[8em] font-bruno hidden md:block">
+        2K25
+      </h1>
+   
+
+    </section>
+    <div className="light-effect"></div>
+  </div>
+  
   );
 };
 

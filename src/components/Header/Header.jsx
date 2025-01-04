@@ -40,7 +40,7 @@ const Header = () => {
               setShowNav((prev) => !prev);
             }}
           >
-            <GiHamburgerMenu size={22} />
+            <GiHamburgerMenu className="text-2xl lg:text-4xl" />
             {userData && (
               <Link to="/profile">
                 <h1 className="max-md:hidden bg-transparent font-semibold  text-xl">
