@@ -154,7 +154,6 @@ function App() {
         <>
           <Toaster />
           <main className="animate-show">
-            <ParticlesComponent id="particles" />
 
             <Routes>
               <Route path="/" element={<Home />} />
