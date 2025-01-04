@@ -26,7 +26,7 @@ const Background = () => {
       <h1 className="titleSection text-[3em] md:text-[7em] lg:text-[8em] font-bruno hidden md:block">
         2K25
       </h1>
-      <svg width={320} height={130} className="flex justify-center items-center bg-transparent">
+      <svg width={320} height={130} className="flex justify-center items-center bg-transparent md:hidden">
   <defs>
     <filter id="glow" x="-50%" y="-50%" width="300%" height="300%">
       <feGaussianBlur stdDeviation="4" result="coloredBlur" />
