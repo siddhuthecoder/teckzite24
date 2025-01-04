@@ -109,6 +109,16 @@ const Profile = () => {
               </div>
             )}
           </div>
+          {userData.qrimage && (
+  <div className="flex justify-center my-5">
+    <img
+      src={userData.qrimage}
+      alt="QR Code"
+      className="w-[200px] h-[200px] object-contain border rounded-md"
+    />
+  </div>
+)}
+
           <div className="w-full grid grid-cols-1 md:grid-cols-2">
             <div className="ps-[0px] md:ps-[40px] flex flex-col">
               <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
