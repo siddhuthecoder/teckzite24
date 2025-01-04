@@ -131,72 +131,70 @@ function App() {
     }
   }, [eventStatus, workshopStatus, notificationStatus, dispatch]);
 
-  return (
-    <>
-      {/* <AnimatedCursor
-        innerSize={8}
-        outerSize={35}
-        innerScale={1}
-        outerScale={2}
-        outerAlpha={0}
-        hasBlendMode={true}
-        showSystemCursor={true}
-        innerStyle={{
-          backgroundColor: "red",
-        }}
-        outerStyle={{
-          border: "3px solid red",
-        }}
-      /> */}
-      {loading ? (
-        <Preloader setLoading={setLoading} loading={loading} />
-      ) : (
-        <>
-          <Toaster />
-          <main className="animate-show">
-            <ParticlesComponent id="particles" />
+  return <>
+    {/* <AnimatedCursor
+      innerSize={8}
+      outerSize={35}
+      innerScale={1}
+      outerScale={2}
+      outerAlpha={0}
+      hasBlendMode={true}
+      showSystemCursor={true}
+      innerStyle={{
+        backgroundColor: "red",
+      }}
+      outerStyle={{
+        border: "3px solid red",
+      }}
+    /> */}
+    {loading ? (
+      <Preloader setLoading={setLoading} loading={loading} />
+    ) : (
+      <>
+        <Toaster />
+        <main className="animate-show">
+         
 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/workshops" element={<Workshops />} />
-              <Route path="/coreteam" element={<CoreTeam />} />
-              {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
-              <Route path="/webteam" element={<WebTeam />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/team" element={<TeamCard />} />
-              {/* <Route path="/contact" element={<Contact />} /> */}
-              <Route path="/contact" element={<ComingSoon />} />
-              <Route path="/swiper" element={<SwiperModule />} />
-              <Route path="/referrals" element={<Referrals />} />
-              <Route path="/audio" element={<AudioBG />} />
-              <Route path="/card" element={<SpeakersCard />} />
-              <Route path="/schedule" element={<Schedule />} />
-              <Route path="/card2" element={<EWschedule />} />
-              <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
-              {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
-              <Route path="/eventupdates" element={<EventUpdates />} />
-              <Route path="/sponsors" element={<Sponsors />} />
-              <Route
-                path="/workshopdetails/:id"
-                element={<WorkshopDetails />}
-              />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/certficates/users" element={<CertificatesUser />} />
-              <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
-              <Route path="*" element={<PageNotFound />} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/workshops" element={<Workshops />} />
+            <Route path="/coreteam" element={<CoreTeam />} />
+            {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
+            <Route path="/webteam" element={<WebTeam />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/team" element={<TeamCard />} />
+            {/* <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/contact" element={<ComingSoon />} />
+            <Route path="/swiper" element={<SwiperModule />} />
+            <Route path="/referrals" element={<Referrals />} />
+            <Route path="/audio" element={<AudioBG />} />
+            <Route path="/card" element={<SpeakersCard />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/card2" element={<EWschedule />} />
+            <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
+            {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
+            <Route path="/eventupdates" element={<EventUpdates />} />
+            <Route path="/sponsors" element={<Sponsors />} />
+            <Route
+              path="/workshopdetails/:id"
+              element={<WorkshopDetails />}
+            />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/certficates/users" element={<CertificatesUser />} />
+            <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
+            <Route path="*" element={<PageNotFound />} />
 
-            </Routes>
-            <Footer />
-            {/* <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
-              <AudioBG />
-            </div> */}
-          </main>
-        </>
-      )}
-    </>
-  );
+          </Routes>
+          <Footer />
+          {/* <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
+            <AudioBG />
+          </div> */}
+        </main>
+      </>
+    )}
+  </>;
 }
 
 export default App;
