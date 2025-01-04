@@ -7,18 +7,52 @@ import Ellipse131 from "../../assets/menu/Group 15.svg";
 import Ellipse132 from "../../assets/menu/Group 54.svg";
 import MenuButton from "../button/MenuButton";
 import { GiCrossedSwords } from "react-icons/gi";
-
+import {motion} from "framer-motion"
 const Navbar = ({ setShowNav }) => {
   const navigate = useNavigate();
+  // const NavButton = ({ name, action, mobileDelay, desktopClasses }) => {
+  //   const fadeInUp = {
+  //     hidden: { opacity: 0, y: 50 }, // Initial state
+  //     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // Animated state
+  //   };
+  //   return (
+  //     <div className={`animate-fadeInUp mobile-delay-${mobileDelay} ${desktopClasses}`}>
+  //       <MenuButton name={name} action={action} />
+  //     </div>
+  //   );
+  // };
   const NavButton = ({ name, action, mobileDelay, desktopClasses }) => {
+    // Variants for animations
     const fadeInUp = {
-      hidden: { opacity: 0, y: 50 }, // Initial state
-      visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // Animated state
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: mobileDelay * 0.1 } },
     };
+    const fadeIn = {
+      hidden: { opacity: 0, x: -50 }, // Start off-screen (to the left)
+      visible: {
+        opacity: 1,
+        x: 0, // Moves to its final position
+        transition: {
+          type: "spring", // Use spring animation
+          stiffness: 100, // Adjust stiffness for spring tension
+          damping: 10, // Adjust damping for oscillation control
+          duration: 0.5, // Set a duration for fallback
+          delay: mobileDelay * 0.1, // Add a delay for staggered effect
+        },
+      },
+    };
+    
+    const isMobile = window.innerWidth <= 768; // Replace with dynamic state management if needed
+  
     return (
-      <div className={`animate-fadeInUp mobile-delay-${mobileDelay} ${desktopClasses}`}>
+      <motion.div
+        className={`${desktopClasses}`}
+        initial="hidden"
+        animate="visible"
+        variants={isMobile ? fadeIn : fadeInUp}
+      >
         <MenuButton name={name} action={action} />
-      </div>
+      </motion.div>
     );
   };
   
