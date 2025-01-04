@@ -18,8 +18,8 @@ module.exports = {
         }
       },
       animation: {
-        spin: 'spin 2s linear infinite',
-        spinReverse: 'spinReverse 2s linear infinite',
+        spin: 'spin 5s linear infinite',
+        spinReverse: 'spinReverse 5s linear infinite',
   
       },
       colors: {

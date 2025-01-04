@@ -1,14 +1,13 @@
-<svg width="1281" height="90" viewBox="0 0 1281 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M535.096 12.5002H855.321L877.436 34.9427H899.046L913.063 43.0002H963" stroke="#0A69A5" stroke-width="3"/>
-<path d="M852.99 13.0002H453.165L428.832 35.0748H401.85L384.349 43.0002H321.999" stroke="#0A69A5" stroke-width="3"/>
+<svg width="1276" height="79" viewBox="0 0 1276 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M535 2H787.945L805.414 24.0745H822.483L833.555 32H873" stroke="#0A69A5" stroke-width="3"/>
+<path d="M780 2H484.525L465.691 24.0745H444.807L431.26 32H383" stroke="#0A69A5" stroke-width="3"/>
 <g filter="url(#filter0_b_527_5)">
-<path d="M1 89.5H1280V53H1151L1146 46.5H1123.5H985L963 44.5H912L898.5 36.1737H877.25L854 14L571 16H493.5H473H452.5L430.5 37H401L384.5 45H184.5H163H137.5L130.5 52.5H1V89.5Z" fill="black"/>
+<path d="M1 78.5L1276 79V25.5H1165.5H1148H1115.5H993.5H964.5H919.5H874V33.5H833.5L822.5 26H805L787 3.5H485.5L467 25H446.5L432 34H384L374 25H186.5H166H133.5H1V78.5Z" fill="black"/>
 </g>
-<path d="M370 35.0002H304.465L294.806 44.5387H136.904L130.605 51.0002H-5.71618e-06" stroke="#0A69A5" stroke-width="3"/>
-<path d="M911 35H976.535L986.194 44.5385H1144.1L1150.4 51H1281" stroke="#0A69A5" stroke-width="3"/>
-<path d="M427 23.5002L450 2.00018H860L879.5 23.5002" stroke="#22EAEA" stroke-width="3"/>
+<path d="M370 24.0002H420.5H0.5" stroke="#0A69A5" stroke-width="3"/>
+<path d="M840 24H1276" stroke="#0A69A5" stroke-width="3"/>
 <defs>
-<filter id="filter0_b_527_5" x="-44" y="-31" width="1369" height="165.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_b_527_5" x="-44" y="-41.5" width="1365" height="165.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feGaussianBlur in="BackgroundImageFix" stdDeviation="22.5"/>
 <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_527_5"/>

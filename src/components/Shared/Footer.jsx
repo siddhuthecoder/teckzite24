@@ -14,7 +14,7 @@ const Footer = () => {
         <FaTwitter />
 
         </div>
-        <div className="text-center translate-x-[70px] lg:translate-x-[100px] translate-y-[-20px] lg:translate-y-[-30px]">Copyright &copy; RGUKT,Nuzvid</div>
+        <div className="text-center translate-x-[70px] xl:translate-x-[100px] translate-y-[38px] lg:translate-y-[-30px]">Copyright &copy; RGUKT,Nuzvid</div>
         <div className="flex gap-[20px] md:items-center md:translate-y-[20px] lg:translate-y-0">
           <h2>Contact</h2>
           <h2>Stalls</h2>
