@@ -33,7 +33,7 @@ const EWCard = ({ img, id, name, workshop }) => {
         >
           <img
             src={img}
-            className="h-full w-full rounded-lg object-cover"
+            className="h-full z-0 w-full rounded-lg object-cover"
             alt="event"
           />
         </CardItem>
