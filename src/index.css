@@ -1003,22 +1003,7 @@ transition: opacity .2s; */
     -webkit-text-stroke: 2px #0A69A5; /* Outline the text in aqua color */
     text-shadow: 0 0 20px #0A69A5, 0 0 40px #0A69A5;
   }
-  .text_path {
-    stroke: #0A69A5; /* Aqua outline for the text */
-    stroke-width: 2;
-    fill: transparent; /* Ensures the text itself is transparent */
-    transition: all 0.3s linear;
-    filter: drop-shadow(0 0 20px #0A69A5) drop-shadow(0 0 40px #0A69A5);
-  }
-  
-  .section:hover .text_path {
-    fill: #0A69A5; /* Changes the fill color on hover */
-    stroke: none; /* Removes the stroke on hover */
-  }
-  
-#curve{
-  fill:transparent;
-}
+ 
   /* Light effect */
   .light-effect {
     position: fixed;

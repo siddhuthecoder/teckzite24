@@ -7,7 +7,7 @@ import Ellipse131 from "../../assets/menu/Group 15.svg";
 import Ellipse132 from "../../assets/menu/Group 54.svg";
 import MenuButton from "../button/MenuButton";
 import { GiCrossedSwords } from "react-icons/gi";
-import {motion} from "framer-motion"
+import {animate, motion, spring} from "framer-motion"
 const Navbar = ({ setShowNav }) => {
   const navigate = useNavigate();
   
@@ -50,6 +50,16 @@ const Navbar = ({ setShowNav }) => {
         initial="hidden"
         animate="visible"
         variants={isMobile ? fadeIn : fadeInUp}
+        whileHover={{
+          scale: 1.2,     
+          transition:{
+          type: "spring", 
+          stiffness: 300, 
+          damping: 5, 
+  
+          }
+        }}
+  
       >
         <MenuButton name={name} action={action} />
       </motion.div>
@@ -84,7 +94,7 @@ const Navbar = ({ setShowNav }) => {
 
       {/* Main Content */}
       <div
-        className="main md:relative flex flex-col justify-center items-center gap-[20px]"
+        className="main md:relative flex flex-col justify-center items-center gap-[20px] translate-y-[50px]"
         style={{
           zIndex: "99999",
         }}
