@@ -10,6 +10,7 @@ import { GiCrossedSwords } from "react-icons/gi";
 import {motion} from "framer-motion"
 const Navbar = ({ setShowNav }) => {
   const navigate = useNavigate();
+  
   // const NavButton = ({ name, action, mobileDelay, desktopClasses }) => {
   //   const fadeInUp = {
   //     hidden: { opacity: 0, y: 50 }, // Initial state
@@ -21,28 +22,27 @@ const Navbar = ({ setShowNav }) => {
   //     </div>
   //   );
   // };
-  const NavButton = ({ name, action, mobileDelay, desktopClasses }) => {
-    // Variants for animations
+  const NavButton = ({ name, action,desktopClasses,desktopDelay,mobileDelay }) => {
     const fadeInUp = {
       hidden: { opacity: 0, y: 50 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: mobileDelay * 0.1 } },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: desktopDelay*0.1 } },
     };
     const fadeIn = {
-      hidden: { opacity: 0, x: -50 }, // Start off-screen (to the left)
+      hidden: { opacity: 0, x: -50 }, 
       visible: {
         opacity: 1,
-        x: 0, // Moves to its final position
+        x: 0,
         transition: {
-          type: "spring", // Use spring animation
-          stiffness: 100, // Adjust stiffness for spring tension
-          damping: 10, // Adjust damping for oscillation control
-          duration: 0.5, // Set a duration for fallback
-          delay: mobileDelay * 0.1, // Add a delay for staggered effect
+          type: "spring", 
+          stiffness: 100, 
+          damping: 10, 
+          duration: 0.5, 
+          delay: mobileDelay * 0.1,
         },
       },
     };
     
-    const isMobile = window.innerWidth <= 768; // Replace with dynamic state management if needed
+    const isMobile = window.innerWidth <= 768; 
   
     return (
       <motion.div
@@ -128,31 +128,36 @@ const Navbar = ({ setShowNav }) => {
           <NavButton
             name="Home"
             action={() => navigate("/")}
-            mobileDelay={5}
+            desktopDelay={5}
+            mobileDelay={1}
             desktopClasses="md:ml-[20px] md:mt-[0px] lg:ml-[-30px] md:animate-slideTopDelay5"
           />
           <NavButton
             name="Events"
             action={() => navigate("/events")}
-            mobileDelay={4}
+            desktopDelay={4}
+            mobileDelay={2}
             desktopClasses="md:ml-[-100px] lg:ml-[-150px] md:animate-slideTopDelay4"
           />
           <NavButton
             name="Workshops"
             action={() => navigate("/workshops")}
+            desktopDelay={3}
             mobileDelay={3}
             desktopClasses="md:ml-[-140px] lg:ml-[-180px] md:animate-slideTopDelay3"
           />
           <NavButton
             name="Web Team"
             action={() => navigate("/web-team")}
-            mobileDelay={2}
+            desktopDelay={2}
+            mobileDelay={4}
             desktopClasses="md:ml-[-100px] lg:ml-[-150px] md:animate-slideTopDelay2"
           />
           <NavButton
             name="Updates"
             action={() => navigate("/updates")}
-            mobileDelay={1}
+            desktopDelay={1}
+            mobileDelay={5}
             desktopClasses="md:ml-[20px] lg:ml-[-30px] md:animate-slideTopDelay1"
           />
         </div>
@@ -162,6 +167,7 @@ const Navbar = ({ setShowNav }) => {
           <NavButton
             name="Login"
             action={() => navigate("/login")}
+            desktopDelay={6}
             mobileDelay={6}
             desktopClasses="md:animate-slideTopDelay6"
           />
@@ -172,30 +178,35 @@ const Navbar = ({ setShowNav }) => {
           <NavButton
             name="About"
             action={() => navigate("/about")}
+            desktopDelay={7}
             mobileDelay={7}
             desktopClasses="md:mr-[20px] lg:mr-[-30px] md:animate-slideTopDelay7"
           />
           <NavButton
             name="Core Team"
             action={() => navigate("/core-team")}
+            desktopDelay={8}
             mobileDelay={8}
             desktopClasses="md:mr-[-100px] lg:mr-[-150px] md:animate-slideTopDelay8"
           />
           <NavButton
             name="Referrals"
             action={() => navigate("/referrals")}
+            desktopDelay={9}
             mobileDelay={9}
             desktopClasses="md:mr-[-140px] lg:mr-[-180px] md:animate-slideTopDelay9"
           />
           <NavButton
             name="Sponsors"
             action={() => navigate("/sponsors")}
+            desktopDelay={10}
             mobileDelay={10}
             desktopClasses="md:mr-[-100px] lg:mr-[-150px] md:animate-slideTopDelay10"
           />
           <NavButton
             name="Contact"
             action={() => navigate("/contact")}
+            desktopDelay={11}
             mobileDelay={11}
             desktopClasses="md:mr-[20px] mb-[40px] lg:mr-[-30px] md:animate-slideTopDelay11"
           />
