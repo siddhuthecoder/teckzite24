@@ -44,30 +44,28 @@ const EWCard = ({ img, id, name, workshop }) => {
           className="absolute top-[270px] left-0 flex flex-col gap-[20px]"
         >
           <div className="flex flex-col gap-[13px] ml-[46px]">
-            <div className="text-[18px] text-white font-bold">{name}</div>
-            <div className="text-[15px] text-white text-center ml-[-100px]">
-              Entry fee
+            <div className="text-[18px] text-white font-bold">{name.slice(0,20)} {".."}</div>
+          </div>
+        </CardItem>
+
+        {/* <CardItem translateZ={50} className="absolute top-[350px] left-[160px]">
+          {workshop && (
+            <div
+              onClick={handleNavigation}
+              className={workshop ? "mt-8" : "mt-0"}
+            >
+              <div className="flex flex-col gap-[20px] ml-[70px]">
+                <div className="text-[15px] text-white font-semibold">
+                  {name}
+                </div>
+                <div className="text-[15px] font-semibold text-white">6</div>
+              </div>
             </div>
-          </div>
-        </CardItem>
+          )}
+        </CardItem> */}
 
-        <CardItem translateZ={50} className="absolute top-[350px] left-[160px]">
-          <div
-            onClick={handleNavigation}
-            className={workshop ? "mt-8" : "mt-0"}
-          >
-          <div className="flex flex-col gap-[20px] ml-[70px]">
-            <div className="text-[15px] text-white font-semibold">{name}</div>
-            <div className="text-[15px] font-semibold text-white">6</div>
-          </div>
-        </CardItem>
-
-        <CardItem
-          translateZ={50}
-          className="absolute top-[330px] left-[160px]"
-        >
-          <div onClick={handleNavigation}>
-
+        <CardItem translateZ={50} className="absolute top-[330px] left-[160px]">
+          <div onClick={handleNavigation} className={`${workshop?"mt-10":""}`}>
             <EventButton name="Know More" />
           </div>
         </CardItem>
