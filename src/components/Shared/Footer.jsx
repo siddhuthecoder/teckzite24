@@ -12,7 +12,6 @@ const Footer = () => {
           <RiInstagramFill className="text-[20px] lg:text-[25px] hover:text-[#E1306C]" />
           <FaFacebookSquare className="text-[20px] lg:text-[25px] hover:text-[#1877F2]" />
           <FaTwitter className="text-[20px] lg:text-[25px] hover:text-[#1DA1F2]" />
-          <FaTwitter className="text-[20px] lg:text-[25px] hover:text-[#1DA1F2]" />
         </div>
         <div className="text-center translate-y-[-15px] md:translate-y-[15px] lg:translate-y-0 text-[10px] md:text-[22px] md:w-1/3 mb-3">
           Copyright &copy; RGUKT,Nuzvid
