@@ -3,15 +3,11 @@ import eventcard from "../../assets/events/eventcard.png";
 import { useNavigate } from "react-router-dom";
 import EventButton from "../button/EventButton";
 import { CardContainer, CardBody, CardItem } from "../utils/3Dcard";
-import workshopImage from "../../assets/img/Workshop.png";
-
 const EWCard = ({ img, id, name, workshop }) => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
-    const targetPath = `/${
-      workshop ? "workshopdetails" : "eventdetails"
-    }/${id}`;
+    const targetPath = `/${workshop ? "workshopdetails" : "eventdetails"}/${id}`;
     navigate(targetPath);
   };
 
@@ -19,9 +15,12 @@ const EWCard = ({ img, id, name, workshop }) => {
     <CardContainer className="flex justify-center items-center">
       <CardBody className="relative h-[450px] w-[300px]">
         {/* Background Card */}
-        <CardItem translateZ={-20} className="relative h-full w-full">
+        <CardItem
+          translateZ={-20}
+          className="relative h-full w-full"
+        >
           <img
-            src={workshop ? workshopImage : eventcard}
+            src={eventcard}
             className="h-full w-full object-cover rounded-lg"
             alt="card background"
           />
@@ -43,31 +42,19 @@ const EWCard = ({ img, id, name, workshop }) => {
           translateZ={40}
           className="absolute top-[270px] left-0 flex flex-col gap-[20px]"
         >
-          <div className="flex flex-col gap-[13px] ml-[46px]">
-            <div className="text-[18px] text-white font-bold">{name}</div>
-            <div className="text-[15px] text-white text-center ml-[-100px]">
-              Entry fee
-            </div>
-          </div>
-        </CardItem>
-
-        <CardItem translateZ={50} className="absolute top-[350px] left-[160px]">
-          <div
-            onClick={handleNavigation}
-            className={workshop ? "mt-8" : "mt-0"}
-          >
           <div className="flex flex-col gap-[20px] ml-[70px]">
-            <div className="text-[15px] text-white font-semibold">{name}</div>
-            <div className="text-[15px] font-semibold text-white">6</div>
+            <div className="text-[20px] text-white font-bold">{name}</div>
+            <div className="text-[15px] text-white text-center ml-[-50px]">
+              5
+            </div>
           </div>
         </CardItem>
 
         <CardItem
           translateZ={50}
-          className="absolute top-[330px] left-[160px]"
+          className="absolute top-[350px] left-[160px]"
         >
           <div onClick={handleNavigation}>
-
             <EventButton name="Know More" />
           </div>
         </CardItem>
@@ -78,8 +65,10 @@ const EWCard = ({ img, id, name, workshop }) => {
 
 export default EWCard;
 
-{
-  /*import React from "react";
+
+
+
+{/*import React from "react";
 import s1 from "../../assets/img/s1.svg";
 import s2 from "../../assets/img/s2.svg";
 import s3 from "../../assets/img/s3.svg";
@@ -153,5 +142,4 @@ const EWCard = ({ img, id, name, workshop }) => {
   );
 };
 
-export default EWCard;*/
-}
+export default EWCard;*/}
