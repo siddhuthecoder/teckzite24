@@ -201,7 +201,7 @@ const EventDetailsCard3 = () => {
 
             </div>
 
-            <div className="  max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900">
+            <div className="  max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900 overflow-x-auto">
               <RenderTabs />
             </div>
 
