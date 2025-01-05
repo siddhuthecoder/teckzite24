@@ -13,7 +13,7 @@ const EWCsrd1 = ({ img, id, name, workshop }) => {
   return (
     <>
       <div className="my-10 mx-2 flex items-center justify-center">
-      <div className="flex justify-center bg-[black] items-center min-h-screen ">
+      <div className="flex justify-center bg-[black] items-center - ">
 
 <div className=" relative image-container">
     <img 
