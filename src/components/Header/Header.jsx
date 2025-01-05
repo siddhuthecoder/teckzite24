@@ -28,7 +28,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header_container">
+    <div className="header_container ">
       <header className="w-full  relative h-full">
         <div
           className="absolute  lg:left-[5%] top-[35%] -translate-y-1/2 left-0 px-4 flex justify-between items-center gap-4 "
