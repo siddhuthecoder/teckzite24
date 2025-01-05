@@ -5,6 +5,10 @@ module.exports = {
 
   theme: {
     extend: {
+      // backgroundImage: {
+      //   'cup-bg': "url('teckzite24/public/cup_bg.png')",
+      //   'whole-bg' : "url('/another-path.jpg')",
+      //  },
       keyframes: {
         spin: {
           '0%': { transform: 'rotate(0deg)' },
