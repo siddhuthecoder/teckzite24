@@ -8,7 +8,10 @@ import Ellipse132 from "../../assets/menu/Group 54.svg";
 import MenuButton from "../button/MenuButton";
 import { GiCrossedSwords } from "react-icons/gi";
 import {animate, motion, spring} from "framer-motion"
-import { useSelector } from "react-redux";
+import { toast } from 'react-hot-toast';
+import { userActions } from './../../store/userSlice';
+import { useSelector, useDispatch } from "react-redux";
+
 const Navbar = ({ setShowNav }) => {
   const navigate = useNavigate();
   const userData = useSelector((state) => state.user.data);
@@ -23,6 +26,7 @@ const Navbar = ({ setShowNav }) => {
   //     </div>
   //   );
   // };
+
   const NavButton = ({ name, action,desktopClasses,desktopDelay,mobileDelay }) => {
     const fadeInUp = {
       hidden: { opacity: 0, y: 50 },
@@ -42,9 +46,15 @@ const Navbar = ({ setShowNav }) => {
         },
       },
     };
+    const dispatch = useDispatch();
+
     
     const isMobile = window.innerWidth <= 768; 
-  
+    const logout = () => {
+      localStorage.clear();
+      toast.success("User Logged out successfully");
+      dispatch(userActions.removeUser());
+    };
     return (
       <motion.div
         className={`${desktopClasses}`}
@@ -135,7 +145,7 @@ const Navbar = ({ setShowNav }) => {
         </div>
 
         {/* Left Buttons */}
-        <div className="left-buttons pt-[30px] md:pt-0 md:absolute left-0 md:top-[30px] flex flex-col gap-[30px] font-bruno">
+        <div className="left-buttons pt-[30px] md:pt-0 md:absolute left-0 md:top-[30px] flex flex-col gap-[30px] font-bruno order-2 md:order-1">
           <NavButton
             name="Home"
             action={() => navigate("/")}
@@ -174,14 +184,14 @@ const Navbar = ({ setShowNav }) => {
         </div>
 
         {/* Center Button */}
-        <div className="center-button md:absolute lg:top-[-20px] md:top-0 left-2/5 font-bruno">
+        <div className="center-button md:absolute lg:top-[-20px] md:top-0 left-2/5 font-bruno order-1 md:order-2">
             
            {userData ?   <h1 className="bg-transparent font-semibold  text-xl" onClick={()=>{navigate('/profile')}}>
                             {userData.tzkid.toUpperCase()}
                           </h1> :
              <NavButton
             name="Login"
-            action={() => navigate("/login")}
+            action={() => navigate("/register")}
             desktopDelay={6}
             mobileDelay={6}
             desktopClasses="md:animate-slideTopDelay6"
@@ -191,7 +201,7 @@ const Navbar = ({ setShowNav }) => {
         </div>
 
         {/* Right Buttons */}
-        <div className="right-buttons mb-[40px] md:absolute right-0 top-[30px] flex flex-col gap-[30px] font-bruno">
+        <div className="right-buttons mb-[40px] md:absolute right-0 top-[30px] flex flex-col gap-[30px] font-bruno order-3">
           <NavButton
             name="About"
             action={() => navigate("/about")}

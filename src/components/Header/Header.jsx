@@ -73,11 +73,11 @@ const Header = () => {
                 <h1 className="max-lg:hidden bg-transparent font-semibold  text-xl">
                   {userData.tzkid.toUpperCase()}
                 </h1>
-                <IoMdPerson className="md:hidden" size={22} />
+                <IoMdExit className="md:hidden" size={22} />
               </Link>
             )}
               <h1 className="max-lg:hidden bg-transparent">Logout</h1>
-              <IoMdExit className="hidden" size={22} />
+              <IoMdExit className="hidden sm:block lg:hidden" size={22} />
             </div>
             </div>
           ) : (

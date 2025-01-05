@@ -286,7 +286,7 @@ select option {
   transform: rotate(0deg);
   left: 0;
   right: 0;
-  background: url("../public/Group 174.svg") no-repeat top center fixed;
+  background: url("../public/foot.png") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
   z-index: 3;
@@ -328,7 +328,7 @@ select option {
   left: 0;
   right: 0;
   z-index: 10;
-  background: url("../public/headerImg.png") no-repeat top center fixed;
+  background: url("../public/Group104.png") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
 }
