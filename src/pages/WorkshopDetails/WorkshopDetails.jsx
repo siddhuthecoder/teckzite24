@@ -13,7 +13,9 @@ import ed2 from "../../assets/img/ed/ed2.svg";
 import ed3 from "../../assets/img/ed/ed3.svg";
 import ed4 from "../../assets/img/ed/ed4.svg";
 import RenderRegistrationForm from "./RenderRegistrationForm";
-
+import eventdetailsdesk from '../../assets/events/eventdetailsdesk.png';
+import EventButton from "../../components/button/EventButton";
+import tabbutton from "../../assets/events/tabbutton.png";
 const WorkshopDetails = () => {
   const [activeTab, setActiveTab] = useState("Description");
   const workshopData = useSelector((state) => state.workshop.data);
@@ -65,9 +67,9 @@ const WorkshopDetails = () => {
           setActiveTab(tab.value);
         }}
       >
-        <span className="p-2 max-md:bg-[#10022A]">{tab.label}</span>
+        <span className="p-2 ">{tab.label}</span>
         <img
-          src={ed4}
+          src={tabbutton}
           alt="cover"
           className={`absolute top-0 left-0 z-[-1] pointer-events-none ${
             activeTab === tab.value ? "opacity-100" : "opacity-0"
@@ -110,32 +112,33 @@ const WorkshopDetails = () => {
       ></div>
       <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
         <div className="absolute max-md:relative top-3 w-full z-20">
-          <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around flex-wrap gap-3 pb-2 border-b border-1 border-purple-900">
+          <div className="max-md:hidden mt-[20px] flex items-center w-[90%] mx-auto justify-around flex-wrap gap-3 pb-2 ">
             <RenderTabs />
           </div>
-          <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#FF48AB]">
+          <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#0A69A5] ">
             {data.name}
           </h1>
           <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
-            <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3">
+            <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center md:ml-[25px] flex-col gap-3">
               <img
                 src={data.workshopImg}
                 alt={data.name}
                 className="md:h-[220px] max-md:w-[70vw]"
               />
-              <button
+              {/*<button
                 className="px-8 py-1.5 rounded bg-gradient"
                 onClick={handleRegister}
               >
                 Register
-              </button>
+              </button>*/}
+              <div onClick={handleRegister}><EventButton name="Register"/></div>
             </div>
 
             <div className="max-md:flex hidden mt-2 items-center w-[95vw]  mx-auto justify-around flex-wrap gap-1 pb-2 border-b border-1 border-purple-900">
               <RenderTabs />
             </div>
 
-            <div className="col-span-8 max-md:col-span-12 max-md:bg-[#10022A] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2">
+            <div className="col-span-8 max-md:col-span-12  max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2 md:ml-[10px]">
               <div className="div h-[240px] max-md:h-[fit-content] w-full pt-2 text-white overflow-y-auto overflow-x-visible">
                 {activeTab === "Description" && <Description data={data} />}
                 {activeTab === "Instructor" && <Instructor data={data} />}
@@ -157,15 +160,15 @@ const WorkshopDetails = () => {
           </div>
         </div>
         <img
-          src={ed1}
+          src={eventdetailsdesk}
           alt=""
           className="absolute pointer-events-none scale-y-[1.1] hidden md:block md:rotate-[0deg] z-[0]  "
           style={{
-            width: "800px",
-            minHeight: "400px",
+            width: "900px",
+            minHeight: "450px",
           }}
         />
-        <img
+       {/* <img
           src={ed2}
           alt=""
           className="absolute max-md:hidden pointer-events-none  scale-[0.7] left-[-0px] md:left-[-20px] z-[0]  top-[5%] md:top-[20%]"
@@ -174,7 +177,7 @@ const WorkshopDetails = () => {
           src={ed3}
           alt=""
           className="absolute max-md:hidden pointer-events-none  scale-[0.7] right-[-0px] md:right-[-20px] z-[0] top-[5%]  md:top-[20%]"
-        />
+        />*/}
       </div>
     </div>
   );
