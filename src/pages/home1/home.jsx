@@ -9,15 +9,16 @@ import apple from "../../assets/img/apple.png";
 import meebuddy from "../../assets/meenews.png";
 import Background from "../../components/home_banneer/Background";
 import SplineScreen from "../../components/home_banneer/SplineScreen";
+import ParticlesComponent from "./../../components/home_banneer/Particle";
 
 const Home = () => {
   const [app, setApp] = useState(true);
   return (
     <main>
+      <ParticlesComponent id="particles" />
       <Header />
       <SplineScreen />
-      <Background  />
-
+      <Background />
     </main>
   );
 };
