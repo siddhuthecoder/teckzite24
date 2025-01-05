@@ -13,8 +13,14 @@ import ed1 from "../../assets/img/ed/ed1.svg";
 import ed2 from "../../assets/img/ed/ed2.svg";
 import ed3 from "../../assets/img/ed/ed3.svg";
 import ed4 from "../../assets/img/ed/ed4.svg";
+import tabbutton from "../../assets/events/tabbutton.png";
+import EventButton from "../../components/button/EventButton";
+import eventdetailsdesk from "../../assets/events/eventdetailsdesk.png";
+import eventdetailsmobile from "../../assets/events/eventdetailsmobile.png";
 import { userActions } from "../../store/userSlice";
 const EventDetailsCard3 = () => {
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [activeTab, setActiveTab] = useState("Description");
   const [registerForm, setRegisterForm] = useState(false);
   const [data, setData] = useState(null);
@@ -26,6 +32,20 @@ const EventDetailsCard3 = () => {
   const dispatch = useDispatch();
   const eventData = useSelector((state) => state.event.data);
   const userData = useSelector((state) => state.user.data);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Add event listener on mount
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleSound = () => {
     const audio = new Audio("./click.wav");
@@ -51,6 +71,8 @@ const EventDetailsCard3 = () => {
       setIsReg(false);
       return;
     }
+
+    console.log(windowWidth)
 
     if (userData.regEvents.includes(id)) {
       toast.error("You are already registered to this event");
@@ -109,11 +131,10 @@ const EventDetailsCard3 = () => {
         onClick={() => setActiveTab(tab.value)}
       >
         <img
-          src={ed4}
+          src={tabbutton}
           alt="cover"
-          className={`absolute top-0 left-0 z-[-1] ${
-            activeTab === tab.value ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute top-0 left-0 z-[-1] ${activeTab === tab.value ? "opacity-100" : "opacity-0"
+            }`}
           style={{ width: "120px", height: "40px" }}
         />
         <span className="p-2">{tab.label}</span>
@@ -148,34 +169,39 @@ const EventDetailsCard3 = () => {
   const RenderEventDetails = () => (
     <div className="w-full flex min-h-screen justify-center items-center">
       <div
-        className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center z-0"
-        style={{ backgroundImage: "url('../../../eventdetails.png')" }}
+        className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center "
+        style={{ backgroundImage: "" }}
         onClick={() => handleSound()}
       ></div>
       <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
-        <div className="absolute max-md:relative top-3 w-full z-20">
-          <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900">
+        <div className="absolute max-md:relative top-[10px] w-full  md:mt-[25px]">
+          <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2">
             <RenderTabs />
           </div>
-          <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#FF48AB]">
+          <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#0A69A5]">
             {data.name}
           </h1>
           <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
-            <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3">
+            <div className="col-span-4  max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3">
               <img
                 src={data.img}
                 alt={data.name}
                 className="md:h-[220px] max-md:w-[70vw]"
               />
-              <button
+              <div onClick={handleRegister}>
+                <EventButton name={isReg ? "Registering..." : "Register"} />
+              </div>
+
+              {/*<button
                 className="px-8 py-1.5 rounded bg-gradient"
                 onClick={handleRegister}
               >
                 {isReg ? "Registering..." : "Register"}
-              </button>
+              </button>*/}
+
             </div>
 
-            <div className="max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900">
+            <div className="  max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900">
               <RenderTabs />
             </div>
 
@@ -214,24 +240,25 @@ const EventDetailsCard3 = () => {
           </div>
         </div>
         <img
-          src={ed1}
+          src={eventdetailsdesk}
           alt=""
-          className="absolute pointer-events-none scale-y-[1.1] hidden md:block md:rotate-[0deg] z-[0]  "
+          className="absolute pointer-events-none scale-y-[1.1] hidden md:block md:rotate-[0deg]  "
           style={{
             width: "800px",
-            minHeight: "400px",
+            minHeight: "450px",
           }}
         />
-        <img
+ 
+        {/* <img
           src={ed2}
           alt=""
           className="absolute max-md:hidden pointer-events-none  scale-[0.7] left-[-0px] md:left-[-20px] z-[0]  top-[5%] md:top-[20%]"
-        />
-        <img
+        /> */}
+        {/* <img
           src={ed3}
           alt=""
           className="absolute max-md:hidden pointer-events-none  scale-[0.7] right-[-0px] md:right-[-20px] z-[0] top-[5%]  md:top-[20%]"
-        />
+        /> */}
       </div>
     </div>
   );
@@ -242,9 +269,8 @@ const EventDetailsCard3 = () => {
       for (let i = 0; i < data.teamSize; i++) {
         inputFields.push(
           <div className="mt-2" key={i}>
-            <p className="text-sm text-black pb-1 pl-1">{`Team Member ${
-              i + 1
-            }`}</p>
+            <p className="text-sm text-black pb-1 pl-1">{`Team Member ${i + 1
+              }`}</p>
             <input
               type="text"
               id={`team-${i + 1}`}
@@ -264,7 +290,7 @@ const EventDetailsCard3 = () => {
         id="default-modal"
         tabIndex="-1"
         aria-hidden="true"
-        className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center z-[1200] scroll_in"
+        className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center  scroll_in"
       >
         <div className="bg-white text-black w-[95%] max-w-lg p-4 rounded shadow-lg max-h-[90vh] scroll_in">
           <div className="flex items-center justify-between pb-4 border-b">

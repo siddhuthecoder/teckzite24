@@ -286,7 +286,7 @@ select option {
   transform: rotate(0deg);
   left: 0;
   right: 0;
-  background: url("../public/menu/f.svg") no-repeat top center fixed;
+  background: url("../public/foot.png") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
   z-index: 3;
@@ -328,7 +328,7 @@ select option {
   left: 0;
   right: 0;
   z-index: 10;
-  background: url("../public/headerImg.png") no-repeat top center fixed;
+  background: url("../public/Group104.png") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
 }
@@ -1000,14 +1000,8 @@ transition: opacity .2s; */
     color: transparent;
     cursor: default;
     transition: color 0.3s linear;
-    -webkit-text-stroke: 2px #0e7fb1
-
-; /* Outline the text in aqua color */
-    text-shadow: 0 0 20px #0e7fb1
-
-, 0 0 40px #0e7fb1
-
-;
+    -webkit-text-stroke: 2px #0A69A5; /* Outline the text in aqua color */
+    text-shadow: 0 0 20px #0A69A5, 0 0 40px #0A69A5;
   }
  
   /* Light effect */
