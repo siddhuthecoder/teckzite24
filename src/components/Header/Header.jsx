@@ -41,14 +41,7 @@ const Header = () => {
             }}
           >
             <GiHamburgerMenu className="text-2xl lg:text-4xl" />
-            {userData && (
-              <Link to="/profile">
-                <h1 className="max-md:hidden bg-transparent font-semibold  text-xl">
-                  {userData.tzkid.toUpperCase()}
-                </h1>
-                <IoMdPerson className="md:hidden" size={22} />
-              </Link>
-            )}
+           
           </div>
         </div>
         <div
@@ -74,8 +67,18 @@ const Header = () => {
                 logout();
               }}
             >
+            <div className="lg:flex lg:gap-[30px]">
+             {userData && (
+              <Link to="/profile">
+                <h1 className="max-lg:hidden bg-transparent font-semibold  text-xl">
+                  {userData.tzkid.toUpperCase()}
+                </h1>
+                <IoMdPerson className="md:hidden" size={22} />
+              </Link>
+            )}
               <h1 className="max-lg:hidden bg-transparent">Logout</h1>
-              <IoMdExit className="lg:hidden" size={22} />
+              <IoMdExit className="hidden" size={22} />
+            </div>
             </div>
           ) : (
             <Link to="/register">

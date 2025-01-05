@@ -8,9 +8,10 @@ import Ellipse132 from "../../assets/menu/Group 54.svg";
 import MenuButton from "../button/MenuButton";
 import { GiCrossedSwords } from "react-icons/gi";
 import {animate, motion, spring} from "framer-motion"
+import { useSelector } from "react-redux";
 const Navbar = ({ setShowNav }) => {
   const navigate = useNavigate();
-  
+  const userData = useSelector((state) => state.user.data);
   // const NavButton = ({ name, action, mobileDelay, desktopClasses }) => {
   //   const fadeInUp = {
   //     hidden: { opacity: 0, y: 50 }, // Initial state
@@ -174,13 +175,19 @@ const Navbar = ({ setShowNav }) => {
 
         {/* Center Button */}
         <div className="center-button md:absolute lg:top-[-20px] md:top-0 left-2/5 font-bruno">
-          <NavButton
+            
+           {userData ?   <h1 className="bg-transparent font-semibold  text-xl" onClick={()=>{navigate('/profile')}}>
+                            {userData.tzkid.toUpperCase()}
+                          </h1> :
+             <NavButton
             name="Login"
             action={() => navigate("/login")}
             desktopDelay={6}
             mobileDelay={6}
             desktopClasses="md:animate-slideTopDelay6"
           />
+                        
+          }
         </div>
 
         {/* Right Buttons */}
