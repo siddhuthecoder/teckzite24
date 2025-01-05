@@ -5,7 +5,7 @@ const Instructor = ({data}) => {
       <div className="text-2xl text-center font-bold text-[white]">Instructor</div>
       <img src={data.instructorImage} alt="instructor_image" className="w-[150px] mt-[10px] h-[150px] m-auto" />
       <h2 className="font-bold">{data.instructorName}</h2>
-      <p className="text-slate-500">{data.instructorSpecifications}</p>
+      <p className="text-black">{data.instructorSpecifications}</p>
     </div>
   );
 };

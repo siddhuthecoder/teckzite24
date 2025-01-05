@@ -138,7 +138,7 @@ const WorkshopDetails = () => {
               <RenderTabs />
             </div>
 
-            <div className="col-span-8 max-md:col-span-12  max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2 md:ml-[10px]">
+            <div className="col-span-8 max-md:col-span-12 max-md:bg-[#0a8ea5] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2">
               <div className="div h-[240px] max-md:h-[fit-content] w-full pt-2 text-white overflow-y-auto overflow-x-visible">
                 {activeTab === "Description" && <Description data={data} />}
                 {activeTab === "Instructor" && <Instructor data={data} />}
