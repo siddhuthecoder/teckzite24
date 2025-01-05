@@ -9,10 +9,10 @@ const TabsButton = ({ name, isActive }) => {
           <>
             <img
               src={tabbutton}
-              className="absolute inset-0 md:h-[50px] md:w-[150px] h-[35px] w-[75px]"
+              className="absolute inset-0 md:h-[36px] md:w-[300px] h-[25px] w-[180px] cursor-pointer"
               alt="Active Event Button"
             />
-            <div className="absolute top-[15px] md:[0px] md:text-[15px] text-[10px] font-bold text-white z-[10]">
+            <div className="absolute md:top-[7px] top-[6px] md:text-[15px] text-[10px] font-bold text-white z-[10]">
               {name}
             </div>
           </>
