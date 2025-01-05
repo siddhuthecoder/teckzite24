@@ -31,11 +31,11 @@ const Events = () => {
     <main className="w-full overflow-x-hidden">
       <Header />
       <EventsBanner />
-      <div className="w-full flex flex-col z-10 min-h-[85vh] pb-5 sticky">
+      <div className="w-full flex flex-col  min-h-[85vh] pb-5 sticky">
         <div className="text-center font-joti text-3xl">Events</div>
-        <div className="w-full flex items-center gap-2 justify-center flex-wrap mt-7">
+        <div className="w-full flex items-center gap-2 justify-center flex-wrap px-[20px] mt-7">
           {[
-            "OPEN FOR ALL",
+            "OPEN ALL",
             "PUC",
             "CSE",
             "ECE",
@@ -50,13 +50,13 @@ const Events = () => {
               key={index}
               onClick={() => {
                 setTab(
-                  item === "EE" ? "EEE" : item === "OPEN FOR ALL" ? "ALL" : item
+                  item === "EE" ? "EEE" : item === "OPEN ALL" ? "ALL" : item
                 );
                 setIsActive(true);
                 handleSound();
               }}
             >
-              <TabsButton name={item}  isActive={tab===(item==="EE"?"EEE":item==="OPEN FOR ALL"?"ALL":item)}/>
+              <TabsButton name={item}  isActive={tab===(item==="EE"?"EEE":item==="OPEN ALL"?"ALL":item)}/>
             </div>
           ))}
         </div>

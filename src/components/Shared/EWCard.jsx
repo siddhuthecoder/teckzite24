@@ -43,16 +43,14 @@ const EWCard = ({ img, id, name, workshop }) => {
           className="absolute top-[270px] left-0 flex flex-col gap-[20px]"
         >
           <div className="flex flex-col gap-[20px] ml-[70px]">
-            <div className="text-[20px] text-white font-bold">{name}</div>
-            <div className="text-[15px] text-white text-center ml-[-50px]">
-              5
-            </div>
+            <div className="text-[15px] text-white font-semibold">{name}</div>
+            <div className="text-[15px] font-semibold text-white">6</div>
           </div>
         </CardItem>
 
         <CardItem
           translateZ={50}
-          className="absolute top-[350px] left-[160px]"
+          className="absolute top-[330px] left-[160px]"
         >
           <div onClick={handleNavigation}>
             <EventButton name="Know More" />
