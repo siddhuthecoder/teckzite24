@@ -154,7 +154,6 @@ function App() {
         <>
           <Toaster />
           <main className="animate-show">
-            <ParticlesComponent id="particles" />
 
             <Routes>
               <Route path="/" element={<Home />} />
@@ -187,11 +186,10 @@ function App() {
               <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
               <Route path="*" element={<PageNotFound />} />
 
+
+
             </Routes>
             <Footer />
-            {/* <div className="fixed audio- rounded-[50%] flex justify-center items-center bottom-[5%]  left-[3%] z-[2000]">
-              <AudioBG />
-            </div> */}
           </main>
         </>
       )}
