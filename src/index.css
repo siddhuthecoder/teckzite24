@@ -312,14 +312,14 @@ select option {
   transform: rotate(180deg); /* Rotate the background image
   z-index: -1;
 }  */
-/* 
+
 @media (max-width: 768px) {
   .footer_container {
     height: 40px;
-    background: url("../public/footer1.png") no-repeat bottom center fixed;
+    background: url("../public/mobilefooter.png") no-repeat bottom center fixed;
     background-size: 100% 40px;
   }
-} */
+}
 
 /* Header */
 .header_container {
