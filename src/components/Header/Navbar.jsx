@@ -151,7 +151,7 @@ const Navbar = ({ setShowNav }) => {
             action={() => navigate("/")}
             desktopDelay={5}
             mobileDelay={1}
-            desktopClasses="md:ml-[20px] md:mt-[0px] lg:ml-[-30px] md:animate-slideTopDelay5"
+            desktopClasses="md:ml-[20px] md:mt-[0px] lg:ml-[-30px] md:animate-slideTopDelay5" 
           />
           <NavButton
             name="Events"
@@ -168,15 +168,15 @@ const Navbar = ({ setShowNav }) => {
             desktopClasses="md:ml-[-140px] lg:ml-[-180px] md:animate-slideTopDelay3"
           />
           <NavButton
-            name="Web Team"
-            action={() => navigate("/web-team")}
+            name="Robo Wars"
+            action={() => navigate("/robowars")}
             desktopDelay={2}
             mobileDelay={4}
             desktopClasses="md:ml-[-100px] lg:ml-[-150px] md:animate-slideTopDelay2"
           />
           <NavButton
-            name="Updates"
-            action={() => navigate("/updates")}
+            name="Stalls"
+            action={() => navigate("/stalls")}
             desktopDelay={1}
             mobileDelay={5}
             desktopClasses="md:ml-[20px] lg:ml-[-30px] md:animate-slideTopDelay1"
