@@ -182,7 +182,7 @@ const EventDetailsCard3 = () => {
             {data.name}
           </h1>
           <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
-            <div className="col-span-4  max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3">
+            <div className="col-span-4  max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3 md:ml-[20px]">
               <img
                 src={data.img}
                 alt={data.name}
@@ -205,7 +205,7 @@ const EventDetailsCard3 = () => {
               <RenderTabs />
             </div>
 
-            <div className="col-span-8 max-md:col-span-12 max-md:bg-[#10022A] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2">
+            <div className="col-span-8 max-md:col-span-12 max-md:bg-[#0a8ea5] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2">
               <div className="div h-[230px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible">
                 {activeTab === "TimeLine" && (
                   <TimeLine timeline={data.timeline} />
