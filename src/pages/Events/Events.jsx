@@ -33,11 +33,8 @@ const Events = () => {
     <main className="relative w-full overflow-x-hidden">
       <Header className="relative z-50" />
 
-      {/* Fixed Background with Eventsbg */}
-      <Eventsbg />
-
-      {/* Main Content */}
-      <div className="relative w-full flex flex-col min-h-[85vh] pb-5 z-30">
+      <Eventsbg isEventOpen={true} />
+      <div className="relative w-full flex flex-col min-h-[85vh] pb-5 ">
         <div className="text-center font-joti text-3xl mt-5">Events</div>
         <div className="w-full flex items-center gap-2 justify-center flex-wrap px-5 mt-7">
           {[
@@ -73,7 +70,7 @@ const Events = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           {filteredEvents ? (
-            <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-4 gap-10 z-0">
               {filteredEvents.map((event, index) => (
                 <EWCard
                   key={index}

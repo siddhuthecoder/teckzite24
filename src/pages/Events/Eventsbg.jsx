@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const Eventsbg = () => {
+const Eventsbg = ({ isEventOpen }) => {
   const [cupPosition, setCupPosition] = useState("-translate-y-full");
   const [animationComplete, setAnimationComplete] = useState(false);
+  const [bgOpacity, setBgOpacity] = useState("bg-opacity-5");
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -13,22 +14,40 @@ const Eventsbg = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const scrollHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+      setBgOpacity(scrollPercentage > 10 ? "bg-opacity-80" : "bg-opacity-5");
+    };
+
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="relative w-full h-full">
-      {/* Fixed Overlay Background with Black Shade */}
       <div
         className="fixed top-0 left-0 w-full h-screen bg-cover bg-center pointer-events-none"
         style={{
-          backgroundImage: "url('/overlaybg-cup.jpg')", // Overlay background image
+          backgroundImage: "url('/overlaybg-cup.jpg')",
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-40"></div> {/* Black shade */}
+        <div
+          className={`absolute inset-0 bg-black ${bgOpacity}`}
+          style={{
+            transition: "opacity 0.8s ease-in-out", 
+          }}
+        ></div>
       </div>
 
-      {/* Animated Cup */}
-      <div className="relative h-screen ">
+      <div className="relative h-screen">
         <img
-          src="/cup.webp" // Path to the cup image
+          src="/cup.webp" 
           alt="Cup"
           className={`absolute left-1/2 transform -translate-x-1/2 transition-transform duration-1000 ease-in-out ${
             animationComplete ? "" : cupPosition
