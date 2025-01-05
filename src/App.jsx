@@ -161,9 +161,9 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />
-              <Route path="/coreteam" element={<CoreTeam />} />
+              <Route path="/coreteam" element={<ComingSoon />} />
               {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
-              <Route path="/webteam" element={<WebTeam />} />
+              {/* <Route path="/webteam" element={<WebTeam />} /> */}
               <Route path="/register" element={<Register />} />
               <Route path="/team" element={<TeamCard />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
@@ -185,6 +185,9 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/certficates/users" element={<CertificatesUser />} />
               <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
+              <Route path="/stalls" element={<ComingSoon />} />
+              <Route path="/robowars" element={<ComingSoon />} />
+
               <Route path="*" element={<PageNotFound />} />
 
             </Routes>

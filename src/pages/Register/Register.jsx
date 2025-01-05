@@ -17,14 +17,14 @@ const Register = () => {
 
   return (
     <main
-      className="pt-5 flex justify-center items-center w-100 min-h-[100vh] bg-cover bg-center"
+      className="pt-5 flex justify-center items-center w-100 min-h-[100vh] bg-cover bg-center z-0"
       style={{
         backgroundImage: "url('../../../register.png')",
       }}
     >
       <Header />
       <RegisterForm />
-      <Contact />
+      <Contact className="mt-[30px]" />
     </main>
   );
 };

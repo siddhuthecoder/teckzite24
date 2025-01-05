@@ -7,7 +7,7 @@ export const PageNotFound = () => {
     <>
       <Header />
       <div className="w-screen relative h-screen overflow-hidden">
-        <div className="absolute w-full h-full flex top-0 z-20 left-0 items-center justify-center gap-2 flex-col">
+        <div className="absolute w-full h-full flex top-0 z-0 left-0 items-center justify-center gap-2 flex-col">
           <h1 className="font-bold text-7xl">
             <span className="text-[#9b1ba7]">4</span>0
             <span className="text-[#57128f]">4</span>
