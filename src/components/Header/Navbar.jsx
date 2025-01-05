@@ -142,7 +142,7 @@ const Navbar = ({ setShowNav }) => {
             action={() => navigate("/")}
             desktopDelay={5}
             mobileDelay={1}
-            desktopClasses="md:ml-[20px] md:mt-[0px] lg:ml-[-30px] md:animate-slideTopDelay5"
+            desktopClasses="md:ml-[20px] md:mt-[0px] lg:ml-[-30px] md:animate-slideTopDelay5" 
           />
           <NavButton
             name="Events"
