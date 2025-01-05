@@ -1,12 +1,6 @@
 import React from "react";
-import t1 from "../../assets/img/table/t1.svg";
-import t2 from "../../assets/img/table/t2.svg";
-import t3 from "../../assets/img/table/t3.svg";
-import t4 from "../../assets/img/table/t4.svg";
-import t5 from "../../assets/img/table/t5.svg";
-import t6 from "../../assets/img/table/t6.svg";
-import t7 from "../../assets/img/table/t7.svg";
-import t9 from "../../assets/img/table/t9.svg";
+import Refcard from "../../assets/img/Refcard.png";
+import Header from "../../assets/img/Header.png";
 import { useSelector, useDispatch } from "react-redux";
 import { MdOutlineWifiOff } from "react-icons/md";
 import { fetchRefs } from "../../store/refSlice";
@@ -74,7 +68,7 @@ const Table = () => {
       key={user.email}
       className={`w-full mt-[40px] relative flex item-center justify-center`}
     >
-      <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around">
+      <div className="w-[80%] py-[20px] h-[20px] flex items-center justify-around">
         <div className="w-[30px] mx-auto text-center">{index + 1}</div>
         <div className="w-[240px] mx-auto text-center">{user.firstName}</div>
         <div className="w-[300px] mx-auto text-center">{user.email}</div>
@@ -82,26 +76,13 @@ const Table = () => {
           {user.referralsCount}
         </div>
       </div>
-      <img
-        src={t1}
+
+       <img
+        src={Refcard}
         alt=""
-        className="absolute scale-y-[1.2] pointer-events-none"
+        className="absolute top-[-120%] left-[0%] scale-y-[1.1] scale-x-[0.84] mb-[4px]"
       />
-      <img
-        src={t2}
-        alt=""
-        className="absolute top-[-120%] left-[17%] scale-y-[1.1] scale-x-[0.84]"
-      />
-      <img
-        src={t3}
-        alt=""
-        className="absolute top-[-7px] left-[3px] scale-y-[1.1] scale-x-[0.84]"
-      />
-      <img
-        src={t4}
-        alt=""
-        className="absolute bottom-[-26px] left-[56.5%] scale-y-[1.1] scale-x-[0.84]"
-      />
+     
     </div>
   ));
 
@@ -111,36 +92,18 @@ const Table = () => {
         <div className="w-[100%] min-w-[900px] flex flex-col" style={{}}>
           <div className="w-full my-[20px] h-[60px] flex items-center relative">
             <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
-              <div className="w-[30px] mx-auto text-center">Sno</div>
+              <div className="w-[20px] mx-auto text-center">Sno</div>
               <div className="w-[240px] mx-auto text-center">Name</div>
               <div className="w-[300px] mx-auto text-center">Email</div>
               <div className="w-[300px] mx-auto text-center">Referrals</div>
             </div>
-            <img
+            {/* head image */}
+            {/* <img
               src={t5}
               alt=""
               className="absolute top-[-15px] scale-y-[0.7]"
-            />
-            <img
-              src={t6}
-              alt=""
-              className="absolute bottom-[5px] left-[10%] scale-x-[0.7]"
-            />
-            <img
-              src={t7}
-              alt=""
-              className="absolute bottom-[-3px] left-[9.365%] scale-x-[0.705]"
-            />
-            <img
-              src={t9}
-              alt=""
-              className="absolute scale-[0.8] right-[30%] top-[10px]"
-            />
-            <img
-              src={t7}
-              alt=""
-              className="absolute top-[-6px] right-[30%] scale-x-[0.799]"
-            />
+            /> */}
+            <img src={Header} alt=" " className="absolute top-[-15px]" />
           </div>
           {tableRows}
         </div>
