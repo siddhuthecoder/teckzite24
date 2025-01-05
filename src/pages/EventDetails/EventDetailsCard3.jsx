@@ -182,7 +182,7 @@ const EventDetailsCard3 = () => {
             {data.name}
           </h1>
           <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
-            <div className="col-span-4  max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3">
+            <div className="col-span-4  max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3 md:ml-[20px]">
               <img
                 src={data.img}
                 alt={data.name}
