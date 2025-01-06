@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import enter from '../assets/home/enter.jpg'; // Adjust the path if needed
 
 const Preloader = ({ setLoading }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -19,12 +18,20 @@ const Preloader = ({ setLoading }) => {
   return (
     <div className="z-50 text-center bg-[#1E1C1C] h-screen relative overflow-hidden w-full">
       <img
-        src={enter}
-        className={`h-full w-full object-cover imagesenter z-0 ${
+        src="desktopPreloader.png"
+        className={`h-full w-full object-cover hidden md:block imagesenter z-0 ${
           isClicked ? 'imagesenterclick' : ''
         }`}
         alt="Enter"
       />
+        <img
+        src="mobilePreloader.png"
+        className={`h-full w-full object-cover md:hidden imagesenter z-0 ${
+          isClicked ? 'imagesenterclick' : ''
+        }`}
+        alt="Enter"
+      />
+
       {!isClicked && (
         <div
           onClick={onClickHandler}
