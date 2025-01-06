@@ -4,12 +4,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 
   theme: {
-    extend: {
-      // backgroundImage: {
-      //   'cup-bg': "url('teckzite24/public/cup_bg.png')",
-      //   'whole-bg' : "url('/another-path.jpg')",
-      //  },
+    extend: {   
       keyframes: {
+        
         spin: {
           '0%': { transform: 'rotate(0deg)' },
           '50%': { transform: 'rotate(180deg)' },
@@ -20,6 +17,7 @@ module.exports = {
           '50%': { transform: 'rotate(180deg)' },
           '100%': { transform: 'rotate(0deg)' },
         }
+        
       },
       animation: {
         spin: 'spin 5s linear infinite',
