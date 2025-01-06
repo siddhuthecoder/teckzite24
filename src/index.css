@@ -941,7 +941,7 @@ transition: opacity .2s; */
 
 .imagesenterclick{
   transition: linear;
-  animation: zoom 5.2s linear 0.2s 1 forwards;
+  animation: zoom 7s linear 0.2s 1 forwards;
 }
 .enter-btn{
   transition: all;
@@ -955,7 +955,7 @@ transition: opacity .2s; */
   }
 
   100%{
-      transform: scale(640%);
+      transform: scale(700%);
       opacity: 0.5;
       display: hidden;
   }
