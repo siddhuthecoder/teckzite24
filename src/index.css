@@ -955,7 +955,7 @@ transition: opacity .2s; */
   }
 
   100%{
-      transform: scale(700%);
+      transform: scale(1000%);
       opacity: 0.5;
       display: hidden;
   }
