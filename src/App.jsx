@@ -9,6 +9,7 @@ import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
 import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
 import EWschedule from "./pages/Schedule/EWschedule";
+import RobowarEvents from "./pages/Robowars/RobowarEvents"
 import {
   CoreTeam,
   Events,
@@ -187,10 +188,12 @@ function App() {
               <Route path="/stalls" element={<ComingSoon />} />
               <Route path="/robowars" element={<ComingSoon />} />
 
+                
+              <Route path="/robos" element={<RobowarEvents></RobowarEvents>}/>  
               <Route path="*" element={<PageNotFound />} />
 
 
-
+            
             </Routes>
             <Footer />
           </main>
