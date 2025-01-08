@@ -210,7 +210,7 @@ const Navbar = ({ setShowNav }) => {
             desktopClasses="md:mr-[20px] lg:mr-[-30px] md:animate-slideTopDelay7"
           />
           <NavButton
-            name="Core Team"
+            name="Project Expo"
             action={() => navigate("/core-team")}
             desktopDelay={8}
             mobileDelay={8}

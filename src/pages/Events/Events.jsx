@@ -31,14 +31,14 @@ const Events = () => {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <Header className="relative z-50" />
+      <Header />
 
       <Eventsbg isEventOpen={true} />
-      <div className="relative w-full flex flex-col min-h-[85vh] pb-5 ">
+      <div className="relative w-full flex flex-col min-h-[85vh] pb-5">
         <div className="text-center font-joti text-3xl mt-5">Events</div>
         <div className="w-full flex items-center gap-2 justify-center flex-wrap px-5 mt-7">
           {[
-            "OPEN ALL",
+            "OPEN 2 ALL",
             "PUC",
             "CSE",
             "ECE",
@@ -53,7 +53,7 @@ const Events = () => {
               key={index}
               onClick={() => {
                 setTab(
-                  item === "EE" ? "EEE" : item === "OPEN ALL" ? "ALL" : item
+                  item === "EE" ? "EEE" : item === "OPEN 2 ALL" ? "ALL" : item
                 );
                 setIsActive(true);
                 handleSound();
@@ -62,7 +62,7 @@ const Events = () => {
               <TabsButton
                 name={item}
                 isActive={
-                  tab === (item === "EE" ? "EEE" : item === "OPEN ALL" ? "ALL" : item)
+                  tab === (item === "EE" ? "EEE" : item === "OPEN 2 ALL" ? "ALL" : item)
                 }
               />
             </div>
@@ -70,14 +70,15 @@ const Events = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           {filteredEvents ? (
-            <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-4 gap-10 z-0">
+            <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-4 gap-x-20 gap-y-0 z-0">
               {filteredEvents.map((event, index) => (
-                <EWCard
-                  key={index}
-                  img={event.img}
-                  id={event._id}
-                  name={event.name}
-                />
+                <div key={index} className="cursor-pointer">
+                  <EWCard
+                    img={event.img}
+                    id={event._id}
+                    name={event.name}
+                  />
+                </div>
               ))}
             </div>
           ) : (
@@ -111,6 +112,7 @@ const Events = () => {
 };
 
 export default Events;
+
 
 
 // import Style from "./Events.module.css";

@@ -8,7 +8,7 @@ const Sponsors = () => {
   return (
     <>
       <Header />
-      <Banner text="Sponsors" bg="spon-heading" />
+      {/* <Banner text="Sponsors" bg="spon-heading" /> */}
       <SponsorsCard2 />
     </>
   )

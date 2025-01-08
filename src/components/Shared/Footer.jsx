@@ -13,7 +13,7 @@ const Footer = () => {
           <FaFacebookSquare className="text-[20px] lg:text-[25px] hover:text-[#1877F2]" />
           <FaTwitter className="text-[20px] lg:text-[25px] hover:text-[#1DA1F2]" />
         </div>
-        <div className="text-center translate-y-[-15px] md:translate-y-[15px] lg:translate-y-0 text-[10px] md:text-[22px] md:w-1/3 mb-3">
+        <div className="text-center translate-y-[-15px] md:translate-y-[15px] lg:translate-y-0 text-[15px] md:text-[22px] md:w-1/3 mb-3">
           Copyright &copy; RGUKT,Nuzvid
         </div>
         <div className="hidden md:flex md:items-center md:translate-y-[14px] lg:translate-y-0 w-1/3 justify-around lg:text-[19px] mb-1">
