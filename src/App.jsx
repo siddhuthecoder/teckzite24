@@ -186,10 +186,10 @@ function App() {
               <Route path="/certficates/users" element={<CertificatesUser />} />
               <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
               <Route path="/stalls" element={<ComingSoon />} />
-              <Route path="/robowars" element={<ComingSoon />} />
+              {/* <Route path="/robowars" element={<ComingSoon />} /> */}
 
                 
-              <Route path="/robos" element={<RobowarEvents></RobowarEvents>}/>  
+              <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
               <Route path="*" element={<PageNotFound />} />
 
 

@@ -205,7 +205,7 @@ const EventDetailsCard3 = () => {
               <RenderTabs />
             </div>
 
-            <div className="col-span-8 max-md:col-span-12 max-md:bg-[#0a8ea5] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2">
+            <div className="col-span-8 max-md:col-span-12 max-md:bg-[rgba(42,46,56,0.56 )] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2 rounded-[12px] border border-[rgba(255,255,255,0.125)] backdrop-blur-[18px] backdrop-saturate-200">
               <div className="div h-[230px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible">
                 {activeTab === "TimeLine" && (
                   <TimeLine timeline={data.timeline} />

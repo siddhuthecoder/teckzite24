@@ -45,7 +45,7 @@ const Referrals = () => {
   };
 
   return (
-    <section className="absolute top-0 w-[99vw] m-auto overflow-x-hidden">
+    <section className="absolute top-36 w-[99vw] m-auto overflow-x-hidden">
       <Header />
       <Banner text="referrals" bg="referral-heading" />
       <Table />
