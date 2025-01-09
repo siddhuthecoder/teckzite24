@@ -8,11 +8,12 @@ const CarAnimation = ({ scrollPosition }) => {
     <div>
       {/* Animation Section */}
       <div
-        className="relative h-[100vh] bg-cover bg-center"
+        className="relative h-[100vh] bg-cover bg-center -top-10"
         style={{
-          backgroundImage: "url('/cup_bg.png')", // Path to your background image
+          backgroundImage: "url('/robowarsbg.jpg')", // Path to your background image
         }}
       >
+         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         {/* Car container */}
         <div
           className="absolute top-[50%] transform -translate-y-1/2 transition-all duration-700 ease-out"

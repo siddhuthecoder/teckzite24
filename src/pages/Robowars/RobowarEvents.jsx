@@ -49,62 +49,7 @@ const RobowarEvents = () => {
               <h3 className="text-xl font-semibold mb-2">Battle Bots</h3>
               <p>Compete with your custom-built robots in an intense battle arena!</p>
             </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Robo Soccer</h3>
-              <p>Showcase your robotic soccer skills in this fun competition!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Line Following Robots</h3>
-              <p>Test your robot's precision in our line-following race!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Battle Bots</h3>
-              <p>Compete with your custom-built robots in an intense battle arena!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Robo Soccer</h3>
-              <p>Showcase your robotic soccer skills in this fun competition!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Line Following Robots</h3>
-              <p>Test your robot's precision in our line-following race!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Battle Bots</h3>
-              <p>Compete with your custom-built robots in an intense battle arena!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Robo Soccer</h3>
-              <p>Showcase your robotic soccer skills in this fun competition!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Line Following Robots</h3>
-              <p>Test your robot's precision in our line-following race!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Battle Bots</h3>
-              <p>Compete with your custom-built robots in an intense battle arena!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Robo Soccer</h3>
-              <p>Showcase your robotic soccer skills in this fun competition!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Line Following Robots</h3>
-              <p>Test your robot's precision in our line-following race!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Battle Bots</h3>
-              <p>Compete with your custom-built robots in an intense battle arena!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Robo Soccer</h3>
-              <p>Showcase your robotic soccer skills in this fun competition!</p>
-            </div>
-            <div className="bg-black bg-opacity-50 p-5 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Line Following Robots</h3>
-              <p>Test your robot's precision in our line-following race!</p>
-            </div>
+           
           </div>
         </div>
       </main>
