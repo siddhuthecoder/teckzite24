@@ -56,6 +56,7 @@ const WorkshopDetails = () => {
   ];
 
   const RenderTabs = () => {
+     {/* max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 mt-36 */}
     return tabs.map((tab) => (
       <button
         key={tab.value}

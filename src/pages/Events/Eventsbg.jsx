@@ -50,7 +50,7 @@ const Eventsbg = ({ isEventOpen }) => {
         <img
           src="/cup.webp"
           alt="Cup"
-          className={`absolute left-1/2 md:scale-100 scale-[1.75] top-1/4 transform -translate-x-1/2 transition-transform duration-1000 ease-in-out ${
+          className={`absolute left-1/2 md:scale-100 scale-[1.75] md:top-1/4 top-[45%] transform -translate-x-1/2 transition-transform duration-1000 ease-in-out ${
             animationComplete ? "" : cupPosition
           }`}
         />
