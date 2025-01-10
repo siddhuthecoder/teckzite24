@@ -1,21 +1,40 @@
 import React from "react";
-import t1 from "../../assets/img/table/t1.svg";
-import t2 from "../../assets/img/table/t2.svg";
-import t3 from "../../assets/img/table/t3.svg";
-import t4 from "../../assets/img/table/t4.svg";
-import t5 from "../../assets/img/table/t5.svg";
-import t6 from "../../assets/img/table/t6.svg";
-import t7 from "../../assets/img/table/t7.svg";
-import t9 from "../../assets/img/table/t9.svg";
+import Reftail from "../../assets/img/Reftail.png";
+import Refhead from "../../assets/img/Refhead.png";
 import { useSelector, useDispatch } from "react-redux";
 import { MdOutlineWifiOff } from "react-icons/md";
 import { fetchRefs } from "../../store/refSlice";
+import { toast } from "react-hot-toast";
+import MenuButton from "../../components/button/MenuButton";
+
 
 const Table = () => {
   const refError = useSelector((state) => state.ref.error);
   const refStatus = useSelector((state) => state.ref.status);
   const refData = useSelector((state) => state.ref.data);
+  const userData = useSelector((state) => state.user.data);
   const dispatch = useDispatch();
+
+
+  const handleShare = () => {
+    if (!userData) {
+      toast.error("Login to refer");
+      return;
+    }
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "Teckzite 2k24 referral",
+          text: "Register for Teckzite2k24 using this link",
+          url: `${process.env.REACT_APP_FRONTEND_URL}/register?ref=${userData.tzkid}`,
+        })
+        .then(() => console.log("Shared successfully"))
+        .catch((error) => console.error("Error sharing:", error));
+    } else {
+      alert("Share API is not supported in your browser.");
+    }
+  };
 
   if (refStatus !== "loaded") {
     return (
@@ -75,7 +94,7 @@ const Table = () => {
       className={`w-full mt-[40px] relative flex item-center justify-center`}
     >
       <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around">
-        <div className="w-[30px] mx-auto text-center">{index + 1}</div>
+        <div className="w-[30px] mx-auto text-center ml-10">{index + 1}</div>
         <div className="w-[240px] mx-auto text-center">{user.firstName}</div>
         <div className="w-[300px] mx-auto text-center">{user.email}</div>
         <div className="w-[300px] mx-auto text-center">
@@ -83,66 +102,34 @@ const Table = () => {
         </div>
       </div>
       <img
-        src={t1}
+        src={Reftail}
         alt=""
-        className="absolute scale-y-[1.2] pointer-events-none"
-      />
-      <img
-        src={t2}
-        alt=""
-        className="absolute top-[-120%] left-[17%] scale-y-[1.1] scale-x-[0.84]"
-      />
-      <img
-        src={t3}
-        alt=""
-        className="absolute top-[-7px] left-[3px] scale-y-[1.1] scale-x-[0.84]"
-      />
-      <img
-        src={t4}
-        alt=""
-        className="absolute bottom-[-26px] left-[56.5%] scale-y-[1.1] scale-x-[0.84]"
+        className="absolute scale-y-[1.2] pointer-events-none h-[50px] w-full"
       />
     </div>
   ));
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center">
-      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-x-auto flex flex-col">
+    <div className="w-full h-full flex items-center justify-center mt-[110px]">
+      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-y-auto h-[calc(100vh-150px)] overflow-x-auto flex flex-col">
         <div className="w-[100%] min-w-[900px] flex flex-col" style={{}}>
           <div className="w-full my-[20px] h-[60px] flex items-center relative">
             <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
-              <div className="w-[30px] mx-auto text-center">Sno</div>
+              <div className="w-[30px] mx-auto text-center ml-10">Sno</div>
               <div className="w-[240px] mx-auto text-center">Name</div>
               <div className="w-[300px] mx-auto text-center">Email</div>
               <div className="w-[300px] mx-auto text-center">Referrals</div>
             </div>
             <img
-              src={t5}
+              src={Refhead}
               alt=""
-              className="absolute top-[-15px] scale-y-[0.7]"
-            />
-            <img
-              src={t6}
-              alt=""
-              className="absolute bottom-[5px] left-[10%] scale-x-[0.7]"
-            />
-            <img
-              src={t7}
-              alt=""
-              className="absolute bottom-[-3px] left-[9.365%] scale-x-[0.705]"
-            />
-            <img
-              src={t9}
-              alt=""
-              className="absolute scale-[0.8] right-[30%] top-[10px]"
-            />
-            <img
-              src={t7}
-              alt=""
-              className="absolute top-[-6px] right-[30%] scale-x-[0.799]"
+              className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] "
             />
           </div>
           {tableRows}
+        </div>
+        <div className=" my-10  z-10 w-full bg-transparent flex items-center justify-end ">
+         <MenuButton text="Refer Now" action={handleShare} name="Refer Now" />
         </div>
       </div>
     </div>
