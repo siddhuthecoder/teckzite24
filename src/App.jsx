@@ -40,7 +40,7 @@ import { fetchEvents } from "./store/eventSlice";
 import { fetchWorkshops } from "./store/workshopSlice";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 import { fetchUser } from "./store/userSlice";
-import { PageNotFound } from "./components/PageNotFound";
+import  PageNotFound  from "./components/PageNotFound";
 
 import ComingSoon from "./components/ComingSoon";
 import Home from "./pages/home1/home";
