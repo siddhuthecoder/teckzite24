@@ -106,6 +106,7 @@ const SponsorsCard2 = () => {
       className=" absolute top-0 w-full min-h-screen bg-cover bg-center "
       style={{
         backgroundImage: "url('/sponsers.bg.jpg')",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Black Overlay */}

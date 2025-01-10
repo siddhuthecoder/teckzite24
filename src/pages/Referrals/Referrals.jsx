@@ -48,6 +48,7 @@ const Referrals = () => {
       className="fixed top-2 w-full min-h-screen m-auto overflow-x-hidden bg-cover bg-center"
       style={{
         backgroundImage: "url('/referralsbg.jpg')",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Black Overlay */}
