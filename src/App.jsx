@@ -9,6 +9,7 @@ import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
 import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
 import EWschedule from "./pages/Schedule/EWschedule";
+import RobowarEvents from "./pages/Robowars/RobowarEvents"
 import {
   CoreTeam,
   Events,
@@ -39,7 +40,7 @@ import { fetchEvents } from "./store/eventSlice";
 import { fetchWorkshops } from "./store/workshopSlice";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 import { fetchUser } from "./store/userSlice";
-import { PageNotFound } from "./components/PageNotFound";
+import  PageNotFound  from "./components/PageNotFound";
 
 import ComingSoon from "./components/ComingSoon";
 import Home from "./pages/home1/home";
@@ -164,14 +165,14 @@ function App() {
               {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
               {/* <Route path="/webteam" element={<WebTeam />} /> */}
               <Route path="/register" element={<Register />} />
-              <Route path="/team" element={<TeamCard />} />
+              <Route path="/team" element={<WebTeam />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
               <Route path="/contact" element={<ComingSoon />} />
               <Route path="/swiper" element={<SwiperModule />} />
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<SpeakersCard />} />
-              <Route path="/schedule" element={<Schedule />} />
+              <Route path="/schedule" element={<ComingSoon />} />
               <Route path="/card2" element={<EWschedule />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
@@ -185,12 +186,15 @@ function App() {
               <Route path="/certficates/users" element={<CertificatesUser />} />
               <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
               <Route path="/stalls" element={<ComingSoon />} />
-              <Route path="/robowars" element={<ComingSoon />} />
+              {/* <Route path="/robowars" element={<ComingSoon />} /> */}
 
+                
+              <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
+              <Route path="/expo" element={<ComingSoon></ComingSoon>}/>  
               <Route path="*" element={<PageNotFound />} />
 
 
-
+            
             </Routes>
             <Footer />
           </main>

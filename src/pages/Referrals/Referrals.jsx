@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Header from "../../components/Header/Header";
-import Banner from "../../components/banner/Banner";
 import Table from "./TableCard";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
@@ -33,8 +32,8 @@ const Referrals = () => {
     if (navigator.share) {
       navigator
         .share({
-          title: "Teckzite 2k24 refferal",
-          text: "Register for teckzite2k24 using this link",
+          title: "Teckzite 2k24 referral",
+          text: "Register for Teckzite2k24 using this link",
           url: `${process.env.REACT_APP_FRONTEND_URL}/register?ref=${userData.tzkid}`,
         })
         .then(() => console.log("Shared successfully"))
@@ -45,19 +44,31 @@ const Referrals = () => {
   };
 
   return (
-    <section className="absolute top-0 w-[99vw] m-auto overflow-x-hidden">
-      <Header />
-      <Banner text="referrals" bg="referral-heading" />
-      <Table />
-      <div className="my-10 w-full flex items-center justify-center">
-        <button
-          className="px-10 py-2 bg-gradient rounded mb-[40px]"
-          onClick={handleShare}
-        >
-          Refer Now
-        </button>
+    <section
+      className="fixed top-2 w-full min-h-screen m-auto overflow-x-hidden bg-cover bg-center"
+      style={{
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/referralsbg.jpg')",
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover", // Ensures the background image covers the container
+        backgroundPosition: "center", // Centers the image
+      }}
+    >
+      {/* Black Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      {/* Main Content */}
+      <div className="relative z-10">
+        <Header />
+        <Table />
+        <div className="my-10 w-full flex items-center justify-center">
+          <button
+            className="px-10 py-2 bg-gradient rounded mb-[40px]"
+            onClick={handleShare}
+          >
+            Refer Now
+          </button>
+        </div>
       </div>
-      
     </section>
   );
 };

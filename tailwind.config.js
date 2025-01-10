@@ -5,7 +5,9 @@ module.exports = {
 
   theme: {
     extend: {
+      
       keyframes: {
+        
         spin: {
           '0%': { transform: 'rotate(0deg)' },
           '50%': { transform: 'rotate(180deg)' },
@@ -16,10 +18,12 @@ module.exports = {
           '50%': { transform: 'rotate(180deg)' },
           '100%': { transform: 'rotate(0deg)' },
         }
+        
       },
       animation: {
         spin: 'spin 5s linear infinite',
         spinReverse: 'spinReverse 5s linear infinite',
+        'slow-spin': 'spin 4s linear infinite',
   
       },
       colors: {
@@ -31,6 +35,7 @@ module.exports = {
         koneMono: ["Kode Mono", "monospace"],
         rog: ["ROG", "sans-serif"],
         joti: ["Joti One", "serif"],
+        orbitron: ['Orbitron', 'sans-serif'],
       },
     },
   },

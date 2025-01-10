@@ -13,7 +13,7 @@ import ed2 from "../../assets/img/ed/ed2.svg";
 import ed3 from "../../assets/img/ed/ed3.svg";
 import ed4 from "../../assets/img/ed/ed4.svg";
 import RenderRegistrationForm from "./RenderRegistrationForm";
-import eventdetailsdesk from '../../assets/events/eventdetailsdesk.png';
+import eventdetailsdesk from '../../assets/events/ewDetails.png';
 import EventButton from "../../components/button/EventButton";
 import tabbutton from "../../assets/events/tabbutton.png";
 const WorkshopDetails = () => {
@@ -56,6 +56,7 @@ const WorkshopDetails = () => {
   ];
 
   const RenderTabs = () => {
+     {/* max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 mt-36 */}
     return tabs.map((tab) => (
       <button
         key={tab.value}
@@ -111,7 +112,7 @@ const WorkshopDetails = () => {
         style={{ backgroundImage: "url('../../../eventdetails.png')" }}
       ></div>
       <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
-        <div className="absolute max-md:relative top-3 w-full z-20">
+        <div className="absolute max-md:relative top-3 w-full">
           <div className="max-md:hidden mt-[20px] flex items-center w-[90%] mx-auto justify-around flex-wrap gap-3 pb-2 ">
             <RenderTabs />
           </div>
@@ -164,8 +165,8 @@ const WorkshopDetails = () => {
           alt=""
           className="absolute pointer-events-none scale-y-[1.1] hidden md:block md:rotate-[0deg] z-[0]  "
           style={{
-            width: "900px",
-            minHeight: "450px",
+            width: "880px",
+            minHeight: "420px",
           }}
         />
        {/* <img

@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       <Header />
-      <Banner text="ABOUT" bg="about-heading" />
+      {/* <Banner text="ABOUT" bg="about-heading" /> */}
       <AboutBody />
     </>
   )

@@ -336,7 +336,8 @@ select option {
 @media (max-width: 768px) {
   .header_container {
     height: 80px;
-    background: url("../public/assets/headerMobile.png") no-repeat top center fixed;
+    background: url("../public/assets/headerMobile.png") no-repeat top center
+      fixed;
     background-size: 100% 80px;
   }
 }
@@ -870,7 +871,6 @@ transition: opacity .2s; */
 
 /* Timeline dot  */
 
-
 /* text right if the card is even  */
 .card:nth-child(even) > .info > .title {
   text-align: right;
@@ -886,34 +886,26 @@ transition: opacity .2s; */
   right: -45px;
 }
 
-
-
-
 /* hero title section */
-.navbar_robo{
+.navbar_robo {
   z-index: 20000;
 }
 
-
-
-
-.robo-img{
+.robo-img {
   transition: all;
   animation: float 5s ease 0.2s infinite forwards;
 }
 @keyframes float {
-  0%{
-      transform: translateY(0);
+  0% {
+    transform: translateY(0);
   }
-  50%{
-      transform: translateY(30px)
+  50% {
+    transform: translateY(30px);
   }
-  100%{
-      transform: translateY(0);
+  100% {
+    transform: translateY(0);
   }
 }
-
-
 
 /* preloader css */
 
@@ -923,7 +915,7 @@ transition: opacity .2s; */
   left: 0;
   width: 100%;
   height: 100%;
-  background: #1E1C1C;
+  background: #1e1c1c;
   z-index: 1000;
   transition: opacity 0.5s linear;
 }
@@ -938,37 +930,31 @@ transition: opacity .2s; */
   transition: transform 1.5s linear;
 }
 
-
-.imagesenterclick{
+.imagesenterclick {
   transition: linear;
-  animation: zoom 5s linear 0.2s 1 forwards;
+  animation: zoom 7s linear 0.2s 1 forwards;
 }
-.enter-btn{
+.enter-btn {
   transition: all;
   animation: blink 2s linear 0.3s infinite forwards;
 }
 
-
 @keyframes zoom {
-  0%{
-      transform: scale(100%);
+  0% {
+    transform: scale(100%);
   }
 
-  100%{
-      transform: scale(640%);
-      opacity: 0.5;
-      display: hidden;
+  100% {
+    transform: scale(1000%);
+    opacity: 0.5;
+    display: hidden;
   }
-
 }
-.preloader{
+.preloader {
   position: absolute;
   z-index: 50;
 }
 
-
-
-  
 #particles {
   position: fixed;
   top: 0;
@@ -982,124 +968,133 @@ transition: opacity .2s; */
   z-index: -2;
   height: 100%;
   width: 100%;
-  position:absolute;
+  position: absolute;
 }
 
-  @media screen and (max-width: 768px) {
-    #particles canvas {
-        opacity: 0.8;
-    }
+@media screen and (max-width: 768px) {
+  #particles canvas {
+    opacity: 0.8;
   }
+}
 
+/* Title styling */
+.titleSection {
+  color: transparent;
+  cursor: default;
+  transition: color 0.3s linear;
+  -webkit-text-stroke: 2px #0a69a5; /* Outline the text in aqua color */
+  text-shadow: 0 0 20px #0a69a5, 0 0 40px #0a69a5;
+}
 
+/* Light effect */
+.light-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    transparent 5%,
+    rgba(30, 38, 42, 0.95) 15%
+  );
+}
 
+.section {
+  position: relative;
+  min-height: 100vh;
+  background: #1e262a;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 70px;
+}
 
+/* Text color change on light hover */
 
-  /* Title styling */
-  .titleSection {
-    color: transparent;
-    cursor: default;
-    transition: color 0.3s linear;
-    -webkit-text-stroke: 2px #0A69A5; /* Outline the text in aqua color */
-    text-shadow: 0 0 20px #0A69A5, 0 0 40px #0A69A5;
-  }
- 
-  /* Light effect */
-  .light-effect {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: radial-gradient(
-        circle at var(--x) var(--y),
-        transparent 5%,
-        rgba(30, 38, 42, 0.95) 15%
-    );
-  }
+.section:hover .titleSection {
+  color: #0a69a5;
+  mix-blend-mode: difference;
+}
 
-  .section {
-    position: relative;
-    min-height: 100vh;
-    background: #1e262a;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    padding-top: 70px;
-  }
+.back {
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
 
+.spline-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
 
- 
-  /* Text color change on light hover */
-
-  .section:hover .titleSection {
-    color: #0A69A5;
-    mix-blend-mode: difference;
-  }
-
-  .back{
-    z-index: -2;
-    height: 100%;
-    width: 100%;
-    position:absolute;
-  }
- 
-  
+/* Mobile*/
+@media screen and (max-width: 767px) {
   .spline-container {
-    width: 100vw;
     height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 3;
+    width: 100%;
+    margin-top: 30%;
+    overflow: hidden;
   }
-  
-  /* Mobile*/
-  @media screen and (max-width: 767px) {
-    .spline-container {
-      height: 100vh;
-      width: 100%;
-      margin-top: 30%;
-      overflow: hidden;
-    }
-    .canvas{
-      transform: scale(100px);
-    }
+  .canvas {
+    transform: scale(100px);
   }
+}
 
-
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fadeInUp {
-    animation: fadeInUp 0.5s ease forwards;
+@keyframes fadeInUp {
+  from {
     opacity: 0;
+    transform: translateY(20px);
   }
-  
-  /* Animation delays for mobile */
-  .mobile-delay-1 { animation-delay: 0.1s; }
-  .mobile-delay-2 { animation-delay: 0.2s; }
-  .mobile-delay-3 { animation-delay: 0.3s; }
-  .mobile-delay-4 { animation-delay: 0.4s; }
-  .mobile-delay-5 { animation-delay: 0.5s; }
-  .mobile-delay-6 { animation-delay: 0.6s; }
-  .mobile-delay-7 { animation-delay: 0.7s; }
-  .mobile-delay-8 { animation-delay: 0.8s; }
-  .mobile-delay-9 { animation-delay: 0.9s; }
-  .mobile-delay-10 { animation-delay: 1s; }
-  .mobile-delay-11 { animation-delay: 1.1s; }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
 
-  
+/* Animation delays for mobile */
+.mobile-delay-1 {
+  animation-delay: 0.1s;
+}
+.mobile-delay-2 {
+  animation-delay: 0.2s;
+}
+.mobile-delay-3 {
+  animation-delay: 0.3s;
+}
+.mobile-delay-4 {
+  animation-delay: 0.4s;
+}
+.mobile-delay-5 {
+  animation-delay: 0.5s;
+}
+.mobile-delay-6 {
+  animation-delay: 0.6s;
+}
+.mobile-delay-7 {
+  animation-delay: 0.7s;
+}
+.mobile-delay-8 {
+  animation-delay: 0.8s;
+}
+.mobile-delay-9 {
+  animation-delay: 0.9s;
+}
+.mobile-delay-10 {
+  animation-delay: 1s;
+}
+.mobile-delay-11 {
+  animation-delay: 1.1s;
+}

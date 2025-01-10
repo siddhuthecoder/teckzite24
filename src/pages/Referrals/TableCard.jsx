@@ -1,6 +1,6 @@
 import React from "react";
-import Refcard from "../../assets/img/Refcard.png";
-import Header from "../../assets/img/Header.png";
+import Reftail from "../../assets/img/Reftail.png"
+import Refhead from "../../assets/img/Refhead.png";
 import { useSelector, useDispatch } from "react-redux";
 import { MdOutlineWifiOff } from "react-icons/md";
 import { fetchRefs } from "../../store/refSlice";
@@ -68,42 +68,40 @@ const Table = () => {
       key={user.email}
       className={`w-full mt-[40px] relative flex item-center justify-center`}
     >
-      <div className="w-[80%] py-[20px] h-[20px] flex items-center justify-around">
-        <div className="w-[30px] mx-auto text-center">{index + 1}</div>
+      <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around">
+        <div className="w-[30px] mx-auto text-center ml-10">{index + 1}</div>
         <div className="w-[240px] mx-auto text-center">{user.firstName}</div>
         <div className="w-[300px] mx-auto text-center">{user.email}</div>
         <div className="w-[300px] mx-auto text-center">
           {user.referralsCount}
         </div>
       </div>
-
-       <img
-        src={Refcard}
+      <img
+        src={Reftail}
         alt=""
-        className="absolute top-[-120%] left-[0%] scale-y-[1.1] scale-x-[0.84] mb-[4px]"
+        className="absolute scale-y-[1.2] pointer-events-none h-[50px] w-full"
       />
      
     </div>
   ));
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center">
-      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-x-auto flex flex-col">
+    <div className="w-full h-full flex items-center justify-center mt-[110px]">
+      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-y-auto h-[calc(100vh-150px)] overflow-x-auto flex flex-col">
         <div className="w-[100%] min-w-[900px] flex flex-col" style={{}}>
           <div className="w-full my-[20px] h-[60px] flex items-center relative">
             <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
-              <div className="w-[20px] mx-auto text-center">Sno</div>
+              <div className="w-[30px] mx-auto text-center ml-10">Sno</div>
               <div className="w-[240px] mx-auto text-center">Name</div>
               <div className="w-[300px] mx-auto text-center">Email</div>
               <div className="w-[300px] mx-auto text-center">Referrals</div>
             </div>
-            {/* head image */}
-            {/* <img
-              src={t5}
+            <img
+              src={Refhead}
               alt=""
-              className="absolute top-[-15px] scale-y-[0.7]"
-            /> */}
-            <img src={Header} alt=" " className="absolute top-[-15px]" />
+              className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-10"
+            />
+            
           </div>
           {tableRows}
         </div>
