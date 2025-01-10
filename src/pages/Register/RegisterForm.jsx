@@ -342,7 +342,7 @@ const RegisterForm = () => {
                 </div>
               </div>
             ) : (
-              <div className="w-full h-[100%] flex justify-center  items-center mx-auto  relative  ">
+              <div className="w-full h-[100%] flex justify-center  items-center mx-auto  relative mt-[-60px] ">
                 <img
                   src={signup}
                   alt=""
