@@ -165,7 +165,7 @@ function App() {
               {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
               {/* <Route path="/webteam" element={<WebTeam />} /> */}
               <Route path="/register" element={<Register />} />
-              <Route path="/team" element={<TeamCard />} />
+              <Route path="/team" element={<WebTeam />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
               <Route path="/contact" element={<ComingSoon />} />
               <Route path="/swiper" element={<SwiperModule />} />
