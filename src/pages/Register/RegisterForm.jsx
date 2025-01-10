@@ -342,7 +342,7 @@ const RegisterForm = () => {
                 </div>
               </div>
             ) : (
-              <div className="w-full h-[100%] flex justify-center  items-center mx-auto  relative mt-[-60px] ">
+              <div className="w-full h-[100%] flex justify-center  items-center md:mx-auto md:ml-[0px] ml-[-50px] relative mt-[-60px] ">
                 <img
                   src={signup}
                   alt=""
@@ -368,7 +368,7 @@ const RegisterForm = () => {
                   alt=""
                   className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
                 />*/}
-                <div className="ml-[70px]">
+                <div className="md:ml-[75px] ml-[60px]">
                 <GoogleLogin
                   clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
                   onSuccess={onSuccess}
@@ -382,8 +382,15 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className="py-2 w-full flex justify-center items-center  sm:mt-[0px] flex-col relative ">
+          <div className="py-2 flex justify-center items-center  sm:mt-[0px] flex-col relative ">
             <img
+              src={signup}
+              alt=""
+              className="absolute pointer-events-none left-0"
+            />
+
+
+            {/*<img
               src={bord}
               alt=""
               className="absolute pointer-events-none hidden sm:block  scale-y-[2.9]  sm:scale-y-[1.9]   left-0"
@@ -402,7 +409,7 @@ const RegisterForm = () => {
               src={svg2}
               alt=""
               className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
-            />
+            />*/}
             <h4 className="font-semibold mt-2 text-xl">Register</h4>
             <h3 className="text-sm mt-1 mb-4 px-10 text-center">
               {isRgukt &&
