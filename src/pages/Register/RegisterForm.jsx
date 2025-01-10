@@ -14,6 +14,7 @@ import svg1 from "../../assets/img/svgs/regSvg.svg";
 import svg2 from "../../assets/img/svgs/svg2.svg";
 import signup from "../../assets/events/signup.png";
 import signupdetails from "../../assets/events/signupdetails.png";
+import eventdetailsdesk from "../../assets/events/eventdetailsdesk.png";
 const RegisterForm = () => {
   const location = useLocation();
 
@@ -385,13 +386,10 @@ const RegisterForm = () => {
         {signIn && (
           <div className=" py-2 flex justify-center items-center  sm:mt-[0px] flex-col relative ">
             <img
-              src={signupdetails}
+              src={eventdetailsdesk}
               alt=""
-              className="absolute pointer-events-none hidden sm:block  scale-y-[2.5]  sm:scale-y-[1.9]   left-0"
+              className="absolute pointer-events-none   h-[520px]  w-[800px] left-0"
             />
-
-
-
             {/*<img
               src={bord}
               alt=""
