@@ -12,7 +12,7 @@ import "./reg.css";
 import bord from "../../assets/img/svgs/regBorder.svg";
 import svg1 from "../../assets/img/svgs/regSvg.svg";
 import svg2 from "../../assets/img/svgs/svg2.svg";
-
+import signup from "../../assets/events/signup.png";
 const RegisterForm = () => {
   const location = useLocation();
 
@@ -342,18 +342,23 @@ const RegisterForm = () => {
                 </div>
               </div>
             ) : (
-              <div className="w-full h-[100%] flex justify-center items-center mx-auto  relative  ">
+              <div className="w-full h-[100%] flex justify-center  items-center mx-auto  relative  ">
                 <img
-                  src={bord}
+                  src={signup}
                   alt=""
                   className="absolute pointer-events-none  left-0"
                 />
-                <img
+                {/*<img
+                  src={bord}
+                  alt=""
+                  className="absolute pointer-events-none  left-0"
+                />*/}
+                {/*<img
                   src={svg1}
                   alt=""
                   className="absolute pointer-events-none  hidden sm:block sm:left-[24%]  sm:top-[-280%] sm:scale-x-[0.7] "
-                />
-                <img
+                />*/}
+                {/*<img
                   src={svg2}
                   alt=""
                   className="absolute pointer-events-none right-[-15px]"
@@ -362,13 +367,16 @@ const RegisterForm = () => {
                   src={svg2}
                   alt=""
                   className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
-                />
+                />*/}
+                <div className="ml-[70px]">
                 <GoogleLogin
                   clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
                   onSuccess={onSuccess}
                   onFailure={onFailure}
                   buttonText="Sign up with Google"
                 />
+                </div>
+                
               </div>
             )}
           </>
