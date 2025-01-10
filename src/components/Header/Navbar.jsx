@@ -211,7 +211,7 @@ const Navbar = ({ setShowNav }) => {
           />
           <NavButton
             name="Project Expo"
-            action={() => navigate("/core-team")}
+            action={() => navigate("/expo")}
             desktopDelay={8}
             mobileDelay={8}
             desktopClasses="md:mr-[-100px] lg:mr-[-150px] md:animate-slideTopDelay8"

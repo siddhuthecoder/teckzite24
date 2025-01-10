@@ -19,6 +19,7 @@ const AboutBody = () => {
         className="w-full min-h-[100vh] relative bg-cover bg-center"
         style={{
           backgroundImage: "url('/aboutbg.jpg')",
+          backgroundAttachment: "fixed",
         }}
       >
         {/* Black overlay */}

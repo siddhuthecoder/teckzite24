@@ -18,7 +18,7 @@ const Coming = () => {
             <div className="relative  flex flex-col items-center justify-center space-y-8">
                 {/* Top Message */}
                 <div className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold">
-                    Our Website
+                   Under Construction
                 </div>
 
                 {/* Coming Soon Text */}
@@ -50,7 +50,7 @@ const Coming = () => {
 
                 {/* Bottom Message */}
                 <div className="text-center text-white text-xs sm:text-sm md:text-base lg:text-lg px-4">
-                    This page is under construction. Meanwhile, you can view and register for events!
+                     Meanwhile, you can view and register for events!
                 </div>
             </div>
       </div>

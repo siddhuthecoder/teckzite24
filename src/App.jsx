@@ -172,7 +172,7 @@ function App() {
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<SpeakersCard />} />
-              <Route path="/schedule" element={<Schedule />} />
+              <Route path="/schedule" element={<ComingSoon />} />
               <Route path="/card2" element={<EWschedule />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
@@ -190,6 +190,7 @@ function App() {
 
                 
               <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
+              <Route path="/expo" element={<ComingSoon></ComingSoon>}/>  
               <Route path="*" element={<PageNotFound />} />
 
 
