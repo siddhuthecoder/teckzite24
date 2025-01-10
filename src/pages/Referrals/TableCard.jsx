@@ -1,15 +1,40 @@
 import React from "react";
-import Reftail from "../../assets/img/Reftail.png"
+import Reftail from "../../assets/img/Reftail.png";
 import Refhead from "../../assets/img/Refhead.png";
 import { useSelector, useDispatch } from "react-redux";
 import { MdOutlineWifiOff } from "react-icons/md";
 import { fetchRefs } from "../../store/refSlice";
+import { toast } from "react-hot-toast";
+import MenuButton from "../../components/button/MenuButton";
+
 
 const Table = () => {
   const refError = useSelector((state) => state.ref.error);
   const refStatus = useSelector((state) => state.ref.status);
   const refData = useSelector((state) => state.ref.data);
+  const userData = useSelector((state) => state.user.data);
   const dispatch = useDispatch();
+
+
+  const handleShare = () => {
+    if (!userData) {
+      toast.error("Login to refer");
+      return;
+    }
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "Teckzite 2k24 referral",
+          text: "Register for Teckzite2k24 using this link",
+          url: `${process.env.REACT_APP_FRONTEND_URL}/register?ref=${userData.tzkid}`,
+        })
+        .then(() => console.log("Shared successfully"))
+        .catch((error) => console.error("Error sharing:", error));
+    } else {
+      alert("Share API is not supported in your browser.");
+    }
+  };
 
   if (refStatus !== "loaded") {
     return (
@@ -81,7 +106,6 @@ const Table = () => {
         alt=""
         className="absolute scale-y-[1.2] pointer-events-none h-[50px] w-full"
       />
-     
     </div>
   ));
 
@@ -99,11 +123,13 @@ const Table = () => {
             <img
               src={Refhead}
               alt=""
-              className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px]"
+              className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-10"
             />
-            
           </div>
           {tableRows}
+        </div>
+        <div className=" my-10  z-10 w-full bg-transparent flex items-center justify-end ">
+         <MenuButton text="Refer Now" action={handleShare} name="Refer Now" />
         </div>
       </div>
     </div>
