@@ -1,25 +1,63 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import Header from "./Header/Header";
-import { Link } from "react-router-dom";
-
-export const PageNotFound = () => {
+const PageNotFound = () => {
   return (
-    <>
-      <Header />
-      <div className="w-screen relative h-screen overflow-hidden">
-        <div className="absolute w-full h-full flex top-0 z-0 left-0 items-center justify-center gap-2 flex-col">
-          <h1 className="font-bold text-7xl">
-            <span className="text-[#9b1ba7]">4</span>0
-            <span className="text-[#57128f]">4</span>
-          </h1>
-          <p className="font-semibold text-xl px-3 mb-[-18px] text-center">
-            You are lost some where in Metaverse
-          </p>
-          <Link to="/">
-            <button className="send-btn text-white">Back to Home</button>
-          </Link>
-        </div>
+      <>
+    <Header />
+        <div
+            className="h-screen flex flex-col items-center justify-center relative font-orbitron"
+            style={{
+                backgroundImage: "url('notfound.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}
+        >
+            {/* Black Overlay */}
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+
+            {/* Content */}
+            <div className="relative text-center space-y-8">
+                {/* 404 Number */}
+                <div className="text-white font-extrabold text-[5rem] sm:text-[7rem] md:text-[10rem] leading-none tracking-wide">
+                    4
+                    <span className="relative inline-block">
+                        O
+                        <span className="absolute inset-0 flex items-center justify-center text-white text-[2rem] sm:text-[3rem] md:text-[4rem] font-bold">
+                            ?
+                        </span>
+                    </span>
+                    4
+                </div>
+
+                {/* Error Message */}
+                <div className="text-white text-lg sm:text-xl md:text-2xl px-4">
+                    Sorry, the page you are looking for does not exist.
+                </div>
+
+                {/* Redirect Link */}
+                <div className="mt-4">
+                    <a
+                        href="/"
+                        className="text-blue-500 text-lg sm:text-xl md:text-2xl font-semibold hover:underline"
+                    >
+                        Please continue to our <span className="font-bold">home page</span>.
+                    </a>
+                </div>
+
+                {/* Back to Home Button */}
+                <div className="mt-8">
+                    <a
+                        href="/"
+                        className="px-6 py-3 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                    >
+                        Back to Home
+                    </a>
+                </div>
+            </div>
       </div>
-    </>
-  );
+     </>
+    );
 };
+
+export default PageNotFound;

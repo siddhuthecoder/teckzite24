@@ -4,7 +4,8 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 
   theme: {
-    extend: {   
+    extend: {
+      
       keyframes: {
         
         spin: {
@@ -22,6 +23,7 @@ module.exports = {
       animation: {
         spin: 'spin 5s linear infinite',
         spinReverse: 'spinReverse 5s linear infinite',
+        'slow-spin': 'spin 4s linear infinite',
   
       },
       colors: {
@@ -33,6 +35,7 @@ module.exports = {
         koneMono: ["Kode Mono", "monospace"],
         rog: ["ROG", "sans-serif"],
         joti: ["Joti One", "serif"],
+        orbitron: ['Orbitron', 'sans-serif'],
       },
     },
   },

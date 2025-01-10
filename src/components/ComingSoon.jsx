@@ -1,46 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import Header from "./Header/Header";
-
-const ComingSoon = () => {
+const Coming = () => {
   return (
     <>
       <Header />
-      <section
-        className="absolute top-0 left-0 w-full z-2 min-h-screen bg-cover bg-center bg-fixed"
-        style={{
-          backgroundImage: "url('../../comingsoon.webp')",
-        }}
-      >
-        <div className="w-full h-screen bg-[#491549] opacity-65"></div>
-        <div className="absolute w-[50%] max-sm:w-[80%] max-sm:-left-1/4 top-1/2 translate-x-1/2 -translate-y-1/2 text-center">
-          <h3 className="font-bold text-xl md:text-3xl xl:text-6xl text-white opacity-100">
-            WE ARE COMING SOON
-          </h3>
-          <p className="mt-[40px] md:text-sm sm:text-xs xl:text-lg text-xs">
-            This page is under construction
-          </p>
-          <div className="max-sm:flex-col flex m-auto mt-[40px] max-sm:w-full text-center xl:w-[70%] justify-center gap-7">
-            <Link
-              to="/"
-              style={{ backgroundColor: "#221C3E" }}
-              className="comeBtn w-[40%] max-sm:h-[30px] rounded-[5px] max-sm:w-[70%] m-auto max-sm:text-sm flex items-center justify-center md:text-sm"
-            >
-              {" "}
-              Back to Home
-            </Link>
-            <Link
-              to="/contact"
-              className="comeBtn w-[40%] max-sm:h-[30px] rounded-[5px] max-sm:w-[70%] m-auto max-sm:text-base flex items-center justify-center md:text-sm"
-            >
-              {" "}
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+        <div
+            className="h-screen flex flex-col items-center justify-center space-y-8 font-orbitron relative"
+            style={{
+                backgroundImage: "url('comingsoonbg.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}
+        >
+            {/* Black Overlay */}
+            <div className="absolute inset-0 bg-black opacity-70"></div>
+
+            {/* Content */}
+            <div className="relative  flex flex-col items-center justify-center space-y-8">
+                {/* Top Message */}
+                <div className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold">
+                    Our Website
+                </div>
+
+                {/* Coming Soon Text */}
+                <div className="text-center text-white font-extrabold space-y-6">
+                    <div className="flex items-center justify-center space-x-3 text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] tracking-wide">
+                        <span>C</span>
+                        <img
+                            src="https://thumbs.wbm.im/pw/medium/cf3856a1c655538917c7afc782baaa94.avif"
+                            alt="rotating letter image"
+                            className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 animate-slow-spin"
+                        />
+                        <span>ming</span>
+                    </div>
+                    <div className="flex items-center justify-center space-x-3 text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] tracking-wide">
+                        <span>S</span>
+                        <img
+                            src="https://thumbs.wbm.im/pw/medium/cf3856a1c655538917c7afc782baaa94.avif"
+                            alt="rotating letter image"
+                            className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 animate-slow-spin"
+                        />
+                        <img
+                            src="https://thumbs.wbm.im/pw/medium/cf3856a1c655538917c7afc782baaa94.avif"
+                            alt="rotating letter image"
+                            className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 animate-slow-spin"
+                        />
+                        <span>n</span>
+                    </div>
+                </div>
+
+                {/* Bottom Message */}
+                <div className="text-center text-white text-xs sm:text-sm md:text-base lg:text-lg px-4">
+                    This page is under construction. Meanwhile, you can view and register for events!
+                </div>
+            </div>
+      </div>
+      </>
+    );
 };
 
-export default ComingSoon;
+export default Coming;
