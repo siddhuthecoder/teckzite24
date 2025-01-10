@@ -99,7 +99,7 @@ const Table = () => {
             <img
               src={Refhead}
               alt=""
-              className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-10"
+              className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px]"
             />
             
           </div>
