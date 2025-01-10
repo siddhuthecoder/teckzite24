@@ -59,15 +59,9 @@ const Referrals = () => {
       {/* Main Content */}
       <div className="relative z-10">
         <Header />
+        
         <Table />
-        <div className="my-10 w-full flex items-center justify-center">
-          <button
-            className="px-10 py-2 bg-gradient rounded mb-[40px]"
-            onClick={handleShare}
-          >
-            Refer Now
-          </button>
-        </div>
+        
       </div>
     </section>
   );
