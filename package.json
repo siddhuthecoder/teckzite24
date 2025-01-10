@@ -1,0 +1,86 @@
+{
+  "name": "tzk24",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@headlessui/react": "^1.7.18",
+    "@mui/icons-material": "^5.15.13",
+    "@mui/material": "^5.15.13",
+    "@mui/utils": "^5.15.14",
+    "@react-oauth/google": "^0.12.1",
+    "@reduxjs/toolkit": "^2.2.1",
+    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^1.9.54",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.7.1",
+    "assert": "^2.1.0",
+    "autoprefixer": "^10.4.18",
+    "axios": "^1.6.7",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "clsx": "^2.1.1",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
+    "framer-motion": "^11.15.0",
+    "https-browserify": "^1.0.0",
+    "jwt-decode": "^4.0.0",
+    "net-browserify": "^0.2.4",
+    "postcss": "^8.4.35",
+    "razorpay": "^2.9.2",
+    "react": "^18.2.0",
+    "react-animated-cursor": "^2.11.2",
+    "react-dom": "^18.2.0",
+    "react-file-base64": "^1.0.3",
+    "react-google-recaptcha": "^3.1.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.0.1",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "^5.0.1",
+    "react-swiper": "^0.1.5",
+    "react-toastify": "^10.0.5",
+    "sass": "^1.71.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "swiper": "^11.0.7",
+    "tailwind-merge": "^2.6.0",
+    "three": "^0.162.0",
+    "tls": "^0.0.1",
+    "util": "^0.12.5",
+    "vanta": "^0.5.24",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

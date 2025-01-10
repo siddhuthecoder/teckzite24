@@ -1,0 +1,26 @@
+::-webkit-scrollbar {
+    width: 0;
+  }
+  .marquee-container {
+    width: calc(100% + 30px); /* Width of items + margin */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee-item {
+    display: inline-block;
+    width: 100px;
+    min-width: 200px;
+    height: 250px;
+    margin-right: 30px;
+    animation: marquee 10s linear infinite; /* Adjust duration as needed */
+}
+
+.marquee-container:hover .marquee-item {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
