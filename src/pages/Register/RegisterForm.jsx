@@ -14,7 +14,7 @@ import svg1 from "../../assets/img/svgs/regSvg.svg";
 import svg2 from "../../assets/img/svgs/svg2.svg";
 import signup from "../../assets/events/signup.png";
 import signupdetails from "../../assets/events/signupdetails.png";
-import eventdetailsdesk from "../../assets/events/eventdetailsdesk.png";
+import profiledesk from "../../assets/events/profiledesk.png";
 import "./RegisterForm.css";
 const RegisterForm = () => {
   const location = useLocation();
@@ -385,11 +385,11 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className="  py-2 flex justify-center items-center  w-[800px] sm:mt-[0px] flex-col relative ">
+          <div className=" md:mt-[-60px] flex justify-center items-center  w-[800px] sm:mt-[0px] flex-col relative  ">
             <img
-              src={eventdetailsdesk}
+              src={profiledesk}
               alt=""
-              className="absolute pointer-events-none  h-[560px] w-[800px] md:block hidden left-0"
+              className="absolute pointer-events-none  h-[490px] w-[800px] md:block hidden mt-[10px] left-0"
             />
             {/*<img
               src={bord}
@@ -411,7 +411,7 @@ const RegisterForm = () => {
               alt=""
               className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
             />*/}
-            <h4 className="font-semibold mt-2 text-xl">Register</h4>
+            <h4 className="font-semibold text-xl ">Register</h4>
             <h3 className="text-sm mt-1 mb-4 px-10 text-center">
               {isRgukt &&
                 `Fee for Registration is ${process.env.REACT_APP_RGUKT_FEE}`}
