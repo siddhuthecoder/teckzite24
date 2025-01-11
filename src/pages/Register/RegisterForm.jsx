@@ -15,6 +15,7 @@ import svg2 from "../../assets/img/svgs/svg2.svg";
 import signup from "../../assets/events/signup.png";
 import signupdetails from "../../assets/events/signupdetails.png";
 import eventdetailsdesk from "../../assets/events/eventdetailsdesk.png";
+import "./RegisterForm.css";
 const RegisterForm = () => {
   const location = useLocation();
 
@@ -388,7 +389,7 @@ const RegisterForm = () => {
             <img
               src={eventdetailsdesk}
               alt=""
-              className="absolute pointer-events-none   h-[520px]  w-[800px] left-0"
+              className="absolute pointer-events-none  h-[560px] md:block hidden left-0"
             />
             {/*<img
               src={bord}
@@ -419,68 +420,109 @@ const RegisterForm = () => {
             </h3>
             {!next && (
               <>
-                {!isRgukt && (
-                  <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {/* First Name */}
-                    <input
-                      type="text"
-                      id="firstName"
-                      value={data.firstName}
-                      name="firstName"
-                      onChange={handleChange}
-                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                      placeholder="First Name"
-                      required
-                    />
-                    {/* Last Name */}
-                    <input
-                      type="text"
-                      id="lastName"
-                      value={data.lastName}
-                      name="lastName"
-                      onChange={handleChange}
-                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                      placeholder="Last Name"
-                      required
-                    />
-                  </div>
-                )}
-                {/* College */}
-                <div className="mb-3 w-[90%]">
-                  <input
-                    type="text"
-                    id="college"
-                    value={data.college}
-                    name="college"
-                    onChange={handleChange}
-                    className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="College"
-                    required
-                  />
-                </div>
-                {/* Phone Number and ID Number */}
-                <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    id="phoneNumber"
-                    value={data.phoneNumber}
-                    name="phoneNumber"
-                    onChange={handleChange}
-                    className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="Phone Number"
-                    required
-                  />
-                  <input
-                    type="text"
-                    id="collegeId"
-                    value={data.collegeId}
-                    name="collegeId"
-                    onChange={handleChange}
-                    className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="Enter your college ID"
-                    required
-                  />
-                </div>
+               {!isRgukt && (
+  <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+    {/* First Name */}
+    <div className="input-group relative">
+      <input
+        type="text"
+        id="firstName"
+        value={data.firstName}
+        name="firstName"
+        onChange={handleChange}
+        className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        htmlFor="firstName"
+        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+      >
+        First Name
+      </label>
+    </div>
+    {/* Last Name */}
+    <div className="input-group relative">
+      <input
+        type="text"
+        id="lastName"
+        value={data.lastName}
+        name="lastName"
+        onChange={handleChange}
+        className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        htmlFor="lastName"
+        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+      >
+        Last Name
+      </label>
+    </div>
+  </div>
+)}
+{/* College */}
+<div className="mb-3 w-[90%]">
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="college"
+      value={data.college}
+      name="college"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      htmlFor="college"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      College
+    </label>
+  </div>
+</div>
+{/* Phone Number and ID Number */}
+<div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="phoneNumber"
+      value={data.phoneNumber}
+      name="phoneNumber"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      htmlFor="phoneNumber"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      Phone Number
+    </label>
+  </div>
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="collegeId"
+      value={data.collegeId}
+      name="collegeId"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      htmlFor="collegeId"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      College ID
+    </label>
+  </div>
+</div>
+
                 {/* Year and branch */}
                 <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
                   <select
