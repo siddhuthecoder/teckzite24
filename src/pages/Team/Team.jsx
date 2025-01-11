@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import webteam from "../../assets/img/webteam.jpg"
 import coreteam from "../../assets/img/coreteam.jpg"
 import tabbutton from "../../assets/events/tabbutton.png";
+import Header from '../../components/Header/Header'
 const Team = () => {
     const navigate=useNavigate();
     const handleWebTeamClick = () => {
@@ -13,7 +14,9 @@ const Team = () => {
         navigate('/Teamcore');
       };
   return (
-    <div className="flex justify-center items-center h-screen w-full bg-black gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px]">
+    <>
+    <Header />
+    <div className="flex justify-center items-center w-full  gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px] z-10 h-screen">
     <div className="flex bg-gray-500 w-[300px] h-[400px] justify-center items-center shadow-md transition-shadow duration-300 rounded-lg relative">
         <div className="flex  w-[280px] h-[380px] rounded-lg  hover:-translate-y-10 transition-transform duration-300 ease-in-out justify-center items-center relative">
             <img src={webteam} alt="webteam"className='w-[90%] h-[96%] absolute'></img>
@@ -36,6 +39,7 @@ const Team = () => {
     
 
 </div>
+    </>
   )
 }
 
