@@ -37,7 +37,7 @@ const Animation = (props) => {
           />
 
           {/* Title with Parallax Effect */}
-          <h1
+          <div
             className="text-white text-[30px] lg:text-[57px] absolute z-10"
             style={{
               top: `calc(50% - ${scrollPosition * 0.5}px)`, // Moves text up on scroll
@@ -47,8 +47,16 @@ const Animation = (props) => {
               transition: "top 0.1s, opacity 0.2s",
             }}
           >
-            {props.title}
-          </h1>
+          <div className="relative">
+  <h1 className="absolute text-[60px] translate-x-[-50%] translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
+    {props.title}
+  </h1>
+  <h1 className="absolute text-[60px] translate-x-[-50%] translate-y-[-50%] text-[#05a8f3] stroke-[2px] stroke-[#05a8f3] animate-waves">
+    {props.title}
+  </h1>
+</div>
+
+          </div>
 
           {/* Robo Hand Image */}
           <img
