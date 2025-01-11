@@ -8,7 +8,7 @@ const CarAnimation = ({ scrollPosition }) => {
     <div>
       {/* Animation Section */}
       <div
-        className="relative h-[100vh] bg-cover bg-center -top-10"
+        className="relative h-[100vh] bg-cover bg-center -top-10 overflow-x-hidden"
         style={{
           backgroundImage: "url('/robowarsbg.jpg')", // Path to your background image
         }}
@@ -43,10 +43,10 @@ const CarAnimation = ({ scrollPosition }) => {
       </div>
 
       {/* Events Section */}
-      <div className="relative bg-white">
+      {/* <div className="relative bg-white">
         <h2 className="text-center text-3xl font-bold py-10">Events Section</h2>
-        {/* Add your Events component or content here */}
-      </div>
+        Add your Events component or content here
+      </div> */}
     </div>
   );
 };

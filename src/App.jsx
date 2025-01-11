@@ -10,12 +10,15 @@ import SpeakersCard from "./components/Shared/SPcard";
 import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
 import EWschedule from "./pages/Schedule/EWschedule";
 import RobowarEvents from "./pages/Robowars/RobowarEvents"
+import Team from "./pages/Team/Team"
+import Teamcore from "./pages/Team/Teamcore";
+import Teamweb from "./pages/Team/Teamweb";
+
 import {
   CoreTeam,
   Events,
   // Home,
   Register,
-  WebTeam,
   Workshops,
   // EventUpdates,
   // WorkshopsDetails,
@@ -165,7 +168,7 @@ function App() {
               {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
               {/* <Route path="/webteam" element={<WebTeam />} /> */}
               <Route path="/register" element={<Register />} />
-              <Route path="/team" element={<TeamCard />} />
+              <Route path="/team" element={<Team />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
               <Route path="/contact" element={<ComingSoon />} />
               <Route path="/swiper" element={<SwiperModule />} />
@@ -178,6 +181,8 @@ function App() {
               {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
               <Route path="/eventupdates" element={<ComingSoon />} />
               <Route path="/sponsors" element={<Sponsors />} />
+              <Route path="/Teamcore" element={<Teamcore />} />
+              <Route path="/Teamweb" element={<Teamweb />} />
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}

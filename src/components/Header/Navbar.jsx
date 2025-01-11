@@ -148,35 +148,35 @@ const Navbar = ({ setShowNav }) => {
         <div className="left-buttons pt-[30px] md:pt-0 md:absolute left-0 md:top-[30px] flex flex-col gap-[30px] font-bruno order-2 md:order-1">
           <NavButton
             name="Home"
-            action={() => navigate("/")}
+            action={() =>{ setShowNav(false);;navigate("/")}}
             desktopDelay={5}
             mobileDelay={1}
             desktopClasses="md:ml-[20px] md:mt-[0px] lg:ml-[-30px] md:animate-slideTopDelay5" 
           />
           <NavButton
             name="Events"
-            action={() => navigate("/events")}
+            action={() => {setShowNav(false);navigate("/events")}}
             desktopDelay={4}
             mobileDelay={2}
             desktopClasses="md:ml-[-100px] lg:ml-[-150px] md:animate-slideTopDelay4"
           />
           <NavButton
             name="Workshops"
-            action={() => navigate("/workshops")}
+            action={() => {setShowNav(false);navigate("/workshops")}}
             desktopDelay={3}
             mobileDelay={3}
             desktopClasses="md:ml-[-140px] lg:ml-[-180px] md:animate-slideTopDelay3"
           />
           <NavButton
             name="Robo Wars"
-            action={() => navigate("/robowars")}
+            action={() => {setShowNav(false);navigate("/robowars")}}
             desktopDelay={2}
             mobileDelay={4}
             desktopClasses="md:ml-[-100px] lg:ml-[-150px] md:animate-slideTopDelay2"
           />
           <NavButton
-            name="Stalls"
-            action={() => navigate("/stalls")}
+            name="Project Expo"
+            action={() =>{ setShowNav(false);navigate("/expo")}}
             desktopDelay={1}
             mobileDelay={5}
             desktopClasses="md:ml-[20px] lg:ml-[-30px] md:animate-slideTopDelay1"
@@ -191,7 +191,7 @@ const Navbar = ({ setShowNav }) => {
                           </h1> :
              <NavButton
             name="Login"
-            action={() => navigate("/register")}
+            action={() => {setShowNav(false);navigate("/register")}}
             desktopDelay={6}
             mobileDelay={6}
             desktopClasses="md:animate-slideTopDelay6"
@@ -204,35 +204,35 @@ const Navbar = ({ setShowNav }) => {
         <div className="right-buttons mb-[40px] md:absolute right-0 top-[30px] flex flex-col gap-[30px] font-bruno order-3">
           <NavButton
             name="About"
-            action={() => navigate("/about")}
+            action={() => {setShowNav(false);navigate("/about");}}
             desktopDelay={7}
             mobileDelay={7}
             desktopClasses="md:mr-[20px] lg:mr-[-30px] md:animate-slideTopDelay7"
           />
           <NavButton
-            name="Project Expo"
-            action={() => navigate("/expo")}
+            name="stalls"
+            action={() => {setShowNav(false);navigate("/stalls")}}
             desktopDelay={8}
             mobileDelay={8}
             desktopClasses="md:mr-[-100px] lg:mr-[-150px] md:animate-slideTopDelay8"
           />
           <NavButton
             name="Referrals"
-            action={() => navigate("/referrals")}
+            action={() => {setShowNav(false);navigate("/referrals")}}
             desktopDelay={9}
             mobileDelay={9}
             desktopClasses="md:mr-[-140px] lg:mr-[-180px] md:animate-slideTopDelay9"
           />
           <NavButton
             name="Sponsors"
-            action={() => navigate("/sponsors")}
+            action={() =>{ setShowNav(false);navigate("/sponsors")}}
             desktopDelay={10}
             mobileDelay={10}
             desktopClasses="md:mr-[-100px] lg:mr-[-150px] md:animate-slideTopDelay10"
           />
           <NavButton
-            name="Contact"
-            action={() => navigate("/contact")}
+            name="Team"
+            action={() => {setShowNav(false);navigate("/Team")}}
             desktopDelay={11}
             mobileDelay={11}
             desktopClasses="md:mr-[20px] mb-[40px] lg:mr-[-30px] md:animate-slideTopDelay11"
