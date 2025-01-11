@@ -40,10 +40,10 @@ const Animation = (props) => {
           <div
             className="text-white text-[30px] lg:text-[57px] absolute z-10"
             style={{
-              top: `calc(50% - ${scrollPosition * 0.5}px)`, // Moves text up on scroll
+              top: `calc(50% - ${scrollPosition * 0.5}px)`, 
               left: "50%",
-              transform: "translate(-50%, -50%)", // Center horizontally and vertically
-              opacity: scrollPosition > 300 ? 0 : 1, // Fade out after scrolling
+              transform: "translate(-50%, -50%)", 
+              opacity: scrollPosition > 300 ? 0 : 1, 
               transition: "top 0.1s, opacity 0.2s",
             }}
           >
