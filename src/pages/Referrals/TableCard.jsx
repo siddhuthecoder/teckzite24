@@ -38,7 +38,7 @@ const Table = () => {
 
   if (refStatus !== "loaded") {
     return (
-      <div className="w-full flex items-center justify-center gap-3 flex-col z-0">
+      <div className="w-full flex items-center justify-center gap-3 flex-col z-0 mt-[-70px]">
         <div role="status">
           <svg
             aria-hidden="true"
