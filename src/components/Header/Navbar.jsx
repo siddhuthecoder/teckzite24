@@ -80,7 +80,7 @@ const Navbar = ({ setShowNav }) => {
   return (
     <div
       style={{
-        zIndex: "100",
+        zIndex: "9999",
         width: "100%",
         position: "fixed",
         left: "0",
