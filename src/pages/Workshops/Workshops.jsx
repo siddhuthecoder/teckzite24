@@ -19,23 +19,23 @@ const Workshops = () => {
   };
 
   return (
-    <main>
+    <main className="relative h-screen overflow-hidden">
       <Header />
-      <div className="fixed w-full h-screen top-2 left-0">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/workshopbg.jpg')",
-          }}
-        ></div>
-        {/* Black overlay with opacity */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        {/* Main content */}
-        <div className="relative z-10 text-center font-joti text-3xl mt-28">
+      {/* Outer wrapper with the background applied */}
+      <div
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/workshopbg.jpg')",
+        }}
+      ></div>
+      <div className="fixed inset-0 bg-black bg-opacity-80"></div>
+      {/* Content wrapper for scrollable workshops */}
+      <div className="relative  h-screen overflow-y-auto">
+        {/* Title */}
+        <div className="text-center font-joti text-3xl mt-28">
           Workshops
         </div>
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 mt-[5%] lg:grid-cols-3 gap-4 pb-24 content-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-[5%] pb-24 px-4">
           {!workshopData ? (
             <div className="min-h-[300px] my-10 col-span-3 flex items-center justify-center">
               <div role="status">
@@ -65,14 +65,16 @@ const Workshops = () => {
                   <h1 className="text-center text-xl">No workshops yet...</h1>
                 </div>
               )}
-              {workshopData.map((w) => (
+                {workshopData.map((w) => (
+                <div className="cursor-pointer">
                 <EWCard
                   key={w._id}
                   id={w._id}
                   img={w.workshopImg}
                   workshop={true}
                   name={w.name}
-                />
+                    />
+                    </div>
               ))}
             </>
           )}
@@ -83,4 +85,5 @@ const Workshops = () => {
 };
 
 export default Workshops;
+
 

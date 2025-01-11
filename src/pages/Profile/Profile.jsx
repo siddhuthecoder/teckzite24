@@ -8,7 +8,8 @@ import "./Profile.module.css";
 import s1 from "../../assets/img/profile/Rectangle 29.svg";
 import s2 from "../../assets/img/profile/Rectangle 28.svg";
 import s3 from "../../assets/img/profile/Rectangle 30.svg";
-
+import profiledesk from "../../assets/events/profiledesk.png";
+import profilemobile from "../../assets/events/profilemobile.png";
 const Profile = () => {
   const userData = useSelector((state) => state.user.data);
   const userStatus = useSelector((state) => state.user.status);
@@ -62,8 +63,18 @@ const Profile = () => {
           backgroundImage: "url('../../../register.png')",
         }}
       >
-        <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] pt-4 max-md:mt-24 pb-10  border-[white] border-[1px] rounded-md  relative">
-          <img
+        <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] pt-4 max-md:mt-24 pb-10    relative">
+        <img
+            src={profiledesk}
+            alt=""
+            className="absolute w-[100%] h-[100%] md:block hidden  "
+          />
+           <img
+            src={profilemobile}
+            alt=""
+            className="absolute w-[100%] h-[100%] md:hidden block bottom-[10px] "
+          />
+          {/*<img
             src={s1}
             alt=""
             className="absolute top-[-55px] left-[30%] scale-x-[0.6]"
@@ -92,11 +103,11 @@ const Profile = () => {
             src={s2}
             alt=""
             className="absolute bottom-[-55px] right-[30.8%] scale-x-[0.6]"
-          />
-          <div className="text-center text-2xl pt-4 pb-2 font-joti">
+          />*/}
+          <div className="text-center text-2xl md:pt-[40px]  pt-[60px] pb-2 font-joti ">
             Profile
           </div>
-          <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-gradient">
+          <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-[#22EAEA]">
             {userData.img && userData.img !== "" ? (
               <img
                 src={userData.img}

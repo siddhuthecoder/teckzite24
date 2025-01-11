@@ -11,8 +11,22 @@ import i9 from "../../assets/img/about/img09.webp";
 import i10 from "../../assets/img/about/img10.webp";
 import i11 from "../../assets/img/about/img11.webp";
 import i12 from "../../assets/img/about/img12.webp";
-
+import Humanhand from "../../assets/Animation/Humanhand.png";
+import Robohand from "../../assets/Animation/Robohand.png";
+import { useState, useEffect } from "react";
+import Animation from "../../components/Animation";
 const AboutBody = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  useEffect(() => {
+      const handleScroll = () => {
+        setScrollPosition(window.scrollY);
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
   return (
     <>
       <div
@@ -24,7 +38,38 @@ const AboutBody = () => {
       >
         {/* Black overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-
+        {/* <div className="relative w-full h-screen">
+              <div
+                className="fixed top-0 left-0 w-full h-screen pointer-events-none bg-transparent"
+                style={{ zIndex: 0 }}
+              >
+                <div className="w-screen h-screen relative bg-transparent">
+                  <img
+                    src={Humanhand}
+                    alt="Human Hand"
+                    style={{
+                      position: "absolute",
+                      top: -scrollPosition * 0.8,
+                      left: -scrollPosition * 0.6,
+                      transition: "top 0.1s, left 0.1s",
+                    }}
+                    className="w-[90%] h-[80%] bg-transparent"
+                  />
+                  <img
+                    src={Robohand}
+                    alt="Robo Hand"
+                    style={{
+                      position: "absolute",
+                      bottom: -scrollPosition * 1,
+                      right: -scrollPosition * 0.4,
+                      transition: "bottom 0.1s, right 0.1s",
+                    }}
+                    className="w-[90%] h-[80%] bg-transparent"
+                  />
+                </div>
+              </div>
+            </div> */}
+            <Animation title="About"/>
         {/* Main content */}
         <div className="relative ">
           <div className="text-center font-bold text-4xl my-7 text-white font-joti">

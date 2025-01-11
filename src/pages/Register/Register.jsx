@@ -4,7 +4,6 @@ import RegisterForm from "./RegisterForm";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Contact from "./Contact";
-
 const Register = () => {
   const userData = useSelector((state) => state.user.data);
   const navigate = useNavigate();
@@ -16,16 +15,11 @@ const Register = () => {
   }, [navigate, userData]);
 
   return (
-    <main
-      className="pt-5 flex justify-center items-center w-100 min-h-[100vh] bg-cover bg-center z-0"
-      style={{
-        backgroundImage: "url('../../../register.png')",
-      }}
-    >
+   <div className="w-full min-h-screen flex justify-center items-center">
       <Header />
       <RegisterForm />
       <Contact className="mt-[30px]" />
-    </main>
+      </div>
   );
 };
 

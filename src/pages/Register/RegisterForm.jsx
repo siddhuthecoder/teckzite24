@@ -13,6 +13,9 @@ import bord from "../../assets/img/svgs/regBorder.svg";
 import svg1 from "../../assets/img/svgs/regSvg.svg";
 import svg2 from "../../assets/img/svgs/svg2.svg";
 import signup from "../../assets/events/signup.png";
+import signupdetails from "../../assets/events/signupdetails.png";
+import profiledesk from "../../assets/events/profiledesk.png";
+import "./RegisterForm.css";
 const RegisterForm = () => {
   const location = useLocation();
 
@@ -312,10 +315,10 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="z-1 w-full pt-[160px] pb-[20px]">
+    <section className="z-5 w-full pt-[160px] pb-[20px]">
       <form
         onSubmit={handleSubmit}
-        className="w-[90%] max-w-[420px] mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
+        className="w-[90%] max-w-[420px] z-10 mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
       >
         {!signIn && (
           <>
@@ -342,7 +345,7 @@ const RegisterForm = () => {
                 </div>
               </div>
             ) : (
-              <div className="w-full h-[100%] flex justify-center  items-center mx-auto  relative mt-[-60px] ">
+              <div className="w-full h-[100%] flex justify-center  items-center md:mx-auto md:ml-[0px] ml-[-50px] relative mt-[-60px] ">
                 <img
                   src={signup}
                   alt=""
@@ -356,7 +359,7 @@ const RegisterForm = () => {
                 {/*<img
                   src={svg1}
                   alt=""
-                  className="absolute pointer-events-none  hidden sm:block sm:left-[24%]  sm:top-[-280%] sm:scale-x-[0.7] "
+                  className="absolute pointer-events-none  hidden sm:block sm:left-[24%]  sm:solute-280%] sm:scale-x-[0.7] "
                 />*/}
                 {/*<img
                   src={svg2}
@@ -368,8 +371,8 @@ const RegisterForm = () => {
                   alt=""
                   className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
                 />*/}
-                <div className="ml-[70px]">
-                <GoogleLogin
+                <div className="md:ml-[75px] ml-[60px] z-7 w-[200px]" >
+                <GoogleLogin 
                   clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
                   onSuccess={onSuccess}
                   onFailure={onFailure}
@@ -382,8 +385,13 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className="py-2 w-full flex justify-center items-center  sm:mt-[0px] flex-col relative ">
+          <div className=" md:mt-[-60px] flex justify-center items-center  w-[800px] sm:mt-[0px] flex-col relative  ">
             <img
+              src={profiledesk}
+              alt=""
+              className="absolute pointer-events-none  h-[490px] w-[800px] md:block hidden mt-[10px] left-0"
+            />
+            {/*<img
               src={bord}
               alt=""
               className="absolute pointer-events-none hidden sm:block  scale-y-[2.9]  sm:scale-y-[1.9]   left-0"
@@ -402,8 +410,8 @@ const RegisterForm = () => {
               src={svg2}
               alt=""
               className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
-            />
-            <h4 className="font-semibold mt-2 text-xl">Register</h4>
+            />*/}
+            <h4 className="font-semibold text-xl ">Register</h4>
             <h3 className="text-sm mt-1 mb-4 px-10 text-center">
               {isRgukt &&
                 `Fee for Registration is ${process.env.REACT_APP_RGUKT_FEE}`}
@@ -412,68 +420,112 @@ const RegisterForm = () => {
             </h3>
             {!next && (
               <>
-                {!isRgukt && (
-                  <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {/* First Name */}
-                    <input
-                      type="text"
-                      id="firstName"
-                      value={data.firstName}
-                      name="firstName"
-                      onChange={handleChange}
-                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                      placeholder="First Name"
-                      required
-                    />
-                    {/* Last Name */}
-                    <input
-                      type="text"
-                      id="lastName"
-                      value={data.lastName}
-                      name="lastName"
-                      onChange={handleChange}
-                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                      placeholder="Last Name"
-                      required
-                    />
-                  </div>
-                )}
-                {/* College */}
-                <div className="mb-3 w-[90%]">
-                  <input
-                    type="text"
-                    id="college"
-                    value={data.college}
-                    name="college"
-                    onChange={handleChange}
-                    className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="College"
-                    required
-                  />
-                </div>
-                {/* Phone Number and ID Number */}
-                <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    id="phoneNumber"
-                    value={data.phoneNumber}
-                    name="phoneNumber"
-                    onChange={handleChange}
-                    className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="Phone Number"
-                    required
-                  />
-                  <input
-                    type="text"
-                    id="collegeId"
-                    value={data.collegeId}
-                    name="collegeId"
-                    onChange={handleChange}
-                    className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 text_input"
-                    placeholder="Enter your college ID"
-                    required
-                  />
-                </div>
+               {!isRgukt && (
+                <div className="md:w-[800px]">
+  <div className=" md:ml-[30px] mb-3 w-[270px] md:w-[90%] grid grid-cols-1 md:grid-cols-2 gap-[10px]">
+    {/* First Name */}
+    <div className="input-group relative">
+      <input
+        type="text"
+        id="firstName"
+        value={data.firstName}
+        name="firstName"
+        onChange={handleChange}
+        className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        htmlFor="firstName"
+        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+      >
+        First Name
+      </label>
+    </div>
+    {/* Last Name */}
+    <div className="input-group relative ">
+      <input
+        type="text"
+        id="lastName"
+        value={data.lastName}
+        name="lastName"
+        onChange={handleChange}
+        className="bg-transparent border-gray-300 text-white text-base block w-full  px-1 py-1.5 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        htmlFor="lastName"
+        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+      >
+        Last Name
+      </label>
+    </div>
+  </div>
+  </div>
+)}
+
+{/* College */}
+<div className="mb-3 w-[90%]">
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="college"
+      value={data.college}
+      name="college"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      htmlFor="college"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      College
+    </label>
+  </div>
+</div>
+{/* Phone Number and ID Number */}
+<div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="phoneNumber"
+      value={data.phoneNumber}
+      name="phoneNumber"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      htmlFor="phoneNumber"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      Phone Number
+    </label>
+  </div>
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="collegeId"
+      value={data.collegeId}
+      name="collegeId"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      htmlFor="collegeId"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      College ID
+    </label>
+  </div>
+</div>
+
                 {/* Year and branch */}
                 <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
                   <select

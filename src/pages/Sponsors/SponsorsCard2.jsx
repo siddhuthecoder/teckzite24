@@ -3,7 +3,9 @@ import hp1 from '../../assets/img/sponsors/hp1.jpg'
 import hp2 from '../../assets/img/sponsors/hp2.jpg'
 import hp3 from '../../assets/img/sponsors/hp3.jpg'
 
+
 import sponcercard from "../../assets/img/Sponcercard.png";
+import Animation from '../../components/Animation'
 import ssit from '../../assets/img/sponsors/ssit.jpg'
 import dd_prints from '../../assets/img/sponsors/dd_prints.png'
 import meeNews from '../../assets/img/sponsors/mee news.png'
@@ -108,9 +110,13 @@ const SponsorsCard2 = () => {
         backgroundImage: "url('/sponsers.bg.jpg')",
         backgroundAttachment: "fixed",
       }}
+
     >
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <Animation title="Sponsors"/>
+
+      <div className="relative">
  <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[100px]">
  Academic partner
       </div>
@@ -238,6 +244,7 @@ const SponsorsCard2 = () => {
         </div>
         ))
       }
+      </div>
         </div>
         </div>
    </>
