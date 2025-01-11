@@ -38,7 +38,7 @@ const Table = () => {
 
   if (refStatus !== "loaded") {
     return (
-      <div className="w-full h-screen flex items-center justify-center gap-3 flex-col">
+      <div className="w-full flex items-center justify-center gap-3 flex-col z-0 mt-[-70px]">
         <div role="status">
           <svg
             aria-hidden="true"
@@ -110,8 +110,8 @@ const Table = () => {
   ));
 
   return (
-    <div className="w-full h-full flex items-center justify-center mt-[110px]">
-      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-y-auto h-auto overflow-x-auto flex flex-col">
+    <div className="w-full h-full flex items-center justify-center mt-[-70px]">
+      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-y-auto  overflow-x-auto flex flex-col">
         <div className="w-[100%] min-w-[900px] flex flex-col" style={{}}>
           <div className="w-full my-[20px] h-[60px] flex items-center relative">
             <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
@@ -128,7 +128,7 @@ const Table = () => {
           </div>
           {tableRows}
         </div>
-        <div className=" my-10  z-0 w-full bg-transparent flex items-center justify-end ">
+        <div className=" my-10  w-full bg-transparent flex items-center justify-end ">
          <MenuButton text="Refer Now" action={handleShare} name="Refer Now" />
         </div>
       </div>

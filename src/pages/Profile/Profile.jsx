@@ -63,17 +63,21 @@ const Profile = () => {
           backgroundImage: "url('../../../register.png')",
         }}
       >
-        <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] pt-4 max-md:mt-24 pb-10    relative">
-        <img
+        <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative">
+           <img
             src={profiledesk}
             alt=""
             className="absolute w-[100%] h-[100%] md:block hidden  "
           />
+
            <img
             src={profilemobile}
             alt=""
-            className="absolute w-[100%] h-[100%] md:hidden block bottom-[10px] "
+            className="absolute w-auto h-[100%] block md:hidden "
           />
+
+           
+
           {/*<img
             src={s1}
             alt=""
@@ -104,7 +108,7 @@ const Profile = () => {
             alt=""
             className="absolute bottom-[-55px] right-[30.8%] scale-x-[0.6]"
           />*/}
-          <div className="text-center text-2xl md:pt-[40px]  pt-[60px] pb-2 font-joti ">
+          <div className="text-center text-2xl md:pt-[40px]  mt-[34px] pb-2 font-joti ">
             Profile
           </div>
           <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-[#22EAEA]">

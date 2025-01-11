@@ -19,10 +19,10 @@ const EWCard = ({ img, id, name, workshop }) => {
     <CardContainer className="flex justify-center items-center">
       <CardBody className="relative h-[450px] w-[300px]">
         {/* Background Card */}
-        <CardItem translateZ={-20} className="relative h-full w-full">
+        <CardItem translateZ={-20} className="relative h-auto w-full">
           <img
             src={workshop ? workshopImage : eventcard}
-            className="h-full w-full object-cover rounded-lg"
+            className="h-auto w-full object-cover rounded-lg"
             alt="card background"
           />
         </CardItem>
