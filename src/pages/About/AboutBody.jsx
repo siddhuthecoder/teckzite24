@@ -72,9 +72,7 @@ const AboutBody = () => {
             <Animation title="About"/>
         {/* Main content */}
         <div className="relative ">
-          <div className="text-center font-bold text-4xl my-7 text-white font-joti">
-            ABOUT
-          </div>
+         
           <div
             className="w-[97%] max-w-[1200px] border-[#068feb] rounded-[5px] border-[2px] flex
             justify-center items-center mx-auto min-h-[400px] backdrop-blur-md relative bg-white bg-opacity-10"
