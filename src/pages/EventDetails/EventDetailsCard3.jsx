@@ -166,65 +166,84 @@ const EventDetailsCard3 = () => {
     </div>
   );
 
-  const RenderEventDetails = () => (
-    <div className="w-full flex min-h-screen justify-center items-center">
-      <div
-        className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center "
-        style={{ backgroundImage: "" }}
-        onClick={() => handleSound()}
-      ></div>
-      <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
-        <div className="absolute max-md:relative top-[10px] w-full  md:mt-[25px]">
-          <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2">
+ const RenderEventDetails = () => (
+  <div className="w-full flex min-h-screen justify-center items-center relative">
+    {/* Background Image */}
+    <div
+      className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center "
+      style={{ backgroundImage: "url('/notfound.jpg')" }}
+      onClick={() => handleSound()}
+    ></div>
+
+    {/* Black Overlay with Opacity */}
+    <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50 "></div>
+
+    {/* Main Content */}
+    <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative  max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
+      <div className="absolute max-md:relative top-[10px] w-full md:mt-[25px]">
+        <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2">
+          <RenderTabs />
+        </div>
+        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#0A69A5]">
+          {data.name}
+        </h1>
+        <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
+          <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3 md:ml-[10px]">
+            <img
+              src={data.img}
+              alt={data.name}
+              className="md:h-[220px] max-md:w-[70vw]"
+            />
+            <div onClick={handleRegister}>
+              <EventButton name={isReg ? "Registering..." : "Register"} />
+            </div>
+          </div>
+
+          <div className="max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900 overflow-x-auto">
             <RenderTabs />
           </div>
-          <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#0A69A5]">
-            {data.name}
-          </h1>
-          <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
-            <div className="col-span-4  max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3 md:ml-[20px]">
-              <img
-                src={data.img}
-                alt={data.name}
-                className="md:h-[220px] max-md:w-[70vw]"
-              />
-              <div onClick={handleRegister}>
-                <EventButton name={isReg ? "Registering..." : "Register"} />
-              </div>
 
-              {/*<button
+          <div className="col-span-8 max-md:col-span-12 max-md:bg-[rgba(42,46,56,0.56)] max-md:py-5 w-full  md:w-[94%] flex items-start flex-col px-4 max-md:px-2 rounded-[12px] border border-[rgba(255,255,255,0.125)] backdrop-blur-[18px] backdrop-saturate-200 md:ml-3 md:mr-1">
+            <div className="div h-[230px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible ">
+              {activeTab === "TimeLine" && (
+                <TimeLine timeline={data.timeline} />
+              )}
+              {activeTab === "Structure" && (
+                <Structure structure={data.structure} />
+              )}
+              {activeTab === "Description" && (
+                <Description
+                  desc={data.desc}
+                  rules={data.rules}
+                  teamSize={data.teamSize}
+                />
+              )}
+              {activeTab === "Contact" && (
+                <Contact contact={data.contact_info} />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src={eventdetailsdesk}
+        alt=""
+        className="absolute pointer-events-none scale-y-[1.1] scale-x-[1.0] hidden md:block md:rotate-[0deg]"
+        style={{
+          width: "800px",
+          minHeight: "450px",
+        }}
+      />
+    </div>
+  </div>
+);
+                {/*<button
                 className="px-8 py-1.5 rounded bg-gradient"
                 onClick={handleRegister}
               >
                 {isReg ? "Registering..." : "Register"}
               </button>*/}
-
-            </div>
-
-            <div className="  max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900 overflow-x-auto">
-              <RenderTabs />
-            </div>
-
-            <div className="col-span-8 max-md:col-span-12 max-md:bg-[rgba(42,46,56,0.56 )] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2 rounded-[12px] border border-[rgba(255,255,255,0.125)] backdrop-blur-[18px] backdrop-saturate-200">
-              <div className="div h-[230px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible">
-                {activeTab === "TimeLine" && (
-                  <TimeLine timeline={data.timeline} />
-                )}
-                {activeTab === "Structure" && (
-                  <Structure structure={data.structure} />
-                )}
-                {activeTab === "Description" && (
-                  <Description
-                    desc={data.desc}
-                    rules={data.rules}
-                    teamSize={data.teamSize}
-                  />
-                )}
-                {activeTab === "Contact" && (
-                  <Contact contact={data.contact_info} />
-                )}
-              </div>
-              {/* <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
+    {/* <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
                 <h1 className="font-semibold text-lg">Prize Money :- </h1>
                 {data.prizeMoney ? (
                   <>
@@ -236,20 +255,8 @@ const EventDetailsCard3 = () => {
                   "Updated soon"
                 )}
               </div> */}
-            </div>
-          </div>
-        </div>
-        <img
-          src={eventdetailsdesk}
-          alt=""
-          className="absolute pointer-events-none scale-y-[1.1] hidden md:block md:rotate-[0deg]  "
-          style={{
-            width: "800px",
-            minHeight: "450px",
-          }}
-        />
- 
-        {/* <img
+
+          {/* <img
           src={ed2}
           alt=""
           className="absolute max-md:hidden pointer-events-none  scale-[0.7] left-[-0px] md:left-[-20px] z-[0]  top-[5%] md:top-[20%]"
@@ -259,10 +266,7 @@ const EventDetailsCard3 = () => {
           alt=""
           className="absolute max-md:hidden pointer-events-none  scale-[0.7] right-[-0px] md:right-[-20px] z-[0] top-[5%]  md:top-[20%]"
         /> */}
-      </div>
-    </div>
-  );
-
+  
   const RenderRegistrationForm = () => {
     const renderInputFields = () => {
       const inputFields = [];
