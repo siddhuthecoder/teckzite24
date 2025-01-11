@@ -21,7 +21,7 @@ const RobowarEvents = () => {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main className="pt-16 overflow-x-hidden">
         {/* Car Animation Section */}
         <div className="relative h-[100vh]">
          <CarAnimation scrollPosition={scrollPosition} /> <CarAnimation />
