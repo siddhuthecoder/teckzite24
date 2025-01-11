@@ -111,7 +111,7 @@ const Table = () => {
 
   return (
     <div className="w-full h-full flex items-center justify-center mt-[110px]">
-      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-y-auto h-[calc(100vh-150px)] overflow-x-auto flex flex-col">
+      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-y-auto h-auto overflow-x-auto flex flex-col">
         <div className="w-[100%] min-w-[900px] flex flex-col" style={{}}>
           <div className="w-full my-[20px] h-[60px] flex items-center relative">
             <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
@@ -123,7 +123,7 @@ const Table = () => {
             <img
               src={Refhead}
               alt=""
-              className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-5"
+              className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-2"
             />
           </div>
           {tableRows}
