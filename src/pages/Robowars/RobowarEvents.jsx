@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import CarAnimation from "./CarAnimation";
 import Header from "../../components/Header/Header";
+import RobowarAnimation from "./RobowarAnimation";
 
 const RobowarEvents = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -21,11 +22,12 @@ const RobowarEvents = () => {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main>
         {/* Car Animation Section */}
-        <div className="relative h-[100vh]">
-         <CarAnimation scrollPosition={scrollPosition} /> <CarAnimation />
-        </div>
+        {/* <div className="relative h-[100vh]"> 
+          <CarAnimation scrollPosition={scrollPosition} /> <CarAnimation />
+        </div> */}
+        <RobowarAnimation />
 
         {/* Events Section */}
         <div className="relative bg-gray-800 text-white py-10">
