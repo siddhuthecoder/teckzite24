@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Humanhand from "../assets/Animation/Humanhand.png"; // Update with correct path
-import Robohand from "../assets/Animation/Robohand.png"; // Update with correct path
+import Humanhand from "../assets/Animation/Hhand.png"; // Update with correct path
+import Robohand from "../assets/Animation/rhand.png"; // Update with correct path
 
 const Animation = (props) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -29,16 +29,16 @@ const Animation = (props) => {
             alt="Human Hand"
             style={{
               position: "absolute",
-              top: -scrollPosition * 0.8,
+              bottom: -scrollPosition * 0.8,
               left: -scrollPosition * 0.6,
-              transition: "top 0.1s, left 0.1s",
+              transition: "bottom 0.1s, left 0.1s",
             }}
-            className="w-[90%] h-[80%]"
+            className="w-[40%] h-[50%]"
           />
 
           {/* Title */}
           <h1
-            className="text-white text-[40px] absolute top-1/2 left-[50%] z-10 translate-x-[-120px]"
+            className="text-white text-[40px] absolute top-1/2 left-[50%] z-10 lg:translate-x-[-120px]"
             style={{
               transition: "opacity 0.2s",
               opacity: scrollPosition > 200 ? 0 : 1,
@@ -53,11 +53,11 @@ const Animation = (props) => {
             alt="Robo Hand"
             style={{
               position: "absolute",
-              bottom: -scrollPosition * 1,
-              right: -scrollPosition * 0.4,
-              transition: "bottom 0.1s, right 0.1s",
+              top: -scrollPosition * 0.8,
+              right: -scrollPosition * 0.6,
+              transition: "top 0.1s, right 0.1s",
             }}
-            className="w-[90%] h-[80%]"
+            className="w-[50%] h-[50%]"
           />
         </div>
       </div>
