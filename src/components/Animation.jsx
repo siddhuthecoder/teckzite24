@@ -60,7 +60,7 @@ const Animation = (props) => {
               right: -scrollPosition * 0.6,
               transition: "top 0.1s, right 0.1s",
             }}
-            className="w-[40%] h-[40%] MD:h-[50%] "
+            className="w-[40%] h-[40%] md:h-[50%] "
           />
         </div>
       </div>

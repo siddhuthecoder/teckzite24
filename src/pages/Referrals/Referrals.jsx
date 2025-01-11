@@ -54,6 +54,8 @@ const Referals = () => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      console.log(scrollPosition)
+
     };
   }, []);
 
@@ -103,11 +105,12 @@ const Referals = () => {
         </div>
       </div> */}
 
-    <Animation title="Referals" />
-      <section className="relative w-full m-auto overflow-x-hidden">
+  
+      <section className="relative w-full  overflow-x-hidden">
+      <Animation title="Referals" />
         {/* Overlay */}
         {/* Main Content */}
-        <div className="relative z-10">
+        <div className="relative z-5">
           <Header />
           <Table />
         </div>
