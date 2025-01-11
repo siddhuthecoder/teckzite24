@@ -7,7 +7,7 @@ import sid from "../../assets/webteam/sidd.png";
 import aswini from "../../assets/webteam/ash.png";
 import yash from "../../assets/webteam/yash.png";
 import hemu from "../../assets/webteam/hemu.png";
-
+import Animation from "../../components/Animation";
 const WebTeam = () => {
   const WebTeamCard = [
     {
@@ -46,6 +46,7 @@ const WebTeam = () => {
       <Header />
       <Banner text="WEB TEAM" bg="web-heading" />
       <div className="w-full my-[10%] min-h-[80vh]">
+        <Animation/>
         <div className="text-center font-joti text-3xl">Web Team</div>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
           {WebTeamCard.map((data) => (
