@@ -171,12 +171,12 @@ const EventDetailsCard3 = () => {
     {/* Background Image */}
     <div
       className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center "
-      style={{ backgroundImage: "url('/workshopdetailsbg.jpg')" }}
+      style={{ backgroundImage: "url('/notfound.jpg')" }}
       onClick={() => handleSound()}
     ></div>
 
     {/* Black Overlay with Opacity */}
-    <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-70 "></div>
+    <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50 "></div>
 
     {/* Main Content */}
     <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative  max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
