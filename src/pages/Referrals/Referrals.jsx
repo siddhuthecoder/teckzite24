@@ -57,6 +57,7 @@ const Referals = () => {
     };
   }, []);
 
+  
   return (
     <div
       style={{
@@ -102,7 +103,7 @@ const Referals = () => {
         </div>
       </div> */}
 
-    <Animation title="Referals"/>
+    <Animation title="Referals" />
       <section className="relative w-full m-auto overflow-x-hidden">
         {/* Overlay */}
         {/* Main Content */}
