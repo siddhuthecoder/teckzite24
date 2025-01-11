@@ -104,71 +104,84 @@ const WorkshopDetails = () => {
       </div>
     </div>
   );
-
-  const RenderWorkshopDetails = () => (
-    <div className="w-full flex min-h-screen justify-center items-center">
-      <div
-        className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center z-0"
-        style={{ backgroundImage: "url('../../../eventdetails.png')" }}
-      ></div>
-      <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
-        <div className="absolute max-md:relative top-3 w-full">
-          <div className="max-md:hidden mt-[20px] flex items-center w-[90%] mx-auto justify-around flex-wrap gap-3 pb-2 ">
-            <RenderTabs />
-          </div>
-          <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#0A69A5] ">
-            {data.name}
-          </h1>
-          <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
-            <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center md:ml-[25px] flex-col gap-3">
-              <img
-                src={data.workshopImg}
-                alt={data.name}
-                className="md:h-[220px] max-md:w-[70vw]"
-              />
               {/*<button
                 className="px-8 py-1.5 rounded bg-gradient"
                 onClick={handleRegister}
               >
                 Register
               </button>*/}
-              <div onClick={handleRegister}><EventButton name="Register"/></div>
-            </div>
+  
+  const RenderWorkshopDetails = () => (
+  <div className="w-full flex min-h-screen justify-center items-center relative">
+    {/* Background Image */}
+    <div
+      className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center z-0"
+      style={{ backgroundImage: "url('/workshopdetailsbg.jpg')" }}
+    ></div>
+    
+    {/* Black overlay with opacity */}
+    <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50 "></div>
 
-            <div className="max-md:flex hidden mt-2 items-center w-[95vw]  mx-auto justify-around flex-wrap gap-1 pb-2 border-b border-1 border-purple-900">
-              <RenderTabs />
+    {/* Main Content */}
+    <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative  max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
+      <div className="absolute max-md:relative top-3 w-full">
+        <div className="max-md:hidden mt-[20px] flex items-center w-[90%] mx-auto justify-around flex-wrap gap-3 pb-2 ">
+          <RenderTabs />
+        </div>
+        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#0A69A5] ">
+          {data.name}
+        </h1>
+        <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
+          <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center md:ml-[25px] flex-col gap-3">
+            <img
+              src={data.workshopImg}
+              alt={data.name}
+              className="md:h-[220px] max-md:w-[70vw]"
+            />
+            <div onClick={handleRegister}>
+              <EventButton name="Register" />
             </div>
+          </div>
 
-            <div className="col-span-8 max-md:col-span-12 max-md:bg-[#0a8ea5] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2">
-              <div className="div h-[240px] max-md:h-[fit-content] w-full pt-2 text-white overflow-y-auto overflow-x-visible">
-                {activeTab === "Description" && <Description data={data} />}
-                {activeTab === "Instructor" && <Instructor data={data} />}
-                {activeTab === "Contact" && <Contact data={data} />}
-                {activeTab === "Department" && <Department data={data} />}
-                {activeTab === "Structure" && <Structure data={data} />}
-              </div>
-              <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
-                <h1 className="font-semibold text-lg">Registration Fee :- </h1>
-                {data.entryFee ? (
-                  <>
-                    <div dangerouslySetInnerHTML={{ __html: data.entryFee }} />
-                  </>
-                ) : (
-                  "Updated soon"
-                )}
-              </div>
+          <div className="max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around flex-wrap gap-1 pb-2 border-b border-1 border-purple-900">
+            <RenderTabs />
+          </div>
+
+          <div className="col-span-8 max-md:col-span-12 max-md:bg-[#0a8ea5] max-md:py-5 w-full flex items-start flex-col px-4 max-md:px-2">
+            <div className="div h-[240px] max-md:h-[fit-content] w-full pt-2 text-white overflow-y-auto overflow-x-visible">
+              {activeTab === "Description" && <Description data={data} />}
+              {activeTab === "Instructor" && <Instructor data={data} />}
+              {activeTab === "Contact" && <Contact data={data} />}
+              {activeTab === "Department" && <Department data={data} />}
+              {activeTab === "Structure" && <Structure data={data} />}
+            </div>
+            <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
+              <h1 className="font-semibold text-lg">Registration Fee :- </h1>
+              {data.entryFee ? (
+                <>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: data.entryFee }}
+                  />
+                </>
+              ) : (
+                "Updated soon"
+              )}
             </div>
           </div>
         </div>
-        <img
-          src={eventdetailsdesk}
-          alt=""
-          className="absolute pointer-events-none scale-y-[1.1] hidden md:block md:rotate-[0deg] z-[0]  "
-          style={{
-            width: "880px",
-            minHeight: "420px",
-          }}
-        />
+      </div>
+      <img
+        src={eventdetailsdesk}
+        alt=""
+        className="absolute pointer-events-none scale-y-[1.1] hidden md:block md:rotate-[0deg] z-[0]"
+        style={{
+          width: "880px",
+          minHeight: "420px",
+        }}
+      />
+    </div>
+  </div>
+);
        {/* <img
           src={ed2}
           alt=""
@@ -179,10 +192,6 @@ const WorkshopDetails = () => {
           alt=""
           className="absolute max-md:hidden pointer-events-none  scale-[0.7] right-[-0px] md:right-[-20px] z-[0] top-[5%]  md:top-[20%]"
         />*/}
-      </div>
-    </div>
-  );
-
   return (
     <>
       <Header />
