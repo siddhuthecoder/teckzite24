@@ -315,7 +315,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="z-1 w-full pt-[160px] pb-[20px]">
+    <section className="md:z-1 w-full pt-[160px] pb-[20px]">
       <form
         onSubmit={handleSubmit}
         className="w-[90%] max-w-[420px] mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
@@ -371,7 +371,7 @@ const RegisterForm = () => {
                   alt=""
                   className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
                 />*/}
-                <div className="md:ml-[75px] ml-[60px]">
+                <div className="md:ml-[75px] ml-[60px] w-[200px]">
                 <GoogleLogin
                   clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
                   onSuccess={onSuccess}
@@ -385,11 +385,11 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className=" py-2 flex justify-center items-center  sm:mt-[0px] flex-col relative ">
+          <div className=" z-[20px] py-2 flex justify-center items-center  w-[800px] sm:mt-[0px] flex-col relative ">
             <img
               src={eventdetailsdesk}
               alt=""
-              className="absolute pointer-events-none  h-[560px] md:block hidden left-0"
+              className="absolute pointer-events-none  h-[560px] w-[800px] md:block hidden left-0"
             />
             {/*<img
               src={bord}
@@ -421,7 +421,8 @@ const RegisterForm = () => {
             {!next && (
               <>
                {!isRgukt && (
-  <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="md:w-[800px]">
+  <div className=" md:ml-[30px] mb-3 w-[270px] md:w-[90%] grid grid-cols-1 md:grid-cols-2 gap-[10px]">
     {/* First Name */}
     <div className="input-group relative">
       <input
@@ -442,14 +443,14 @@ const RegisterForm = () => {
       </label>
     </div>
     {/* Last Name */}
-    <div className="input-group relative">
+    <div className="input-group relative ">
       <input
         type="text"
         id="lastName"
         value={data.lastName}
         name="lastName"
         onChange={handleChange}
-        className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+        className="bg-transparent border-gray-300 text-white text-base block w-full  px-1 py-1.5 peer"
         placeholder=" "
         required
       />
@@ -461,7 +462,9 @@ const RegisterForm = () => {
       </label>
     </div>
   </div>
+  </div>
 )}
+
 {/* College */}
 <div className="mb-3 w-[90%]">
   <div className="input-group relative">
