@@ -3,7 +3,7 @@ import hp1 from '../../assets/img/sponsors/hp1.jpg'
 import hp2 from '../../assets/img/sponsors/hp2.jpg'
 import hp3 from '../../assets/img/sponsors/hp3.jpg'
 
-
+import sponcercard from "../../assets/img/Sponcercard.png";
 import ssit from '../../assets/img/sponsors/ssit.jpg'
 import dd_prints from '../../assets/img/sponsors/dd_prints.png'
 import meeNews from '../../assets/img/sponsors/mee news.png'
@@ -118,9 +118,10 @@ const SponsorsCard2 = () => {
       {
         edu.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+          {/*<img src="./box_sponsors_card.png" width="100%" />*/}
+          <img src={sponcercard} width="100%"></img>
+          <img src={data.img} className="w-[140px] h-[80px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-14  text-white text-center w-[85%] text-md pl-4">{data.name}</h2>
         </div>
         ))
       }
@@ -132,9 +133,9 @@ const SponsorsCard2 = () => {
       {
         DMP.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+          <img src={sponcercard} width="100%"></img>
+          <img src={data.img} className="w-[140px] h-[80px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-14   text-white text-center w-[85%]">{data.name}</h2>
         </div>
         ))
       }
@@ -146,9 +147,9 @@ const SponsorsCard2 = () => {
       {
         OEP.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+          <img src={sponcercard} className="w-[450px] h-[250px]"></img>
+          <img src={data.img} className="w-[140px] h-[87px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-16   text-white text-center w-[85%] text-sm pl-6">{data.name}</h2>
         </div>
         ))
       }
@@ -160,9 +161,9 @@ const SponsorsCard2 = () => {
       {
         ES.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+         <img src={sponcercard} width="100%"></img>
+          <img src={data.img} className="w-[140px] h-[80px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-14   text-white text-center w-[85%]">{data.name}</h2>
         </div>
         ))
       }
@@ -174,9 +175,9 @@ const SponsorsCard2 = () => {
       {
         TSP.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+          <img src={sponcercard} className="h-[250px]"></img>
+          <img src={data.img} className="w-[140px] h-[80px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-16   text-white text-center w-[85%] text-sm pl-7">{data.name}</h2>
         </div>
         ))
       }
@@ -189,9 +190,9 @@ const SponsorsCard2 = () => {
       {
         CP.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+          <img src={sponcercard} width="100%"className="h-[240px]"></img>
+          <img src={data.img} className="w-[140px] h-[80px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-16   text-white text-center w-[85%] text-sm pl-5">{data.name}</h2>
         </div>
         ))
       }
@@ -203,9 +204,9 @@ const SponsorsCard2 = () => {
       {
         PP.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer mb-[70px]" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+          <img src={sponcercard} width="100%"></img>
+          <img src={data.img} className="w-[140px] h-[80px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-14   text-white text-center w-[85%] pl-6">{data.name}</h2>
         </div>
         ))
       }
@@ -217,9 +218,9 @@ const SponsorsCard2 = () => {
       {
         DES.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer mb-[70px]" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+          <img src={sponcercard} width="100%"></img>
+          <img src={data.img} className="w-[140px] h-[80px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-14   text-white text-center w-[85%] pl-4">{data.name}</h2>
         </div>
         ))
       }
@@ -231,9 +232,9 @@ const SponsorsCard2 = () => {
       {
         food.map((data) => (
           <div className="relative mt-5 w-64 cursor-pointer mb-[70px]" >
-          <img src="./box_sponsors_card.png" width="100%" />
-          <img src={data.img} className="w-[140px] h-[91px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
-          <h2 className="absolute top-7   text-white text-center w-[85%]">{data.name}</h2>
+          <img src={sponcercard} width="100%" className="h-[250px]"></img>
+          <img src={data.img} className="w-[140px] h-[90px] absolute left-[20%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]" />
+          <h2 className="absolute top-16   text-white text-center w-[70%] text-sm pl-14">{data.name}</h2>
         </div>
         ))
       }

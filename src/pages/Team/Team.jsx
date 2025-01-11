@@ -1,29 +1,39 @@
 import React from 'react'
-import Webteamicon from "../../assets/img/Webteamicon.png"
+import { useNavigate } from 'react-router-dom'
+import webteam from "../../assets/img/webteam.jpg"
+import coreteam from "../../assets/img/coreteam.jpg"
+import tabbutton from "../../assets/events/tabbutton.png";
 const Team = () => {
+    const navigate=useNavigate();
+    const handleWebTeamClick = () => {
+        navigate('/Teamweb');
+      };
+    
+      const handleCoreTeamClick = () => {
+        navigate('/Teamcore');
+      };
   return (
-    <div className="flex justify-center items-center h-full w-full bg-black gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px]">
+    <div className="flex justify-center items-center h-screen w-full bg-black gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px]">
     <div className="flex bg-gray-500 w-[300px] h-[400px] justify-center items-center shadow-md transition-shadow duration-300 rounded-lg relative">
-        <div className="flex bg-[#0A69A5] w-[280px] h-[380px] rounded-lg absolute hover:-translate-y-10 transition-transform duration-300 ease-in-out justify-center items-center">
-            <div>
-                <div className="text-2xl flex justify-center items-center font-bold">Web team</div>
-                <img src={Webteamicon}></img>
-                <div className="flex justify-center items-center pt-[20px]"><button className="bg-[#22EAEA] p-[10px] rounded-lg font-bold text-black">Explore</button></div>
-            </div>
+        <div className="flex  w-[280px] h-[380px] rounded-lg  hover:-translate-y-10 transition-transform duration-300 ease-in-out justify-center items-center relative">
+            <img src={webteam} alt="webteam"className='w-[90%] h-[96%] absolute'></img>
+            <div className="absolute text-white text-xl font-bold z-10">WEBTEAM</div>
+            
+            <div className="absolute bottom-20 right-30"onClick={handleWebTeamClick}><img src={tabbutton.png} alt="button" className="w-10 h-10"/></div>
 
-        </div>
+            </div>
 
     </div>
     <div className="flex bg-gray-500 w-[300px] h-[400px] justify-center items-center shadow-md transition-shadow duration-300 rounded-lg relative">
-        <div className="flex bg-[#0A69A5] w-[280px] h-[380px] rounded-lg absolute hover:-translate-y-10 transition-transform duration-300 ease-in-out justify-center items-center">
-            <div>
-                <div className="text-2xl flex justify-center items-center font-bold">Core team</div>
-                <img src={Webteamicon}></img>
-                <div className="flex justify-center items-center pt-[20px]"><button className="bg-[#22EAEA] p-[10px] rounded-lg font-bold text-black">Explore</button></div>
+        <div className="flex  w-[280px] h-[380px] rounded-lg  hover:-translate-y-10 transition-transform duration-300 ease-in-out justify-center items-center relative">
+            <img src={coreteam} alt="webteam"className='w-[90%] h-[96%] absolute'></img>
+            <div className="absolute text-white text-xl font-bold z-10">CORETEAM</div>
+            <div className="absolute bottom-20 right-30"><button onClick={handleCoreTeamClick}/><img src={tabbutton.png} alt="button" className="w-10 h-10" /></div>
             </div>
 
-        </div>
     </div>
+    
+    
 
 </div>
   )

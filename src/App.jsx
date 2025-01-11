@@ -11,6 +11,9 @@ import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
 import EWschedule from "./pages/Schedule/EWschedule";
 import RobowarEvents from "./pages/Robowars/RobowarEvents"
 import Team from "./pages/Team/Team"
+import Teamcore from "./pages/Team/Teamcore";
+import Teamweb from "./pages/Team/Teamweb";
+
 import {
   CoreTeam,
   Events,
@@ -178,6 +181,8 @@ function App() {
               {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
               <Route path="/eventupdates" element={<ComingSoon />} />
               <Route path="/sponsors" element={<Sponsors />} />
+              <Route path="/Teamcore" element={<Teamcore />} />
+              <Route path="/Teamweb" element={<Teamweb />} />
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}
