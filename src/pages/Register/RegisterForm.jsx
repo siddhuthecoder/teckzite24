@@ -15,6 +15,7 @@ import svg2 from "../../assets/img/svgs/svg2.svg";
 import signup from "../../assets/events/signup.png";
 import signupdetails from "../../assets/events/signupdetails.png";
 import profiledesk from "../../assets/events/profiledesk.png";
+import profilemobile from "../../assets/events/profilemobile.png";
 import "./RegisterForm.css";
 const RegisterForm = () => {
   const location = useLocation();
@@ -315,7 +316,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="z-5 w-full pt-[160px] pb-[20px]">
+    <section className=" backimage z-5 w-full pt-[160px] pb-[20px] bg-[white]">
       <form
         onSubmit={handleSubmit}
         className="w-[90%] max-w-[420px] z-10 mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
@@ -385,11 +386,11 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className=" md:mt-[-60px] flex justify-center items-center  w-[800px] sm:mt-[0px] flex-col relative  ">
+          <div className=" md:mt-[-60px] flex justify-center items-center  md:p-[2px]  flex-col relative  ">
             <img
               src={profiledesk}
               alt=""
-              className="absolute pointer-events-none  h-[490px] w-[800px] md:block hidden mt-[10px] left-0"
+              className="absolute pointer-events-none  h-full w-full  mt-[10px] left-[5px]"
             />
             {/*<img
               src={bord}
@@ -411,7 +412,7 @@ const RegisterForm = () => {
               alt=""
               className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
             />*/}
-            <h4 className="font-semibold text-xl ">Register</h4>
+            <h4 className="font-semibold text-xl mt-[25px]">Register</h4>
             <h3 className="text-sm mt-1 mb-4 px-10 text-center">
               {isRgukt &&
                 `Fee for Registration is ${process.env.REACT_APP_RGUKT_FEE}`}
@@ -419,10 +420,10 @@ const RegisterForm = () => {
                 `Fee for Registration is ${process.env.REACT_APP_OUTSIDERS}`}
             </h3>
             {!next && (
-              <>
+              <div className="md:p-[0px] ml-[30px] p-[30px] mt-[10px]">
                {!isRgukt && (
-                <div className="md:w-[800px]">
-  <div className=" md:ml-[30px] mb-3 w-[270px] md:w-[90%] grid grid-cols-1 md:grid-cols-2 gap-[10px]">
+               
+  <div className=" mb-3  w-[90%]  grid grid-cols-1 md:grid-cols-2 gap-4 ">
     {/* First Name */}
     <div className="input-group relative">
       <input
@@ -462,7 +463,7 @@ const RegisterForm = () => {
       </label>
     </div>
   </div>
-  </div>
+ 
 )}
 
 {/* College */}
@@ -618,52 +619,96 @@ const RegisterForm = () => {
                     </label>
                   </div>
                 </div>
-              </>
+              </div>
             )}
             {next && (
               <>
                 {!isRgukt && (
                   <>
                     <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <input
-                        id="state"
-                        name="state"
-                        value={data.state}
-                        onChange={handleChange}
-                        placeholder="State"
-                        className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                        style={{ borderBottom: "1px solid #eee" }}
-                      />
-                      <input
-                        id="district"
-                        name="district"
-                        value={data.district}
-                        onChange={handleChange}
-                        placeholder="District"
-                        className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                        style={{ borderBottom: "1px solid #eee" }}
-                      />
-                    </div>
-                    <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <input
-                        id="city"
-                        name="city"
-                        value={data.city}
-                        onChange={handleChange}
-                        placeholder="Village / Town / City"
-                        className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                        style={{ borderBottom: "1px solid #eee" }}
-                      />
-                      <input
-                        id="referal"
-                        name="referal"
-                        value={data.referal}
-                        onChange={handleChange}
-                        placeholder="Refferal Id (Optional)"
-                        className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                        style={{ borderBottom: "1px solid #eee" }}
-                      />
-                    </div>
+  {/* State */}
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="state"
+      value={data.state}
+      name="state"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+      style={{ borderBottom: "1px solid #eee" }}
+    />
+    <label
+      htmlFor="state"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      State
+    </label>
+  </div>
+  {/* District */}
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="district"
+      value={data.district}
+      name="district"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+      style={{ borderBottom: "1px solid #eee" }}
+    />
+    <label
+      htmlFor="district"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      District
+    </label>
+  </div>
+</div>
+<div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+  {/* City */}
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="city"
+      value={data.city}
+      name="city"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      required
+      style={{ borderBottom: "1px solid #eee" }}
+    />
+    <label
+      htmlFor="city"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      Village / Town / City
+    </label>
+  </div>
+  {/* Referral */}
+  <div className="input-group relative">
+    <input
+      type="text"
+      id="referal"
+      value={data.referal}
+      name="referal"
+      onChange={handleChange}
+      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+      placeholder=" "
+      style={{ borderBottom: "1px solid #eee" }}
+    />
+    <label
+      htmlFor="referal"
+      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+    >
+      Referral Id (Optional)
+    </label>
+  </div>
+</div>
+
 
                     <div className="my-3 w-[90%]">
                       <label
