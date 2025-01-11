@@ -290,14 +290,8 @@ select option {
   height: 90px;
   background-size: 100% 100px;
   z-index: 20;
-  /* bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: url("../public/headerImg.png") no-repeat top center fixed;
-  height: 90px;
-  background-size: 100% 100px; */
 }
+
 
 /* sss */
 /* new changes */
@@ -330,7 +324,7 @@ select option {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 1000;
   background: url("../public/Group104.png") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
