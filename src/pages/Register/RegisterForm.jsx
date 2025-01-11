@@ -315,10 +315,10 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="md:z-1 w-full pt-[160px] pb-[20px]">
+    <section className="z-5 w-full pt-[160px] pb-[20px]">
       <form
         onSubmit={handleSubmit}
-        className="w-[90%] max-w-[420px] mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
+        className="w-[90%] max-w-[420px] z-10 mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
       >
         {!signIn && (
           <>
@@ -359,7 +359,7 @@ const RegisterForm = () => {
                 {/*<img
                   src={svg1}
                   alt=""
-                  className="absolute pointer-events-none  hidden sm:block sm:left-[24%]  sm:top-[-280%] sm:scale-x-[0.7] "
+                  className="absolute pointer-events-none  hidden sm:block sm:left-[24%]  sm:solute-280%] sm:scale-x-[0.7] "
                 />*/}
                 {/*<img
                   src={svg2}
@@ -371,8 +371,8 @@ const RegisterForm = () => {
                   alt=""
                   className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
                 />*/}
-                <div className="md:ml-[75px] ml-[60px] w-[200px]">
-                <GoogleLogin
+                <div className="md:ml-[75px] ml-[60px] z-7 w-[200px]" >
+                <GoogleLogin 
                   clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
                   onSuccess={onSuccess}
                   onFailure={onFailure}
@@ -385,7 +385,7 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className=" z-[20px] py-2 flex justify-center items-center  w-[800px] sm:mt-[0px] flex-col relative ">
+          <div className="  py-2 flex justify-center items-center  w-[800px] sm:mt-[0px] flex-col relative ">
             <img
               src={eventdetailsdesk}
               alt=""

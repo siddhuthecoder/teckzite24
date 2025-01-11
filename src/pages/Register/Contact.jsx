@@ -3,7 +3,7 @@ import React from "react";
 const Contact = () => {
   return (
     <>
-      <div className="absolute top-[13%] max-md:bottom-0">
+      {/* <div className="absolute top-[13%] max-md:bottom-0">
         <p className="text-gray-200 text-center">
           Facing any Issues? Contact Us
         </p>
@@ -15,7 +15,7 @@ const Contact = () => {
         <p className="text-gray-300 text-center">
           Note :- Btech final year and mtech students are not allowed{" "}
         </p>
-      </div>
+      </div> */}
     </>
   );
 };

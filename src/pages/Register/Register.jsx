@@ -15,16 +15,11 @@ const Register = () => {
   }, [navigate, userData]);
 
   return (
-    <main
-      className="pt-5 flex justify-center items-center w-100 min-h-[100vh] bg-cover bg-center z-0"
-      style={{
-        backgroundImage: "url('../../../register.png')",
-      }}
-    >
+   <div className="w-full min-h-screen flex justify-center items-center">
       <Header />
       <RegisterForm />
       <Contact className="mt-[30px]" />
-    </main>
+      </div>
   );
 };
 
