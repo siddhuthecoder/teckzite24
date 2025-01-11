@@ -289,7 +289,7 @@ select option {
   background: url("../public/foot.png") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
-  z-index: 3;
+  z-index: 20;
   /* bottom: 0;
   left: 0;
   right: 0;
