@@ -8,7 +8,6 @@ import "./Profile.module.css";
 import s1 from "../../assets/img/profile/Rectangle 29.svg";
 import s2 from "../../assets/img/profile/Rectangle 28.svg";
 import s3 from "../../assets/img/profile/Rectangle 30.svg";
-
 const Profile = () => {
   const userData = useSelector((state) => state.user.data);
   const userStatus = useSelector((state) => state.user.status);
