@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Humanhand from "../assets/Animation/Hhand.png"; // Update with correct path
-import Robohand from "../assets/Animation/rhand.png"; // Update with correct path
+import Robohand from "../assets/Animation/Robohand.png"; // Update with correct path
 
 const Animation = (props) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -33,15 +33,18 @@ const Animation = (props) => {
               left: -scrollPosition * 0.6,
               transition: "bottom 0.1s, left 0.1s",
             }}
-            className="w-[40%] h-[50%]"
+            className="w-[50%] h-[50%]"
           />
 
-          {/* Title */}
+          {/* Title with Parallax Effect */}
           <h1
-            className="text-white text-[40px] absolute top-1/2 left-[50%] z-10 lg:translate-x-[-120px]"
+            className="text-white text-[57px] absolute z-10"
             style={{
-              transition: "opacity 0.2s",
-              opacity: scrollPosition > 200 ? 0 : 1,
+              top: `calc(50% - ${scrollPosition * 0.5}px)`, // Moves text up on scroll
+              left: "50%",
+              transform: "translate(-50%, -50%)", // Center horizontally and vertically
+              opacity: scrollPosition > 300 ? 0 : 1, // Fade out after scrolling
+              transition: "top 0.1s, opacity 0.2s",
             }}
           >
             {props.title}
@@ -57,7 +60,7 @@ const Animation = (props) => {
               right: -scrollPosition * 0.6,
               transition: "top 0.1s, right 0.1s",
             }}
-            className="w-[50%] h-[50%]"
+            className="w-[80%] h-[90%] scale-y-[-1]"
           />
         </div>
       </div>

@@ -105,7 +105,6 @@ const Referals = () => {
     <Animation title="Referals"/>
       <section className="relative w-full m-auto overflow-x-hidden">
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         {/* Main Content */}
         <div className="relative z-10">
           <Header />

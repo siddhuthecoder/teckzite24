@@ -110,9 +110,11 @@ const SponsorsCard2 = () => {
       }}
 
     >
-      <Animation title="Sponsors"/>
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <Animation title="Sponsors"/>
+
+      <div className="relative">
  <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[100px]">
  Academic partner
       </div>
@@ -239,6 +241,7 @@ const SponsorsCard2 = () => {
         </div>
         ))
       }
+      </div>
         </div>
         </div>
    </>
