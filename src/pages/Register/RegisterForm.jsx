@@ -289,7 +289,7 @@ const RegisterForm = () => {
 
   if (settingUser) {
     return (
-      <section className="w-full min-h-[100vh] flex items-center justify-center flex-col gap-2">
+      <section className="w-full min-h-[100vh] flex items-center justify-center flex-col gap-2 ">
         <div role="status">
           <svg
             aria-hidden="true"
@@ -316,7 +316,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className=" backimage z-5 w-full pt-[160px] pb-[20px] bg-[white]">
+    <section className="z-5 w-full h-full pt-[160px] pb-[20px] overflow-x-hidden">
       <form
         onSubmit={handleSubmit}
         className="w-[90%] max-w-[420px] z-10 mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
@@ -386,11 +386,11 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className=" md:mt-[-60px] flex justify-center items-center  md:p-[2px]  flex-col relative  ">
+          <div className=" overlow-y-hidden md:mt-[-70px] flex justify-center items-center  md:p-[2px]  flex-col relative  ">
             <img
               src={profiledesk}
               alt=""
-              className="absolute pointer-events-none  h-full w-full  mt-[10px] left-[5px]"
+              className="absolute pointer-events-none  h-full w-full  left-0"
             />
             {/*<img
               src={bord}
@@ -420,7 +420,7 @@ const RegisterForm = () => {
                 `Fee for Registration is ${process.env.REACT_APP_OUTSIDERS}`}
             </h3>
             {!next && (
-              <div className="md:p-[0px] ml-[30px] p-[30px] mt-[10px]">
+              <div className="w-[300px] ml-[20px] md:w-[90%]">
                {!isRgukt && (
                
   <div className=" mb-3  w-[90%]  grid grid-cols-1 md:grid-cols-2 gap-4 ">
@@ -622,7 +622,7 @@ const RegisterForm = () => {
               </div>
             )}
             {next && (
-              <>
+              <div className="md:w-[90%] w-[300px] ml-[20px] md:ml-[0px]">
                 {!isRgukt && (
                   <>
                     <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -637,7 +637,7 @@ const RegisterForm = () => {
       className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
       placeholder=" "
       required
-      style={{ borderBottom: "1px solid #eee" }}
+      
     />
     <label
       htmlFor="state"
@@ -657,7 +657,7 @@ const RegisterForm = () => {
       className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
       placeholder=" "
       required
-      style={{ borderBottom: "1px solid #eee" }}
+     
     />
     <label
       htmlFor="district"
@@ -679,7 +679,7 @@ const RegisterForm = () => {
       className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
       placeholder=" "
       required
-      style={{ borderBottom: "1px solid #eee" }}
+      
     />
     <label
       htmlFor="city"
@@ -698,7 +698,7 @@ const RegisterForm = () => {
       onChange={handleChange}
       className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
       placeholder=" "
-      style={{ borderBottom: "1px solid #eee" }}
+     
     />
     <label
       htmlFor="referal"
@@ -734,7 +734,7 @@ const RegisterForm = () => {
                       onChange={handleChange}
                       placeholder="Refferal Id"
                       className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                      style={{ borderBottom: "1px solid #eee" }}
+                      
                     />
                   </div>
                 )}
@@ -764,7 +764,7 @@ const RegisterForm = () => {
                     </a>
                   </label>
                 </div>
-              </>
+              </div>
             )}
             {error && <div className="w-[90%] text-red-500">{error}</div>}
             <div className="w-[90%] mt-2 flex items-end justify-between">
