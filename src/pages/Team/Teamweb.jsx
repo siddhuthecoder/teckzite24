@@ -13,18 +13,18 @@ const Teamweb = () => {
   ];
 
   return (
-    <>
+    <div  style={{
+      backgroundImage:
+        "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
+      backgroundAttachment: "fixed",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      minHeight: "100vh",
+    }}>
     
       <Header />
       
-      <div className="flex flex-wrap justify-center items-center gap-4 mt-[100px] mb-[100px]"  style={{
-    backgroundImage:
-      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
-    backgroundAttachment: "fixed",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "100vh",
-  }}>
+      <div className="flex flex-wrap justify-center items-center gap-4 py-[100px]" >
         {team.map((member, index) => (
           <div key={index} className="relative">
             <img src={Teamcard} className="w-80 h-96" alt="Team Card" />
@@ -34,7 +34,7 @@ const Teamweb = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

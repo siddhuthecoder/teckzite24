@@ -47,7 +47,14 @@ const Profile = () => {
     return (
       <>
         <Header />
-        <div className="w-full min-h-screen flex items-center justify-center">
+        <div className="w-full min-h-screen flex items-center justify-center"   style={{
+    backgroundImage:
+      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
+    backgroundAttachment: "fixed",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "100vh",
+  }}>
           <h1 className="text-2xl font-semibold">Login to access profile</h1>
         </div>
       </>
@@ -55,13 +62,19 @@ const Profile = () => {
   }
 
   return (
-    <>
+    <div  style={{
+      backgroundImage:
+        "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/profile.jpg')",
+      backgroundAttachment: "fixed",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      minHeight: "100vh",
+    }}>
       <Header />
       <div
         className=" flex items-center min-h-[100vh] justify-center w-full bg-fixed bg-center"
-        style={{
-          backgroundImage: "url('../../../register.png')",
-        }}
+       
+       
       >
         <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative">
            <img
@@ -108,7 +121,7 @@ const Profile = () => {
             alt=""
             className="absolute bottom-[-55px] right-[30.8%] scale-x-[0.6]"
           />*/}
-          <div className="text-center text-2xl md:pt-[40px]  mt-[34px] pb-2 font-joti ">
+          <div className="text-center text-2xl md:pt-[40px]  mt-[24px] pb-2 font-bruno">
             Profile
           </div>
           <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-[#22EAEA]">
@@ -227,7 +240,7 @@ const Profile = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
