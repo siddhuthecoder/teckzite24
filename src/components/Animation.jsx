@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Humanhand from "../assets/Animation/Hhand.png"; // Update with correct path
-import Robohand from "../assets/Animation/rhand.png"; // Update with correct path
+import Humanhand from "../assets/Animation/Hhand.png"; 
+import Robohand from "../assets/Animation/rhand.png"; 
 
 const Animation = (props) => {
   const [scrollPosition, setScrollPosition] = useState(0);
