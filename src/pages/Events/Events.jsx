@@ -35,7 +35,7 @@ const Events = () => {
 
       <Eventsbg isEventOpen={true} />
       <div className="relative w-full flex flex-col min-h-[85vh] pb-5">
-        <div className="text-center font-joti text-3xl mt-5">Events</div>
+        <div className="text-center font-bruno text-3xl mt-[80px] md:mt-5">Events</div>
         <div className="w-full flex items-center gap-2 justify-center flex-wrap px-5 mt-7">
           {[
             "OPEN 2 ALL",
