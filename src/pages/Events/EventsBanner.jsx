@@ -59,7 +59,7 @@ const EventsBanner = () => {
         style={headingStyle}
       >
         <div
-          className="text-[50px] sm:text-[60px] md:text-[70px]"
+          className="text-[50px] sm:text-[60px] md:text-[70px] font-bruno"
           style={{ position: "absolute", bottom: "200px" }}
         >
           Events

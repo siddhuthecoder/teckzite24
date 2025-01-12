@@ -114,7 +114,7 @@ const EventUpdatesCards = () => {
                 } max-md:order-2 max-md:col-span-12 py-3 max-md:px-3 w-full flex backdrop-blur-lg items-start justify-between flex-col`}
               >
                 <div className="flex flex-col items-start gap-2 backdrop-blur-lg">
-                  <h1 className="text-3xl max-md:text-center mb-2 w-full font-joti">
+                  <h1 className="text-3xl max-md:text-center mb-2 w-full font-bruno">
                     {note.heading}
                   </h1>
                   <p className="text-base max-md:text-center mb-1">

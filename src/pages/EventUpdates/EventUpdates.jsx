@@ -6,7 +6,7 @@ const EventUpdates = () => {
     <>
       <Header />
       <div className="w-full pt-24">
-        <h1 className="w-full text-center text-3xl">Event Updates</h1>
+        <h1 className="w-full text-center text-3xl font-bruno">Event Updates</h1>
         <EventUpdatesCards />
       </div>
     </>

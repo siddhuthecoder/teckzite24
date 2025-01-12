@@ -184,7 +184,7 @@ const EventDetailsCard3 = () => {
         <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2">
           <RenderTabs />
         </div>
-        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-joti text-[#0A69A5]">
+        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-bruno text-[#0A69A5]">
           {data.name}
         </h1>
         <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
