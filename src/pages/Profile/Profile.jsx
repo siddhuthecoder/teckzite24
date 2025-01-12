@@ -73,8 +73,6 @@ const Profile = () => {
       <Header />
       <div
         className=" flex items-center min-h-[100vh] justify-center w-full bg-fixed bg-center"
-       
-       
       >
         <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative pb-[30px]">
            <img
