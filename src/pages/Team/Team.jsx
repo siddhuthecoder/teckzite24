@@ -25,7 +25,7 @@ const Team = () => {
               alt="webteam"
               className="w-[90%] h-[96%] absolute"
             ></img>
-            <div className="absolute text-white text-sm pb-3 font-bold z-10"onClick={handleWebTeamClick}>
+            <div className="absolute text-white text-sm pb-3 font-bold z-10 cursor-pointer"onClick={handleWebTeamClick}>
               WEBTEAM
             </div>
             <MenuButton text="Core Team" action={() => handleWebTeamClick()} />
@@ -40,7 +40,7 @@ const Team = () => {
               alt="webteam"
               className="w-[90%] h-[96%] absolute"
             ></img>
-            <div className="absolute text-white text-sm pb-3 font-bold z-10"onClick={handleCoreTeamClick}>
+            <div className="absolute text-white text-sm pb-3 font-bold z-10 cursor-pointer"onClick={handleCoreTeamClick}>
               CORETEAM
             </div>
             <MenuButton text="Core Team" action={() => handleCoreTeamClick()} />
