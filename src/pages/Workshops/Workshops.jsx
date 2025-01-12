@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import EWCard from "../../components/Shared/EWCard";
 
 // import Header from "../../components/Header/Header";
-import Animation from './../../components/Animation';
 
 const Workshops = () => {
   const workshopData = useSelector((state) => state.workshop.data);
@@ -22,7 +21,6 @@ const Workshops = () => {
   return (
     <main className="relative h-screen overflow-hidden">
       <Header />
-      
       {/* Outer wrapper with the background applied */}
       <div
         className="fixed inset-0 bg-cover bg-center bg-no-repeat"
@@ -30,19 +28,14 @@ const Workshops = () => {
           backgroundImage: "url('/workshopbg.jpg')",
         }}
       ></div>
-      <div className="fixed inset-0 bg-black bg-opacity-80">
-      
-      </div>
+      <div className="fixed inset-0 bg-black bg-opacity-80"></div>
       {/* Content wrapper for scrollable workshops */}
       <div className="relative  h-screen overflow-y-auto">
-        <Animation title="Workshops"/>
         {/* Title */}
-
         <div className="text-center font-bruno text-3xl mt-28">
           Workshops
-
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-[5%] pb-24 px-4">
+        <div className="flex flex-wrap justify-around mt-[5%] pb-24 px-4">
           {!workshopData ? (
             <div className="min-h-[300px] my-10 col-span-3 flex items-center justify-center">
               <div role="status">
