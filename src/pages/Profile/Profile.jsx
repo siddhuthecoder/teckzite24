@@ -76,7 +76,7 @@ const Profile = () => {
        
        
       >
-        <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative">
+        <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative pb-[30px]">
            <img
             src={profiledesk}
             alt=""
