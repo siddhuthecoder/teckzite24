@@ -20,9 +20,7 @@ const Teamcore = () => {
     {name:"Sribabu Mandraju",position:"Coremember"}
   ]
   return (
-   <>
-   <Header />
-   <div className="flex flex-wrap justify-center items-center gap-4 mt-[100px] mb-[100px] flex-col"  style={{
+   <div   style={{
     backgroundImage:
       "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
     backgroundAttachment: "fixed",
@@ -30,6 +28,8 @@ const Teamcore = () => {
     backgroundPosition: "center",
     minHeight: "100vh",
   }}>
+   <Header />
+   <div className="flex flex-wrap justify-center items-center gap-4 py-[100px] flex-col">
         {pre.map((member, index) => (
           <div key={index} className="relative">
             <img src={Teamcard} className="w-80 h-96" alt="Team Card" />
@@ -62,7 +62,7 @@ const Teamcore = () => {
 
 
       </div>
-   </>
+   </div>
   )
 }
 

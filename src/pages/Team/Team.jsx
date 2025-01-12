@@ -17,7 +17,8 @@ const Team = () => {
   return (
     <>
       <Header />
-      <div className="flex justify-center items-center w-full  gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px] z-10 h-screen"  style={{
+      <div className="flex justify-center items-center w-full  gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px] z-10 h-screen" 
+       style={{
     backgroundImage:
       "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
     backgroundAttachment: "fixed",
