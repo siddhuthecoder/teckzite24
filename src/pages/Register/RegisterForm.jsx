@@ -316,7 +316,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="z-5 w-full h-full pt-[160px] pb-[20px] overflow-x-hidden">
+    <section className="z-5 w-full h-full pt-[160px] pb-[20px] ">
       <form
         onSubmit={handleSubmit}
         className="w-[90%] max-w-[420px] z-10 mx-auto mb-20   rounded-md backdrop-filter backdrop-blur-lg px-3 py-2 flex justify-center items-center"
@@ -386,7 +386,7 @@ const RegisterForm = () => {
           </>
         )}
         {signIn && (
-          <div className=" overlow-y-hidden md:mt-[-70px] flex justify-center items-center  md:p-[2px]  flex-col relative  ">
+          <div className=" md:mt-[-70px] flex justify-center items-center  md:p-[2px]  flex-col relative  overflow-x-hidden">
             <img
               src={profiledesk}
               alt=""
@@ -622,7 +622,7 @@ const RegisterForm = () => {
               </div>
             )}
             {next && (
-              <div className="md:w-[90%] w-[300px] ml-[20px] md:ml-[0px]">
+              <div className="md:w-[90%] w-[300px] ml-[20px] md:ml-[0px] overflow-x-hidden">
                 {!isRgukt && (
                   <>
                     <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">

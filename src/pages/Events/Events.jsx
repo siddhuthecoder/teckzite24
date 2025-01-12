@@ -38,7 +38,7 @@ const Events = () => {
         <div className="text-center font-joti text-3xl mt-5">Events</div>
         <div className="w-full flex items-center gap-2 justify-center flex-wrap px-5 mt-7">
           {[
-            "OPEN TO ALL",
+            "OPEN 2 ALL",
             "PUC",
             "CSE",
             "ECE",
@@ -53,7 +53,7 @@ const Events = () => {
               key={index}
               onClick={() => {
                 setTab(
-                  item === "EE" ? "EEE" : item === "OPEN TO ALL" ? "ALL" : item
+                  item === "EE" ? "EEE" : item === "OPEN 2 ALL" ? "ALL" : item
                 );
                 setIsActive(true);
                 handleSound();
@@ -62,7 +62,7 @@ const Events = () => {
               <TabsButton
                 name={item}
                 isActive={
-                  tab === (item === "EE" ? "EEE" : item === "OPEN TO ALL" ? "ALL" : item)
+                  tab === (item === "EE" ? "EEE" : item === "OPEN 2 ALL" ? "ALL" : item)
                 }
               />
             </div>
