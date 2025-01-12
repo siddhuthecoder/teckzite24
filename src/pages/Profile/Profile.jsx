@@ -60,7 +60,8 @@ const Profile = () => {
       <div
         className=" flex items-center min-h-[100vh] justify-center w-full bg-fixed bg-center"
         style={{
-          backgroundImage: "url('../../../register.png')",
+          backgroundImage:
+      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('./sponsers.bg.jpg')",
         }}
       >
         <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative">
