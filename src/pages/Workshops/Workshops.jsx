@@ -35,7 +35,7 @@ const Workshops = () => {
         <div className="text-center font-bruno text-3xl mt-28">
           Workshops
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-[5%] pb-24 px-4">
+        <div className="  justify-around flex flex-wrap mt-[5%] pb-24 px-4">
           {!workshopData ? (
             <div className="min-h-[300px] my-10 col-span-3 flex items-center justify-center">
               <div role="status">

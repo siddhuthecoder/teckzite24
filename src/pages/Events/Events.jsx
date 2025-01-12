@@ -70,7 +70,7 @@ const Events = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           {filteredEvents ? (
-            <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-4 gap-x-20 gap-y-0 z-0">
+            <div className=" mt-10 flex flex-wrap justify-around  gap-y-0 z-0">
               {filteredEvents.map((event, index) => (
                 <div key={index} className="cursor-pointer">
                   <EWCard
