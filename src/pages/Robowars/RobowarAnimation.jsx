@@ -62,18 +62,35 @@ const RobowarAnimation = () => {
 
           {/* Main Content */}
           <div className="relative z-10 flex flex-col items-center justify-center gap-4">
-            <h1 className="text-5xl sm:text-9xl font-bold mb-4 text-reveal flex flex-wrap justify-center">
-              {title.split('').map((letter, index) => (
-                <span
-                  key={index}
-                  className="letter"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {letter}
-                </span>
-              ))}
-            </h1>
-            <p className="text-xl sm:text-4xl text-blue-400 wave-text" style={{ animationDelay: '1s' }}>
+          <div className="relative flex gap-3">
+  {/* Outer container for the text */}
+  <h1 className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-5xl sm:text-9xl font-bold text-white stroke-[2px] stroke-[#05a8f3] pb-4">
+    {/* First layer of the text */}
+    {title.split('').map((letter, index) => (
+      <span
+        key={index}
+        className="letter"
+        style={{ animationDelay: `${index * 0.1}s` }}
+      >
+        {letter}
+      </span>
+    ))}
+  </h1>
+  <h1 className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-5xl sm:text-9xl font-bold text-[#05a8f3] stroke-[2px] stroke-[#05a8f3] animate-waves pb-4">
+    {/* Second layer with wave animation */}
+    {title.split('').map((letter, index) => (
+      <span
+        key={index}
+        className="letter"
+        style={{ animationDelay: `${index * 0.1}s` }}
+      >
+        {letter}
+      </span>
+    ))}
+  </h1>
+</div>
+
+            <p className="text-xl sm:text-4xl text-blue-400 wave-text mt-7" style={{ animationDelay: '1s' }}>
               {description}
             </p>
             <p className="text-lg sm:text-xl text-gray-300 max-w-md sm:max-w-lg wave-text" style={{ animationDelay: '1.5s' }}>
