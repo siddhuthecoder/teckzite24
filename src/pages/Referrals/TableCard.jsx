@@ -91,7 +91,7 @@ const Table = () => {
   const tableRows = sortedRefData.map((user, index) => (
     <div
       key={user.email}
-      className={`w-full mt-[40px] relative flex item-center justify-center`}
+      className={`w-full mt-[40px] relative flex item-center justify-center pb-[40px]`}
     >
       <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around">
         <div className="w-[30px] mx-auto text-center ml-10">{index + 1}</div>
@@ -110,8 +110,8 @@ const Table = () => {
   ));
 
   return (
-    <div className="w-full h-full flex items-center justify-center mt-[-70px]">
-      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-10 overflow-y-auto  overflow-x-auto flex flex-col">
+    <div className="w-full h-full flex items-center justify-center mt-[-70px] relative">
+      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-[70px] overflow-y-auto  overflow-x-auto flex flex-col ">
         <div className="w-[100%] min-w-[900px] flex flex-col" style={{}}>
           <div className="w-full my-[20px] h-[60px] flex items-center relative">
             <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
@@ -128,10 +128,10 @@ const Table = () => {
           </div>
           {tableRows}
         </div>
-        <div className=" my-10  w-full bg-transparent flex items-center justify-end ">
+      </div>
+      <div className="w-full bg-transparent flex items-center justify-end my-6 md:my-7 fixed bottom-2 right-[5px] md:right-0 md:translate-x-[-50px] ">
          <MenuButton text="Refer Now" action={handleShare} name="Refer Now" />
         </div>
-      </div>
     </div>
   );
 };
