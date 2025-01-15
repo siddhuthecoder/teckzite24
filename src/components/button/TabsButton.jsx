@@ -4,7 +4,7 @@ const TabsButton = ({ name, isActive }) => {
   return (
     <div className="flex justify-center items-center">
       <div
-        className="relative lg:h-[50px] lg:w-[100px] md:w-[80px] h-[40px] w-[65px] flex justify-center items-center">
+        className="relative lg:h-[50px] lg:w-[120px] md:w-[80px] h-[40px] w-[65px] flex justify-center items-center">
         {isActive && (
           <>
             <img

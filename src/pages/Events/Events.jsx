@@ -38,11 +38,11 @@ const Events = () => {
         <div className="text-center font-bruno text-3xl mt-[80px] md:mt-5">Events</div>
         <div className="w-full flex items-center gap-2 justify-center flex-wrap px-5 mt-7">
           {[
-            "OPEN 2 ALL",
+            "OPEN TO ALL",
             "PUC",
             "CSE",
             "ECE",
-            "EE",
+            "EEE",
             "MME",
             "MECH",
             "CHEM",
@@ -151,7 +151,7 @@ export default Events;
 //       {/* <EventsBanner /> */}
 //       <Eventsbg ></Eventsbg>
 //       <div className="w-full flex flex-col  min-h-[85vh] pb-5 sticky ">
-//         <div className="text-center font-joti text-3xl">Events</div>
+//         <div className="text-center font-bruno text-3xl">Events</div>
 //         <div className="w-full flex items-center gap-2 justify-center flex-wrap px-[20px] mt-7">
 //           {[
 //             "OPEN ALL",
@@ -259,7 +259,7 @@ const Events = () => {
       <Header />
       <EventsBanner />
       <div className="w-full flex flex-col z-10 min-h-[85vh] pb-5 sticky">
-        <div className="text-center font-joti text-3xl">Events</div>
+        <div className="text-center font-bruno text-3xl">Events</div>
         <div className="w-full flex items-center gap-2 justify-center flex-wrap mt-7">
           {[
             "OPEN FOR ALL",

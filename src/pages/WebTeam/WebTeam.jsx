@@ -47,7 +47,7 @@ const WebTeam = () => {
       <Banner text="WEB TEAM" bg="web-heading" />
       <div className="w-full my-[10%] min-h-[80vh]">
         <Animation/>
-        <div className="text-center font-joti text-3xl">Web Team</div>
+        <div className="text-center font-bruno text-3xl">Web Team</div>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
           {WebTeamCard.map((data) => (
             <WebCard img={data.img} name={data.name} role={data.role} />
