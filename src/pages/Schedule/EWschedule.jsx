@@ -21,11 +21,11 @@ const EWschedule = () => {
                                     <>
                                         <div className="flex items-center">{r.Round}</div>
                                         <div className="flex items-center">
-                                            <div className="text-[#f529a3] font-bold pe-[10px]">Date :</div>
+                                            <div className="text-[#1DCFDC] font-bold pe-[10px]">Date :</div>
                                             <div className="text-white">{r.Date}</div>
                                         </div>
                                         <div className="flex items-center">
-                                            <div className="text-[#f529a3] font-bold pe-[10px]">Time :</div>
+                                            <div className="text-[#1DCFDC] font-bold pe-[10px]">Time :</div>
                                             <div className="text-white">{r.Time}</div>
                                         </div>
                                     </>

@@ -5,11 +5,7 @@
 :root {
   --primary-gradient: linear-gradient(
     to right bottom,
-    #de7ce7,
-    #f529a3,
-    #f529a3,
-    #f529a3,
-    #de7ce7
+    #1DCFDC
   );
   /* font-family: Arial, Helvetica, sans-serif;
   font-family: "BURN-RUBBER", sans-serif; */
@@ -498,7 +494,7 @@ select option {
   transition-duration: 0.5s;
 }
 .icon-bg:hover .soc-icon {
-  color: #a301b1;
+  color: #1DCFDC;
 }
 
 .main-heading {
@@ -551,7 +547,7 @@ select option {
   }
 }
 ::selection {
-  background-color: purple;
+  background-color: #1DCFDC;
   color: white;
 }
 
@@ -810,7 +806,7 @@ transition: opacity .2s; */
   content: "";
   position: absolute;
   width: 50%;
-  border: solid #f529a3;
+  border: solid #1DCFDC;
 }
 
 /* Setting the border of top, bottom, left */
@@ -869,7 +865,7 @@ transition: opacity .2s; */
 
 /* Title of the card */
 .title {
-  color: #f529a3;
+  color: #1DCFDC;
   position: relative;
 }
 
