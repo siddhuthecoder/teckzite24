@@ -50,7 +50,7 @@
 
 // export default Preloader;
 import { useEffect, useState } from "react";
-import BackgroundAnimation from "./Shared/BackgroundAnimation";
+// import BackgroundAnimation from "./Shared/BackgroundAnimation";
 import "../css/glitch.scss";
 import "../css/glitch2.scss";
 
@@ -119,7 +119,7 @@ const Preloader = ({ setLoading }) => {
   const Whole = ({ left }) => {
     return (
       <div
-        className={`w-[100vw] h-screen flex items-center justify-center relative flex-col ${
+        className={`w-[100vw] h-screen flex items-center justify-center relative overflow-hidden flex-col ${
           left && "-translate-x-1/2"
         }`}
       >
@@ -134,7 +134,7 @@ const Preloader = ({ setLoading }) => {
         <img
           src={"/preloader_mobile.png"}
           alt="preloaderimg"
-          className={`absolute w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2.2] scale-y-[1.8] -translate-y-1/2 md:hidden`}
+          className={`fixed w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2.2] scale-y-[1.8] -translate-y-1/2 md:hidden`}
         />
 
         {/* <img
@@ -203,7 +203,7 @@ const Preloader = ({ setLoading }) => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <BackgroundAnimation />
+      {/* <BackgroundAnimation /> */}
       <div
         className={`absolute top-0 ${
           isStart ? "left-[-50%] opacity-25" : "left-0 opacity-100"
