@@ -133,7 +133,7 @@ const EventDetailsCard3 = () => {
         <img
           src={tabbutton}
           alt="cover"
-          className={`absolute top-0 left-0 z-[-1] ${activeTab === tab.value ? "opacity-100" : "opacity-0"
+          className={`absolute top-0 left-0 z-[1] ${activeTab === tab.value ? "opacity-100" : "opacity-0"
             }`}
           style={{ width: "120px", height: "40px" }}
         />
@@ -184,15 +184,15 @@ const EventDetailsCard3 = () => {
         <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2">
           <RenderTabs />
         </div>
-        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-bruno text-[#0A69A5]">
+        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-bruno text-[#0A69A5] ">
           {data.name}
         </h1>
-        <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
+        <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16 ">
           <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3 md:ml-[10px]">
             <img
               src={data.img}
               alt={data.name}
-              className="md:h-[220px] max-md:w-[70vw]"
+              className="md:h-[220px] max-md:w-[70vw] mr-3 "
             />
             <div onClick={handleRegister}>
               <EventButton name={isReg ? "Registering..." : "Register"} />
