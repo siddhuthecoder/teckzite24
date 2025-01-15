@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
 import { fetchRefs } from "../../store/refSlice";
 import Animation from "../../components/Animation";
-import React, { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 const Referals = () => {
   const dispatch = useDispatch();
   const refError = useSelector((state) => state.ref.error);
@@ -33,8 +33,8 @@ const Referals = () => {
     if (navigator.share) {
       navigator
         .share({
-          title: "Teckzite 2k24 referral",
-          text: "Register for Teckzite2k24 using this link",
+          title: "Teckzite 2k25 referral",
+          text: "Register for Teckzite2k25 using this link",
           url: `${process.env.REACT_APP_FRONTEND_URL}/register?ref=${userData.tzkid}`,
         })
         .then(() => console.log("Shared successfully"))

@@ -131,8 +131,8 @@ const RegisterForm = () => {
         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: "INR",
-        name: "Teckzite 2k24",
-        description: "Teckzite 2k24",
+        name: "Teckzite 2k25",
+        description: "Teckzite 2k25",
         image: img,
         order_id: order.id,
         handler: async function (response) {
