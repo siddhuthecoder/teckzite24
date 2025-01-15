@@ -52,7 +52,7 @@ const Header = () => {
           }}
         >
           <Link to="/">
-            <img src={"/TECKZITE'25WHITE.png"} alt="logo"  className=" w-[160px] scale-[0.8] sm:scale-[1] md:w-[300px] lg:w-[200px] xl:w-[300px] h-[300px] translate-x-[-5px]" />
+            <img src={"/TECKZITE'25 WHITE.png"} alt="logo"  className=" w-[160px] scale-[0.8] sm:scale-[1] md:w-[300px] lg:w-[200px] xl:w-[300px] h-[300px] translate-x-[-5px]" />
           </Link>
         </div>
         <div
