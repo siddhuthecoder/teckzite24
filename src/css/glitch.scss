@@ -32,7 +32,7 @@
 .glitch::before {
     @include glitchCopy;
     left: 2px;
-    text-shadow: -2px 0 #ff00c1;
+    text-shadow: -2px 0 #1DCFDC;
     clip: rect(44px, 450px, 56px, 0);
     font-weight: 400;
     animation: glitch-anim 5s infinite linear alternate-reverse;
@@ -42,7 +42,7 @@
     @include glitchCopy;
     left: -2px;
     font-weight: 400;
-    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    text-shadow: -2px 0 #00fff9, 2px 2px #1DCFDC;
     animation: glitch-anim2 1s infinite linear alternate-reverse;
 }
 
