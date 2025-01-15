@@ -7,20 +7,21 @@ import Banner from "../../components/banner/Banner";
 
 import { useSelector } from "react-redux";
 import EWCard from "../../components/Shared/EWCard";
-
+import Animation from "../../components/Animation";
 // import Header from "../../components/Header/Header";
-
+import { useState,useEffect } from "react";
 const Workshops = () => {
   const workshopData = useSelector((state) => state.workshop.data);
-
+  
   const handleSound = () => {
     const audio = new Audio("./click.wav");
     audio.play();
   };
 
   return (
-    <main className="relative h-screen overflow-hidden">
+    <main className="relative">
       <Header />
+
       {/* Outer wrapper with the background applied */}
       <div
         className="fixed inset-0 bg-cover bg-center bg-no-repeat"
@@ -28,13 +29,11 @@ const Workshops = () => {
           backgroundImage: "url('/workshopbg.jpg')",
         }}
       ></div>
-      <div className="fixed inset-0 bg-black bg-opacity-80"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-80"></div>
+      <Animation title="Workshops"/>
       {/* Content wrapper for scrollable workshops */}
-      <div className="relative  h-screen overflow-y-auto">
+      <div className="relative">
         {/* Title */}
-        <div className="text-center font-bruno text-3xl mt-28">
-          Workshops
-        </div>
         <div className="flex flex-wrap justify-around mt-[5%] pb-24 px-4">
           {!workshopData ? (
             <div className="min-h-[300px] my-10 col-span-3 flex items-center justify-center">

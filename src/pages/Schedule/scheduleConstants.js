@@ -423,7 +423,7 @@ const Eve = {
       },
       {
         "Event_no": 1,
-        "Name_of_the_Event": "F1 2K24",
+        "Name_of_the_Event": "F1 2K25",
         "Rounds": [
           {
             "Round": "Round-1",

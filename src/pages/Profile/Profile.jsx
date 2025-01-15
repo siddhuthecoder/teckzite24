@@ -204,7 +204,7 @@ const Profile = () => {
           </div>
           {userData.regEvents && userData.regEvents.length !== 0 && (
             <>
-              <h1 className="col-span-12 text-2xl font-joti mt-10 mb-5 text-center text-white  font-semibold">
+              <h1 className="col-span-12 text-2xl font-bruno mt-10 mb-5 text-center text-white  font-semibold">
                 Registered Events
               </h1>
               <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
@@ -218,7 +218,7 @@ const Profile = () => {
           )}
           {userData.regWorkshop && userData.regWorkshop.length !== 0 && (
             <>
-              <h1 className="col-span-12 text-2xl font-joti mt-5 text-center text-white  font-semibold">
+              <h1 className="col-span-12 text-2xl font-bruno mt-5 text-center text-white  font-semibold">
                 Registered Workshops
               </h1>
               <div className="w-full flex items-center justify-center flex-wrap gap-5 ">

@@ -123,7 +123,7 @@ const AboutBody = () => {
             </div>
           </div>
 
-          <div className="text-center font-bold text-4xl my-10 text-white font-joti">
+          <div className="text-center font-bold text-4xl my-10 text-white font-bruno">
             MEMORIES
           </div>
           <div className="w-full my-3 mb-[80px] ">
