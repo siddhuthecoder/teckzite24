@@ -773,7 +773,7 @@ const RegisterForm = () => {
                   <div></div>
                   <div
                     type="button"
-                    className="text-white cursor-pointer bg-[rgba(152,65,255,0.8)] hover:bg-primary font-medium rounded-md text-base px-6 py-1.5 mb-2"
+                    className="text-white cursor-pointer bg-[#1DCFDC] hover:bg-[#0A69A5] font-medium rounded-md text-base px-6 py-1.5 mb-2"
                     onClick={handleNext}
                   >
                     Next
@@ -784,7 +784,7 @@ const RegisterForm = () => {
                 <>
                   <div
                     type="button"
-                    className="text-white cursor-pointer bg-[rgba(152,65,255,0.8)] hover:bg-primary font-medium rounded-md text-base px-6 py-1.5 me-2 mb-2"
+                    className="text-white cursor-pointer bg-[#1DCFDC] hover:bg-[#0A69A5] font-medium rounded-md text-base px-6 py-1.5 me-2 mb-2"
                     onClick={() => setNext(false)}
                   >
                     Prev

@@ -11,8 +11,6 @@ import i9 from "../../assets/img/about/img09.webp";
 import i10 from "../../assets/img/about/img10.webp";
 import i11 from "../../assets/img/about/img11.webp";
 import i12 from "../../assets/img/about/img12.webp";
-import Humanhand from "../../assets/Animation/Humanhand.png";
-import Robohand from "../../assets/Animation/Robohand.png";
 import { useState, useEffect } from "react";
 import Animation from "../../components/Animation";
 const AboutBody = () => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./banner.css";
 
-const Banner = ({ bg, text }) => {
+const Banner = ({ text }) => {
   const [scroll, setScroll] = useState(window.scrollY);
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -43,7 +43,7 @@ const Banner = ({ bg, text }) => {
 
   const opacity2 = 1 - (scroll * 4) / (window.innerHeight / 1);
 
-  const DesktopBg = ({ bg }) => {
+  const DesktopBg = ({  }) => {
     return (
       <>
         <div
@@ -59,7 +59,7 @@ const Banner = ({ bg, text }) => {
           }}
         ></div>
         <div
-          className={`${bg} w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[1]`}
+          className={` w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[1]`}
           style={{ position: "fixed", top: "0px", left: "0px", opacity }}
         >
           <div
@@ -79,7 +79,7 @@ const Banner = ({ bg, text }) => {
 
   return (
     <>
-      <DesktopBg bg={bg} />
+      <DesktopBg  />
     </>
   );
 };

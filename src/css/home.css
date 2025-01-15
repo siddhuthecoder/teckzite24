@@ -6,13 +6,13 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 
   border: 2px solid transparent;
-  border-image: linear-gradient(to right, #743ad5, #d53a9d) 1;
+  border-image: linear-gradient(to right, #743ad5, #1DCFDC) 1;
 }
 
 .custom-play-button {
-  background-image: linear-gradient(45deg, #743ad5, #d53a9d);
+  background-image: linear-gradient(45deg, #743ad5, #1DCFDC);
   /* border: 3px solid transparent; */
-  border-image: linear-gradient(to right, #743ad5, #d53a9d) 1;
+  border-image: linear-gradient(to right, #743ad5, #1DCFDC) 1;
 }
 
 ::-webkit-scrollbar {
@@ -25,9 +25,7 @@
   margin-bottom: 5px;
   background-image:linear-gradient(
     to right bottom,
-    #9b1ba7,
-    #57128f,
-    #a301b1
+    #1DCFDC
   );;
 }
 
@@ -59,7 +57,7 @@ img.neon-img {
 
 .grad-text {
   color: transparent;
-  background: linear-gradient(45deg, #990085, #4329d6);
+  background: linear-gradient(45deg, #1DCFDC, #4329d6);
   -webkit-background-clip: text;
   font-size: 70px;
 }
@@ -71,12 +69,12 @@ img.neon-img {
 .clip {
   clip-path: polygon(20% 0%, 80% 0%, 100% 120%, 0% 120%);
 
-  background-image: linear-gradient(45deg, #743ad5, #d53a9d);
+  background-image: linear-gradient(45deg, #743ad5, #1DCFDC);
 }
 
 .icon-bg {
   border: 2px solid transparent;
-  border-image: linear-gradient(to right, #743ad5, #d53a9d) 1;
+  border-image: linear-gradient(to right, #743ad5, #1DCFDC) 1;
 }
 
 .opacity {

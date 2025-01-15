@@ -1,14 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 
-.core-banner {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.0000000003)), url("../../public/coreTeam.jpg");
-    background-size: cover;
-    width: 100%;
-    min-height: 100vh;
-    background-position: center top;
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
 
 ::-webkit-scrollbar {
     width: 0;

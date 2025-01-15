@@ -117,7 +117,7 @@ const SponsorsCard2 = () => {
       <Animation title="Sponsors"/>
 
       <div className="relative">
- <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[100px]">
+ <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[100px]">
  Academic partner
       </div>
       <div className="w-full flex items-center justify-center flex-wrap">
@@ -132,7 +132,7 @@ const SponsorsCard2 = () => {
         ))
       }
       </div>
-      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[100px]">
+      <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[100px]">
         Digital and Media Partner
       </div>
       <div className="w-full flex items-center justify-center flex-wrap">
@@ -146,7 +146,7 @@ const SponsorsCard2 = () => {
         ))
       }
       </div>
-      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+      <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[20px]">
       Overseas education partner 
       </div>
       <div className="w-full flex items-center justify-center flex-wrap">
@@ -160,7 +160,7 @@ const SponsorsCard2 = () => {
         ))
       }
       </div>
-      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+      <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[20px]">
       Events Partner
       </div>
       <div className="w-full flex items-center justify-center flex-wrap">
@@ -174,7 +174,7 @@ const SponsorsCard2 = () => {
         ))
       }
       </div>
-      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+      <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[20px]">
       Telecom service partner
       </div>
       <div className="w-full flex items-center justify-center flex-wrap mb-[80px]">
@@ -189,7 +189,7 @@ const SponsorsCard2 = () => {
       }
       </div>
 
-      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+      <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[20px]">
       Costume Partner
       </div>
       <div className="w-full flex items-center justify-center flex-wrap">
@@ -203,7 +203,7 @@ const SponsorsCard2 = () => {
         ))
       }
       </div>
-      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+      <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[20px]">
       Printing partner 
       </div>
       <div className="w-full flex items-center justify-center flex-wrap">
@@ -217,7 +217,7 @@ const SponsorsCard2 = () => {
         ))
       }
       </div>
-      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+      <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[20px]">
       Designing partner 
       </div>
       <div className="w-full flex items-center justify-center flex-wrap">
@@ -231,7 +231,7 @@ const SponsorsCard2 = () => {
         ))
       }
       </div>
-      <div className="text-center font-joti text-[#f529a3,] text-3xl mt-[20px]">
+      <div className="text-center font-joti text-[#1DCFDC,] text-3xl mt-[20px]">
        Food Partner
       </div>
       <div className="w-full flex items-center justify-center flex-wrap">

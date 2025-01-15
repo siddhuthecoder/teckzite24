@@ -101,7 +101,7 @@ button.active-tab:active {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: purple;
+    background: #1DCFDC;
 }
 
 /* Handle on hover */

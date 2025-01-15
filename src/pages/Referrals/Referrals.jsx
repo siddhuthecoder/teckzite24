@@ -5,8 +5,6 @@ import { toast } from "react-hot-toast";
 import { fetchRefs } from "../../store/refSlice";
 import Animation from "../../components/Animation";
 import React, { useState, useEffect } from "react";
-import Humanhand from "../../assets/Animation/Humanhand.png";
-import Robohand from "../../assets/Animation/Robohand.png";
 const Referals = () => {
   const dispatch = useDispatch();
   const refError = useSelector((state) => state.ref.error);
