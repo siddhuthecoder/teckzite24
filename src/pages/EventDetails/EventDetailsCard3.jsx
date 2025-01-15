@@ -18,6 +18,7 @@ import EventButton from "../../components/button/EventButton";
 import eventdetailsdesk from "../../assets/events/eventdetailsdesk.png";
 import eventdetailsmobile from "../../assets/events/eventdetailsmobile.png";
 import { userActions } from "../../store/userSlice";
+import TabsButton from "../../components/button/TabsButton";
 const EventDetailsCard3 = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -237,36 +238,7 @@ const EventDetailsCard3 = () => {
     </div>
   </div>
 );
-                {/*<button
-                className="px-8 py-1.5 rounded bg-gradient"
-                onClick={handleRegister}
-              >
-                {isReg ? "Registering..." : "Register"}
-              </button>*/}
-    {/* <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
-                <h1 className="font-semibold text-lg">Prize Money :- </h1>
-                {data.prizeMoney ? (
-                  <>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: data.prizeMoney }}
-                    />
-                  </>
-                ) : (
-                  "Updated soon"
-                )}
-              </div> */}
-
-          {/* <img
-          src={ed2}
-          alt=""
-          className="absolute max-md:hidden pointer-events-none  scale-[0.7] left-[-0px] md:left-[-20px] z-[0]  top-[5%] md:top-[20%]"
-        /> */}
-        {/* <img
-          src={ed3}
-          alt=""
-          className="absolute max-md:hidden pointer-events-none  scale-[0.7] right-[-0px] md:right-[-20px] z-[0] top-[5%]  md:top-[20%]"
-        /> */}
-  
+           
   const RenderRegistrationForm = () => {
     const renderInputFields = () => {
       const inputFields = [];
