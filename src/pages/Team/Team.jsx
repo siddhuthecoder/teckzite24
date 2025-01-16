@@ -5,6 +5,7 @@ import coreteam from "../../assets/img/coreteam.jpg";
 import tabbutton from "../../assets/events/tabbutton.png";
 import MenuButton from "../../components/button/MenuButton";
 import Header from "../../components/Header/Header";
+import Teamone from "./Team.css";
 const Team = () => {
   const navigate = useNavigate();
   const handleWebTeamClick = () => {
@@ -17,45 +18,43 @@ const Team = () => {
   return (
     <>
       <Header />
-      <div className="flex justify-center items-center w-full  gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px] z-10 h-screen" 
+      <div className=" flex justify-center items-center w-full  gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px] z-10 h-screen" 
        style={{
     backgroundImage:
       "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    minHeight: "100vh",
+   
   }}>
-        <div className="flex bg-gray-500 w-[300px] h-[400px] justify-center items-center shadow-md transition-shadow duration-300 rounded-lg relative">
-          <div className="flex  w-[280px] h-[380px] rounded-lg  hover:-translate-y-10 transition-transform duration-300 ease-in-out justify-center items-center relative">
+          <div className="flex card w-[280px] h-[400px] rounded-[20px]  justify-center items-center relative">
             <img
               src={webteam}
               alt="webteam"
-              className="w-[90%] h-[96%] absolute"
+              className="w-[200%] h-[97%] absolute titleone rounded-lg pr-[15px] overflow-hidden ml-[-15px] "
             ></img>
-            <div className="absolute text-white text-sm pb-3 font-bold z-10 cursor-pointer"onClick={handleWebTeamClick}>
+            <div className=" absolute text-white text-sm pb-3 font-bold  cursor-pointer"onClick={handleWebTeamClick}>
               WEBTEAM
             </div>
             <MenuButton text="Core Team" action={() => handleWebTeamClick()} />
 
             {/* <div className="absolute bottom-20 right-30 cursor-pointer"onClick={handleWebTeamClick}><img src={tabbutton.png} alt="button" className="w-10 h-10"/></div> */}
           </div>
-        </div>
-        <div className="flex bg-gray-500 w-[300px] h-[400px] justify-center items-center shadow-md transition-shadow duration-300 rounded-lg relative">
-          <div className="flex  w-[280px] h-[380px] rounded-lg  hover:-translate-y-10 transition-transform duration-300 ease-in-out justify-center items-center relative">
+          <div className="flex card w-[280px] h-[400px] rounded-[20px]  justify-center items-center relative">
             <img
               src={coreteam}
               alt="webteam"
-              className="w-[90%] h-[96%] absolute"
+              className="w-[100%] h-[97%] absolute titleone rounded-[20px] overflow-hidden pl-[16px] mr-[-13px]"
             ></img>
-            <div className="absolute text-white text-sm pb-3 font-bold z-10 cursor-pointer"onClick={handleCoreTeamClick}>
+            <div className=" absolute text-white text-sm pb-3 font-bold  cursor-pointer"onClick={handleWebTeamClick}>
               CORETEAM
             </div>
-            <MenuButton text="Core Team" action={() => handleCoreTeamClick()} />
-            {/* <div className="absolute bottom-20 right-30 cursor-pointer"onClick={handleCoreTeamClick}><img src={tabbutton.png} alt="button" className="w-10 h-10" /></div> */}
+            <MenuButton text="Core Team" action={() => handleWebTeamClick()} />
+
+            {/* <div className="absolute bottom-20 right-30 cursor-pointer"onClick={handleWebTeamClick}><img src={tabbutton.png} alt="button" className="w-10 h-10"/></div> */}
           </div>
         </div>
-      </div>
+          
     </>
   );
 };
