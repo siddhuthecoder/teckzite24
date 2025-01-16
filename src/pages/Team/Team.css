@@ -1,60 +1,61 @@
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;
-    transition: all 0.3s linear;
-    font-family: "poppins",sans-serif;
+    transition:all 0.35s linear;
 }
 section{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+    align-items:center;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
+    min-height:100vh;
+    background-color: black;
 }
-.card{
-    --color:teal;
+
+.cardone{
+    --color:rgb(46, 212, 212);
     --border-size: 1rem;
-    position: relative;
+    --bg-color: #252525;
+    position:relative;
     background-color: var(--bg-color);
+    width: 200px;
+    margin: 2rem;
     border-radius: var(--border-size);
     color: white;
     display: grid;
     place-content: center;
+    padding: 3rem 2rem;
     isolation: isolate;
     overflow: hidden;
-    width: 100%;
+
 }
 
-.card::before,
-.card::after{
+.cardone::before,
+.cardone::after{
     content: "";
-    position:absolute;
+    position: absolute;
 }
-.card::before{
+.cardone::before{
     width: 200%;
-    height:200%;
+    height: 200%;
     background-image: conic-gradient(var(--color) 0deg,
     transparent 60deg,
     transparent 180deg,
     var(--color) 180deg,
-    transparent 240deg);
+    transparent 240deg
+    );
     inset: -50%;
-    z-index: -3;
+    z-index: -2;
     animation: border 8s linear infinite;
 }
-.card:hover::before{
-    animation-play-state: paused;
-}
-@keyframes border {
-    to {
+@keyframes border{
+    to{
         transform: rotateZ(-360deg);
     }
-    
 }
-
-.card::after{
-    --inset: 0.15rem;
+.cardone::after{
+    --inset: 0.25rem;
     background-color: #111;
     inset: var(--inset);
     border-radius: calc(
@@ -63,19 +64,11 @@ section{
     z-index:-1;
     transition: all 0.3s linear;
 }
-.card:hover::after{
-    background-color: var(--bg-color);
-}
-.card i {
+.cardone i {
     font-size: 4rem;
     margin-inline: auto;
     color: transparent;
     -webkit-text-stroke: thin var(--color);
 }
-.card:hover i{
-    color: var(--color);
-    -webkit-text-stroke-width: 0;
-}
-.card .titleone{
-    color:var(--color)
-}
+
+
