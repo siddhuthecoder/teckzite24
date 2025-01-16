@@ -1,9 +1,9 @@
 import React from "react";
-import eventcard from "../../assets/events/eventcard.png";
+import eventcard from "../../assets/events/eventcard.webp";
 import { useNavigate } from "react-router-dom";
 import EventButton from "../button/EventButton";
 import { CardContainer, CardBody, CardItem } from "../utils/3Dcard";
-import workshopImage from "../../assets/img/Workshop.png";
+import workshopImage from "../../assets/img/Workshop.webp";
 
 const EWCard = ({ img, id, name, workshop }) => {
   const navigate = useNavigate();

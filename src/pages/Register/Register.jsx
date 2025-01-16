@@ -17,7 +17,7 @@ const Register = () => {
   return (
    <div className="w-full min-h-screen flex justify-center items-center relative overflow-hidden"  style={{
     backgroundImage:
-      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('/eventdetailsbg.jpg')",
+      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('/eventdetailsbg.webp')",
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundPosition: "center",

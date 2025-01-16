@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { IoLogoTwitter } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
-import rect from "../../assets/img/speakers/rect.svg";
+// import rect from "../../assets/img/speakers/rect.svg";
 
 const SocialIcons = () => {
   const icons = [
@@ -83,11 +83,11 @@ const SocialIcons = () => {
                 >
                   {data.name}
                 </div>
-                <img
+                {/* <img
                   src={rect}
                   alt=""
                   className="absolute bottom-[-10px] scale-x-[0.5] left-[-35px]"
-                />
+                /> */}
               </motion.div>
             ))}
           </div>

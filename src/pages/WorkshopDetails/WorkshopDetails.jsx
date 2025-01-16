@@ -8,14 +8,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import Contact from "./details/Contact";
 import Department from "./details/Department";
 import Structure from "./details/Structure";
-import ed1 from "../../assets/img/ed/ed1.svg";
-import ed2 from "../../assets/img/ed/ed2.svg";
-import ed3 from "../../assets/img/ed/ed3.svg";
-import ed4 from "../../assets/img/ed/ed4.svg";
 import RenderRegistrationForm from "./RenderRegistrationForm";
-import eventdetailsdesk from '../../assets/events/ewDetails.png';
+import eventdetailsdesk from '../../assets/events/ewDetails.webp';
 import EventButton from "../../components/button/EventButton";
-import tabbutton from "../../assets/events/tabbutton.png";
+import tabbutton from "../../assets/events/tabbutton.webp";
+import TabsButton from "../../components/button/TabsButton";
 const WorkshopDetails = () => {
   const [activeTab, setActiveTab] = useState("Description");
   const workshopData = useSelector((state) => state.workshop.data);
@@ -55,31 +52,26 @@ const WorkshopDetails = () => {
     { label: "Contact", value: "Contact" },
   ];
 
-  const RenderTabs = () => {
-     {/* max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 mt-36 */}
-    return tabs.map((tab) => (
-      <button
-        key={tab.value}
-        type="button"
-        className={`text-[15px] mt-[10px] md:mt-[0px] flex items-center justify-center flex-wrap relative`}
-        style={{ width: "120px", height: "40px" }}
-        onClick={() => {
-          handleSound();
-          setActiveTab(tab.value);
-        }}
-      >
-        <span className="p-2 ">{tab.label}</span>
-        <img
-          src={tabbutton}
-          alt="cover"
-          className={`absolute top-0 left-0 z-[-1] pointer-events-none ${
-            activeTab === tab.value ? "opacity-100" : "opacity-0"
-          }`}
+   const RenderTabs = () => {
+      return tabs.map((tab) => (
+        <button
+          key={tab.value}
+          type="button"
+          className={`text-[15px] mt-[10px] md:mt-[0px] flex items-center justify-center flex-wrap relative`}
           style={{ width: "120px", height: "40px" }}
-        />
-      </button>
-    ));
-  };
+          onClick={() => setActiveTab(tab.value)}
+        >
+          <img
+            src={tabbutton}
+            alt="cover"
+            className={`absolute top-0 left-0 z-[1] ${activeTab === tab.value ? "opacity-100" : "opacity-0"
+              }`}
+            style={{ width: "120px", height: "40px" }}
+          />
+          <span className="p-2">{tab.label}</span>
+        </button>
+      ));
+    };
 
   const RenderLoadingIndicator = () => (
     <div className="w-full min-h-[100vh] flex items-center justify-center">
@@ -104,19 +96,14 @@ const WorkshopDetails = () => {
       </div>
     </div>
   );
-              {/*<button
-                className="px-8 py-1.5 rounded bg-gradient"
-                onClick={handleRegister}
-              >
-                Register
-              </button>*/}
+             
   
   const RenderWorkshopDetails = () => (
   <div className="w-full flex min-h-screen justify-center items-center relative">
     {/* Background Image */}
     <div
       className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center z-0"
-      style={{ backgroundImage: "url('/workshopdetailsbg.jpg')" }}
+      style={{ backgroundImage: "url('/workshopdetailsbg.webp')" }}
     ></div>
     
     {/* Black overlay with opacity */}
@@ -183,16 +170,6 @@ const WorkshopDetails = () => {
     </div>
   </div>
 );
-       {/* <img
-          src={ed2}
-          alt=""
-          className="absolute max-md:hidden pointer-events-none  scale-[0.7] left-[-0px] md:left-[-20px] z-[0]  top-[5%] md:top-[20%]"
-        />
-        <img
-          src={ed3}
-          alt=""
-          className="absolute max-md:hidden pointer-events-none  scale-[0.7] right-[-0px] md:right-[-20px] z-[0] top-[5%]  md:top-[20%]"
-        />*/}
   return (
     <>
       <Header />

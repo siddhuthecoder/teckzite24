@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../components/Header/Header';
-import Teamcard from "../../assets/img/Teamcard.png";
-import Robo from "../../assets/img/Robo.png";
+import Teamcard from "../../assets/img/Teamcard.webp";
+import Robo from "../../assets/img/Robo.webp";
 const Teamcore = () => {
   const pre = [
     {  name: "Sribabu Mandraju", position: "President" },
@@ -22,7 +22,7 @@ const Teamcore = () => {
   return (
    <div   style={{
     backgroundImage:
-      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
+      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundPosition: "center",

@@ -6,7 +6,7 @@ const Coming = () => {
         <div
             className="h-screen flex flex-col items-center justify-center space-y-8 font-orbitron relative"
             style={{
-                backgroundImage: "url('comingsoonbg.jpg')",
+                backgroundImage: "url('comingsoonbg.webp')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}

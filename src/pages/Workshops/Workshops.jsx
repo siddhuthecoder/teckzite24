@@ -26,7 +26,7 @@ const Workshops = () => {
       <div
         className="fixed inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/workshopbg.jpg')",
+          backgroundImage: "url('/workshopbg.webp')",
         }}
       ></div>
       <div className="absolute inset-0 bg-black bg-opacity-80"></div>

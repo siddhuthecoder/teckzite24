@@ -254,26 +254,26 @@
 
 
 import React from 'react';
-import hp1 from '../../assets/img/sponsors/hp1.jpg';
-import hp2 from '../../assets/img/sponsors/hp2.jpg';
-import hp3 from '../../assets/img/sponsors/hp3.jpg';
+import hp1 from '../../assets/img/sponsors/hp1.webp';
+import hp2 from '../../assets/img/sponsors/hp2.webp';
+import hp3 from '../../assets/img/sponsors/hp3.webp';
 
-import Twosponcer from '../../assets/img/Twosponcer.png';
-import sponcercard from '../../assets/img/Sponcercard.png';
+import Twosponcer from '../../assets/img/Twosponcer.webp';
+import sponcercard from '../../assets/img/Sponcercard.webp';
 import Animation from '../../components/Animation';
-import ssit from '../../assets/img/sponsors/ssit.jpg';
-import dd_prints from '../../assets/img/sponsors/dd_prints.png';
-import meeNews from '../../assets/img/sponsors/mee news.png';
-import beBest from '../../assets/img/sponsors/beBest.png';
-import bridge from '../../assets/img/sponsors/bridge.jpg';
-import siuk from '../../assets/img/sponsors/siuk.jpg';
-import svs from '../../assets/img/sponsors/svs.png';
-import una from '../../assets/img/sponsors/una.png';
-import sriv from '../../assets/img/sponsors/sriv.jpeg';
-import fc from '../../assets/img/sponsors/fc.jpeg';
-import kmk from '../../assets/img/sponsors/kmk.jpeg';
-import km from '../../assets/img/sponsors/km.jpeg';
-import des from '../../assets/img/sponsors/des.jpeg';
+import ssit from '../../assets/img/sponsors/ssit.webp';
+import dd_prints from '../../assets/img/sponsors/dd_prints.webp';
+import meeNews from '../../assets/img/sponsors/mee news.webp';
+import beBest from '../../assets/img/sponsors/beBest.webp';
+import bridge from '../../assets/img/sponsors/bridge.webp';
+import siuk from '../../assets/img/sponsors/siuk.webp';
+import svs from '../../assets/img/sponsors/svs.webp';
+import una from '../../assets/img/sponsors/una.webp';
+import sriv from '../../assets/img/sponsors/sriv.webp';
+import fc from '../../assets/img/sponsors/fc.webp';
+import kmk from '../../assets/img/sponsors/kmk.webp';
+import km from '../../assets/img/sponsors/km.webp';
+import des from '../../assets/img/sponsors/des.webp';
 
 const sponsorsData = [
   {
@@ -341,7 +341,7 @@ const SponsorsCard2 = () => {
     <div
       className="absolute top-0 w-full min-h-screen bg-cover bg-center"
       style={{
-        backgroundImage: "url('/sponsers.bg.jpg')",
+        backgroundImage: "url('/sponsers.bg.webp')",
         backgroundAttachment: "fixed",
       }}
     >

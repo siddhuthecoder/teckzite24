@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { IoLogoTwitter } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
-import rect from '../../assets/img/speakers/rect.svg'
+// import rect from '../../assets/img/speakers/rect.svg'
 
 
 

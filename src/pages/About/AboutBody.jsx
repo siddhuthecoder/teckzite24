@@ -30,7 +30,7 @@ const AboutBody = () => {
       <div
         className="w-full min-h-[100vh] relative bg-cover bg-center"
         style={{
-          backgroundImage: "url('/aboutbg.jpg')",
+          backgroundImage: "url('/aboutbg.webp')",
           backgroundAttachment: "fixed",
         }}
       >

@@ -8,7 +8,7 @@ const PageNotFound = () => {
         <div
             className="h-screen flex flex-col items-center justify-center relative font-orbitron"
             style={{
-                backgroundImage: "url('notfound.jpg')",
+                backgroundImage: "url('notfound.webp')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}

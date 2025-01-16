@@ -5,11 +5,9 @@ import "../../css/referrals.css";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./Profile.module.css";
-import s1 from "../../assets/img/profile/Rectangle 29.svg";
-import s2 from "../../assets/img/profile/Rectangle 28.svg";
-import s3 from "../../assets/img/profile/Rectangle 30.svg";
-import profiledesk from "../../assets/events/profiledesk.png";
-import profilemobile from "../../assets/events/profilemobile.png";
+
+import profiledesk from "../../assets/events/profiledesk.webp";
+import profilemobile from "../../assets/events/profilemobile.webp";
 const Profile = () => {
   const userData = useSelector((state) => state.user.data);
   const userStatus = useSelector((state) => state.user.status);
@@ -49,7 +47,7 @@ const Profile = () => {
         <Header />
         <div className="w-full min-h-screen flex items-center justify-center"   style={{
     backgroundImage:
-      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
+      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundPosition: "center",

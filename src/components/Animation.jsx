@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Humanhand from "../assets/Animation/Hhand.png"; 
-import Robohand from "../assets/Animation/rhand.png"; 
+import Humanhand from "../assets/Animation/Hhand.webp"; 
+import Robohand from "../assets/Animation/rhand.webp"; 
 
 const Animation = (props) => {
   const [scrollPosition, setScrollPosition] = useState(0);
