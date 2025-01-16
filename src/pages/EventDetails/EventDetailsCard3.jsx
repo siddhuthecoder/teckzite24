@@ -18,6 +18,7 @@ import EventButton from "../../components/button/EventButton";
 import eventdetailsdesk from "../../assets/events/eventdetailsdesk.png";
 import eventdetailsmobile from "../../assets/events/eventdetailsmobile.png";
 import { userActions } from "../../store/userSlice";
+import TabsButton from "../../components/button/TabsButton";
 const EventDetailsCard3 = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -133,7 +134,7 @@ const EventDetailsCard3 = () => {
         <img
           src={tabbutton}
           alt="cover"
-          className={`absolute top-0 left-0 z-[-1] ${activeTab === tab.value ? "opacity-100" : "opacity-0"
+          className={`absolute top-0 left-0 z-[1] ${activeTab === tab.value ? "opacity-100" : "opacity-0"
             }`}
           style={{ width: "120px", height: "40px" }}
         />
@@ -184,15 +185,15 @@ const EventDetailsCard3 = () => {
         <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2">
           <RenderTabs />
         </div>
-        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-bruno text-[#0A69A5]">
+        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-bruno text-[#0A69A5] ">
           {data.name}
         </h1>
-        <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16">
+        <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16 ">
           <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3 md:ml-[10px]">
             <img
               src={data.img}
               alt={data.name}
-              className="md:h-[220px] max-md:w-[70vw]"
+              className="md:h-[220px] max-md:w-[70vw] mr-3 "
             />
             <div onClick={handleRegister}>
               <EventButton name={isReg ? "Registering..." : "Register"} />
@@ -237,36 +238,7 @@ const EventDetailsCard3 = () => {
     </div>
   </div>
 );
-                {/*<button
-                className="px-8 py-1.5 rounded bg-gradient"
-                onClick={handleRegister}
-              >
-                {isReg ? "Registering..." : "Register"}
-              </button>*/}
-    {/* <div className="w-full flex items-end flex-col px-10 max-md:mt-3">
-                <h1 className="font-semibold text-lg">Prize Money :- </h1>
-                {data.prizeMoney ? (
-                  <>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: data.prizeMoney }}
-                    />
-                  </>
-                ) : (
-                  "Updated soon"
-                )}
-              </div> */}
-
-          {/* <img
-          src={ed2}
-          alt=""
-          className="absolute max-md:hidden pointer-events-none  scale-[0.7] left-[-0px] md:left-[-20px] z-[0]  top-[5%] md:top-[20%]"
-        /> */}
-        {/* <img
-          src={ed3}
-          alt=""
-          className="absolute max-md:hidden pointer-events-none  scale-[0.7] right-[-0px] md:right-[-20px] z-[0] top-[5%]  md:top-[20%]"
-        /> */}
-  
+           
   const RenderRegistrationForm = () => {
     const renderInputFields = () => {
       const inputFields = [];

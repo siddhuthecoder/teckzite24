@@ -235,7 +235,28 @@ const Navbar = ({ setShowNav }) => {
             action={() => {setShowNav(false);navigate("/Team")}}
             desktopDelay={11}
             mobileDelay={11}
-            desktopClasses="md:mr-[20px] mb-[40px] lg:mr-[-30px] md:animate-slideTopDelay11"
+            desktopClasses="md:mr-[20px]  lg:mr-[-30px] md:animate-slideTopDelay11"
+          />
+          <NavButton
+            name="Events Schedule"
+            action={() => {setShowNav(false);navigate("/Team")}}
+            desktopDelay={11}
+            mobileDelay={11}
+            desktopClasses="md:mr-[20px]  lg:mr-[-30px] md:animate-slideTopDelay11 md:hidden text-[13px] whitespace-nowrap"
+          />
+          <NavButton
+            name="Updates"
+            action={() => {setShowNav(false);navigate("/Team")}}
+            desktopDelay={11}
+            mobileDelay={11}
+            desktopClasses="md:mr-[20px]  lg:mr-[-30px] md:animate-slideTopDelay11 md:hidden"
+          />
+          <NavButton
+            name="Contact"
+            action={() => {setShowNav(false);navigate("/Team")}}
+            desktopDelay={11}
+            mobileDelay={11}
+            desktopClasses="md:mr-[20px] mb-[40px] lg:mr-[-30px] md:animate-slideTopDelay11 md:hidden"
           />
         </div>
       </div>
