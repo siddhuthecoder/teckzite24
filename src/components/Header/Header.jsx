@@ -83,7 +83,7 @@ const Header = () => {
             </div>
           ) : (
             <Link to="/register">
-              <h1 className="max-lg:hidden bg-transparent">Login/Register</h1>
+              <h1 className="max-lg:hidden bg-transparent font-bruno">Login/Register</h1>
               <IoMdPerson className="lg:hidden" size={22} />
             </Link>
           )}

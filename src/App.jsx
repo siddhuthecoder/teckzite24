@@ -180,6 +180,9 @@ function App() {
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
               <Route path="/eventupdates" element={<ComingSoon />} />
+              <Route path="/EventsSchedule" element={<ComingSoon />} />
+              <Route path="/updates" element={<ComingSoon />} />
+              <Route path="/Contact" element={<ComingSoon />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/Teamcore" element={<Teamcore />} />
               <Route path="/Teamweb" element={<Teamweb />} />
