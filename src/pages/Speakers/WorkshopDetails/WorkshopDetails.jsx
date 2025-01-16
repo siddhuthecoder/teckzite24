@@ -59,7 +59,7 @@ const WorkshopDetails = () => {
             <div className="font-[ROG] font-bold w-full flex items-center ">
               <div className="font-bold flex w-full items-center  justify-start flex-wrap ">
                 <button
-                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] ${
+                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] font-bruno ${
                     tab === "Description" ? " active-tab " : ""
                   }`}
                   style={{ width: "100px", height: "40px" }}
@@ -68,7 +68,7 @@ const WorkshopDetails = () => {
                   Description
                 </button>
                 <button
-                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] ${
+                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] font-bruno ${
                     tab === "Instructor" ? " active-tab" : ""
                   }`}
                   style={{ width: "100px", height: "40px" }}
@@ -77,7 +77,7 @@ const WorkshopDetails = () => {
                   Instructor
                 </button>
                 <button
-                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] ${
+                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] font-bruno ${
                     tab === "Structure" ? " active-tab " : ""
                   }`}
                   style={{ width: "100px", height: "40px" }}
@@ -86,7 +86,7 @@ const WorkshopDetails = () => {
                   Structure
                 </button>
                 <button
-                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] ${
+                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] font-bruno ${
                     tab === "Department" ? " active-tab" : ""
                   }`}
                   style={{ width: "100px", height: "40px" }}
@@ -95,7 +95,7 @@ const WorkshopDetails = () => {
                   Deparment
                 </button>
                 <button
-                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] ${
+                  className={`tab border text-[15px] mt-[10px] md:mt-[0px] font-bruno ${
                     tab === "Contact" ? " active-tab " : ""
                   }`}
                   style={{ width: "100px", height: "40px" }}
