@@ -13,7 +13,7 @@ button {
 }
 
 #clip {
-  --color: #ff00ff;
+  --color: #1dc1d1;
   /* Neon border color */
   position: absolute;
   top: 0;
@@ -21,7 +21,7 @@ button {
   width: 100%;
   height: 100%;
   border: 5px double var(--color);
-  box-shadow: inset 0px 0px 15px #ff00ff;
+  box-shadow: inset 0px 0px 15px #1dc1d1;
   /* Neon glow color */
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
@@ -29,7 +29,7 @@ button {
 .arrow {
   position: absolute;
   transition: 0.2s;
-  background-color: #ff00ff;
+  background-color: #1dc1d1;
   /* Neon arrow color */
   top: 35%;
   width: 11%;
@@ -64,9 +64,9 @@ button:hover #leftArrow {
   position: absolute;
   width: 4em;
   height: 4em;
-  background-color: #ff00ff;
+  background-color: #1dc1d1;
   /* Neon corner color */
-  box-shadow: inset 1px 1px 8px #ff00ff;
+  box-shadow: inset 1px 1px 8px #1dc1d1;
   /* Neon corner glow color */
   transform: scale(1) rotate(45deg);
   transition: 0.2s;
@@ -124,7 +124,7 @@ button:hover #clip {
 
 @keyframes changeColor8 {
   from {
-    background-color: #ff00ff;
+    background-color: #1dc1d1;
     /* Neon arrow color */
   }
 

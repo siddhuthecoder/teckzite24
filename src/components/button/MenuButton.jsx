@@ -16,10 +16,10 @@ const MenuButton = ({ name, text, action }) => {
     };
     return (
         <div className="menu-btn flex justify-center items-start">
-            <div className="relative cursor-pointer">
+            <div className="relative cursor-pointer font-bruno">
                 <img src={button} className="h-[60px] w-[150px]" />
                 <div
-                    className="absolute text-white flex justify-center items-center  z-[10px] top-[12px] right-[10px] left-[10px]"
+                    className="absolute text-white flex justify-center items-center  z-[10px] top-[12px] right-[10px] left-[10px] font-bruno"
                    onClick={action}
                 >
                     {name}

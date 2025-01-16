@@ -68,7 +68,7 @@ const WorkshopDetails = () => {
               }`}
             style={{ width: "120px", height: "40px" }}
           />
-          <span className="p-2">{tab.label}</span>
+          <span className="p-2 font-bruno">{tab.label}</span>
         </button>
       ));
     };

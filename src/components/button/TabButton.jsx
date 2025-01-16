@@ -10,8 +10,8 @@ const TabButton = ({ name }) => {
   };
 
   return (
-    <button style={{ transform: "scale(0.8)" }} className="mx-auto">
-      <span className="font-bold  text-[25px]" style={styles}>
+    <button style={{ transform: "scale(0.8)" }} className="mx-auto font-bruno">
+      <span className="font-bold  text-[25px] font-bruno" style={styles}>
         {name}
       </span>
       <div id="clip">

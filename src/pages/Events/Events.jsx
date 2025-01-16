@@ -30,13 +30,13 @@ const Events = () => {
   };
 
   return (
-    <main className="relative w-full overflow-x-hidden">
+    <main className="relative w-full overflow-x-hidden font-bruno">
       <Header />
 
       <Eventsbg isEventOpen={true} />
-      <div className="relative w-full flex flex-col min-h-[85vh] pb-5">
+      <div className="relative w-full flex flex-col min-h-[85vh] pb-5 font-bruno">
         <div className="text-center font-bruno text-3xl mt-[80px] md:mt-5">Events</div>
-        <div className="w-full flex items-center gap-2 justify-center flex-wrap px-5 mt-7">
+        <div className="w-full flex items-center gap-2 justify-center flex-wrap px-5 mt-7 font-bruno">
           {[
             "OPEN TO ALL",
             "PUC",
@@ -57,7 +57,9 @@ const Events = () => {
                 );
                 setIsActive(true);
                 handleSound();
+              
               }}
+              className="font-bruno"
             >
               <TabsButton
                 name={item}
@@ -68,7 +70,7 @@ const Events = () => {
             </div>
           ))}
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 font-bruno">
           {filteredEvents ? (
             <div className=" mt-10 flex flex-wrap justify-around  gap-y-0 z-0">
               {filteredEvents.map((event, index) => (
