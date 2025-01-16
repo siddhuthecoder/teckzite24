@@ -48,10 +48,10 @@ const Animation = (props) => {
             }}
           >
           <div className="relative">
-  <h1 className="absolute text-[40px] md:text-[60px] translate-x-[-50%] translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
+  <h1 className="absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
     {props.title}
   </h1>
-  <h1 className="absolute text-[40px] md:text-[60px] translate-x-[-50%] translate-y-[-50%] text-[#05a8f3] stroke-[2px] stroke-[#05a8f3] animate-waves">
+  <h1 className="absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-[#05a8f3] stroke-[2px] stroke-[#05a8f3] animate-waves">
     {props.title}
   </h1>
 </div>
