@@ -1,22 +1,35 @@
+import React, { useEffect, useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { userActions } from "../../store/userSlice";
-import img from "../../assets/logo.png";
 import FileBase64 from "react-file-base64";
-import "./reg.css";
+import { gapi } from 'gapi-script';
 
+// Import all necessary images
+import img from "../../assets/logo.png";
 import signup from "../../assets/events/signup.webp";
 import signupdetails from "../../assets/events/signupdetails.webp";
 import profiledesk from "../../assets/events/profiledesk.webp";
 import profilemobile from "../../assets/events/profilemobile.webp";
+
+// Import CSS
+import "./reg.css";
 import "./RegisterForm.css";
+
+const CLIENT_ID = process.env.REACT_APP_GOOGLE_DRIVE_CLIENT_ID;
+const API_KEY = process.env.REACT_APP_GOOGLE_DRIVE_API_KEY;
+const SCOPE = 'https://www.googleapis.com/auth/drive.file';
+
 const RegisterForm = () => {
   const location = useLocation();
+
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const getQueryParam = (name) => {
     const params = new URLSearchParams(location.search);
@@ -42,6 +55,7 @@ const RegisterForm = () => {
     amount: process.env.REACT_APP_OUTSIDERS,
     terms: false,
   };
+
   const [data, setData] = useState(initialData);
   const [signIn, setSignIn] = useState(false);
   const [next, setNext] = useState(false);
@@ -51,18 +65,27 @@ const RegisterForm = () => {
   const [isReging, setisReging] = useState(false);
   const [settingUser, setSettingUser] = useState(false);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        scope: SCOPE,
+      });
+    };
+    gapi.load('client:auth2', initClient);
+  }, []);
 
   useEffect(() => {
     if (error) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setError(null);
       }, 3000);
+      return () => clearTimeout(timer);
     }
   }, [error]);
 
-  const handleFileInputChange = (file) => {
+  const handleFileInputChange = async (file) => {
     if (!file || !file.base64) {
       setError("Please select a valid file.");
       return;
@@ -74,17 +97,39 @@ const RegisterForm = () => {
       return;
     }
 
-    if (parseInt(file.size) > 100) {
-      setError("File size should less than 100KB");
+    if (parseInt(file.size) > 100 * 1024) {
+      setError("File size should be less than 100KB");
       return;
     }
 
-    setData({ ...data, file: file.base64 });
+    try {
+      await gapi.auth2.getAuthInstance().signIn();
+      const accessToken = gapi.auth.getToken().access_token;
+
+      const form = new FormData();
+      form.append('metadata', new Blob([JSON.stringify({
+        name: file.name,
+        mimeType: file.type
+      })], { type: 'application/json' }));
+      form.append('file', file);
+
+      const response = await fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
+        method: 'POST',
+        headers: new Headers({ 'Authorization': 'Bearer ' + accessToken }),
+        body: form
+      });
+
+      const result = await response.json();
+      const driveLink = `https://drive.google.com/file/d/${result.id}/view`;
+      setData({ ...data, file: driveLink });
+    } catch (error) {
+      setError("Failed to upload file to Google Drive: " + error.message);
+    }
   };
 
   const handleSubmit = async (e) => {
-    setisReging(true);
     e.preventDefault();
+    setisReging(true);
 
     if (data.state === "" || data.district === "" || data.city === "") {
       setError("All fields are required");
@@ -163,7 +208,7 @@ const RegisterForm = () => {
             );
             localStorage.setItem("token", res.data.token);
             dispatch(userActions.setUser(res.data.user));
-            toast.success(res.data.message || "Account created Sucessfully!!");
+            toast.success(res.data.message || "Account created Successfully!!");
             navigate("/profile");
           } catch (error) {
             toast.error(
@@ -187,18 +232,17 @@ const RegisterForm = () => {
 
       const razor = new window.Razorpay(options);
       razor.on("payment.failed", function (response) {
-        toast.error("Payment failed: " + response.error);
+        toast.error("Payment failed: " + response.error.description);
         setisReging(false);
-        return;
       });
 
       razor.open();
-      setisReging(false);
     } catch (error) {
       toast.error(
         error?.response?.data?.message ||
           "Failed to process payment. Please try again."
       );
+    } finally {
       setisReging(false);
     }
   };
@@ -234,8 +278,7 @@ const RegisterForm = () => {
     setIsLoading(true);
     const decodedUser = jwtDecode(res.credential);
     const { given_name, family_name, email, picture } = decodedUser;
-    const domainPattern =
-      /^(r|n|s|o)[0-9]{6}@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
+    const domainPattern = /^(r|n|s|o)[0-9]{6}@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
 
     try {
       const res = await axios.post(
@@ -274,8 +317,6 @@ const RegisterForm = () => {
         });
       }
       setSignIn(true);
-      // window.alert("Oops Registrations are closed");
-      // setIsLoading(false);
     }
   };
 
@@ -291,7 +332,7 @@ const RegisterForm = () => {
         <div role="status">
           <svg
             aria-hidden="true"
-            className="w-8 h-8 text-gray-200 animate-  dark:text-gray-600 fill-blue-600"
+            className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +353,6 @@ const RegisterForm = () => {
       </section>
     );
   }
-
   return (
     <section className="z-5 w-full h-full pt-[160px] pb-[20px]">
       <form
@@ -346,39 +386,18 @@ const RegisterForm = () => {
             ) : (
               <div className="w-full h-[100%] flex justify-center  items-center md:mx-auto md:ml-[0px] ml-[-50px] relative mt-[-60px] ">
                 <img
-                  src={signup}
+                  src={signup || "/placeholder.svg"}
                   alt=""
                   className="absolute pointer-events-none  left-0"
                 />
-                {/*<img
-                  src={bord}
-                  alt=""
-                  className="absolute pointer-events-none  left-0"
-                />*/}
-                {/*<img
-                  src={svg1}
-                  alt=""
-                  className="absolute pointer-events-none  hidden sm:block sm:left-[24%]  sm:solute-280%] sm:scale-x-[0.7] "
-                />*/}
-                {/*<img
-                  src={svg2}
-                  alt=""
-                  className="absolute pointer-events-none right-[-15px]"
-                />
-                <img
-                  src={svg2}
-                  alt=""
-                  className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
-                />*/}
-                <div className="md:ml-[75px] ml-[60px] z-7 w-[200px]" >
-                <GoogleLogin 
-                  clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
-                  onSuccess={onSuccess}
-                  onFailure={onFailure}
-                  buttonText="Sign up with Google"
-                />
+                <div className="md:ml-[75px] ml-[60px] z-7 w-[200px]">
+                  <GoogleLogin
+                    clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
+                    onSuccess={onSuccess}
+                    onFailure={onFailure}
+                    buttonText="Sign up with Google"
+                  />
                 </div>
-                
               </div>
             )}
           </>
@@ -386,30 +405,10 @@ const RegisterForm = () => {
         {signIn && (
           <div className=" md:mt-[-70px] flex justify-center items-center  md:p-[2px]  flex-col relative  overflow-x-hidden">
             <img
-              src={profiledesk}
+              src={profiledesk || "/placeholder.svg"}
               alt=""
               className="absolute pointer-events-none  h-full w-full  left-0"
             />
-            {/*<img
-              src={bord}
-              alt=""
-              className="absolute pointer-events-none hidden sm:block  scale-y-[2.9]  sm:scale-y-[1.9]   left-0"
-            />
-            <img
-              src={svg1}
-              alt=""
-              className="absolute pointer-events-none hidden top-[-2%] left-[16%] scale-x-[0.5]  sm:block sm:left-[24%]  sm:top-[-7%] sm:scale-x-[0.65] "
-            />
-            <img
-              src={svg2}
-              alt=""
-              className="absolute pointer-events-none  right-[-15px]"
-            />
-            <img
-              src={svg2}
-              alt=""
-              className="absolute pointer-events-none  left-[-15px] scale-x-[-1]"
-            />*/}
             <h4 className="font-semibold text-xl mt-[25px]">Register</h4>
             <h3 className="text-sm mt-1 mb-4 px-10 text-center">
               {isRgukt &&
@@ -419,113 +418,106 @@ const RegisterForm = () => {
             </h3>
             {!next && (
               <div className="w-[300px] ml-[20px] md:w-[90%]">
-               {!isRgukt && (
-               
-  <div className=" mb-3  w-[90%]  grid grid-cols-1 md:grid-cols-2 gap-4 ">
-    {/* First Name */}
-    <div className="input-group relative">
-      <input
-        type="text"
-        id="firstName"
-        value={data.firstName}
-        name="firstName"
-        onChange={handleChange}
-        className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-        placeholder=" "
-        required
-      />
-      <label
-        htmlFor="firstName"
-        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-      >
-        First Name
-      </label>
-    </div>
-    {/* Last Name */}
-    <div className="input-group relative ">
-      <input
-        type="text"
-        id="lastName"
-        value={data.lastName}
-        name="lastName"
-        onChange={handleChange}
-        className="bg-transparent border-gray-300 text-white text-base block w-full  px-1 py-1.5 peer"
-        placeholder=" "
-        required
-      />
-      <label
-        htmlFor="lastName"
-        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-      >
-        Last Name
-      </label>
-    </div>
-  </div>
- 
-)}
+                {!isRgukt && (
+                  <div className=" mb-3  w-[90%]  grid grid-cols-1 md:grid-cols-2 gap-4 ">
+                    <div className="input-group relative">
+                      <input
+                        type="text"
+                        id="firstName"
+                        value={data.firstName}
+                        name="firstName"
+                        onChange={handleChange}
+                        className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+                        placeholder=" "
+                        required
+                      />
+                      <label
+                        htmlFor="firstName"
+                        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                      >
+                        First Name
+                      </label>
+                    </div>
+                    <div className="input-group relative ">
+                      <input
+                        type="text"
+                        id="lastName"
+                        value={data.lastName}
+                        name="lastName"
+                        onChange={handleChange}
+                        className="bg-transparent border-gray-300 text-white text-base block w-full  px-1 py-1.5 peer"
+                        placeholder=" "
+                        required
+                      />
+                      <label
+                        htmlFor="lastName"
+                        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                      >
+                        Last Name
+                      </label>
+                    </div>
+                  </div>
+                )}
 
-{/* College */}
-<div className="mb-3 w-[90%]">
-  <div className="input-group relative">
-    <input
-      type="text"
-      id="college"
-      value={data.college}
-      name="college"
-      onChange={handleChange}
-      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-      placeholder=" "
-      required
-    />
-    <label
-      htmlFor="college"
-      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-    >
-      College
-    </label>
-  </div>
-</div>
-{/* Phone Number and ID Number */}
-<div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-  <div className="input-group relative">
-    <input
-      type="text"
-      id="phoneNumber"
-      value={data.phoneNumber}
-      name="phoneNumber"
-      onChange={handleChange}
-      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-      placeholder=" "
-      required
-    />
-    <label
-      htmlFor="phoneNumber"
-      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-    >
-      Phone Number
-    </label>
-  </div>
-  <div className="input-group relative">
-    <input
-      type="text"
-      id="collegeId"
-      value={data.collegeId}
-      name="collegeId"
-      onChange={handleChange}
-      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-      placeholder=" "
-      required
-    />
-    <label
-      htmlFor="collegeId"
-      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-    >
-      College ID
-    </label>
-  </div>
-</div>
+                <div className="mb-3 w-[90%]">
+                  <div className="input-group relative">
+                    <input
+                      type="text"
+                      id="college"
+                      value={data.college}
+                      name="college"
+                      onChange={handleChange}
+                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+                      placeholder=" "
+                      required
+                    />
+                    <label
+                      htmlFor="college"
+                      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                    >
+                      College
+                    </label>
+                  </div>
+                </div>
+                <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="input-group relative">
+                    <input
+                      type="text"
+                      id="phoneNumber"
+                      value={data.phoneNumber}
+                      name="phoneNumber"
+                      onChange={handleChange}
+                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+                      placeholder=" "
+                      required
+                    />
+                    <label
+                      htmlFor="phoneNumber"
+                      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                    >
+                      Phone Number
+                    </label>
+                  </div>
+                  <div className="input-group relative">
+                    <input
+                      type="text"
+                      id="collegeId"
+                      value={data.collegeId}
+                      name="collegeId"
+                      onChange={handleChange}
+                      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+                      placeholder=" "
+                      required
+                    />
+                    <label
+                      htmlFor="collegeId"
+                      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                    >
+                      College ID
+                    </label>
+                  </div>
+                </div>
 
-                {/* Year and branch */}
                 <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
                   <select
                     id="year"
@@ -562,7 +554,6 @@ const RegisterForm = () => {
                     <option value="ROBOTICS">ROBOTICS</option>
                   </select>
                 </div>
-                {/* Gender */}
                 <div className="w-[90%] mb-1 text-left">Gender</div>
                 <div className="mb-1 w-[80%] mr-[10%] flex items-center justify-between">
                   <div className="flex items-center mb-2">
@@ -624,89 +615,80 @@ const RegisterForm = () => {
                 {!isRgukt && (
                   <>
                     <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-  {/* State */}
-  <div className="input-group relative">
-    <input
-      type="text"
-      id="state"
-      value={data.state}
-      name="state"
-      onChange={handleChange}
-      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-      placeholder=" "
-      required
-      
-    />
-    <label
-      htmlFor="state"
-      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-    >
-      State
-    </label>
-  </div>
-  {/* District */}
-  <div className="input-group relative">
-    <input
-      type="text"
-      id="district"
-      value={data.district}
-      name="district"
-      onChange={handleChange}
-      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-      placeholder=" "
-      required
-     
-    />
-    <label
-      htmlFor="district"
-      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-    >
-      District
-    </label>
-  </div>
-</div>
-<div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
-  {/* City */}
-  <div className="input-group relative">
-    <input
-      type="text"
-      id="city"
-      value={data.city}
-      name="city"
-      onChange={handleChange}
-      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-      placeholder=" "
-      required
-      
-    />
-    <label
-      htmlFor="city"
-      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-    >
-      Village / Town / City
-    </label>
-  </div>
-  {/* Referral */}
-  <div className="input-group relative">
-    <input
-      type="text"
-      id="referal"
-      value={data.referal}
-      name="referal"
-      onChange={handleChange}
-      className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-      placeholder=" "
-     
-    />
-    <label
-      htmlFor="referal"
-      className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
-    >
-      Referral Id (Optional)
-    </label>
-  </div>
-</div>
-
+                      <div className="input-group relative">
+                        <input
+                          type="text"
+                          id="state"
+                          value={data.state}
+                          name="state"
+                          onChange={handleChange}
+                          className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+                          placeholder=" "
+                          required
+                        />
+                        <label
+                          htmlFor="state"
+                          className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                        >
+                          State
+                        </label>
+                      </div>
+                      <div className="input-group relative">
+                        <input
+                          type="text"
+                          id="district"
+                          value={data.district}
+                          name="district"
+                          onChange={handleChange}
+                          className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+                          placeholder=" "
+                          required
+                        />
+                        <label
+                          htmlFor="district"
+                          className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                        >
+                          District
+                        </label>
+                      </div>
+                    </div>
+                    <div className="mb-3 w-[90%] grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="input-group relative">
+                        <input
+                          type="text"
+                          id="city"
+                          value={data.city}
+                          name="city"
+                          onChange={handleChange}
+                          className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+                          placeholder=" "
+                          required
+                        />
+                        <label
+                          htmlFor="city"
+                          className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                        >
+                          Village / Town / City
+                        </label>
+                      </div>
+                      <div className="input-group relative">
+                        <input
+                          type="text"
+                          id="referal"
+                          value={data.referal}
+                          name="referal"
+                          onChange={handleChange}
+                          className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
+                          placeholder=" "
+                        />
+                        <label
+                          htmlFor="referal"
+                          className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                        >
+                          Referral Id (Optional)
+                        </label>
+                      </div>
+                    </div>
 
                     <div className="my-3 w-[90%]">
                       <label
@@ -732,7 +714,6 @@ const RegisterForm = () => {
                       onChange={handleChange}
                       placeholder="Refferal Id"
                       className="bg-transparent text_input text-base focus:ring-transparent focus:border-transparent block w-full px-1 py-2 text-[#eee]"
-                      
                     />
                   </div>
                 )}
@@ -806,3 +787,4 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
+
