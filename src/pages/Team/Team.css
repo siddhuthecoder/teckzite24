@@ -40,7 +40,7 @@ section{
     var(--color) 180deg,
     transparent 240deg);
     inset: -50%;
-    z-index: -2;
+    z-index: -3;
     animation: border 8s linear infinite;
 }
 .card:hover::before{
