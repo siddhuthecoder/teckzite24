@@ -41,7 +41,7 @@ const ReferralsBanner = () => {
 
     return (
         <>
-            <div className="ref-banner w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[1]" style={backgroundStyle}></div>
+            <div className="ref-banner w-full min-h-[100vh] flex justify-center items-center pointer-events-none z-[1] overflow-x-auto" style={backgroundStyle}></div>
             <div className={`ref-heading w-full min-h-[100vh] flex justify-center items-center z-[2] relative
                
                `} style={headingStyle}>
