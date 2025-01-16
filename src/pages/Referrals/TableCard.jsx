@@ -7,14 +7,12 @@ import { fetchRefs } from "../../store/refSlice";
 import { toast } from "react-hot-toast";
 import MenuButton from "../../components/button/MenuButton";
 
-
 const Table = () => {
   const refError = useSelector((state) => state.ref.error);
   const refStatus = useSelector((state) => state.ref.status);
   const refData = useSelector((state) => state.ref.data);
   const userData = useSelector((state) => state.user.data);
   const dispatch = useDispatch();
-
 
   const handleShare = () => {
     if (!userData) {
@@ -82,27 +80,29 @@ const Table = () => {
     );
   }
 
-  // Create a copy of refData to avoid modifying the original array
   const sortedRefData = [...refData]
     .filter((user) => user.referralsCount > 0)
     .sort((a, b) => b.referralsCount - a.referralsCount);
 
-  // Render table rows
   const tableRows = sortedRefData.map((user, index) => (
     <div
       key={user.email}
-      className={`w-full mt-[40px] relative flex item-center justify-center pb-[40px]`}
+      className="w-full mt-[40px] relative flex item-center justify-center pb-[40px] font-bruno"
     >
-      <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around">
-        <div className="w-[30px] mx-auto text-center ml-10">{index + 1}</div>
-        <div className="w-[240px] mx-auto text-center">{user.firstName}</div>
-        <div className="w-[300px] mx-auto text-center">{user.email}</div>
-        <div className="w-[300px] mx-auto text-center">
+      <div className="w-full md:w-[97%] py-[20px] flex items-center justify-around px-2 md:px-0 font-bruno">
+        <div className="w-[30px] text-center text-xs md:text-base">{index + 1}</div>
+        <div className="w-[120px] md:w-[240px] text-center truncate text-xs md:text-base">
+          {user.firstName}
+        </div>
+        <div className="w-[150px] md:w-[300px] text-center truncate text-xs md:text-base">
+          {user.email}
+        </div>
+        <div className="w-[80px] md:w-[300px] text-center text-xs md:text-base">
           {user.referralsCount}
         </div>
       </div>
       <img
-        src={Reftail}
+        src={Reftail || "/placeholder.svg"}
         alt=""
         className="absolute scale-y-[1.2] pointer-events-none h-[50px] w-full"
       />
@@ -111,17 +111,17 @@ const Table = () => {
 
   return (
     <div className="w-full h-full flex items-center justify-center mt-[-70px] relative">
-      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-[70px] overflow-y-auto  overflow-x-auto flex flex-col ">
-        <div className="w-[100%] min-w-[900px] flex flex-col" style={{}}>
-          <div className="w-full my-[20px] h-[60px] flex items-center relative">
-            <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
-              <div className="w-[30px] mx-auto text-center ml-10">Sno</div>
-              <div className="w-[240px] mx-auto text-center">Name</div>
-              <div className="w-[300px] mx-auto text-center">Email</div>
-              <div className="w-[300px] mx-auto text-center">Referrals</div>
+      <div className="w-full md:w-[97%] max-w-[1200px] min-w-[300px] pb-[70px] overflow-y-auto overflow-x-auto flex flex-col">
+        <div className="w-full flex flex-col">
+          <div className="w-full my-[20px] h-[60px] flex items-center justify-center relative">
+            <div className="w-full md:w-[97%] py-[20px] flex items-center justify-around px-3">
+              <div className="w-[30px] text-center text-xs md:text-base font-semibold">Sno</div>
+              <div className="w-[120px] md:w-[240px] text-center text-xs md:text-base font-semibold">Name</div>
+              <div className="w-[150px] md:w-[300px] text-center text-xs md:text-base font-semibold">Email</div>
+              <div className="w-[80px] md:w-[300px] text-center text-xs md:text-base font-semibold">Referrals</div>
             </div>
             <img
-              src={Refhead}
+              src={Refhead || "/placeholder.svg"}
               alt=""
               className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-2"
             />
@@ -129,9 +129,9 @@ const Table = () => {
           {tableRows}
         </div>
       </div>
-      <div className="w-full bg-transparent flex items-center justify-end my-6 md:my-7 fixed bottom-2 right-[5px] md:right-0 md:translate-x-[-50px] ">
-         <MenuButton text="Refer Now" action={handleShare} name="Refer Now" />
-        </div>
+      <div className="w-full bg-transparent flex items-center justify-end fixed bottom-5 md:bottom-8 right-0 px-4 md:px-8">
+        <MenuButton text="Refer Now" action={handleShare} name="Refer Now" />
+      </div>
     </div>
   );
 };

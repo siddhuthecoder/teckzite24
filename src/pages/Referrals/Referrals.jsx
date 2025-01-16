@@ -70,40 +70,6 @@ const Referals = () => {
       }}
       className="w-full text-white"
     >
-      {/* Animation Section */}
-      {/* <div className="relative w-full h-screen">
-        <div
-          className="fixed top-0 left-0 w-full h-screen pointer-events-none"
-          style={{ zIndex: 0 }}
-        >
-          <div className="w-screen h-screen relative">
-            <img
-              src={Humanhand}
-              alt="Human Hand"
-              style={{
-                position: "absolute",
-                top: -scrollPosition * 0.8,
-                left: -scrollPosition * 0.6,
-                transition: "top 0.1s, left 0.1s",
-              }}
-              className="w-[90%] h-[80%]"
-            />
-            <img
-              src={Robohand}
-              alt="Robo Hand"
-              style={{
-                position: "absolute",
-                bottom: -scrollPosition * 1,
-                right: -scrollPosition * 0.4,
-                transition: "bottom 0.1s, right 0.1s",
-              }}
-              className="w-[90%] h-[80%]"
-            />
-          </div>
-        </div>
-      </div> */}
-
-  
       <section className="relative w-full  overflow-x-hidden">
       <Animation title="Referals" />
         {/* Overlay */}
