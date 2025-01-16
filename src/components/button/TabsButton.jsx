@@ -12,7 +12,7 @@ const TabsButton = ({ name, isActive }) => {
               className="absolute inset-0 md:h-[36px] md:w-[300px] h-[25px] w-[180px] cursor-pointer"
               alt="Active Event Button"
             />
-            <div className="absolute md:top-[7px] top-[6px] md:text-[14px] text-[10px] font-bold font-bruno text-white z-[10] whitespace-nowrap">
+            <div className="absolute md:top-[7px] top-[6px] md:text-[12px] pt-1 text-[10px] font-bold font-bruno text-white z-[10] whitespace-nowrap">
               {name}
             </div>
           </>

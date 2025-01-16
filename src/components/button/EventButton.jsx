@@ -6,7 +6,7 @@ const EventButton = ({ name }) => {
             <div className="relative">
                 <img src={button} className="h-[50px] w-[115px]" />
                 <div
-                    className="absolute text-[15px] font-semibold text-white flex justify-center items-center z-[10px] top-[7px] right-[15px] left-[10px] font-bruno"
+                    className="absolute text-[12px] pt-1 font-semibold text-white flex justify-center items-center z-[10px] top-[7px] right-[15px] left-[10px] font-bruno"
                 >
                     {name}
                 </div>

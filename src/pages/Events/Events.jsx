@@ -6,28 +6,29 @@ import Eventsbg from "./Eventsbg";
 import { useSelector } from "react-redux";
 
 const Events = () => {
-  const [tab, setTab] = useState("ALL");
-  const [filteredEvents, setFilteredEvents] = useState(null);
-  const [isActive, setIsActive] = useState(false);
+  const [tab, setTab] = useState("OPEN TO ALL"); // Default tab set to "OPEN TO ALL"
+  const [filteredEvents, setFilteredEvents] = useState([]);
   const eventData = useSelector((state) => state.event.data);
 
   useEffect(() => {
     if (eventData) {
-      setFilteredEvents(eventData);
-    }
-  }, [eventData]);
-
-  useEffect(() => {
-    if (eventData) {
-      const filtering = eventData.filter((data) => data.dep === tab);
-      setFilteredEvents(filtering);
+      if (tab === "OPEN TO ALL") {
+        const allEvents = eventData.filter((data) => data.dep === "ALL");
+        setFilteredEvents(allEvents); // Display events where data.dep === "ALL"
+      } else {
+        const filtering = eventData.filter((data) => data.dep === tab);
+        setFilteredEvents(filtering);
+      }
     }
   }, [eventData, tab]);
+  
 
   const handleSound = () => {
     const audio = new Audio("./click.wav");
     audio.play();
   };
+
+  console.log(filteredEvents)
 
   return (
     <main className="relative w-full overflow-x-hidden font-bruno">
@@ -36,7 +37,7 @@ const Events = () => {
       <Eventsbg isEventOpen={true} />
       <div className="relative w-full flex flex-col min-h-[85vh] pb-5 font-bruno">
         <div className="text-center font-bruno text-3xl mt-[80px] md:mt-5">Events</div>
-        <div className="w-full flex items-center gap-2 justify-center flex-wrap px-5 mt-7 font-bruno">
+        <div className="w-full  flex items-center gap-3 justify-center  md:text-[12px] pt-1 text-[10px] flex-wrap px-5 mt-7 font-bruno">
           {[
             "OPEN TO ALL",
             "PUC",
@@ -52,27 +53,21 @@ const Events = () => {
             <div
               key={index}
               onClick={() => {
-                setTab(
-                  item === "EE" ? "EEE" : item === "OPEN 2 ALL" ? "ALL" : item
-                );
-                setIsActive(true);
+                setTab(item);
                 handleSound();
-              
               }}
-              className="font-bruno"
+              className="font-bruno cursor-pointer"
             >
               <TabsButton
                 name={item}
-                isActive={
-                  tab === (item === "EE" ? "EEE" : item === "OPEN 2 ALL" ? "ALL" : item)
-                }
+                isActive={tab === item} // Set active state correctly
               />
             </div>
           ))}
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 font-bruno">
-          {filteredEvents ? (
-            <div className=" mt-10 flex flex-wrap justify-around  gap-y-0 z-0">
+          {filteredEvents.length > 0 ? (
+            <div className="mt-10 flex flex-wrap justify-around gap-y-0 z-0">
               {filteredEvents.map((event, index) => (
                 <div key={index} className="cursor-pointer">
                   <EWCard
