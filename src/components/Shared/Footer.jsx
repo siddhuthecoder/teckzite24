@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate=useNavigate()
   return (
-    <div className="footer_container  md:flex justify-center items-end translate-y-[30px] md:bottom-[-16px]">
+    <div className="footer_container  md:flex justify-center items-end translate-y-[30px] md:bottom-[-16px] font-bruno">
       <footer className="h-full w-full flex items-center  lg:items-end justify-center md:justify-between lg:justify-around lg:p-4 mt-[20px]">
         <div className="social-media md:flex text-white mb-2  md:items-center md:translate-y-[13px]  lg:translate-y-0 justify-around w-1/3 translate-x-[-20px] hidden">
           <FaLinkedin className="text-[20px] lg:text-[25px] hover:text-[blue]" />
