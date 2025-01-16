@@ -1,6 +1,6 @@
 import React from "react";
-import Reftail from "../../assets/img/Reftail.png";
-import Refhead from "../../assets/img/Refhead.png";
+import Reftail from "../../assets/img/Reftail.webp";
+import Refhead from "../../assets/img/Refhead.webp";
 import { useSelector, useDispatch } from "react-redux";
 import { MdOutlineWifiOff } from "react-icons/md";
 import { fetchRefs } from "../../store/refSlice";

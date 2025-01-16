@@ -9,13 +9,11 @@ import { userActions } from "../../store/userSlice";
 import img from "../../assets/logo.png";
 import FileBase64 from "react-file-base64";
 import "./reg.css";
-import bord from "../../assets/img/svgs/regBorder.svg";
-import svg1 from "../../assets/img/svgs/regSvg.svg";
-import svg2 from "../../assets/img/svgs/svg2.svg";
-import signup from "../../assets/events/signup.png";
-import signupdetails from "../../assets/events/signupdetails.png";
-import profiledesk from "../../assets/events/profiledesk.png";
-import profilemobile from "../../assets/events/profilemobile.png";
+
+import signup from "../../assets/events/signup.webp";
+import signupdetails from "../../assets/events/signupdetails.webp";
+import profiledesk from "../../assets/events/profiledesk.webp";
+import profilemobile from "../../assets/events/profilemobile.webp";
 import "./RegisterForm.css";
 const RegisterForm = () => {
   const location = useLocation();

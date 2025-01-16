@@ -1,5 +1,5 @@
 import React from 'react';
-import tabbutton from '../../assets/events/tabbutton.png'
+import tabbutton from '../../assets/events/tabbutton.webp'
 const TabsButton = ({ name, isActive }) => {
   return (
     <div className="flex justify-center items-center">

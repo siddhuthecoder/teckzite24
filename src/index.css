@@ -282,7 +282,7 @@ select option {
   transform: rotate(0deg);
   left: 0;
   right: 0;
-  background: url("../public/foot.png") no-repeat top center fixed;
+  background: url("../public/foot.webp") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
   z-index: 20;
@@ -316,7 +316,7 @@ select option {
 @media (max-width: 768px) {
   .footer_container {
     height: 40px;
-    background: url("../public/mobilefooter.png") no-repeat bottom center fixed;
+    background: url("../public/mobilefooter.webp") no-repeat bottom center fixed;
     background-size: 100% 40px;
   }
 }
@@ -328,7 +328,7 @@ select option {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: url("../public/Group104.png") no-repeat top center fixed;
+  background: url("../public/Group104.webp") no-repeat top center fixed;
   height: 90px;
   background-size: 100% 100px;
 }
@@ -336,7 +336,7 @@ select option {
 @media (max-width: 768px) {
   .header_container {
     height: 80px;
-    background: url("../public/assets/headerMobile.png") no-repeat top center
+    background: url("../public/assets/headerMobile.webp") no-repeat top center
       fixed;
     background-size: 100% 80px;
   }

@@ -1,25 +1,24 @@
 import React from "react";
-import sp1 from "../../assets/img/speakers/sp1.svg";
-import sp2 from "../../assets/img/speakers/sp2.svg";
-import sp3 from "../../assets/img/speakers/sp3.svg";
-import sp4 from "../../assets/img/speakers/sp4.svg";
-import sp5 from "../../assets/img/speakers/sp5.svg";
-import sp6 from "../../assets/img/speakers/sp6.svg";
-import sp7 from "../../assets/img/speakers/sp7.svg";
-import sp8 from "../../assets/img/speakers/sp8.svg";
-import sp9 from "../../assets/img/speakers/sp9.svg";
-import sp10 from "../../assets/img/speakers/sp10.svg";
-import sp11 from "../../assets/img/speakers/sp11.svg";
-import img from "../../assets/img/event.jpg";
+// import sp1 from "../../assets/img/speakers/sp1.svg";
+// import sp2 from "../../assets/img/speakers/sp2.svg";
+// import sp3 from "../../assets/img/speakers/sp3.svg";
+// import sp4 from "../../assets/img/speakers/sp4.svg";
+// import sp5 from "../../assets/img/speakers/sp5.svg";
+// import sp6 from "../../assets/img/speakers/sp6.svg";
+// import sp7 from "../../assets/img/speakers/sp7.svg";
+// import sp8 from "../../assets/img/speakers/sp8.svg";
+// import sp9 from "../../assets/img/speakers/sp9.svg";
+// import sp10 from "../../assets/img/speakers/sp10.svg";
+// import sp11 from "../../assets/img/speakers/sp11.svg";
 
 const SpeakersCard = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center">
       <div className="flex  w-[216px] justify-center items-center h-[336px] m-[40px]  relative">
         <div className="w-[170px] h-[300px] relative">
-          <img src={img} alt="" />
+          {/* <img src={img} alt="" /> */}
         </div>
-        <img src={sp1} alt="" className="absolute pointer-events-none" />
+        {/* <img src={sp1} alt="" className="absolute pointer-events-none" />
         <img
           src={sp2}
           alt=""
@@ -89,7 +88,7 @@ const SpeakersCard = () => {
           src={sp11}
           alt=""
           className="absolute pointer-events-none right-[-4px] bottom-[13px]"
-        />
+        /> */}
       </div>
     </div>
   );

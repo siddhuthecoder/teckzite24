@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import webteam from "../../assets/img/webteam.jpg";
-import coreteam from "../../assets/img/coreteam.jpg";
-import tabbutton from "../../assets/events/tabbutton.png";
+import webteam from "../../assets/img/webteam.webp";
+import coreteam from "../../assets/img/coreteam.webp";
+import tabbutton from "../../assets/events/tabbutton.webp";
 import MenuButton from "../../components/button/MenuButton";
 import Header from "../../components/Header/Header";
 const Team = () => {
@@ -20,7 +20,7 @@ const Team = () => {
       <div className="flex justify-center items-center w-full  gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px] z-10 h-screen" 
        style={{
     backgroundImage:
-      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.jpg')",
+      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundPosition: "center",

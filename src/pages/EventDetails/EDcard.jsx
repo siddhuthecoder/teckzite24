@@ -3,7 +3,6 @@ import ed1 from "../../assets/img/ed/ed1.svg";
 import ed2 from "../../assets/img/ed/ed2.svg";
 import ed3 from "../../assets/img/ed/ed3.svg";
 import ed4 from "../../assets/img/ed/ed4.svg";
-import img from "../../assets/img/event.jpg";
 
 const EDcard = () => {
   const [tab, setTab] = useState("Description");

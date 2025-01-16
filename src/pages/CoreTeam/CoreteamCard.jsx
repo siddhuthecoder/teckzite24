@@ -10,7 +10,6 @@ import sp8 from "../../assets/img/speakers/sp8.svg";
 import sp9 from "../../assets/img/speakers/sp9.svg";
 import sp10 from "../../assets/img/speakers/sp10.svg";
 import sp11 from "../../assets/img/speakers/sp11.svg";
-import img from "../../assets/img/event.jpg";
 const CoreteamCard = ({ img, role, name }) => {
   return (
     <div className="m-[30px] flex items-center justify-center">

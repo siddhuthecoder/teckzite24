@@ -3,7 +3,7 @@ import '../../css/home.css';
 import { motion } from 'framer-motion'
 import Header from '../../components/Header/Header'
 import SideComonent from './SideComonent'
-import rect from "../../assets/img/speakers/rect.svg";
+// import rect from "../../assets/img/speakers/rect.svg";
 
 
 const StatusHome = () => {
@@ -56,11 +56,11 @@ const StatusHome = () => {
                                     backgroundImage:
                                       "repeating-linear-gradient(45deg,#262626,#1a1a1a 7px ,#1a1a1a 7px",
                                   }}>
-                                    <img
+                                    {/* <img
                                     src={rect}
                                     alt=""
                                     className="absolute bottom-[-10px] scale-x-[0.5] left-[-35px]"
-                                    />
+                                    /> */}
                                 <div className="w-full items-center justify-center   text-[30px] grad-text font-bold  flex">
                                     <Counter className="" count={item.count} />
                                     <div className="text-white px-3" style={{ fontSize: "20px" }}>+</div>

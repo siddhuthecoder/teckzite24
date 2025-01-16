@@ -9,14 +9,11 @@ import TimeLine from "./details/TimeLine";
 import Structure from "./details/Structure";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-import ed1 from "../../assets/img/ed/ed1.svg";
-import ed2 from "../../assets/img/ed/ed2.svg";
-import ed3 from "../../assets/img/ed/ed3.svg";
-import ed4 from "../../assets/img/ed/ed4.svg";
-import tabbutton from "../../assets/events/tabbutton.png";
+
+import tabbutton from "../../assets/events/tabbutton.webp";
 import EventButton from "../../components/button/EventButton";
-import eventdetailsdesk from "../../assets/events/eventdetailsdesk.png";
-import eventdetailsmobile from "../../assets/events/eventdetailsmobile.png";
+import eventdetailsdesk from "../../assets/events/eventdetailsdesk.webp";
+import eventdetailsmobile from "../../assets/events/eventdetailsmobile.webp";
 import { userActions } from "../../store/userSlice";
 import TabsButton from "../../components/button/TabsButton";
 const EventDetailsCard3 = () => {
@@ -172,7 +169,7 @@ const EventDetailsCard3 = () => {
     {/* Background Image */}
     <div
       className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center "
-      style={{ backgroundImage: "url('/notfound.jpg')" }}
+      style={{ backgroundImage: "url('/notfound.webp')" }}
       onClick={() => handleSound()}
     ></div>
 

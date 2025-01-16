@@ -34,7 +34,7 @@ const Eventsbg = ({ isEventOpen }) => {
       <div
         className="fixed top-2 left-0 w-full h-screen bg-cover bg-center pointer-events-none"
         style={{
-          backgroundImage: "url('/overlaybg-cup.jpg')",
+          backgroundImage: "url('/overlaybg-cup.webp')",
         }}
       >
         <div

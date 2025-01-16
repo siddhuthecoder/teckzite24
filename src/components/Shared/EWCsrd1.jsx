@@ -3,7 +3,7 @@ import Workbutton from "./Workbutton";
 import {FaInstagram} from "react-icons/fa";
 import { RiFacebookCircleLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
-import Workshop from "../../assets/img/Workshop.png";
+import Workshop from "../../assets/img/Workshop.webp";
 const EWCsrd1 = ({ img, id, name, workshop }) => {
   const navigate = useNavigate();
   const handleSound = () => {
