@@ -1,7 +1,6 @@
 $light: #ffffff;
 $dark: lighten(#000000, 8%);
 $glow: #0ba9ca;
-$fs: 60px;
 
 html {
   height: 100%;
@@ -23,14 +22,18 @@ html {
   }
   .major {
     display: block;
-    font-size: $fs;
+    font-size: 60px;
   }
-  .minor {
-    display: block;
-    font-size: $fs/10*6;
+  
+  @media (max-width: 768px) {
+    .major {
+      display: block;
+      font-size: 40px;
+    }
   }
-}
+  
 
+}
 @keyframes blink {
   0%   {}
   100% { 
