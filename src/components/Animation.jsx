@@ -44,7 +44,7 @@ const Animation = (props) => {
               top: `calc(50% - ${scrollPosition * 0.5}px)`, 
               left: "50%",
               transform: "translate(-50%, -50%)", 
-              opacity: scrollPosition > 300 ? 0 : 1, 
+              opacity: scrollPosition > 400 ? 0 : 1, 
               transition: "top 0.1s, opacity 0.2s",
             }}
           >
