@@ -59,6 +59,8 @@ const Referals = () => {
 
   
   return (
+    <section className="relative w-full  overflow-x-hidden">
+
     <div
       style={{
         backgroundImage:
@@ -72,14 +74,14 @@ const Referals = () => {
     >
                 <Header />
 
-      <section className="relative w-full  overflow-x-hidden">
       <Animation title="Referals" />
         {/* Overlay */}
         {/* Main Content */}
         {userData?
         (<div className="relative z-5">
           <Table />
-        </div>):  (<div
+        </div>):
+          (<div
                 role="status"
                 className="flex items-center justify-center w-[fit-content] min-h-[400px]"
               >
@@ -102,8 +104,9 @@ const Referals = () => {
                 <span className="sr-only">Loading...</span>
               </div>)
 }
-      </section>
+    
     </div>
+    </section>
   );
 };
 
