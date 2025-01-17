@@ -75,7 +75,7 @@ const Referals = () => {
         <Animation title="Referals" />
         {/* Overlay */}
         {/* Main Content */}
-        {/* {refStatus === "loading" || !userData  ? (
+        {refStatus === "loading"  ? (
           <div
             role="status"
             className="flex items-center justify-center w-[fit-content] min-h-[400px] mx-auto"
@@ -98,12 +98,12 @@ const Referals = () => {
             </svg>
             <span className="sr-only">Loading...</span>
           </div>
-        ) :( */}
+        ) :(
         <div className="relative z-5 w-full overflow-x-auto">
         <Table />
       </div> 
           
-        {/* )} */}
+        )} 
     </div>
     </section>
   );
