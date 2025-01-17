@@ -125,8 +125,8 @@ const Table = () => {
           {tableRows}
         </div>
       </div>
-      <div className="w-full bg-transparent flex items-center justify-end my-6 md:my-7 fixed bottom-2 right-[5px] md:right-0 md:translate-x-[-50px]">
-        <MenuButton text="Refer Now" action={handleShare} name="Refer Now" />
+      <div className="w-auto bg-[#1E262A] h-[50px] rounded-b-[10px] rounded-tl-[10px] flex items-center justify-end my-6 md:my-7 fixed bottom-1 right-[5px] md:right-0 md:translate-x-[-50px]">
+        <MenuButton text="Refer Now" action={handleShare} name="Refer Now"  />
       </div>
     </div>
   );

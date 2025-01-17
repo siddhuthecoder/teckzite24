@@ -49,7 +49,7 @@ const Animation = (props) => {
             }}
           >
           <div className="glow">
-  <span className="major absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
+  <span className="major absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-90%] md:translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
     {props.title}
   </span>
   {/* <h1 className="absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-[#05a8f3] stroke-[2px] stroke-[#05a8f3] animate-waves">
