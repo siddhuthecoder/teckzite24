@@ -72,18 +72,13 @@ const Referals = () => {
     >
       <Header />
 
-      <section className="relative w-full  overflow-x-hidden">
         <Animation title="Referals" />
         {/* Overlay */}
         {/* Main Content */}
-        {userData ? (
-          <div className="relative z-5 w-full overflow-x-auto">
-            <Table />
-          </div>
-        ) : (
+        {refStatus === "loading" || !userData  ? (
           <div
             role="status"
-            className="flex items-center justify-center w-[fit-content] min-h-[400px]"
+            className="flex items-center justify-center w-[fit-content] min-h-[400px] mx-auto"
           >
             <svg
               aria-hidden="true"
@@ -103,8 +98,11 @@ const Referals = () => {
             </svg>
             <span className="sr-only">Loading...</span>
           </div>
+        ) :(<div className="relative z-5 w-full overflow-x-auto">
+        <Table />
+      </div> 
+          
         )}
-      </section>
     </div>
     </section>
   );
