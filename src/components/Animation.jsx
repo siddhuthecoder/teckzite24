@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Humanhand from "../assets/Animation/Hhand.webp"; 
-import Robohand from "../assets/Animation/rhand.webp"; 
+import Humanhand from "../assets/Animation/Hhand.webp";
+import Robohand from "../assets/Animation/rhand.webp";
 
 const Animation = (props) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -40,22 +40,21 @@ const Animation = (props) => {
           <div
             className="text-white text-[30px] lg:text-[57px] absolute z-10"
             style={{
-              top: `calc(50% - ${scrollPosition * 0.5}px)`, 
+              top: `calc(50% - ${scrollPosition * 0.5}px)`,
               left: "50%",
-              transform: "translate(-50%, -50%)", 
-              opacity: scrollPosition > 300 ? 0 : 1, 
+              transform: "translate(-50%, -50%)",
+              opacity: scrollPosition > 300 ? 0 : 1,
               transition: "top 0.1s, opacity 0.2s",
             }}
           >
-          <div className="relative">
-  <h1 className="absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
-    {props.title}
-  </h1>
-  <h1 className="absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-[#05a8f3] stroke-[2px] stroke-[#05a8f3] animate-waves">
-    {props.title}
-  </h1>
-</div>
-
+            <div className="relative">
+              <h1 className="absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
+                {props.title}
+              </h1>
+              <h1 className="absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-[#05a8f3] stroke-[2px] stroke-[#05a8f3] animate-waves">
+                {props.title}
+              </h1>
+            </div>
           </div>
 
           {/* Robo Hand Image */}
