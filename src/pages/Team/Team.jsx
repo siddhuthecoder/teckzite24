@@ -20,6 +20,7 @@ const Team = () => {
   return (
     <>
       <Header />
+      <section>
       <div
         className="flex justify-center items-center w-full gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px] z-10 md:h-screen"
         style={{
@@ -30,31 +31,28 @@ const Team = () => {
           backgroundPosition: "center",
         }}
       >
-        {/* Web Team Card */}
         <div
-          className="flex card w-[280px] h-[400px] rounded-[20px] justify-center items-center relative cursor-pointer mt-[100px] md:mt-0"
+          className="flex cardone w-[300px] h-[400px] rounded-[20px] justify-center items-center relative cursor-pointer mt-[100px] md:mt-0"
           onClick={handleWebTeamClick}
         >
           <img
             src={webteam}
             alt="webteam"
-            className="w-[200%] h-[97%] absolute titleone rounded-lg pr-[15px] overflow-hidden ml-[-15px]"
+            className="w-[97%] h-[97%] absolute titleone rounded-lg  overflow-hidden "
           />
-          <div className="absolute text-white text-sm pb-3 font-bold z-20">
+          <div className="absolute  text-white text-sm pb-3 font-bold z-20">
             WEBTEAM
           </div>
           <MenuButton text="Web Team" action={handleWebTeamClick} />
         </div>
-
-        {/* Core Team Card */}
         <div
-          className="flex card w-[280px] h-[400px] rounded-[20px] justify-center items-center relative cursor-pointer mb-[50px] md:mt-0"
+          className="flex cardone w-[300px] h-[400px] rounded-[20px] justify-center items-center relative cursor-pointer mb-[50px] md:mt-0"
           onClick={handleCoreTeamClick}
         >
           <img
             src={coreteam}
             alt="coreteam"
-            className="w-[100%] h-[97%] absolute titleone rounded-[20px] overflow-hidden pl-[16px] mr-[-13px]"
+            className="w-[97%] h-[97%] absolute titleone rounded-lg overflow-hidden"
           />
           <div className="absolute text-white text-sm pb-3 font-bold z-20">
             CORETEAM
@@ -62,6 +60,16 @@ const Team = () => {
           <MenuButton text="Core Team" action={handleCoreTeamClick} />
         </div>
       </div>
+      </section>
+    {/*<section>
+      <div className=" cardone">
+        <div>UI Design</div>
+        <div>
+          Hello, how are you? Here is the information about the above one.
+        </div>
+      </div>
+    </section>*/}
+
     </>
   );
 };
