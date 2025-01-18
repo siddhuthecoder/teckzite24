@@ -49,6 +49,7 @@ import ComingSoon from "./components/ComingSoon";
 import Home from "./pages/home1/home";
 import ParticlesComponent from "./components/home_banneer/Particle";
 import CertificatesWorkshop from "./pages/CertificatesWorkshop/CertificatesWorkshop";
+import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -198,7 +199,7 @@ function App() {
 
                 
               <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
-              <Route path="/expo" element={<ComingSoon></ComingSoon>}/>  
+              <Route path="/expo" element={<ProjectExpo/>}/>  
               <Route path="*" element={<PageNotFound />} />
 
 
