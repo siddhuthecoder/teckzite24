@@ -305,7 +305,7 @@ const RegisterForm = () => {
 
   if (settingUser) {
     return (
-      <section className="w-full min-h-[100vh] flex items-center justify-center flex-col gap-2 ">
+      <section className="w-full min-h-[100vh] flex items-center justify-center flex-col gap-2 " >
         <div role="status">
           <svg
             aria-hidden="true"
@@ -332,7 +332,13 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="z-5 w-full h-full pt-[160px] pb-[20px]">
+    <section className="z-5 w-full h-full pt-[160px] pb-[20px]"   style={{
+      backgroundImage:
+        "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
+      backgroundAttachment: "fixed",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}>
       <form
         onSubmit={handleSubmit}
         className="w-[90%] max-w-[420px] z-10 mx-auto mb-20 flex justify-center items-center"
