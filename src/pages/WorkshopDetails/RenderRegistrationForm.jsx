@@ -18,7 +18,8 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
     ? `${userData.firstName} ${userData.lastName}`
     : "";
   const defaultPhno = userData ? userData.phno : "";
-
+  const user = useSelector((state)=> state.auth.user)
+console.log(user)
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState(defaultEmail);
   const [idNumber, setIdNumber] = useState(defaultIdNumber);
