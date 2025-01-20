@@ -9,9 +9,12 @@ const RegistrationModal = ({ onClose, userData }) => {
     projectName: '',
     abstract: '',
     file: '',
+    problemStatementNumber: '',
   });
-  const [teamMembers, setTeamMembers] = useState([userData.tkzid]);
-  const [newMemberId, setNewMemberId] = useState('');
+  const [teamMembers, setTeamMembers] = useState([
+    { tkzid: userData.tkzid, name: userData.name, phoneNumber: userData.phoneNumber, branch: userData.branch },
+  ]);
+  const [newMember, setNewMember] = useState({ tkzid: '', name: '', phoneNumber: '', branch: '' });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -51,16 +54,16 @@ const RegistrationModal = ({ onClose, userData }) => {
       toast.error('Maximum 5 team members allowed');
       return;
     }
-    if (newMemberId.trim() === '') {
-      toast.error('Please enter a valid Teckzite ID');
+    if (!newMember.tkzid || !newMember.name || !newMember.phoneNumber || !newMember.branch) {
+      toast.error('Please fill in all member details');
       return;
     }
-    if (teamMembers.includes(newMemberId)) {
+    if (teamMembers.some((member) => member.tkzid === newMember.tkzid)) {
       toast.error('Member already added');
       return;
     }
-    setTeamMembers((prev) => [...prev, newMemberId]);
-    setNewMemberId('');
+    setTeamMembers((prev) => [...prev, newMember]);
+    setNewMember({ tkzid: '', name: '', phoneNumber: '', branch: '' });
   };
 
   const handleRemoveMember = (tkzid) => {
@@ -68,7 +71,7 @@ const RegistrationModal = ({ onClose, userData }) => {
       toast.error('Minimum 2 team members required');
       return;
     }
-    setTeamMembers((prev) => prev.filter((id) => id !== tkzid));
+    setTeamMembers((prev) => prev.filter((member) => member.tkzid !== tkzid));
   };
 
   const handleSubmit = async () => {
@@ -76,7 +79,7 @@ const RegistrationModal = ({ onClose, userData }) => {
       toast.error('Minimum 2 team members required');
       return;
     }
-    if (!projectData.projectName || !projectData.abstract || !projectData.file) {
+    if (!projectData.projectName || !projectData.abstract || !projectData.file || !projectData.problemStatementNumber) {
       toast.error('Please fill in all project details');
       setStep(1);
       return;
@@ -86,6 +89,7 @@ const RegistrationModal = ({ onClose, userData }) => {
       projectName: projectData.projectName,
       abstract: projectData.abstract,
       file: projectData.file,
+      problemStatementNumber: Number(projectData.problemStatementNumber),
       teamMembers,
     };
 
@@ -100,7 +104,8 @@ const RegistrationModal = ({ onClose, userData }) => {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to register project. Please try again.');
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to register project. Please try again.');
       }
 
       const data = await response.json();
@@ -113,7 +118,8 @@ const RegistrationModal = ({ onClose, userData }) => {
     }
   };
 
-  const canProceedToStep2 = projectData.projectName && projectData.abstract && projectData.file;
+  const canProceedToStep2 =
+    projectData.projectName && projectData.abstract && projectData.file && projectData.problemStatementNumber;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -145,6 +151,16 @@ const RegistrationModal = ({ onClose, userData }) => {
               disabled={fileUploading}
             />
             {fileUploading && <p className="text-white mb-2">Uploading file...</p>}
+            <input
+              type="number"
+              name="problemStatementNumber"
+              value={projectData.problemStatementNumber}
+              onChange={handleInputChange}
+              placeholder="Problem Statement Number (1-6)"
+              className="w-full p-2 mb-4 bg-white bg-opacity-20 rounded text-white"
+              min="1"
+              max="6"
+            />
             <button
               onClick={() => (canProceedToStep2 ? setStep(2) : toast.error('Please fill in all project details'))}
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
@@ -156,12 +172,12 @@ const RegistrationModal = ({ onClose, userData }) => {
           <>
             <div className="mb-4">
               <h3 className="text-lg font-semibold mb-2 text-white">Team Members ({teamMembers.length}/5)</h3>
-              {teamMembers.map((tkzid) => (
-                <div key={tkzid} className="flex justify-between items-center mb-2">
-                  <span className="text-white">{tkzid}</span>
-                  {tkzid !== userData.tkzid && (
+              {teamMembers.map((member) => (
+                <div key={member.tkzid} className="flex justify-between items-center mb-2">
+                  <span className="text-white">{member.name} ({member.tkzid})</span>
+                  {member.tkzid !== userData.tkzid && (
                     <button
-                      onClick={() => handleRemoveMember(tkzid)}
+                      onClick={() => handleRemoveMember(member.tkzid)}
                       className="text-red-500 hover:text-red-700"
                     >
                       Remove
@@ -170,20 +186,40 @@ const RegistrationModal = ({ onClose, userData }) => {
                 </div>
               ))}
             </div>
-            <div className="flex mb-4">
+            <div className="flex flex-col mb-4">
               <input
                 type="text"
-                value={newMemberId}
-                onChange={(e) => setNewMemberId(e.target.value)}
-                placeholder="Add team member TKZID"
-                className="flex-grow p-2 bg-white bg-opacity-20 rounded-l text-white"
+                value={newMember.tkzid}
+                onChange={(e) => setNewMember({ ...newMember, tkzid: e.target.value })}
+                placeholder="Teckzite ID"
+                className="p-2 mb-2 bg-white bg-opacity-20 rounded text-white"
+              />
+              <input
+                type="text"
+                value={newMember.name}
+                onChange={(e) => setNewMember({ ...newMember, name: e.target.value })}
+                placeholder="Name"
+                className="p-2 mb-2 bg-white bg-opacity-20 rounded text-white"
+              />
+              <input
+                type="text"
+                value={newMember.phoneNumber}
+                onChange={(e) => setNewMember({ ...newMember, phoneNumber: e.target.value })}
+                placeholder="Phone Number"
+                className="p-2 mb-2 bg-white bg-opacity-20 rounded text-white"
+              />
+              <input
+                type="text"
+                value={newMember.branch}
+                onChange={(e) => setNewMember({ ...newMember, branch: e.target.value })}
+                placeholder="Branch"
+                className="p-2 mb-2 bg-white bg-opacity-20 rounded text-white"
               />
               <button
                 onClick={handleAddMember}
-                className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600"
-                disabled={teamMembers.length >= 5}
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
               >
-                Add
+                Add Member
               </button>
             </div>
             <div className="flex justify-between">
@@ -196,19 +232,13 @@ const RegistrationModal = ({ onClose, userData }) => {
               <button
                 onClick={handleSubmit}
                 className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-                disabled={loading || teamMembers.length < 2}
+                disabled={loading}
               >
-                {loading ? 'Submitting...' : 'Submit'}
+                {loading ? 'Registering...' : 'Submit'}
               </button>
             </div>
           </>
         )}
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-white hover:text-gray-300"
-        >
-          ✕
-        </button>
       </div>
     </div>
   );
