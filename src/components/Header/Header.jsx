@@ -12,6 +12,7 @@ const Header = () => {
   // const pathName = window.location.pathname;
   const [showNav, setShowNav] = useState(false);
   const userData = useSelector((state) => state.user.data);
+  // console.log(userData)
 
   const dispatch = useDispatch();
   // const navigate = useNavigate()
