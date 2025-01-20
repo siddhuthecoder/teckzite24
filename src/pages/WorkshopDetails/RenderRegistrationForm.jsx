@@ -100,9 +100,9 @@ console.log(user)
       aria-hidden="true"
       className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center z-[1200] scroll_in"
     >
-      <div className="bg-white text-black w-[95%] max-w-lg p-4 rounded shadow-lg max-h-[90vh] scroll_in">
+      <div className="backdrop-blur-[18px] backdrop-saturate-200  text-white w-[95%] max-w-lg p-4 rounded shadow-lg max-h-[90vh] scroll_in">
         <div className="flex items-center justify-between pb-4 border-b">
-          <h3 className="text-xl font-semibold text-black">{data.name}</h3>
+          <h3 className="text-xl font-semibold text-white">{data.name}</h3>
           <button
             type="button"
             onClick={() => setRegisterForm(false)}
@@ -129,7 +129,7 @@ console.log(user)
             <div className="mt-2">
               <label
                 htmlFor="username"
-                className="text-sm text-black pb-1 pl-1"
+                className="text-sm text-white pb-1 pl-1"
               >
                 Full Name
               </label>
@@ -138,11 +138,11 @@ console.log(user)
                 id="username"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 border text-black rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
             <div className="mt-2">
-              <label htmlFor="college" className="text-sm text-black pb-1 pl-1">
+              <label htmlFor="college" className="text-sm text-white pb-1 pl-1">
                 College
               </label>
               <input
@@ -150,11 +150,11 @@ console.log(user)
                 id="college"
                 value={college}
                 onChange={(e) => setCollege(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 border text-black rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
             <div className="mt-2">
-              <label htmlFor="email" className="text-sm text-black pb-1 pl-1">
+              <label htmlFor="email" className="text-sm text-white pb-1 pl-1">
                 Email
               </label>
               <input
@@ -162,13 +162,13 @@ console.log(user)
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 border text-black rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
             <div className="mt-2">
               <label
                 htmlFor="idNumber"
-                className="text-sm text-black pb-1 pl-1"
+                className="text-sm text-white pb-1 pl-1"
               >
                 Id Number
               </label>
@@ -177,11 +177,11 @@ console.log(user)
                 id="idNumber"
                 value={idNumber}
                 onChange={(e) => setIdNumber(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 text-black border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
             <div className="mt-2">
-              <label htmlFor="phno" className="text-sm text-black pb-1 pl-1">
+              <label htmlFor="phno" className="text-sm text-white pb-1 pl-1">
                 Phone Number
               </label>
               <input
@@ -189,7 +189,7 @@ console.log(user)
                 id="phno"
                 value={phno}
                 onChange={(e) => setPhno(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 text-black border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
           </form>
