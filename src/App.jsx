@@ -9,8 +9,8 @@ import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
 import SpeakersCard from "./components/Shared/SPcard";
 import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
 import EWschedule from "./pages/Schedule/EWschedule";
-import RobowarEvents from "./pages/Robowars/RobowarEvents";
-import Team from "./pages/Team/Team";
+import RobowarEvents from "./pages/Robowars/RobowarEvents"
+import Team from "./pages/Team/Team"
 import Teamcore from "./pages/Team/Teamcore";
 import Teamweb from "./pages/Team/Teamweb";
 
@@ -43,14 +43,12 @@ import { fetchEvents } from "./store/eventSlice";
 import { fetchWorkshops } from "./store/workshopSlice";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
 import { fetchUser } from "./store/userSlice";
-import PageNotFound from "./components/PageNotFound";
-import { fetchRefs } from "./store/refSlice";
+import  PageNotFound  from "./components/PageNotFound";
 
 import ComingSoon from "./components/ComingSoon";
 import Home from "./pages/home1/home";
 import ParticlesComponent from "./components/home_banneer/Particle";
 import CertificatesWorkshop from "./pages/CertificatesWorkshop/CertificatesWorkshop";
-import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -61,9 +59,6 @@ function App() {
 
   const workshopError = useSelector((state) => state.workshop.error);
   const workshopStatus = useSelector((state) => state.workshop.status);
-
-  const refError = useSelector((state) => state.ref.error);
-  const refStatus = useSelector((state) => state.ref.status);
 
   const notificationError = useSelector((state) => state.notification.error);
   const notificationStatus = useSelector((state) => state.notification.status);
@@ -125,45 +120,7 @@ function App() {
     if (notificationError) {
       toast.error(notificationError);
     }
-    if(refError){
-      toast.error(refError);
-
-    }
-  }, [eventError, workshopError,refError, notificationError]);
-  useEffect(() => {
-    const preventRightClick = (e) => {
-      e.preventDefault();
-    };
-  
-    const handleKeyDown = (e) => {
-      // Prevents developer tools from opening with common key combinations
-      if (
-        e.keyCode === 123 || // F12
-        ctrlShiftKey(e, "I") || // Ctrl+Shift+I
-        ctrlShiftKey(e, "J") || // Ctrl+Shift+J
-        ctrlShiftKey(e, "C") || // Ctrl+Shift+C
-        (e.ctrlKey && e.keyCode === "U".charCodeAt(0)) // Ctrl+U (view source)
-      ) {
-        e.preventDefault();
-      }
-    };
-  
-    const ctrlShiftKey = (e, keycode) => {
-      return e.ctrlKey && e.shiftKey && e.keyCode === keycode.charCodeAt(0);
-    };
-  
-    // Disable right-click context menu
-    window.document.addEventListener("contextmenu", preventRightClick);
-  
-    // Prevent certain key combinations
-    window.document.addEventListener("keydown", handleKeyDown);
-  
-    return () => {
-      window.document.removeEventListener("contextmenu", preventRightClick);
-      window.document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
+  }, [eventError, workshopError, notificationError]);
 
   useEffect(() => {
     //fetch events
@@ -176,10 +133,7 @@ function App() {
     if (notificationStatus === "idle") {
       dispatch(fetchNotifications());
     }
-    if (refStatus === "idle") {
-      dispatch(fetchRefs());
-    }
-  }, [eventStatus, workshopStatus,refStatus, notificationStatus, dispatch]);
+  }, [eventStatus, workshopStatus, notificationStatus, dispatch]);
 
   return (
     <>
@@ -204,6 +158,7 @@ function App() {
         <>
           <Toaster />
           <main className="animate-show">
+
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
@@ -237,17 +192,17 @@ function App() {
               />
               <Route path="/profile" element={<Profile />} />
               <Route path="/certficates/users" element={<CertificatesUser />} />
-              <Route
-                path="/certficates/workshops"
-                element={<CertificatesWorkshop />}
-              />
+              <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
               <Route path="/stalls" element={<ComingSoon />} />
               {/* <Route path="/robowars" element={<ComingSoon />} /> */}
 
                 
               <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
-              <Route path="/expo" element={<ProjectExpo/>}/>  
+              <Route path="/expo" element={<ComingSoon></ComingSoon>}/>  
               <Route path="*" element={<PageNotFound />} />
+
+
+            
             </Routes>
             <Footer />
           </main>

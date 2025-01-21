@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 const Background = () => {
   const userData = useSelector((state) => state.user.data);
-  alert(userData?.credits)
   
   if (!userData) {
     //add logic for the redirect /register
