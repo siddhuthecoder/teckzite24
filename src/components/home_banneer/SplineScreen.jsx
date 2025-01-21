@@ -7,8 +7,8 @@ function SplineScreen() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Track screen size
 
   // Cache the Spline scene paths using useMemo
-  const splineSceneDesktop = useMemo(() => '/assets/scene.splinecode', []);
-  const splineSceneMobile = useMemo(() => '/assets/scene_mobile.splinecode', []);
+  const splineSceneDesktop = useMemo(() => '/scene.splinecode', []);
+  const splineSceneMobile = useMemo(() => '/scene_mobile.splinecode', []);
 
   useEffect(() => {
     const adjustViewAndScreen = () => {

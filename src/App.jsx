@@ -130,6 +130,40 @@ function App() {
 
     }
   }, [eventError, workshopError,refError, notificationError]);
+  useEffect(() => {
+    const preventRightClick = (e) => {
+      e.preventDefault();
+    };
+  
+    const handleKeyDown = (e) => {
+      // Prevents developer tools from opening with common key combinations
+      if (
+        e.keyCode === 123 || // F12
+        ctrlShiftKey(e, "I") || // Ctrl+Shift+I
+        ctrlShiftKey(e, "J") || // Ctrl+Shift+J
+        ctrlShiftKey(e, "C") || // Ctrl+Shift+C
+        (e.ctrlKey && e.keyCode === "U".charCodeAt(0)) // Ctrl+U (view source)
+      ) {
+        e.preventDefault();
+      }
+    };
+  
+    const ctrlShiftKey = (e, keycode) => {
+      return e.ctrlKey && e.shiftKey && e.keyCode === keycode.charCodeAt(0);
+    };
+  
+    // Disable right-click context menu
+    window.document.addEventListener("contextmenu", preventRightClick);
+  
+    // Prevent certain key combinations
+    window.document.addEventListener("keydown", handleKeyDown);
+  
+    return () => {
+      window.document.removeEventListener("contextmenu", preventRightClick);
+      window.document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
 
   useEffect(() => {
     //fetch events
