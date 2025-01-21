@@ -154,10 +154,10 @@ const Preloader = ({ setLoading }) => {
                 </div>
               ) : (
                 <div
-                  data-glitch="Travelling.."
+                  data-glitch="Generating.."
                   className="text-[#1DCFDC] glitch mt-[45px] text-[22px] md:text-[30px]"
                 >
-                  Travelling..
+                  Generating..
                 </div>
               )}
             </>
