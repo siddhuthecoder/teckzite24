@@ -46,7 +46,7 @@ const RegistrationModal = ({ onClose, userData }) => {
       }
 
       const data = await response.json();
-      toast.success(data.message || "File uploaded successfully!");
+      // toast.success(data.message || "File uploaded successfully!");
       setProjectData((prev) => ({ ...prev, file: data.webViewLink }));
     } catch (error) {
       toast.error(error.message);
@@ -173,7 +173,7 @@ const RegistrationModal = ({ onClose, userData }) => {
               className="w-full p-2 mb-4 bg-white bg-opacity-20 rounded text-white"
               disabled={fileUploading}
             />
-            {fileUploading && <p className="text-white mb-2">Uploading file...</p>}
+            {fileUploading && <p className="text-orange-600 mb-2">Uploading file...</p>}
             <input
               type="number"
               name="problemStatementNumber"
