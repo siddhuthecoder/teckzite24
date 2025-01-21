@@ -13,7 +13,6 @@ import ParticlesComponent from "./../../components/home_banneer/Particle";
 
 const Home = () => {
   const [app, setApp] = useState(true);
-  
   return (
     <main>
       <ParticlesComponent id="particles" />
