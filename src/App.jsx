@@ -51,6 +51,7 @@ import Home from "./pages/home1/home";
 import ParticlesComponent from "./components/home_banneer/Particle";
 import CertificatesWorkshop from "./pages/CertificatesWorkshop/CertificatesWorkshop";
 import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
+import Contact from "./pages/Register/Contact";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -227,7 +228,7 @@ function App() {
               <Route path="/eventupdates" element={<ComingSoon />} />
               <Route path="/EventsSchedule" element={<ComingSoon />} />
               <Route path="/updates" element={<ComingSoon />} />
-              <Route path="/Contact" element={<ComingSoon />} />
+              <Route path="/Contact" element={<Contact />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/Teamcore" element={<Teamcore />} />
               <Route path="/Teamweb" element={<Teamweb />} />

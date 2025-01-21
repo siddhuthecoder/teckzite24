@@ -1,7 +1,7 @@
 import Header from "./Header/Header";
 const Coming = () => {
   return (
-    <>
+    <div className="relative">
       <Header />
         <div
             className="h-screen flex flex-col items-center justify-center space-y-8 font-orbitron relative"
@@ -54,7 +54,7 @@ const Coming = () => {
                 </div>
             </div>
       </div>
-      </>
+      </div>
     );
 };
 

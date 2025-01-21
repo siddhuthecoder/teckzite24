@@ -6,9 +6,10 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { userActions } from "../../store/userSlice";
 import { toast } from "react-hot-toast";
-// import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { RiCoinsLine } from "react-icons/ri";
 const Header = () => {
+    const navigate =useNavigate()
   // const pathName = window.location.pathname;
   const [showNav, setShowNav] = useState(false);
   const userData = useSelector((state) => state.user.data);
@@ -29,8 +30,8 @@ const Header = () => {
   };
 
   return (
-    <div className="header_container">
-      <header className="w-full  relative h-full">
+    <div className="header_container relative ">
+      <header className="w-full  relative h-full ">
         <div
           className="absolute  lg:left-[5%] top-[35%] -translate-y-1/2 left-0 px-4 flex justify-between items-center gap-4 "
           style={{ verticalAlign: true }}
@@ -43,7 +44,24 @@ const Header = () => {
             }}
           >
             <GiHamburgerMenu className="text-2xl lg:text-4xl" />
+            <button className=' justify-center items-center p-2 mx-auto hidden md:flex '>
+                   {userData ? (
+                     <div className="flex  items-center gap-[8px] relative after:content-['|'] after:absolute   after:right-[70px] ">
+                       <span className="bg-gradient-to-b from-[#D7AC5D] via-[#D7AC5D] to-[#4F3025] bg-clip-text text-transparent">
+                         {userData.tzkid.toUpperCase()}
+                       </span>
+                       <span className="text-[20px] ml-[20px]  ">
+                         <RiCoinsLine className="text-[20px] text-[#D7AC5D] " />
            
+                       </span>
+                       <span className="bg-gradient-to-b from-[#D7AC5D] via-[#D7AC5D] to-[#4F3025] bg-clip-text text-transparent">
+                         {userData?.credits}
+                       </span>
+                     </div>
+                   ) : (
+                     ""
+                   )}
+                 </button>
           </div>
         </div>
         <div
@@ -53,7 +71,7 @@ const Header = () => {
           }}
         >
           <Link to="/">
-            <img src={"/TECKZITE'25 WHITE.png"} alt="logo"  className=" w-[160px]  md:w-[300px] lg:w-[200px] xl:w-[300px] translate-x-[-5px] inline-block z-0" />
+            <img src={"/tz25_web.webp"} alt="logo"  className=" w-[150px]  md:w-[300px] lg:w-[200px] xl:w-[300px] translate-x-[-5px] inline-block z-0" />
           </Link>
         </div>
         <div
@@ -69,12 +87,10 @@ const Header = () => {
                 logout();
               }}
             >
-            <div className="lg:flex lg:gap-[30px]">
+            <div className="lg:flex ">
              {userData && (
               <Link to="/profile">
-                <h1 className="max-lg:hidden bg-transparent font-semibold  text-xl">
-                  {userData.tzkid.toUpperCase()}
-                </h1>
+                
                 <IoMdExit className="md:hidden" size={22} />
               </Link>
             )}
