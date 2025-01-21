@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Humanhand from "../assets/Animation/Hhand.webp"; 
-import Robohand from "../assets/Animation/rhand.webp"; 
-import '../css/glow.scss';
+import Humanhand from "../assets/Animation/Hhand.webp";
+import Robohand from "../assets/Animation/rhand.webp";
+import "../css/glow.scss";
 
 const Animation = (props) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -41,22 +41,18 @@ const Animation = (props) => {
           <div
             className="text-white text-[30px] lg:text-[57px] absolute z-10"
             style={{
-              top: `calc(50% - ${scrollPosition * 0.5}px)`, 
+              top: `calc(50% - ${scrollPosition * 0.5}px)`,
               left: "50%",
-              transform: "translate(-50%, -50%)", 
-              opacity: scrollPosition > 400 ? 0 : 1, 
+              transform: "translate(-50%, -50%)",
+              opacity: scrollPosition > 400 ? 0 : 1,
               transition: "top 0.1s, opacity 0.2s",
             }}
           >
-          <div className="glow">
-  <span className="major absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-90%] md:translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
-    {props.title}
-  </span>
-  {/* <h1 className="absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-50%] text-[#05a8f3] stroke-[2px] stroke-[#05a8f3] animate-waves">
-    {props.title}
-  </h1> */}
-</div>
-
+            <div className="glow">
+              <span className="major absolute text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-90%] md:translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
+                {props.title}
+              </span>
+            </div>
           </div>
 
           {/* Robo Hand Image */}
