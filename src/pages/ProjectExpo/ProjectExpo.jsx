@@ -35,27 +35,38 @@ const ProjectExpo = () => {
             Welcome to Project Expo
           </span>
         </div>
-        <div
-          className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg text-white mb-8"
-        >
+        <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg text-white mb-8">
           <h2 className="text-2xl font-bold mb-4">About</h2>
           <p className="mb-6">
-            The Project Expo is an opportunity for participants to showcase their
-            innovative projects and ideas to a wider audience. This event
+            The Project Expo is an opportunity for participants to showcase
+            their innovative projects and ideas to a wider audience. This event
             fosters creativity, collaboration, and learning among students and
             professionals alike.
           </p>
           <h2 className="text-2xl font-bold mb-4">Rules and Regulations</h2>
           <ul className="list-disc pl-6">
-            <li className="mb-2">All participants must register before the deadline.</li>
-            <li className="mb-2">Projects should adhere to the specified guidelines.</li>
-            <li className="mb-2">Use of any prohibited materials or content will lead to disqualification.</li>
-            <li className="mb-2">Participants must be present during the event to present their projects.</li>
+            <li className="mb-2">
+              All participants must register before the deadline.
+            </li>
+            <li className="mb-2">
+              Projects should adhere to the specified guidelines.
+            </li>
+            <li className="mb-2">
+              Use of any prohibited materials or content will lead to
+              disqualification.
+            </li>
+            <li className="mb-2">
+              Participants must be present during the event to present their
+              projects.
+            </li>
           </ul>
+          <div className="w-full flex items-center justify-between">
+            <div onClick={handleRegisterClick}>
+              <MenuButton title="Register" name="Register" />
+            </div>
+          </div>
         </div>
-        <div onClick={handleRegisterClick}>
-          <MenuButton title="Register" name="Register" />
-        </div>
+
         {isModalOpen && (
           <RegistrationModal
             onClose={() => setIsModalOpen(false)}
