@@ -276,64 +276,64 @@ import km from '../../assets/img/sponsors/km.webp';
 import des from '../../assets/img/sponsors/des.webp';
 
 const sponsorsData = [
-  {
-    heading: "Academic Partner",
-    sponsors: [
-      { name: "UNACADEMY", img: una },
-    ],
-  },
+  // {
+  //   heading: "Academic Partner",
+  //   sponsors: [
+  //     { name: "UNACADEMY", img: una },
+  //   ],
+  // },
   {
     heading: "Digital and Media Partner",
     sponsors: [
       { name: "MEE NEWS", img: meeNews },
     ],
   },
-  {
-    heading: "Overseas Education Partner",
-    sponsors: [
-      { name: "Bridge Consultancy", img: bridge },
-      { name: "Be Best", img: beBest },
-      { name: "SIUK", img: siuk },
-    ],
-  },
-  {
-    heading: "Events Partner",
-    sponsors: [
-      { name: "SSIT", img: ssit },
-    ],
-  },
-  {
-    heading: "Telecom Service Partner",
-    sponsors: [
-      { name: "Sri Vatsa Electronics", img: sriv },
-    ],
-  },
-  {
-    heading: "Costume Partner",
-    sponsors: [
-      { name: "Anusai Boutique", img: hp1 },
-    ],
-  },
-  {
-    heading: "Printing Partner",
-    sponsors: [
-      { name: "DD Prime Prints", img: svs },
-    ],
-  },
-  {
-    heading: "Designing Partner",
-    sponsors: [
-      { name: "Design Verge", img: des },
-    ],
-  },
-  {
-    heading: "Food Partner",
-    sponsors: [
-      { name: "Swamy's Food Court", img: fc },
-      { name: "KMK Food Caterings", img: kmk },
-      { name: "Anusha and Fine Caterings", img: km },
-    ],
-  },
+  // {
+  //   heading: "Overseas Education Partner",
+  //   sponsors: [
+  //     { name: "Bridge Consultancy", img: bridge },
+  //     { name: "Be Best", img: beBest },
+  //     { name: "SIUK", img: siuk },
+  //   ],
+  // },
+  // {
+  //   heading: "Events Partner",
+  //   sponsors: [
+  //     { name: "SSIT", img: ssit },
+  //   ],
+  // },
+  // {
+  //   heading: "Telecom Service Partner",
+  //   sponsors: [
+  //     { name: "Sri Vatsa Electronics", img: sriv },
+  //   ],
+  // },
+  // {
+  //   heading: "Costume Partner",
+  //   sponsors: [
+  //     { name: "Anusai Boutique", img: hp1 },
+  //   ],
+  // },
+  // {
+  //   heading: "Printing Partner",
+  //   sponsors: [
+  //     { name: "DD Prime Prints", img: svs },
+  //   ],
+  // },
+  // {
+  //   heading: "Designing Partner",
+  //   sponsors: [
+  //     { name: "Design Verge", img: des },
+  //   ],
+  // },
+  // {
+  //   heading: "Food Partner",
+  //   sponsors: [
+  //     { name: "Swamy's Food Court", img: fc },
+  //     { name: "KMK Food Caterings", img: kmk },
+  //     { name: "Anusha and Fine Caterings", img: km },
+  //   ],
+  // },
 ];
 
 const SponsorsCard2 = () => {
