@@ -171,7 +171,7 @@ function App() {
               {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
               {/* <Route path="/webteam" element={<WebTeam />} /> */}
               <Route path="/register" element={<Register />} />
-              <Route path="/team" element={<Team />} />
+              <Route path="/team" element={<ComingSoon />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
               <Route path="/contact" element={<ComingSoon />} />
               <Route path="/swiper" element={<SwiperModule />} />
@@ -201,7 +201,7 @@ function App() {
 
                 
               <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
-              <Route path="/expo" element={<ComingSoon></ComingSoon>}/>  
+              <Route path="/expo" element={<ProjectExpo/>}/>    
               <Route path="*" element={<PageNotFound />} />
 
 
