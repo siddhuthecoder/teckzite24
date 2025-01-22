@@ -18,7 +18,7 @@ const Animation = (props) => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen ">
+    <div className="relative w-full h-screen">
       <div
         className="fixed top-0 left-0 w-full h-screen pointer-events-none"
         style={{ zIndex: 0 }}
