@@ -26,7 +26,6 @@ const Register = () => {
   >
       <Header />
       <RegisterForm />
-
       <Contact className="mt-[30px]" />
     
       </div>

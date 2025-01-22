@@ -3,7 +3,7 @@ import React from "react";
 const Contact = () => {
   return (
     <div>
-      <div className="absolute top-[13%] max-md:bottom-0 translate-x-[-150px]">
+      <div className="absolute top-[13%] max-md:bottom-0  md:translate-x-[-150px]">
         <p className="text-gray-200 text-center">
           Facing any Issues? Contact Us
         </p>
