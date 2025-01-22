@@ -23,7 +23,7 @@ const Table = () => {
     if (navigator.share) {
       navigator
         .share({
-          title: "Teckzite 2k25 referral",
+          title: "Teckzite 2k25 Referral",
           text: "Register for Teckzite2k25 using this link",
           url: `${process.env.REACT_APP_FRONTEND_URL}/register?ref=${userData.tzkid}`,
         })
@@ -34,9 +34,9 @@ const Table = () => {
     }
   };
 
-  if (refStatus !== "loaded") {
+  if (refStatus === "loading") {
     return (
-      <div className="w-full flex items-center justify-center gap-3 flex-col z-0 mt-[-70px]">
+      <div className="w-full flex items-center justify-center gap-3 flex-col mt-[-70px]">
         <div role="status">
           <svg
             aria-hidden="true"
@@ -69,9 +69,7 @@ const Table = () => {
           Error Occurred while fetching referrals
         </h1>
         <button
-          onClick={() => {
-            dispatch(fetchRefs());
-          }}
+          onClick={() => dispatch(fetchRefs())}
           className="px-5 py-2 border border-gray-500 bg-black hover:bg-white hover:text-black rounded text-white"
         >
           Try Again
@@ -80,18 +78,19 @@ const Table = () => {
     );
   }
 
-  const sortedRefData = [...refData]
-    .filter((user) => user.referralsCount > 0)
-    .sort((a, b) => b.referralsCount - a.referralsCount);
+  const sortedRefData = refData
+    ? [...refData].sort((a, b) => b.referralsCount - a.referralsCount)
+    : [];
 
   return (
     <div className="w-full h-full flex items-center justify-center relative">
       <div className="w-[97%] max-w-[920px] min-w-[300px] pb-[70px] overflow-y-auto overflow-x-auto flex flex-col">
-        <div className="w-[100%] min-w-[900px] flex flex-col">
+        <div className="w-[100%] min-w-[900px] h-screen flex flex-col">
           {sortedRefData.length > 0 ? (
             <>
+              {/* Header */}
               <div className="w-full my-[20px] h-[60px] flex items-center relative">
-                <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto relative z-10">
+                <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
                   <div className="w-[30px] mx-auto text-center ml-10 font-semibold">
                     Sno
                   </div>
@@ -107,10 +106,12 @@ const Table = () => {
                 </div>
                 <img
                   src={Refhead}
-                  alt=""
+                  alt="Header"
                   className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-[1]"
                 />
               </div>
+
+              {/* Body */}
               {sortedRefData.map((user, index) => (
                 <div
                   key={user.email}
@@ -121,10 +122,10 @@ const Table = () => {
                       {index + 1}
                     </div>
                     <div className="w-[240px] mx-auto text-center">
-                      {user.firstName}
+                      {user.firstName || "N/A"}
                     </div>
                     <div className="w-[300px] mx-auto text-center">
-                      {user.email}
+                      {user.email || "N/A"}
                     </div>
                     <div className="w-[300px] mx-auto text-center">
                       {user.referralsCount}
@@ -132,7 +133,7 @@ const Table = () => {
                   </div>
                   <img
                     src={Reftail}
-                    alt=""
+                    alt="Row Tail"
                     className="absolute scale-y-[1.2] pointer-events-none h-[50px] w-full"
                   />
                 </div>
@@ -145,11 +146,11 @@ const Table = () => {
           )}
         </div>
       </div>
+      {/* Footer */}
       <div className="w-auto bg-[#1E262A] h-[50px] rounded-b-[10px] rounded-tl-[10px] flex items-center justify-end my-6 md:my-7 fixed bottom-1 right-[5px] md:right-0 md:translate-x-[-50px]">
-        <MenuButton text="Refer Now" action={handleShare} name="Refer Now" />
+        <MenuButton onClick={handleShare} name="Referals"/>
       </div>
     </div>
   );
 };
-
 export default Table;

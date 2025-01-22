@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import Teamcard from "../../assets/img/Teamcard.webp";
 import Robo from "../../assets/img/Robo.webp";
 import sribabu from "../../assets/webteam/sribabu.png";
+
 const Teamweb = () => {
   const team = [
     {  name: "Sribabu Mandraju", position: "Web Manager" },
