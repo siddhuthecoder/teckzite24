@@ -62,7 +62,7 @@ function SplineScreen() {
           </div>
         ) : (
           // "Register"
-          <div onClick={()=>{navigate('/register')}}>Register</div>
+          <div onClick={()=>{navigate('/register')}}>Click Here To Register</div>
         )}
       </button>
     

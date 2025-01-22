@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header_container relative ">
+    <div className="header_container relative">
       <header className="w-full  relative h-full ">
         <div
           className="absolute  lg:left-[5%] top-[35%] -translate-y-1/2 left-0 px-4 flex justify-between items-center gap-4 "
@@ -43,7 +43,7 @@ const Header = () => {
               setShowNav((prev) => !prev);
             }}
           >
-            <GiHamburgerMenu className="text-2xl lg:text-4xl" />
+            <GiHamburgerMenu className="text-2xl lg:text-4xl mb-2" />
             <button className=' justify-center items-center p-2 mx-auto hidden md:flex '>
                    {userData ? (
                      <div className="flex  items-center gap-[8px] relative after:content-['|'] after:absolute   after:right-[70px] ">
@@ -71,7 +71,7 @@ const Header = () => {
           }}
         >
           <Link to="/">
-            <img src={"/tz25_web.webp"} alt="logo"  className=" w-[150px]  md:w-[300px] lg:w-[200px] xl:w-[300px] translate-x-[-5px] inline-block z-0" />
+            <img src={"/tz25_web.webp"} alt="logo"  className=" w-[150px]  md:w-[300px] lg:w-[200px] xl:w-[300px] translate-x-[-5px] translate-y-[-4px] inline-block z-0" />
           </Link>
         </div>
         <div

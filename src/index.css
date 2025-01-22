@@ -324,12 +324,12 @@ select option {
 /* Header */
 .header_container {
   position: fixed;
-  top: -10px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   background: url("../public/Group104.webp") no-repeat top center fixed;
-  height: 90px;
+  height: 100px;
   background-size: 100% 100px;
 }
 
