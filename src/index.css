@@ -324,7 +324,7 @@ select option {
 /* Header */
 .header_container {
   position: fixed;
-  margin-top: -3px;
+  top:0;
   left: 0;
   right: 0;
   z-index: 1000;
