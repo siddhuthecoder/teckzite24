@@ -3,6 +3,8 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { RiCoinsLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
+
 function SplineScreen() {
   const userData = useSelector((state) => state.user.data);
   const navigate =useNavigate()
@@ -62,7 +64,8 @@ function SplineScreen() {
           </div>
         ) : (
           // "Register"
-          <div onClick={()=>{navigate('/register')}}>Click Here To Register</div>
+          <div onClick={()=>{navigate('/register')}} className="flex items-center gap-[5px]">Click Here To Register <FaArrowRight />
+</div>
         )}
       </button>
     
