@@ -332,7 +332,9 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="z-5 w-full h-full pt-[160px] pb-[20px]"   style={{
+    <>
+
+    <section className="z-5 w-full h-full pt-[160px] pb-[20px]  "   style={{
       backgroundImage:
         "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/eventdetailsbg.webp')",
       backgroundAttachment: "fixed",
@@ -783,8 +785,12 @@ const RegisterForm = () => {
             </div>
           </div>
         )}
+
       </form>
+
     </section>
+    
+    </>
   );
 };
 
