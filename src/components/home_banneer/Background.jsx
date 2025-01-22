@@ -3,7 +3,13 @@ import './background.css'
 import { useSelector } from 'react-redux';
 
 const Background = () => {
- 
+
+  const userData = useSelector((state) => state.user.data);
+  
+  if (!userData) {
+    //add logic for the redirect /register
+  }
+
   
   
   
