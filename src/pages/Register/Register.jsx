@@ -15,7 +15,7 @@ const Register = () => {
   }, [navigate, userData]);
 
   return (
-   <div className="w-full min-h-screen flex justify-center items-center relative overflow-hidden"  style={{
+   <div className="w-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden"  style={{
     backgroundImage:
       "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('/eventdetailsbg.webp')",
     backgroundAttachment: "fixed",
@@ -26,7 +26,9 @@ const Register = () => {
   >
       <Header />
       <RegisterForm />
+
       <Contact className="mt-[30px]" />
+    
       </div>
   );
 };
