@@ -181,7 +181,7 @@ const RegisterForm = () => {
                   gender: data.gender,
                   state: data.state,
                   district: data.district,
-                  idUpload: data.file,
+                  // idUpload: data.file,
                   city: data.city,
                   mode: "online_mode",
                   referredBy: data.referal.toLowerCase(),
