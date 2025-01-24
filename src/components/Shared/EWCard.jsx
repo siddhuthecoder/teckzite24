@@ -30,7 +30,7 @@ const EWCard = ({ img, id, name, workshop }) => {
         {/* Inner Content */}
         <CardItem
           translateZ={30}
-          className="absolute top-[30px] left-[45px] h-[225px] w-[180px]"
+          className="absolute top-[30px] left-[45px] h-[260px] w-[210px]"
         >
           <img
             src={img}
@@ -41,10 +41,10 @@ const EWCard = ({ img, id, name, workshop }) => {
 
         <CardItem
           translateZ={40}
-          className="absolute top-[270px] left-0 flex flex-col gap-[20px]"
+          className="absolute top-[320px] left-0 flex flex-col gap-[20px]"
         >
           <div className="flex flex-col gap-[13px] ml-[46px]">
-            <div className="text-[18px] text-white font-bold">{name.slice(0,20)} {".."}</div>
+            <div className="text-[16px] text-white font-bold">{name.slice(0,15)} {".."}</div>
           </div>
         </CardItem>
 
@@ -64,7 +64,7 @@ const EWCard = ({ img, id, name, workshop }) => {
           )}
         </CardItem> */}
 
-        <CardItem translateZ={50} className="absolute top-[330px] left-[160px]">
+        <CardItem translateZ={50} className="absolute top-[360px] left-[160px]">
           <div onClick={handleNavigation} className={`${workshop?"mt-10":""}`}>
             <EventButton name="Know More" />
           </div>

@@ -168,8 +168,8 @@ const Navbar = ({ setShowNav }) => {
             desktopClasses="md:ml-[-140px] lg:ml-[-180px] md:animate-slideTopDelay3"
           />
           <NavButton
-            name="Robo Wars"
-            action={() => {setShowNav(false);navigate("/robowars")}}
+            name="Hackathon"
+            action={() => {setShowNav(false);navigate("/hackathon")}}
             desktopDelay={2}
             mobileDelay={4}
             desktopClasses="md:ml-[-100px] lg:ml-[-150px] md:animate-slideTopDelay2"
@@ -210,8 +210,8 @@ const Navbar = ({ setShowNav }) => {
             desktopClasses="md:mr-[20px] lg:mr-[-30px] md:animate-slideTopDelay7"
           />
           <NavButton
-            name="stalls"
-            action={() => {setShowNav(false);navigate("/stalls")}}
+            name="Robo wars"
+            action={() => {setShowNav(false);navigate("/robowars")}}
             desktopDelay={8}
             mobileDelay={8}
             desktopClasses="md:mr-[-100px] lg:mr-[-150px] md:animate-slideTopDelay8"

@@ -13,7 +13,7 @@ import RobowarEvents from "./pages/Robowars/RobowarEvents"
 import Team from "./pages/Team/Team"
 import Teamcore from "./pages/Team/Teamcore";
 import Teamweb from "./pages/Team/Teamweb";
-
+import Hackathon from "./pages/Hackathon/Hackathon";
 import {
   CoreTeam,
   Events,
@@ -189,6 +189,8 @@ function App() {
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/Teamcore" element={<Teamcore />} />
               <Route path="/Teamweb" element={<Teamweb />} />
+              <Route path="/hackathon" element={<Hackathon />} />
+
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}

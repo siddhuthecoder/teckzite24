@@ -4,11 +4,22 @@ import { toast } from "react-hot-toast";
 import RegistrationModal from "./ProjectExpoModal";
 import MenuButton from "../../components/button/MenuButton";
 import Header from "../../components/Header/Header";
-
+import { useEffect } from "react";
 const ProjectExpo = () => {
   const userData = useSelector((state) => state.user.data);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const handleRegisterClick = () => {
     if (!userData || Object.keys(userData).length === 0) {
       toast.error("Please login to register for the project expo");
@@ -21,52 +32,111 @@ const ProjectExpo = () => {
     <>
       <Header />
       <div
-        className="w-full flex-col p-4 mb-3 md:mt-0 min-h-screen flex justify-center items-center"
+        className="w-full flex-col p-4 mb-3 md:mt-0 min-h-screen flex justify-center items-center gap-[20px]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
+            "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/expo.jpg')",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="glow">
-          <span className="text-[40px] font-bruno lg:text-[60px] translate-x-[-50%] translate-y-[-90%] md:translate-y-[-50%] text-white stroke-[2px] stroke-[#05a8f3]">
-            Welcome to Project Expo
-          </span>
+        <img
+          src="/assets/expotitle.png"
+          className={`
+                      ${scrollPosition < 20 ? "my-[100px]" : "my-0"} 
+                      md:my-0 md:mt-0 
+                      h-[250px] md:h-full
+                    `}
+        />
+        <div
+          className={`flex flex-col md:flex-row gap-[30px] md:gap-[70px] items-center     ${
+            scrollPosition < 20 ? "my-[30px]" : "my-0"
+          } 
+`}
+        >
+          <img
+            src="TZ LOGO .png"
+            className="h-[100px] w-[100px] md:h-[200px] md:w-[200px]"
+          />
+          <img src="Nidi.png" className="md:h-[100px] md:w-[250px]" />
         </div>
-        <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg text-white mb-8">
-          <h2 className="text-2xl font-bold mb-4">About</h2>
-          <p className="mb-6">
-            The Project Expo is an opportunity for participants to showcase
-            their innovative projects and ideas to a wider audience. This event
-            fosters creativity, collaboration, and learning among students and
-            professionals alike.
-          </p>
-          <h2 className="text-2xl font-bold mb-4">Rules and Regulations</h2>
-          <ul className="list-disc pl-6">
-            <li className="mb-2">
-              All participants must register before the deadline.
+        <p className="text-white md:text-[24px] text-center">
+          Supported by NIDI Scheme, Ministry of Education , Govt. of India
+        </p>
+        <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg flex flex-col gap-[30px] bg-white/10 border border-white/20 shadow-lg text-white mb-8">
+          <ul class="list-disc ml-6 text-[white]">
+            <li>
+              <strong class="text-cyan-500">
+                Round 1: Project Submission and Screening
+              </strong>
+              <ul class="list-circle ml-6 mt-2">
+                <li>
+                  Participants should submit a brief report (maximum of 15 pages
+                  in .pdf format with provisions for search options).
+                </li>
+                <li>
+                  The report should contain:
+                  <ul class="list-decimal ml-6 mt-2">
+                    <li>Methodology used</li>
+                    <li>Components with specifications</li>
+                  </ul>
+                </li>
+                <li>
+                  The list of projects is provided in Annexure-I of this
+                  notification. Each project is denoted with a Project Number
+                  (i.e., Project-1, Project-2 respectively).
+                </li>
+                <li>
+                  Under{" "}
+                  <span class="font-semibold text-cyan-500">
+                    Project No. 11
+                  </span>{" "}
+                  in Annexure-I, students are invited to submit their project
+                  proposals, including:
+                  <ul class="list-decimal ml-6 mt-2">
+                    <li>Abstracts</li>
+                    <li>Ideas and objectives</li>
+                    <li>Methodology</li>
+                    <li>Expected outcomes</li>
+                  </ul>
+                </li>
+              </ul>
             </li>
-            <li className="mb-2">
-              Projects should adhere to the specified guidelines.
-            </li>
-            <li className="mb-2">
-              Use of any prohibited materials or content will lead to
-              disqualification.
-            </li>
-            <li className="mb-2">
-              Participants must be present during the event to present their
-              projects.
+            <li class="mt-4">
+              <strong class=" text-cyan-500">
+                Round 2: Project Expo Presentation
+              </strong>
+              <ul class="list-circle ml-6 mt-2">
+                <li>
+                  Shortlisted participants will display their projects during
+                  Teckzite'25, presenting their work to a diverse audience,
+                  including peers, faculty, and industry professionals.
+                </li>
+                <li>
+                  A jury panel will evaluate the projects during the expo based
+                  on:
+                  <ul class="list-decimal ml-6 mt-2">
+                    <li>Creativity</li>
+                    <li>Implementation</li>
+                    <li>Real-world impact</li>
+                  </ul>
+                </li>
+                <li>
+                  The jury will select and announce the results for each project
+                  from the list of projects enlisted in Annexure-I.
+                </li>
+              </ul>
             </li>
           </ul>
-          <div className="w-full flex items-center justify-between">
+          <p className="text-white pl-[30px]">Note : The Government of India will fund the most innovative projects to support their advancement in product development.</p>
+          <p className="px-[30px]">For more details <a href="https://shorturl.at/A8Ktp" className="text-cyan-500" target="blank">Click here</a> </p>
+          <div className="w-full flex items-center justify-between mx-[40px]">
             <div onClick={handleRegisterClick}>
               <MenuButton title="Register" name="Register" />
             </div>
           </div>
         </div>
-
         {isModalOpen && (
           <RegistrationModal
             onClose={() => setIsModalOpen(false)}
