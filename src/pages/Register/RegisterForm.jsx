@@ -102,7 +102,7 @@ const RegisterForm = () => {
       console.error("Error uploading file:", error);
   
       // Use the Base64 string as a fallback
-      setData({ ...data, file: base64 });
+      setData({ ...data, file: '' });
       console.log({base64})
     }
   };
@@ -119,11 +119,11 @@ const RegisterForm = () => {
       return;
     }
 
-    if (!isRgukt && data.file === "") {
-      setError("Upload id proof");
-      setisReging(false);
-      return;
-    }
+    // if (!isRgukt && data.file === "") {
+    //   setError("Upload id proof");
+    //   setisReging(false);
+    //   return;
+    // }
 
     if (!data.terms) {
       setError("Please accept the Terms and Conditions");
@@ -181,7 +181,7 @@ const RegisterForm = () => {
                   gender: data.gender,
                   state: data.state,
                   district: data.district,
-                  // idUpload: data.file,
+                  idUpload: data.file,
                   city: data.city,
                   mode: "online_mode",
                   referredBy: data.referal.toLowerCase(),
