@@ -61,7 +61,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Teamcard from "../../assets/img/Teamcard.webp";
-
+import Pipe from "../../assets/img/pipe.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -114,7 +114,7 @@ const Teamweb = () => {
     <div
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
+          "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('/assets/cbg.webp')",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -122,14 +122,16 @@ const Teamweb = () => {
       }}
     >
       <Header />
-      <div className="flex  justify-center items-center gap-4 py-[100px]">
-        <Slider {...settings} className="w-[80%] h-full md:mt-[170px] mt-[80px] lg:mt-[70px]">
+      <div className="flex flex-col w-screen  justify-center items-center gap-4 py-[100px]">
+        <div className="absolute top-[-39px] md:-right-20 lg:right-0 md:top-[170px]  lg:top-[70px]"><img src={Pipe} className="md:w-[350px] w-[250px] md:h-[590px] h-[300px] md:rotate-0 rotate-90" /></div>
+        <div className="absolute md:-left-36 lg:-left-16 md:top-[170px] top-[450px] lg:top-[70px]"><img src={Pipe} className="md:w-[350px] w-[250px] md:h-[590px] h-[300px] md:rotate-0 rotate-90 scale-y-[-1]" /></div>
+        <Slider {...settings} className="w-[80%] h-full md:mt-[170px] mt-[100px] lg:mt-[70px]">
           {team.map((member) => (
             <div key={member._id} className="relative">
-              <img src={Teamcard} className="w-80 h-96" alt="Team Card" />
+              <img src={Teamcard} className="w-80 md:h-96  h-80" alt="Team Card" />
               <img
                 src={member.image}
-                className="absolute lg:w-52 lg:h-52 w-52 h-52 md:w-[150px] md:h-[150px] md:top-24 md:left-8 lg:top-16 top-16 left-10 lg:left-14  rounded-full"
+                className="absolute lg:w-52 lg:h-52 w-[170px] h-[170px] md:w-[150px] md:h-[150px] md:top-24 md:left-8 lg:top-16 top-16 left-14 lg:left-14  rounded-full"
                 alt={member.name}
               />
               <p className="absolute ml-[70px] bottom-6 text-white">
