@@ -61,27 +61,28 @@ const RegisterForm = () => {
     }
   }, [error]);
 
-  const handleFileInputChange = async (file) => {
-    if (!file || !file.base64) {
+  const handleFileInputChange = async ({ base64, file }) => {
+    if (!file) {
       setError("Please select a valid file.");
       return;
     }
-
+  
     const acceptedImageTypes = ["image/jpeg", "image/png", "image/jpg"];
     if (!acceptedImageTypes.includes(file.type)) {
       setError("Only image files (JPEG, PNG, JPG) are allowed.");
       return;
     }
-
-    if (parseInt(file.size) > 1024) {
-      setError("File size should be less than 1024KB");
+  
+    const fileSizeInMB = parseFloat(file.size) / (1024 * 1024); // Convert size to MB
+    if (fileSizeInMB > 1) {
+      setError("Image size should be less than 1MB.");
       return;
     }
-
+  
     try {
       const formData = new FormData();
-      formData.append("file", file.file);
-
+      formData.append("file", file);
+  
       const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/uploads/upload`,
         formData,
@@ -91,18 +92,22 @@ const RegisterForm = () => {
           },
         }
       );
-
+  
       if (response.data && response.data.webContentLink) {
-        console.log(response.data);
-        setData({ ...data, file: response.data.webContentLink });
+        setData({ ...data, file: response.data.webContentLink }); // Use uploaded URL
       } else {
-        setError("Failed to upload file. Please try again.");
+        throw new Error("Upload failed");
       }
     } catch (error) {
       console.error("Error uploading file:", error);
-      setError("Failed to upload file. Please try again.");
+  
+      // Use the Base64 string as a fallback
+      setData({ ...data, file: base64 });
+      console.log({base64})
     }
   };
+  
+  
 
   const handleSubmit = async (e) => {
     setisReging(true);
