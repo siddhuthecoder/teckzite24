@@ -1,0 +1,10 @@
+.slick-slide {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: scale(0.6); /* Reduce the size of all slides */
+    opacity: 0.5; /* Make them slightly transparent */
+  }
+  
+  .slick-center {
+    transform: scale(1); /* Scale up the middle slide */
+    opacity: 1; /* Full opacity for better focus */
+  }
