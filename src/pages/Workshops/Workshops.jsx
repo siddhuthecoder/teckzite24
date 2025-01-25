@@ -20,7 +20,7 @@ const Workshops = () => {
 
   return (
     <main className="relative">
-      <Header />
+      <Header/>
 
       {/* Outer wrapper with the background applied */}
       <div

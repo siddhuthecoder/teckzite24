@@ -72,7 +72,6 @@ const Referals = () => {
         <Header />
 
         <Animation title="Referals" />
-        <div className="w-full h-[100vh]"></div>
        
         <div className="relative z-5  w-full overflow-x-auto">
           <Table />
@@ -82,4 +81,4 @@ const Referals = () => {
   );
 };
 
-  export default Referals;
+export default Referals;

@@ -127,7 +127,7 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
             <div className="mt-2">
               <label
                 htmlFor="username"
-                className="text-sm text-white pb-1 pl-1"
+                className="text-sm text-cyan-500 pb-1 pl-1"
               >
                 Full Name
               </label>
@@ -136,11 +136,11 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
                 id="username"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 border text-black rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 border  text-white rounded-md focus:outline-none focus:ring bg-transparent focus:border-blue-300"
               />
             </div>
             <div className="mt-2">
-              <label htmlFor="college" className="text-sm text-white pb-1 pl-1">
+              <label htmlFor="college" className="text-sm text-cyan-500 pb-1 pl-1">
                 College
               </label>
               <input
@@ -148,11 +148,11 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
                 id="college"
                 value={college}
                 onChange={(e) => setCollege(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 border text-black rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 border text-white bg-transparent rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
             <div className="mt-2">
-              <label htmlFor="email" className="text-sm text-white pb-1 pl-1">
+              <label htmlFor="email" className="text-sm text-cyan-500 pb-1 pl-1">
                 Email
               </label>
               <input
@@ -160,13 +160,13 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 border text-black rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 border text-white bg-transparent rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
             <div className="mt-2">
               <label
                 htmlFor="idNumber"
-                className="text-sm text-white pb-1 pl-1"
+                className="text-sm text-cyan-500 pb-1 pl-1"
               >
                 Id Number
               </label>
@@ -175,11 +175,11 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
                 id="idNumber"
                 value={idNumber}
                 onChange={(e) => setIdNumber(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 text-black border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 text-white bg-transparent border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
             <div className="mt-2">
-              <label htmlFor="phno" className="text-sm text-white pb-1 pl-1">
+              <label htmlFor="phno" className="text-sm text-cyan-500 pb-1 pl-1">
                 Phone Number
               </label>
               <input
@@ -187,7 +187,7 @@ const RenderRegistrationForm = ({ setRegisterForm, data }) => {
                 id="phno"
                 value={phno}
                 onChange={(e) => setPhno(e.target.value)}
-                className="w-full placeholder:capitalize px-3 py-2 text-black border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full placeholder:capitalize px-3 py-2 text-white bg-transparent border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               />
             </div>
           </form>
