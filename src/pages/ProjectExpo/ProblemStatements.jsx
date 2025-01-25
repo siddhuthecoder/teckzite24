@@ -6,14 +6,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
+import MenuButton from "../../components/button/MenuButton";
 
-import MenuButton from "../../../components/button/MenuButton";
-import "./Hack.css";
+import "./ProblemStatements.css";
 
-const HackathonProblem = () => {
+const ProblemStatements = () => {
   const navigate = useNavigate();
   const handleNavigation = (id) => {
-    const targetPath = `/hackathonproblem/${id}`;
+    const targetPath = `/problemstatement/${id}`;
     navigate(targetPath);
   };
 
@@ -188,4 +188,4 @@ const HackathonProblem = () => {
   );
 };
 
-export default HackathonProblem;
+export default ProblemStatements;

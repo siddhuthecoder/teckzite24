@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import { useSelector } from "react-redux";
+import Animation from "../../components/Animation";
+import MenuButton from "../../components/button/MenuButton";
+import Header from "../../components/Header/Header";
 import RegistrationModal from "./hackModal";
-import MenuButton from "../../../components/button/MenuButton";
-import Header from "../../../components/Header/Header";
-import { useEffect } from "react";
 import HackathonProblem from "./HackProblem";
-import Animation from "../../../components/Animation";
 const Hackathon= () => {
   const userData = useSelector((state) => state.user.data);
   const [isModalOpen, setIsModalOpen] = useState(false);

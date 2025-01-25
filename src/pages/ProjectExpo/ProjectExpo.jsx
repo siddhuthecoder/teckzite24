@@ -5,6 +5,7 @@ import RegistrationModal from "./ProjectExpoModal";
 import MenuButton from "../../components/button/MenuButton";
 import Header from "../../components/Header/Header";
 import { useEffect } from "react";
+import ProblemStatements from "./ProblemStatements";
 const ProjectExpo = () => {
   const userData = useSelector((state) => state.user.data);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -64,6 +65,9 @@ const ProjectExpo = () => {
         <p className="text-white md:text-[24px] text-center">
           Supported by NIDI Scheme, Ministry of Education , Govt. of India
         </p>
+
+        <h2 className="text-[30px]">Problem Statements</h2>
+        <ProblemStatements />
         <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg flex flex-col gap-[30px] bg-white/10 border border-white/20 shadow-lg text-white mb-8">
           <ul class="list-disc ml-6 text-[white]">
             <li>
@@ -129,8 +133,27 @@ const ProjectExpo = () => {
               </ul>
             </li>
           </ul>
-          <p className="text-white pl-[30px]">Note : The Government of India will fund the most innovative projects to support their advancement in product development.</p>
-          <p className="px-[30px]">For more details <a href="https://shorturl.at/A8Ktp" className="text-cyan-500" target="blank">Click here</a> </p>
+          <p className="text-white pl-[30px]">
+          <h3>Note :</h3>
+            <ul>
+            <li>The Government of India will fund the most innovative projects to
+            support their advancement in product development.</li>
+            <li>Team size should be Minimum 2 and Maximum 5 students are allowed</li>
+            <li>To participate in the Project Expo, it is mandatory to register for Teckzite.</li>
+            </ul>
+      
+            
+          </p>
+          <p className="px-[30px]">
+            For more details{" "}
+            <a
+              href="https://docs.google.com/document/d/16waPX_korG0tVZ4Gkzlla_qAOgAT5n3bn6nDLy88N1U/edit?usp=sharing"
+              className="text-cyan-500"
+              target="blank"
+            >
+              Please go through this link
+            </a>{" "}
+          </p>
           <div className="w-full flex items-center justify-between mx-[40px]">
             <div onClick={handleRegisterClick}>
               <MenuButton title="Register" name="Register" />
