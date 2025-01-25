@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 
-const hackModal = ({ onClose, userData }) => {
+const RegistrationModal = ({ onClose, userData }) => {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [fileUploading, setFileUploading] = useState(false);
@@ -277,4 +277,4 @@ const hackModal = ({ onClose, userData }) => {
   );
 };
 
-export default hackModal;
+export default RegistrationModal;

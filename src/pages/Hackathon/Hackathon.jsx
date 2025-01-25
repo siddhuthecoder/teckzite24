@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Animation from "../../components/Animation";
 import MenuButton from "../../components/button/MenuButton";
 import Header from "../../components/Header/Header";
-import RegistrationModal from "./hackModal";
+import RegistrationModal from "./RegistartionModal";
 import HackathonProblem from "./HackProblem";
 const Hackathon= () => {
   const userData = useSelector((state) => state.user.data);
