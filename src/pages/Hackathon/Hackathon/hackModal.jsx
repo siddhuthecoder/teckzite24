@@ -110,7 +110,7 @@ const RegistrationModal = ({ onClose, userData }) => {
       setLoading(true);
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/projectExpo`,
+        `${process.env.REACT_APP_BACKEND_URL}/hackathon`,
         {
           method: "POST",
           headers: {
