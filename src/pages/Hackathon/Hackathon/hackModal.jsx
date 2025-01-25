@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 
-const RegistrationModal = ({ onClose, userData }) => {
+const hackModal = ({ onClose, userData }) => {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [fileUploading, setFileUploading] = useState(false);
@@ -110,7 +110,7 @@ const RegistrationModal = ({ onClose, userData }) => {
       setLoading(true);
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/projectExpo`,
+        `${process.env.REACT_APP_BACKEND_URL}/hackathon`,
         {
           method: "POST",
           headers: {
@@ -277,4 +277,4 @@ const RegistrationModal = ({ onClose, userData }) => {
   );
 };
 
-export default RegistrationModal;
+export default hackModal;
