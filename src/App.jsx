@@ -13,7 +13,8 @@ import RobowarEvents from "./pages/Robowars/RobowarEvents"
 import Team from "./pages/Team/Team"
 import Teamcore from "./pages/Team/Teamcore";
 import Teamweb from "./pages/Team/Teamweb";
-import Hackathon from "./pages/Hackathon/Hackathon";
+import Hackathon from "./pages/Hackathon/Hackathon/Hackathon";
+import HackathonProblem from "./pages/Hackathon/Hackathon/HackProblem";
 import {
   CoreTeam,
   Events,
@@ -205,6 +206,9 @@ function App() {
               <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
               <Route path="/expo" element={<ProjectExpo/>}/>    
               <Route path="*" element={<PageNotFound />} />
+              <Route path="/hackathon" element={<Hackathon/>}/>
+              <Route path="/hackproblem/:id" element={<HackathonProblem />}
+/>
 
 
             
