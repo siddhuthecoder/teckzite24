@@ -1,60 +1,50 @@
-import { Routes, Route } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
-import TeamCard from "./components/Shared/TeamCard";
+import { Route, Routes } from "react-router-dom";
 import SwiperModule from "./components/swiper/Swiper";
 // import Contact from "./pages/contact/Contact";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Preloader } from "./components";
 import AudioBG from "./components/Audio";
-import Referrals from "./pages/Referrals/Referrals";
-import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
+import PageNotFound from "./components/PageNotFound";
+import Footer from "./components/Shared/Footer";
 import SpeakersCard from "./components/Shared/SPcard";
-import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
-import EWschedule from "./pages/Schedule/EWschedule";
-import RobowarEvents from "./pages/Robowars/RobowarEvents"
-import Team from "./pages/Team/Team"
-import Teamcore from "./pages/Team/Teamcore";
-import Teamweb from "./pages/Team/Teamweb";
-import Hackathon from "./pages/Hackathon/Hackathon";
-import ProblemStatementDetails from "./pages/ProjectExpo/ProblemStatementDetails";
-
 import {
-  CoreTeam,
+  About,
   Events,
-  // Home,
-  Register,
-  Workshops,
   // EventUpdates,
   // WorkshopsDetails,
   // EventDetails,
   Profile,
+  // Home,
+  Register,
   // Referrals,
   // Speakers,
   Sponsors,
-  Schedule,
-  About,
-  // EventUpdates,
-  ScrollHome,
-  EventUpdates,
+  Workshops
 } from "./pages";
-import { Preloader } from "./components";
-import { useEffect, useState } from "react";
-import Footer from "./components/Shared/Footer";
-import BackgroundAnimation from "./components/Shared/BackgroundAnimation";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchNotifications } from "./store/notificationSlice";
-import { fetchEvents } from "./store/eventSlice";
-import { fetchWorkshops } from "./store/workshopSlice";
+import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
+import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
+import Hackathon from "./pages/Hackathon/Hackathon";
+import Referrals from "./pages/Referrals/Referrals";
+import RobowarEvents from "./pages/Robowars/RobowarEvents";
+import EWschedule from "./pages/Schedule/EWschedule";
+import Team from "./pages/Team/Team";
+import Teamcore from "./pages/Team/Teamcore";
+import Teamweb from "./pages/Team/Teamweb";
 import WorkshopDetails from "./pages/WorkshopDetails/WorkshopDetails";
+import { fetchEvents } from "./store/eventSlice";
+import { fetchNotifications } from "./store/notificationSlice";
 import { fetchUser } from "./store/userSlice";
-import  PageNotFound  from "./components/PageNotFound";
+import { fetchWorkshops } from "./store/workshopSlice";
 
 import ComingSoon from "./components/ComingSoon";
-import Home from "./pages/home1/home";
-import ParticlesComponent from "./components/home_banneer/Particle";
 import CertificatesWorkshop from "./pages/CertificatesWorkshop/CertificatesWorkshop";
+import Home from "./pages/home1/home";
 
+import ProblemStatementDetails from './pages/ProjectExpo/ProblemStatementDetails';
 import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
 import Contact from "./pages/Register/Contact";
-import ProblemStatements from "./pages/ProjectExpo/ProblemStatements";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -212,6 +202,9 @@ function App() {
                 element={<ProblemStatementDetails />}
               />  
               <Route path="*" element={<PageNotFound />} />
+              <Route path="/hackathon" element={<Hackathon/>}/>
+              <Route path="/hackproblem/:id" element={<Hackathon />}
+/>
 
 
             
