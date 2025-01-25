@@ -14,6 +14,8 @@ import Team from "./pages/Team/Team"
 import Teamcore from "./pages/Team/Teamcore";
 import Teamweb from "./pages/Team/Teamweb";
 import Hackathon from "./pages/Hackathon/Hackathon";
+import ProblemStatementDetails from "./pages/ProjectExpo/ProblemStatementDetails";
+
 import {
   CoreTeam,
   Events,
@@ -52,6 +54,7 @@ import CertificatesWorkshop from "./pages/CertificatesWorkshop/CertificatesWorks
 
 import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
 import Contact from "./pages/Register/Contact";
+import ProblemStatements from "./pages/ProjectExpo/ProblemStatements";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -204,6 +207,10 @@ function App() {
                 
               <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
               <Route path="/expo" element={<ProjectExpo/>}/>    
+              <Route
+                path="/problemstatement/:id"
+                element={<ProblemStatementDetails />}
+              />  
               <Route path="*" element={<PageNotFound />} />
 
 
