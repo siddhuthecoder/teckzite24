@@ -19,7 +19,7 @@ section{
     --bg-color: #252525;
     position:relative;
     background-color: var(--bg-color);
-    width: 200px;
+    width: 280px;
     margin: 2rem;
     border-radius: var(--border-size);
     color: white;

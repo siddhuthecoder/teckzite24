@@ -69,6 +69,7 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import Refhead from "../../assets/img/Refhead.webp";
+import Core from "../../assets/img/Core.png";
 
 const teamData = {
   facultyCore: [
@@ -304,17 +305,17 @@ const TeamTable = () => {
     <>
       <Header />
       <div className="mb-10">
-        <h1 className="core text-[40px] font-bruno text-center translate-y-[70px] my-[20px]">
-          Teckzite'24 Core Team
+        <h1 className="core text-[30px] font-bruno text-center translate-y-[70px] my-[20px]">
+          Teckzite'25 Core Team
         </h1>
-        <h2 className="text-[26px] translate-y-[50px] text-center">
+        <h2 className="text-[26px] translate-y-[50px] text-center mb-[50px]">
           Faculty Core
         </h2>
 
         
 
-       <div className="w-full overflow-x-auto">
-       <div className="w-full my-[20px] h-[60px] flex items-center min-w-[600px] relative mt-[55px] mx-auto">
+       <div className=" flex flex-wrap">
+       {/*<div className="w-full my-[20px] h-[60px] flex items-center min-w-[600px] relative mt-[55px] mx-auto">
           <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around ">
             <div className="w-[10%] mx-auto text-center ml-10 font-semibold">
               Sno
@@ -327,68 +328,56 @@ const TeamTable = () => {
             </div>
           </div>
           <img
-            src={Refhead}
+            src={Coreteam}
             alt="Header"
-            className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-[1]"
+            className="absolute top-[-15px] scale-y-[0.7]  z-[1]"
           />
-        </div>
+        </div>*/}
+        <div className="flex flex-wrap justify-evenly items-center w-full mt-[15px]">
        {teamData.facultyCore.map((member) => (
           <div
             key={member.id}
-            className="flex justify-evenly items-center min-w-[600px] w-full mt-[15px] h-[50px] relative "
+            className="flex flex-row justify-evenly items-center  mt-[15px]  relative flex-wrap"
           >
             <img
-              src={Refhead}
+              src={Core}
               alt="Row Tail"
-              className="absolute scale-y-[1.2] pointer-events-none h-[50px] w-full"
+              className="object-cover w-[300px] md:w-[400px]"
             />
-            <div className="w-[10%] text-center">{member.id}</div>
+            {/*
             <div className="w-[45%] text-center">{member.responsibility}</div>
-            <div className="w-[45%] text-center">{member.name}</div>
+            <div className="w-[45%] text-center">{member.name}</div>*/}
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 text-white font-semibold">
+              <div className="w-[170px] md:w-[250px] ml-[90px] md:ml-[130px] text-center">{member.name}</div>
+              <div className="w-[170px] md:w-[250px] ml-[90px] md:ml-[130px] text-center">{member.responsibility}</div>
+            </div>
           </div>
         ))}
+        </div>
        </div>
 
         <h2 className="text-[26px] mt-[10px] text-center">Student Core</h2>
         <div className="w-full overflow-x-auto">
-        <div className="w-full my-[20px] h-[60px] min-w-[600px] flex items-center relative">
-          <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around ">
-            <div className="w-[10%] mx-auto text-center ml-10 font-semibold">
-              Sno
-            </div>
-            <div className="w-[30%] mx-auto text-center font-semibold">
-              Responsibility
-            </div>
-            <div className="w-[40%] mx-auto text-center font-semibold">
-              Name
-            </div>
-            <div className="w-[20%] mx-auto text-center font-semibold">
-              ID NUMBER
-            </div>
-          </div>
-          <img
-            src={Refhead}
-            alt="Header"
-            className="absolute top-[-15px] scale-y-[0.7] w-full h-[80px] z-[1]"
-          />
-        </div>
 
+          <div className="flex flex-wrap justify-evenly items-center w-full mt-[15px]">
           {teamData.studentCore.map((member) => (
             <div
               key={member.id}
-              className="flex justify-evenly items-center min-w-[600px] mt-[15px] h-[50px] relative "
+              className="flex flex-row justify-evenly items-center  mt-[15px] relative flex-wrap"
             >
               <img
-                src={Refhead}
+                src={Core}
                 alt="Row Tail"
-                className="absolute scale-y-[1.2] pointer-events-none h-[50px] w-full"
+                className="object-cover w-[300px] md:w-[400px]"
               />
-              <div className="w-[10%] text-center">{member.id}</div>
-              <div className="w-[30%] text-center">{member.responsibility}</div>
-              <div className="w-[40%] text-center">{member.name}</div>
-              <div className="w-[20%] text-center">{member.idCode}</div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 text-white font-semibold ml-[105px]">
+              <div className="w-[150px] md:w-[250px] text-center">{member.responsibility}</div>
+              <div className="w-[150px] md:w-[250px] text-center">{member.name}</div>
+              <div className="w-[150px] md:w-[250px] text-center">{member.idCode}</div>
+              </div>
             </div>
           ))}
+          </div>
           <div className="w-full h-[100px]"></div>
         </div>
         </div>

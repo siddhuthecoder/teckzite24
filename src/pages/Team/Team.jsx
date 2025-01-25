@@ -22,7 +22,7 @@ const Team = () => {
       <Header />
       <section>
       <div
-        className="flex justify-center items-center w-full gap-10 flex-col md:flex-row pt-[10px] md:pt-[50px] z-10 md:h-screen"
+        className="flex justify-center items-center w-full gap-10 flex-col md:flex-row pt-[70px] md:pt-[50px] z-10 md:h-screen"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
@@ -32,15 +32,17 @@ const Team = () => {
         }}
       >
         <div
-          className="flex cardone w-[300px] h-[400px] rounded-[20px] justify-center items-center relative cursor-pointer mt-[100px] md:mt-0"
+          className="flex cardone w-[280px] h-[400px] rounded-[20px] justify-center items-center relative cursor-pointer mt-[100px] md:mt-0"
           onClick={handleWebTeamClick}
         >
-          <img
+    
+            <img
             src={webteam}
             alt="webteam"
-            className="w-[97%] h-[97%] absolute titleone rounded-lg  overflow-hidden "
+            className="w-[97%] h-[97%] absolute titleone rounded-lg  overflow-hidden ml-[5px]"
           />
-          <div className="absolute  text-white text-sm pb-3 font-bold z-20">
+
+          <div className="absolute  text-white text-sm pb-3 font-bold z-20 ml-[100px]">
             WEBTEAM
           </div>
           <MenuButton text="Web Team" action={handleWebTeamClick} />
@@ -52,9 +54,9 @@ const Team = () => {
           <img
             src={coreteam}
             alt="coreteam"
-            className="w-[97%] h-[97%] absolute titleone rounded-lg overflow-hidden"
+            className="w-[97%] h-[97%] absolute titleone rounded-lg overflow-hidden ml-[5px]"
           />
-          <div className="absolute text-white text-sm pb-3 font-bold z-20">
+          <div className="absolute text-white text-sm pb-3 font-bold z-20 ml-[100px]">
             CORETEAM
           </div>
           <MenuButton text="Core Team" action={handleCoreTeamClick} />
