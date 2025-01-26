@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
-import Core from "../../assets/img/Core.png";
-
+import Cardteam from '../../assets/img/Cardteam.png';
 const TeamTable = () => {
   const [teamData, setTeamData] = useState({ studentCore: [] });
 
@@ -23,7 +22,7 @@ const TeamTable = () => {
   return (
     <>
       <Header />
-      <div className="mb-10">
+      <div className="mb-10 mt-[110px]">
         <h2 className="text-[26px] mt-[10px] text-center">Student Core</h2>
         <div className="w-full overflow-x-auto">
           <div className="flex flex-wrap justify-evenly items-center w-full mt-[15px]">
@@ -33,7 +32,7 @@ const TeamTable = () => {
                 className="flex flex-row justify-evenly items-center mt-[15px] relative flex-wrap"
               >
                 <img
-                  src={Core}
+                  src={Cardteam}
                   alt="Row Tail"
                   className="object-cover w-[300px] md:w-[400px]"
                 />
