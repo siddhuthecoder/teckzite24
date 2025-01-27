@@ -124,11 +124,11 @@ const RegisterForm = () => {
       return;
     }
 
-    // if (!isRgukt && data.file === "") {
-    //   setError("Upload id proof");
-    //   setisReging(false);
-    //   return;
-    // }
+    if (!isRgukt && data.file === "") {
+      setError("Upload id proof");
+      setisReging(false);
+      return;
+    }
 
     if (!data.terms) {
       setError("Please accept the Terms and Conditions");
@@ -430,12 +430,7 @@ const RegisterForm = () => {
                 className="absolute pointer-events-none  h-full w-full  left-0"
               />
               <h4 className="font-semibold text-xl mt-[25px]">Register</h4>
-              <h3 className="text-sm mt-1 mb-4 px-10 text-center">
-                {isRgukt &&
-                  `Fee for Registration is ${process.env.REACT_APP_RGUKT_FEE}`}
-                {!isRgukt &&
-                  `Fee for Registration is ${process.env.REACT_APP_OUTSIDERS}`}
-              </h3>
+             
               {!next && (
                 <div className="w-[300px] ml-[20px] md:w-[90%]">
                   {!isRgukt && (
@@ -493,7 +488,7 @@ const RegisterForm = () => {
                       htmlFor="verified-college"
                       className="text-[cyan] font-medium"
                     >
-                      Is Verified College
+                    Are you from the Design Innovation Centre (DIC)? Select if yes
                     </label>
                   </div>
 
