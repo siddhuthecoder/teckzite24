@@ -182,7 +182,7 @@ function App() {
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/Teamcore" element={<Teamcore />} />
               <Route path="/Teamweb" element={<Teamweb />} />
-              <Route path="/hackathon" element={<Hackathon />} />
+              <Route path="/hackathon" element={<ComingSoon />} />
 
               <Route
                 path="/workshopdetails/:id"
@@ -202,8 +202,8 @@ function App() {
                 element={<ProblemStatementDetails />}
               />  
               <Route path="*" element={<PageNotFound />} />
-              <Route path="/hackathon" element={<Hackathon/>}/>
-              <Route path="/hackproblem/:id" element={<Hackathon />}
+              <Route path="/hackathon" element={<ComingSoon/>}/>
+              <Route path="/hackproblem/:id" element={<ComingSoon />}
 />
 
 

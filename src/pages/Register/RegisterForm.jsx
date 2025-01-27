@@ -13,9 +13,12 @@ import signup from "../../assets/events/signup.webp";
 import signupdetails from "../../assets/events/signupdetails.webp";
 import profiledesk from "../../assets/events/profiledesk.webp";
 import profilemobile from "../../assets/events/profilemobile.webp";
+import { verifiedColleges } from "../../constants";
 import "./RegisterForm.css";
+
 const RegisterForm = () => {
   const location = useLocation();
+  const [isVerifiedCollege, setIsVerifiedCollege] = useState(false);
 
   const getQueryParam = (name) => {
     const params = new URLSearchParams(location.search);
@@ -61,28 +64,32 @@ const RegisterForm = () => {
     }
   }, [error]);
 
+  const handleCheckboxChange = (e) => {
+    setIsVerifiedCollege(e.target.checked);
+  };
+
   const handleFileInputChange = async ({ base64, file }) => {
     if (!file) {
       setError("Please select a valid file.");
       return;
     }
-  
+
     const acceptedImageTypes = ["image/jpeg", "image/png", "image/jpg"];
     if (!acceptedImageTypes.includes(file.type)) {
       setError("Only image files (JPEG, PNG, JPG) are allowed.");
       return;
     }
-  
+
     const fileSizeInMB = parseFloat(file.size) / (1024 * 1024); // Convert size to MB
     if (fileSizeInMB > 1) {
       setError("Image size should be less than 1MB.");
       return;
     }
-  
+
     try {
       const formData = new FormData();
       formData.append("file", file);
-  
+
       const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/uploads/upload`,
         formData,
@@ -92,7 +99,7 @@ const RegisterForm = () => {
           },
         }
       );
-  
+
       if (response.data && response.data.webContentLink) {
         setData({ ...data, file: response.data.webContentLink }); // Use uploaded URL
       } else {
@@ -100,14 +107,12 @@ const RegisterForm = () => {
       }
     } catch (error) {
       console.error("Error uploading file:", error);
-  
+
       // Use the Base64 string as a fallback
-      setData({ ...data, file: '' });
-      console.log({base64})
+      setData({ ...data, file: "" });
+      console.log({ base64 });
     }
   };
-  
-  
 
   const handleSubmit = async (e) => {
     setisReging(true);
@@ -119,11 +124,11 @@ const RegisterForm = () => {
       return;
     }
 
-    // if (!isRgukt && data.file === "") {
-    //   setError("Upload id proof");
-    //   setisReging(false);
-    //   return;
-    // }
+    if (!isRgukt && data.file === "") {
+      setError("Upload id proof");
+      setisReging(false);
+      return;
+    }
 
     if (!data.terms) {
       setError("Please accept the Terms and Conditions");
@@ -261,8 +266,7 @@ const RegisterForm = () => {
     setIsLoading(true);
     const decodedUser = jwtDecode(res.credential);
     const { given_name, family_name, email, picture } = decodedUser;
-    const domainPattern =
-      /^(r|n|s|o)[0-9]{6}@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
+    const domainPattern = /^(r|n|s|o)[0-9]{6}@(rguktn|rguktong|rguktsklm|rguktrkv)\.ac\.in$/;
 
     try {
       const res = await axios.post(
@@ -426,12 +430,7 @@ const RegisterForm = () => {
                 className="absolute pointer-events-none  h-full w-full  left-0"
               />
               <h4 className="font-semibold text-xl mt-[25px]">Register</h4>
-              <h3 className="text-sm mt-1 mb-4 px-10 text-center">
-                {isRgukt &&
-                  `Fee for Registration is ${process.env.REACT_APP_RGUKT_FEE}`}
-                {!isRgukt &&
-                  `Fee for Registration is ${process.env.REACT_APP_OUTSIDERS}`}
-              </h3>
+             
               {!next && (
                 <div className="w-[300px] ml-[20px] md:w-[90%]">
                   {!isRgukt && (
@@ -477,22 +476,57 @@ const RegisterForm = () => {
                     </div>
                   )}
 
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id="verified-college"
+                      className="h-5 w-5 text-cyan-600 border-gray-300 rounded focus:ring-cyan-500"
+                      checked={isVerifiedCollege}
+                      onChange={handleCheckboxChange}
+                    />
+                    <label
+                      htmlFor="verified-college"
+                      className="text-[cyan] font-medium"
+                    >
+                    Are you from the Design Innovation Centre (DIC)? Select if yes
+                    </label>
+                  </div>
+
                   {/* College */}
                   <div className="mb-3 w-[90%]">
-                    <div className="input-group relative">
-                      <input
-                        type="text"
-                        id="college"
-                        value={data.college}
-                        name="college"
-                        onChange={handleChange}
-                        className="bg-transparent border-gray-300 text-white text-base block w-full px-1 py-1.5 peer"
-                        placeholder=" "
-                        required
-                      />
+                    <div className="input-group mt-2 relative">
+                      {isVerifiedCollege ? (
+                        <select
+                          id="college"
+                          name="college"
+                          value={data.college}
+                          onChange={handleChange}
+                          className="bg-transparent border-b text-white text-base block w-full px-3 py-2  focus:ring-cyan-500 focus:border-cyan-500"
+                          required
+                        >
+                          <option value="" disabled>
+                            Select a college
+                          </option>
+                          {verifiedColleges.map((college, index) => (
+                            <option key={index} value={college}>
+                              {college}
+                            </option>
+                          ))}
+                        </select>
+                      ) : (
+                        <input
+                          type="text"
+                          id="college"
+                          value={data.college}
+                          name="college"
+                          onChange={handleChange}
+                          className="bg-transparent border-b text-gray-700 text-base block w-full px-3 py-2 rounded-md focus:ring-cyan-500 focus:border-cyan-500"
+                          required
+                        />
+                      )}
                       <label
                         htmlFor="college"
-                        className="absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200"
+                        className={`absolute left-1  ${isVerifiedCollege?"hidden":""} top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-200`}
                       >
                         College
                       </label>
@@ -556,7 +590,6 @@ const RegisterForm = () => {
                       <option value="E3">E3</option>
                       <option value="E4">E4</option>
                       <option value="Others">Others</option>
-
                     </select>
                     <select
                       id="branch"
@@ -577,7 +610,6 @@ const RegisterForm = () => {
                       <option value="MME">MME</option>
                       <option value="ROBOTICS">ROBOTICS</option>
                       <option value="Others">Others</option>
-
                     </select>
                   </div>
                   {/* Gender */}
