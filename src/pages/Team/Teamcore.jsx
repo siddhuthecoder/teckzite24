@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Cardteam from '../../assets/img/Cardteam.png';
+
 const TeamTable = () => {
   const [teamData, setTeamData] = useState({ studentCore: [] });
 
@@ -36,16 +37,13 @@ const TeamTable = () => {
                   alt="Row Tail"
                   className="object-cover w-[300px] md:w-[400px]"
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 text-white font-semibold ml-[105px]">
-                  <div className="w-[150px] md:w-[250px] text-center">
-                    {member.responsibility}
+                <div className="inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 text-white font-semibold">
+                  <img className="absolute w-[90px] h-[90px] text-center ml-[-600px] rounded-full mt-[-6px]"
+                    src={member.image}/>
+                  <div>
+                    <p className="absolute  ml-[-200px] mt-[-50px] text-[25px]">{member.name}</p>
                   </div>
-                  <div className="w-[150px] md:w-[250px] text-center">
-                    {member.name}
-                  </div>
-                  <div className="w-[150px] md:w-[250px] text-center">
-                    {member.idCode}
-                  </div>
+                  
                 </div>
               </div>
             ))}
@@ -58,3 +56,5 @@ const TeamTable = () => {
 };
 
 export default TeamTable;
+
+
