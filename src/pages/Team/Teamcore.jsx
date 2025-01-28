@@ -38,10 +38,12 @@ const TeamTable = () => {
                   className="object-cover w-[300px] md:w-[400px]"
                 />
                 <div className="inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 text-white font-semibold">
-                  <img className="absolute w-[90px] h-[90px] text-center ml-[-600px] rounded-full mt-[-6px]"
+                  {/*<div>Hello</div>*/}
+                  <img className="absolute w-[75px] h-[75px] md:w-[100px] md:h-[100px] text-center ml-[-455px] md:ml-[-605px] rounded-full mt-[-6px]"
                     src={member.image}/>
                   <div>
-                    <p className="absolute  ml-[-200px] mt-[-50px] text-[25px]">{member.name}</p>
+                    <p className="absolute  ml-[-170px] md:ml-[-230px] mt-[-40px] md:mt-[-60px] md:text-[25px] w-[150px] md:w-[220px]">{member.name}</p>
+                    <p className="absolute ml-[-170px] md:ml-[-230px] mt-[5px] md:mt-[15px] md:text-[25px] md:w-[220px] w-[150px]">{member.position} </p>
                   </div>
                   
                 </div>
