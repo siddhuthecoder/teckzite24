@@ -44,8 +44,8 @@ import Home from "./pages/home1/home";
 
 import ProblemStatementDetails from './pages/ProjectExpo/ProblemStatementDetails';
 import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
-import Contact from "./pages/Register/Contact";
-
+// import Contact from "./pages/Register/Contact";
+// import Contact from "./pages/ContactUs/ContactUs";
 function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
@@ -178,7 +178,7 @@ function App() {
               <Route path="/eventupdates" element={<ComingSoon />} />
               <Route path="/EventsSchedule" element={<ComingSoon />} />
               <Route path="/updates" element={<ComingSoon />} />
-              <Route path="/Contact" element={<Contact />} />
+              {/* <Route path="/Contact" element={<Contact />} /> */}
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/Teamcore" element={<Teamcore />} />
               <Route path="/Teamweb" element={<Teamweb />} />
