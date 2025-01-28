@@ -38,7 +38,7 @@ const TeamTable = () => {
                   className="object-cover w-[300px] md:w-[400px]"
                 />
                 <div className="inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 text-white font-semibold">
-                  {/*<div>Hello</div>*/}
+                  
                   <img className="absolute w-[75px] h-[75px] md:w-[100px] md:h-[100px] text-center ml-[-455px] md:ml-[-605px] rounded-md mt-[-6px]"
                     src={member.image}/>
                   <div>

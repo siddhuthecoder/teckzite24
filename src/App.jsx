@@ -9,6 +9,7 @@ import AudioBG from "./components/Audio";
 import PageNotFound from "./components/PageNotFound";
 import Footer from "./components/Shared/Footer";
 import SpeakersCard from "./components/Shared/SPcard";
+import Stalls from "./pages/Stalls/Stalls";
 import {
   About,
   Events,
@@ -191,7 +192,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/certficates/users" element={<CertificatesUser />} />
               <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
-              <Route path="/stalls" element={<ComingSoon />} />
+              <Route path="/stalls" element={<Stalls />} />
               {/* <Route path="/robowars" element={<ComingSoon />} /> */}
 
                 
