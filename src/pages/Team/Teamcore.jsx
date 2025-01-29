@@ -30,12 +30,12 @@ const TeamTable = () => {
       <Header />
       <div className="mb-10 relative ">
         <div
-          className="fixed inset-0 top-0 bg-cover bg-center bg-no-repeat"
+          className="fixed inset-0 top-0 bg-cover bg-center min-h-screen bg-no-repeat"
           style={{
             backgroundImage: "url('/workshopbg.webp')",
           }}
         ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-80"></div>
+        <div className="absolute inset-0 h-screen bg-black bg-opacity-80"></div>
         <h2 className="text-[26px] mt-[10px] text-center">Student Core</h2>
         <div className="w-full overflow-x-auto">
           {loading ? (
