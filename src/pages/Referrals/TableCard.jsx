@@ -148,7 +148,7 @@ const Table = () => {
       </div>
       {/* Footer */}
       <div className="w-auto bg-[#1E262A] h-[50px] rounded-b-[10px] rounded-tl-[10px] flex  mb-4 items-center justify-end my-6 md:my-7 fixed bottom-1 right-[5px] md:right-0 md:translate-x-[-50px]">
-        <div className="" onClick={handleShare()}><MenuButton name={"Refer Now "}  /></div>
+        <div className="" onClick={handleShare}><MenuButton name={"Refer Now "}  /></div>
       </div>
     </div>
   );

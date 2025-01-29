@@ -24,25 +24,7 @@ const Referals = () => {
     }
   }, [refStatus, dispatch]);
 
-  const handleShare = () => {
-    if (!userData) {
-      toast.error("Login to refer");
-      return;
-    }
 
-    if (navigator.share) {
-      navigator
-        .share({
-          title: "Teckzite 2k25 referral",
-          text: "Register for Teckzite2k25 using this link",
-          url: `${process.env.REACT_APP_FRONTEND_URL}/register?ref=${userData.tzkid}`,
-        })
-        .then(() => console.log("Shared successfully"))
-        .catch((error) => console.error("Error sharing:", error));
-    } else {
-      alert("Share API is not supported in your browser.");
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
