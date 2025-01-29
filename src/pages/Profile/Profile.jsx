@@ -45,14 +45,17 @@ const Profile = () => {
     return (
       <>
         <Header />
-        <div className="w-full min-h-screen flex items-center justify-center"   style={{
-    backgroundImage:
-      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
-    backgroundAttachment: "fixed",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "100vh",
-  }}>
+        <div
+          className="w-full min-h-screen flex items-center justify-center"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/cbg.webp')",
+            backgroundAttachment: "fixed",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            minHeight: "100vh",
+          }}
+        >
           <h1 className="text-2xl font-semibold">Login to access profile</h1>
         </div>
       </>
@@ -60,32 +63,30 @@ const Profile = () => {
   }
 
   return (
-    <div  style={{
-      backgroundImage:
-        "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/profile.jpg')",
-      backgroundAttachment: "fixed",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      minHeight: "100vh",
-    }}>
+    <div
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/profile.webp')",
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+      }}
+    >
       <Header />
-      <div
-        className=" flex items-center min-h-[100vh] justify-center w-full bg-fixed bg-center"
-      >
+      <div className=" flex items-center min-h-[100vh] justify-center w-full bg-fixed bg-center">
         <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative pb-[30px]">
-           <img
+          <img
             src={profiledesk}
             alt=""
             className="absolute w-[100%] h-[100%] md:block hidden  "
           />
 
-           <img
+          <img
             src={profilemobile}
             alt=""
             className="absolute w-auto h-[100%] block md:hidden "
           />
-
-           
 
           {/*<img
             src={s1}
@@ -120,6 +121,22 @@ const Profile = () => {
           <div className="text-center text-2xl md:pt-[40px]  mt-[24px] pb-2 font-bruno">
             Profile
           </div>
+          <div class="bg-gray-900 text-white p-6 rounded-2xl shadow-lg max-w-md mx-auto text-center">
+            <h2 class="text-2xl font-bold text-cyan-400">Follow Teckzite'25</h2>
+            <p class="mt-2 text-gray-300">
+              Stay updated with the latest announcements and news.
+            </p>
+            <a
+  href="https://whatsapp.com/channel/0029VayuJFhBfxnxj4gvAJ0O"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="mt-4 inline-block px-5 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition duration-300 cursor-pointer"
+>
+  Join WhatsApp Channel
+</a>
+
+          </div>
+
           <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-[#22EAEA]">
             {userData.img && userData.img !== "" ? (
               <img
@@ -134,14 +151,14 @@ const Profile = () => {
             )}
           </div>
           {userData.qrimage && (
-  <div className="flex justify-center my-5">
-    <img
-      src={userData.qrimage}
-      alt="QR Code"
-      className="w-[200px] h-[200px] object-contain border rounded-md"
-    />
-  </div>
-)}
+            <div className="flex justify-center my-5">
+              <img
+                src={userData.qrimage}
+                alt="QR Code"
+                className="w-[200px] h-[200px] object-contain border rounded-md"
+              />
+            </div>
+          )}
 
           <div className="w-full grid grid-cols-1 md:grid-cols-2">
             <div className="ps-[0px] md:ps-[40px] flex flex-col">
