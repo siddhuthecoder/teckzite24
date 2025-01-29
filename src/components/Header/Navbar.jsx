@@ -175,11 +175,11 @@ const Navbar = ({ setShowNav }) => {
             desktopClasses="md:ml-[-100px] lg:ml-[-150px] md:animate-slideTopDelay2"
           />
           <NavButton
-            name="Project Expo"
+            name="MegaExpo'25"
             action={() =>{ setShowNav(false);navigate("/expo")}}
             desktopDelay={1}
             mobileDelay={5}
-            desktopClasses="md:ml-[20px] lg:ml-[-30px] md:animate-slideTopDelay1"
+            desktopClasses="md:ml-[20px] lg:ml-[-30px] md:animate-slideTopDelay1 whitespace-nowrap"
           />
         </div>
 
