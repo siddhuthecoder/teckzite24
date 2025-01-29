@@ -110,6 +110,17 @@ const projects = [
       "Test the algorithm on a dataset containing both real and deepfake content.",
       "Points will be awarded for detection accuracy and real-time analysis capability."
     ]
+  },
+  {
+    id: "10",
+    title: "Student Innovation",
+    description:
+"This problem statement is open to all RGUKT students, regardless of domain or branch. Under this category, teams can submit projects showcasing innovative ideas and solutions across any field of interest. It serves as a platform for students to demonstrate their creativity, technical skills, and out-of-the-box thinking.",  
+  instructions: [
+    "Only RGUKT students are eligible to participate.",
+    "Projects can belong to any domain or branch of study.",
+    "Teams are encouraged to focus on originality, feasibility, and innovation in their submissions.",
+    ]
   }
 ];
 

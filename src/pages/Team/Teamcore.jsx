@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Cardteam from '../../assets/img/Cardteam.png';
+
 const TeamTable = () => {
   const [teamData, setTeamData] = useState({ studentCore: [] });
 
@@ -36,16 +37,15 @@ const TeamTable = () => {
                   alt="Row Tail"
                   className="object-cover w-[300px] md:w-[400px]"
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 text-white font-semibold ml-[105px]">
-                  <div className="w-[150px] md:w-[250px] text-center">
-                    {member.responsibility}
+                <div className="inset-0 flex flex-col items-center justify-center bg-black bg-opacity-0 text-white font-semibold">
+                  {/*<div>Hello</div>*/}
+                  <img className="absolute w-[75px] h-[75px] md:w-[100px] md:h-[100px] text-center ml-[-455px] md:ml-[-605px] rounded-md mt-[-6px]"
+                    src={member.image}/>
+                  <div>
+                    <p className="absolute  ml-[-170px] md:ml-[-230px] mt-[-40px] md:mt-[-40px] md:text-[17px] w-[150px] md:w-[220px]">{member.name}</p>
+                    <p className="absolute ml-[-170px] md:ml-[-230px] mt-[5px] md:mt-[5px] md:text-[17px] md:w-[220px] w-[150px]">{member.position} </p>
                   </div>
-                  <div className="w-[150px] md:w-[250px] text-center">
-                    {member.name}
-                  </div>
-                  <div className="w-[150px] md:w-[250px] text-center">
-                    {member.idCode}
-                  </div>
+                  
                 </div>
               </div>
             ))}
@@ -58,3 +58,5 @@ const TeamTable = () => {
 };
 
 export default TeamTable;
+
+

@@ -41,14 +41,14 @@ const Events = () => {
         <div className="w-full flex items-center gap-3 justify-center md:text-[12px] pt-1 text-[10px] flex-wrap px-5 mt-7 font-bruno">
           {[
             "OPEN TO ALL",
-            "PUC",
+            "CHEM",
+            "CIVIL",
             "CSE",
             "ECE",
             "EEE",
-            "MME",
             "MECH",
-            "CHEM",
-            "CIVIL",
+            "MME",
+            "PUC",
             "ROBOTICS",
           ].map((item, index) => (
             <div

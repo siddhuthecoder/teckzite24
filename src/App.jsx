@@ -44,8 +44,8 @@ import Home from "./pages/home1/home";
 
 import ProblemStatementDetails from './pages/ProjectExpo/ProblemStatementDetails';
 import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
-import Contact from "./pages/Register/Contact";
-
+// import Contact from "./pages/Register/Contact";
+// import Contact from "./pages/ContactUs/ContactUs";
 function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
@@ -164,7 +164,7 @@ function App() {
               {/* <Route path="/coreteam" element={<ComingSoon />} /> */}
               {/* <Route path="/webteam" element={<WebTeam />} /> */}
               <Route path="/register" element={<Register />} />
-              <Route path="/team" element={<ComingSoon />} />
+              <Route path="/team" element={<Team />} />
               {/* <Route path="/contact" element={<Contact />} /> */}
               <Route path="/contact" element={<ComingSoon />} />
               <Route path="/swiper" element={<SwiperModule />} />
@@ -178,7 +178,7 @@ function App() {
               <Route path="/eventupdates" element={<ComingSoon />} />
               <Route path="/EventsSchedule" element={<ComingSoon />} />
               <Route path="/updates" element={<ComingSoon />} />
-              <Route path="/Contact" element={<Contact />} />
+              {/* <Route path="/Contact" element={<Contact />} /> */}
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/Teamcore" element={<Teamcore />} />
               <Route path="/Teamweb" element={<Teamweb />} />
