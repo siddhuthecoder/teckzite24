@@ -6,23 +6,23 @@ import { fetchRefs } from "../../store/refSlice";
 import Animation from "../../components/Animation";
 import { useState, useEffect } from "react";
 const Referals = () => {
-  // const dispatch = useDispatch();
-  // const refError = useSelector((state) => state.ref.error);
-  // const refStatus = useSelector((state) => state.ref.status);
+  const dispatch = useDispatch();
+  const refError = useSelector((state) => state.ref.error);
+  const refStatus = useSelector((state) => state.ref.status);
   const userData = useSelector((state) => state.user.data);
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  // useEffect(() => {
-  //   if (refError) {
-  //     toast.error(refError);
-  //   }
-  // }, [refError]);
+  useEffect(() => {
+    if (refError) {
+      toast.error(refError);
+    }
+  }, [refError]);
 
-  // useEffect(() => {
-  //   if (refStatus === "idle") {
-  //     dispatch(fetchRefs());
-  //   }
-  // }, [refStatus, dispatch]);
+  useEffect(() => {
+    if (refStatus === "idle") {
+      dispatch(fetchRefs());
+    }
+  }, [refStatus, dispatch]);
 
   const handleShare = () => {
     if (!userData) {
@@ -73,7 +73,7 @@ const Referals = () => {
 
         <Animation title="Referals" />
        
-        <div className="relative z-5  w-full overflow-x-auto">
+        <div className="relative z-5 h-auto  w-full overflow-x-auto">
           <Table />
         </div>
       </div>

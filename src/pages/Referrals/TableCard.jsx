@@ -84,12 +84,12 @@ const Table = () => {
 
   return (
     <div className="w-full h-full flex items-center justify-center relative">
-      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-[70px] overflow-y-auto overflow-x-auto flex flex-col">
-        <div className="w-[100%] min-w-[900px] h-screen flex flex-col">
+      <div className="w-[97%] max-w-[920px] min-w-[300px] pb-[70px] h-auto flex flex-col">
+        <div className="w-[100%] min-w-[900px] h-auto flex flex-col">
           {sortedRefData.length > 0 ? (
             <>
               {/* Header */}
-              <div className="w-full my-[20px] h-[60px] flex items-center relative">
+              <div className="w-full my-[5px] h-[60px] flex items-center relative">
                 <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around mx-auto">
                   <div className="w-[30px] mx-auto text-center ml-10 font-semibold">
                     Sno
@@ -115,7 +115,7 @@ const Table = () => {
               {sortedRefData.map((user, index) => (
                 <div
                   key={user.email}
-                  className="w-full mt-[40px] relative flex item-center justify-center pb-[40px]"
+                  className="w-full mt-[10px] relative flex item-center justify-center pb-[40px]"
                 >
                   <div className="w-[97%] py-[20px] h-[20px] flex items-center justify-around">
                     <div className="w-[30px] mx-auto text-center ml-10">
@@ -148,7 +148,7 @@ const Table = () => {
       </div>
       {/* Footer */}
       <div className="w-auto bg-[#1E262A] h-[50px] rounded-b-[10px] rounded-tl-[10px] flex  mb-4 items-center justify-end my-6 md:my-7 fixed bottom-1 right-[5px] md:right-0 md:translate-x-[-50px]">
-        <MenuButton name={"Refer Now "} onClick={handleShare} />
+        <div className="" onClick={handleShare()}><MenuButton name={"Refer Now "}  /></div>
       </div>
     </div>
   );
