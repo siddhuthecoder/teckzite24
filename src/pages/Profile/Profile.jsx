@@ -16,6 +16,7 @@ const Profile = () => {
     return (
       <>
         <Header />
+
         <div className="w-full min-h-screen flex items-center justify-center">
           <div role="status">
             <svg
@@ -45,6 +46,7 @@ const Profile = () => {
     return (
       <>
         <Header />
+
         <div
           className="w-full min-h-screen flex items-center justify-center"
           style={{
@@ -63,32 +65,34 @@ const Profile = () => {
   }
 
   return (
-    <div
-      style={{
-        backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/assets/profile.webp')",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <Header />
-      <div className=" flex items-center min-h-[100vh] justify-center w-full bg-fixed bg-center">
-        <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative pb-[30px]">
-          <img
-            src={profiledesk}
-            alt=""
-            className="absolute w-[100%] h-[100%] md:block hidden  "
-          />
+    <>
+      <div
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('/workshopbg.webp')",
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <Header />
 
-          <img
-            src={profilemobile}
-            alt=""
-            className="absolute w-auto h-[100%] block md:hidden "
-          />
+        <div className=" flex items-center min-h-[100vh] justify-center w-full bg-fixed bg-center">
+          <div className="w-[97%] bg-transparent max-w-[1000px] mx-auto flex-col my-[10%] max-md:mt-24    relative pb-[30px]">
+            <img
+              src={profiledesk}
+              alt=""
+              className="absolute w-[100%] h-[100%] md:block hidden  "
+            />
 
-          {/*<img
+            <img
+              src={profilemobile}
+              alt=""
+              className="absolute w-auto h-[100%] block md:hidden "
+            />
+
+            {/*<img
             src={s1}
             alt=""
             className="absolute top-[-55px] left-[30%] scale-x-[0.6]"
@@ -118,142 +122,135 @@ const Profile = () => {
             alt=""
             className="absolute bottom-[-55px] right-[30.8%] scale-x-[0.6]"
           />*/}
-          <div className="text-center text-2xl md:pt-[40px]  mt-[24px] pb-2 font-bruno">
-            Profile
-          </div>
-          <div class="bg-gray-900 text-white p-6 rounded-2xl shadow-lg max-w-md mx-auto text-center">
-            <h2 class="text-2xl font-bold text-cyan-400">Follow Teckzite'25</h2>
-            <p class="mt-2 text-gray-300">
-              Stay updated with the latest announcements and news.
-            </p>
-            <a
-  href="https://whatsapp.com/channel/0029VayuJFhBfxnxj4gvAJ0O"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="mt-4 inline-block px-5 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition duration-300 cursor-pointer"
->
-  Join WhatsApp Channel
-</a>
-
-          </div>
-
-          <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-[#22EAEA]">
-            {userData.img && userData.img !== "" ? (
-              <img
-                src={userData.img}
-                alt={userData.firstName}
-                className="w-full h-full object-contain"
-              />
-            ) : (
-              <div className="text-[60px]">
-                {userData.firstName.charAt(0).toUpperCase()}
+            <div className="text-center text-2xl md:pt-[40px]  mt-[24px] pb-2 font-bruno">
+              Profile
+            </div>
+            <div className="w-[170px] h-[170px] rounded-full my-[15px] mx-auto overflow-hidden flex justify-center items-center border bg-[#22EAEA]">
+              {userData.img && userData.img !== "" ? (
+                <img
+                  src={userData.img}
+                  alt={userData.firstName}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <div className="text-[60px]">
+                  {userData.firstName.charAt(0).toUpperCase()}
+                </div>
+              )}
+            </div>
+            {userData.qrimage && (
+              <div className="flex justify-center my-5">
+                <img
+                  src={userData.qrimage}
+                  alt="QR Code"
+                  className="w-[200px] h-[200px] object-contain border rounded-md"
+                />
               </div>
             )}
-          </div>
-          {userData.qrimage && (
-            <div className="flex justify-center my-5">
-              <img
-                src={userData.qrimage}
-                alt="QR Code"
-                className="w-[200px] h-[200px] object-contain border rounded-md"
-              />
-            </div>
-          )}
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-2">
-            <div className="ps-[0px] md:ps-[40px] flex flex-col">
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
-                  Name of Student{" "}
-                  <span className="hidden md:inline-block">:-</span>{" "}
+            <div className="w-full grid grid-cols-1 md:grid-cols-2">
+              <div className="ps-[0px] md:ps-[40px] flex flex-col">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
+                  <div className="text-[20px] text-[white] font-semibold max-md:hidden">
+                    Name of Student{" "}
+                    <span className="hidden md:inline-block">:-</span>{" "}
+                  </div>
+                  <div className="font-normal text-xl max-md:text-xl  md:text-[20px] text-[white] max-md:text-center">
+                    {userData.firstName} {userData.lastName}
+                  </div>
                 </div>
-                <div className="font-normal text-xl max-md:text-xl  md:text-[20px] text-[white] max-md:text-center">
-                  {userData.firstName} {userData.lastName}
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
+                  <div className="text-[20px] text-[white] font-semibold max-md:hidden">
+                    Student ID{" "}
+                    <span className="hidden md:inline-block">:-</span>{" "}
+                  </div>
+                  <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
+                    {userData.collegeId.toUpperCase()}
+                  </div>
+                </div>
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
+                  <div className="text-[20px] text-[white] font-semibold max-md:hidden">
+                    Teckzite ID{" "}
+                    <span className="hidden md:inline-block">:-</span>{" "}
+                  </div>
+                  <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
+                    {userData.tzkid.toUpperCase()}
+                  </div>
                 </div>
               </div>
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
-                  Student ID <span className="hidden md:inline-block">:-</span>{" "}
+              <div className="ps-[0] md:ps-[40px] flex flex-col">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
+                  <div className="text-[20px] text-[white] font-semibold max-md:hidden">
+                    University Name{" "}
+                    <span className="hidden md:inline-block">:-</span>{" "}
+                  </div>
+                  <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
+                    {userData.college.toUpperCase()}
+                  </div>
                 </div>
-                <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
-                  {userData.collegeId.toUpperCase()}
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
+                  <div className="text-[20px] text-[white] font-semibold max-md:hidden">
+                    Year & Branch{" "}
+                    <span className="hidden md:inline-block">:-</span>{" "}
+                  </div>
+                  <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
+                    {userData.year.toUpperCase()}{" "}
+                    {userData.branch.toUpperCase()}
+                  </div>
                 </div>
-              </div>
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
-                  Teckzite ID <span className="hidden md:inline-block">:-</span>{" "}
-                </div>
-                <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
-                  {userData.tzkid.toUpperCase()}
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
+                  <div className="text-[20px] text-[white] font-semibold max-md:hidden">
+                    Email <span className="hidden md:inline-block">:-</span>{" "}
+                  </div>
+                  <div className="font-normal text-lg pt-2 md:text-[14px] text-[white] max-md:text-center">
+                    {userData.email}
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="ps-[0] md:ps-[40px] flex flex-col">
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
-                  University Name{" "}
-                  <span className="hidden md:inline-block">:-</span>{" "}
+            {userData.regEvents && userData.regEvents.length !== 0 && (
+              <>
+                <h1 className="col-span-12 text-2xl font-bruno mt-10 mb-5 text-center text-white  font-semibold">
+                  Registered Events
+                </h1>
+                <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
+                  {userData.regEvents.map((e) => {
+                    return (
+                      <EWCard
+                        key={e._id}
+                        id={e._id}
+                        img={e.img}
+                        name={e.name}
+                      />
+                    );
+                  })}
                 </div>
-                <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
-                  {userData.college.toUpperCase()}
+              </>
+            )}
+            {userData.regWorkshop && userData.regWorkshop.length !== 0 && (
+              <>
+                <h1 className="col-span-12 text-2xl font-bruno mt-5 text-center text-white  font-semibold">
+                  Registered Workshops
+                </h1>
+                <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
+                  {userData.regWorkshop.map((w) => {
+                    return (
+                      <EWCard
+                        key={w._id}
+                        id={w._id}
+                        img={w.workshopImg}
+                        name={w.name}
+                        workshop={true}
+                      />
+                    );
+                  })}
                 </div>
-              </div>
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
-                  Year & Branch{" "}
-                  <span className="hidden md:inline-block">:-</span>{" "}
-                </div>
-                <div className="font-normal text-xl max-md:text-lg  md:text-[20px] text-[white] max-md:text-center">
-                  {userData.year.toUpperCase()} {userData.branch.toUpperCase()}
-                </div>
-              </div>
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 mx-auto ">
-                <div className="text-[20px] text-[white] font-semibold max-md:hidden">
-                  Email <span className="hidden md:inline-block">:-</span>{" "}
-                </div>
-                <div className="font-normal text-lg pt-2 md:text-[14px] text-[white] max-md:text-center">
-                  {userData.email}
-                </div>
-              </div>
-            </div>
+              </>
+            )}
           </div>
-          {userData.regEvents && userData.regEvents.length !== 0 && (
-            <>
-              <h1 className="col-span-12 text-2xl font-bruno mt-10 mb-5 text-center text-white  font-semibold">
-                Registered Events
-              </h1>
-              <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
-                {userData.regEvents.map((e) => {
-                  return (
-                    <EWCard key={e._id} id={e._id} img={e.img} name={e.name} />
-                  );
-                })}
-              </div>
-            </>
-          )}
-          {userData.regWorkshop && userData.regWorkshop.length !== 0 && (
-            <>
-              <h1 className="col-span-12 text-2xl font-bruno mt-5 text-center text-white  font-semibold">
-                Registered Workshops
-              </h1>
-              <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
-                {userData.regWorkshop.map((w) => {
-                  return (
-                    <EWCard
-                      key={w._id}
-                      id={w._id}
-                      img={w.workshopImg}
-                      name={w.name}
-                      workshop={true}
-                    />
-                  );
-                })}
-              </div>
-            </>
-          )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
