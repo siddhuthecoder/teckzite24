@@ -183,6 +183,24 @@ const ProblemStatements = () => {
             <MenuButton name="Know More" />
           </div>
         </SwiperSlide>
+        <SwiperSlide className="w-11/12 max-w-4xl md:p-6 rounded-lg gap-[20px] md:h-[320px] h-[600px] backdrop-blur-lg flex flex-col  bg-white/10 border border-white/20 shadow-lg text-white mb-8">
+          {" "}
+          <h2 className="text-cyan-500 text-[30px]">Student Innovation
+          </h2>
+       
+          <h2 className="text-[20px] px-2">
+            {" "}
+            (Exclusive to RGUKT Students)
+{" "}
+          </h2>
+          <p className="text-[16px] px-[20px] md:px-[40px]">
+          This problem statement is open to all RGUKT students, regardless of domain or branch. Under this category, teams can submit projects showcasing innovative ideas and solutions across any field of interest. It serves as a platform for students to demonstrate their creativity, technical skills, and out-of-the-box thinking.
+
+          </p>
+          <div onClick={() => handleNavigation(10)} className="mt-10">
+            <MenuButton name="Know More" />
+          </div>
+        </SwiperSlide>
       </Swiper>
     </>
   );

@@ -10,7 +10,13 @@ const ProjectExpo = () => {
   const userData = useSelector((state) => state.user.data);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
-
+  const downloadFile = () => {
+    const fileUrl = " `${process.env.PUBLIC_URL}/assets/MEGAEXPO'25.pptx`";
+    const anchor = document.createElement("a");
+    anchor.href = fileUrl;
+    anchor.download = "sample.pdf";
+    anchor.click();
+  };
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
@@ -86,7 +92,7 @@ const ProjectExpo = () => {
                     <li>Components with specifications</li>
                   </ul>
                 </li>
-                <li>
+                <li className="mt-[10px]">
                   The list of projects is provided in Annexure-I of this
                   notification. Each project is denoted with a Project Number
                   (i.e., Project-1, Project-2 respectively).
@@ -94,16 +100,43 @@ const ProjectExpo = () => {
                 <li>
                   Under{" "}
                   <span class="font-semibold text-cyan-500">
-                    Project No. 11
+                    Student Innovation
                   </span>{" "}
-                  in Annexure-I, students are invited to submit their project
-                  proposals, including:
-                  <ul class="list-decimal ml-6 mt-2">
-                    <li>Abstracts</li>
-                    <li>Ideas and objectives</li>
-                    <li>Methodology</li>
-                    <li>Expected outcomes</li>
+                  in Annexure-1, students are invited to submit their project
+                  proposals. <br />
+                  <span>
+                    The project proposal under student innovation should be
+                    submitted in a PPT format.
+                  </span>
+                  <br />
+                  <span>That ppt should include :</span>
+                  <ul class="list-decimal ml-6 mt-2 ">
+                    <li className="font-semibold text-[16px]">Project title</li>
+                    <li className="font-semibold text-[16px]">Objective</li>
+                    <li className="font-semibold text-[16px]">Methodology</li>
+                    <li className="font-semibold text-[16px]">
+                      Novelty and Expected outcomes
+                    </li>
+                    <li className="font-semibold text-[16px]">
+                      Future scope and Market Feasibility
+                    </li>
+                    <li className="font-semibold text-[16px]">
+                      Estimated budget for prototype building
+                    </li>
+                    <li className="font-semibold text-[16px]">
+                      Research and References
+                    </li>
                   </ul>
+                  <div className="flex  items-start mt-[20px]">
+                  Sample PPT format for student innovation problem statement.
+                    <button
+                      className="px-4  rounded text-cyan-500"
+                      onClick={downloadFile}
+                    >
+                      Click here to download
+                    </button>
+                  </div>
+                 Note: For other problem statements, you must submit a brief report including the methodology used and the components with their specifications.
                 </li>
               </ul>
             </li>
@@ -128,21 +161,39 @@ const ProjectExpo = () => {
                 </li>
                 <li>
                   The jury will select and announce the results for each project
-                  from the list of projects enlisted in Annexure-I.
+                  from the list of projects enlisted in Problem Statements.
                 </li>
+              </ul>
+            </li>
+            <li class="mt-4">
+              <strong class=" text-cyan-500">TimeLine for MegaExpo</strong>{" "}
+              <br />
+              <ul class="list-circle ml-6 mt-2">
+                <li>Event Announcement : Jan 24 ,2025</li>
+                <li>Abstract Submission Deadline : Feb 2 ,2025</li>
+                <li>Announcement of shortlisted teams : Feb 3 ,2025</li>
+                <li>Project Development and Expo Presentation</li>
+                <li>Project Execution : Feb 3 - Feb 23, 2025</li>
+                <li>Prototype Submission Deadline : Feb 24,2025</li>
+                <li>Expo and Evaluation : Feb 26 - Feb 27,2025</li>
               </ul>
             </li>
           </ul>
           <p className="text-white pl-[30px]">
-          <h3>Note :</h3>
+            <h3>Note :</h3>
             <ul>
-            <li>The Government of India will fund the most innovative projects to
-            support their advancement in product development.</li>
-            <li>Team size should be Minimum 2 and Maximum 5 students are allowed</li>
-            <li>To participate in the Project Expo, it is mandatory to register for Teckzite.</li>
+              <li>
+                1.The Government of India will fund the most innovative projects
+                to support their advancement in product development.
+              </li>
+              <li>
+                2.Team size should be Minimum 2 and Maximum 5 students are allowed
+              </li>
+              <li>
+                3.To participate in the Project Expo, it is mandatory to register
+                for Teckzite.
+              </li>
             </ul>
-      
-            
           </p>
           <p className="px-[30px]">
             For more details{" "}
@@ -154,6 +205,7 @@ const ProjectExpo = () => {
               Please go through this link
             </a>{" "}
           </p>
+
           <div className="w-full flex items-center justify-between mx-[40px]">
             <div onClick={handleRegisterClick}>
               <MenuButton title="Register" name="Register" />
