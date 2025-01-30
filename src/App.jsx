@@ -10,6 +10,7 @@ import PageNotFound from "./components/PageNotFound";
 import Footer from "./components/Shared/Footer";
 import SpeakersCard from "./components/Shared/SPcard";
 import Stalls from "./pages/Stalls/Stalls";
+import Modalstall  from "./pages/Stalls/Modalstall";
 import {
   About,
   Events,
@@ -193,6 +194,7 @@ function App() {
               <Route path="/certficates/users" element={<CertificatesUser />} />
               <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
               <Route path="/stalls" element={<Stalls />} />
+              <Route path="/Modalstall" element={<Modalstall />} />
               {/* <Route path="/robowars" element={<ComingSoon />} /> */}
 
                 
