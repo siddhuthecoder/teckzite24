@@ -1,54 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-
-// const Preloader = ({ setLoading }) => {
-//   const [isClicked, setIsClicked] = useState(false);
-
-//   useEffect(() => {
-//     if (isClicked) {
-//       setTimeout(() => {
-//         setLoading(false); // Stop loading after the timeout
-//       }, 2600);
-//     }
-//   }, [isClicked, setLoading]);
-
-//   const onClickHandler = () => {
-//     setIsClicked(true);
-//   };
-
-//   return (
-//     <div className="z-50 text-center bg-[#1E1C1C] h-screen relative overflow-hidden w-full">
-//       <img
-//         src="desktopPreloader.png"
-//         className={`h-full w-full object-cover hidden md:block imagesenter z-0 ${
-//           isClicked ? 'imagesenterclick' : ''
-//         }`}
-//         alt="Enter"
-//       />
-//         <img
-//         src="mobilePreloader.png"
-//         className={`h-full w-full object-cover md:hidden imagesenter z-0 ${
-//           isClicked ? 'imagesenterclick' : ''
-//         }`}
-//         alt="Enter"
-//       />
-
-//       {!isClicked && (
-//         <div
-//           onClick={onClickHandler}
-//           className="w-full absolute left-0 top-0 h-screen flex items-center justify-center bg-white bg-opacity-5 backdrop-blur-lg z-10"
-//         >
-//           <button
-//             className="enter-btn text-white font-bold px-2 py-1 z-50 rounded-md text-[50px] font-bruno"
-//           >
-//             Enter
-//           </button>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Preloader;
 import { useEffect, useState } from "react";
 import "../css/glitch.scss";
 import "../css/glitch2.scss";
@@ -61,6 +10,42 @@ const Preloader = ({ setLoading }) => {
   const [second, setSecond] = useState("");
   const [date, setDate] = useState("");
   const [month, setMonth] = useState("");
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  useEffect(() => {
+    const fetchCurrentTime = () => {
+      const now = new Date();
+      setHour(now.getHours().toString().padStart(2, "0"));
+      setMinute(now.getMinutes().toString().padStart(2, "0"));
+      setSecond(now.getSeconds().toString().padStart(2, "0"));
+      setDate(now.getDate().toString().padStart(2, "0"));
+      setMonth((now.getMonth() + 1).toString().padStart(2, "0"));
+    };
+
+    const interval = setInterval(fetchCurrentTime, 1000);
+    fetchCurrentTime();
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    // Load the `scene_mobile.splinecode` file
+    const loadSplineFile = async () => {
+      try {
+        // Simulate loading the spline file
+        const response = await fetch("/path/to/scene_mobile.splinecode");
+        if (response.ok) {
+          setAssetsLoaded(true); // Set assetsLoaded to true once loaded
+        } else {
+          console.error("Failed to load scene_mobile.splinecode");
+        }
+      } catch (error) {
+        console.error("Error loading spline file:", error);
+      }
+    };
+
+    loadSplineFile();
+  }, []);
 
   useEffect(() => {
     if (!isStart) {
@@ -84,38 +69,7 @@ const Preloader = ({ setLoading }) => {
     setTimeout(() => {
       setIsStart(true);
     }, 1500);
-    startTimer();
   };
-
-  const startTimer = () => {
-    const interval = setInterval(() => {
-      setSecond((p) => (p + 5) % 60);
-      setHour((p) => (p + 5) % 24);
-      setMinute((p) => (p + 5) % 60);
-      setMonth((p) => (p + 1) % 12);
-      setDate((p) => (p + 2) % 31);
-    }, 10);
-
-    setTimeout(() => {
-      clearInterval(interval);
-    }, 2000);
-  };
-
-  useEffect(() => {
-    const fetchCurrentTime = () => {
-      const now = new Date();
-      setHour(now.getHours().toString().padStart(2, "0"));
-      setMinute(now.getMinutes().toString().padStart(2, "0"));
-      setSecond(now.getSeconds().toString().padStart(2, "0"));
-      setDate(now.getDate().toString().padStart(2, "0"));
-      setMonth((now.getMonth() + 1).toString().padStart(2, "0"));
-    };
-
-    const interval = setInterval(fetchCurrentTime, 1000);
-    fetchCurrentTime();
-
-    return () => clearInterval(interval);
-  }, []);
 
   const Whole = ({ left }) => {
     return (
@@ -124,7 +78,6 @@ const Preloader = ({ setLoading }) => {
           left ? "-translate-x-1/2" : ""
         }`}
       >
-        {/* Preloader Images */}
         <img
           src={"/preloader_desktop.png"}
           alt="preloaderimg"
@@ -138,8 +91,6 @@ const Preloader = ({ setLoading }) => {
           alt="preloaderimg"
           className={`absolute w-full top-[50%] left-[50%] -translate-x-1/2 scale-x-[2.2] scale-y-[1.8] -translate-y-1/2 md:hidden`}
         />
-        
-        {/* Dynamic Text */}
         <h1 className="text-3xl max-md:text-lg font-[ROG] max-md:pl-4 uppercase mt-10">
           {isStart ? (
             "?????????"
@@ -164,7 +115,6 @@ const Preloader = ({ setLoading }) => {
           )}
         </h1>
 
-        {/* Timer */}
         <div className="my-8 max-md:pl-4 flex items-center justify-evenly w-[90%] max-w-[1000px]">
           <h2 className="text-4xl max-md:text-2xl">
             {isStart
@@ -173,7 +123,6 @@ const Preloader = ({ setLoading }) => {
           </h2>
         </div>
 
-        {/* Start Button */}
         <button
           onClick={handleStart}
           className="bg-red-600 mt-3 max-md:ml-4 px-5 py-1.5 border rounded border-red-700 cursor-pointer"
@@ -183,8 +132,9 @@ const Preloader = ({ setLoading }) => {
               !startCount &&
               "hue-rotate(137deg) drop-shadow(0 0 20px #23a347) brightness(120%)",
           }}
+          disabled={!assetsLoaded} // Disable button until assets are loaded
         >
-          PRESS
+          {assetsLoaded ? "PRESS" : "Loading..."}
         </button>
       </div>
     );
@@ -213,7 +163,3 @@ const Preloader = ({ setLoading }) => {
 };
 
 export default Preloader;
-
-
-
-
