@@ -85,8 +85,8 @@ const Teamweb = () => {
         className="absolute lg:w-52 lg:h-52 w-[170px] h-[170px] md:w-[150px] md:h-[150px] md:top-24 md:left-8 lg:top-16 top-16 left-14 lg:left-14 rounded-full"
         alt={member.name}
       />
-      <p className="absolute ml-[70px] bottom-6 text-white">{member.name}</p>
-      <p className="absolute bottom-1 ml-[70px] font-bold text-[black]">{member.position}</p>
+      <p className="absolute  ml-[70px] bottom-5 md:bottom-6 text-white">{member.name}</p>
+      <p className="absolute  bottom-1 md:ml-[70px] ml-[55px] font-bold text-[black]">{member.position}</p>
     </div>
   )
 
