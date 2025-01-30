@@ -129,12 +129,13 @@ const ProjectExpo = () => {
                   </ul>
                   <div className="flex  items-start mt-[20px]">
                   Sample PPT format for student innovation problem statement.
-                    <button
-                      className="px-4  rounded text-cyan-500"
-                      onClick={downloadFile}
-                    >
-                      Click here to download
-                    </button>
+                  <a
+              href="https://docs.google.com/presentation/d/1I1KGqGC_PDrSszn9VVoXMHRqNndv5wJw/edit?usp=drivesdk&ouid=106574611355872954164&rtpof=true&sd=true "
+              className="text-cyan-500"
+              target="blank"
+            >
+              Please go through this link
+            </a>{" "}
                   </div>
                  Note: For other problem statements, you must submit a brief report including the methodology used and the components with their specifications.
                 </li>
