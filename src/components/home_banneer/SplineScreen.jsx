@@ -31,7 +31,9 @@ function SplineScreen() {
             splineRef.current.emit("setPosition", { x: 0, y: 0, z: 6 }); // Default camera position for desktop
           }
         } else {
-          console.error('splineRef.current does not support the "emit" method.');
+          console.error(
+            'splineRef.current does not support the "emit" method.'
+          );
         }
       }
     };
@@ -44,31 +46,32 @@ function SplineScreen() {
 
   return (
     <div className="spline-container h-screen relative">
-      {isLoading && <div  >Loading </div>} {/* Show Preloader */}
-      {!isLoading && (
-        <button
-          className="backdrop-blur-[25px] backdrop-saturate-[136%] bg-white/5 border-[1px] border-gray-300/30 rounded-full text-white flex justify-center items-center px-3 py-[4px] mx-auto md:hidden"
-        >
-          {userData ? (
-            <div className="flex items-center gap-[8px] relative after:content-['|'] after:absolute after:right-[70px] ">
-              <span className="bg-gradient-to-b from-[#D7AC5D] via-[#D7AC5D] to-[#4F3025] bg-clip-text text-transparent">
-                {userData.tzkid.toUpperCase()}
-              </span>
-              <span className="text-[20px] ml-[20px]">
-                <RiCoinsLine className="text-[20px] text-[#D7AC5D]" />
-              </span>
-              <span className="bg-gradient-to-b from-[#D7AC5D] via-[#D7AC5D] to-[#4F3025] bg-clip-text text-transparent">
-                {userData?.credits}
-              </span>
-            </div>
-          ) : (
-            <div onClick={() => navigate("/register")} className="flex items-center gap-[5px]">
-              Click Here To Register <FaArrowRight />
-            </div>
-          )}
-        </button>
-      )}
-
+      {/* {isLoading && <div  >Loading </div>} Show Preloader */}
+      {/* {!isLoading && (
+        
+      )} */}
+      <button className="backdrop-blur-[25px] backdrop-saturate-[136%] bg-white/5 border-[1px] border-gray-300/30 rounded-full text-white flex justify-center items-center px-3 py-[4px] mx-auto md:hidden">
+        {userData ? (
+          <div className="flex items-center gap-[8px] relative after:content-['|'] after:absolute after:right-[70px] ">
+            <span className="bg-gradient-to-b from-[#D7AC5D] via-[#D7AC5D] to-[#4F3025] bg-clip-text text-transparent">
+              {userData.tzkid.toUpperCase()}
+            </span>
+            <span className="text-[20px] ml-[20px]">
+              <RiCoinsLine className="text-[20px] text-[#D7AC5D]" />
+            </span>
+            <span className="bg-gradient-to-b from-[#D7AC5D] via-[#D7AC5D] to-[#4F3025] bg-clip-text text-transparent">
+              {userData?.credits}
+            </span>
+          </div>
+        ) : (
+          <div
+            onClick={() => navigate("/register")}
+            className="flex items-center gap-[5px]"
+          >
+            Click Here To Register <FaArrowRight />
+          </div>
+        )}
+      </button>
       <Spline
         scene={isMobile ? splineSceneMobile : splineSceneDesktop}
         onLoad={(spline) => {
