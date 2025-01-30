@@ -15,7 +15,7 @@ const RegistrationModal = ({ onClose, userData }) => {
   const [teamMembers, setTeamMembers] = useState([
   ]);
   const [newMember, setNewMember] = useState({
-    tkzid: "",
+    tzkid: "",
     name: "",
     phoneNumber: "",
   });
@@ -61,16 +61,16 @@ const RegistrationModal = ({ onClose, userData }) => {
       toast.error("Maximum 4 team members allowed");
       return;
     }
-    if (!newMember.tkzid || !newMember.name || !newMember.phoneNumber) {
+    if (!newMember.tzkid || !newMember.name || !newMember.phoneNumber) {
       toast.error("Please fill in all member details");
       return;
     }
-    if (teamMembers.some((member) => member.tkzid === newMember.tkzid)) {
+    if (teamMembers.some((member) => member.tzkid === newMember.tzkid)) {
       toast.error("Member already added");
       return;
     }
     setTeamMembers((prev) => [...prev, newMember]);
-    setNewMember({ tkzid: "", name: "", phoneNumber: "" });
+    setNewMember({ tzkid: "", name: "", phoneNumber: "" });
   };
 
   const handleRemoveMember = (tzkid) => {
@@ -103,7 +103,7 @@ const RegistrationModal = ({ onClose, userData }) => {
       file: projectData.file,
       problemStatementNumber: Number(projectData.problemStatementNumber),
       teamMembers: teamMembers.filter(
-        (member) => member.tkzid && member.name && member.phoneNumber
+        (member) => member.tzkid && member.name && member.phoneNumber
       ),
     };
 
@@ -207,15 +207,15 @@ const RegistrationModal = ({ onClose, userData }) => {
               </h3>
               {teamMembers.map((member) => (
                 <div
-                  key={member.tkzid}
+                  key={member.tzkid}
                   className="flex justify-between items-center mb-2"
                 >
                   <span className="text-white">
-                    {member.name} ({member.tkzid})
+                    {member.name} ({member.tzkid})
                   </span>
-                  {member.tkzid !== userData.tkzid && (
+                  {member.tzkid !== userData.tzkid && (
                     <button
-                      onClick={() => handleRemoveMember(member.tkzid)}
+                      onClick={() => handleRemoveMember(member.tzkid)}
                       className="text-red-500 hover:text-red-700"
                     >
                       Remove
@@ -227,9 +227,9 @@ const RegistrationModal = ({ onClose, userData }) => {
             <div className="flex flex-col mb-4">
               <input
                 type="text"
-                value={newMember.tkzid}
+                value={newMember.tzkid}
                 onChange={(e) =>
-                  setNewMember({ ...newMember, tkzid: e.target.value })
+                  setNewMember({ ...newMember, tzkid: e.target.value })
                 }
                 placeholder="Teckzite ID"
                 className="p-2 mb-2 bg-white bg-opacity-20 rounded text-white"
