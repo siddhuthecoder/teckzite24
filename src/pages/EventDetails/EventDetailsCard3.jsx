@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { toast } from "react-hot-toast";
@@ -13,11 +13,9 @@ import axios from "axios";
 import tabbutton from "../../assets/events/tabbutton.webp";
 import EventButton from "../../components/button/EventButton";
 import eventdetailsdesk from "../../assets/events/eventdetailsdesk.webp";
-import eventdetailsmobile from "../../assets/events/eventdetailsmobile.webp";
 import { userActions } from "../../store/userSlice";
-import TabsButton from "../../components/button/TabsButton";
-const EventDetailsCard3 = () => {
 
+const EventDetailsCard3 = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [activeTab, setActiveTab] = useState("Description");
   const [registerForm, setRegisterForm] = useState(false);
@@ -36,14 +34,11 @@ const EventDetailsCard3 = () => {
   };
 
   useEffect(() => {
-    // Add event listener on mount
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup event listener on unmount
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [handleResize]); // Added handleResize to dependencies
 
   const handleSound = () => {
     const audio = new Audio("./click.wav");
@@ -70,45 +65,42 @@ const EventDetailsCard3 = () => {
       return;
     }
 
-    console.log(windowWidth)
-
     if (userData.regEvents.includes(id)) {
       toast.error("You are already registered to this event");
       setIsReg(false);
       return;
     }
 
-    if (data.teamSize === 1) {
-      if (window.confirm("Are you sure you want to register to this event")) {
-        const token = localStorage.getItem("token");
-        try {
-          const res = await axios.post(
-            `${process.env.REACT_APP_BACKEND_URL}/events/register/${data._id}`,
-            {
-              tzkIds: [userData.tzkid],
-            },
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
-          setIsReg(false);
-          toast.success("Registered for the event Successfully");
-          dispatch(userActions.addEvent(res.data.event));
-          navigate("/profile");
-        } catch (error) {
-          toast.error(error?.response?.data.message || "Internal Server Error");
-          setIsReg(false);
-        }
-      } else {
-        setIsReg(false);
-        return;
-      }
-    } else {
+    if (data.teamSize > 1) {
       setRegisterForm(true);
       setIsReg(false);
       return;
+    }
+
+    if (window.confirm("Are you sure you want to register to this event")) {
+      const token = localStorage.getItem("token");
+      try {
+        const res = await axios.post(
+          `${process.env.REACT_APP_BACKEND_URL}/events/register/${data._id}`,
+          {
+            tzkIds: [userData.tzkid],
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        setIsReg(false);
+        toast.success("Registered for the event Successfully");
+        dispatch(userActions.addEvent(res.data.event));
+        navigate("/profile");
+      } catch (error) {
+        toast.error(error?.response?.data.message || "Internal Server Error");
+        setIsReg(false);
+      }
+    } else {
+      setIsReg(false);
     }
   };
 
@@ -129,10 +121,11 @@ const EventDetailsCard3 = () => {
         onClick={() => setActiveTab(tab.value)}
       >
         <img
-          src={tabbutton}
+          src={tabbutton || "/placeholder.svg"}
           alt="cover"
-          className={`absolute top-0 left-0 z-[1] ${activeTab === tab.value ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute top-0 left-0 z-[1] ${
+            activeTab === tab.value ? "opacity-100" : "opacity-0"
+          }`}
           style={{ width: "120px", height: "40px" }}
         />
         <span className="p-2">{tab.label}</span>
@@ -164,114 +157,149 @@ const EventDetailsCard3 = () => {
     </div>
   );
 
- const RenderEventDetails = () => (
-  <div className="w-full flex min-h-screen justify-center items-center relative">
-    {/* Background Image */}
-    <div
-      className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center "
-      style={{ backgroundImage: "url('/notfound.webp')" }}
-      onClick={() => handleSound()}
-    ></div>
-
-    {/* Black Overlay with Opacity */}
-    <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50 "></div>
-
-    {/* Main Content */}
-    <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative  max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
-      <div className="absolute max-md:relative top-[10px] w-full md:mt-[25px]">
-        <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2">
-          <RenderTabs />
-        </div>
-        <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-bruno text-[#0A69A5] ">
-          {data.name}
-        </h1>
-        <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16 ">
-          <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3 md:ml-[10px]">
-            <img
-              src={data.img}
-              alt={data.name}
-              className="md:h-[220px] max-md:w-[70vw] mr-3 "
-            />
-            <div onClick={handleRegister}>
-              <EventButton name={isReg ? "Registering..." : "Register"} />
-            </div>
-          </div>
-
-          <div className="max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900 overflow-x-auto">
+  const RenderEventDetails = () => (
+    <div className="w-full flex min-h-screen justify-center items-center relative">
+      <div
+        className="absolute top-0 left-0 w-full h-screen bg-cover bg-fixed bg-center "
+        style={{ backgroundImage: "url('/notfound.webp')" }}
+        onClick={() => handleSound()}
+      ></div>
+      <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50 "></div>
+      <div className="w-[95%] max-w-[800px] mx-auto h-[450px] mt-5 relative  max-md:absolute max-md:w-full max-md:h-screen max-md:overflow-y-scroll max-md:pt-[80px]">
+        <div className="absolute max-md:relative top-[10px] w-full md:mt-[25px]">
+          <div className="max-md:hidden flex items-center w-[90%] mx-auto justify-around gap-3 pb-2">
             <RenderTabs />
           </div>
+          <h1 className="text-xl max-md:text-3xl my-2 w-full text-center font-bruno text-[#0A69A5] ">
+            {data.name}
+          </h1>
+          <div className="md:h-[220px] grid grid-cols-12 p-3 max-md:pb-16 ">
+            <div className="col-span-4 max-md:col-span-12 flex items-center w-full justify-start max-md:justify-center flex-col gap-3 md:ml-[10px]">
+              <img
+                src={data.img || "/placeholder.svg"}
+                alt={data.name}
+                className="md:h-[220px] max-md:w-[70vw] mr-3 "
+              />
+              <div onClick={handleRegister}>
+                <EventButton name={isReg ? "Registering..." : "Register"} />
+              </div>
+            </div>
 
-          <div className="col-span-8 max-md:col-span-12 max-md:bg-[rgba(42,46,56,0.56)] max-md:py-5 w-full  md:w-[94%] flex items-start flex-col px-4 max-md:px-2 rounded-[12px] border border-[rgba(255,255,255,0.125)] backdrop-blur-[18px] backdrop-saturate-200 md:ml-3 md:mr-1">
-            <div className="div h-[230px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible  ">
-              {activeTab === "TimeLine" && (
-                <TimeLine timeline={data.timeline} />
-              )}
-              {activeTab === "Structure" && (
-                <Structure structure={data.structure} />
-              )}
-              {activeTab === "Description" && (
-                <Description
-                  desc={data.desc}
-                  rules={data.rules}
-                  teamSize={data.teamSize}
-                />
-              )}
-              {activeTab === "Contact" && (
-                <Contact contact={data.contact_info} />
-              )}
+            <div className="max-md:flex hidden mt-2 items-center w-[95vw] mx-auto justify-around gap-3 pb-2 border-b border-1 border-purple-900 overflow-x-auto">
+              <RenderTabs />
+            </div>
+
+            <div className="col-span-8 max-md:col-span-12 max-md:bg-[rgba(42,46,56,0.56)] max-md:py-5 w-full  md:w-[94%] flex items-start flex-col px-4 max-md:px-2 rounded-[12px] border border-[rgba(255,255,255,0.125)] backdrop-blur-[18px] backdrop-saturate-200 md:ml-3 md:mr-1">
+              <div className="div h-[230px] max-md:h-[fit-content] pt-2 text-white overflow-y-auto overflow-x-visible  ">
+                {activeTab === "TimeLine" && (
+                  <TimeLine timeline={data.timeline} />
+                )}
+                {activeTab === "Structure" && (
+                  <Structure structure={data.structure} />
+                )}
+                {activeTab === "Description" && (
+                  <Description
+                    desc={data.desc}
+                    rules={data.rules}
+                    teamSize={data.teamSize}
+                  />
+                )}
+                {activeTab === "Contact" && (
+                  <Contact contact={data.contact_info} />
+                )}
+              </div>
             </div>
           </div>
         </div>
+        <img
+          src={eventdetailsdesk || "/placeholder.svg"}
+          alt=""
+          className="absolute pointer-events-none scale-y-[1.1] scale-x-[1.0] hidden md:block md:rotate-[0deg]"
+          style={{
+            width: "800px",
+            minHeight: "450px",
+          }}
+        />
       </div>
-      <img
-        src={eventdetailsdesk}
-        alt=""
-        className="absolute pointer-events-none scale-y-[1.1] scale-x-[1.0] hidden md:block md:rotate-[0deg]"
-        style={{
-          width: "800px",
-          minHeight: "450px",
-        }}
-      />
     </div>
-  </div>
-);
-           
-  const RenderRegistrationForm = () => {
-    const renderInputFields = () => {
-      const inputFields = [];
-      for (let i = 0; i < data.teamSize; i++) {
-        inputFields.push(
-          <div className="mt-2" key={i}>
-            <p className="text-sm text-black pb-1 pl-1">{`Team Member ${i + 1
-              }`}</p>
-            <input
-              type="text"
-              id={`team-${i + 1}`}
-              className="w-full uppercase placeholder:capitalize px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-              placeholder={`Team Member ${i + 1} TzkId`}
-            />
-          </div>
-        );
-      }
-      return inputFields;
-    };
+  );
 
+  const RenderRegistrationForm = () => {
+    const [teamMembers, setTeamMembers] = useState(
+      Array(data.teamSize).fill("")
+    );
     const [loading, setLoading] = useState(false);
 
+    const handleInputChange = (index, value) => {
+      const newTeamMembers = [...teamMembers];
+      newTeamMembers[index] = value;
+      setTeamMembers(newTeamMembers);
+    };
+
+    const handleSubmit = async () => {
+      setLoading(true);
+      let flag = false;
+      let empty = false;
+      let dups = false;
+
+      const uniqueMembers = new Set(teamMembers.map((m) => m.toLowerCase()));
+
+      if (teamMembers.some((m) => m === "" || m.length !== 9)) {
+        empty = true;
+      }
+      if (
+        !teamMembers
+          .map((m) => m.toLowerCase())
+          .includes(userData.tzkid.toLowerCase())
+      ) {
+        flag = true;
+      }
+      if (uniqueMembers.size !== teamMembers.length) {
+        dups = true;
+      }
+
+      if (empty) {
+        toast.error("Invalid Teckzite Ids");
+      } else if (dups) {
+        toast.error("Duplicate Teckzite Ids are not allowed");
+      } else if (flag) {
+        toast.error("Invalid Teckzite Ids! You must be a part of the team");
+      } else {
+        const token = localStorage.getItem("token");
+        try {
+          const res = await axios.post(
+            `${process.env.REACT_APP_BACKEND_URL}/events/register/${data._id}`,
+            {
+              tzkIds: teamMembers,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          toast.success("Registered for the event Successfully");
+          dispatch(userActions.addEvent(res.data.event));
+          navigate("/profile");
+        } catch (error) {
+          toast.error(error?.response?.data.message || "Internal Server Error");
+        } finally {
+          setRegisterForm(false);
+        }
+      }
+      setLoading(false);
+    };
+
     return (
-      <div
-        id="default-modal"
-        tabIndex="-1"
-        aria-hidden="true"
-        className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center  scroll_in"
-      >
-        <div className="bg-white text-black w-[95%] max-w-lg p-4 rounded shadow-lg max-h-[90vh] scroll_in">
-          <div className="flex items-center justify-between pb-4 border-b">
-            <h3 className="text-xl font-semibold text-black">{data.name}</h3>
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg border border-white/20 text-white w-[95%] max-w-lg p-6 rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto">
+          <div className="flex items-center justify-between pb-4 border-b border-white/30">
+            <h3 className="text-xl font-semibold">
+              {data.name} - Team Registration
+            </h3>
             <button
-              type="button"
               onClick={() => setRegisterForm(false)}
-              className="text-gray-500 hover:text-gray-700 focus:outline-none"
+              className="text-white hover:text-gray-300 focus:outline-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -290,91 +318,41 @@ const EventDetailsCard3 = () => {
             </button>
           </div>
           <div className="p-4">
-            <form onSubmit={(e) => e.preventDefault()}>
-              {renderInputFields()}
-            </form>
+            {teamMembers.map((member, index) => (
+              <div key={index} className="mt-3">
+                <p className="text-sm pb-1 pl-1">{`Team Member ${
+                  index + 1
+                }`}</p>
+                <input
+                  type="text"
+                  value={member}
+                  onChange={(e) => handleInputChange(index, e.target.value)}
+                  className="w-full uppercase bg-white/20 text-white placeholder-gray-300 px-3 py-2 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50"
+                  placeholder={`Team Member ${index + 1} TzkId`}
+                />
+              </div>
+            ))}
           </div>
           <div className="flex justify-end pt-4">
             <button
               onClick={() => setRegisterForm(false)}
-              className="px-4 py-1 bg-gray-300 text-gray-800 rounded mr-2 focus:outline-none"
+              className="px-4 py-1 bg-white/20 text-white rounded-lg mr-2 focus:outline-none hover:bg-white/30"
             >
               Close
             </button>
             <button
+              onClick={handleSubmit}
               disabled={loading}
-              className="px-4 py-1 bg-gradient text-white rounded focus:outline-none"
-              onClick={async () => {
-                setLoading(true);
-                const teamMembers = [];
-                let flag = false;
-                let empty = false;
-                let dups = false;
-
-                for (let i = 0; i < data.teamSize; i++) {
-                  const inputValue = document.getElementById(
-                    `team-${i + 1}`
-                  ).value;
-                  if (inputValue === "" || inputValue.length !== 9) {
-                    empty = true;
-                  }
-                  if (inputValue.toLowerCase() === userData.tzkid) {
-                    flag = true;
-                  }
-                  if (teamMembers.includes(inputValue.toLowerCase())) {
-                    dups = true;
-                  }
-                  teamMembers.push(inputValue.toLowerCase());
-                }
-
-                if (empty) {
-                  toast.error("Invalid Teckzides Ids");
-                  setLoading(false);
-                } else if (dups) {
-                  toast.error("Duplicate Teckzides Ids are not allowed");
-                  setLoading(false);
-                } else if (!flag) {
-                  toast.error(
-                    "Invalid Teckzite Ids !!\n You must be a part of team"
-                  );
-                  setLoading(false);
-                } else {
-                  const token = localStorage.getItem("token");
-                  try {
-                    const res = await axios.post(
-                      `${process.env.REACT_APP_BACKEND_URL}/events/register/${data._id}`,
-                      {
-                        tzkIds: teamMembers,
-                      },
-                      {
-                        headers: {
-                          Authorization: `Bearer ${token}`,
-                        },
-                      }
-                    );
-                    setLoading(false);
-                    toast.success("Registered for the event Successfully");
-                    dispatch(userActions.addEvent(res.data.event));
-                    navigate("/profile");
-                  } catch (error) {
-                    toast.error(
-                      error?.response?.data.message || "Internal Server Error"
-                    );
-                    setLoading(false);
-                  } finally {
-                    setRegisterForm(false);
-                    setLoading(false);
-                  }
-                }
-              }}
+              className="px-4 py-1 bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-lg focus:outline-none hover:from-blue-500 hover:to-blue-700"
             >
-              {loading ? "Registering...." : "Register"}
+              {loading ? "Registering..." : "Register"}
             </button>
           </div>
         </div>
       </div>
     );
   };
+
   return (
     <>
       <Header />

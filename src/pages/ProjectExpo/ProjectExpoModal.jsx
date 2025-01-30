@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { MdClose } from "react-icons/md";
 
 const RegistrationModal = ({ onClose, userData }) => {
   const [step, setStep] = useState(1);
@@ -56,8 +57,8 @@ const RegistrationModal = ({ onClose, userData }) => {
   };
 
   const handleAddMember = () => {
-    if (teamMembers.length >= 5) {
-      toast.error("Maximum 5 team members allowed");
+    if (teamMembers.length >= 4) {
+      toast.error("Maximum 4 team members allowed");
       return;
     }
     if (!newMember.tzkid || !newMember.name || !newMember.phoneNumber) {
@@ -73,16 +74,16 @@ const RegistrationModal = ({ onClose, userData }) => {
   };
 
   const handleRemoveMember = (tzkid) => {
-    if (teamMembers.length <= 2) {
-      toast.error("Minimum 2 team members required");
-      return;
-    }
+    // if (teamMembers.length <= 1) {
+    //   toast.error("Minimum 2 team members required inlcuding you");
+    //   return;
+    // }
     setTeamMembers((prev) => prev.filter((member) => member.tzkid !== tzkid));
   };
 
   const handleSubmit = async () => {
-    if (teamMembers.length < 2) {
-      toast.error("Minimum 2 team members required");
+    if (teamMembers.length <1) {
+      toast.error("Minimum 2 team members required inlccluding you");
       return;
     }
     if (
@@ -148,6 +149,9 @@ const RegistrationModal = ({ onClose, userData }) => {
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-8 max-w-md w-full z-10">
+        <div className="w-full flex items-center justify-end">
+          <MdClose className="text-2xl text-white cursor-pointer"  onClick={onClose}/>
+        </div>
         <h2 className="text-2xl font-bold mb-4 text-white">Project Registration</h2>
         {step === 1 ? (
           <>
@@ -199,7 +203,7 @@ const RegistrationModal = ({ onClose, userData }) => {
           <>
             <div className="mb-4">
               <h3 className="text-lg font-semibold mb-2 text-white">
-                Team Members ({teamMembers.length}/5)
+                Team Members ({teamMembers.length}/4) Excluding you
               </h3>
               {teamMembers.map((member) => (
                 <div
