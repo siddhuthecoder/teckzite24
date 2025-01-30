@@ -42,10 +42,10 @@ const Team = () => {
             className="w-[97%] h-[97%] absolute titleone rounded-lg  overflow-hidden ml-[5px]"
           />
 
-          <div className="absolute  text-white text-sm pb-3 font-bold z-20 ml-[100px]">
+          <div className="absolute  text-white text-sm pb-3 font-bold z-20 ml-[100px] ">
             WEBTEAM
           </div>
-          <MenuButton text="Web Team" action={handleWebTeamClick} />
+          <MenuButton text="Web Team" action={handleWebTeamClick}/>
         </div>
         <div
           className="flex cardone w-[300px] h-[400px] rounded-[20px] justify-center items-center relative cursor-pointer mb-[50px] md:mt-0"
@@ -59,7 +59,7 @@ const Team = () => {
           <div className="absolute text-white text-sm pb-3 font-bold z-20 ml-[100px]">
             CORETEAM
           </div>
-          <MenuButton text="Core Team" action={handleCoreTeamClick} />
+          <MenuButton text="Core Team" action={handleCoreTeamClick} className="bg-black"/>
         </div>
       </div>
       </section>
