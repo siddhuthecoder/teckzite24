@@ -71,7 +71,7 @@ const TeamTable = () => {
           <img
             src={member.image || "/placeholder.svg"}
             alt={member.name}
-            className={`w-[95px] h-[95px] object-cover ${isLoading ? "opacity-50" : ""}`}
+            className={`w-[95px] h-[95px] ml-[3px] object-cover ${isLoading ? "opacity-50" : ""}`}
           />
         </div>
         <div>
