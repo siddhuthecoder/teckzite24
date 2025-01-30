@@ -11,10 +11,10 @@ const ProjectExpo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const downloadFile = () => {
-    const fileUrl = " `${process.env.PUBLIC_URL}/assets/MEGAEXPO'25.pptx`";
+    const fileUrl =  `${process.env.PUBLIC_URL}/assets/MEGAEXPO'25.pptx`;
     const anchor = document.createElement("a");
     anchor.href = fileUrl;
-    anchor.download = "sample.pdf";
+    anchor.download = "sample.pptx";
     anchor.click();
   };
   useEffect(() => {
