@@ -17,35 +17,30 @@ const Teamweb = () => {
       name: "Y.Siddartha",
       image: "https://res.cloudinary.com/djkjpikye/image/upload/v1737866631/user_photos/zhinj3u5863lswwfkpke.png",
       position: "Web Team Manager",
-      priority: 1,
     },
     {
       _id: "6795bdeef817652fe3cdcc3c",
       name: "Shiva",
       image: "https://res.cloudinary.com/djkjpikye/image/upload/v1737866733/user_photos/kkbdrattv0ksc7opg7se.png",
       position: "Web Team Coordinator",
-      priority: 2,
     },
     {
       _id: "6795be21f817652fe3cdcc3e",
       name: "Sribabu Mandraju",
       image: "https://res.cloudinary.com/djkjpikye/image/upload/v1737872904/user_photos/dckcr5g4oswa7cekf5p5.png",
       position: "Web Team Coordinator",
-      priority: 3,
     },
     {
       _id: "6795be8df817652fe3cdcc40",
       name: "Yasvanth",
       image: "https://res.cloudinary.com/djkjpikye/image/upload/v1737873332/user_photos/sd0ktlmb63ddmyjdfufz.png",
       position: "Web Team Coordinator",
-      priority: 4,
     },
     {
       _id: "67978db85bcea54807682441",
       name: "Aswini Kodati",
       image: "https://res.cloudinary.com/djkjpikye/image/upload/v1737985463/user_photos/yjzzjzysygty6m6zrt3q.png",
       position: "Web designer",
-      priority: 5,
     },
   ]
 
@@ -79,34 +74,19 @@ const Teamweb = () => {
     autoplay: true,
     autoplaySpeed: 1400,
     pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: true,
-        },
-      },
-    ],
+    responsive: [{ breakpoint: 768, settings: { slidesToShow: 1 } }],
   }
 
   const renderTeamMember = (member) => (
     <div key={member._id} className="relative">
       <img src={Teamcard || "/placeholder.svg"} className="w-80 md:h-96 h-80" alt="Team Card" />
-      <div className={`${loading ? "animate-pulse" : ""}`}>
-        <img
-          src={member.image || "/placeholder.svg"}
-          className="absolute lg:w-52 lg:h-52 w-[170px] h-[170px] md:w-[150px] md:h-[150px] md:top-24 md:left-8 lg:top-16 top-16 left-14 lg:left-14 rounded-full object-cover"
-          alt={member.name}
-          onError={(e) => {
-            e.target.onerror = null
-            e.target.src = "/placeholder.svg"
-          }}
-        />
-        <p className="absolute ml-[70px] bottom-6 text-white">{member.name}</p>
-        <p className="absolute bottom-1 ml-[70px] font-bold text-[black]">{member.position}</p>
-      </div>
+      <img
+        src={member.image || "/placeholder.svg"}
+        className="absolute lg:w-52 lg:h-52 w-[170px] h-[170px] md:w-[150px] md:h-[150px] md:top-24 md:left-8 lg:top-16 top-16 left-14 lg:left-14 rounded-full"
+        alt={member.name}
+      />
+      <p className="absolute ml-[70px] bottom-6 text-white">{member.name}</p>
+      <p className="absolute bottom-1 ml-[70px] font-bold text-[black]">{member.position}</p>
     </div>
   )
 
@@ -126,19 +106,23 @@ const Teamweb = () => {
           <img
             src={Pipe || "/placeholder.svg"}
             className="md:w-[350px] w-[250px] md:h-[590px] h-[300px] md:rotate-0 rotate-90"
-            alt="Decorative pipe right"
+            alt="Pipe"
           />
         </div>
         <div className="absolute md:-left-36 lg:-left-16 md:top-[170px] top-[450px] lg:top-[70px]">
           <img
             src={Pipe || "/placeholder.svg"}
             className="md:w-[350px] w-[250px] md:h-[590px] h-[300px] md:rotate-0 rotate-90 scale-y-[-1]"
-            alt="Decorative pipe left"
+            alt="Pipe"
           />
         </div>
-        <Slider {...settings} className="w-[80%] h-full md:mt-[170px] mt-[100px] lg:mt-[70px]">
-          {(loading ? staticTeamData : team).map(renderTeamMember)}
-        </Slider>
+        {loading ? (
+          <div className="text-white text-2xl">Loading...</div>
+        ) : (
+          <Slider {...settings} className="w-[80%] h-full md:mt-[170px] mt-[100px] lg:mt-[70px]">
+            {team.map(renderTeamMember)}
+          </Slider>
+        )}
       </div>
     </div>
   )
