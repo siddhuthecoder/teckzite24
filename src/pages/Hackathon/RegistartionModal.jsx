@@ -182,7 +182,7 @@ const RegistrationModal = ({ onClose, userData }) => {
               placeholder="Problem Statement Number (1-6)"
               className="w-full p-2 mb-4 bg-white bg-opacity-20 rounded text-white"
               min="1"
-              max="6"
+              max="10"
             />
             <button
               onClick={() =>
