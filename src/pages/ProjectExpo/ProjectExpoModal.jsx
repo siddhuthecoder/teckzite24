@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { MdClose } from "react-icons/md";
 
 const RegistrationModal = ({ onClose, userData }) => {
   const [step, setStep] = useState(1);
@@ -14,7 +15,7 @@ const RegistrationModal = ({ onClose, userData }) => {
   const [teamMembers, setTeamMembers] = useState([
   ]);
   const [newMember, setNewMember] = useState({
-    tkzid: "",
+    tzkid: "",
     name: "",
     phoneNumber: "",
   });
@@ -56,33 +57,33 @@ const RegistrationModal = ({ onClose, userData }) => {
   };
 
   const handleAddMember = () => {
-    if (teamMembers.length >= 5) {
-      toast.error("Maximum 5 team members allowed");
+    if (teamMembers.length >= 4) {
+      toast.error("Maximum 4 team members allowed");
       return;
     }
-    if (!newMember.tkzid || !newMember.name || !newMember.phoneNumber) {
+    if (!newMember.tzkid || !newMember.name || !newMember.phoneNumber) {
       toast.error("Please fill in all member details");
       return;
     }
-    if (teamMembers.some((member) => member.tkzid === newMember.tkzid)) {
+    if (teamMembers.some((member) => member.tzkid === newMember.tzkid)) {
       toast.error("Member already added");
       return;
     }
     setTeamMembers((prev) => [...prev, newMember]);
-    setNewMember({ tkzid: "", name: "", phoneNumber: "" });
+    setNewMember({ tzkid: "", name: "", phoneNumber: "" });
   };
 
-  const handleRemoveMember = (tkzid) => {
-    if (teamMembers.length <= 2) {
-      toast.error("Minimum 2 team members required");
-      return;
-    }
-    setTeamMembers((prev) => prev.filter((member) => member.tkzid !== tkzid));
+  const handleRemoveMember = (tzkid) => {
+    // if (teamMembers.length <= 1) {
+    //   toast.error("Minimum 2 team members required inlcuding you");
+    //   return;
+    // }
+    setTeamMembers((prev) => prev.filter((member) => member.tzkid !== tzkid));
   };
 
   const handleSubmit = async () => {
-    if (teamMembers.length < 2) {
-      toast.error("Minimum 2 team members required");
+    if (teamMembers.length <1) {
+      toast.error("Minimum 2 team members required inlccluding you");
       return;
     }
     if (
@@ -102,7 +103,7 @@ const RegistrationModal = ({ onClose, userData }) => {
       file: projectData.file,
       problemStatementNumber: Number(projectData.problemStatementNumber),
       teamMembers: teamMembers.filter(
-        (member) => member.tkzid && member.name && member.phoneNumber
+        (member) => member.tzkid && member.name && member.phoneNumber
       ),
     };
 
@@ -148,6 +149,9 @@ const RegistrationModal = ({ onClose, userData }) => {
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-8 max-w-md w-full z-10">
+        <div className="w-full flex items-center justify-end">
+          <MdClose className="text-2xl text-white cursor-pointer"  onClick={onClose}/>
+        </div>
         <h2 className="text-2xl font-bold mb-4 text-white">Project Registration</h2>
         {step === 1 ? (
           <>
@@ -182,7 +186,7 @@ const RegistrationModal = ({ onClose, userData }) => {
               placeholder="Problem Statement Number (1-6)"
               className="w-full p-2 mb-4 bg-white bg-opacity-20 rounded text-white"
               min="1"
-              max="6"
+              max="10"
             />
             <button
               onClick={() =>
@@ -199,19 +203,19 @@ const RegistrationModal = ({ onClose, userData }) => {
           <>
             <div className="mb-4">
               <h3 className="text-lg font-semibold mb-2 text-white">
-                Team Members ({teamMembers.length}/5)
+                Team Members ({teamMembers.length}/4) Excluding you
               </h3>
               {teamMembers.map((member) => (
                 <div
-                  key={member.tkzid}
+                  key={member.tzkid}
                   className="flex justify-between items-center mb-2"
                 >
                   <span className="text-white">
-                    {member.name} ({member.tkzid})
+                    {member.name} ({member.tzkid})
                   </span>
-                  {member.tkzid !== userData.tkzid && (
+                  {member.tzkid !== userData.tzkid && (
                     <button
-                      onClick={() => handleRemoveMember(member.tkzid)}
+                      onClick={() => handleRemoveMember(member.tzkid)}
                       className="text-red-500 hover:text-red-700"
                     >
                       Remove
@@ -223,9 +227,9 @@ const RegistrationModal = ({ onClose, userData }) => {
             <div className="flex flex-col mb-4">
               <input
                 type="text"
-                value={newMember.tkzid}
+                value={newMember.tzkid}
                 onChange={(e) =>
-                  setNewMember({ ...newMember, tkzid: e.target.value })
+                  setNewMember({ ...newMember, tzkid: e.target.value })
                 }
                 placeholder="Teckzite ID"
                 className="p-2 mb-2 bg-white bg-opacity-20 rounded text-white"

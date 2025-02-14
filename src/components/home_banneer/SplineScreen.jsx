@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 function SplineScreen() {
   const userData = useSelector((state) => state.user.data);
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   const splineRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true); // Track loading state
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Track screen size
@@ -22,7 +22,6 @@ function SplineScreen() {
       setIsMobile(mobile);
 
       if (splineRef.current) {
-        // Ensure `splineRef.current` is valid and supports the `emit` method
         if (typeof splineRef.current.emit === "function") {
           if (mobile) {
             splineRef.current.emit("setZoom", 0.5); // Adjust zoom level for mobile
@@ -46,30 +45,33 @@ function SplineScreen() {
   }, []);
 
   return (
-    <div className="spline-container h-screen  relative">
-      <button   className='backdrop-blur-[25px] backdrop-saturate-[136%] bg-white/5 border-[1px]  border-gray-300/30 rounded-full text-white flex justify-center items-center px-3 py-[4px]  mx-auto md:hidden'
-      >
+    <div className="spline-container h-screen relative">
+      {/* {isLoading && <div  >Loading </div>} Show Preloader */}
+      {/* {!isLoading && (
+        
+      )} */}
+      <button className="backdrop-blur-[25px] backdrop-saturate-[136%] bg-white/5 border-[1px] border-gray-300/30 rounded-full text-white flex justify-center items-center px-3 py-[4px] mx-auto md:hidden">
         {userData ? (
-          <div className="flex  items-center gap-[8px] relative after:content-['|'] after:absolute   after:right-[70px] ">
+          <div className="flex items-center gap-[8px] relative after:content-['|'] after:absolute after:right-[70px] ">
             <span className="bg-gradient-to-b from-[#D7AC5D] via-[#D7AC5D] to-[#4F3025] bg-clip-text text-transparent">
               {userData.tzkid.toUpperCase()}
             </span>
-            <span className="text-[20px] ml-[20px]  ">
-              <RiCoinsLine className="text-[20px] text-[#D7AC5D] " />
-
+            <span className="text-[20px] ml-[20px]">
+              <RiCoinsLine className="text-[20px] text-[#D7AC5D]" />
             </span>
             <span className="bg-gradient-to-b from-[#D7AC5D] via-[#D7AC5D] to-[#4F3025] bg-clip-text text-transparent">
               {userData?.credits}
             </span>
           </div>
         ) : (
-          // "Register"
-          <div onClick={()=>{navigate('/register')}} className="flex items-center gap-[5px]">Click Here To Register <FaArrowRight />
-</div>
+          <div
+            onClick={() => navigate("/register")}
+            className="flex items-center gap-[5px]"
+          >
+            Click Here To Register <FaArrowRight />
+          </div>
         )}
       </button>
-    
-
       <Spline
         scene={isMobile ? splineSceneMobile : splineSceneDesktop}
         onLoad={(spline) => {
@@ -78,6 +80,7 @@ function SplineScreen() {
         }}
         style={{
           zIndex: 2,
+          display: isLoading ? "none" : "block", // Hide Spline until loading is done
         }}
       />
     </div>
