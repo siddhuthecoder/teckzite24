@@ -20,7 +20,6 @@ import {
   // Home,
   Register,
   // Referrals,
-  // Speakers,
   Sponsors,
   Workshops
 } from "./pages";
