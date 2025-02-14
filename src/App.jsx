@@ -9,6 +9,7 @@ import AudioBG from "./components/Audio";
 import PageNotFound from "./components/PageNotFound";
 import Footer from "./components/Shared/Footer";
 import SpeakersCard from "./components/Shared/SPcard";
+import Privacy from "./pages/Privacy/Privacy";
 import {
   About,
   Events,
@@ -183,7 +184,7 @@ function App() {
               <Route path="/Teamcore" element={<Teamcore />} />
               <Route path="/Teamweb" element={<Teamweb />} />
               <Route path="/hackathon" element={<ComingSoon />} />
-
+              <Route path="/privacy" element={<Privacy />} />
               <Route
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}
