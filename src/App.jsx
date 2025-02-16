@@ -10,6 +10,7 @@ import PageNotFound from "./components/PageNotFound";
 import Footer from "./components/Shared/Footer";
 import SpeakersCard from "./components/Shared/SPcard";
 import Privacy from "./pages/Privacy/Privacy";
+import Results from "./pages/ProjectExpo/Results";
 import {
   About,
   Events,
@@ -196,7 +197,9 @@ function App() {
 
                 
               <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
-              <Route path="/expo" element={<ProjectExpo/>}/>    
+              <Route path="/expo" element={<ProjectExpo/>}/> 
+              <Route path="/results" element={<Results/>}/>    
+   
               <Route
                 path="/problemstatement/:id"
                 element={<ProblemStatementDetails />}
