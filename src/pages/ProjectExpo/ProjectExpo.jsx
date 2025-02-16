@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
-import RegistrationModal from "./ProjectExpoModal";
-import MenuButton from "../../components/button/MenuButton";
+// import RegistrationModal from "./ProjectExpoModal";
+// import MenuButton from "../../components/button/MenuButton";
 import Header from "../../components/Header/Header";
 import { useEffect } from "react";
 import ProblemStatements from "./ProblemStatements";
@@ -17,6 +17,13 @@ const ProjectExpo = () => {
     anchor.download = "sample.pptx";
     anchor.click();
   };
+  const ResultsdownloadFile = () => {
+    const fileUrl = " `${process.env.PUBLIC_URL}/assets/MEGAEXPO_R1_RESULTS_final`";
+    const anchor = document.createElement("a");
+    anchor.href = fileUrl;
+    anchor.download = "ResultsdownloadFile.pdf";
+    anchor.click();
+  };
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
@@ -27,13 +34,13 @@ const ProjectExpo = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const handleRegisterClick = () => {
-    if (!userData || Object.keys(userData).length === 0) {
-      toast.error("Please login to register for the project expo");
-    } else {
-      setIsModalOpen(true);
-    }
-  };
+  // const handleRegisterClick = () => {
+  //   if (!userData || Object.keys(userData).length === 0) {
+  //     toast.error("Please login to register for the project expo");
+  //   } else {
+  //     setIsModalOpen(true);
+  //   }
+  // };
 
   return (
     <>
@@ -71,6 +78,14 @@ const ProjectExpo = () => {
         <p className="text-white md:text-[24px] text-center">
           Supported by NIDI Scheme, Ministry of Education , Govt. of India
         </p>
+
+   
+      <div className="relative flex gap-5 text-xl backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg p-6 rounded-lg">
+        <h2>Results are out now</h2>
+        <button onClick={ResultsdownloadFile} className="text-cyan-500">
+          Click Here to Download Results
+        </button>
+      </div>
 
         <h2 className="text-[30px]">Problem Statements</h2>
         <ProblemStatements />
@@ -210,18 +225,19 @@ const ProjectExpo = () => {
             </a>{" "}
           </p>
 
-          <div className="w-full flex items-center justify-between mx-[40px]">
+          {/* <div className="w-full flex items-center justify-between mx-[40px]">
             <div onClick={handleRegisterClick}>
               <MenuButton title="Register" name="Register" />
             </div>
-          </div>
+          </div> */}
+
         </div>
-        {isModalOpen && (
+        {/* {isModalOpen && (
           <RegistrationModal
             onClose={() => setIsModalOpen(false)}
             userData={userData}
           />
-        )}
+        )} */}
       </div>
     </>
   );

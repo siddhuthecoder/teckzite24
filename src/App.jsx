@@ -12,8 +12,10 @@ import SpeakersCard from "./components/Shared/SPcard";
 
 import Privacy from "./pages/Privacy/Privacy";
 
+
 import Stalls from "./pages/Stalls/Stalls";
 import Modalstall  from "./pages/Stalls/Modalstall";
+
 
 import {
   About,
@@ -202,7 +204,8 @@ function App() {
 
                 
               <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
-              <Route path="/expo" element={<ProjectExpo/>}/>    
+              <Route path="/expo" element={<ProjectExpo/>}/> 
+   
               <Route
                 path="/problemstatement/:id"
                 element={<ProblemStatementDetails />}
