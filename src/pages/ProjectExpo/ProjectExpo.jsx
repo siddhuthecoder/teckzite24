@@ -11,10 +11,10 @@ const ProjectExpo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const downloadFile = () => {
-    const fileUrl = " `${process.env.PUBLIC_URL}/assets/MEGAEXPO'25.pptx`";
+    const fileUrl = `${process.env.PUBLIC_URL}/assets/MEGAEXPO'25.pptx`;
     const anchor = document.createElement("a");
     anchor.href = fileUrl;
-    anchor.download = "sample.pdf";
+    anchor.download = "sample.pptx";
     anchor.click();
   };
   const ResultsdownloadFile = () => {
@@ -143,15 +143,18 @@ const ProjectExpo = () => {
                     </li>
                   </ul>
                   <div className="flex  items-start mt-[20px]">
-                  Sample PPT format for student innovation problem statement.
-                    <button
-                      className="px-4  rounded text-cyan-500"
-                      onClick={downloadFile}
+                    Sample PPT format for student innovation problem statement.
+                    <a
+                      href="https://docs.google.com/presentation/d/1I1KGqGC_PDrSszn9VVoXMHRqNndv5wJw/edit?usp=drivesdk&ouid=106574611355872954164&rtpof=true&sd=true "
+                      className="text-cyan-500"
+                      target="blank"
                     >
-                      Click here to download
-                    </button>
+                      Please go through this link
+                    </a>{" "}
                   </div>
-                 Note: For other problem statements, you must submit a brief report including the methodology used and the components with their specifications.
+                  Note: For other problem statements, you must submit a brief
+                  report including the methodology used and the components with
+                  their specifications.
                 </li>
               </ul>
             </li>
@@ -202,11 +205,12 @@ const ProjectExpo = () => {
                 to support their advancement in product development.
               </li>
               <li>
-                2.Team size should be Minimum 2 and Maximum 5 students are allowed
+                2.Team size should be Minimum 2 and Maximum 5 students are
+                allowed
               </li>
               <li>
-                3.To participate in the Project Expo, it is mandatory to register
-                for Teckzite.
+                3.To participate in the Project Expo, it is mandatory to
+                register for Teckzite.
               </li>
             </ul>
           </p>
