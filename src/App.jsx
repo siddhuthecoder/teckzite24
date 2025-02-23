@@ -16,7 +16,7 @@ import Privacy from "./pages/Privacy/Privacy";
 import Stalls from "./pages/Stalls/Stalls";
 import Modalstall  from "./pages/Stalls/Modalstall";
 
-
+import Schedule from "./pages/Schedule/Schedule";
 import {
   About,
   Events,
@@ -51,6 +51,7 @@ import Home from "./pages/home1/home";
 
 import ProblemStatementDetails from './pages/ProjectExpo/ProblemStatementDetails';
 import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
+import HackathonProblem from "./pages/Hackathon/HackProblem";
 // import Contact from "./pages/Register/Contact";
 // import Contact from "./pages/ContactUs/ContactUs";
 function App() {
@@ -178,7 +179,7 @@ function App() {
               <Route path="/referrals" element={<Referrals />} />
               <Route path="/audio" element={<AudioBG />} />
               <Route path="/card" element={<SpeakersCard />} />
-              <Route path="/schedule" element={<ComingSoon />} />
+              <Route path="/schedule" element={<Schedule />} />
               <Route path="/card2" element={<EWschedule />} />
               <Route path="/eventdetails/:id" element={<EventDetailsCard3 />} />
               {/* <Route path="/eventupdates" element={<ComingSoon />} /> */}
@@ -189,7 +190,7 @@ function App() {
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/Teamcore" element={<Teamcore />} />
               <Route path="/Teamweb" element={<Teamweb />} />
-              <Route path="/hackathon" element={<ComingSoon />} />
+              {/* <Route path="/hackathon" element={<ComingSoon />} /> */}
               <Route path="/privacy" element={<Privacy />} />
               <Route
                 path="/workshopdetails/:id"
@@ -211,8 +212,8 @@ function App() {
                 element={<ProblemStatementDetails />}
               />  
               <Route path="*" element={<PageNotFound />} />
-              <Route path="/hackathon" element={<ComingSoon/>}/>
-              <Route path="/hackproblem/:id" element={<ComingSoon />}
+              <Route path="/hackathon" element={<Hackathon/>}/>
+              <Route path="/hackproblem/:id" element={<HackathonProblem />}
 />
 
 
