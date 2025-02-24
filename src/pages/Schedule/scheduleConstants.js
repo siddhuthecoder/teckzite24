@@ -7,7 +7,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "9 AM - 11 PM"
             }
           ],
@@ -19,7 +19,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "11 AM - 1 PM"
             }
           ],
@@ -31,7 +31,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "10 AM - 11 AM"
             }
           ],
@@ -43,7 +43,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "11 AM - 12:30 PM"
             }
           ],
@@ -55,7 +55,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "9 AM - 10 AM"
             }
           ],
@@ -67,7 +67,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "10:15 AM - 11:15 AM"
             }
           ],
@@ -79,7 +79,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "11:30 AM - 12:30 PM"
             }
           ],
@@ -91,7 +91,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "9 AM - 11 AM"
             }
           ],
@@ -103,7 +103,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "11:30 AM - 12:00 PM"
             }
           ],
@@ -115,7 +115,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "9 AM - 10:15 AM"
             }
           ],
@@ -127,7 +127,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "10:15 AM - 11:45 AM"
             }
           ],
@@ -139,7 +139,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "9 AM - 10:30 AM"
             }
           ],
@@ -151,7 +151,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "10:30 AM - 1 PM"
             }
           ],
@@ -163,7 +163,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "9:30 AM - 10 AM"
             }
           ],
@@ -175,7 +175,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "10:30 AM - 11 AM"
             }
           ],
@@ -187,7 +187,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "11 AM - 11:30 AM"
             }
           ],
@@ -199,7 +199,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "12 PM - 1 PM"
             }
           ],
@@ -211,7 +211,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "9:00 AM - 9:45 AM"
             }
           ],
@@ -223,7 +223,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "9:50 AM - 10:10 AM"
             }
           ],
@@ -235,7 +235,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "10:15 AM - 11:45 AM"
             }
           ],
@@ -247,7 +247,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "10:45 AM - 11:15 AM"
             }
           ],
@@ -259,7 +259,7 @@ const Eve = {
           "Rounds": [
             {
               "Round": "Round-1",
-              "Date": "13-04-2024",
+              "Date": "26-02-2025",
               "Time": "11:20 AM - 12:00 PM"
             }
           ],
