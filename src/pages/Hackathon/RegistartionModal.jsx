@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { MdClose } from "react-icons/md";
 
 const RegistrationModal = ({ onClose, userData }) => {
   const [step, setStep] = useState(1);
@@ -73,16 +74,16 @@ const RegistrationModal = ({ onClose, userData }) => {
   };
 
   const handleRemoveMember = (tzkid) => {
-    if (teamMembers.length <= 2) {
-      toast.error("Minimum 2 team members required");
+    if (teamMembers.length <= 3) {
+      toast.error("Minimum 3 team members required");
       return;
     }
     setTeamMembers((prev) => prev.filter((member) => member.tzkid !== tzkid));
   };
 
   const handleSubmit = async () => {
-    if (teamMembers.length < 2) {
-      toast.error("Minimum 2 team members required");
+    if (teamMembers.length < 3) {
+      toast.error("Minimum 3 team members required");
       return;
     }
     if (
@@ -148,6 +149,9 @@ const RegistrationModal = ({ onClose, userData }) => {
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-8 max-w-md w-full z-10">
+          <div className="w-full flex items-center justify-end">
+                  <MdClose className="text-2xl text-white cursor-pointer"  onClick={onClose}/>
+                </div>
         <h2 className="text-2xl font-bold mb-4 text-white">Hackathon Registration</h2>
         {step === 1 ? (
           <>
@@ -156,14 +160,14 @@ const RegistrationModal = ({ onClose, userData }) => {
               name="projectName"
               value={projectData.projectName}
               onChange={handleInputChange}
-              placeholder="Project Name"
+              placeholder="THEME TITLE"
               className="w-full p-2 mb-4 bg-white bg-opacity-20 rounded text-white"
             />
             <textarea
               name="abstract"
               value={projectData.abstract}
               onChange={handleInputChange}
-              placeholder="Abstract"
+              placeholder="ABSTRACT"
               className="w-full p-2 mb-4 bg-white bg-opacity-20 rounded text-white"
               rows={4}
             />
@@ -179,10 +183,10 @@ const RegistrationModal = ({ onClose, userData }) => {
               name="problemStatementNumber"
               value={projectData.problemStatementNumber}
               onChange={handleInputChange}
-              placeholder="Problem Statement Number (1-6)"
+              placeholder="THEME NUMBER (1-3)"
               className="w-full p-2 mb-4 bg-white bg-opacity-20 rounded text-white"
               min="1"
-              max="10"
+              max="3"
             />
             <button
               onClick={() =>

@@ -12,7 +12,7 @@ import SpeakersCard from "./components/Shared/SPcard";
 
 import Privacy from "./pages/Privacy/Privacy";
 
-
+import AithonDetails from "./pages/Hackathon/AithonDetails";
 import Stalls from "./pages/Stalls/Stalls";
 import Modalstall  from "./pages/Stalls/Modalstall";
 
@@ -52,6 +52,8 @@ import Home from "./pages/home1/home";
 import ProblemStatementDetails from './pages/ProjectExpo/ProblemStatementDetails';
 import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
 import HackathonProblem from "./pages/Hackathon/HackProblem";
+import RobothonDetails from "./pages/Hackathon/RobothonDetails";
+import Hacktype from "./pages/Hackathon/Hacktype";
 // import Contact from "./pages/Register/Contact";
 // import Contact from "./pages/ContactUs/ContactUs";
 function App() {
@@ -196,6 +198,10 @@ function App() {
                 path="/workshopdetails/:id"
                 element={<WorkshopDetails />}
               />
+              <Route path="/Hacktype" element={<Hacktype />} />
+        <Route path="/aithon" element={<AithonDetails />} />
+        <Route path="/robothon" element={<RobothonDetails />} />
+
               <Route path="/profile" element={<Profile />} />
               <Route path="/certficates/users" element={<CertificatesUser />} />
               <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
