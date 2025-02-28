@@ -4,7 +4,8 @@ import HackathonProblem from "./HackProblem";
 import ai from "../../assets/Hackathon/ailog.jpg";
 import amotion from "../../assets/Hackathon/amotionaiblack.jpg";
 import MenuButton from "../../components/button/MenuButton";
-import RegistrationModal from "./RegistartionModal";
+// import RegistrationModal from "./RegistartionModal";
+import RobothonModal from "./RobothonModal";
 
 const RobothonDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,14 +58,14 @@ const RobothonDetails = () => {
               <li className="mt-4">
                 <strong className="text-cyan-500">Round 2:</strong>
                 <ul className="list-circle ml-6 mt-2">
-                  <li>Date: 09/03/2025 Time: 2:00 PM</li>
+                  <li>Date: 09/03/2025 | Time: 2:00 PM</li>
                   <li>
                     <span className="text-cyan-500">Starting Date:</span>{" "}
-                    09/03/2025 Time: 2:00PM
+                    09/03/2025 | Time: 2:00PM
                   </li>
                   <li>
                     <span className="text-cyan-500">Ending Date:</span>{" "}
-                    10/03/2025 Time: 2:00PM
+                    10/03/2025 | Time: 2:00PM
                   </li>
                   <li>
                     <span className="text-cyan-500">Location:</span> RGUKT
@@ -90,7 +91,7 @@ const RobothonDetails = () => {
           </div>
         </div>
         {isModalOpen && (
-          <RegistrationModal onClose={() => setIsModalOpen(false)} />
+          <RobothonModal onClose={() => setIsModalOpen(false)} />
         )}
       </div>
     </div>

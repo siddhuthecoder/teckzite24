@@ -57,9 +57,9 @@ const HackathonProblem = (props) => {
                       <p className="text-[16px] px-[20px] md:px-[40px]">
                        {item.description}
                       </p>
-                      <div onClick={() => handleNavigation(1)} className="mt-10">
+                      {/* <div onClick={() => handleNavigation(1)} className="mt-10">
                         <MenuButton name="Know More" />
-                      </div>
+                      </div> */}
                     </SwiperSlide>
         ))}
      

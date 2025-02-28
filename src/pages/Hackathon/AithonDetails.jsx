@@ -66,7 +66,7 @@ const AithonDetails = () => {
               <li className="mt-4">
                 <strong className="text-cyan-500">Round 2:</strong>
                 <ul className="list-disc ml-6 mt-2 space-y-3">
-                  <li>Congratulations! Your team has been shortlisted for Round 2 of AI-THON.</li>
+                  <li>The top performers in Round-1 will be shortlisted for Round 2 of AI-THON.</li>
                   <li>
                     <strong className="text-cyan-500">Starting Date:</strong> 09/03/2025 | <strong className="text-cyan-500">Time:</strong> 2:00 PM
                   </li>
