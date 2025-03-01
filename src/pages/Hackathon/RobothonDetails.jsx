@@ -39,13 +39,15 @@ const RobothonDetails = () => {
             <img src={ai} className="h-[200px]" alt="AI Logo" />
           </div>
           <HackathonProblem /> */}
+                  <h1 className="md:text-7xl text-cyan-500">ROBOTHON</h1>
+
           <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg flex flex-col gap-[30px] bg-white/10 border border-white/20 shadow-lg text-white mb-8">
             <ul className="list-disc ml-6 text-white">
               <li>
                 <strong className="text-cyan-500">Round 1:</strong>
                 <ul className="list-circle ml-6 mt-2">
                   <li>
-                    Welcome to ROBO-THON, the premier Robotic Hackathon of
+                    Welcome to ROBO-THON, the premier Hackathon of
                     Teckzite'25! After successful registration, teams are
                     invited to participate in Round 1, which will be quiz on
                     basics of Robotics and IoT etc.
@@ -87,8 +89,10 @@ const RobothonDetails = () => {
                   <li>We look forward to seeing you at RGUKT Nuzvid!</li>
                 </ul>
               </li>
+              
             </ul>
-
+            <h3>FOR QUERIES:</h3>
+            <h2>Srinivas B - +91 90630 46555 | n200328@rguktn.ac.in</h2>
             <div className="w-full flex items-center justify-between mx-[40px]">
               <div onClick={handleRegisterClick}>
                 <MenuButton title="Register" name="Register" />
