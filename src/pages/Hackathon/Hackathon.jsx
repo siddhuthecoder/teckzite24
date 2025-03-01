@@ -37,7 +37,7 @@ const Hackathon= () => {
         className="w-full flex-col p-4 mb-3 md:mt-0 min-h-screen flex justify-center items-center gap-[20px]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/Hack.jpg')",
+            "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('contact_bg.jpg')",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
           backgroundPosition: "center",
