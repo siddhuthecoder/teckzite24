@@ -1,69 +1,57 @@
 import React, { useState } from 'react';
 import './EWschedule.css';
 import Header from '../../components/Header/Header';
-import Eve from './scheduleConstants';
+import eventData from './scheduleConstants';
+
 
 const EWschedule = () => {
-  const [tab, setTab] = useState('Events');
+  const [selectedDay, setSelectedDay] = useState('Mar 10');
 
   return (
-    <div className="container mx-auto py-16 px-4 relative mt-[30px]">
-      {/* Timeline divider */}
-      <div className="absolute top-0 md:left-1/2 transform -translate-x-1/2 bg-gradient-to-b from-gray-900 to-teal-900 w-1 h-full rounded-md"></div>
+    <div className="flex flex-col items-center p-[20px]"  >
+      {/* Tabs */}
+      <div className="flex gap-4">
+        {Object.keys(eventData).map((day, index) => (
+          <button
+            key={day}
+            onClick={() => setSelectedDay(day)}
+            className={`px-4 py-2 rounded-md ${
+              selectedDay === day ? 'bg-teal-600 text-white' : 'bg-gray-800 text-teal-400'
+            }`}
+          >
+            <div className="text-lg">DAY {index + 1}</div>
+            <div className="text-sm">{day}</div>
+          </button>
+        ))}
+      </div>
 
-      {/* Event cards */}
-      {Eve.events.map((event, index) => (
-        <div
-          key={index}
-          className={`relative w-full md:w-1/2 p-6 transition-all duration-500 ease-in-out 
-          ${index % 2 === 0 ? 'ml-0 md:ml-auto' : 'ml-0 md:mr-auto'} 
-          ${index % 2 === 0 ? 'text-left' : 'text-left'}`}
-        >
-          {/* Connector dot */}
+      {/* Timeline */}
+      <div className="relative w-full max-w-2xl my-[100px]">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-teal-600 w-1 h-full"></div>
+        {eventData[selectedDay].map((event, index) => (
           <div
-            className={` md:block hidden absolute w-4 h-4 bg-teal-600 rounded-full border-2 border-gray-800 transform 
-            -translate-x-1/2 md:translate-x-0 
-            ${index % 2 === 0 ? "left-[50%] md:-left-2" : "right-[50%] md:-right-2"}`}
-            style={{ top: "50%" }}
-          ></div>
-         
-         <div
-            className={` md:hidden  absolute w-4 h-4 bg-teal-600 rounded-full border-2 border-gray-800 transform 
-            -translate-x-1/2 md:translate-x-0 
-            ${index % 2 === 0 ? "left-0" : "left-0"}`}
-            style={{ top: "50%" }}
-          ></div>
-
-          {/* Event card */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-md border-b-4 border-teal-600">
-            <h2 className="text-xl font-semibold text-teal-400 mb-2">
-              {event.Name_of_the_Event}
-            </h2>
-            <p className="text-gray-300 text-sm mb-4">
-              <span className="font-bold text-teal-400">Department:</span> {event.Department}
-            </p>
-
-            {/* Rounds */}
-            <div className="text-gray-300 text-sm">
-              <h3 className="font-bold text-teal-400 mb-2">Rounds:</h3>
-              {event.Rounds.map((round, roundIndex) => (
-                <div key={roundIndex} className="mb-4">
-                  <p className="font-medium text-gray-400">{round.Round}</p>
-                  <p>
-                    <span className="text-teal-400 font-bold">Date:</span> {round.Date}
-                  </p>
-                  <p>
-                    <span className="text-teal-400 font-bold">Time:</span> {round.Time}
-                  </p>
-                </div>
-              ))}
-            </div>
+            key={index}
+            className={`relative mb-8 p-4 bg-gray-800 text-teal-400 rounded-md shadow-md ${
+              index % 2 === 0 ? 'ml-auto' : 'mr-auto'
+            }`}
+            style={{ width: '45%' }}
+          >
+            <h3 className="text-lg font-semibold">{event.title}</h3>
+            <p>{event.time}</p>
+            <p>{event.department}</p>
+            <div
+              className={`absolute w-4  h-4 bg-teal-600 rounded-full border-2 border-gray-800 ${
+                index % 2 === 0 ? 'left-full' : 'right-full'
+              }`}
+              style={{ top: '50%' }}
+            ></div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
+
 
 export default EWschedule;
 

@@ -22,13 +22,9 @@ const HackathonProblem = (props) => {
         title:"Building AI Agents",
         description:"This theme focuses on developing innovative AI agents to solve real-world challenges. Participants will create solutions such as an AI Receptionist for event management, a Virtual Health Assistant for medical queries and bookings, and a Dynamic Pricing Optimizer for real-time price adjustments. Join us to build cutting-edge AI agents that transform industries!"
     },
+
     {
         theme:"Theme-2",
-        title:"Build MVP for AI company (Amotion or AIspire labs)",
-        description:"Test your coding chops and execution ability by building a Minimum Viable Product (MVP) around curated, real-world problems. This is your chance to demonstrate technical excellence and rapid product development."
-    },
-    {
-        theme:"Theme-3",
         title:"AI/ML Startup Idea (Market Access Readlines)",
         description:"Unleash your entrepreneurial spirit and bring your boldest AI/ML startup ideas to life! This is your chance to transform innovative concepts into impactful solutions and be part of the startup revolution. Let your creativity shine, take the leap, and show the world how your vision can shape the future of technology!"
     },

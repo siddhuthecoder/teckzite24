@@ -8,11 +8,29 @@ import RegistrationModal from "./RegistartionModal";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { FaArrowRight } from "react-icons/fa";
+import sponcercard from '../../assets/img/Sponcercard.webp';
 
 const AithonDetails = () => {
   const userData = useSelector((state) => state.user.data);
   const [isModalOpen, setIsModalOpen] = useState(false);
+ const sponsorsData = [
+  {
+  sponsors:[{
+  image:amotion,
+ 
+  name:"Amotion AI",
+},
+{
+  
+    image:ai,
+    name:"AISPIRE",
+  
+},
+],
+heading:"AI PARTNERS",
 
+}]
+ 
  
   const handleRegisterClick = () => {
     if (!userData || Object.keys(userData).length === 0) {
@@ -22,23 +40,44 @@ const AithonDetails = () => {
     }
   };
   return (
-    <div>
+    <div >
       <Header />
       <div
         className="w-full flex-col p-4 mb-3 md:mt-0 flex justify-center items-center gap-[20px]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/Hack.jpg')",
+            "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('contact_bg.jpg')",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
+        
         <div className="flex w-full justify-center items-center flex-col gap-[20px]">
-          <div className="partners mt-[120px] flex md:gap-[100px] flex-col md:flex-row gap-[20px]">
-            <img src={amotion} alt="Amotion AI" className="rounded-md" />
-            <img src={ai} className="h-[200px] rounded-md" alt="AI Logo" />
+        <div className="relative mt-[100px]">
+        {sponsorsData.map((section, index) => (
+          <div key={index} className="pb-[70px]">
+            <div className="text-center font-bruno text-[white] text-2xl md:text-3xl">
+              {section.heading}
+            </div>
+            <div className="w-full flex items-center justify-center flex-wrap">
+              {section.sponsors.map((sponsor, i) => (
+                <div className="relative mt-5 w-64 cursor-pointer" key={i}>
+                  <img src={sponcercard} width="100%" alt="Sponsor Card" />
+                  <img
+                    src={sponsor.image}
+                    className="w-[140px] h-[80px] absolute left-[25%] top-[40%] [clip-path:polygon(88%_0,_100%_17%,_100%_100%,_10%_100%,_0_81%,_0_0)]"
+                    alt={sponsor.name}
+                  />
+                  <h2 className="absolute top-14 text-white text-center w-[85%] text-md pl-4">
+                    {sponsor.name}
+                  </h2>
+                </div>
+              ))}
+            </div>
           </div>
+        ))}
+      </div>
           <HackathonProblem />
           <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg flex flex-col gap-[30px] bg-white/10 border border-white/20 shadow-lg text-white mb-8">
          <strong className="text-cyan-500">Round-1:</strong>

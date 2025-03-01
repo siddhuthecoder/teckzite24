@@ -6,13 +6,19 @@ import amotion from "../../assets/Hackathon/amotionaiblack.jpg";
 import MenuButton from "../../components/button/MenuButton";
 // import RegistrationModal from "./RegistartionModal";
 import RobothonModal from "./RobothonModal";
-
+import { toast } from "react-hot-toast";
+import { useSelector } from "react-redux";
 const RobothonDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const userData = useSelector((state) => state.user.data);
 
-  const handleRegisterClick = () => {
-    setIsModalOpen(true);
-  };
+   const handleRegisterClick = () => {
+      if (!userData || Object.keys(userData).length === 0) {
+        toast.error("Please login to register for the project expo");
+      } else {
+        setIsModalOpen(true);
+      }
+    };
 
   return (
     <div>
@@ -90,8 +96,9 @@ const RobothonDetails = () => {
             </div>
           </div>
         </div>
+       
         {isModalOpen && (
-          <RobothonModal onClose={() => setIsModalOpen(false)} />
+          <RobothonModal onClose={() => setIsModalOpen(false)} userData={userData}/>
         )}
       </div>
     </div>
