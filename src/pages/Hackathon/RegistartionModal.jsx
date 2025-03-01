@@ -57,7 +57,7 @@ const RegistrationModal = ({ onClose, userData }) => {
   };
 
   const handleAddMember = () => {
-    if (teamMembers.length >= 5) {
+    if (teamMembers.length >= 4) {
       toast.error("Maximum 5 team members allowed");
       return;
     }
@@ -65,7 +65,11 @@ const RegistrationModal = ({ onClose, userData }) => {
       toast.error("Please fill in all member details");
       return;
     }
-    if (teamMembers.some((member) => member.tzkid === newMember.tzkid)) {
+    if (newMember.tzkid.toLowerCase() === userData.tzkid.toLowerCase()) {
+      toast.error("You don't need to enter your Teckzite ID. Please enter your team mate's IDs.");
+      return;
+    }
+    if (teamMembers.some((member) => member.tzkid.toLowerCase() === newMember.tzkid.toLowerCase())) {
       toast.error("Member already added");
       return;
     }
@@ -74,7 +78,7 @@ const RegistrationModal = ({ onClose, userData }) => {
   };
 
   const handleRemoveMember = (tzkid) => {
-    if (teamMembers.length <= 3) {
+    if (teamMembers.length <= 1) {
       toast.error("Minimum 3 team members required");
       return;
     }
@@ -82,7 +86,7 @@ const RegistrationModal = ({ onClose, userData }) => {
   };
 
   const handleSubmit = async () => {
-    if (teamMembers.length < 3) {
+    if (teamMembers.length < 2) {
       toast.error("Minimum 3 team members required");
       return;
     }
@@ -148,11 +152,12 @@ const RegistrationModal = ({ onClose, userData }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-8 max-w-md w-full z-10">
+      <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-8 max-w-md w-full z-10 h-[500px] overflow-y-auto scrollbar-hide">
           <div className="w-full flex items-center justify-end">
                   <MdClose className="text-2xl text-white cursor-pointer"  onClick={onClose}/>
                 </div>
         <h2 className="text-2xl font-bold mb-4 text-white">Hackathon Registration</h2>
+        <h3 className="text-lg font-bold mb-4 text-white"> {userData.tzkid.toUpperCase()} <span className="text-cyan-500">(No need to add your details)</span></h3>
         {step === 1 ? (
           <>
             <input
@@ -183,10 +188,10 @@ const RegistrationModal = ({ onClose, userData }) => {
               name="problemStatementNumber"
               value={projectData.problemStatementNumber}
               onChange={handleInputChange}
-              placeholder="THEME NUMBER (1-3)"
+              placeholder="THEME NUMBER (1-2)"
               className="w-full p-2 mb-4 bg-white bg-opacity-20 rounded text-white"
               min="1"
-              max="3"
+              max="2"
             />
             <button
               onClick={() =>
@@ -203,7 +208,7 @@ const RegistrationModal = ({ onClose, userData }) => {
           <>
             <div className="mb-4">
               <h3 className="text-lg font-semibold mb-2 text-white">
-                Team Members ({teamMembers.length}/5)
+                Team Members ({(teamMembers.length+1)}/5)
               </h3>
               {teamMembers.map((member) => (
                 <div

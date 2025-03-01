@@ -34,7 +34,7 @@ heading:"AI PARTNERS",
  
   const handleRegisterClick = () => {
     if (!userData || Object.keys(userData).length === 0) {
-      toast.error("Please login to register for the project expo");
+      toast.error("Please login to register for the AI Hackathon");
     } else {
       setIsModalOpen(true);
     }
