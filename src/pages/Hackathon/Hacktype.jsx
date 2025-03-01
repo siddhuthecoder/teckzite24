@@ -5,7 +5,7 @@ const Hacktype = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="px-[100px]">
+    <div className="md:px-[100px]">
       <div className="flex flex-col  py-[50px] px-[30px] rounded-lg mb-[30px]  backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg text-white ">
         <h2 className="text-3xl">About Hacakathon</h2>
       Teckzite'25 Hackathons, part of South India's largest techno-management
