@@ -55,6 +55,7 @@
     "stream-http": "^3.2.0",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.6.0",
+    "tailwind-scrollbar-hide": "^2.0.0",
     "three": "^0.162.0",
     "tls": "^0.0.1",
     "util": "^0.12.5",
