@@ -29,7 +29,15 @@ const AithonDetails = () => {
       heading: "AI PARTNERS",
     },
   ];
-
+  const downloadFile = () => {
+    const fileUrl = `https://docs.google.com/presentation/d/12owf2vRydE6X8qrNnv9LHBChEo7YV5np/export?format=pptx`; // Export as PPTX
+    const anchor = document.createElement("a");
+    anchor.href = fileUrl;
+    anchor.target = "_blank"; // Opens in a new tab (optional)
+    anchor.rel = "noopener noreferrer";
+    anchor.click();
+  };
+  
   const handleRegisterClick = () => {
     if (!userData || Object.keys(userData).length === 0) {
       toast.error("Please login to register for the AI Hackathon");
@@ -80,6 +88,12 @@ const AithonDetails = () => {
 
           <HackathonProblem />
           <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg flex flex-col gap-[30px] bg-white/10 border border-white/20 shadow-lg text-white mb-8">
+          <div className="relative flex gap-5 text-xl backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg p-6 rounded-lg">
+        
+        <button onClick={downloadFile} className="text-cyan-500">
+          Click Here to Download the PPT format
+        </button>
+      </div>
             <strong className="text-cyan-500">Round-1:</strong>
             <ul className="list-disc ml-6 mt-2 space-y-3">
               <li className="flex items-start gap-5">
