@@ -7,10 +7,10 @@ const RobthonModal = ({ onClose, userData }) => {
   const [loading, setLoading] = useState(false);
   const [fileUploading, setFileUploading] = useState(false);
   const [projectData, setProjectData] = useState({
-    projectName: "",
-    abstract: "",
-    file: "",
-    problemStatementNumber: "",
+    projectName: "Robothon",
+    abstract: "Robothon",
+    file: "Robothon",
+    problemStatementNumber: "1",
   });
   const [teamMembers, setTeamMembers] = useState([
   ]);
@@ -115,7 +115,7 @@ const RobthonModal = ({ onClose, userData }) => {
       setLoading(true);
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/robothon`,
+        `${process.env.REACT_APP_BACKEND_URL}/hackathon`,
         {
           method: "POST",
           headers: {
