@@ -78,7 +78,7 @@ const RegistrationModal = ({ onClose, userData }) => {
   };
 
   const handleRemoveMember = (tzkid) => {
-    if (teamMembers.length <= 1) {
+    if (teamMembers.length <= 0) {
       toast.error("Minimum 3 team members required");
       return;
     }
