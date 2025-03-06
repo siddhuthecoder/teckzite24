@@ -124,12 +124,6 @@ const RegisterForm = () => {
       return;
     }
 
-    if (!isRgukt && data.file === "") {
-      setError("Upload id proof");
-      setisReging(false);
-      return;
-    }
-
     if (!data.terms) {
       setError("Please accept the Terms and Conditions");
       setisReging(false);
