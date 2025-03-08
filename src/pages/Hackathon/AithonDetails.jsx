@@ -37,13 +37,14 @@ const AithonDetails = () => {
     anchor.rel = "noopener noreferrer";
     anchor.click();
   };
-  
+
   const handleRegisterClick = () => {
-    if (!userData || Object.keys(userData).length === 0) {
-      toast.error("Please login to register for the AI Hackathon");
-    } else {
-      setIsModalOpen(true);
-    }
+    // if (!userData || Object.keys(userData).length === 0) {
+    //   toast.error("Please login to register for the AI Hackathon");
+    // } else {
+    //   setIsModalOpen(true);
+    // }
+    toast.error("Registrations for this hackathon are closed");
   };
   return (
     <div>
@@ -59,7 +60,7 @@ const AithonDetails = () => {
         }}
       >
         <div className="flex w-full justify-center items-center flex-col gap-[20px] mt-[100px]">
-        <h1 className="md:text-7xl text-cyan-500">AI HACKATHON</h1>
+          <h1 className="md:text-7xl text-cyan-500">AI HACKATHON</h1>
 
           <div className="relative">
             {sponsorsData.map((section, index) => (
@@ -88,12 +89,11 @@ const AithonDetails = () => {
 
           <HackathonProblem />
           <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg flex flex-col gap-[30px] bg-white/10 border border-white/20 shadow-lg text-white mb-8">
-          <div className="relative flex gap-5 text-xl backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg p-6 rounded-lg">
-        
-        <button onClick={downloadFile} className="text-cyan-500">
-          Click Here to Download the PPT format
-        </button>
-      </div>
+            <div className="relative flex gap-5 text-xl backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg p-6 rounded-lg">
+              <button onClick={downloadFile} className="text-cyan-500">
+                Click Here to Download the PPT format
+              </button>
+            </div>
             <strong className="text-cyan-500">Round-1:</strong>
             <ul className="list-disc ml-6 mt-2 space-y-3">
               <li className="flex items-start gap-5">

@@ -12,13 +12,14 @@ const RobothonDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const userData = useSelector((state) => state.user.data);
 
-   const handleRegisterClick = () => {
-      if (!userData || Object.keys(userData).length === 0) {
-        toast.error("Please login to register for the Robothon");
-      } else {
-        setIsModalOpen(true);
-      }
-    };
+  const handleRegisterClick = () => {
+    // if (!userData || Object.keys(userData).length === 0) {
+    //   toast.error("Please login to register for the Robothon");
+    // } else {
+    //   setIsModalOpen(true);
+    // }
+    toast.error("Registrations for this hackathon are closed");
+  };
 
   return (
     <div>
@@ -39,7 +40,7 @@ const RobothonDetails = () => {
             <img src={ai} className="h-[200px]" alt="AI Logo" />
           </div>
           <HackathonProblem /> */}
-                  <h1 className="md:text-7xl text-cyan-500">ROBOTHON</h1>
+          <h1 className="md:text-7xl text-cyan-500">ROBOTHON</h1>
 
           <div className="w-11/12 max-w-4xl p-6 rounded-lg backdrop-blur-lg flex flex-col gap-[30px] bg-white/10 border border-white/20 shadow-lg text-white mb-8">
             <ul className="list-disc ml-6 text-white">
@@ -47,10 +48,10 @@ const RobothonDetails = () => {
                 <strong className="text-cyan-500">Round 1:</strong>
                 <ul className="list-circle ml-6 mt-2">
                   <li>
-                    Welcome to ROBO-THON, the premier Hackathon of
-                    Teckzite'25! After successful registration, teams are
-                    invited to participate in Round 1, which will be quiz on
-                    basics of Robotics and IoT etc.
+                    Welcome to ROBO-THON, the premier Hackathon of Teckzite'25!
+                    After successful registration, teams are invited to
+                    participate in Round 1, which will be quiz on basics of
+                    Robotics and IoT etc.
                   </li>
                   <li>
                     Next Steps: Shortlisted teams will proceed to Round 2, where
@@ -89,7 +90,6 @@ const RobothonDetails = () => {
                   <li>We look forward to seeing you at RGUKT Nuzvid!</li>
                 </ul>
               </li>
-              
             </ul>
             <h3>FOR QUERIES:</h3>
             <h2>Srinivas B - +91 90630 46555 | n200328@rguktn.ac.in</h2>
@@ -100,9 +100,12 @@ const RobothonDetails = () => {
             </div>
           </div>
         </div>
-       
+
         {isModalOpen && (
-          <RobothonModal onClose={() => setIsModalOpen(false)} userData={userData}/>
+          <RobothonModal
+            onClose={() => setIsModalOpen(false)}
+            userData={userData}
+          />
         )}
       </div>
     </div>
