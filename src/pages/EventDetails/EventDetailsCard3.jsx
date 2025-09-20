@@ -86,6 +86,7 @@ const EventDetailsCard3 = () => {
             tzkIds: [userData.tzkid],
           },
           {
+            
             headers: {
               Authorization: `Bearer ${token}`,
             },

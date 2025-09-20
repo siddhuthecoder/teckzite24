@@ -2,57 +2,132 @@ import React from "react";
 import Header from "../../components/Header/Header";
 const Privacy = () => {
   return (
-    <div>
-       
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
+      <Header/>
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto bg-gray-800 bg-opacity-50 backdrop-blur-xl shadow-2xl rounded-3xl p-8 text-gray-100 border border-gray-700">
+          <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Privacy Policy</h1>
+          <p className="mb-8 text-gray-300">Welcome to <strong className="text-blue-400">Teckzite</strong>! Your privacy is important to us...</p>
+          
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-300">
+              <span className="mr-2">1.</span>
+              <span>Information We Collect</span>
+            </h2>
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span><strong className="text-blue-200">Personal Information:</strong> Name, email, phone number, etc.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span><strong className="text-blue-200">Usage Data:</strong> Device type, IP address, app activity.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span><strong className="text-blue-200">Cookies and Tracking Technologies:</strong> Used for analysis.</span>
+              </li>
+            </ul>
+          </div>
 
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 p-5 md:p-10 ">
-    <Header/>
-      <div className="max-w-3xl w-full bg-white bg-opacity-10 backdrop-blur-lg shadow-lg rounded-2xl p-3 md:p-8 text-white my-[80px]">
-        <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
-        {/* <p className="mb-2"><strong>Effective Date:</strong> [Insert Date]</p> */}
-        <p className="mb-4">Welcome to <strong>Teckzite</strong>! Your privacy is important to us...</p>
-        
-        <h2 className="text-xl font-semibold mt-6">1. Information We Collect</h2>
-        <ul className="list-disc ml-6 mt-2">
-          <li><strong>Personal Information:</strong> Name, email, phone number, etc.</li>
-          <li><strong>Usage Data:</strong> Device type, IP address, app activity.</li>
-          <li><strong>Cookies and Tracking Technologies:</strong> Used for analysis.</li>
-        </ul>
-        
-        <h2 className="text-xl font-semibold mt-6">2. How We Use Your Information</h2>
-        <ul className="list-disc ml-6 mt-2">
-          <li>Provide, operate, and maintain the app.</li>
-          <li>Improve user experience and troubleshoot issues.</li>
-          <li>Send notifications and updates (if opted in).</li>
-        </ul>
-        
-        <h2 className="text-xl font-semibold mt-6">3. How We Share Your Information</h2>
-        <ul className="list-disc ml-6 mt-2">
-          <li><strong>Service Providers:</strong> Third-party vendors for app operations.</li>
-          <li><strong>Legal Authorities:</strong> If required by law.</li>
-          <li><strong>Business Transfers:</strong> In case of mergers or acquisitions.</li>
-        </ul>
-        
-        <h2 className="text-xl font-semibold mt-6">4. Data Security</h2>
-        <p className="mt-2">We implement industry-standard security measures...</p>
-        
-        <h2 className="text-xl font-semibold mt-6">5. Your Rights & Choices</h2>
-        <ul className="list-disc ml-6 mt-2">
-          <li>Access, update, or delete your data.</li>
-          <li>Opt out of marketing communications.</li>
-          <li>Disable cookies through device settings.</li>
-        </ul>
-        
-        <h2 className="text-xl font-semibold mt-6">6. Third-Party Links</h2>
-        <p className="mt-2">Our app may contain links to third-party services...</p>
-        
-        <h2 className="text-xl font-semibold mt-6">7. Changes to This Privacy Policy</h2>
-        <p className="mt-2">We may update this policy from time to time...</p>
-        
-        <h2 className="text-xl font-semibold mt-6">8. Contact Us</h2>
-        <p className="mt-2">If you have any questions, contact us at: [Insert Contact Email]</p>
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-300">
+              <span className="mr-2">2.</span>
+              <span>How We Use Your Information</span>
+            </h2>
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span>Provide, operate, and maintain the app.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span>Improve user experience and troubleshoot issues.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span>Send notifications and updates (if opted in).</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-300">
+              <span className="mr-2">3.</span>
+              <span>How We Share Your Information</span>
+            </h2>
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span><strong className="text-blue-200">Service Providers:</strong> Third-party vendors for app operations.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span><strong className="text-blue-200">Legal Authorities:</strong> If required by law.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span><strong className="text-blue-200">Business Transfers:</strong> In case of mergers or acquisitions.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-300">
+              <span className="mr-2">4.</span>
+              <span>Data Security</span>
+            </h2>
+            <p className="text-gray-300">We implement industry-standard security measures...</p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-300">
+              <span className="mr-2">5.</span>
+              <span>Your Rights & Choices</span>
+            </h2>
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span>Access, update, or delete your data.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span>Opt out of marketing communications.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-blue-400">•</span>
+                <span>Disable cookies through device settings.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-300">
+              <span className="mr-2">6.</span>
+              <span>Third-Party Links</span>
+            </h2>
+            <p className="text-gray-300">Our app may contain links to third-party services...</p>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-300">
+              <span className="mr-2">7.</span>
+              <span>Changes to This Privacy Policy</span>
+            </h2>
+            <p className="text-gray-300">We may update this policy from time to time...</p>
+          </div>
+
+          <div className="mt-12 pt-6 border-t border-gray-700">
+            <h2 className="text-2xl font-semibold mb-4 text-blue-300">Contact Us</h2>
+            <p className="text-gray-300">
+              If you have any questions, contact us at: 
+              <a href="mailto:teckzite@rguktn.ac.in" className="text-blue-400 hover:text-blue-300 ml-1 transition-colors">
+                teckzite@rguktn.ac.in
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

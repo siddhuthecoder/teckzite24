@@ -55,14 +55,21 @@ const ProjectExpo = () => {
           backgroundPosition: "center",
         }}
       >
+        
         <img
           src="/assets/expotitle.png"
           className={`
-                      ${scrollPosition < 20 ? "my-[100px]" : "my-0"} 
+                      ${scrollPosition < 20 ? "mt-[100px]" : "my-0"} 
                       md:my-0 md:mt-0 
                       h-[250px] md:h-full
                     `}
         />
+        <div className="relative flex gap-5 text-xl backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg p-6 rounded-lg">
+        <h2 className="text-blink">Results are out now</h2>
+        <button onClick={ResultsdownloadFile} className="text-cyan-500">
+          Click Here to Download Results
+        </button>
+      </div>
         <div
           className={`flex flex-col md:flex-row gap-[30px] md:gap-[70px] items-center     ${
             scrollPosition < 20 ? "my-[30px]" : "my-0"
@@ -80,12 +87,7 @@ const ProjectExpo = () => {
         </p>
 
    
-      <div className="relative flex gap-5 text-xl backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg p-6 rounded-lg">
-        <h2>Results are out now</h2>
-        <button onClick={ResultsdownloadFile} className="text-cyan-500">
-          Click Here to Download Results
-        </button>
-      </div>
+      
 
         <h2 className="text-[30px]">Problem Statements</h2>
         <ProblemStatements />

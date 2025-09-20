@@ -251,13 +251,7 @@ const Navbar = ({ setShowNav }) => {
             mobileDelay={11}
             desktopClasses="md:mr-[20px]  lg:mr-[-30px] md:animate-slideTopDelay11 md:hidden"
           />
-          <NavButton
-            name="Contact"
-            action={() => {setShowNav(false);navigate("/contact")}}
-            desktopDelay={11}
-            mobileDelay={11}
-            desktopClasses="md:mr-[20px] mb-[40px] lg:mr-[-30px] md:animate-slideTopDelay11 md:hidden"
-          />
+         
         </div>
       </div>
     </div>

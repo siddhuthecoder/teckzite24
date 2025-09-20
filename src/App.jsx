@@ -14,7 +14,7 @@ import Privacy from "./pages/Privacy/Privacy";
 
 import AithonDetails from "./pages/Hackathon/AithonDetails";
 import Stalls from "./pages/Stalls/Stalls";
-import Modalstall  from "./pages/Stalls/Modalstall";
+import Modalstall from "./pages/Stalls/Modalstall";
 
 import Schedule from "./pages/Schedule/Schedule";
 import {
@@ -28,7 +28,7 @@ import {
   Register,
   // Referrals,
   Sponsors,
-  Workshops
+  Workshops,
 } from "./pages";
 import CertificatesUser from "./pages/CertificatesUser/CertificatesUser";
 import EventDetailsCard3 from "./pages/EventDetails/EventDetailsCard3";
@@ -49,7 +49,7 @@ import ComingSoon from "./components/ComingSoon";
 import CertificatesWorkshop from "./pages/CertificatesWorkshop/CertificatesWorkshop";
 import Home from "./pages/home1/home";
 
-import ProblemStatementDetails from './pages/ProjectExpo/ProblemStatementDetails';
+import ProblemStatementDetails from "./pages/ProjectExpo/ProblemStatementDetails";
 import ProjectExpo from "./pages/ProjectExpo/ProjectExpo";
 import HackathonProblem from "./pages/Hackathon/HackProblem";
 import RobothonDetails from "./pages/Hackathon/RobothonDetails";
@@ -164,7 +164,6 @@ function App() {
         <>
           <Toaster />
           <main className="animate-show">
-
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
@@ -199,31 +198,32 @@ function App() {
                 element={<WorkshopDetails />}
               />
               <Route path="/Hacktype" element={<Hacktype />} />
-        <Route path="/aithon" element={<AithonDetails />} />
-        <Route path="/robothon" element={<RobothonDetails />} />
+              <Route path="/aithon" element={<AithonDetails />} />
+              <Route path="/robothon" element={<RobothonDetails />} />
 
               <Route path="/profile" element={<Profile />} />
               <Route path="/certficates/users" element={<CertificatesUser />} />
-              <Route path="/certficates/workshops" element={<CertificatesWorkshop />} />
+              <Route
+                path="/certficates/workshops"
+                element={<CertificatesWorkshop />}
+              />
               <Route path="/stalls" element={<Stalls />} />
               <Route path="/Modalstall" element={<Modalstall />} />
               {/* <Route path="/robowars" element={<ComingSoon />} /> */}
 
-                
-              <Route path="/robowars" element={<RobowarEvents></RobowarEvents>}/>  
-              <Route path="/expo" element={<ProjectExpo/>}/> 
-   
+              <Route
+                path="/robowars"
+                element={<RobowarEvents></RobowarEvents>}
+              />
+              <Route path="/expo" element={<ProjectExpo />} />
+
               <Route
                 path="/problemstatement/:id"
                 element={<ProblemStatementDetails />}
-              />  
+              />
               <Route path="*" element={<PageNotFound />} />
-              <Route path="/hackathon" element={<Hackathon/>}/>
-              <Route path="/hackproblem/:id" element={<HackathonProblem />}
-/>
-
-
-            
+              <Route path="/hackathon" element={<Hackathon />} />
+              <Route path="/hackproblem/:id" element={<HackathonProblem />} />
             </Routes>
             <Footer />
           </main>

@@ -25,12 +25,7 @@ const Footer = () => {
       >
         Updates
       </h2>
-      <h2
-        className="cursor-pointer hover:underline font-bruno"
-        onClick={() => navigate("/contact")}
-      >
-        Contact
-      </h2>
+     
       <h2
         className="cursor-pointer hover:underline font-bruno"
         onClick={() => navigate("/schedule")}
