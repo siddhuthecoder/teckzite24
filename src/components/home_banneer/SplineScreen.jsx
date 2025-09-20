@@ -83,7 +83,10 @@ function SplineScreen() {
             </span>
           </div>
         ) : (
-          <div onClick={() => navigate("/register")} className="flex items-center gap-[5px]">
+          <div
+            onClick={() => navigate("/register")}
+            className="flex items-center gap-[5px]"
+          >
             Click Here To Register <FaArrowRight />
           </div>
         )}
@@ -97,16 +100,14 @@ function SplineScreen() {
             </div>
           )}
           <Spline
-            scene={isMobile ? splineSceneMobile : splineSceneDesktop}
+            scene="https://prod.spline.design/7w5I0rW2167SAmYb/scene.splinecode"
             onLoad={(spline) => {
               splineRef.current = spline; // Save the Spline instance reference
               setIsLoading(false); // Mark loading complete
             }}
-            style={{
-              zIndex: 2,
-              display: isLoading ? "none" : "block", // Hide the scene until fully loaded
-            }}
+           
           />
+        
         </>
       ) : (
         // If not yet in view, show a placeholder (this div could be styled further or contain a preview image)
