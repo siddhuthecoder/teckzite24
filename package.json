@@ -88,7 +88,7 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.3"
-chnafe  },
+  },
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
